@@ -1,0 +1,353 @@
+{
+ "name": "BaseMessage",
+ "title": "Station Base Message",
+ "size": [
+  577,
+  353
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    569,
+    317
+   ],
+   "text": "Write Your Station Code",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Email",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    238
+   ],
+   "size": [
+    474,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Phone",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    373,
+    198
+   ],
+   "size": [
+    184,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StationManager",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    197
+   ],
+   "size": [
+    184,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "StationAddress",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    158
+   ],
+   "size": [
+    474,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "StationName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    118
+   ],
+   "size": [
+    475,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "StationCode",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    36
+   ],
+   "size": [
+    184,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CitySelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    77
+   ],
+   "size": [
+    184,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "RegionSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    373,
+    36
+   ],
+   "size": [
+    184,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CreateStation",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    360,
+    267
+   ],
+   "size": [
+    96,
+    46
+   ],
+   "text": "Add New",
+   "dock": null,
+   "visible": false,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    314,
+    200
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Phone",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    241
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Email",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    201
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Manager",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    161
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Address",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    121
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Station Name",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    80
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "City",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    315,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Region",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Station Code",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "NextButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    462,
+    267
+   ],
+   "size": [
+    96,
+    46
+   ],
+   "text": "Next",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  }
+ ],
+ "columns": {}
+}

@@ -1,0 +1,1030 @@
+{
+ "name": "OilTransacation",
+ "title": "Transaction Query",
+ "size": [
+  1502,
+  868
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    1494,
+    832
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ShiftDuty",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    685,
+    17
+   ],
+   "size": [
+    78,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ShiftDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    556,
+    18
+   ],
+   "size": [
+    123,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ShiftDutyCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    475,
+    18
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Shift Select",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "OilCodeCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    17,
+    18
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Type Select",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "OrderSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    850,
+    21
+   ],
+   "size": [
+    176,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "OilCodeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    98,
+    19
+   ],
+   "size": [
+    142,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "OrderCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    769,
+    17
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Sort Rule",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "ShiftCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    246,
+    18
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Shift",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ShiftSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    327,
+    19
+   ],
+   "size": [
+    142,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "TotalSumView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1488,
+    126
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1488,
+    481
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    498
+   ],
+   "size": [
+    1488,
+    27
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    459,
+    21
+   ],
+   "size": [
+    413,
+    12
+   ],
+   "text": "起止时间自行选择日期，若要修改时间则自行点击进行修改，默认为24小时制",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QuerySearch",
+   "type": "SkinButton",
+   "parent": "groupBox4",
+   "loc": [
+    897,
+    13
+   ],
+   "size": [
+    142,
+    27
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StartDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox4",
+   "loc": [
+    98,
+    18
+   ],
+   "size": [
+    166,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "DateCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    17,
+    16
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Query Time",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    270,
+    24
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "-",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "EndDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox4",
+   "loc": [
+    289,
+    18
+   ],
+   "size": [
+    155,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "UserSelect",
+   "type": "SkinTextBox",
+   "parent": "groupBox5",
+   "loc": [
+    1279,
+    20
+   ],
+   "size": [
+    142,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTypeCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    17,
+    20
+   ],
+   "size": [
+    63,
+    21
+   ],
+   "text": "CardType",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "UserCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    1198,
+    20
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Customer Query",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox5",
+   "loc": [
+    98,
+    21
+   ],
+   "size": [
+    142,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "NozCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    246,
+    20
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Noz Select",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "EmpSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox5",
+   "loc": [
+    1050,
+    21
+   ],
+   "size": [
+    142,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "NozSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox5",
+   "loc": [
+    327,
+    21
+   ],
+   "size": [
+    142,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "EmpCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    969,
+    20
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Employee",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "AsnCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    475,
+    20
+   ],
+   "size": [
+    75,
+    21
+   ],
+   "text": "Query Asn",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "AsnSelect",
+   "type": "SkinTextBox",
+   "parent": "groupBox5",
+   "loc": [
+    556,
+    20
+   ],
+   "size": [
+    176,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "CardNoCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox5",
+   "loc": [
+    735,
+    20
+   ],
+   "size": [
+    51,
+    21
+   ],
+   "text": "Car No",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CardNoSelect",
+   "type": "SkinTextBox",
+   "parent": "groupBox5",
+   "loc": [
+    790,
+    17
+   ],
+   "size": [
+    176,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    158
+   ],
+   "size": [
+    1494,
+    674
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1494,
+    158
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox5",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    45
+   ],
+   "size": [
+    1494,
+    70
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    115
+   ],
+   "size": [
+    1494,
+    43
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1494,
+    45
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1494,
+    528
+   ],
+   "text": "Result",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel3",
+   "loc": [
+    0,
+    528
+   ],
+   "size": [
+    1494,
+    146
+   ],
+   "text": "Summary",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NextEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1291,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1256,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1232,
+    8
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TotalCount",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    901,
+    10
+   ],
+   "size": [
+    209,
+    12
+   ],
+   "text": "Record Total:9999,50 per page Total Page:1",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Export",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1410,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Import All",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ExportPage",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1329,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Import Page",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1222,
+    8
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    1188,
+    3
+   ],
+   "size": [
+    32,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1151,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CurEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1116,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "NozID",
+    "header": "Noz ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Price",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TruePay",
+    "header": "TruePay",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TrueTime",
+    "header": "Transaction Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "ASN",
+    "header": "Asn",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "BAL",
+    "header": "Balance",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TType",
+    "header": "Trade Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PayMent",
+    "header": "Pay Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PosP",
+    "header": "Com",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "POSTTC",
+    "header": "POSTTC",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "EMP",
+    "header": "Employee",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "VolumeTotal",
+    "header": "Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Shift",
+    "header": "Shift",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CardNo",
+    "header": "Car No",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Mileage",
+    "header": "Mileage",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "DisCount",
+    "header": "Discount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Coupon",
+    "header": "Coupon",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CouponValue",
+    "header": "Par",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "TotalSumView": [
+   {
+    "name": "Count",
+    "header": "Card Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalUserCard",
+    "header": "Total Record",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

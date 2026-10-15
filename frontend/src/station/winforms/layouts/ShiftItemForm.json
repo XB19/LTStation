@@ -1,0 +1,134 @@
+{
+ "name": "ShiftItemForm",
+ "title": "Shift Setting",
+ "size": [
+  745,
+  388
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    737,
+    350
+   ],
+   "text": "Base Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ShiftItemView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    731,
+    297
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    314
+   ],
+   "size": [
+    731,
+    33
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Delete",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    653,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AddShift",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    572,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "ShiftItemView": [
+   {
+    "name": "ID",
+    "header": "Shift No",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Shift Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Start Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "EndTime",
+    "header": "End Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Scope",
+    "header": "Interval(minutes)",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

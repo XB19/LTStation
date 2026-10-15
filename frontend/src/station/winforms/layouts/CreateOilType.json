@@ -1,0 +1,137 @@
+{
+ "name": "CreateOilType",
+ "title": "Create Fuel Type",
+ "size": [
+  283,
+  199
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    275,
+    163
+   ],
+   "text": "Please Input Message To Finish it",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "OilName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    75
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OilCode",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    35
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    163,
+    106
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    14,
+    106
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    83
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Fuel Type Name",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Fuel Type ID",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  }
+ ],
+ "columns": {}
+}

@@ -1,0 +1,214 @@
+{
+ "name": "StationNozzleSet",
+ "title": "Noz Setting",
+ "size": [
+  884,
+  450
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    876,
+    414
+   ],
+   "text": "Noz List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NozzleConfigView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    627,
+    359
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    629,
+    24
+   ],
+   "size": [
+    245,
+    359
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    383
+   ],
+   "size": [
+    872,
+    29
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinPanel1",
+   "loc": [
+    3,
+    8
+   ],
+   "size": [
+    221,
+    12
+   ],
+   "text": "If you modify the communication port, you need to restart the software to take effect",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextButton",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    780,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Next",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Delete",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    699,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    618,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  }
+ ],
+ "columns": {
+  "NozzleConfigView": [
+   {
+    "name": "ID",
+    "header": "Noz ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "CABLENO.",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TankType",
+    "header": "TankType",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Type",
+    "header": "Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PosType",
+    "header": "Pos Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PosIP",
+    "header": "PosIP",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "TankView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "TankID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewComboBoxColumn1",
+    "header": "Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewComboBoxColumn2",
+    "header": "Price",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

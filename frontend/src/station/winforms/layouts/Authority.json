@@ -1,0 +1,623 @@
+{
+ "name": "Authority",
+ "title": "Authority Manage",
+ "size": [
+  413,
+  448
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    405,
+    410
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "AuthorityBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    267
+   ],
+   "size": [
+    104,
+    24
+   ],
+   "text": "24.Authority",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UserCheck",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    267
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "23.User",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ExtendManager",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    267
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "22.Extend",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Communication",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    233
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "21.Communication",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "StationManager",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    233
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "20.Station Manage",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "SystemSet",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    233
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "19.System Set",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "PasswodLostBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    199
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "18.Pass Lost",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "BusinessBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    165
+   ],
+   "size": [
+    90,
+    16
+   ],
+   "text": "15.Bussiness",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "PSAMBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    131
+   ],
+   "size": [
+    78,
+    16
+   ],
+   "text": "12.PSAM",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "KeyManagementBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    97
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "9.Secret Key",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "DisCountBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    63
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "6.Discount",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "SocreBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    291,
+    29
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "3.Integral",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "CardSearchBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    199
+   ],
+   "size": [
+    102,
+    16
+   ],
+   "text": "17.Card Log",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "MonthBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    165
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "14.Month Report",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "DailyBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    131
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "11.Daily Report",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "ShiftBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    97
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "8.Shift Report",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "EmpBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    63
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "5.Emp Manage",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "OilTransactionBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    156,
+    29
+   ],
+   "size": [
+    108,
+    16
+   ],
+   "text": "2.Transaction",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "DepositBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    199
+   ],
+   "size": [
+    96,
+    16
+   ],
+   "text": "16.Balance",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "CardChangeBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    165
+   ],
+   "size": [
+    78,
+    16
+   ],
+   "text": "13.Card Change",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "CardLostBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    131
+   ],
+   "size": [
+    78,
+    16
+   ],
+   "text": "10.Card Lost",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "CardUpdateBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    97
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "7.Card Update",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "MakeCardBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    63
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "4.Card Make",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "PriceBox",
+   "type": "CheckBox",
+   "parent": "AuthorithBox",
+   "loc": [
+    24,
+    29
+   ],
+   "size": [
+    108,
+    16
+   ],
+   "text": "1.Price Setting",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "AddAuthority",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    256,
+    20
+   ],
+   "size": [
+    143,
+    23
+   ],
+   "text": "Add Authority",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AuthoritySelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    78,
+    20
+   ],
+   "size": [
+    173,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label114",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    13,
+    25
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Authority:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    10
+   ],
+   "size": [
+    178,
+    40
+   ],
+   "text": "Please click Confirm button when you update Authority",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    256,
+    20
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ShiftClose",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    337,
+    20
+   ],
+   "size": [
+    62,
+    23
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "AuthorithBox",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    62
+   ],
+   "size": [
+    405,
+    295
+   ],
+   "text": "Authority Select",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    357
+   ],
+   "size": [
+    405,
+    53
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    405,
+    62
+   ],
+   "text": "Authority Type",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {}
+}

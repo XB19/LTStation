@@ -1,0 +1,6815 @@
+{
+ "name": "CardMake",
+ "title": "Card Make",
+ "size": [
+  1204,
+  654
+ ],
+ "controls": [
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1196,
+    70
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "skinPanel2",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    104
+   ],
+   "size": [
+    1196,
+    546
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PersonPage",
+   "type": "SkinTabPage",
+   "parent": "CardTool",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "User Card",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EmployeePage",
+   "type": "SkinTabPage",
+   "parent": "CardTool",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "Employee Card",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PersonGroup",
+   "type": "SkinTabPage",
+   "parent": "CardTool",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "Group Card",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CreditCard",
+   "type": "SkinTabPage",
+   "parent": "CardTool",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "Credit Card",
+   "dock": "fill",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GroupChilrdCard",
+   "type": "SkinTabPage",
+   "parent": "CardTool",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "Group Chilrd Card",
+   "dock": "fill",
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GroupBalance",
+   "type": "TextBox",
+   "parent": "CreditBox",
+   "loc": [
+    697,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GroupRepayDay",
+   "type": "TextBox",
+   "parent": "CreditBox",
+   "loc": [
+    396,
+    54
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GroupUseAmount",
+   "type": "TextBox",
+   "parent": "CreditBox",
+   "loc": [
+    396,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GroupCreateDay",
+   "type": "TextBox",
+   "parent": "CreditBox",
+   "loc": [
+    83,
+    54
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GroupCreditLine",
+   "type": "TextBox",
+   "parent": "CreditBox",
+   "loc": [
+    83,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label68",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    387,
+    57
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label67",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    67,
+    57
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label66",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    67,
+    26
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label64",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    617,
+    26
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Remain Balance",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label65",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    316,
+    26
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Used Balance",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label62",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    316,
+    57
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Bill Repay Day",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label63",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    3,
+    57
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Bill Create Day",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label61",
+   "type": "Label",
+   "parent": "CreditBox",
+   "loc": [
+    3,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Credit Balance",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "panel6",
+   "type": "Panel",
+   "parent": "CreditCard",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EmpIniButton",
+   "type": "SkinButton",
+   "parent": "EGradePrice",
+   "loc": [
+    773,
+    121
+   ],
+   "size": [
+    132,
+    44
+   ],
+   "text": "Init",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EPrice6",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    965,
+    91
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EPrice4",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    965,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EmployeeConfirm",
+   "type": "SkinButton",
+   "parent": "EGradePrice",
+   "loc": [
+    981,
+    121
+   ],
+   "size": [
+    126,
+    44
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "EPrice2",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    965,
+    24
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label166",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    904,
+    94
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "EGrade6",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    677,
+    91
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label167",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    607,
+    94
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label168",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    904,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "EGrade4",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    677,
+    58
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label169",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    607,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label170",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    904,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "EGrade2",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    677,
+    24
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label171",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    607,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "EPrice7",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    386,
+    126
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "EPrice5",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    386,
+    91
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "EPrice3",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    386,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "EPrice1",
+   "type": "TextBox",
+   "parent": "EGradePrice",
+   "loc": [
+    386,
+    24
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label158",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    325,
+    129
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "EGrade7",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    98,
+    126
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label159",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    28,
+    129
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label160",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    325,
+    94
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "EGrade5",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    98,
+    91
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label161",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    28,
+    94
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label162",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    325,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "EGrade3",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    98,
+    58
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label163",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    28,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "label164",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    325,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "EGrade1",
+   "type": "SkinComboBox",
+   "parent": "EGradePrice",
+   "loc": [
+    98,
+    24
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "label165",
+   "type": "Label",
+   "parent": "EGradePrice",
+   "loc": [
+    28,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "EmployeePage",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    349
+   ],
+   "text": "Emplyee Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EGradePrice",
+   "type": "GroupBox",
+   "parent": "EmployeePage",
+   "loc": [
+    0,
+    349
+   ],
+   "size": [
+    1196,
+    172
+   ],
+   "text": "SpecialPrice",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GPrice6",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    977,
+    90
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GPrice4",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    977,
+    57
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GPrice2",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    977,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GPrice7",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    383,
+    125
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GPrice5",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    383,
+    90
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GPrice3",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    383,
+    57
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "GPrice1",
+   "type": "TextBox",
+   "parent": "GradePrice",
+   "loc": [
+    383,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label156",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    901,
+    93
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "Grade6",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    674,
+    90
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label157",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    604,
+    93
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label154",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    901,
+    60
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "Grade4",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    674,
+    57
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label155",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    604,
+    60
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label152",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    901,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "Grade2",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    674,
+    23
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label153",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    604,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label144",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    319,
+    128
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "Grade7",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    92,
+    125
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label145",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    22,
+    128
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label146",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    319,
+    93
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "Grade5",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    92,
+    90
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label147",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    22,
+    93
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label148",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    319,
+    60
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "Grade3",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    92,
+    57
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label149",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    22,
+    60
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label150",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    319,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialPrice",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "Grade1",
+   "type": "SkinComboBox",
+   "parent": "GradePrice",
+   "loc": [
+    92,
+    23
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "label151",
+   "type": "Label",
+   "parent": "GradePrice",
+   "loc": [
+    22,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "SpecialEnergy",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "PersonInitButton",
+   "type": "SkinButton",
+   "parent": "GradePrice",
+   "loc": [
+    799,
+    114
+   ],
+   "size": [
+    90,
+    40
+   ],
+   "text": "Init Card",
+   "dock": null,
+   "visible": false,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "PersonButton",
+   "type": "SkinButton",
+   "parent": "GradePrice",
+   "loc": [
+    977,
+    114
+   ],
+   "size": [
+    104,
+    40
+   ],
+   "text": "Write Card",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "panel8",
+   "type": "Panel",
+   "parent": "GroupChilrdCard",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "PersonGroup",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "PersonPage",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Reader",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    95,
+    27
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    25,
+    30
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Reader:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    384,
+    27
+   ],
+   "size": [
+    167,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    316,
+    30
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Card Factory:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "LimitMinBalance",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    374,
+    177
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GroupEamil",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    83,
+    177
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GroupAddress",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    374,
+    138
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GroupPostCode",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    83,
+    138
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GroupFax",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    374,
+    101
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GroupPhone",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    83,
+    101
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "GroupManage",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    374,
+    62
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label110",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    283,
+    211
+   ],
+   "size": [
+    316,
+    26
+   ],
+   "text": "Set the threshold according to the actual situation",
+   "dock": null,
+   "visible": false,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "GroupCertificateNo",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    83,
+    62
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "GroupID",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    374,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "GroupName",
+   "type": "TextBox",
+   "parent": "groupBox10",
+   "loc": [
+    83,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "LimitMinLabel",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    316,
+    180
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "LPFD",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label70",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    66,
+    65
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label69",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    66,
+    26
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label53",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    13,
+    180
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Email",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label50",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    316,
+    141
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Address",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label51",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    13,
+    141
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "PostCode",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label48",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    316,
+    104
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Fax",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label49",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    13,
+    104
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Phone",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label46",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    316,
+    65
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Contact",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label47",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    13,
+    65
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Business Card",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label44",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    316,
+    26
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Group ID",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label45",
+   "type": "Label",
+   "parent": "groupBox10",
+   "loc": [
+    13,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Company Name",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "GroupIniButton",
+   "type": "SkinButton",
+   "parent": "groupBox11",
+   "loc": [
+    253,
+    120
+   ],
+   "size": [
+    128,
+    64
+   ],
+   "text": "Init Card",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GroupLimitAmountMonth",
+   "type": "TextBox",
+   "parent": "groupBox11",
+   "loc": [
+    384,
+    93
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GroupButton",
+   "type": "SkinButton",
+   "parent": "groupBox11",
+   "loc": [
+    451,
+    120
+   ],
+   "size": [
+    126,
+    64
+   ],
+   "text": "Write Card",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GroupLimitVolumeMonth",
+   "type": "TextBox",
+   "parent": "groupBox11",
+   "loc": [
+    105,
+    93
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GroupLimitAmountDay",
+   "type": "TextBox",
+   "parent": "groupBox11",
+   "loc": [
+    384,
+    59
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GroupLimitTime",
+   "type": "TextBox",
+   "parent": "groupBox11",
+   "loc": [
+    105,
+    59
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "GroupLimitVolume",
+   "type": "TextBox",
+   "parent": "groupBox11",
+   "loc": [
+    384,
+    24
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "GroupLimitOil",
+   "type": "SkinComboBox",
+   "parent": "groupBox11",
+   "loc": [
+    105,
+    21
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label58",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    13,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Fuel Type",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label52",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    304,
+    96
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label54",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    13,
+    96
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Volume Limit",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label55",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    304,
+    62
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label56",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    13,
+    62
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Time Limit",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label57",
+   "type": "Label",
+   "parent": "groupBox11",
+   "loc": [
+    304,
+    27
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Volume Per Time",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "BillDate",
+   "type": "TextBox",
+   "parent": "groupBox13",
+   "loc": [
+    907,
+    55
+   ],
+   "size": [
+    190,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RepayDate",
+   "type": "TextBox",
+   "parent": "groupBox13",
+   "loc": [
+    646,
+    55
+   ],
+   "size": [
+    196,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CreditBalance",
+   "type": "TextBox",
+   "parent": "groupBox13",
+   "loc": [
+    387,
+    55
+   ],
+   "size": [
+    206,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CreditLine",
+   "type": "TextBox",
+   "parent": "groupBox13",
+   "loc": [
+    83,
+    55
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label74",
+   "type": "Label",
+   "parent": "groupBox13",
+   "loc": [
+    599,
+    58
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Bill Repay Day",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label75",
+   "type": "Label",
+   "parent": "groupBox13",
+   "loc": [
+    301,
+    58
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Group Balance",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label72",
+   "type": "Label",
+   "parent": "groupBox13",
+   "loc": [
+    861,
+    58
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Bill Create Day",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label73",
+   "type": "Label",
+   "parent": "groupBox13",
+   "loc": [
+    13,
+    58
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Credit Line",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CreditGroup",
+   "type": "SkinComboBox",
+   "parent": "groupBox13",
+   "loc": [
+    83,
+    20
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label71",
+   "type": "Label",
+   "parent": "groupBox13",
+   "loc": [
+    13,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Group",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label175",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    373,
+    166
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label174",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    69,
+    166
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CreditEmail",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    232
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CreditAddress",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    198
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CreditPostCode",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    198
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CreditCardNo",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    163
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CreditPhone",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    163
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CreditCertificateNo",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    128
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CreditID",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    94
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CreditName",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    94
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "CreditAccount",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    59
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CreditPwd",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "CreditAsn",
+   "type": "TextBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label104",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    69,
+    131
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label103",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    373,
+    131
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label102",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    69,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label101",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    69,
+    62
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label81",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    373,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "CreditBirthDay",
+   "type": "SkinDateTimePicker",
+   "parent": "groupBox15",
+   "loc": [
+    387,
+    227
+   ],
+   "size": [
+    215,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label88",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    235
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "BirthDay",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label89",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    235
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Email",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label86",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    201
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Address",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label87",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    201
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Postcode",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "CreditCertificate",
+   "type": "SkinComboBox",
+   "parent": "groupBox15",
+   "loc": [
+    83,
+    128
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label84",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    166
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Car No",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label85",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    166
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Phone",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label82",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    131
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate No",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "label83",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    131
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate Type",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label79",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User ID",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "label80",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "label78",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    317,
+    26
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Password",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  },
+  {
+   "name": "label76",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    62
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Account",
+   "dock": null,
+   "visible": true,
+   "z": 31,
+   "order": 31
+  },
+  {
+   "name": "label77",
+   "type": "Label",
+   "parent": "groupBox15",
+   "loc": [
+    13,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 32,
+   "order": 32
+  },
+  {
+   "name": "CreditPosEnable",
+   "type": "SkinCheckBox",
+   "parent": "groupBox16",
+   "loc": [
+    158,
+    22
+   ],
+   "size": [
+    48,
+    21
+   ],
+   "text": "Pos",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CreditMileageTolerance",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    163
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CreditLimitMileage",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    95,
+    163
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CreditLimitAmountMonth",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    128
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CreditLimitVolumeMonth",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    95,
+    128
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CreditLimitAmount",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    94
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CreditLimitTime",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    95,
+    94
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CreditLimitVolume",
+   "type": "TextBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    59
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CreditIniButton",
+   "type": "SkinButton",
+   "parent": "groupBox16",
+   "loc": [
+    233,
+    227
+   ],
+   "size": [
+    104,
+    51
+   ],
+   "text": "Init Card",
+   "dock": null,
+   "visible": false,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CreditLimitStations",
+   "type": "SkinComboBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    198
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "CreditLimitType",
+   "type": "SkinComboBox",
+   "parent": "groupBox16",
+   "loc": [
+    95,
+    197
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CreditButton",
+   "type": "SkinButton",
+   "parent": "groupBox16",
+   "loc": [
+    460,
+    227
+   ],
+   "size": [
+    112,
+    51
+   ],
+   "text": "Write Card",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label90",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    293,
+    201
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Select",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label91",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    13,
+    201
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Type",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "CreditDisCount",
+   "type": "SkinComboBox",
+   "parent": "groupBox16",
+   "loc": [
+    379,
+    18
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label92",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    308,
+    24
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "CreditLimitCardNo",
+   "type": "SkinCheckBox",
+   "parent": "groupBox16",
+   "loc": [
+    31,
+    22
+   ],
+   "size": [
+    87,
+    21
+   ],
+   "text": "Limit Car No?",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "CreditLimitOilType",
+   "type": "SkinComboBox",
+   "parent": "groupBox16",
+   "loc": [
+    95,
+    59
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label93",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    293,
+    166
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Allow error of mileage",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label94",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    15,
+    166
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "oil use up In 100 km",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label95",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    293,
+    131
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label96",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    13,
+    131
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Volume Limit",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label97",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    293,
+    97
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label98",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    13,
+    97
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Time Limit",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label99",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    294,
+    62
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Volume Per Time",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label100",
+   "type": "Label",
+   "parent": "groupBox16",
+   "loc": [
+    15,
+    62
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Fuel Type",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "MasterCardName",
+   "type": "TextBox",
+   "parent": "groupBox17",
+   "loc": [
+    711,
+    21
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MasterCardID",
+   "type": "TextBox",
+   "parent": "groupBox17",
+   "loc": [
+    392,
+    24
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label112",
+   "type": "Label",
+   "parent": "groupBox17",
+   "loc": [
+    614,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Group Name",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label113",
+   "type": "Label",
+   "parent": "groupBox17",
+   "loc": [
+    313,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Group No",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "MasterGroupSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox17",
+   "loc": [
+    83,
+    21
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label114",
+   "type": "Label",
+   "parent": "groupBox17",
+   "loc": [
+    13,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Group",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "ChilrenPosEnable",
+   "type": "SkinCheckBox",
+   "parent": "groupBox18",
+   "loc": [
+    154,
+    22
+   ],
+   "size": [
+    48,
+    21
+   ],
+   "text": "Pos",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ChilrenMileagerTolerance",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    160
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ChilrenLimitMileager",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    95,
+    163
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ChilrenLimitAmountMonth",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    127
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ChilrenLimitVolumeMonth",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    95,
+    127
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ChilrenLimitAmount",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    92
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "ChilrenLimitTime",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    95,
+    92
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "ChilrenLimitVolume",
+   "type": "TextBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    56
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ChilrenInit",
+   "type": "SkinButton",
+   "parent": "groupBox18",
+   "loc": [
+    261,
+    224
+   ],
+   "size": [
+    120,
+    66
+   ],
+   "text": "Init Card",
+   "dock": null,
+   "visible": false,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "ChildLimitStation",
+   "type": "SkinComboBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    196
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "ChilrenConfirm",
+   "type": "SkinButton",
+   "parent": "groupBox18",
+   "loc": [
+    436,
+    224
+   ],
+   "size": [
+    131,
+    66
+   ],
+   "text": "Write Card",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "ChilrenLimitTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox18",
+   "loc": [
+    95,
+    194
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label115",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    291,
+    199
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Select",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label116",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    13,
+    197
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Type",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "ChilrenDisCount",
+   "type": "SkinComboBox",
+   "parent": "groupBox18",
+   "loc": [
+    374,
+    20
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label117",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    294,
+    28
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "ChilrenIsLimitCardNo",
+   "type": "SkinCheckBox",
+   "parent": "groupBox18",
+   "loc": [
+    15,
+    24
+   ],
+   "size": [
+    87,
+    21
+   ],
+   "text": "Limit Car No?",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "ChilrenLimitOilType",
+   "type": "SkinComboBox",
+   "parent": "groupBox18",
+   "loc": [
+    95,
+    53
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label118",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    291,
+    163
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Allow error of mileage",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label119",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    13,
+    163
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "oil use up In 100 km",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label120",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    291,
+    130
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label121",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    13,
+    130
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Volume Limit",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label122",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    291,
+    95
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label123",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    13,
+    95
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Time Limit",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label124",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    291,
+    59
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Volume Per Time",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label125",
+   "type": "Label",
+   "parent": "groupBox18",
+   "loc": [
+    13,
+    59
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Fuel Type",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label177",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    378,
+    166
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label176",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    69,
+    166
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ChilrenEmail",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    232
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ChilrenAddress",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    198
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ChilrenPostCode",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    198
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ChilrenCarNo",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    163
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "ChilrenPhone",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    163
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "ChilrenCardCertificateNo",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    128
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ChilrenCardID",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    94
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "ChilrenCardName",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    94
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "ChilrenCardAccount",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    59
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "ChilrenCardPassword",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "ChilrenCardAsn",
+   "type": "TextBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    23
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label126",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    69,
+    131
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label127",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    378,
+    131
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label128",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    69,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label129",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    69,
+    62
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label130",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    378,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "ChilrenBirthDay",
+   "type": "SkinDateTimePicker",
+   "parent": "groupBox19",
+   "loc": [
+    392,
+    227
+   ],
+   "size": [
+    215,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label131",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    235
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Birthday",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label132",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    235
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Email",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label133",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    201
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Address",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label134",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    201
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "PostCode",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "ChilrenCardCerTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox19",
+   "loc": [
+    83,
+    128
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label135",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    166
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Car No",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label136",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    166
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Phone",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label137",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    131
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate No",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "label138",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    131
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate Type",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label139",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User ID",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "label140",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "label141",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    322,
+    26
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Password",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  },
+  {
+   "name": "label142",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    62
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Account",
+   "dock": null,
+   "visible": true,
+   "z": 31,
+   "order": 31
+  },
+  {
+   "name": "label143",
+   "type": "Label",
+   "parent": "groupBox19",
+   "loc": [
+    13,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 32,
+   "order": 32
+  },
+  {
+   "name": "GroupPassword",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    914,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GroupAccount",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    656,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GroupValidTime",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    365,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GroupAsn",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    58
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GroupDisCount",
+   "type": "SkinComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    363,
+    20
+   ],
+   "size": [
+    214,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label60",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    304,
+    23
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "GroupTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    20
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label59",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    12,
+    23
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Card Type Select",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label40",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    877,
+    61
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Password",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label41",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    586,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Account",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label42",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    304,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Card Valid Time",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label43",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    13,
+    61
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "EmpPosEnable",
+   "type": "SkinCheckBox",
+   "parent": "groupBox3",
+   "loc": [
+    327,
+    26
+   ],
+   "size": [
+    48,
+    21
+   ],
+   "text": "Pos",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EmpCardType",
+   "type": "ComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    83,
+    27
+   ],
+   "size": [
+    215,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label109",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    13,
+    30
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EmpAccount",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    657,
+    104
+   ],
+   "size": [
+    214,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "EmpPasswordConfirm",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    372,
+    104
+   ],
+   "size": [
+    195,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "EmpPassword",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    83,
+    104
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "EmpValidTime",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    945,
+    61
+   ],
+   "size": [
+    195,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "EmpAsn",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    656,
+    61
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label111",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    586,
+    107
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Account",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    304,
+    107
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Password Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    13,
+    107
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Password",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    877,
+    64
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Card Valid Time",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    586,
+    64
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "EmployeeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    372,
+    61
+   ],
+   "size": [
+    195,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    304,
+    64
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Employee Name",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "StationSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    83,
+    61
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    13,
+    64
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Station",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "groupBox5",
+   "loc": [
+    313,
+    10
+   ],
+   "size": [
+    275,
+    40
+   ],
+   "text": "Select Group First",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PersonGroupSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox5",
+   "loc": [
+    92,
+    20
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "groupBox5",
+   "loc": [
+    22,
+    23
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Group",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "POSEnable",
+   "type": "SkinCheckBox",
+   "parent": "groupBox7",
+   "loc": [
+    146,
+    23
+   ],
+   "size": [
+    48,
+    21
+   ],
+   "text": "Pos",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PersonMileageTolerance",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    168
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PersonLimitMileage",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    104,
+    168
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PersonLimitAmountMonth",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    132
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PersonLlimitVolumeMonth",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    104,
+    132
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "PersonLimitAmountDaliy",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    98
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "PersonLimitDaliyTime",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    104,
+    98
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PersonLimitVolume",
+   "type": "TextBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    60
+   ],
+   "size": [
+    193,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "PersonStation",
+   "type": "SkinComboBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    207
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "LimitType",
+   "type": "SkinComboBox",
+   "parent": "groupBox7",
+   "loc": [
+    104,
+    207
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    303,
+    210
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Select",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label39",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    12,
+    213
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Type",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "PersonDiscount",
+   "type": "SkinComboBox",
+   "parent": "groupBox7",
+   "loc": [
+    395,
+    23
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label34",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    324,
+    29
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "PersonLimitCardNo",
+   "type": "SkinCheckBox",
+   "parent": "groupBox7",
+   "loc": [
+    20,
+    25
+   ],
+   "size": [
+    87,
+    21
+   ],
+   "text": "Limit Card No?",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "PersonLimitOilType",
+   "type": "SkinComboBox",
+   "parent": "groupBox7",
+   "loc": [
+    104,
+    60
+   ],
+   "size": [
+    193,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label32",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    303,
+    171
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Allow error of mileage",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label33",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    12,
+    171
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "oil use up In 100 km",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label30",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    303,
+    135
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label31",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    12,
+    135
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Month Volume Limit",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label28",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    303,
+    101
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Amount Limit",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label29",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    12,
+    101
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Day Time Limit",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label26",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    303,
+    66
+   ],
+   "size": [
+    77,
+    12
+   ],
+   "text": "Limit Volume Per Time",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label27",
+   "type": "Label",
+   "parent": "groupBox7",
+   "loc": [
+    12,
+    66
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Limit Fuel Type",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label173",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    366,
+    168
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label172",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    78,
+    168
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PersonBirthDay",
+   "type": "DateTimePicker",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    274
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PersonAddress",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    274
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PersonEmail",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    239
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "PersonPostCode",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    202
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "PersonCardNo",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    165
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PersonPhone",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    165
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "PersonCertificateNo",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    129
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "PersonID",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    384,
+    94
+   ],
+   "size": [
+    214,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "PersonName",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    94
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "PersonPassword",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    59
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "PersonAccount",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    59
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "PersonValidTime",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    384,
+    22
+   ],
+   "size": [
+    214,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "PersonAsn",
+   "type": "TextBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    22
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label107",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    369,
+    242
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label35",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    78,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "CardNoType",
+   "type": "SkinComboBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    239
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label108",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    313,
+    242
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Car Type",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label105",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    369,
+    205
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "CardNoColor",
+   "type": "SkinComboBox",
+   "parent": "groupBox9",
+   "loc": [
+    383,
+    202
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label106",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    313,
+    205
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Car Color",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label38",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    366,
+    132
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label37",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    78,
+    132
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label36",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    366,
+    97
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "PersonCertificate",
+   "type": "SkinComboBox",
+   "parent": "groupBox9",
+   "loc": [
+    92,
+    129
+   ],
+   "size": [
+    215,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label24",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    277
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Birthday",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "label25",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    242
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Email",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label22",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    316,
+    277
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Address",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "label23",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    205
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "PostCode",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "label20",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    328,
+    168
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Car No",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  },
+  {
+   "name": "label21",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    168
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Phone",
+   "dock": null,
+   "visible": true,
+   "z": 31,
+   "order": 31
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    313,
+    132
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate No",
+   "dock": null,
+   "visible": true,
+   "z": 32,
+   "order": 32
+  },
+  {
+   "name": "label19",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    132
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate Type",
+   "dock": null,
+   "visible": true,
+   "z": 33,
+   "order": 33
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    319,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User ID",
+   "dock": null,
+   "visible": true,
+   "z": 34,
+   "order": 34
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    97
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 35,
+   "order": 35
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    328,
+    62
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Password",
+   "dock": null,
+   "visible": true,
+   "z": 36,
+   "order": 36
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    62
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Account",
+   "dock": null,
+   "visible": true,
+   "z": 37,
+   "order": 37
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    313,
+    25
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Valid Time",
+   "dock": null,
+   "visible": true,
+   "z": 38,
+   "order": 38
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "groupBox9",
+   "loc": [
+    22,
+    25
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 39,
+   "order": 39
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    53
+   ],
+   "size": [
+    1196,
+    468
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox5",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    53
+   ],
+   "text": "Group Select",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox7",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    604,
+    0
+   ],
+   "size": [
+    592,
+    304
+   ],
+   "text": "Limit Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox9",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    604,
+    304
+   ],
+   "text": "User Card Message",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GradePrice",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    304
+   ],
+   "size": [
+    1196,
+    164
+   ],
+   "text": "SpecialPrice",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    174
+   ],
+   "size": [
+    1196,
+    347
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    174
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox11",
+   "type": "GroupBox",
+   "parent": "panel4",
+   "loc": [
+    599,
+    0
+   ],
+   "size": [
+    597,
+    347
+   ],
+   "text": "Limit",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox10",
+   "type": "GroupBox",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    599,
+    347
+   ],
+   "text": "Group Message",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel5",
+   "loc": [
+    0,
+    85
+   ],
+   "size": [
+    1196,
+    86
+   ],
+   "text": "Card Message",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CreditBox",
+   "type": "GroupBox",
+   "parent": "panel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    85
+   ],
+   "text": "Credit Card Message",
+   "dock": "top",
+   "visible": false,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel7",
+   "type": "Panel",
+   "parent": "panel6",
+   "loc": [
+    0,
+    89
+   ],
+   "size": [
+    1196,
+    432
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox13",
+   "type": "GroupBox",
+   "parent": "panel6",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    89
+   ],
+   "text": "Group Message",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox16",
+   "type": "GroupBox",
+   "parent": "panel7",
+   "loc": [
+    612,
+    0
+   ],
+   "size": [
+    584,
+    432
+   ],
+   "text": "Limit Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox15",
+   "type": "GroupBox",
+   "parent": "panel7",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    612,
+    432
+   ],
+   "text": "Card Message",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel9",
+   "type": "Panel",
+   "parent": "panel8",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    521
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox18",
+   "type": "GroupBox",
+   "parent": "panel9",
+   "loc": [
+    616,
+    57
+   ],
+   "size": [
+    580,
+    464
+   ],
+   "text": "Limit Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox19",
+   "type": "GroupBox",
+   "parent": "panel9",
+   "loc": [
+    0,
+    57
+   ],
+   "size": [
+    616,
+    464
+   ],
+   "text": "Card Message",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox17",
+   "type": "GroupBox",
+   "parent": "panel9",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    57
+   ],
+   "text": "Group Message",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinPanel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    70
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTool",
+   "type": "SkinTabControl",
+   "parent": "skinPanel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1196,
+    546
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {}
+}

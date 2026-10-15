@@ -1,0 +1,404 @@
+{
+ "name": "CustomerUserList",
+ "title": "Card List",
+ "size": [
+  894,
+  450
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    886,
+    412
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "EmpReadButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    781,
+    15
+   ],
+   "size": [
+    95,
+    36
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardStatue",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    635,
+    24
+   ],
+   "size": [
+    140,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    594,
+    27
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Statue:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CarNumber",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    451,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    398,
+    27
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Car No:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "Phone",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    255,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    202,
+    27
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    59,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    27
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "UserView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    880,
+    261
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    694,
+    10
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    840,
+    11
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Page",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    729,
+    12
+   ],
+   "size": [
+    76,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TotalNumber",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    805,
+    15
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "/999",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Total",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    47,
+    12
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    15
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Sum:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    94
+   ],
+   "size": [
+    886,
+    281
+   ],
+   "text": "List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    375
+   ],
+   "size": [
+    886,
+    37
+   ],
+   "text": "Total",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    886,
+    94
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "UserView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Card No",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "User Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CardOperate",
+    "header": "Card Statue",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Phone",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Car No",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

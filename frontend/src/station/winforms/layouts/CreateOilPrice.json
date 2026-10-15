@@ -1,0 +1,317 @@
+{
+ "name": "CreateOilPrice",
+ "title": "Create Price",
+ "size": [
+  359,
+  356
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    351,
+    320
+   ],
+   "text": "Please Input Message To Finish it",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "DensityT",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    207
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OilPrice",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    167
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    210
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Density",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    274,
+    249
+   ],
+   "size": [
+    75,
+    10
+   ],
+   "text": "时间请自行更改",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ValidTime",
+   "type": "DateTimePicker",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    243
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    245
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Effective date",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "AddOiLType",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    274,
+    36
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    170
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Price",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ID",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    36
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "OilTypeName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    120
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "Code",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    75
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    228,
+    270
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    14,
+    270
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    125
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Name",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    83
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Fuel Type ID",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Fuel Type",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  }
+ ],
+ "columns": {}
+}

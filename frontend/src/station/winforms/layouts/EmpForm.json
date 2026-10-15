@@ -1,0 +1,146 @@
+{
+ "name": "EmpForm",
+ "title": "Employee Management",
+ "size": [
+  467,
+  432
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    459,
+    346
+   ],
+   "text": "Employee Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    380
+   ],
+   "size": [
+    459,
+    48
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    17
+   ],
+   "size": [
+    113,
+    23
+   ],
+   "text": "Double-click on a row to modify",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    378,
+    13
+   ],
+   "size": [
+    75,
+    32
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "AddEmp",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    297,
+    13
+   ],
+   "size": [
+    75,
+    32
+   ],
+   "text": "Add Employee",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EmpView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    453,
+    326
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "EmpView": [
+   {
+    "name": "ID",
+    "header": "EmployeeID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "LoginName",
+    "header": "LoginName",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Type",
+    "header": "Authority",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

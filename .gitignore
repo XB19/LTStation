@@ -1,0 +1,25 @@
+# Secrets locaux (mot de passe PostgreSQL, clés WeChat…)
+.env
+backend/config/application-local.yml
+
+# Backend
+backend/target/
+backend/uploads/
+*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+backend/src/main/resources/static/
+
+# Application de bureau
+desktop/node_modules/
+desktop/dist/

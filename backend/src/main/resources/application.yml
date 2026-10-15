@@ -1,0 +1,80 @@
+# Les identifiants PostgreSQL viennent des variables d'environnement ou du fichier ../.env
+# (exclu de git). Aucun mot de passe n'est écrit ici.
+spring:
+  config:
+    import: optional:file:../.env[.properties],optional:file:./.env[.properties]
+  application:
+    name: ltstation-center
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:center}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      write-dates-as-timestamps: false
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    session:
+      timeout: 8h
+      cookie:
+        http-only: true
+        same-site: lax
+        name: LTSESSION
+
+app:
+  # Super administrateur optionnel (remplace les comptes maîtres codés en dur de l'original).
+  # Laisser vide pour le désactiver.
+  superadmin:
+    username: ${SUPERADMIN_USER:}
+    password: ${SUPERADMIN_PASSWORD:}
+  # Mode location (LeaseMode d'origine) : une nouvelle station doit être activée avant usage
+  lease-mode: ${LEASE_MODE:true}
+  # Adresse publique de la plateforme (scanPay_prefixUrl d'origine), utilisée dans les liens WeChat
+  public-url: ${PUBLIC_URL:}
+  wechat:
+    # Compte de service (AppID / AppSecret d'origine)
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}
+    # Marchand prestataire WeChat Pay (Servermch_id) et clé de signature (SHSecret)
+    service-mch-id: ${WECHAT_SERVICE_MCH_ID:}
+    sign-key: ${WECHAT_SIGN_KEY:}
+    # Certificat .p12 du marchand (mot de passe = n° de marchand par défaut)
+    cert-path: ${WECHAT_CERT_PATH:}
+    cert-password: ${WECHAT_CERT_PASSWORD:}
+    # Mini-programme de paiement par QR code (scanPay_appid / scanPay_secret / scanPay_sub_mch_id)
+    mini-app-id: ${WECHAT_MINI_APP_ID:}
+    mini-app-secret: ${WECHAT_MINI_APP_SECRET:}
+    scan-pay-sub-mch-id: ${WECHAT_SCAN_PAY_SUB_MCH_ID:}
+  # Vidéosurveillance EZVIZ (appKeyMonitor / appSecretMonitor d'origine)
+  ezviz:
+    app-key: ${EZVIZ_APP_KEY:}
+    app-secret: ${EZVIZ_APP_SECRET:}
+  # SecretSame=1 d'origine : remises, recharges et cartes cloisonnées par société
+  discount-per-company: ${DISCOUNT_PER_COMPANY:true}
+  # CreditPayAdvance=1 d'origine : les recharges en ligne créditent immédiatement les cartes de crédit
+  credit-pay-advance: ${CREDIT_PAY_ADVANCE:true}
+  # Licence d'activation (table active_web), comme la plateforme d'origine.
+  license:
+    enabled: ${LICENSE_ENABLED:true}
+  # Dossier des fichiers envoyés (images POS, publicités, vidéos…)
+  upload-dir: ${UPLOAD_DIR:./uploads}
+  # Origine du frontend en développement (Vite)
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}
+
+logging:
+  level:
+    com.ltstation: INFO

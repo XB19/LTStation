@@ -1,0 +1,290 @@
+{
+ "name": "CardScore",
+ "title": "Card Score Message",
+ "size": [
+  963,
+  461
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    955,
+    64
+   ],
+   "text": "Search",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    98
+   ],
+   "size": [
+    955,
+    302
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    400
+   ],
+   "size": [
+    955,
+    57
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    949,
+    282
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    854,
+    22
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QueryCarNo",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    546,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    475,
+    27
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Car No:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "QueryPhone",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    321,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    250,
+    27
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "QueryName",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    94,
+    24
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    23,
+    27
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "NextBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    889,
+    28
+   ],
+   "size": [
+    60,
+    23
+   ],
+   "text": "Next",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PreBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    823,
+    28
+   ],
+   "size": [
+    60,
+    23
+   ],
+   "text": "Last",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    878,
+    13
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "Card Number",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "User Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Phone",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Score",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

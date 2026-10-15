@@ -1,0 +1,677 @@
+{
+ "name": "CardChange",
+ "title": "Card Change",
+ "size": [
+  548,
+  501
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    540,
+    463
+   ],
+   "text": "Make Card Lost Then Using Card Change Function",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PhoneSearch",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    336,
+    55
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    274,
+    64
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "UserNameSearch",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    55
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    64
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "UserName Query:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    212
+   ],
+   "size": [
+    365,
+    12
+   ],
+   "text": "if Card Type is Chilred Card ,Please Ignore Card Balance and Summary Balance",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "LogBalance",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    175
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    184
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Summary Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "Balance",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    334,
+    134
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    278,
+    143
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Card Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "OldAsn",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    134
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    143
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Old Card Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "SearchButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    449,
+    175
+   ],
+   "size": [
+    75,
+    44
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "UserID",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    334,
+    96
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    278,
+    105
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "User ID:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "UserName",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    96
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    105
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "TypeNo",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    334,
+    17
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    274,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Certificates No:",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "TypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    23
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificates Type:",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    24
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Replaced Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ChangeCardNo",
+   "type": "SkinComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    77,
+    20
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    115
+   ],
+   "size": [
+    221,
+    12
+   ],
+   "text": "Please Initialize Card First",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "IniButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    334,
+    88
+   ],
+   "size": [
+    76,
+    42
+   ],
+   "text": "Init",
+   "dock": null,
+   "visible": false,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ChangeButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    449,
+    88
+   ],
+   "size": [
+    75,
+    42
+   ],
+   "text": "Change",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CardAsn",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    334,
+    54
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    272,
+    63
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "New Card Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "UserCardName",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    77,
+    54
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    63
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    278,
+    29
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTypeIndex",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    339,
+    26
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    77,
+    26
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    29
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Select Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    87
+   ],
+   "size": [
+    536,
+    241
+   ],
+   "text": "Old Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    536,
+    63
+   ],
+   "text": "Card Manufacturer",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    328
+   ],
+   "size": [
+    536,
+    133
+   ],
+   "text": "Card Change Message",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {}
+}

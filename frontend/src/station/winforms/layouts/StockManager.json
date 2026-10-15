@@ -1,0 +1,170 @@
+{
+ "name": "StockManager",
+ "title": "Stock",
+ "size": [
+  910,
+  450
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    902,
+    367
+   ],
+   "text": "Inventory Information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    401
+   ],
+   "size": [
+    902,
+    45
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    896,
+    347
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DirectButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    814,
+    14
+   ],
+   "size": [
+    82,
+    21
+   ],
+   "text": "Jump",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    643,
+    18
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Current Page:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PageText",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    708,
+    14
+   ],
+   "size": [
+    100,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TPage",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    23,
+    17
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "TankID",
+    "header": "ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Grade Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Height",
+    "header": "Tank Height",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Tank Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Current Volume",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

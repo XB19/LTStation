@@ -1,0 +1,2096 @@
+{
+ "name": "Deposit",
+ "title": "Deposit/Charge",
+ "size": [
+  1158,
+  387
+ ],
+ "controls": [
+  {
+   "name": "BalanceChange",
+   "type": "SkinTabControl",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    1150,
+    351
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardDeposit",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Deposit",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Transfer",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Transfer",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardDeduction",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Charge",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CardConsume",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Consumption",
+   "dock": "fill",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "STransfer",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Transfer/Change",
+   "dock": "fill",
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CreditPay",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Credit Repay",
+   "dock": "fill",
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "DepositForMasterCard",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Shortcut",
+   "dock": "fill",
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "skinCaptionPanel3",
+   "type": "SkinCaptionPanel",
+   "parent": "CardConsume",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Please Connect Card Reader,Read Card,Write Consumption Amount, Click Consumption Button",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel2",
+   "type": "SkinCaptionPanel",
+   "parent": "CardDeduction",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Please Connect Card Reader,Read Card,Write Charge Amount,Click Charge Button",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "CardDeposit",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Please Connect Card Reader,Read Card,Input Deposit Amount,Then Deposit",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "CreditPay",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Repay List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel4",
+   "type": "SkinCaptionPanel",
+   "parent": "DepositForMasterCard",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "当前只支持集团主卡无卡充值",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel5",
+   "type": "SkinCaptionPanel",
+   "parent": "STransfer",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel6",
+   "type": "SkinCaptionPanel",
+   "parent": "Transfer",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1150,
+    326
+   ],
+   "text": "Please Read Card Then Do Transfer(This Function Need Center Online Deposit)",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label27",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    579,
+    64
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UserNameReturn",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    650,
+    56
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "AsnSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    81,
+    20
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "MasterDeposter",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1018,
+    54
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Deposit",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label22",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    26
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "MasterPayMent",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    81,
+    61
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label21",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    579,
+    26
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Balance",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "MasterScore",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    380,
+    54
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label20",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    64
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Pay Type",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    309,
+    64
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Integration",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "MasterBalance",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    650,
+    20
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "MasterDisCount",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    938,
+    17
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    309,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Deposit Amount",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    867,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Gift Amount",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "MasterAmn",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    380,
+    18
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "CarNoSearch",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    81,
+    46
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label26",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    10,
+    54
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "CarNo Search",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CNoSearch",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    938,
+    11
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label25",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    867,
+    19
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "ID Search",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PhoneSearch",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    650,
+    9
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label24",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    579,
+    17
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Phone Search",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label23",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    10,
+    17
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Type",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardType",
+   "type": "SkinComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    81,
+    9
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "QueryButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    1021,
+    46
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "MasterName",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    380,
+    9
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label19",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    309,
+    17
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Group Name",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "SaveToName",
+   "type": "SkinTextBox",
+   "parent": "groupBox3",
+   "loc": [
+    374,
+    55
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label28",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    303,
+    63
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "UserName:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaveToAsn",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    80,
+    60
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label33",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    10,
+    63
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Transfer Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "STAmount",
+   "type": "SkinTextBox",
+   "parent": "groupBox3",
+   "loc": [
+    932,
+    9
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "STConfirm",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    560,
+    124
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label29",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    861,
+    17
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "STBalance",
+   "type": "SkinTextBox",
+   "parent": "groupBox3",
+   "loc": [
+    651,
+    9
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label30",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    580,
+    17
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label31",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    10,
+    17
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Transfer/Change",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "STTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    81,
+    14
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "STRead",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    386,
+    124
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Read Card",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "STAsn",
+   "type": "SkinTextBox",
+   "parent": "groupBox3",
+   "loc": [
+    374,
+    9
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label32",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    303,
+    17
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "RepayView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox4",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1144,
+    274
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "groupBox4",
+   "loc": [
+    3,
+    291
+   ],
+   "size": [
+    1144,
+    32
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NextEnd",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    1103,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    1068,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    1039,
+    8
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label34",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    1023,
+    8
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    981,
+    3
+   ],
+   "size": [
+    36,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    946,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CurEnd",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    911,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PayMent",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    82
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Score",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    647,
+    75
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    576,
+    85
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Integration",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "DiscountAmount",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    377,
+    77
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    306,
+    85
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Gift Amount",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "DepositAmount",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    930,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    859,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Deposit Amount",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "UserName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    377,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    306,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "Balance",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    647,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "ASN",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    32
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "DepositButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    607,
+    151
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Deposit",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    377,
+    151
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Card Read",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    90
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Pay Type",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    576,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Balance",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "DeductionAmount",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    952,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    881,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Charge Amount",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DeductionName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    388,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    317,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "DeductionBalance",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    673,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "DeductionASN",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    83,
+    32
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "DeductionButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    635,
+    138
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Charge",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardReader",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    415,
+    138
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Read Card",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    602,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Balance",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "ConsumeAmount",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    946,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    875,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Consumption Amount",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ConsumeName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    392,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    321,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ConsumeBalance",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    671,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ConsumeASN",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    83,
+    32
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "ConsumeButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    617,
+    134
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Consumption",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardConsumeRead",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    392,
+    134
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Read Card",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    600,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Balance",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "skinCaptionPanel3",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Asn",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel4",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    1146,
+    126
+   ],
+   "text": "Search",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel4",
+   "loc": [
+    2,
+    150
+   ],
+   "size": [
+    1146,
+    174
+   ],
+   "text": "Card Message",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel5",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    1146,
+    300
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TransferAmount",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    930,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label37",
+   "type": "Label",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    859,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "TransferAmount:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TransferName",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    377,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label38",
+   "type": "Label",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    306,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "TransferBalance",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    647,
+    31
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "TransferAsn",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    83,
+    32
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "TransferBtn",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    607,
+    151
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Transfer",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "TransferReader",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    377,
+    151
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Read",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label40",
+   "type": "Label",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    576,
+    39
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label41",
+   "type": "Label",
+   "parent": "skinCaptionPanel6",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  }
+ ],
+ "columns": {
+  "RepayView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "GroupName",
+    "header": "GroupName",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "GroupID",
+    "header": "GroupID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "GroupAsn",
+    "header": "Asn",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "BillDate",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "LoginName",
+    "header": "Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "RepayAmount",
+    "header": "Repay",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Statue",
+    "header": "Statue",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

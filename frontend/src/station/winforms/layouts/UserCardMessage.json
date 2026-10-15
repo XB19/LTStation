@@ -1,0 +1,290 @@
+{
+ "name": "UserCardMessage",
+ "title": "User Message",
+ "size": [
+  1003,
+  552
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    995,
+    76
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    110
+   ],
+   "size": [
+    995,
+    438
+   ],
+   "text": "User Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Page",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    903,
+    50
+   ],
+   "size": [
+    28,
+    14
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    960,
+    46
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    847,
+    46
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "QuerySearch",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    847,
+    13
+   ],
+   "size": [
+    142,
+    27
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PhoneQuery",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    543,
+    17
+   ],
+   "size": [
+    123,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    447,
+    17
+   ],
+   "size": [
+    90,
+    15
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "NameQuery",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    318,
+    17
+   ],
+   "size": [
+    123,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    222,
+    17
+   ],
+   "size": [
+    90,
+    15
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    81,
+    17
+   ],
+   "size": [
+    135,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    15,
+    17
+   ],
+   "size": [
+    60,
+    15
+   ],
+   "text": "Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "UserView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    989,
+    418
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "UserView": [
+   {
+    "name": "CustomerID",
+    "header": "用户ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "NozID",
+    "header": "Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "ASN",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Card Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Phone",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Car Number",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TruePay",
+    "header": "Balance",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

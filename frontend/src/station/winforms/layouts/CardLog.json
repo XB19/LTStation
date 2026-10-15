@@ -1,0 +1,700 @@
+{
+ "name": "CardLog",
+ "title": "Card Log",
+ "size": [
+  1205,
+  705
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1197,
+    667
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardNoRequest",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    82,
+    48
+   ],
+   "size": [
+    152,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    17,
+    53
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Car Number:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label109",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    847,
+    51
+   ],
+   "size": [
+    261,
+    26
+   ],
+   "text": "证件号查询只支持用户类型，不支持集团与员工",
+   "dock": null,
+   "visible": false,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CertificateNo",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    956,
+    20
+   ],
+   "size": [
+    152,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    906,
+    26
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Certificate No:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "DTEndTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    585,
+    20
+   ],
+   "size": [
+    86,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    520,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Time:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "DTEndDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    412,
+    20
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    347,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Date:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "DTStartTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    255,
+    20
+   ],
+   "size": [
+    86,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    190,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Time:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "DTStartDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    82,
+    20
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    17,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Date:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "LogSearch",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1114,
+    53
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Search",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "CardNoSearch",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1114,
+    21
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Read Card",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "CardNo",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    725,
+    20
+   ],
+   "size": [
+    178,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    687,
+    26
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1191,
+    509
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "LogTotalView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    526
+   ],
+   "size": [
+    1191,
+    56
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    82
+   ],
+   "size": [
+    1197,
+    585
+   ],
+   "text": "Log",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1197,
+    82
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardLogView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1191,
+    482
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    482
+   ],
+   "size": [
+    1191,
+    27
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "MLabel",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    686,
+    9
+   ],
+   "size": [
+    215,
+    12
+   ],
+   "text": "Record Total:9999,50 per page Total Page:1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1076,
+    4
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1041,
+    4
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1017,
+    9
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Export",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1111,
+    4
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Excel Export",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1007,
+    9
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    973,
+    4
+   ],
+   "size": [
+    32,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    936,
+    4
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CurEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    901,
+    4
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  }
+ ],
+ "columns": {
+  "CardLogView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Asn",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "User Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CardOperate",
+    "header": "Operate Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Deposit Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Gift Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Consume Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "Consume Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "Trade Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "Balance",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "LogTotalView": [
+   {
+    "name": "OilType",
+    "header": "User Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Deposit Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "DecutionAmount",
+    "header": "Charge Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Gift Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Consume Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TruePay",
+    "header": "Consume Volume",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

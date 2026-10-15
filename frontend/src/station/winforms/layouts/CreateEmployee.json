@@ -1,0 +1,245 @@
+{
+ "name": "CreateEmployee",
+ "title": "Create Employee",
+ "size": [
+  284,
+  319
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    276,
+    281
+   ],
+   "text": "Please input All Message To Finished it",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CenterLogin",
+   "type": "CheckBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    14,
+    250
+   ],
+   "size": [
+    96,
+    16
+   ],
+   "text": "Allow Center Login",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Password",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    167
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "LoginName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    122
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PersonName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    80
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "BaseAuthority",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    211
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    214
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Authority:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    170
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "PassWord:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "StationSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    83,
+    36
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    166,
+    239
+   ],
+   "size": [
+    102,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    125
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Login Name:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    83
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Name:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    12,
+    39
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Station:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  }
+ ],
+ "columns": {}
+}

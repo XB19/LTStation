@@ -1,0 +1,245 @@
+{
+ "name": "RepayFrom",
+ "title": "Repay",
+ "size": [
+  286,
+  275
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    278,
+    237
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "RepayAmount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    170
+   ],
+   "size": [
+    163,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    173
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "RepayMent:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    164,
+    199
+   ],
+   "size": [
+    92,
+    32
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ReapyBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    30,
+    199
+   ],
+   "size": [
+    92,
+    32
+   ],
+   "text": "Repay",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Amount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    137
+   ],
+   "size": [
+    163,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    140
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "BillDate",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    99
+   ],
+   "size": [
+    163,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    102
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Bill Date:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "GroupName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    62
+   ],
+   "size": [
+    163,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    65
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Group:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "RepayBillID",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    23
+   ],
+   "size": [
+    163,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    26
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "ID:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  }
+ ],
+ "columns": {}
+}

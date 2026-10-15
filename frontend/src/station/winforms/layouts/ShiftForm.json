@@ -1,0 +1,758 @@
+{
+ "name": "ShiftForm",
+ "title": "Shift Close",
+ "size": [
+  1373,
+  850
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    788,
+    631
+   ],
+   "text": "Shift For Noz",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    792,
+    34
+   ],
+   "size": [
+    577,
+    631
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    665
+   ],
+   "size": [
+    1365,
+    181
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "NozView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    782,
+    611
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OilTypeView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    571,
+    142
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CheckedLabel",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    1238,
+    21
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Shift Close",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    377,
+    21
+   ],
+   "size": [
+    449,
+    12
+   ],
+   "text": "Shift is follow Shift Setting Time",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    20
+   ],
+   "size": [
+    365,
+    12
+   ],
+   "text": "Finished Shift Setting First",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    1084,
+    20
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Shift No:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ShiftNo",
+   "type": "ComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    1137,
+    17
+   ],
+   "size": [
+    95,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    920,
+    21
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Shift:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "ShiftDT",
+   "type": "DateTimePicker",
+   "parent": "groupBox3",
+   "loc": [
+    967,
+    16
+   ],
+   "size": [
+    101,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "ShiftClose",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    1285,
+    16
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Make Shift",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "TotalView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox4",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1359,
+    115
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox5",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    571,
+    423
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "groupBox5",
+   "loc": [
+    3,
+    440
+   ],
+   "size": [
+    571,
+    26
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1365,
+    135
+   ],
+   "text": "Summary Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    135
+   ],
+   "size": [
+    1365,
+    46
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox5",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    577,
+    469
+   ],
+   "text": "Shift For Detial",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    469
+   ],
+   "size": [
+    577,
+    162
+   ],
+   "text": "Employee Summary",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NextEnd",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    370,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    335,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    311,
+    8
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    301,
+    8
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    267,
+    3
+   ],
+   "size": [
+    32,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    230,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CurEnd",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    195,
+    3
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "MessageLabel",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    4,
+    8
+   ],
+   "size": [
+    185,
+    12
+   ],
+   "text": "共9999条记录，每页50条，共99页",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  }
+ ],
+ "columns": {
+  "TotalView": [
+   {
+    "name": "dataGridViewTextBoxColumn11",
+    "header": "FuelType",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TypePPU",
+    "header": "Price",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn12",
+    "header": "TotalVolume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn13",
+    "header": "TotalAmount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn14",
+    "header": "EmpVolume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn15",
+    "header": "EmpAmount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn16",
+    "header": "UserVolume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn17",
+    "header": "UserAmount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn18",
+    "header": "CreditVolume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn19",
+    "header": "CreditAmount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn22",
+    "header": "NotCardVolume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn23",
+    "header": "NotCardAmount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CashCouponsV",
+    "header": "RepairVoulme",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CashCouponsM",
+    "header": "RepairAmount",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "NozView": [
+   {
+    "name": "NozID",
+    "header": "Noz ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Fuel Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Start Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "End Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TruePay",
+    "header": "Error",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TrueTime",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "ASN",
+    "header": "Start Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "BAL",
+    "header": "End Time",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "TransactionView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "POSTTC",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Noz",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "EmpNo",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "ASN",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn9",
+    "header": "Fuel Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PPU",
+    "header": "Price",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PayMent",
+    "header": "Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PosP",
+    "header": "Balance",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "POSTTC",
+    "header": "Pay Type",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "OilTypeView": [
+   {
+    "name": "xxxx",
+    "header": "Employee",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn21",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn20",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

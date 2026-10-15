@@ -1,0 +1,83 @@
+{
+ "name": "OtherSetForm",
+ "title": "Other Seting",
+ "size": [
+  342,
+  156
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    334,
+    118
+   ],
+   "text": "Param",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    77
+   ],
+   "size": [
+    75,
+    32
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SpeedSelectBox",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    40
+   ],
+   "size": [
+    206,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    43
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Speed:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {}
+}

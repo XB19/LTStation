@@ -1,0 +1,140 @@
+{
+ "name": "CenterDisCount",
+ "title": "Discount Setting",
+ "size": [
+  217,
+  366
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    209,
+    242
+   ],
+   "text": "Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    274
+   ],
+   "size": [
+    209,
+    88
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    48,
+    67
+   ],
+   "size": [
+    101,
+    12
+   ],
+   "text": "Double-click to modify or delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    9,
+    47
+   ],
+   "size": [
+    197,
+    20
+   ],
+   "text": "折扣值采用百分比,如90%填写90即可",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "AddDisCount",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    61,
+    20
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Add Discount",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "DisCountView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    203,
+    222
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "DisCountView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Discount",
+    "header": "Discount",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

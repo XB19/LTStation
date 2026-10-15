@@ -1,0 +1,245 @@
+{
+ "name": "StationPrintForm",
+ "title": "Print",
+ "size": [
+  312,
+  251
+ ],
+ "controls": [
+  {
+   "name": "First",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    49
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 999
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    52
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "First:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 999
+  },
+  {
+   "name": "Second",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    76
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 999
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    79
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Second:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "Third",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    103
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 999
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    106
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Third:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "Fourth",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    130
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 999
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    133
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Fouth:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "Fiveth",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    157
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 999
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    160
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Fivth:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "Sixth",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    72,
+    184
+   ],
+   "size": [
+    233,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 999
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    19,
+    187
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Sixth:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    105,
+    211
+   ],
+   "size": [
+    86,
+    31
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 999
+  }
+ ],
+ "columns": {}
+}

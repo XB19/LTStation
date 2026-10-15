@@ -1,0 +1,160 @@
+/* Fenêtres reprises du logiciel Station d'origine */
+.wf-root {
+  font-size: 12px;
+}
+.wf-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.wf-middle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+.wf-flow {
+  display: grid;
+  max-width: 100%;
+  overflow-x: auto;
+  column-gap: 8px;
+  row-gap: 8px;
+  align-items: center;
+  padding: 6px 4px;
+}
+.wf-cell {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.wf-cell-label {
+  justify-content: flex-end;
+  padding-left: 10px;
+}
+.wf-label {
+  color: #1f3b57;
+  white-space: nowrap;
+}
+.wf-group {
+  overflow: hidden;
+  border: 1px solid #b7cde3;
+  border-radius: 6px;
+  padding: 4px 8px 8px;
+  margin: 0;
+  min-width: 0;
+  background: #fff;
+}
+.wf-group > legend {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1565c0;
+  padding: 0 6px;
+  width: auto;
+  margin: 0;
+  border: none;
+}
+.wf-caption {
+  border: 1px solid #b7cde3;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  min-width: 0;
+}
+.wf-caption-title {
+  background: linear-gradient(#e8f2fc, #d4e6f8);
+  color: #1f3b57;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-bottom: 1px solid #b7cde3;
+}
+.wf-caption > .wf-body {
+  padding: 6px;
+}
+.wf-panel {
+  min-width: 0;
+}
+.wf-tabs {
+  border: 1px solid #b7cde3;
+  border-radius: 6px;
+  background: #fff;
+  min-width: 0;
+}
+.wf-tabbar {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(#f3f8fd, #e2eef9);
+  border-bottom: 1px solid #b7cde3;
+  border-radius: 6px 6px 0 0;
+}
+.wf-tabbar button {
+  border: none;
+  background: transparent;
+  padding: 7px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #1f3b57;
+  border-right: 1px solid #d5e4f2;
+}
+.wf-tabbar button.active {
+  background: #fff;
+  color: #1565c0;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 #1e88e5;
+}
+.wf-tabpage {
+  padding: 8px;
+}
+.wf-grid .ant-table {
+  font-size: 12px;
+}
+.wf-grid .ant-table-thead > tr > th {
+  background: #e3effa;
+  color: #1f3b57;
+  padding: 5px 8px !important;
+}
+.wf-grid .ant-table-tbody > tr > td {
+  padding: 4px 8px !important;
+}
+.wf-grid .ant-table-tbody > tr.wf-row-sel > td {
+  background: #cfe6ff;
+}
+.wf-ro input,
+input.wf-ro {
+  background: #f4f8fb !important;
+}
+
+/* Boîte de dialogue façon fenêtre Windows */
+.wf-window .ant-modal-content {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.wf-window .ant-modal-header {
+  margin: 0;
+  padding: 8px 14px;
+  background: linear-gradient(#2f8fdc, #1a6fbf);
+  border-radius: 0;
+}
+.wf-window .ant-modal-title {
+  color: #fff;
+  font-size: 13px;
+}
+.wf-window .ant-modal-close {
+  top: 6px;
+  color: #fff;
+}
+.wf-window .ant-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.wf-window .ant-modal-body {
+  padding: 10px;
+  background: #f2f7fc;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+.wf-req {
+  color: #e53935;
+  font-weight: 700;
+}

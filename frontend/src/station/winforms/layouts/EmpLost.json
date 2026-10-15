@@ -1,0 +1,227 @@
+{
+ "name": "EmpLost",
+ "title": "Employee Card Lost",
+ "size": [
+  281,
+  325
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    273,
+    287
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "IssueTime",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    199
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EmpName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    154
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EmpID",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    112
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "AsnNo",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    33
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    36
+   ],
+   "size": [
+    29,
+    12
+   ],
+   "text": "Card No:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    202
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Issue Time",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "StationSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    68
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "LostButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    243
+   ],
+   "size": [
+    102,
+    37
+   ],
+   "text": "Lost",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    157
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Employee Name",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    115
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Employee No",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    71
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Station:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  }
+ ],
+ "columns": {}
+}

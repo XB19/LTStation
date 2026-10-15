@@ -1,0 +1,620 @@
+{
+ "name": "RDaily",
+ "title": "Report",
+ "size": [
+  1590,
+  689
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1582,
+    70
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    104
+   ],
+   "size": [
+    1582,
+    498
+   ],
+   "text": "Report Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    602
+   ],
+   "size": [
+    1582,
+    83
+   ],
+   "text": "Summary Report",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "CardView",
+   "type": "SkinDataGridView",
+   "parent": "CardDaily",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NozView",
+   "type": "SkinDataGridView",
+   "parent": "DailyNoz",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DailyNoz",
+   "type": "SkinTabPage",
+   "parent": "DailyTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "Noz Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DailyTank",
+   "type": "SkinTabPage",
+   "parent": "DailyTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "Fuel Type Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardDaily",
+   "type": "SkinTabPage",
+   "parent": "DailyTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "Card Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TankView",
+   "type": "SkinDataGridView",
+   "parent": "DailyTank",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1576,
+    453
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    45
+   ],
+   "size": [
+    377,
+    12
+   ],
+   "text": "该时间为结算终止时间，日结规则为当前选定时间往前推一天的时间段",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SearchButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1398,
+    20
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "Search",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DailyReport",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1490,
+    20
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "Clearing",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EndLabel",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    371,
+    27
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Clearing",
+   "dock": null,
+   "visible": false,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "DTTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    279,
+    21
+   ],
+   "size": [
+    86,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    214,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Reprot Time:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "DTDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    84,
+    21
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Report Date:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "TotalSumView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1576,
+    63
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DailyTab",
+   "type": "SkinTabControl",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1576,
+    478
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TotalSumView": [
+   {
+    "name": "Count",
+    "header": "Total Record",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalUserCard",
+    "header": "Volume(User)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalUserCardAmount",
+    "header": "Amount(User)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalEmpVolume",
+    "header": "Volume(Emp)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalEmpAmount",
+    "header": "Amount(Emp)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalCreditVolume",
+    "header": "Volume(Credit)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalCreditAmount",
+    "header": "Amount(Credit)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalCashCouponsV",
+    "header": "Volume(Repair)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalCashCouponsM",
+    "header": "Amount(Repair)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalNotICVolume",
+    "header": "Volume(NoCard)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalNotICAmount",
+    "header": "Amount(NoCard)",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "NozView": [
+   {
+    "name": "dataGridViewTextBoxColumn10",
+    "header": "Noz ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn11",
+    "header": "Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn12",
+    "header": "Start Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn13",
+    "header": "End Pump",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn14",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn15",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn16",
+    "header": "Start Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn17",
+    "header": "End Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn18",
+    "header": "Error",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "TankView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Fule Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Price",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Density",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "EmpCardA",
+    "header": "Amount(Emp)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "EmpCardV",
+    "header": "Volume(Emp)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PerCardA",
+    "header": "Amount(User)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "PreCardV",
+    "header": "Volume(User)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CreCardA",
+    "header": "Amount(Credit)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CreCardV",
+    "header": "Volume(Credit)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CashCouponsM",
+    "header": "Amount(Repair)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CashCouponsV",
+    "header": "Volume(Repair)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "NotCardA",
+    "header": "Amount(NoCard)",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "NotCardV",
+    "header": "Volume(NoCard)",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "CardView": [
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "Card Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TCount",
+    "header": "Record",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "Total Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "StartTime",
+    "header": "Start Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "EndTime",
+    "header": "End Time",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,670 @@
+{
+ "name": "BusinessReportMess",
+ "title": "Bussiness",
+ "size": [
+  1771,
+  718
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1763,
+    680
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "OperateType",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    949,
+    22
+   ],
+   "size": [
+    131,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    893,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Operate Type:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    756,
+    22
+   ],
+   "size": [
+    131,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label114",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    680,
+    28
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Card Select:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "SearchButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1669,
+    18
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "DTEndTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    588,
+    22
+   ],
+   "size": [
+    86,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    523,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Time:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "DTEndDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    415,
+    22
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    350,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Date:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "DTStartTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    258,
+    22
+   ],
+   "size": [
+    86,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    193,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Time:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "DTStartDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    85,
+    22
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    20,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Date:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "BussinessTotalView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1757,
+    80
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1757,
+    497
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    63
+   ],
+   "size": [
+    1763,
+    517
+   ],
+   "text": "Bussiness Report",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    580
+   ],
+   "size": [
+    1763,
+    100
+   ],
+   "text": "Summary",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1763,
+    63
+   ],
+   "text": "Query Form",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BusinessLogView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1757,
+    470
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    470
+   ],
+   "size": [
+    1757,
+    27
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "MLabel",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1252,
+    6
+   ],
+   "size": [
+    215,
+    12
+   ],
+   "text": "Total Record:9999999，50 records per page，Total Page:99999",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1642,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1607,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1583,
+    6
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Export",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1677,
+    1
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Excel Export",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    1573,
+    6
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    1539,
+    1
+   ],
+   "size": [
+    32,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1502,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CurEnd",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    1467,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  }
+ ],
+ "columns": {
+  "BusinessLogView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Card No",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "User Name",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CardOperate",
+    "header": "Card Operate Type",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Deposit",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Present Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Consume Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "Consume Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "Transaction Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "Balance",
+    "visible": true,
+    "width": null
+   }
+  ],
+  "BussinessTotalView": [
+   {
+    "name": "dataGridViewTextBoxColumn9",
+    "header": "Total Record",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn10",
+    "header": "Total Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "TotalDisAmount",
+    "header": "Total Present Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn11",
+    "header": "Total Deduction Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn12",
+    "header": "Total Non Fuel Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn13",
+    "header": "Total Consume Amount",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn14",
+    "header": "Total Consume Volume",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn15",
+    "header": "消费升数",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn16",
+    "header": "交易时间",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn17",
+    "header": "卡余额",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

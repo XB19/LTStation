@@ -1,0 +1,626 @@
+{
+ "name": "CardLost",
+ "title": "Card Lost",
+ "size": [
+  1043,
+  262
+ ],
+ "controls": [
+  {
+   "name": "BalanceChange",
+   "type": "SkinTabControl",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1035,
+    224
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardDeposit",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1035,
+    199
+   ],
+   "text": "Card Lost(Non Employee Card)",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardDeduction",
+   "type": "SkinTabPage",
+   "parent": "BalanceChange",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1035,
+    199
+   ],
+   "text": "Card Lost(For Employee Card)",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinCaptionPanel2",
+   "type": "SkinCaptionPanel",
+   "parent": "CardDeduction",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1035,
+    199
+   ],
+   "text": "Please Select Employee Card Which You Want Lost",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "CardDeposit",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1035,
+    199
+   ],
+   "text": "Please Input Message To Finish it",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    341,
+    23
+   ],
+   "size": [
+    153,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTypeID",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    268,
+    26
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SPhone",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    341,
+    95
+   ],
+   "size": [
+    153,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PhoneSearch",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    268,
+    102
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    147
+   ],
+   "size": [
+    257,
+    12
+   ],
+   "text": "Please write message and select Asn",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "SearchButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    412,
+    139
+   ],
+   "size": [
+    75,
+    29
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "UserID",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    95
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    102
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User ID:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "UserName",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    55
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    64
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "TypeNo",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    341,
+    55
+   ],
+   "size": [
+    153,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    268,
+    64
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Certificate No:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "TypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    23
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    26
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Certificate Type:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "LostCardNoSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    334,
+    29
+   ],
+   "size": [
+    190,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ConfirmButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    449,
+    124
+   ],
+   "size": [
+    75,
+    44
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardOpen",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    334,
+    66
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    278,
+    75
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Open Station:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CardTime",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    77,
+    66
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    75
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Issue Time:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    278,
+    32
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Asn:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "UserCardName",
+   "type": "SkinTextBox",
+   "parent": "groupBox2",
+   "loc": [
+    77,
+    23
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    32
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    502,
+    24
+   ],
+   "size": [
+    531,
+    173
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    500,
+    173
+   ],
+   "text": "Message Query",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EmpView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    1031,
+    173
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "EmpView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Asn",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Employee",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CardOperate",
+    "header": "Station",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Create Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Card Statue",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "消费金额",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "消费升数",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "交易时间",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "卡余额",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

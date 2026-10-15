@@ -1,0 +1,272 @@
+{
+ "name": "VirtualScore",
+ "title": "VirtualScore",
+ "size": [
+  892,
+  550
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    884,
+    80
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "$this",
+   "loc": [
+    4,
+    114
+   ],
+   "size": [
+    884,
+    432
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardScore",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    786,
+    37
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Card Score",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    20,
+    53
+   ],
+   "size": [
+    96,
+    21
+   ],
+   "text": "User Add",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CurrentPage",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    710,
+    15
+   ],
+   "size": [
+    69,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    645,
+    18
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Current Page:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "DiretToButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    786,
+    14
+   ],
+   "size": [
+    96,
+    21
+   ],
+   "text": "Direct To",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    830,
+    61
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "1/999",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "QueryButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    505,
+    14
+   ],
+   "size": [
+    105,
+    21
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "QueryPhone",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    327,
+    14
+   ],
+   "size": [
+    142,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    262,
+    17
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "QueryName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    83,
+    14
+   ],
+   "size": [
+    142,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    17
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "UserName:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "UserName",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Phone",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Current Score",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

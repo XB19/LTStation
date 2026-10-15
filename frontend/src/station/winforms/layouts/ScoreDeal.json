@@ -1,0 +1,110 @@
+{
+ "name": "ScoreDeal",
+ "title": "Integration Deal",
+ "size": [
+  653,
+  338
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    645,
+    246
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    280
+   ],
+   "size": [
+    645,
+    54
+   ],
+   "text": "Consume Message",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    639,
+    226
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextButton",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    550,
+    20
+   ],
+   "size": [
+    89,
+    28
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "NozID",
+    "header": "ID",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Energy",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "TransformType",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "TransformScale",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}

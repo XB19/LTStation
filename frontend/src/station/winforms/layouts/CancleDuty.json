@@ -1,0 +1,119 @@
+{
+ "name": "CancleDuty",
+ "title": "Shift Cancle",
+ "size": [
+  439,
+  97
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    431,
+    59
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ShiftClose",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    341,
+    19
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    176,
+    22
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "No:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ShiftNo",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    229,
+    19
+   ],
+   "size": [
+    95,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    12,
+    23
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Shift:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ShiftDT",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    59,
+    18
+   ],
+   "size": [
+    101,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  }
+ ],
+ "columns": {}
+}

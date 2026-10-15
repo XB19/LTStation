@@ -1,0 +1,380 @@
+{
+ "name": "VirtualScoreUpdate",
+ "title": "User",
+ "size": [
+  1084,
+  492
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1076,
+    61
+   ],
+   "text": "Base Message",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    95
+   ],
+   "size": [
+    1076,
+    82
+   ],
+   "text": "Score Operate",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    177
+   ],
+   "size": [
+    1076,
+    311
+   ],
+   "text": "History",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "UpdateBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    530,
+    22
+   ],
+   "size": [
+    105,
+    21
+   ],
+   "text": "Update",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UpdatePhone",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    330,
+    23
+   ],
+   "size": [
+    162,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    265,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "UpdateUserName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    83,
+    23
+   ],
+   "size": [
+    162,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    794,
+    38
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Current Page:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DirectBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    965,
+    34
+   ],
+   "size": [
+    105,
+    21
+   ],
+   "text": "Direct",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CurrentPage",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    859,
+    33
+   ],
+   "size": [
+    100,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TotalPage",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    1022,
+    63
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "1/999",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ScoreDealBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    530,
+    33
+   ],
+   "size": [
+    105,
+    21
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ScoreValue",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    330,
+    34
+   ],
+   "size": [
+    162,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    265,
+    37
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Score Value:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "ScoreTypeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    34
+   ],
+   "size": [
+    162,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    18,
+    37
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Operate Type:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1070,
+    291
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "UserName",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Phone",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "ScoreType",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "ScoreValue",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "FinalScore",
+    "header": "FinalScore",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "CreateTime",
+    "header": "Time",
+    "visible": true,
+    "width": null
+   },
+   {
+    "name": "Employee",
+    "header": "Employee",
+    "visible": true,
+    "width": null
+   }
+  ]
+ }
+}
