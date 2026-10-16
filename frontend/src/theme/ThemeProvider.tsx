@@ -81,6 +81,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const config = useMemo(() => buildTheme(mode, prefs.density, !reducedMotion), [mode, prefs.density, reducedMotion])
 
+  // Modal.confirm, message… appelés hors composant : même thème que l'application
+  useEffect(() => {
+    ConfigProvider.config({
+      holderRender: (children) => <ConfigProvider locale={frFR} theme={config}>{children}</ConfigProvider>,
+    })
+  }, [config])
+
   const value = useMemo<ThemeState>(() => {
     const update = (patch: Partial<typeof DEFAULTS>) =>
       setPrefs((p) => {

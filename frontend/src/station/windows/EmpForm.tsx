@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Modal, message } from 'antd'
+import { Button, Modal, message } from 'antd'
 import { del, get, post, put } from '../../api/http'
 import WinForm, { getLayout, useFields } from '../winforms/WinForm'
 import Win from '../winforms/Win'
@@ -64,10 +64,10 @@ function EmployeeEdit({ row, auths, onClose }: { row: Row | null; auths: Row[]; 
         }} />
       {row && (
         <div style={{ textAlign: 'right', marginTop: 8 }}>
-          <a style={{ color: '#d32f2f' }} onClick={() => Modal.confirm({
+          <Button type="link" danger onClick={() => Modal.confirm({
             title: 'Supprimer cet employé ?', okText: 'Supprimer', okType: 'danger', cancelText: 'Annuler',
             onOk: async () => { await del(`/station/employees/${row.employeeId}`); onClose(true) },
-          })}>Supprimer l'employé</a>
+          })}>Supprimer l'employé</Button>
         </div>
       )}
     </Win>
