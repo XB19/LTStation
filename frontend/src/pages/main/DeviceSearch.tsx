@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get } from '../../api/http'
 import PageHeader from '../../components/PageHeader'
@@ -109,7 +109,7 @@ export default function DeviceSearch() {
               ))}
             </MapContainer>
             {devices.length > 0 && located.length === 0 && (
-              <div style={{ padding: 12, color: '#999' }}>Aucun appareil ne transmet encore sa position GPS.</div>
+              <div style={{ padding: 12, color: 'var(--lt-color-text-tertiary)' }}>Aucun appareil ne transmet encore sa position GPS.</div>
             )}
           </Card>
         </Col>

@@ -1,16 +1,19 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { Layout, Menu, Dropdown, Modal, Form, Input, Typography, notification, Space, message } from 'antd'
+import { Layout, Menu, Dropdown, Modal, Form, Input, Typography, notification, Space, message, Button, Tooltip } from 'antd'
 import type { MenuProps } from 'antd'
 import {
   AppstoreOutlined, AuditOutlined, BarChartOutlined, CarOutlined, CreditCardOutlined, FileSearchOutlined,
   FileTextOutlined, HomeOutlined, LogoutOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PieChartOutlined,
   QrcodeOutlined, SafetyOutlined, SearchOutlined, SettingOutlined, ShoppingOutlined, TeamOutlined, UserOutlined,
-  VideoCameraOutlined, WifiOutlined, DashboardOutlined,
+  VideoCameraOutlined, WifiOutlined, DashboardOutlined, SunOutlined, MoonOutlined, DesktopOutlined,
+  ColumnHeightOutlined, CompressOutlined,
 } from '@ant-design/icons'
 import { useAuth } from '../auth/AuthContext'
 import { get, put } from '../api/http'
 import { MENU, linkVisible } from './menu'
+import { useAppTheme } from '../theme/ThemeProvider'
+import type { Density, ModePreference } from '../theme/tokens'
 import './layout.css'
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -29,6 +32,7 @@ interface TankAlarm {
 
 export default function MainLayout() {
   const { me, logout, can } = useAuth()
+  const { mode, modePref, density, setModePref, setDensity } = useAppTheme()
   const navigate = useNavigate()
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
@@ -122,6 +126,33 @@ export default function MainLayout() {
     },
   ]
 
+  const appearanceMenu: MenuProps = {
+    selectable: true,
+    multiple: true,
+    selectedKeys: [`mode:${modePref}`, `density:${density}`],
+    items: [
+      {
+        type: 'group', label: 'Thème', children: [
+          { key: 'mode:light', icon: <SunOutlined />, label: 'Clair' },
+          { key: 'mode:dark', icon: <MoonOutlined />, label: 'Sombre' },
+          { key: 'mode:system', icon: <DesktopOutlined />, label: 'Selon le poste' },
+        ],
+      },
+      { type: 'divider' },
+      {
+        type: 'group', label: 'Densité', children: [
+          { key: 'density:comfortable', icon: <ColumnHeightOutlined />, label: 'Confortable' },
+          { key: 'density:compact', icon: <CompressOutlined />, label: 'Compacte' },
+        ],
+      },
+    ],
+    onClick: ({ key }) => {
+      const [kind, value] = key.split(':')
+      if (kind === 'mode') setModePref(value as ModePreference)
+      else setDensity(value as Density)
+    },
+  }
+
   return (
     <Layout className="lt-layout">
       {contextHolder}
@@ -139,14 +170,23 @@ export default function MainLayout() {
       </Layout.Sider>
       <Layout>
         <Layout.Header className="lt-header">
-          <span className="lt-toggle" onClick={() => setCollapsed(!collapsed)}>
-            {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          </span>
+          <Button
+            type="text"
+            className="lt-toggle"
+            aria-label={collapsed ? 'Déplier le menu' : 'Replier le menu'}
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
+          />
           <div className="lt-ticker" title={expiry} onClick={() => expiry && navigate('/main/active-device')}>
             {expiry && <span className="lt-ticker-text">{expiry}</span>}
           </div>
           <Space size="large">
             <Typography.Text strong>Plateforme de données</Typography.Text>
+            <Dropdown menu={appearanceMenu} trigger={['click']} placement="bottomRight">
+              <Tooltip title="Apparence">
+                <Button type="text" shape="circle" aria-label="Apparence" icon={mode === 'dark' ? <MoonOutlined /> : <SunOutlined />} />
+              </Tooltip>
+            </Dropdown>
             <Dropdown menu={{ items: userMenu }} placement="bottomRight">
               <Space style={{ cursor: 'pointer' }}>
                 <UserOutlined />

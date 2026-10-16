@@ -4,7 +4,7 @@ import {
   Tag, Upload, message,
 } from 'antd'
 import { ReloadOutlined, UploadOutlined } from '@ant-design/icons'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { del, get, http, post, put, type SelectItem } from '../../api/http'
 import PageHeader from '../../components/PageHeader'

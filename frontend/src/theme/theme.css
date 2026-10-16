@@ -1,0 +1,46 @@
+/*
+ * Variables de thème du Center.
+ * Les couleurs, rayons et espacements (--lt-color-*, --lt-radius*, --lt-space-*, --lt-font-size*)
+ * viennent des jetons Ant Design et sont posés sur <html> par ThemeProvider ; les valeurs
+ * ci-dessous ne servent qu'avant le premier affichage, pour éviter un flash de la mauvaise couleur.
+ */
+:root {
+  color-scheme: light;
+  --lt-brand-gradient: linear-gradient(135deg, #1e88e5, #26c6da);
+  --lt-brand-contrast: #fff;
+  --lt-header-height: 64px;
+  --lt-elevation-sider: 2px 0 6px rgba(0, 21, 41, 0.08);
+  --lt-elevation-header: 0 1px 4px rgba(0, 21, 41, 0.08);
+  --lt-elevation-overlay: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  --lt-color-bg-layout: #f3f3f9;
+  --lt-color-bg-container: #fff;
+  --lt-color-text: rgba(0, 0, 0, 0.88);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --lt-brand-gradient: linear-gradient(135deg, #1565c0, #00838f);
+  --lt-elevation-sider: none;
+  --lt-elevation-header: none;
+  --lt-elevation-overlay: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  --lt-color-bg-layout: #000;
+  --lt-color-bg-container: #141414;
+  --lt-color-text: rgba(255, 255, 255, 0.85);
+}
+
+:root[data-density='compact'] {
+  --lt-header-height: 52px;
+}
+
+body {
+  margin: 0;
+  background: var(--lt-color-bg-layout);
+  color: var(--lt-color-text);
+}
+
+/* Texte discret (états vides, horodatages secondaires) */
+.lt-muted {
+  color: var(--lt-color-text-tertiary);
+}

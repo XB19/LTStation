@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, Card, DatePicker, Descriptions, Segmented, Space, Table, Tabs } from 'antd'
 import { DownloadOutlined, SearchOutlined } from '@ant-design/icons'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get } from '../../api/http'
 import PageHeader from '../../components/PageHeader'

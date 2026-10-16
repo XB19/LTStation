@@ -71,7 +71,7 @@ export function MonitorDeviceWall() {
                     allowFullScreen
                   />
                 ) : (
-                  <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>
+                  <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--lt-color-text-tertiary)' }}>
                     Flux indisponible
                   </div>
                 )}

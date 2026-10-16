@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button, Card, Col, Empty, Modal, Pagination, Progress, Row, Segmented, Statistic, Table } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get, type PageResult } from '../api/http'
 import PageHeader from '../components/PageHeader'

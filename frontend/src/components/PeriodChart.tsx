@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Card, DatePicker, Select, Space } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from './ThemedChart'
 import dayjs from 'dayjs'
 import { get } from '../api/http'
 

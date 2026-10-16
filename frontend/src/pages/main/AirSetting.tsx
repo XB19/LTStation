@@ -4,7 +4,7 @@ import {
   Tooltip, Upload, message,
 } from 'antd'
 import { KeyOutlined, LineChartOutlined, PrinterOutlined, TableOutlined, UploadOutlined } from '@ant-design/icons'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { del, get, http, post, put } from '../../api/http'
 import AirDeviceFormFields, { deviceTypeFromDigits } from '../../components/AirDeviceFormFields'
