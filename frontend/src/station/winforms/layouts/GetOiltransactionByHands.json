@@ -1,0 +1,181 @@
+{
+ "name": "GetOiltransactionByHands",
+ "title": "Get Transaction",
+ "size": [
+  294,
+  242
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    286,
+    204
+   ],
+   "text": "Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GetTransaction",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    85,
+    153
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EndPS",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    109
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    9,
+    117
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Code:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    33
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "GunID:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GunSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    30
+   ],
+   "size": [
+    182,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "StartPS",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    70
+   ],
+   "size": [
+    182,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    9,
+    78
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Code:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    166,
+    137
+   ],
+   "size": [
+    120,
+    67
+   ],
+   "text": "起始编号指交易记录中的POSTTC编号,输入对应枪号的POSTTC,可以重新获取键盘里的交易记录",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "GetTransaction": {
+   "Click": "GetTransaction_Click"
+  },
+  "$this": {
+   "Load": "GetOiltransactionByHands_Load"
+  }
+ }
+}

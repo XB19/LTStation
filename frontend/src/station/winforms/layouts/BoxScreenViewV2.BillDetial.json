@@ -1,0 +1,163 @@
+{
+ "name": "BoxScreenViewV2.BillDetial",
+ "title": "Bill Detial",
+ "size": [
+  726,
+  161
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    718,
+    123
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    359,
+    61
+   ],
+   "size": [
+    354,
+    50
+   ],
+   "text": "Repayment",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    93,
+    70
+   ],
+   "size": [
+    244,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    73
+   ],
+   "size": [
+    84,
+    26
+   ],
+   "text": "Repayment Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BillDateBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    469,
+    22
+   ],
+   "size": [
+    244,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    357,
+    25
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Bill Date:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "AccountNameBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    93,
+    22
+   ],
+   "size": [
+    244,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    25
+   ],
+   "size": [
+    84,
+    26
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "BillDetial_Load"
+  }
+ }
+}

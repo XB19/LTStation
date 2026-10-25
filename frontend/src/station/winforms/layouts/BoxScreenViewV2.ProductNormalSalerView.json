@@ -1,0 +1,391 @@
+{
+ "name": "BoxScreenViewV2.ProductNormalSalerView",
+ "title": "Product Saler",
+ "size": [
+  787,
+  530
+ ],
+ "controls": [
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    779,
+    492
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardReadBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    201
+   ],
+   "size": [
+    298,
+    57
+   ],
+   "text": "Read",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    34
+   ],
+   "size": [
+    135,
+    27
+   ],
+   "text": "Card Number",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "BalanceBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    143
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CardNumberBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    64
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ScoreBalanceLabel",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    113
+   ],
+   "size": [
+    83,
+    27
+   ],
+   "text": "Balance",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    64
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ConsumSelect",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    224
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ScorePriceLabel",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    273
+   ],
+   "size": [
+    56,
+    27
+   ],
+   "text": "Price",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "QuantityBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    143
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    194
+   ],
+   "size": [
+    135,
+    27
+   ],
+   "text": "Consumption",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "PriceBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    303
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    113
+   ],
+   "size": [
+    91,
+    27
+   ],
+   "text": "Quantity",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    382
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    219,
+    424
+   ],
+   "size": [
+    155,
+    57
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    20,
+    424
+   ],
+   "size": [
+    157,
+    57
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    352
+   ],
+   "size": [
+    86,
+    27
+   ],
+   "text": "Amount",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    34
+   ],
+   "size": [
+    66,
+    27
+   ],
+   "text": "Name",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel3",
+   "loc": [
+    376,
+    0
+   ],
+   "size": [
+    403,
+    492
+   ],
+   "text": "Product Information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    376,
+    492
+   ],
+   "text": "UserCard",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConsumSelect": {
+   "SelectedIndexChanged": "ConsumSelect_SelectedIndexChanged"
+  },
+  "QuantityBox": {
+   "TextChanged": "QuantityBox_TextChanged"
+  },
+  "CancelBtn": {
+   "Click": "CancelBtn_Click"
+  },
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "CardReadBtn": {
+   "Click": "CardReadBtn_Click"
+  },
+  "$this": {
+   "Load": "ProductNormalSalerView_Load"
+  }
+ }
+}

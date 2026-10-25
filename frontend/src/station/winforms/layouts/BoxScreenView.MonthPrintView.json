@@ -1,0 +1,126 @@
+{
+ "name": "BoxScreenView.MonthPrintView",
+ "title": "Month Report",
+ "size": [
+  1389,
+  809
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1381,
+    771
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    397,
+    0
+   ],
+   "size": [
+    984,
+    771
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    397,
+    771
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    397,
+    771
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "previewControl1",
+   "type": "PreviewControl",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    984,
+    771
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Month Report ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OilDataView": {
+   "CellClick": "OilDataView_CellClick"
+  },
+  "$this": {
+   "Load": "MonthPrintView_Load"
+  }
+ }
+}

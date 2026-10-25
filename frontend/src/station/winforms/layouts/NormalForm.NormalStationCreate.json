@@ -1,0 +1,385 @@
+{
+ "name": "NormalForm.NormalStationCreate",
+ "title": "Station Message",
+ "size": [
+  353,
+  439
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    345,
+    335
+   ],
+   "text": "Base",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    369
+   ],
+   "size": [
+    345,
+    66
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    229,
+    16
+   ],
+   "size": [
+    97,
+    46
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    32,
+    16
+   ],
+   "size": [
+    97,
+    46
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EmailBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    141
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    145
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Email:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Secretkey",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    289
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    293
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "No.:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Latitude",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    252
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    256
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "latitude:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "Longitude",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    215
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    219
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "longitude:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "StationPhone",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    178
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    182
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "StationAddress",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    104
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    108
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Adreess:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "StationCode",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    30
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    34
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Code:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "StationName",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    106,
+    67
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    19,
+    71
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Name:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  }
+ ],
+ "columns": {},
+ "events": {
+  "skinButton1": {
+   "Click": "skinButton1_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "Secretkey": {
+   "MouseMove": "Secretkey_MouseMove"
+  },
+  "$this": {
+   "Load": "NormalStationCreate_Load"
+  }
+ }
+}

@@ -121,20 +121,34 @@
     "name": "ID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Discount",
     "header": "Discount",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "AddDisCount": {
+   "Click": "AddDisCount_Click"
+  },
+  "DisCountView": {
+   "CellDoubleClick": "DisCountView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "CenterDisCount_Load"
+  }
  }
 }

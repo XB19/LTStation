@@ -1,0 +1,168 @@
+{
+ "name": "MonthClose",
+ "title": "MonthClose",
+ "size": [
+  800,
+  600
+ ],
+ "controls": [],
+ "columns": {
+  "NozView": [
+   {
+    "name": "dataGridViewTextBoxColumn10",
+    "header": "dataGridViewTextBoxColumn10",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn12",
+    "header": "dataGridViewTextBoxColumn12",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn13",
+    "header": "dataGridViewTextBoxColumn13",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn14",
+    "header": "dataGridViewTextBoxColumn14",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn15",
+    "header": "dataGridViewTextBoxColumn15",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn16",
+    "header": "dataGridViewTextBoxColumn16",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn17",
+    "header": "dataGridViewTextBoxColumn17",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn18",
+    "header": "dataGridViewTextBoxColumn18",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "GradeView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "dataGridViewTextBoxColumn1",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "dataGridViewTextBoxColumn2",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EmpAmount",
+    "header": "EmpAmount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EmpVolumeSum",
+    "header": "EmpVolumeSum",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "UserAmount",
+    "header": "UserAmount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "UserVolume",
+    "header": "UserVolume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OtherM",
+    "header": "OtherM",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OtherV",
+    "header": "OtherV",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "dataGridViewTextBoxColumn5",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "dataGridViewTextBoxColumn4",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "TotalSumView": [
+   {
+    "name": "TotalVolume",
+    "header": "TotalVolume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "TotalAmount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Export": {
+   "Click": "Export_Click"
+  },
+  "MonthReport": {
+   "Click": "MonthReport_Click"
+  },
+  "DTDate": {
+   "ValueChanged": "DTDate_ValueChanged"
+  }
+ }
+}

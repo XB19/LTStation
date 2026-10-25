@@ -1,0 +1,480 @@
+{
+ "name": "Nozzle",
+ "title": "Nozzle",
+ "size": [
+  238,
+  251
+ ],
+ "controls": [
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    238,
+    46
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    46
+   ],
+   "size": [
+    238,
+    168
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    214
+   ],
+   "size": [
+    238,
+    37
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "skinPanel6",
+   "type": "SkinPanel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    101,
+    139
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    97,
+    46
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel2",
+   "type": "SkinPanel",
+   "parent": "panel2",
+   "loc": [
+    97,
+    0
+   ],
+   "size": [
+    141,
+    46
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel7",
+   "type": "SkinPanel",
+   "parent": "panel3",
+   "loc": [
+    101,
+    29
+   ],
+   "size": [
+    137,
+    139
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    29
+   ],
+   "size": [
+    101,
+    139
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel5",
+   "type": "SkinPanel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    238,
+    29
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "NozzleStatue",
+   "type": "SkinPictureBox",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    101,
+    98
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "VTLabel",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    238,
+    37
+   ],
+   "text": "VolumeTotal:",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NozName",
+   "type": "Label",
+   "parent": "skinPanel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    95,
+    44
+   ],
+   "text": "Noz",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Volume",
+   "type": "Label",
+   "parent": "skinPanel11",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    137,
+    49
+   ],
+   "text": "Volume:",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PPU",
+   "type": "Label",
+   "parent": "skinPanel12",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    137,
+    47
+   ],
+   "text": "Price:",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel4",
+   "type": "SkinPanel",
+   "parent": "skinPanel2",
+   "loc": [
+    0,
+    24
+   ],
+   "size": [
+    139,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel3",
+   "type": "SkinPanel",
+   "parent": "skinPanel2",
+   "loc": [
+    -1,
+    0
+   ],
+   "size": [
+    140,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EmpName",
+   "type": "Label",
+   "parent": "skinPanel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    140,
+    24
+   ],
+   "text": "No Employee",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardNo",
+   "type": "Label",
+   "parent": "skinPanel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    139,
+    24
+   ],
+   "text": "No Card",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "FuelType",
+   "type": "Label",
+   "parent": "skinPanel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    238,
+    29
+   ],
+   "text": "OFFLine",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "skinPanel6",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    101,
+    98
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel8",
+   "type": "SkinPanel",
+   "parent": "skinPanel6",
+   "loc": [
+    0,
+    98
+   ],
+   "size": [
+    101,
+    41
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel11",
+   "type": "SkinPanel",
+   "parent": "skinPanel7",
+   "loc": [
+    0,
+    43
+   ],
+   "size": [
+    137,
+    49
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel12",
+   "type": "SkinPanel",
+   "parent": "skinPanel7",
+   "loc": [
+    0,
+    92
+   ],
+   "size": [
+    137,
+    47
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel9",
+   "type": "SkinPanel",
+   "parent": "skinPanel7",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    137,
+    43
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "OilType",
+   "type": "Label",
+   "parent": "skinPanel8",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    101,
+    41
+   ],
+   "text": "Energy:",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Amount",
+   "type": "Label",
+   "parent": "skinPanel9",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    137,
+    43
+   ],
+   "text": "Amount:",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {},
+ "events": {}
+}

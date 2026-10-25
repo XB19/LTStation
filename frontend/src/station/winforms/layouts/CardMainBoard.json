@@ -1,0 +1,94 @@
+{
+ "name": "CardMainBoard",
+ "title": "Card MainBorad",
+ "size": [
+  331,
+  300
+ ],
+ "controls": [
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    323,
+    262
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CreatePSAM",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    16,
+    155
+   ],
+   "size": [
+    126,
+    87
+   ],
+   "text": "PSAM Card",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CreateCard",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    180,
+    23
+   ],
+   "size": [
+    126,
+    87
+   ],
+   "text": "Card Make",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CreateKey",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    16,
+    23
+   ],
+   "size": [
+    126,
+    87
+   ],
+   "text": "Create Secret Key",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CreatePSAM": {
+   "Click": "CreatePSAM_Click"
+  },
+  "CreateCard": {
+   "Click": "CreateCard_Click"
+  },
+  "CreateKey": {
+   "Click": "CreateKey_Click"
+  }
+ }
+}

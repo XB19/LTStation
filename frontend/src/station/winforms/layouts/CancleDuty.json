@@ -115,5 +115,13 @@
    "order": 4
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "ShiftClose": {
+   "Click": "ShiftClose_Click"
+  },
+  "$this": {
+   "Load": "CancleDuty_Load"
+  }
+ }
 }

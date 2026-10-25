@@ -1,0 +1,168 @@
+{
+ "name": "Card.UserInfoForm",
+ "title": "User List",
+ "size": [
+  1020,
+  635
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1012,
+    56
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    90
+   ],
+   "size": [
+    1012,
+    541
+   ],
+   "text": "User Information List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "UserCardNextBtn",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    908,
+    17
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UserCardPageLabel",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    844,
+    24
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "99/99",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "UserCardPreBtn",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    741,
+    17
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "UserCardDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    23
+   ],
+   "size": [
+    1006,
+    515
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "UserCardDataView": [
+   {
+    "name": "UserName",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardType",
+    "header": "Phone",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardNumber",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Balance",
+    "header": "Balance",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Score",
+    "header": "Score",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "UserCardNextBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "UserCardPreBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "$this": {
+   "Load": "UserInfoForm_Load"
+  }
+ }
+}

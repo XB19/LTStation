@@ -1,0 +1,91 @@
+{
+ "name": "PWDInput",
+ "title": "Input Password",
+ "size": [
+  236,
+  141
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    228,
+    105
+   ],
+   "text": "Please Write Your Password",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CancleButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    130,
+    77
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SureButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    20,
+    77
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PWD",
+   "type": "SkinTextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    20,
+    33
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CancleButton": {
+   "Click": "CancleButton_Click"
+  },
+  "SureButton": {
+   "Click": "SureButton_Click"
+  }
+ }
+}

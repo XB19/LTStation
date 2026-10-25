@@ -553,54 +553,63 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "Card No",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "User Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CardOperate",
     "header": "Card Operate Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "Deposit",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "Present Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn5",
     "header": "Consume Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn6",
     "header": "Consume Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn8",
     "header": "Transaction Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn7",
     "header": "Balance",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -609,62 +618,98 @@
     "name": "dataGridViewTextBoxColumn9",
     "header": "Total Record",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn10",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalDisAmount",
     "header": "Total Present Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn11",
     "header": "Total Deduction Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn12",
     "header": "Total Non Fuel Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn13",
     "header": "Total Consume Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn14",
     "header": "Total Consume Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn15",
     "header": "消费升数",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn16",
     "header": "交易时间",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn17",
     "header": "卡余额",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "NextEnd": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "Export": {
+   "Click": "Export_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "CurEnd": {
+   "Click": "Next_Click"
+  },
+  "SearchButton": {
+   "Click": "SearchButton_Click"
+  },
+  "$this": {
+   "Load": "BusinessReportMess_Load"
+  }
  }
 }

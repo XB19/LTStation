@@ -241,5 +241,13 @@
    "order": 11
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "CreateEmployee_Load"
+  }
+ }
 }

@@ -1,0 +1,112 @@
+{
+ "name": "NormalForm.GradeUpdate",
+ "title": "Energy Update",
+ "size": [
+  318,
+  168
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    310,
+    130
+   ],
+   "text": "Update",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GradeName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    109,
+    36
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    17,
+    37
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Energy",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    189,
+    75
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    21,
+    75
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "GradeUpdate_Load"
+  }
+ }
+}

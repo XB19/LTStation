@@ -223,5 +223,10 @@
    "order": 10
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "LostButton": {
+   "Click": "LostButton_Click"
+  }
+ }
 }

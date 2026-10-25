@@ -1,0 +1,272 @@
+{
+ "name": "BoxScreenView.InformalSalesView",
+ "title": "InformalSalesView",
+ "size": [
+  964,
+  579
+ ],
+ "controls": [
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    956,
+    437
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    471
+   ],
+   "size": [
+    956,
+    104
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "SelectAllBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    576,
+    64
+   ],
+   "size": [
+    120,
+    35
+   ],
+   "text": "Select All",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    704,
+    64
+   ],
+   "size": [
+    120,
+    35
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    832,
+    64
+   ],
+   "size": [
+    120,
+    35
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "textBox3",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    518,
+    32
+   ],
+   "size": [
+    148,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "textBox2",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    364,
+    32
+   ],
+   "size": [
+    148,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    27,
+    32
+   ],
+   "size": [
+    212,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    23,
+    6
+   ],
+   "size": [
+    165,
+    23
+   ],
+   "text": "Transaction number",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    956,
+    437
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column4",
+    "header": "Column4",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Pos",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Nozzle",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Product Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "Unit Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column3",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "SelectAllBtn": {
+   "Click": "SelectAllBtn_Click"
+  },
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "OilDataView": {
+   "CellClick": "OilDataView_CellClick",
+   "SelectionChanged": "OilDataView_SelectionChanged"
+  },
+  "$this": {
+   "Load": "InformalSalesView_Load"
+  }
+ }
+}

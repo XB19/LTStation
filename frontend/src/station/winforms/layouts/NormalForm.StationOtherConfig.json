@@ -1,0 +1,76 @@
+{
+ "name": "NormalForm.StationOtherConfig",
+ "title": "Other configurations",
+ "size": [
+  276,
+  116
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    268,
+    72
+   ],
+   "text": "Site authentication mode",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "RadioEmployee",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    134,
+    31
+   ],
+   "size": [
+    108,
+    28
+   ],
+   "text": "Employee Certification",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RadioNormal",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    20,
+    31
+   ],
+   "size": [
+    108,
+    28
+   ],
+   "text": "Ordinary certification",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "RadioEmployee": {
+   "CheckedChanged": "RadioNormal_CheckedChanged"
+  },
+  "RadioNormal": {
+   "CheckedChanged": "RadioNormal_CheckedChanged"
+  },
+  "$this": {
+   "Load": "StationOtherConfig_Load"
+  }
+ }
+}

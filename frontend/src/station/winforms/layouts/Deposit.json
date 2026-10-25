@@ -2047,50 +2047,126 @@
     "name": "ID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "GroupName",
     "header": "GroupName",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "GroupID",
     "header": "GroupID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "GroupAsn",
     "header": "Asn",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "BillDate",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "LoginName",
     "header": "Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "RepayAmount",
     "header": "Repay",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Statue",
     "header": "Statue",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "DepositButton": {
+   "Click": "DepositButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "BalanceChange": {
+   "SelectedIndexChanged": "BalanceChange_SelectedIndexChanged"
+  },
+  "TransferBtn": {
+   "Click": "TransferBtn_Click"
+  },
+  "TransferReader": {
+   "Click": "SaveButton_Click"
+  },
+  "DeductionButton": {
+   "Click": "DeductionButton_Click"
+  },
+  "CardReader": {
+   "Click": "SaveButton_Click"
+  },
+  "ConsumeButton": {
+   "Click": "DeductionButton_Click"
+  },
+  "CardConsumeRead": {
+   "Click": "SaveButton_Click"
+  },
+  "SaveToAsn": {
+   "SelectedIndexChanged": "SaveToAsn_SelectedIndexChanged"
+  },
+  "STConfirm": {
+   "Click": "STConfirm_Click"
+  },
+  "STRead": {
+   "Click": "SaveButton_Click"
+  },
+  "RepayView": {
+   "CellDoubleClick": "RepayView_CellDoubleClick"
+  },
+  "NextEnd": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "CurEnd": {
+   "Click": "Next_Click"
+  },
+  "QueryButton": {
+   "Click": "QueryButton_Click"
+  },
+  "AsnSelect": {
+   "SelectedIndexChanged": "AsnSelect_SelectedIndexChanged"
+  },
+  "MasterDeposter": {
+   "Click": "MasterDeposter_Click"
+  },
+  "$this": {
+   "Load": "Deposit_Load"
+  }
  }
 }

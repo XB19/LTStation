@@ -1,0 +1,362 @@
+{
+ "name": "NormalForm.TankStockRecored",
+ "title": "Record",
+ "size": [
+  972,
+  628
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    964,
+    590
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    832,
+    65
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankIDBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    87,
+    65
+   ],
+   "size": [
+    166,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    68
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Tank ID:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EndTimeSelect",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    744,
+    27
+   ],
+   "size": [
+    212,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    643,
+    30
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "End Time:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "StartTimeSelect",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    401,
+    24
+   ],
+   "size": [
+    216,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    300,
+    27
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Start Time:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "TankSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    87,
+    24
+   ],
+   "size": [
+    166,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    27
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Tank:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "SumVolume",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    127,
+    34
+   ],
+   "size": [
+    176,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    37
+   ],
+   "size": [
+    115,
+    23
+   ],
+   "text": "Stock Total:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StockView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    27
+   ],
+   "size": [
+    958,
+    365
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    116
+   ],
+   "size": [
+    964,
+    395
+   ],
+   "text": "Import Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    511
+   ],
+   "size": [
+    964,
+    79
+   ],
+   "text": "Summary",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    964,
+    116
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "StockView": [
+   {
+    "name": "CardType",
+    "header": "Tank Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankID",
+    "header": "Tank ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Count",
+    "header": "Stock Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Start Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "End Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "StartStockTime",
+    "header": "Start Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EndStockTime",
+    "header": "End Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "TankSelect": {
+   "SelectedIndexChanged": "TankSelect_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "TankStockRecored_Load"
+  }
+ }
+}

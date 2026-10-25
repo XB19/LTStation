@@ -1,0 +1,238 @@
+{
+ "name": "NormalForm.TankCableStatue",
+ "title": "Tank calibration information",
+ "size": [
+  327,
+  284
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    319,
+    246
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    220,
+    192
+   ],
+   "size": [
+    91,
+    35
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    192
+   ],
+   "size": [
+    91,
+    35
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StopCheck",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    203,
+    152
+   ],
+   "size": [
+    108,
+    27
+   ],
+   "text": "Stop calibration",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Checking",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    109,
+    152
+   ],
+   "size": [
+    88,
+    27
+   ],
+   "text": "Calibration in progress",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    154
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Calibration status:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "StartVolume",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    109,
+    110
+   ],
+   "size": [
+    202,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    113
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Initial volume:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "StartHeight",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    109,
+    73
+   ],
+   "size": [
+    202,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    76
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Initial height:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "TankSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    109,
+    36
+   ],
+   "size": [
+    202,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    39
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Tank Select:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CancelBtn": {
+   "Click": "skinButton1_Click"
+  },
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "$this": {
+   "Load": "TankCableStatue_Load"
+  }
+ }
+}

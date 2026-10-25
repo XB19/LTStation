@@ -1,0 +1,11 @@
+{
+ "name": "ProBar",
+ "title": "ProBar",
+ "size": [
+  800,
+  600
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {}
+}

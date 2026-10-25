@@ -877,126 +877,147 @@
     "name": "NozID",
     "header": "Noz ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Price",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Amount",
     "header": "Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TruePay",
     "header": "TruePay",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TrueTime",
     "header": "Transaction Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "ASN",
     "header": "Asn",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "BAL",
     "header": "Balance",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TType",
     "header": "Trade Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PayMent",
     "header": "Pay Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PosP",
     "header": "Com",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "POSTTC",
     "header": "POSTTC",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "EMP",
     "header": "Employee",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "VolumeTotal",
     "header": "Pump",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Shift",
     "header": "Shift",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CardNo",
     "header": "Car No",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Mileage",
     "header": "Mileage",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "DisCount",
     "header": "Discount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Coupon",
     "header": "Coupon",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CouponValue",
     "header": "Par",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -1005,26 +1026,59 @@
     "name": "Count",
     "header": "Card Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalVolume",
     "header": "Total Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalAmount",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalUserCard",
     "header": "Total Record",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "NextEnd": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "Export": {
+   "Click": "ExportPage_Click"
+  },
+  "ExportPage": {
+   "Click": "ExportPage_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "CurEnd": {
+   "Click": "Next_Click"
+  },
+  "QuerySearch": {
+   "Click": "Select_Click"
+  },
+  "$this": {
+   "Load": "OilTransacation_Load"
+  }
  }
 }

@@ -157,36 +157,42 @@
     "name": "ID",
     "header": "Noz ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "CABLENO.",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TankType",
     "header": "TankType",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Type",
     "header": "Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PosType",
     "header": "Pos Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PosIP",
     "header": "PosIP",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -195,20 +201,37 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "TankID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewComboBoxColumn1",
     "header": "Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewComboBoxColumn2",
     "header": "Price",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "NozzleConfigView": {
+   "CellEndEdit": "NozzleConfigView_CellEndEdit"
+  },
+  "NextButton": {
+   "Click": "NextButton_Click"
+  },
+  "Delete": {
+   "Click": "Delete_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  }
  }
 }

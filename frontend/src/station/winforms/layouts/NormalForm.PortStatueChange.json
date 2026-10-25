@@ -1,0 +1,76 @@
+{
+ "name": "NormalForm.PortStatueChange",
+ "title": "Com_Update",
+ "size": [
+  210,
+  85
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    202,
+    47
+   ],
+   "text": "Statue",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CloseBtn",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    110,
+    20
+   ],
+   "size": [
+    47,
+    16
+   ],
+   "text": "Close",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "StartBtn",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    41,
+    20
+   ],
+   "size": [
+    47,
+    16
+   ],
+   "text": "Open",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CloseBtn": {
+   "Click": "CloseBtn_Click"
+  },
+  "StartBtn": {
+   "Click": "CloseBtn_Click"
+  },
+  "$this": {
+   "Load": "PortStatueChange_Load"
+  }
+ }
+}

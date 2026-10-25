@@ -607,54 +607,63 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "Asn",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "User Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CardOperate",
     "header": "Operate Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "Deposit Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "Gift Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn5",
     "header": "Consume Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn6",
     "header": "Consume Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn8",
     "header": "Trade Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn7",
     "header": "Balance",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -663,38 +672,73 @@
     "name": "OilType",
     "header": "User Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Deposit Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "DecutionAmount",
     "header": "Charge Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Gift Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Amount",
     "header": "Consume Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TruePay",
     "header": "Consume Volume",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "NextEnd": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "Export": {
+   "Click": "Export_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "CurEnd": {
+   "Click": "Next_Click"
+  },
+  "LogSearch": {
+   "Click": "LogSearch_Click"
+  },
+  "CardNoSearch": {
+   "Click": "CardNoSearch_Click"
+  },
+  "$this": {
+   "Load": "CardLog_Load"
+  }
  }
 }

@@ -1,0 +1,652 @@
+{
+ "name": "NormalForm.EmpUpdate",
+ "title": "Emp Update",
+ "size": [
+  303,
+  428
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    295,
+    390
+   ],
+   "text": "Emp List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    130
+   ],
+   "size": [
+    289,
+    200
+   ],
+   "text": "Permission Information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    330
+   ],
+   "size": [
+    289,
+    57
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    289,
+    113
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Phone",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    80,
+    86
+   ],
+   "size": [
+    138,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    27,
+    89
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Password",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    80,
+    50
+   ],
+   "size": [
+    138,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    27,
+    53
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "LoginName",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    80,
+    14
+   ],
+   "size": [
+    138,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    27,
+    17
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Login Name:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    7,
+    20
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Cancel",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    144,
+    20
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "RetailStoreCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    174
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Retail Store",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankImportCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    174
+   ],
+   "size": [
+    96,
+    16
+   ],
+   "text": "Stock Records",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "HandShiftCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    152
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Hand Shift",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PrintMessageCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    152
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Station Print",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "UserMessageCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    152
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "User Info",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "EmpManagerBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    130
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "Employee Card",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CardReplaceBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    130
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "Card Replace",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardLostBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    130
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "Card Lost",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "BalanceBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    108
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Balance",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CardUpdateBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    108
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "Card Update",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "CardMakeBtn",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    108
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "Card Make",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "AuthShift",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    86
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Auto Shift",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "TransactionQuery",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    86
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Transaction",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "MonthReport",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    86
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "Month Report",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "DayReport",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    64
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "Daily Report",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "ShiftReport",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    64
+   ],
+   "size": [
+    48,
+    16
+   ],
+   "text": "Shift Report",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "EmpSet",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    64
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Emp Manager",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "EmployeeLogin",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    42
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Emp Login",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "ShiftSet",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    42
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Shift",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "TankSet",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    42
+   ],
+   "size": [
+    60,
+    16
+   ],
+   "text": "Tank",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "EnergySet",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    198,
+    20
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "EnergyAndPrice",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "Box_Set",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    108,
+    20
+   ],
+   "size": [
+    84,
+    16
+   ],
+   "text": "Box_Set",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "BaseCheck",
+   "type": "CheckBox",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    20
+   ],
+   "size": [
+    96,
+    16
+   ],
+   "text": "Station",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "Cancel": {
+   "Click": "Cancel_Click"
+  },
+  "$this": {
+   "Load": "EmpUpdate_Load"
+  }
+ }
+}

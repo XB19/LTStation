@@ -1,0 +1,346 @@
+{
+ "name": "BoxScreenView.ProductEdit",
+ "title": "ProductEdit",
+ "size": [
+  415,
+  646
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    415,
+    646
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    86
+   ],
+   "size": [
+    415,
+    560
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    415,
+    86
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    31,
+    14
+   ],
+   "size": [
+    354,
+    57
+   ],
+   "text": "Add/Edit",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ScoreBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    288
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    258
+   ],
+   "size": [
+    62,
+    27
+   ],
+   "text": "Score",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GroupSelect",
+   "type": "ComboBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    366
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    31,
+    482
+   ],
+   "size": [
+    157,
+    57
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    230,
+    482
+   ],
+   "size": [
+    155,
+    57
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ProductIDBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    439
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    409
+   ],
+   "size": [
+    108,
+    27
+   ],
+   "text": "Product ID",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    336
+   ],
+   "size": [
+    70,
+    27
+   ],
+   "text": "Group",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "PriceBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    208
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    178
+   ],
+   "size": [
+    56,
+    27
+   ],
+   "text": "Price",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "QuantityBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    126
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    96
+   ],
+   "size": [
+    91,
+    27
+   ],
+   "text": "Quantity",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    47
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    17
+   ],
+   "size": [
+    66,
+    27
+   ],
+   "text": "Name",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "CancelBtn": {
+   "Click": "CancelBtn_Click"
+  },
+  "$this": {
+   "Load": "ProductEdit_Load"
+  }
+ }
+}

@@ -277,5 +277,13 @@
    "order": 13
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "EmpUpdate_Load"
+  }
+ }
 }

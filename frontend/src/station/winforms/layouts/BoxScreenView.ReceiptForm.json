@@ -1,0 +1,414 @@
+{
+ "name": "BoxScreenView.ReceiptForm",
+ "title": "Previous invoice",
+ "size": [
+  1389,
+  809
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1381,
+    65
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    99
+   ],
+   "size": [
+    460,
+    706
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    464,
+    99
+   ],
+   "size": [
+    921,
+    706
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "comboBox4",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    926,
+    33
+   ],
+   "size": [
+    163,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    931,
+    11
+   ],
+   "size": [
+    140,
+    19
+   ],
+   "text": "Number of previous:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "comboBox3",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    799,
+    33
+   ],
+   "size": [
+    101,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    795,
+    11
+   ],
+   "size": [
+    43,
+    19
+   ],
+   "text": "Type:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    593,
+    11
+   ],
+   "size": [
+    107,
+    19
+   ],
+   "text": "Shift stop time:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "dtEnd",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    595,
+    33
+   ],
+   "size": [
+    178,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    387,
+    11
+   ],
+   "size": [
+    109,
+    19
+   ],
+   "text": "Shift start time:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "dtStart",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    391,
+    33
+   ],
+   "size": [
+    178,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "comboBox2",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    202,
+    33
+   ],
+   "size": [
+    163,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    204,
+    11
+   ],
+   "size": [
+    42,
+    19
+   ],
+   "text": "Shift:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "comboBox1",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    13,
+    33
+   ],
+   "size": [
+    163,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    19,
+    11
+   ],
+   "size": [
+    76,
+    19
+   ],
+   "text": "Pos name:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    460,
+    706
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "previewControl1",
+   "type": "PreviewControl",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    921,
+    666
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    666
+   ],
+   "size": [
+    921,
+    40
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CloseBtn",
+   "type": "SkinButton",
+   "parent": "panel5",
+   "loc": [
+    797,
+    6
+   ],
+   "size": [
+    120,
+    28
+   ],
+   "text": "Close",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OrderNumberBox",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    7,
+    6
+   ],
+   "size": [
+    178,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Transaction No.",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Total Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "#",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OilDataView": {
+   "CellClick": "OilDataView_CellContentClick",
+   "CellContentClick": "OilDataView_CellContentClick"
+  },
+  "CloseBtn": {
+   "Click": "CloseBtn_Click"
+  },
+  "$this": {
+   "Load": "ReceiptForm_Load"
+  }
+ }
+}

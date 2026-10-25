@@ -133,5 +133,13 @@
    "order": 5
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  }
+ }
 }

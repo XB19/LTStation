@@ -1,0 +1,147 @@
+{
+ "name": "NormalForm.TankCable",
+ "title": "Tank capacity table information",
+ "size": [
+  521,
+  635
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    513,
+    597
+   ],
+   "text": "Basic Settings",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "DisPlayView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    5,
+    83
+   ],
+   "size": [
+    503,
+    508
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    503,
+    53
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DowloadBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    294,
+    4
+   ],
+   "size": [
+    197,
+    41
+   ],
+   "text": "Dowload To ATG",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankSelect",
+   "type": "SkinComboBox",
+   "parent": "panel1",
+   "loc": [
+    99,
+    10
+   ],
+   "size": [
+    182,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    19,
+    13
+   ],
+   "size": [
+    70,
+    23
+   ],
+   "text": "Tank Select",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "DisPlayView": [
+   {
+    "name": "ID",
+    "header": "Height",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ExtendType",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "DowloadBtn": {
+   "Click": "DowloadBtn_Click"
+  },
+  "TankSelect": {
+   "SelectedIndexChanged": "TankSelect_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "TankCable_Load"
+  }
+ }
+}

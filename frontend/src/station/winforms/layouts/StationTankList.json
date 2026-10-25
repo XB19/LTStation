@@ -1,0 +1,220 @@
+{
+ "name": "StationTankList",
+ "title": "Tank Setting",
+ "size": [
+  1245,
+  477
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    1237,
+    441
+   ],
+   "text": "Tank List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "TankConfigView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    1233,
+    386
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    410
+   ],
+   "size": [
+    1233,
+    29
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TankDelete",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    993,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextStep",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    1155,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Next",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "AddTank",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    1074,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "TankConfigView": [
+   {
+    "name": "TankID",
+    "header": "TankID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankHeight",
+    "header": "TankHeight",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "HighOil",
+    "header": "High Oil Level",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Low Oil Level",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "HighWater",
+    "header": "High Water Level",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Overflow",
+    "header": "溢流",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowTemp",
+    "header": "Low Temp",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Monitor",
+    "header": "Monitor",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TransportationTime",
+    "header": "TransportationTime",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "AlarmStock",
+    "header": "AlarmStock",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "TankConfigView": {
+   "CellEndEdit": "TankConfigView_CellEndEdit"
+  },
+  "TankDelete": {
+   "Click": "TankDelete_Click"
+  },
+  "NextStep": {
+   "Click": "NextStep_Click"
+  },
+  "AddTank": {
+   "Click": "AddTank_Click"
+  }
+ }
+}

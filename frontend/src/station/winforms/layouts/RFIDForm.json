@@ -1,0 +1,932 @@
+{
+ "name": "RFIDForm",
+ "title": "RFID",
+ "size": [
+  732,
+  427
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    724,
+    389
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "TagNumber",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    90,
+    12
+   ],
+   "size": [
+    421,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    17
+   ],
+   "size": [
+    72,
+    27
+   ],
+   "text": "Tag:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "LimitOilType",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    343,
+    14
+   ],
+   "size": [
+    174,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RFIDDiscount",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    79,
+    14
+   ],
+   "size": [
+    168,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CarNoLimit",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    267,
+    108
+   ],
+   "size": [
+    72,
+    16
+   ],
+   "text": "Car Limit",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "MonthAmountLimit",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    342,
+    74
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    265,
+    77
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Month Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "MonthVolumeLImit",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    79,
+    103
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    2,
+    106
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Month Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardMake",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    431,
+    99
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "Card Make",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "DayAmountLimit",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    79,
+    74
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    2,
+    77
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Day Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "DayTimeLimit",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    79,
+    42
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label20",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    277,
+    17
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Limit Type:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label21",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    2,
+    45
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Time Limit:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "RFIDLimitVolume",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    342,
+    42
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label22",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    265,
+    51
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Volume Limit:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label23",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    38,
+    17
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Discount:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "Email",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    342,
+    118
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    301,
+    121
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Email:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Address",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    118
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    14,
+    121
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Address:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PostCode",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    342,
+    87
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    301,
+    90
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "PostCode:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "RFIDAccount",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    87
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    26,
+    90
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Account ID:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "CarNo",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    342,
+    56
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    301,
+    59
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Car Number:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "Certificate",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    56
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    26,
+    59
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "ID Number:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "Phone",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    342,
+    25
+   ],
+   "size": [
+    175,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    277,
+    28
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    25
+   ],
+   "size": [
+    168,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    26,
+    28
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "LogBox",
+   "type": "RichTextBox",
+   "parent": "groupBox4",
+   "loc": [
+    7,
+    212
+   ],
+   "size": [
+    187,
+    169
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DisConnectBtn",
+   "type": "SkinButton",
+   "parent": "groupBox4",
+   "loc": [
+    8,
+    173
+   ],
+   "size": [
+    186,
+    33
+   ],
+   "text": "Disconnect",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ReadBtn",
+   "type": "SkinButton",
+   "parent": "groupBox4",
+   "loc": [
+    8,
+    134
+   ],
+   "size": [
+    186,
+    33
+   ],
+   "text": "Read",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ConnectBtn",
+   "type": "SkinButton",
+   "parent": "groupBox4",
+   "loc": [
+    8,
+    95
+   ],
+   "size": [
+    186,
+    33
+   ],
+   "text": "Connect",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "BitcomboBox",
+   "type": "ComboBox",
+   "parent": "groupBox4",
+   "loc": [
+    75,
+    69
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    6,
+    66
+   ],
+   "size": [
+    63,
+    19
+   ],
+   "text": "Tag Bit:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "BaudcomboBox",
+   "type": "ComboBox",
+   "parent": "groupBox4",
+   "loc": [
+    75,
+    43
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PortCoboBox",
+   "type": "ComboBox",
+   "parent": "groupBox4",
+   "loc": [
+    75,
+    17
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    23,
+    41
+   ],
+   "size": [
+    46,
+    19
+   ],
+   "text": "baud:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    27,
+    18
+   ],
+   "size": [
+    42,
+    19
+   ],
+   "text": "Port:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    203,
+    0
+   ],
+   "size": [
+    521,
+    389
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    203,
+    389
+   ],
+   "text": "RS-232",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    52
+   ],
+   "size": [
+    521,
+    202
+   ],
+   "text": "Base Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    521,
+    52
+   ],
+   "text": "RFIDTag",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel2",
+   "loc": [
+    0,
+    254
+   ],
+   "size": [
+    521,
+    135
+   ],
+   "text": "Limit",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {},
+ "events": {
+  "TagNumber": {
+   "TextChanged": "TagNumber_TextChanged"
+  },
+  "CardMake": {
+   "Click": "CardMake_Click"
+  },
+  "DisConnectBtn": {
+   "Click": "DisConnectBtn_Click"
+  },
+  "ReadBtn": {
+   "Click": "ReadBtn_Click"
+  },
+  "ConnectBtn": {
+   "Click": "ConnectBtn_Click"
+  },
+  "$this": {
+   "FormClosed": "RFIDForm_FormClosed",
+   "Load": "RFIDForm_Load"
+  }
+ }
+}

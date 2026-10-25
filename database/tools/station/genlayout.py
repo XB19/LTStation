@@ -48,9 +48,13 @@ def enum(v, names):
 DOCK = {0: None, 1: 'top', 2: 'bottom', 3: 'left', 4: 'right', 5: 'fill'}
 
 
-def gen(form, cs_dir, resx_dir, en_dir, out):
-    neutral = load_resx(os.path.join(resx_dir, f'StationSoftWare.Forms.{form}.resx'))
-    en = load_resx(os.path.join(en_dir, f'StationSoftWare.Forms.{form}.en.resx'))
+def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
+    """form : nom de la classe ; res : nom complet de la ressource (StationSoftWare.Forms.X par défaut) ;
+    key : nom du fichier de sortie (form par défaut)."""
+    res = res or f'StationSoftWare.Forms.{form}'
+    key = key or form
+    neutral = load_resx(os.path.join(resx_dir, f'{res}.resx'))
+    en = load_resx(os.path.join(en_dir, f'{res}.en.resx'))
     cs_path = os.path.join(cs_dir, f'{form}.cs')
     cs = open(cs_path, encoding='utf-8').read() if os.path.exists(cs_path) else ''
     controls = {}
@@ -82,23 +86,54 @@ def gen(form, cs_dir, resx_dir, en_dir, out):
         cols = re.findall(r'this\.(\w+)', m.group(2))
         columns[m.group(1)] = [{'name': c, 'header': (en.get(f'{c}.HeaderText') or neutral.get(f'{c}.HeaderText') or c).strip(),
                                 'visible': not re.search(rf'this\.{c}\.Visible = false', cs),
+                                'prop': (pm.group(1) if (pm := re.search(rf'this\.{c}\.DataPropertyName = "(\w+)"', cs)) else None),
                                 'width': int(w.group(1)) if (w := re.search(rf'this\.{c}\.Width = (\d+)', cs)) else None} for c in cols]
     for m in re.finditer(r'(\w+)\.Columns\.Add\(', cs):
         pass
+    # Gestionnaires d'événements : this.X.Click += new EventHandler(Y) ; base.Load += ...
+    events = {}
+    for m in re.finditer(r'(?:this|base)\.(?:(\w+)\.)?(\w+) \+= new [\w.]+\((?:this\.)?(\w+)\);', cs):
+        ctl = m.group(1) or '$this'
+        events.setdefault(ctl, {})[m.group(2)] = m.group(3)
     layout = {
-        'name': form,
+        'name': key,
         'title': (en.get('$this.Text') or neutral.get('$this.Text') or form).strip(),
         'size': pair(neutral.get('$this.ClientSize')) or [800, 600],
         'controls': sorted(controls.values(), key=lambda c: (c['parent'], c['order'], c['loc'][1], c['loc'][0])),
         'columns': columns,
+        'events': events,
     }
-    with open(os.path.join(out, f'{form}.json'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(out, f'{key}.json'), 'w', encoding='utf-8') as f:
         json.dump(layout, f, ensure_ascii=False, indent=1)
     return layout
 
 
+def all_forms(base):
+    """(classe, ressource, dossier .cs, clé de sortie) de toutes les fenêtres ayant un .resx."""
+    out = []
+    for fn in sorted(os.listdir(base)):
+        if not fn.endswith('.resx') or fn.count('.') < 2:
+            continue
+        res = fn[:-5]
+        ns, form = res.rsplit('.', 1)
+        if ns == 'StationSoftWare.Forms':
+            key = form
+        elif ns == 'StationSoftWare':
+            key = form
+        elif ns.startswith('StationSoftware.NormalStatue.'):
+            key = ns[len('StationSoftware.NormalStatue.'):] + '.' + form
+        else:
+            continue
+        out.append((form, res, os.path.join(base, ns), key))
+    return out
+
+
 if __name__ == '__main__':
     base = os.path.join(DECOMP, 'StationSoftware')
-    for form in sys.argv[3:]:
-        lay = gen(form, os.path.join(base, 'StationSoftWare.Forms'), base, os.path.join(DECOMP, 'Station_en'), OUT)
-        print(form, lay['title'], lay['size'], len(lay['controls']), 'contrôles', {k: len(v) for k, v in lay['columns'].items()})
+    en_dir = os.path.join(DECOMP, 'Station_en')
+    wanted = set(sys.argv[3:])
+    for form, res, cs_dir, key in all_forms(base):
+        if wanted and key not in wanted and form not in wanted and 'ALL' not in wanted:
+            continue
+        lay = gen(form, cs_dir, base, en_dir, OUT, res, key)
+        print(key, '|', lay['title'], lay['size'], len(lay['controls']), 'contrôles', {k: len(v) for k, v in lay['columns'].items()})

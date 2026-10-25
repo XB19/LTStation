@@ -1,0 +1,223 @@
+{
+ "name": "NormalForm.NozFuelSet",
+ "title": "Fueling",
+ "size": [
+  322,
+  277
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    314,
+    239
+   ],
+   "text": "PreSet",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PreAmount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    106,
+    30
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    63
+   ],
+   "size": [
+    91,
+    19
+   ],
+   "text": "PreSet Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SetPrice",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    106,
+    92
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    93
+   ],
+   "size": [
+    91,
+    19
+   ],
+   "text": "Price:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "SetVolume",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    106,
+    62
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "SetLable",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    31
+   ],
+   "size": [
+    91,
+    19
+   ],
+   "text": "PreSet Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "NozLabel",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    76,
+    36
+   ],
+   "size": [
+    47,
+    19
+   ],
+   "text": "枪号",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    58
+   ],
+   "size": [
+    304,
+    125
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    42,
+    189
+   ],
+   "size": [
+    231,
+    45
+   ],
+   "text": "Start",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    17,
+    36
+   ],
+   "size": [
+    53,
+    19
+   ],
+   "text": "Noz:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  }
+ ],
+ "columns": {},
+ "events": {
+  "PreAmount": {
+   "Validated": "PreAmount_Validated"
+  },
+  "SetVolume": {
+   "Validated": "PreAmount_Validated"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "NozFuelSet_Load"
+  }
+ }
+}

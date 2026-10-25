@@ -1,0 +1,436 @@
+{
+ "name": "Card.CardLost",
+ "title": "Card Lost",
+ "size": [
+  361,
+  556
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    353,
+    68
+   ],
+   "text": "Card Message",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    102
+   ],
+   "size": [
+    353,
+    180
+   ],
+   "text": "Query Message",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    282
+   ],
+   "size": [
+    353,
+    270
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    23
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Card Type:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardTyoeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    111,
+    20
+   ],
+   "size": [
+    223,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    221
+   ],
+   "size": [
+    108,
+    33
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BalanceInput",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    183
+   ],
+   "size": [
+    227,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    186
+   ],
+   "size": [
+    57,
+    23
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "AccountInput",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    72
+   ],
+   "size": [
+    227,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    75
+   ],
+   "size": [
+    57,
+    23
+   ],
+   "text": "Account:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "NameInput",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    109
+   ],
+   "size": [
+    227,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    112
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "UserName:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PhonePut",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    146
+   ],
+   "size": [
+    227,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    149
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CardNumberSelect",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    107,
+    35
+   ],
+   "size": [
+    227,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    38
+   ],
+   "size": [
+    57,
+    23
+   ],
+   "text": "Card No.:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CardReaderBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    111,
+    136
+   ],
+   "size": [
+    108,
+    33
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CNOInput",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    111,
+    61
+   ],
+   "size": [
+    223,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    101
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PhoneInput",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    111,
+    98
+   ],
+   "size": [
+    223,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    64
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "ID Number:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "UserNameInput",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    111,
+    24
+   ],
+   "size": [
+    223,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    27
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "CardNumberSelect": {
+   "SelectedIndexChanged": "CardNumberSelect_SelectedIndexChanged"
+  },
+  "CardReaderBtn": {
+   "Click": "CardReaderBtn_Click"
+  }
+ }
+}

@@ -241,5 +241,10 @@
    "order": 999
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  }
+ }
 }

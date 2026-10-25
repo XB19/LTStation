@@ -1,0 +1,787 @@
+{
+ "name": "BoxScreenView.PersonalCreditView",
+ "title": "Person Credit",
+ "size": [
+  1076,
+  568
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1068,
+    530
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    321,
+    0
+   ],
+   "size": [
+    747,
+    530
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    530
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PersonCreditDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    34
+   ],
+   "size": [
+    321,
+    446
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    480
+   ],
+   "size": [
+    321,
+    50
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    34
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PersonBillDateBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    349
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    352
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "Bill Date:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    207,
+    469
+   ],
+   "size": [
+    354,
+    50
+   ],
+   "text": "Confirm Consumption",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CreditUseBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    405
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    408
+   ],
+   "size": [
+    110,
+    24
+   ],
+   "text": "Amount Used:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CreditLimitBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    405
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    408
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "Limit Credit:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CreditCardNoBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    288
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    291
+   ],
+   "size": [
+    53,
+    24
+   ],
+   "text": "Card No:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CreditTaxBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    233
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    236
+   ],
+   "size": [
+    53,
+    24
+   ],
+   "text": "Tax number:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "CreditEmailBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    178
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    181
+   ],
+   "size": [
+    53,
+    24
+   ],
+   "text": "Email:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "CreditAddressThirdBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    123
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    126
+   ],
+   "size": [
+    63,
+    24
+   ],
+   "text": "Address3:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "CreditAddressBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    68
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    71
+   ],
+   "size": [
+    53,
+    24
+   ],
+   "text": "Address:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "CreditPasswordBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    484,
+    13
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    368,
+    16
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "CreditCarNoBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    293
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    296
+   ],
+   "size": [
+    72,
+    24
+   ],
+   "text": "Car No:",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "CreditFaxBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    237
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    240
+   ],
+   "size": [
+    53,
+    24
+   ],
+   "text": "Fax:",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "CreditPhoneBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    181
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    184
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "CreditAddressSecondBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    125
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    128
+   ],
+   "size": [
+    63,
+    24
+   ],
+   "text": "Address2:",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "CreditGroupBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    69
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    72
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "Group:",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "CreditNameBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    152,
+    13
+   ],
+   "size": [
+    215,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    55,
+    16
+   ],
+   "size": [
+    91,
+    24
+   ],
+   "text": "UserName:",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  },
+  {
+   "name": "SearchBox",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    32
+   ],
+   "text": "Search",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextBtn",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    195,
+    9
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PageLabel",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    131,
+    16
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PreBtn",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    28,
+    9
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "PersonCreditDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "UserName",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "PersonCreditDataView": {
+   "CellClick": "PersonCreditDataView_CellClick"
+  },
+  "NextBtn": {
+   "Click": "PreBtn_Click"
+  },
+  "PreBtn": {
+   "Click": "PreBtn_Click"
+  },
+  "SearchBox": {
+   "Click": "SearchBox_Click",
+   "TextChanged": "SearchBox_TextChanged"
+  },
+  "$this": {
+   "Load": "PersonalCreditView_Load"
+  }
+ }
+}

@@ -247,26 +247,50 @@
     "name": "ID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "UserName",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Phone",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Current Score",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "CardScore": {
+   "Click": "CardScore_Click"
+  },
+  "AddButton": {
+   "Click": "AddButton_Click"
+  },
+  "DiretToButton": {
+   "Click": "DiretToButton_Click"
+  },
+  "QueryButton": {
+   "Click": "QueryButton_Click"
+  },
+  "TransactionView": {
+   "CellDoubleClick": "TransactionView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "VirtualScore_Load"
+  }
  }
 }

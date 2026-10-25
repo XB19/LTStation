@@ -1,0 +1,109 @@
+{
+ "name": "BoxScreenView.CancelInvoice",
+ "title": "Cancel Invoice",
+ "size": [
+  404,
+  177
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    396,
+    76
+   ],
+   "text": "Transaction Number",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    110
+   ],
+   "size": [
+    396,
+    63
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "InvoiceBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    9,
+    35
+   ],
+   "size": [
+    378,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OKBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    144,
+    5
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "OK",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CloseBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    272,
+    5
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "OKBtn": {
+   "Click": "OKBtn_Click"
+  },
+  "CloseBtn": {
+   "Click": "OKBtn_Click"
+  }
+ }
+}

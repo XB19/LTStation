@@ -121,26 +121,44 @@
     "name": "ID",
     "header": "EmployeeID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "LoginName",
     "header": "LoginName",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Type",
     "header": "Authority",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "AddEmp": {
+   "Click": "AddEmp_Click"
+  },
+  "EmpView": {
+   "CellDoubleClick": "EmpView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "EmpForm_Load"
+  }
  }
 }

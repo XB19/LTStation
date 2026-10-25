@@ -1,0 +1,93 @@
+{
+ "name": "NormalForm.TankCableCheckForm",
+ "title": "Tank calibration configuration",
+ "size": [
+  573,
+  529
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    565,
+    491
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "TankCableView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    559,
+    471
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TankCableView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Tank ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Adjust Height",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Adjust Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Adjust Statue",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "TankCableAdd": {
+   "Click": "TankCableAdd_Click"
+  },
+  "$this": {
+   "Load": "TankCableCheckForm_Load"
+  }
+ }
+}

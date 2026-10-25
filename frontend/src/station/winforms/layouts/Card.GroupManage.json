@@ -1,0 +1,83 @@
+{
+ "name": "Card.GroupManage",
+ "title": "GroupManage",
+ "size": [
+  537,
+  406
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    529,
+    368
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "Box_Device",
+   "type": "SkinDataGridView",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    529,
+    368
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "Box_Device": [
+   {
+    "name": "GroupID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Device_No",
+    "header": "Group",
+    "visible": true,
+    "prop": "ID",
+    "width": null
+   },
+   {
+    "name": "GroupType",
+    "header": "Group type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Box_Device": {
+   "CellDoubleClick": "Box_Device_CellDoubleClick"
+  },
+  "AddItem": {
+   "Click": "AddItem_Click"
+  },
+  "$this": {
+   "FormClosed": "GroupManage_FormClosed",
+   "Load": "GroupManage_Load"
+  }
+ }
+}

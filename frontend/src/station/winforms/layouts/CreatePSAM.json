@@ -1,0 +1,289 @@
+{
+ "name": "CreatePSAM",
+ "title": "Make PSAM Card",
+ "size": [
+  371,
+  310
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel2",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    363,
+    272
+   ],
+   "text": "Please Be Sure Card Reader Is Connected",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "LYZN",
+   "type": "SkinRadioButton",
+   "parent": "CardRadio",
+   "loc": [
+    181,
+    30
+   ],
+   "size": [
+    74,
+    21
+   ],
+   "text": "RYZN",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BSky",
+   "type": "SkinRadioButton",
+   "parent": "CardRadio",
+   "loc": [
+    94,
+    30
+   ],
+   "size": [
+    78,
+    21
+   ],
+   "text": "BlueSky1",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ACS",
+   "type": "SkinRadioButton",
+   "parent": "CardRadio",
+   "loc": [
+    26,
+    30
+   ],
+   "size": [
+    50,
+    21
+   ],
+   "text": "ACS",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Encrypt",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    94,
+    91
+   ],
+   "size": [
+    249,
+    28
+   ],
+   "text": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    24,
+    97
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Secret Key",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardTypeSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    94,
+    57
+   ],
+   "size": [
+    249,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    24,
+    60
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Card Type",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Reader",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    94,
+    23
+   ],
+   "size": [
+    249,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    24,
+    26
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Card Reader",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "Cancle",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    230,
+    6
+   ],
+   "size": [
+    79,
+    33
+   ],
+   "text": "Close",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardMake",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    46,
+    6
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "Write Card",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardRadio",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    2,
+    146
+   ],
+   "size": [
+    359,
+    57
+   ],
+   "text": "Card Manufacturer",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    2,
+    203
+   ],
+   "size": [
+    359,
+    67
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "skinCaptionPanel2",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    359,
+    122
+   ],
+   "text": "Card Message",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CardMake": {
+   "Click": "CardMake_Click"
+  },
+  "$this": {
+   "Load": "CreatePSAM_Load"
+  }
+ }
+}

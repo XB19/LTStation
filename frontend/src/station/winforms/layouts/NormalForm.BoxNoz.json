@@ -1,0 +1,601 @@
+{
+ "name": "NormalForm.BoxNoz",
+ "title": "Box_Port_Setting",
+ "size": [
+  633,
+  610
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    625,
+    129
+   ],
+   "text": "Box_Port_Setting",
+   "dock": "top",
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    163
+   ],
+   "size": [
+    625,
+    443
+   ],
+   "text": "RFID",
+   "dock": "fill",
+   "visible": false,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    163
+   ],
+   "size": [
+    625,
+    443
+   ],
+   "text": "Device",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    163
+   ],
+   "size": [
+    625,
+    443
+   ],
+   "text": "Noz_Setting",
+   "dock": "fill",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "VersionCheck",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    376,
+    83
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Version",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DeleteBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    515,
+    83
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": false,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    236,
+    83
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ParitySelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    76,
+    90
+   ],
+   "size": [
+    128,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    23,
+    93
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Parity:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "StopSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    496,
+    58
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    431,
+    61
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Stop:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "DeviceSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    287,
+    58
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    222,
+    61
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "DeviceType:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "AgreeMentSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    76,
+    58
+   ],
+   "size": [
+    128,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    61
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Agreement:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "TimeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    496,
+    26
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    431,
+    29
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Interval:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "BaudSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    287,
+    26
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    234,
+    29
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Baud:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "PortSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    76,
+    26
+   ],
+   "size": [
+    128,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    23,
+    29
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Port:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "NozView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    619,
+    423
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RFIDView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    619,
+    423
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DeviceView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox4",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    619,
+    423
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "NozView": [
+   {
+    "name": "编号",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Address",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Tank",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "GradeName",
+    "header": "Grade",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Parity",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "RFIDView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "DeviceID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Address",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "DeviceView": [
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "DeviceType",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "DeviceAddress",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceBuad",
+    "header": "Buad",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceInterval",
+    "header": "Interval",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceStop",
+    "header": "Stop",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceParity",
+    "header": "Parity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "VersionCheck": {
+   "Click": "VersionCheck_Click"
+  },
+  "DeleteBtn": {
+   "Click": "DeleteBtn_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "AgreeMentSelect": {
+   "SelectedIndexChanged": "AgreeMentSelect_SelectedIndexChanged"
+  },
+  "PortSelect": {
+   "SelectedIndexChanged": "PortSelect_SelectedIndexChanged"
+  },
+  "NozView": {
+   "CellDoubleClick": "NozView_CellDoubleClick"
+  },
+  "Menu_Add": {
+   "Click": "Menu_Add_Click"
+  },
+  "RFIDView": {
+   "CellDoubleClick": "RFIDView_CellDoubleClick"
+  },
+  "DeviceView": {
+   "CellDoubleClick": "DeviceView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "BoxNoz_Load"
+  }
+ }
+}

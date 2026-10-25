@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @PublicApi
 public class SwBootController {
 
-    static final String SESSION_KEY = "SW_LOGIN";
+    public static final String SESSION_KEY = "SW_LOGIN";
     private final StationEngine engine;
 
     public SwBootController(StationEngine engine) {
@@ -41,7 +41,7 @@ public class SwBootController {
     }
 
     /** Licence valide : l'une des adresses MAC du poste correspond à RegisterInfo (double chiffrement). */
-    static boolean registered() {
+    public static boolean registered() {
         List<String> macs = BaseFunction.GetMacAddress();
         if (macs == null) {
             return false;
@@ -151,7 +151,7 @@ public class SwBootController {
         return engine.view();
     }
 
-    static void requireLogin(HttpSession session) {
+    public static void requireLogin(HttpSession session) {
         if (session.getAttribute(SESSION_KEY) == null) {
             throw new SwException("Session expirée : veuillez vous reconnecter", 401);
         }

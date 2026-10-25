@@ -337,44 +337,66 @@
     "name": "ID",
     "header": "UserName",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Phone",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "ScoreType",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "ScoreValue",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "FinalScore",
     "header": "FinalScore",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CreateTime",
     "header": "Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Employee",
     "header": "Employee",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "UpdateBtn": {
+   "Click": "UpdateBtn_Click"
+  },
+  "DirectBtn": {
+   "Click": "DirectBtn_Click"
+  },
+  "ScoreDealBtn": {
+   "Click": "ScoreDealBtn_Click"
+  },
+  "$this": {
+   "FormClosed": "VirtualScoreUpdate_FormClosed",
+   "Load": "VirtualScoreUpdate_Load"
+  }
  }
 }

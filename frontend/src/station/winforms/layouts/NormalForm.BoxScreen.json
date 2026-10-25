@@ -1,0 +1,1725 @@
+{
+ "name": "NormalForm.BoxScreen",
+ "title": "BoxScreen",
+ "size": [
+  1066,
+  894
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1066,
+    47
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "NozPanel",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    47
+   ],
+   "size": [
+    1066,
+    190
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "LeftPanel",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    237
+   ],
+   "size": [
+    386,
+    604
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "RightPanel",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    386,
+    237
+   ],
+   "size": [
+    680,
+    604
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    841
+   ],
+   "size": [
+    1066,
+    53
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "BillFirstPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    316,
+    58
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "BillFirstPanel",
+   "loc": [
+    316,
+    0
+   ],
+   "size": [
+    70,
+    58
+   ],
+   "text": "+",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "BillLastPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    386,
+    28
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BillLastPanel",
+   "type": "Panel",
+   "parent": "BillListPanel",
+   "loc": [
+    0,
+    91
+   ],
+   "size": [
+    386,
+    28
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BillSecondPanel",
+   "type": "Panel",
+   "parent": "BillListPanel",
+   "loc": [
+    0,
+    58
+   ],
+   "size": [
+    386,
+    33
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "BillFirstPanel",
+   "type": "Panel",
+   "parent": "BillListPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    386,
+    58
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "BillSecondPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    271,
+    33
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "BillSecondPanel",
+   "loc": [
+    271,
+    0
+   ],
+   "size": [
+    115,
+    33
+   ],
+   "text": "0",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PQBtn",
+   "type": "SkinButton",
+   "parent": "FirstLineNumber",
+   "loc": [
+    0,
+    183
+   ],
+   "size": [
+    121,
+    151
+   ],
+   "text": "products quantity",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OneNumberBtn",
+   "type": "SkinButton",
+   "parent": "FirstLineNumber",
+   "loc": [
+    0,
+    122
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "1",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "FourNumberBtn",
+   "type": "SkinButton",
+   "parent": "FirstLineNumber",
+   "loc": [
+    0,
+    61
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "4",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "SevenNumberBtn",
+   "type": "SkinButton",
+   "parent": "FirstLineNumber",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "7",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ThirdLineNumber",
+   "type": "Panel",
+   "parent": "KeyBoardPanel",
+   "loc": [
+    242,
+    0
+   ],
+   "size": [
+    122,
+    334
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SecondLineNumber",
+   "type": "Panel",
+   "parent": "KeyBoardPanel",
+   "loc": [
+    121,
+    0
+   ],
+   "size": [
+    121,
+    334
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "FirstLineNumber",
+   "type": "Panel",
+   "parent": "KeyBoardPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    334
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "LeftFirstBtnPanel",
+   "loc": [
+    295,
+    0
+   ],
+   "size": [
+    91,
+    120
+   ],
+   "text": "Open all pump",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "StopAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "LeftFirstBtnPanel",
+   "loc": [
+    194,
+    0
+   ],
+   "size": [
+    101,
+    120
+   ],
+   "text": "Stop all pump",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OpenOnePumpBtn",
+   "type": "SkinButton",
+   "parent": "LeftFirstBtnPanel",
+   "loc": [
+    96,
+    0
+   ],
+   "size": [
+    98,
+    120
+   ],
+   "text": "Open one pump",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "StopOnePumpBtn",
+   "type": "SkinButton",
+   "parent": "LeftFirstBtnPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    96,
+    120
+   ],
+   "text": "Stop one pump",
+   "dock": "left",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "LeftFirstPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    316,
+    35
+   ],
+   "text": "PayMent",
+   "dock": "left",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel7",
+   "type": "Panel",
+   "parent": "LeftPanel",
+   "loc": [
+    0,
+    120
+   ],
+   "size": [
+    386,
+    429
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "LeftSecondBtnPanel",
+   "type": "Panel",
+   "parent": "LeftPanel",
+   "loc": [
+    0,
+    549
+   ],
+   "size": [
+    386,
+    55
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "LeftFirstBtnPanel",
+   "type": "Panel",
+   "parent": "LeftPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    386,
+    120
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "HomeBtn",
+   "type": "SkinButton",
+   "parent": "LeftSecondBtnPanel",
+   "loc": [
+    288,
+    0
+   ],
+   "size": [
+    98,
+    55
+   ],
+   "text": "Home",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaleCancelBtn",
+   "type": "SkinButton",
+   "parent": "LeftSecondBtnPanel",
+   "loc": [
+    192,
+    0
+   ],
+   "size": [
+    96,
+    55
+   ],
+   "text": "Sale Cancel",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ItemSaleCancelBtn",
+   "type": "SkinButton",
+   "parent": "LeftSecondBtnPanel",
+   "loc": [
+    96,
+    0
+   ],
+   "size": [
+    96,
+    55
+   ],
+   "text": "Item Cancel",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ClearBtn",
+   "type": "SkinButton",
+   "parent": "LeftSecondBtnPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    96,
+    55
+   ],
+   "text": "Clear",
+   "dock": "left",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "FleetCardBtn",
+   "type": "SkinButton",
+   "parent": "MiddleFirstPanel",
+   "loc": [
+    158,
+    51
+   ],
+   "size": [
+    158,
+    66
+   ],
+   "text": "Fleet card",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CreditBtn",
+   "type": "SkinButton",
+   "parent": "MiddleFirstPanel",
+   "loc": [
+    158,
+    0
+   ],
+   "size": [
+    158,
+    51
+   ],
+   "text": "Credit Card",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CashBtn",
+   "type": "SkinButton",
+   "parent": "MiddleFirstPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    158,
+    117
+   ],
+   "text": "Cash",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "KeyBoardPanel",
+   "type": "Panel",
+   "parent": "MiddleLastPanel",
+   "loc": [
+    0,
+    270
+   ],
+   "size": [
+    364,
+    334
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BankNotePanel",
+   "type": "Panel",
+   "parent": "MiddleLastPanel",
+   "loc": [
+    0,
+    211
+   ],
+   "size": [
+    364,
+    59
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "RightSecondPanel",
+   "type": "Panel",
+   "parent": "MiddleLastPanel",
+   "loc": [
+    0,
+    35
+   ],
+   "size": [
+    364,
+    176
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "RightFirstPanel",
+   "type": "Panel",
+   "parent": "MiddleLastPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    364,
+    35
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "MiddleThirdPanel",
+   "type": "Panel",
+   "parent": "MiddlePanel",
+   "loc": [
+    0,
+    284
+   ],
+   "size": [
+    316,
+    320
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MiddleSecondBtnPanel",
+   "type": "Panel",
+   "parent": "MiddlePanel",
+   "loc": [
+    0,
+    152
+   ],
+   "size": [
+    316,
+    132
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "MiddleFirstPanel",
+   "type": "Panel",
+   "parent": "MiddlePanel",
+   "loc": [
+    0,
+    35
+   ],
+   "size": [
+    316,
+    117
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "LeftFirstPanel",
+   "type": "Panel",
+   "parent": "MiddlePanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    316,
+    35
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "BankTransferBtn",
+   "type": "SkinButton",
+   "parent": "MiddleSecondBtnPanel",
+   "loc": [
+    158,
+    59
+   ],
+   "size": [
+    158,
+    73
+   ],
+   "text": "Bank Transfer",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QRCodeBtn",
+   "type": "SkinButton",
+   "parent": "MiddleSecondBtnPanel",
+   "loc": [
+    158,
+    0
+   ],
+   "size": [
+    158,
+    59
+   ],
+   "text": "QR code",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OKBtn",
+   "type": "SkinButton",
+   "parent": "MiddleSecondBtnPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    158,
+    132
+   ],
+   "text": "OK",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "skinButton9",
+   "type": "SkinButton",
+   "parent": "MiddleThirdLeftPanel",
+   "loc": [
+    0,
+    178
+   ],
+   "size": [
+    158,
+    142
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ReceiptBtn",
+   "type": "SkinButton",
+   "parent": "MiddleThirdLeftPanel",
+   "loc": [
+    0,
+    82
+   ],
+   "size": [
+    158,
+    96
+   ],
+   "text": "Show receipt",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PresonCreditBtn",
+   "type": "SkinButton",
+   "parent": "MiddleThirdLeftPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    158,
+    82
+   ],
+   "text": "Personal credit",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "MiddleThirdRightPanel",
+   "type": "Panel",
+   "parent": "MiddleThirdPanel",
+   "loc": [
+    158,
+    0
+   ],
+   "size": [
+    158,
+    320
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MiddleThirdLeftPanel",
+   "type": "Panel",
+   "parent": "MiddleThirdPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    158,
+    320
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "MiddleThirdRightPanel",
+   "loc": [
+    0,
+    157
+   ],
+   "size": [
+    158,
+    163
+   ],
+   "text": "Internal use",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DiscountBtn",
+   "type": "SkinButton",
+   "parent": "MiddleThirdRightPanel",
+   "loc": [
+    0,
+    82
+   ],
+   "size": [
+    158,
+    75
+   ],
+   "text": "Discount",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CouponBtn",
+   "type": "SkinButton",
+   "parent": "MiddleThirdRightPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    158,
+    82
+   ],
+   "text": "Coupon",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "RightFirstPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    364,
+    35
+   ],
+   "text": "Command",
+   "dock": "left",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MiddleLastPanel",
+   "type": "Panel",
+   "parent": "RightPanel",
+   "loc": [
+    316,
+    0
+   ],
+   "size": [
+    364,
+    604
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MiddlePanel",
+   "type": "Panel",
+   "parent": "RightPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    316,
+    604
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel22",
+   "type": "Panel",
+   "parent": "RightSecondPanel",
+   "loc": [
+    242,
+    0
+   ],
+   "size": [
+    122,
+    176
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel21",
+   "type": "Panel",
+   "parent": "RightSecondPanel",
+   "loc": [
+    121,
+    0
+   ],
+   "size": [
+    121,
+    176
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel20",
+   "type": "Panel",
+   "parent": "RightSecondPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    176
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PointBtn",
+   "type": "SkinButton",
+   "parent": "SecondLineNumber",
+   "loc": [
+    0,
+    183
+   ],
+   "size": [
+    121,
+    151
+   ],
+   "text": ".",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TwoNumberBtn",
+   "type": "SkinButton",
+   "parent": "SecondLineNumber",
+   "loc": [
+    0,
+    122
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "2",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "FiveNumberBtn",
+   "type": "SkinButton",
+   "parent": "SecondLineNumber",
+   "loc": [
+    0,
+    61
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "5",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EightNumberBtn",
+   "type": "SkinButton",
+   "parent": "SecondLineNumber",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    61
+   ],
+   "text": "8",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ZeroNumberBtn",
+   "type": "SkinButton",
+   "parent": "ThirdLineNumber",
+   "loc": [
+    0,
+    183
+   ],
+   "size": [
+    122,
+    151
+   ],
+   "text": "0",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ThreeNumberBtn",
+   "type": "SkinButton",
+   "parent": "ThirdLineNumber",
+   "loc": [
+    0,
+    122
+   ],
+   "size": [
+    122,
+    61
+   ],
+   "text": "3",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SixNumberBtn",
+   "type": "SkinButton",
+   "parent": "ThirdLineNumber",
+   "loc": [
+    0,
+    61
+   ],
+   "size": [
+    122,
+    61
+   ],
+   "text": "6",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "NineNumberBtn",
+   "type": "SkinButton",
+   "parent": "ThirdLineNumber",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    122,
+    61
+   ],
+   "text": "9",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    712,
+    0
+   ],
+   "size": [
+    177,
+    47
+   ],
+   "text": "C011 V",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TimeLabel",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    889,
+    0
+   ],
+   "size": [
+    177,
+    47
+   ],
+   "text": "2024-12-09 13:18:00",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel2",
+   "loc": [
+    194,
+    0
+   ],
+   "size": [
+    192,
+    28
+   ],
+   "text": "0",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    194,
+    28
+   ],
+   "text": "0",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PrintBtn",
+   "type": "SkinButton",
+   "parent": "panel20",
+   "loc": [
+    0,
+    88
+   ],
+   "size": [
+    121,
+    88
+   ],
+   "text": "Printer",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OpenCashDrawerBtn",
+   "type": "SkinButton",
+   "parent": "panel20",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    88
+   ],
+   "text": "Open Cash",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton14",
+   "type": "SkinButton",
+   "parent": "panel21",
+   "loc": [
+    0,
+    88
+   ],
+   "size": [
+    121,
+    88
+   ],
+   "text": "Quick Print",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MeterBtn",
+   "type": "SkinButton",
+   "parent": "panel21",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    121,
+    88
+   ],
+   "text": "Meter",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton13",
+   "type": "SkinButton",
+   "parent": "panel22",
+   "loc": [
+    0,
+    88
+   ],
+   "size": [
+    122,
+    88
+   ],
+   "text": "Customer info",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankChartBtn",
+   "type": "SkinButton",
+   "parent": "panel22",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    122,
+    88
+   ],
+   "text": "Tank Chart",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1066,
+    53
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel7",
+   "loc": [
+    0,
+    119
+   ],
+   "size": [
+    386,
+    282
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel7",
+   "loc": [
+    0,
+    401
+   ],
+   "size": [
+    386,
+    28
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "BillListPanel",
+   "type": "Panel",
+   "parent": "panel7",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    386,
+    119
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Add": {
+   "Click": "Add_Click"
+  },
+  "HomeBtn": {
+   "Click": "SaleCancelBtn_Click"
+  },
+  "SaleCancelBtn": {
+   "Click": "SaleCancelBtn_Click"
+  },
+  "ItemSaleCancelBtn": {
+   "Click": "SaleCancelBtn_Click"
+  },
+  "ClearBtn": {
+   "Click": "SaleCancelBtn_Click"
+  },
+  "StopAllPumpBtn": {
+   "Click": "StopOnePump_Click"
+  },
+  "OpenOnePumpBtn": {
+   "Click": "StopOnePump_Click"
+  },
+  "StopOnePumpBtn": {
+   "Click": "StopOnePump_Click"
+  },
+  "ZeroNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "ThreeNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "SixNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "NineNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "PointBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "TwoNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "FiveNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "EightNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "OneNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "FourNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "SevenNumberBtn": {
+   "Click": "SevenNumberBtn_Click"
+  },
+  "TankChartBtn": {
+   "Click": "OpenCashDrawerBtn_Click"
+  },
+  "MeterBtn": {
+   "Click": "OpenCashDrawerBtn_Click"
+  },
+  "PrintBtn": {
+   "Click": "OpenCashDrawerBtn_Click"
+  },
+  "OpenCashDrawerBtn": {
+   "Click": "OpenCashDrawerBtn_Click"
+  },
+  "DiscountBtn": {
+   "Click": "ReceiptBtn_Click"
+  },
+  "CouponBtn": {
+   "Click": "ReceiptBtn_Click"
+  },
+  "ReceiptBtn": {
+   "Click": "ReceiptBtn_Click"
+  },
+  "PresonCreditBtn": {
+   "Click": "PresonCreditBtn_Click"
+  },
+  "QRCodeBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "OKBtn": {
+   "Click": "OKBtn_Click"
+  },
+  "FleetCardBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "CreditBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "CashBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "PrintShiftBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "InformalSalesFBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "InformalSalesSBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "ChangePaymentBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "CancelinvoiceBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "OilTestBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "ExitBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "BringInMoneyBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "TakeOutMoneyBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "ChangeOilPriceBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "ToolBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "CloseShiftBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "CloseDayBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "ChangeUserBtn": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "toolStripButton1": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "toolStripButton2": {
+   "Click": "BtnQuit_Click",
+   "MouseDown": "Controls_MouseDown",
+   "MouseMove": "Controls_MouseMove",
+   "MouseUp": "Controls_MouseUp"
+  },
+  "OpenAllPumpBtn": {
+   "Click": "StopOnePump_Click"
+  },
+  "$this": {
+   "Load": "BoxScreen_Load"
+  }
+ }
+}

@@ -6415,5 +6415,46 @@
    "order": 1
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "LimitType": {
+   "SelectedIndexChanged": "LimitType_SelectedIndexChanged"
+  },
+  "PersonUpdatetButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "PersonButton": {
+   "Click": "PersonButton_Click"
+  },
+  "EmpReadButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "EmployeeUpdateButton": {
+   "Click": "PersonButton_Click"
+  },
+  "GroupIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "GroupUpdateButton": {
+   "Click": "PersonButton_Click"
+  },
+  "CreditIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "CreditButton": {
+   "Click": "PersonButton_Click"
+  },
+  "CreditLimitType": {
+   "SelectedIndexChanged": "LimitType_SelectedIndexChanged"
+  },
+  "ChildIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "ChildUpdateButton": {
+   "Click": "PersonButton_Click"
+  },
+  "ChildLimitType": {
+   "SelectedIndexChanged": "LimitType_SelectedIndexChanged"
+  }
+ }
 }

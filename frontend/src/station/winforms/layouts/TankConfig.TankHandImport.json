@@ -1,0 +1,163 @@
+{
+ "name": "TankConfig.TankHandImport",
+ "title": "Inbound information",
+ "size": [
+  434,
+  286
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    426,
+    248
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    134,
+    192
+   ],
+   "size": [
+    170,
+    45
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ImportAmountBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    134,
+    142
+   ],
+   "size": [
+    224,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    145
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Deposit amount:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ImportPriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    134,
+    83
+   ],
+   "size": [
+    224,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    86
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Unit price upon warehousing",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ImportVolumeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    134,
+    24
+   ],
+   "size": [
+    224,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    27
+   ],
+   "size": [
+    84,
+    26
+   ],
+   "text": "Inbound quantity",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "TankHandImport_Load"
+  }
+ }
+}

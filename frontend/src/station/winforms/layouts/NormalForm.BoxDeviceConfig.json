@@ -1,0 +1,264 @@
+{
+ "name": "NormalForm.BoxDeviceConfig",
+ "title": "Port Set",
+ "size": [
+  276,
+  361
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    268,
+    323
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    288
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "comboBox5",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    258
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    261
+   ],
+   "size": [
+    52,
+    16
+   ],
+   "text": "Parity:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "comboBox4",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    213
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    216
+   ],
+   "size": [
+    52,
+    16
+   ],
+   "text": "Stop:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "comboBox3",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    168
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    171
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "Interval:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "comboBox2",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    123
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    126
+   ],
+   "size": [
+    52,
+    16
+   ],
+   "text": "Baud:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    78
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    81
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "Device Address:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "comboBox1",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    79,
+    33
+   ],
+   "size": [
+    181,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    36
+   ],
+   "size": [
+    66,
+    16
+   ],
+   "text": "Device Select:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  }
+ ],
+ "columns": {},
+ "events": {}
+}

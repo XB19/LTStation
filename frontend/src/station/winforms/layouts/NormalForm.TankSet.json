@@ -1,0 +1,259 @@
+{
+ "name": "NormalForm.TankSet",
+ "title": "Tank_Set",
+ "size": [
+  910,
+  496
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    902,
+    61
+   ],
+   "text": "ATG Port",
+   "dock": "top",
+   "visible": false,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    95
+   ],
+   "size": [
+    902,
+    397
+   ],
+   "text": "Tank List",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "ComSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    172,
+    27
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    27
+   ],
+   "size": [
+    148,
+    19
+   ],
+   "text": "ATG Port Select:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ComSave",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    822,
+    18
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TankView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    898,
+    332
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    356
+   ],
+   "size": [
+    898,
+    39
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TankDelete",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    820,
+    3
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankAdd",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    739,
+    3
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "TankView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankName",
+    "header": "Tank Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankNo",
+    "header": "Tank ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Energy",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankHeight",
+    "header": "Tank Height",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankVolume",
+    "header": "Tank Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OverHeightOil",
+    "header": "High Level",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowerHeightOil",
+    "header": "Low Level",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OverHeightWater",
+    "header": "High Water",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "ComSave": {
+   "Click": "ComSave_Click"
+  },
+  "TankView": {
+   "CellDoubleClick": "TankView_CellDoubleClick_1"
+  },
+  "TankImportHandBtn": {
+   "Click": "TankImportHandBtn_Click"
+  },
+  "TankDelete": {
+   "Click": "TankDelete_Click"
+  },
+  "TankAdd": {
+   "Click": "TankAdd_Click"
+  },
+  "$this": {
+   "Load": "TankSet_Load"
+  }
+ }
+}

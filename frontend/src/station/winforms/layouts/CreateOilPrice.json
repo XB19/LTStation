@@ -313,5 +313,20 @@
    "order": 15
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "AddOiLType": {
+   "Click": "AddOiLType_Click"
+  },
+  "ID": {
+   "DropDown": "ID_DropDown",
+   "SelectionChangeCommitted": "ID_SelectionChangeCommitted"
+  },
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  }
+ }
 }

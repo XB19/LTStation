@@ -1,0 +1,30 @@
+{
+ "name": "CarUpdateMess",
+ "title": "CarUpdateMess",
+ "size": [
+  800,
+  600
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {
+  "CyDowload": {
+   "Click": "CyDowload_Click"
+  },
+  "Next": {
+   "Click": "Cur_Click"
+  },
+  "Cur": {
+   "Click": "Cur_Click"
+  },
+  "UploadBtn": {
+   "Click": "UploadBtn_Click"
+  },
+  "AddButton": {
+   "Click": "AddButton_Click"
+  },
+  "$this": {
+   "Load": "CarUpdateMess_Load"
+  }
+ }
+}

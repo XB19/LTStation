@@ -583,5 +583,13 @@
    "order": 2
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "ShiftClose": {
+   "Click": "ShiftClose_Click"
+  }
+ }
 }

@@ -139,26 +139,47 @@
     "name": "ID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Price",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "ValidTime",
     "header": "Time",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "OilPriceView": {
+   "CellDoubleClick": "OilPriceView_CellDoubleClick",
+   "CellEndEdit": "OilPriceView_CellEndEdit",
+   "ColumnWidthChanged": "OilPriceView_ColumnWidthChanged",
+   "Scroll": "OilPriceView_Scroll"
+  },
+  "DeleteButton": {
+   "Click": "DeleteButton_Click"
+  },
+  "NextButton": {
+   "Click": "NextButton_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  }
  }
 }

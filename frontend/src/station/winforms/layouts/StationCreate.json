@@ -1,0 +1,139 @@
+{
+ "name": "StationCreate",
+ "title": "Create Station",
+ "size": [
+  736,
+  450
+ ],
+ "controls": [
+  {
+   "name": "MenuTool",
+   "type": "SkinMenuStrip",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    728,
+    25
+   ],
+   "text": "skinMenuStrip1",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    59
+   ],
+   "size": [
+    728,
+    306
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    365
+   ],
+   "size": [
+    728,
+    81
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "SaveBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    587,
+    20
+   ],
+   "size": [
+    138,
+    50
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    722,
+    286
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveBtn": {
+   "Click": "SaveBtn_Click"
+  },
+  "ChineseText": {
+   "Click": "ChineseText_Click"
+  },
+  "EnglishText": {
+   "Click": "ChineseText_Click"
+  },
+  "OilPrice": {
+   "Click": "OilPrice_Click"
+  },
+  "CardMake": {
+   "Click": "OilPrice_Click"
+  },
+  "CardUpDate": {
+   "Click": "OilPrice_Click"
+  },
+  "PortSet": {
+   "Click": "OilPrice_Click"
+  },
+  "CardLost": {
+   "Click": "OilPrice_Click"
+  },
+  "CardChange": {
+   "Click": "OilPrice_Click"
+  },
+  "Deposit": {
+   "Click": "OilPrice_Click"
+  },
+  "TransactionSearch": {
+   "Click": "OilPrice_Click"
+  },
+  "$this": {
+   "Load": "StationCreate_Load"
+  }
+ }
+}

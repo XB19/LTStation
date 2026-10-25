@@ -1,0 +1,379 @@
+{
+ "name": "RelieveCard",
+ "title": "Deal Grey",
+ "size": [
+  486,
+  291
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    478,
+    189
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    223
+   ],
+   "size": [
+    478,
+    64
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "RelieveBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    383,
+    20
+   ],
+   "size": [
+    89,
+    38
+   ],
+   "text": "Deal",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ReadBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    260,
+    20
+   ],
+   "size": [
+    89,
+    38
+   ],
+   "text": "Read",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TidBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    86,
+    109
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    9,
+    153
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CTCBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    323,
+    109
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    241,
+    112
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "CTC:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CardAccount",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    86,
+    68
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    9,
+    71
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Account:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "GreyBalance",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    86,
+    150
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    9,
+    112
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "TID:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "Amount",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    323,
+    150
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    241,
+    153
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "GrayTime",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    323,
+    68
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    241,
+    71
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Grey Time:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    323,
+    27
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    241,
+    30
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Name:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "RelieveAsn",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    86,
+    27
+   ],
+   "size": [
+    149,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    9,
+    30
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Card No:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  }
+ ],
+ "columns": {},
+ "events": {
+  "RelieveBtn": {
+   "Click": "RelieveBtn_Click"
+  },
+  "ReadBtn": {
+   "Click": "ReadBtn_Click"
+  }
+ }
+}

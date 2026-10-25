@@ -1,0 +1,424 @@
+{
+ "name": "Station.SuperviseForm",
+ "title": "Supervise Set",
+ "size": [
+  378,
+  333
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    370,
+    73
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    107
+   ],
+   "size": [
+    370,
+    222
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "skinTabPage1",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    360,
+    161
+   ],
+   "text": "None",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinTabPage2",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    360,
+    161
+   ],
+   "text": "Tanzania",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinTabPage3",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    360,
+    161
+   ],
+   "text": "Kenya",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "KenyaBtn",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    175,
+    26
+   ],
+   "size": [
+    88,
+    27
+   ],
+   "text": "Kenya",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    261,
+    23
+   ],
+   "size": [
+    102,
+    34
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TanSanBtn",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    26
+   ],
+   "size": [
+    68,
+    27
+   ],
+   "text": "Tanzania",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "NoneBtn",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    30,
+    26
+   ],
+   "size": [
+    48,
+    27
+   ],
+   "text": "None",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "GunAndTankTab",
+   "type": "SkinTabControl",
+   "parent": "groupBox2",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    360,
+    186
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "skinTabPage2",
+   "loc": [
+    120,
+    20
+   ],
+   "size": [
+    165,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PasswordBox",
+   "type": "TextBox",
+   "parent": "skinTabPage2",
+   "loc": [
+    120,
+    72
+   ],
+   "size": [
+    165,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinTabPage2",
+   "loc": [
+    21,
+    23
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinTabPage2",
+   "loc": [
+    21,
+    75
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "UrlBox",
+   "type": "TextBox",
+   "parent": "skinTabPage3",
+   "loc": [
+    120,
+    127
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinTabPage3",
+   "loc": [
+    21,
+    130
+   ],
+   "size": [
+    38,
+    23
+   ],
+   "text": "Url:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DvcSrlNoBox",
+   "type": "TextBox",
+   "parent": "skinTabPage3",
+   "loc": [
+    120,
+    90
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinTabPage3",
+   "loc": [
+    21,
+    93
+   ],
+   "size": [
+    84,
+    23
+   ],
+   "text": "dvcSrlNo:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "TinBox",
+   "type": "TextBox",
+   "parent": "skinTabPage3",
+   "loc": [
+    120,
+    16
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "BhfIdBox",
+   "type": "TextBox",
+   "parent": "skinTabPage3",
+   "loc": [
+    120,
+    53
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinTabPage3",
+   "loc": [
+    21,
+    19
+   ],
+   "size": [
+    38,
+    23
+   ],
+   "text": "Tin:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinTabPage3",
+   "loc": [
+    21,
+    56
+   ],
+   "size": [
+    57,
+    23
+   ],
+   "text": "bhfId:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  }
+ ],
+ "columns": {},
+ "events": {
+  "KenyaBtn": {
+   "CheckedChanged": "NoneBtn_CheckedChanged"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "TanSanBtn": {
+   "CheckedChanged": "NoneBtn_CheckedChanged"
+  },
+  "NoneBtn": {
+   "CheckedChanged": "NoneBtn_CheckedChanged"
+  },
+  "$this": {
+   "Load": "SuperviseForm_Load"
+  }
+ }
+}

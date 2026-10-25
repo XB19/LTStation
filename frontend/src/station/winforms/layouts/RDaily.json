@@ -355,78 +355,91 @@
     "name": "Count",
     "header": "Total Record",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalVolume",
     "header": "Total Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalAmount",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalUserCard",
     "header": "Volume(User)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalUserCardAmount",
     "header": "Amount(User)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalEmpVolume",
     "header": "Volume(Emp)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalEmpAmount",
     "header": "Amount(Emp)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalCreditVolume",
     "header": "Volume(Credit)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalCreditAmount",
     "header": "Amount(Credit)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalCashCouponsV",
     "header": "Volume(Repair)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalCashCouponsM",
     "header": "Amount(Repair)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalNotICVolume",
     "header": "Volume(NoCard)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TotalNotICAmount",
     "header": "Amount(NoCard)",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -435,54 +448,63 @@
     "name": "dataGridViewTextBoxColumn10",
     "header": "Noz ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn11",
     "header": "Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn12",
     "header": "Start Pump",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn13",
     "header": "End Pump",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn14",
     "header": "Total Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn15",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn16",
     "header": "Start Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn17",
     "header": "End Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn18",
     "header": "Error",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -491,90 +513,105 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "Fule Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "Price",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "Density",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn5",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "Total Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "EmpCardA",
     "header": "Amount(Emp)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "EmpCardV",
     "header": "Volume(Emp)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PerCardA",
     "header": "Amount(User)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "PreCardV",
     "header": "Volume(User)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CreCardA",
     "header": "Amount(Credit)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CreCardV",
     "header": "Volume(Credit)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CashCouponsM",
     "header": "Amount(Repair)",
     "visible": true,
+    "prop": "CashCouponsM",
     "width": null
    },
    {
     "name": "CashCouponsV",
     "header": "Volume(Repair)",
     "visible": true,
+    "prop": "CashCouponsV",
     "width": null
    },
    {
     "name": "NotCardA",
     "header": "Amount(NoCard)",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "NotCardV",
     "header": "Volume(NoCard)",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ],
@@ -583,38 +620,58 @@
     "name": "dataGridViewTextBoxColumn6",
     "header": "Card Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TCount",
     "header": "Record",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn7",
     "header": "Total Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn8",
     "header": "Total Amount",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "StartTime",
     "header": "Start Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "EndTime",
     "header": "End Time",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "SearchButton": {
+   "Click": "SearchButton_Click"
+  },
+  "DailyReport": {
+   "Click": "SearchButton_Click"
+  },
+  "DTDate": {
+   "ValueChanged": "DTDate_ValueChanged"
+  },
+  "$this": {
+   "Load": "RDaily_Load"
+  }
  }
 }

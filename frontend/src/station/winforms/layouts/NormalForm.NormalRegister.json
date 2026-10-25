@@ -1,0 +1,88 @@
+{
+ "name": "NormalForm.NormalRegister",
+ "title": "System Register",
+ "size": [
+  382,
+  311
+ ],
+ "controls": [
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    374,
+    273
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    255
+   ],
+   "size": [
+    374,
+    52
+   ],
+   "text": "、",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    292,
+    17
+   ],
+   "size": [
+    73,
+    29
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {},
+ "events": {
+  "StationCreate": {
+   "Click": "OilPrice_Click"
+  },
+  "GradeSet": {
+   "Click": "OilPrice_Click"
+  },
+  "TankSet": {
+   "Click": "OilPrice_Click"
+  },
+  "EmployeeCreate": {
+   "Click": "OilPrice_Click"
+  },
+  "StationActive": {
+   "Click": "OilPrice_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "NormalRegister_Load"
+  }
+ }
+}

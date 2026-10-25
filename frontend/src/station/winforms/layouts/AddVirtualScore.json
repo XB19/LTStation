@@ -115,5 +115,10 @@
    "order": 4
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "QueryButton": {
+   "Click": "QueryButton_Click"
+  }
+ }
 }

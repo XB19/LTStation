@@ -571,56 +571,85 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "Asn",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "Employee",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CardOperate",
     "header": "Station",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "Create Time",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "Card Statue",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn5",
     "header": "消费金额",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn6",
     "header": "消费升数",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn8",
     "header": "交易时间",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn7",
     "header": "卡余额",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "BalanceChange": {
+   "SelectedIndexChanged": "BalanceChange_SelectedIndexChanged"
+  },
+  "LostCardNoSelect": {
+   "SelectedIndexChanged": "LostCardNoSelect_SelectedIndexChanged"
+  },
+  "ConfirmButton": {
+   "Click": "ConfirmButton_Click"
+  },
+  "SearchButton": {
+   "Click": "SearchButton_Click"
+  },
+  "EmpView": {
+   "CellDoubleClick": "EmpView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "CardLost_Load"
+  }
  }
 }

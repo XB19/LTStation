@@ -6811,5 +6811,67 @@
    "order": 0
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "CardSelect": {
+   "SelectedIndexChanged": "CardSelect_SelectedIndexChanged"
+  },
+  "CardTool": {
+   "SelectedIndexChanged": "CardTool_SelectedIndexChanged"
+  },
+  "LimitType": {
+   "SelectedIndexChanged": "EmployeeSelect_SelectedIndexChanged"
+  },
+  "PersonInitButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "PersonButton": {
+   "Click": "EmployeeConfirm_Click"
+  },
+  "PersonGroupSelect": {
+   "DropDown": "EmployeeSelect_DropDown"
+  },
+  "EmpIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "EmployeeConfirm": {
+   "Click": "EmployeeConfirm_Click"
+  },
+  "GroupIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "GroupButton": {
+   "Click": "EmployeeConfirm_Click"
+  },
+  "GroupTypeSelect": {
+   "SelectedIndexChanged": "GroupTypeSelect_SelectedIndexChanged"
+  },
+  "CreditIniButton": {
+   "Click": "PersonInitButton_Click"
+  },
+  "CreditLimitType": {
+   "SelectedIndexChanged": "EmployeeSelect_SelectedIndexChanged"
+  },
+  "CreditButton": {
+   "Click": "EmployeeConfirm_Click"
+  },
+  "CreditGroup": {
+   "SelectedIndexChanged": "CreditGroup_SelectedIndexChanged"
+  },
+  "ChilrenInit": {
+   "Click": "PersonInitButton_Click"
+  },
+  "ChilrenConfirm": {
+   "Click": "EmployeeConfirm_Click"
+  },
+  "ChilrenLimitTypeSelect": {
+   "SelectedIndexChanged": "EmployeeSelect_SelectedIndexChanged"
+  },
+  "MasterGroupSelect": {
+   "SelectedIndexChanged": "MasterGroupSelect_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "CardMake_Load"
+  }
+ }
 }

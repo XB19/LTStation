@@ -1,0 +1,205 @@
+{
+ "name": "NormalForm.BoxUpdate",
+ "title": "Box Update",
+ "size": [
+  391,
+  230
+ ],
+ "controls": [
+  {
+   "name": "BoxName",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    112,
+    50
+   ],
+   "size": [
+    261,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 999
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    13,
+    53
+   ],
+   "size": [
+    93,
+    19
+   ],
+   "text": "Box Name:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 999
+  },
+  {
+   "name": "BoxDeviceNo",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    112,
+    83
+   ],
+   "size": [
+    261,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 999
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    13,
+    86
+   ],
+   "size": [
+    93,
+    19
+   ],
+   "text": "Box Code:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 999
+  },
+  {
+   "name": "BoxModel",
+   "type": "ComboBox",
+   "parent": "$this",
+   "loc": [
+    112,
+    116
+   ],
+   "size": [
+    261,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    13,
+    119
+   ],
+   "size": [
+    93,
+    19
+   ],
+   "text": "Box Mode:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 999
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    13,
+    152
+   ],
+   "size": [
+    93,
+    19
+   ],
+   "text": "Box Port:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "PortSelect",
+   "type": "ComboBox",
+   "parent": "$this",
+   "loc": [
+    112,
+    152
+   ],
+   "size": [
+    261,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    112,
+    185
+   ],
+   "size": [
+    82,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "DeleteBtn",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    226,
+    185
+   ],
+   "size": [
+    82,
+    37
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "BoxModel": {
+   "SelectedIndexChanged": "BoxModel_SelectedIndexChanged"
+  },
+  "DeleteBtn": {
+   "Click": "DeleteBtn_Click"
+  },
+  "$this": {
+   "Load": "BoxUpdate_Load"
+  }
+ }
+}

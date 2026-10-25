@@ -1,0 +1,307 @@
+{
+ "name": "NormalForm.StationMessage",
+ "title": "Station Message",
+ "size": [
+  301,
+  387
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    293,
+    349
+   ],
+   "text": "站点信息配置",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "BackLen",
+   "type": "ComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    178,
+    278
+   ],
+   "size": [
+    107,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    278
+   ],
+   "size": [
+    167,
+    19
+   ],
+   "text": "Retention Time:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "IsVoice",
+   "type": "CheckBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    202,
+    179
+   ],
+   "size": [
+    83,
+    20
+   ],
+   "text": "Yes/No",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ReportAddress",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    251
+   ],
+   "size": [
+    276,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    229
+   ],
+   "size": [
+    129,
+    19
+   ],
+   "text": "Report Save Address:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "VoiceAddress",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    202
+   ],
+   "size": [
+    276,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    180
+   ],
+   "size": [
+    129,
+    19
+   ],
+   "text": "Voice File Address:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "BackUpTime",
+   "type": "DateTimePicker",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    153
+   ],
+   "size": [
+    276,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    131
+   ],
+   "size": [
+    129,
+    19
+   ],
+   "text": "System Backup Time:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "BackUpAddress",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    104
+   ],
+   "size": [
+    276,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    82
+   ],
+   "size": [
+    129,
+    19
+   ],
+   "text": "System Backup Path:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "StName",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    55
+   ],
+   "size": [
+    276,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    186,
+    310
+   ],
+   "size": [
+    105,
+    34
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    9,
+    310
+   ],
+   "size": [
+    102,
+    34
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    33
+   ],
+   "size": [
+    91,
+    19
+   ],
+   "text": "Station Name:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "StationMessage_Load"
+  }
+ }
+}

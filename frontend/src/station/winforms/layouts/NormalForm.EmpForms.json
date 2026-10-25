@@ -1,0 +1,79 @@
+{
+ "name": "NormalForm.EmpForms",
+ "title": "Emp Manager",
+ "size": [
+  566,
+  359
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    558,
+    321
+   ],
+   "text": "Emp List",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "EmpView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    552,
+    301
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "EmpView": [
+   {
+    "name": "EmpID",
+    "header": "EmpID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EmpName",
+    "header": "Emp Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Phone",
+    "header": "Phone",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "EmpView": {
+   "CellDoubleClick": "EmpView_CellDoubleClick"
+  },
+  "EmpAdd": {
+   "Click": "EmpAdd_Click"
+  }
+ }
+}

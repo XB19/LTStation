@@ -1,0 +1,292 @@
+{
+ "name": "NormalForm.PortUpdate",
+ "title": "Port_Update",
+ "size": [
+  506,
+  218
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    498,
+    180
+   ],
+   "text": "端口信息修改",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "AgreementType",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    352,
+    110
+   ],
+   "size": [
+    137,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    270,
+    111
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Agreement",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ParitySelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    96,
+    110
+   ],
+   "size": [
+    168,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "StopBitSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    352,
+    71
+   ],
+   "size": [
+    137,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "DataBitSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    352,
+    30
+   ],
+   "size": [
+    137,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "BuadSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    96,
+    70
+   ],
+   "size": [
+    168,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    15,
+    111
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Parity",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    289,
+    72
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Stop",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "PortSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    96,
+    30
+   ],
+   "size": [
+    168,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    408,
+    143
+   ],
+   "size": [
+    81,
+    28
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    274,
+    143
+   ],
+   "size": [
+    77,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    289,
+    31
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Data",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    15,
+    71
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Buad",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    15,
+    31
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Port",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "PortUpdate_Load"
+  }
+ }
+}

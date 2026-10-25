@@ -1,0 +1,124 @@
+{
+ "name": "NozValid",
+ "title": "Valid",
+ "size": [
+  238,
+  168
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    230,
+    132
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Password",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    76
+   ],
+   "size": [
+    200,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Save",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    73,
+    103
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    42
+   ],
+   "size": [
+    200,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "Radio2",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    189,
+    20
+   ],
+   "size": [
+    29,
+    16
+   ],
+   "text": "2",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "Radio1",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    18,
+    20
+   ],
+   "size": [
+    29,
+    16
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Save": {
+   "Click": "Save_Click"
+  }
+ }
+}

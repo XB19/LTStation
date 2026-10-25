@@ -1,0 +1,383 @@
+{
+ "name": "BoxScreenViewV2.BillPay",
+ "title": "User Bill",
+ "size": [
+  1138,
+  642
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1130,
+    604
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    321,
+    0
+   ],
+   "size": [
+    809,
+    604
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    604
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PersonCreditDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    34
+   ],
+   "size": [
+    321,
+    520
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    554
+   ],
+   "size": [
+    321,
+    50
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    34
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "panel7",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    50
+   ],
+   "size": [
+    809,
+    554
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel6",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    809,
+    50
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SearchBox",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    321,
+    33
+   ],
+   "text": "Search",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextBtn",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    195,
+    9
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PageLabel",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    131,
+    16
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PreBtn",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    28,
+    9
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BillNextBtn",
+   "type": "Button",
+   "parent": "panel6",
+   "loc": [
+    708,
+    11
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BillPage",
+   "type": "Label",
+   "parent": "panel6",
+   "loc": [
+    644,
+    18
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "BillPreBtn",
+   "type": "Button",
+   "parent": "panel6",
+   "loc": [
+    541,
+    11
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BillDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel7",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    809,
+    554
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "BillDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Month",
+    "header": "Bill Date",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CreateTime",
+    "header": "Create Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Statue",
+    "header": "Bill Statue",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "PersonCreditDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "BillDataView": {
+   "CellDoubleClick": "BillDataView_CellDoubleClick"
+  },
+  "BillNextBtn": {
+   "Click": "BillPreBtn_Click"
+  },
+  "BillPreBtn": {
+   "Click": "BillPreBtn_Click"
+  },
+  "PersonCreditDataView": {
+   "CellClick": "PersonCreditDataView_CellClick"
+  },
+  "NextBtn": {
+   "Click": "BillPreBtn_Click"
+  },
+  "PreBtn": {
+   "Click": "BillPreBtn_Click"
+  },
+  "$this": {
+   "Load": "BillPay_Load"
+  }
+ }
+}

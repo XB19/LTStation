@@ -1,0 +1,379 @@
+{
+ "name": "BoxScreenView.BoxPriceUpdate",
+ "title": "BoxPriceUpdate",
+ "size": [
+  364,
+  396
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    356,
+    358
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ShipBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    271
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    274
+   ],
+   "size": [
+    85,
+    17
+   ],
+   "text": "Shipping cost:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TaxBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    240
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    243
+   ],
+   "size": [
+    57,
+    17
+   ],
+   "text": "Tax cost:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "RateBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    209
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    212
+   ],
+   "size": [
+    97,
+    17
+   ],
+   "text": "Rate of change:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "AnPriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    178
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    181
+   ],
+   "size": [
+    129,
+    17
+   ],
+   "text": "Announcement price:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "DiscountBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    147
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    150
+   ],
+   "size": [
+    61,
+    17
+   ],
+   "text": "Discount:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    138,
+    304
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "ValidTimeBox",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    138,
+    116
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    119
+   ],
+   "size": [
+    70,
+    17
+   ],
+   "text": "Valid Time:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "NewPriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    85
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    88
+   ],
+   "size": [
+    69,
+    17
+   ],
+   "text": "New Price:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "CurrentPriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    54
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    57
+   ],
+   "size": [
+    86,
+    17
+   ],
+   "text": "Current Price:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "ProductNameBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    138,
+    23
+   ],
+   "size": [
+    215,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    26
+   ],
+   "size": [
+    56,
+    17
+   ],
+   "text": "Product:",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "BoxPriceUpdate_Load"
+  }
+ }
+}

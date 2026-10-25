@@ -1,0 +1,703 @@
+{
+ "name": "NormalForm.StationPrint",
+ "title": "Station Print",
+ "size": [
+  754,
+  460
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    746,
+    422
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "SixteenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    313
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    324
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Sixteenth:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SevenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    245
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    248
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Seventh:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "FifteenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    276
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    286
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Fifteenth:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "FourteenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    239
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    248
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Fourteenth:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ThirteenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    202
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    210
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Thirteenth:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "TwelveBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    165
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    172
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Twelfth:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "ElevenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    128
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    134
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Eleventh:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "PrintBox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    321
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    324
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Printer:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "TenBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    91
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    96
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Tenth:",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "NineBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    54
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    58
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Ninth:",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "EightBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    446,
+    17
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    366,
+    20
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Eighth:",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "CarNoBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    283
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    286
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "CarNo:",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "SettleBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    312,
+    375
+   ],
+   "size": [
+    162,
+    33
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "SixthBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    207
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    210
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Sixth:",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "FifthBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    169
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    172
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Fifth:",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "FouthBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    131
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    134
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Fourth:",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  },
+  {
+   "name": "ThirdBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    93
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 31,
+   "order": 31
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    96
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Third:",
+   "dock": null,
+   "visible": true,
+   "z": 32,
+   "order": 32
+  },
+  {
+   "name": "SecondBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    55
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 33,
+   "order": 33
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    58
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "Second:",
+   "dock": null,
+   "visible": true,
+   "z": 34,
+   "order": 34
+  },
+  {
+   "name": "FirstBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    83,
+    17
+   ],
+   "size": [
+    277,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 35,
+   "order": 35
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    20
+   ],
+   "size": [
+    69,
+    23
+   ],
+   "text": "First:",
+   "dock": null,
+   "visible": true,
+   "z": 36,
+   "order": 36
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SettleBtn": {
+   "Click": "SettleBtn_Click"
+  },
+  "$this": {
+   "Load": "StationPrint_Load"
+  }
+ }
+}

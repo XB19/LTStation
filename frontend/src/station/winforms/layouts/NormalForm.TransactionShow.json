@@ -1,0 +1,448 @@
+{
+ "name": "NormalForm.TransactionShow",
+ "title": "Settlement",
+ "size": [
+  360,
+  516
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    352,
+    478
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GroupBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    386
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    389
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Group:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CarNumberBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    349
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    352
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Car Number:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    312
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    315
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "username:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    117,
+    423
+   ],
+   "size": [
+    123,
+    49
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "TimeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    275
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    278
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Time:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "VolumeTotalBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    238
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    241
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Volume Total:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "AmountTotalBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    201
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    204
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Amount Total:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "PriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    164
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    167
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Price:",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "VolumeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    127
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    130
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    90
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    93
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "GradeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    53
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    56
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Energy:",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "NozBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    117,
+    16
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    16,
+    19
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Noz:",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  }
+ }
+}

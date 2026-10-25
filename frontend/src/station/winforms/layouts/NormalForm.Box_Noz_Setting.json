@@ -1,0 +1,146 @@
+{
+ "name": "NormalForm.Box_Noz_Setting",
+ "title": "Box_Noz_Set",
+ "size": [
+  891,
+  505
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    883,
+    421
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    455
+   ],
+   "size": [
+    883,
+    46
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    778,
+    10
+   ],
+   "size": [
+    99,
+    27
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BoxPortView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    877,
+    401
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "BoxPortView": [
+   {
+    "name": "NozRowID",
+    "header": "NozRowID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ID",
+    "header": "Box",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Noz",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Tank",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "GradeName",
+    "header": "Energy",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Parity",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "BoxPortView": {
+   "CellDoubleClick": "BoxPortView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "Box_Noz_Setting_Load"
+  }
+ }
+}

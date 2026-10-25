@@ -1,0 +1,184 @@
+{
+ "name": "NormalForm.PriceAdd",
+ "title": "Price Add",
+ "size": [
+  314,
+  243
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    306,
+    205
+   ],
+   "text": "Add",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ValidTime",
+   "type": "DateTimePicker",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    105,
+    121
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GradeSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    105,
+    36
+   ],
+   "size": [
+    185,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    17,
+    122
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Time",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GradePrice",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    105,
+    79
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    17,
+    80
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Price",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    17,
+    37
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Energy",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    185,
+    151
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    21,
+    151
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "PriceAdd_Load"
+  }
+ }
+}

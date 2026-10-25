@@ -1,0 +1,235 @@
+{
+ "name": "Card.EmpCardCreate",
+ "title": "New Employee Card",
+ "size": [
+  390,
+  303
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    382,
+    265
+   ],
+   "text": "Card Information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    128,
+    206
+   ],
+   "size": [
+    130,
+    46
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EmpPassword",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    105,
+    69
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    71
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "EmpSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    105,
+    35
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    38
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Bind Employees:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "AccountBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    105,
+    170
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    173
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "Account:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CardNoBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    105,
+    137
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    139
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "ValidTimeBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    105,
+    102
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    105
+   ],
+   "size": [
+    61,
+    19
+   ],
+   "text": "Expiration Date:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  }
+ ],
+ "columns": {},
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "$this": {
+   "Load": "EmpCardCreate_Load"
+  }
+ }
+}

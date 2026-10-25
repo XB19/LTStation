@@ -1,0 +1,271 @@
+{
+ "name": "NormalForm.StationMessageSet",
+ "title": "Station Message Set",
+ "size": [
+  383,
+  324
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    375,
+    286
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "TaxerBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    125,
+    207
+   ],
+   "size": [
+    236,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    211
+   ],
+   "size": [
+    45,
+    19
+   ],
+   "text": "Tax ID:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StationBranch",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    125,
+    172
+   ],
+   "size": [
+    236,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    176
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Institution Name:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "StationTel",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    123,
+    102
+   ],
+   "size": [
+    236,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    106
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "StationCompany",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    123,
+    137
+   ],
+   "size": [
+    236,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    141
+   ],
+   "size": [
+    109,
+    19
+   ],
+   "text": "Company:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    125,
+    247
+   ],
+   "size": [
+    131,
+    35
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "StationAddress",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    125,
+    67
+   ],
+   "size": [
+    234,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    71
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Station Address:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "StationName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    125,
+    29
+   ],
+   "size": [
+    234,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    33
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "Station Name:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "StationMessageSet_Load"
+  }
+ }
+}

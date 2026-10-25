@@ -241,5 +241,16 @@
    "order": 11
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "skinButton1": {
+   "Click": "skinButton1_Click"
+  },
+  "ReapyBtn": {
+   "Click": "ReapyBtn_Click"
+  },
+  "$this": {
+   "Load": "RepayFrom_Load"
+  }
+ }
 }

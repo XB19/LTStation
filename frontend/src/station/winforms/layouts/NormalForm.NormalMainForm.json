@@ -1,0 +1,598 @@
+{
+ "name": "NormalForm.NormalMainForm",
+ "title": "Normal MainForm",
+ "size": [
+  1259,
+  771
+ ],
+ "controls": [
+  {
+   "name": "MenuTool",
+   "type": "SkinMenuStrip",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1251,
+    27
+   ],
+   "text": "skinMenuStrip1",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    61
+   ],
+   "size": [
+    1251,
+    86
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "skinPanel2",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    147
+   ],
+   "size": [
+    1251,
+    594
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "BottomStrip",
+   "type": "StatusStrip",
+   "parent": "$this",
+   "loc": [
+    4,
+    741
+   ],
+   "size": [
+    1251,
+    26
+   ],
+   "text": "statusStrip1",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "GunPage",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "Noz",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "Tank",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "RFIDShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "RFID",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "RFIDPage",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "RFID",
+   "dock": "fill",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "PLCShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "PLC",
+   "dock": "fill",
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "RFIDDataView",
+   "type": "SkinDataGridView",
+   "parent": "RFIDPage",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    922,
+    569
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "skinPanel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1251,
+    86
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel4",
+   "type": "SkinPanel",
+   "parent": "skinPanel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    922,
+    594
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel3",
+   "type": "SkinPanel",
+   "parent": "skinPanel2",
+   "loc": [
+    922,
+    0
+   ],
+   "size": [
+    329,
+    594
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "skinPanel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    329,
+    444
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ToatlGrade",
+   "type": "SkinDataGridView",
+   "parent": "skinPanel3",
+   "loc": [
+    0,
+    444
+   ],
+   "size": [
+    329,
+    150
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GunAndTankTab",
+   "type": "SkinTabControl",
+   "parent": "skinPanel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    922,
+    594
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "RFIDDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "RFIDNo",
+    "header": "RFID No",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "StationName",
+    "header": "Station Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceAddress",
+    "header": "Address",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "BindNozID",
+    "header": "Bind Noz",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Tag",
+    "header": "Tag",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "UserName",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CarNumber",
+    "header": "Car No",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "RFIDBalance",
+    "header": "Balance",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Statue",
+    "header": "Statue",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "UpdateTime",
+    "header": "UpdateTime",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Noz",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "ToatlGrade": [
+   {
+    "name": "Emp",
+    "header": "GradeName",
+    "visible": true,
+    "prop": "GradeName",
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "VolumeTotal",
+    "visible": true,
+    "prop": "TotalVolume",
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "AmountTotal",
+    "visible": true,
+    "prop": "TotalAmount",
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "BaseMessage": {
+   "Click": "PortItem_Click"
+  },
+  "superviseSet": {
+   "Click": "PortItem_Click"
+  },
+  "BoxCodeSet": {
+   "Click": "PortItem_Click"
+  },
+  "PortItem": {
+   "Click": "PortItem_Click"
+  },
+  "GradeAndPrice": {
+   "Click": "PortItem_Click"
+  },
+  "TankItem": {
+   "Click": "PortItem_Click"
+  },
+  "TankVolumeItem": {
+   "Click": "PortItem_Click"
+  },
+  "NozItem": {
+   "Click": "PortItem_Click"
+  },
+  "ShiftItem": {
+   "Click": "PortItem_Click"
+  },
+  "EmpLoginItem": {
+   "Click": "PortItem_Click"
+  },
+  "ExitItem": {
+   "Click": "PortItem_Click"
+  },
+  "EmpManager": {
+   "Click": "EmpManager_Click"
+  },
+  "StationPrintSet": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "ShiftReport": {
+   "Click": "ShiftReport_Click"
+  },
+  "DailyR": {
+   "Click": "ShiftReport_Click"
+  },
+  "MonthR": {
+   "Click": "ShiftReport_Click"
+  },
+  "TransactionR": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "AuthShiftChange": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "ComStatue": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "StationConfigSet": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "TankCableCheck": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "CreateCable": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "ExtendSerialPort": {
+   "Click": "AuthShiftChange_Click"
+  },
+  "RFIDItem": {
+   "Click": "RFIDItem_Click"
+  },
+  "DisplayButton": {
+   "Click": "RFIDItem_Click"
+  },
+  "OverBtn": {
+   "Click": "RFIDItem_Click"
+  },
+  "LogWrite": {
+   "Click": "RFIDItem_Click"
+  },
+  "tESTToolStripMenuItem": {
+   "Click": "RFIDItem_Click"
+  },
+  "OtherConfig": {
+   "Click": "RFIDItem_Click"
+  },
+  "DeviceConfig": {
+   "Click": "RFIDItem_Click"
+  },
+  "ScreenShow": {
+   "Click": "RFIDItem_Click"
+  },
+  "toolStripMenuItem4": {
+   "Click": "toolStripMenuItem4_Click"
+  },
+  "OilPrice": {
+   "Click": "OilPrice_Click"
+  },
+  "Transaction": {
+   "Click": "OilPrice_Click"
+  },
+  "ShiftReportCheck": {
+   "Click": "OilPrice_Click"
+  },
+  "Report": {
+   "Click": "OilPrice_Click"
+  },
+  "MonthReport": {
+   "Click": "OilPrice_Click"
+  },
+  "EmpCardManager": {
+   "Click": "OilPrice_Click"
+  },
+  "CardMake": {
+   "Click": "OilPrice_Click"
+  },
+  "CardUpdate": {
+   "Click": "OilPrice_Click"
+  },
+  "CardLost": {
+   "Click": "OilPrice_Click"
+  },
+  "CardReplace": {
+   "Click": "OilPrice_Click"
+  },
+  "BalanceDeal": {
+   "Click": "OilPrice_Click"
+  },
+  "UserInfo": {
+   "Click": "OilPrice_Click"
+  },
+  "SPrint": {
+   "Click": "OilPrice_Click"
+  },
+  "ShiftHand": {
+   "Click": "OilPrice_Click"
+  },
+  "RInventory": {
+   "Click": "OilPrice_Click"
+  },
+  "StationStore": {
+   "Click": "OilPrice_Click"
+  },
+  "OilDataView": {
+   "CellDoubleClick": "OilDataView_CellDoubleClick"
+  },
+  "PrintMenu": {
+   "Click": "PrintMenu_Click"
+  },
+  "SettleMentBtn": {
+   "Click": "SettleMentBtn_Click"
+  },
+  "$this": {
+   "FormClosed": "NormalMainForm_FormClosed",
+   "Load": "NormalMainForm_Load"
+  }
+ }
+}

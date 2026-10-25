@@ -1,0 +1,103 @@
+{
+ "name": "BoxScreenView.BoxPriceChange",
+ "title": "Change oil price",
+ "size": [
+  1220,
+  389
+ ],
+ "controls": [
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1212,
+    351
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Product",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Discount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "Announcement price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column4",
+    "header": "Shipping cost",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "Rate of change",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column3",
+    "header": "Tax cost",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column5",
+    "header": "ValidTime",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OilDataView": {
+   "CellClick": "OilDataView_CellClick"
+  },
+  "$this": {
+   "Load": "BoxPriceChange_Load"
+  }
+ }
+}

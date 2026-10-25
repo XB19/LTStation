@@ -1,0 +1,185 @@
+{
+ "name": "NormalForm.NozDelopy",
+ "title": "Box_Set",
+ "size": [
+  799,
+  448
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    791,
+    350
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    384
+   ],
+   "size": [
+    791,
+    60
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "NozView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    785,
+    330
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaveConfig",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    518,
+    20
+   ],
+   "size": [
+    105,
+    33
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Delete",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    710,
+    20
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "删除",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    629,
+    20
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "NozView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Buad",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Stop",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Parity",
+    "header": "Parity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Communication_Type",
+    "header": "Agreement",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_IntervalTime",
+    "header": "Interval",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Delete": {
+   "Click": "Delete_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  },
+  "NozView": {
+   "CellDoubleClick": "NozView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "NozDelopy_Load"
+  }
+ }
+}

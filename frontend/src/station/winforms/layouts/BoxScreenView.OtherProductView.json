@@ -1,0 +1,752 @@
+{
+ "name": "BoxScreenView.OtherProductView",
+ "title": "PRODUCT STOCK",
+ "size": [
+  1506,
+  884
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1498,
+    846
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "TopSummary",
+   "loc": [
+    3,
+    3
+   ],
+   "size": [
+    293,
+    100
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel3",
+   "type": "SkinPanel",
+   "parent": "TopSummary",
+   "loc": [
+    302,
+    3
+   ],
+   "size": [
+    293,
+    100
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel5",
+   "type": "SkinPanel",
+   "parent": "TopSummary",
+   "loc": [
+    601,
+    3
+   ],
+   "size": [
+    293,
+    100
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "skinPanel7",
+   "type": "SkinPanel",
+   "parent": "TopSummary",
+   "loc": [
+    900,
+    3
+   ],
+   "size": [
+    293,
+    100
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "skinPanel9",
+   "type": "SkinPanel",
+   "parent": "TopSummary",
+   "loc": [
+    1199,
+    3
+   ],
+   "size": [
+    293,
+    100
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GroupSelect",
+   "type": "ComboBox",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    3,
+    3
+   ],
+   "size": [
+    331,
+    46
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "StatueSelect",
+   "type": "ComboBox",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    340,
+    3
+   ],
+   "size": [
+    319,
+    46
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SearchBox",
+   "type": "TextBox",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    665,
+    3
+   ],
+   "size": [
+    703,
+    45
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "SearchBtn",
+   "type": "SkinButton",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    1376,
+    5
+   ],
+   "size": [
+    49,
+    40
+   ],
+   "text": "🔍",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "AddBtn",
+   "type": "SkinButton",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    1435,
+    5
+   ],
+   "size": [
+    49,
+    40
+   ],
+   "text": "+",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "NextBtn",
+   "type": "Button",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    1420,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PageLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    1356,
+    0
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "99/99",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PreBtn",
+   "type": "Button",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    1275,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    207
+   ],
+   "size": [
+    1498,
+    639
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    110
+   ],
+   "size": [
+    1498,
+    97
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TopSummary",
+   "type": "FlowLayoutPanel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1498,
+    110
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    54
+   ],
+   "size": [
+    1498,
+    585
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "flowLayoutPanel1",
+   "type": "FlowLayoutPanel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1498,
+    54
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel4",
+   "loc": [
+    0,
+    54
+   ],
+   "size": [
+    1498,
+    531
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "flowLayoutPanel2",
+   "type": "FlowLayoutPanel",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1498,
+    54
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1498,
+    531
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinPanel1",
+   "loc": [
+    21,
+    58
+   ],
+   "size": [
+    87,
+    24
+   ],
+   "text": "Available",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinPanel1",
+   "loc": [
+    16,
+    9
+   ],
+   "size": [
+    42,
+    49
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel2",
+   "type": "SkinPanel",
+   "parent": "skinPanel1",
+   "loc": [
+    215,
+    30
+   ],
+   "size": [
+    75,
+    67
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinPanel3",
+   "loc": [
+    21,
+    58
+   ],
+   "size": [
+    83,
+    24
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinPanel3",
+   "loc": [
+    16,
+    9
+   ],
+   "size": [
+    42,
+    49
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel4",
+   "type": "SkinPanel",
+   "parent": "skinPanel3",
+   "loc": [
+    215,
+    30
+   ],
+   "size": [
+    75,
+    67
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinPanel5",
+   "loc": [
+    21,
+    58
+   ],
+   "size": [
+    103,
+    24
+   ],
+   "text": "Recycle Bin",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinPanel5",
+   "loc": [
+    16,
+    9
+   ],
+   "size": [
+    42,
+    49
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel6",
+   "type": "SkinPanel",
+   "parent": "skinPanel5",
+   "loc": [
+    215,
+    30
+   ],
+   "size": [
+    75,
+    67
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "skinPanel7",
+   "loc": [
+    21,
+    58
+   ],
+   "size": [
+    115,
+    24
+   ],
+   "text": "Almost gone",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "skinPanel7",
+   "loc": [
+    16,
+    9
+   ],
+   "size": [
+    42,
+    49
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel8",
+   "type": "SkinPanel",
+   "parent": "skinPanel7",
+   "loc": [
+    215,
+    30
+   ],
+   "size": [
+    75,
+    67
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "skinPanel9",
+   "loc": [
+    21,
+    58
+   ],
+   "size": [
+    112,
+    24
+   ],
+   "text": "Out of Stock",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "skinPanel9",
+   "loc": [
+    16,
+    9
+   ],
+   "size": [
+    42,
+    49
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinPanel10",
+   "type": "SkinPanel",
+   "parent": "skinPanel9",
+   "loc": [
+    215,
+    30
+   ],
+   "size": [
+    75,
+    67
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ProductlD",
+    "header": "Product lD",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ProductName",
+    "header": "Product Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Price",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Quantity",
+    "header": "Quantity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Group",
+    "header": "Group",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Status",
+    "header": "Status",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OilDataView": {
+   "CellDoubleClick": "OilDataView_CellDoubleClick"
+  },
+  "ProductUpdateMenu": {
+   "Click": "ProductUpdateMenu_Click"
+  },
+  "NextBtn": {
+   "Click": "PreBtn_Click"
+  },
+  "PreBtn": {
+   "Click": "PreBtn_Click"
+  },
+  "SearchBtn": {
+   "Click": "SearchBtn_Click"
+  },
+  "AddBtn": {
+   "Click": "AddBtn_Click"
+  },
+  "$this": {
+   "Load": "OtherProductView_Load"
+  }
+ }
+}

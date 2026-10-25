@@ -517,84 +517,98 @@
     "name": "dataGridViewTextBoxColumn11",
     "header": "FuelType",
     "visible": true,
+    "prop": "TypeName",
     "width": null
    },
    {
     "name": "TypePPU",
     "header": "Price",
     "visible": true,
+    "prop": "PPU",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn12",
     "header": "TotalVolume",
     "visible": true,
+    "prop": "TotalVolume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn13",
     "header": "TotalAmount",
     "visible": true,
+    "prop": "TotalAmount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn14",
     "header": "EmpVolume",
     "visible": true,
+    "prop": "EmpVolume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn15",
     "header": "EmpAmount",
     "visible": true,
+    "prop": "EmpAmount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn16",
     "header": "UserVolume",
     "visible": true,
+    "prop": "UserVolume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn17",
     "header": "UserAmount",
     "visible": true,
+    "prop": "UserAmount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn18",
     "header": "CreditVolume",
     "visible": true,
+    "prop": "CreditAmount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn19",
     "header": "CreditAmount",
     "visible": true,
+    "prop": "CreditVolume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn22",
     "header": "NotCardVolume",
     "visible": true,
+    "prop": "NotCardVolume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn23",
     "header": "NotCardAmount",
     "visible": true,
+    "prop": "NotCardAmount",
     "width": null
    },
    {
     "name": "CashCouponsV",
     "header": "RepairVoulme",
     "visible": true,
+    "prop": "CashCouponsV",
     "width": null
    },
    {
     "name": "CashCouponsM",
     "header": "RepairAmount",
     "visible": true,
+    "prop": "CashCouponsM",
     "width": null
    }
   ],
@@ -603,54 +617,63 @@
     "name": "NozID",
     "header": "Noz ID",
     "visible": true,
+    "prop": "GunID",
     "width": null
    },
    {
     "name": "OilType",
     "header": "Fuel Type",
     "visible": true,
+    "prop": "OilType",
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Start Pump",
     "visible": true,
+    "prop": "StartVolumeTotal",
     "width": null
    },
    {
     "name": "Volume",
     "header": "End Pump",
     "visible": true,
+    "prop": "EndVolumeTotal",
     "width": null
    },
    {
     "name": "Amount",
     "header": "Total Volume",
     "visible": true,
+    "prop": "SumVolume",
     "width": null
    },
    {
     "name": "TruePay",
     "header": "Error",
     "visible": true,
+    "prop": "Error",
     "width": null
    },
    {
     "name": "TrueTime",
     "header": "Total Amount",
     "visible": true,
+    "prop": "SumAmount",
     "width": null
    },
    {
     "name": "ASN",
     "header": "Start Time",
     "visible": true,
+    "prop": "StartTime",
     "width": null
    },
    {
     "name": "BAL",
     "header": "End Time",
     "visible": true,
+    "prop": "EndTime",
     "width": null
    }
   ],
@@ -659,78 +682,91 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "POSTTC",
     "visible": true,
+    "prop": "Posttc",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "Noz",
     "visible": true,
+    "prop": "GunID",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "EmpNo",
     "visible": true,
+    "prop": "EmpID",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "ASN",
     "visible": true,
+    "prop": "Asn",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn5",
     "header": "Volume",
     "visible": true,
+    "prop": "Volume",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn6",
     "header": "Amount",
     "visible": true,
+    "prop": "Amount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn7",
     "header": "Time",
     "visible": true,
+    "prop": "TrueTime",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn8",
     "header": "Pump",
     "visible": true,
+    "prop": "VolumeTotal",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn9",
     "header": "Fuel Type",
     "visible": true,
+    "prop": "OilType",
     "width": null
    },
    {
     "name": "PPU",
     "header": "Price",
     "visible": true,
+    "prop": "PPU",
     "width": null
    },
    {
     "name": "PayMent",
     "header": "Type",
     "visible": true,
+    "prop": "TType",
     "width": null
    },
    {
     "name": "PosP",
     "header": "Balance",
     "visible": true,
+    "prop": "Balance",
     "width": null
    },
    {
     "name": "POSTTC",
     "header": "Pay Type",
     "visible": true,
+    "prop": "PayMent",
     "width": null
    }
   ],
@@ -739,20 +775,53 @@
     "name": "xxxx",
     "header": "Employee",
     "visible": true,
+    "prop": "Emp",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn21",
     "header": "Total Amount",
     "visible": true,
+    "prop": "Amount",
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn20",
     "header": "Total Volume",
     "visible": true,
+    "prop": "Volume",
     "width": null
    }
   ]
+ },
+ "events": {
+  "ShiftNo": {
+   "SelectedIndexChanged": "ShiftNo_SelectedIndexChanged"
+  },
+  "ShiftDT": {
+   "ValueChanged": "ShiftDT_ValueChanged"
+  },
+  "ShiftClose": {
+   "Click": "ShiftClose_Click"
+  },
+  "NextEnd": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "CurEnd": {
+   "Click": "Next_Click"
+  },
+  "$this": {
+   "FormClosed": "ShiftForm_FormClosed",
+   "Load": "ShiftForm_Load"
+  }
  }
 }

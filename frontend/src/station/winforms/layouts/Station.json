@@ -1,0 +1,578 @@
+{
+ "name": "Station",
+ "title": "Station SoftWare",
+ "size": [
+  1259,
+  838
+ ],
+ "controls": [
+  {
+   "name": "MenuTool",
+   "type": "SkinMenuStrip",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1251,
+    25
+   ],
+   "text": "skinMenuStrip1",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 999
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    59
+   ],
+   "size": [
+    1251,
+    93
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 5,
+   "order": 999
+  },
+  {
+   "name": "LeftPanel",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    152
+   ],
+   "size": [
+    393,
+    659
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "skinPanel4",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    397,
+    152
+   ],
+   "size": [
+    858,
+    659
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "skinPanel2",
+   "type": "SkinPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    811
+   ],
+   "size": [
+    1251,
+    23
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "GunPage",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    858,
+    634
+   ],
+   "text": "Noz Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankPage",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    858,
+    634
+   ],
+   "text": "Noz-Table",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TankShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    858,
+    634
+   ],
+   "text": "Tank Show",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "LoadPro",
+   "type": "SkinProgressIndicator",
+   "parent": "GunPage",
+   "loc": [
+    282,
+    282
+   ],
+   "size": [
+    90,
+    90
+   ],
+   "text": "加载中...",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "LeftPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    393,
+    509
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ToatlEmp",
+   "type": "SkinDataGridView",
+   "parent": "LeftPanel",
+   "loc": [
+    0,
+    509
+   ],
+   "size": [
+    393,
+    150
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NozStatueView",
+   "type": "SkinDataGridView",
+   "parent": "TankPage",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    858,
+    634
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "skinPanel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1251,
+    93
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "statusStrip1",
+   "type": "StatusStrip",
+   "parent": "skinPanel2",
+   "loc": [
+    0,
+    1
+   ],
+   "size": [
+    1251,
+    22
+   ],
+   "text": "statusStrip1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GunAndTankTab",
+   "type": "SkinTabControl",
+   "parent": "skinPanel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    858,
+    659
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": "ID",
+    "width": null
+   },
+   {
+    "name": "Deal",
+    "header": "Valid",
+    "visible": true,
+    "prop": "PayMentDealID",
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Noz",
+    "visible": true,
+    "prop": "GunID",
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Volume",
+    "visible": true,
+    "prop": "Volume",
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Amount",
+    "visible": true,
+    "prop": "TruePay",
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Time",
+    "visible": true,
+    "prop": "TrueTime",
+    "width": null
+   }
+  ],
+  "ToatlEmp": [
+   {
+    "name": "Emp",
+    "header": "Emp",
+    "visible": true,
+    "prop": "EmpName",
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Total Volume",
+    "visible": true,
+    "prop": "TotalVolume",
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "Total Amount",
+    "visible": true,
+    "prop": "TotalAmount",
+    "width": null
+   }
+  ],
+  "NozStatueView": [
+   {
+    "name": "NozID",
+    "header": "NozID",
+    "visible": true,
+    "prop": "GunID",
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Last Time",
+    "visible": true,
+    "prop": "LastTime",
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Volume Total",
+    "visible": true,
+    "prop": "VolumeTotal",
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Last Amount",
+    "visible": true,
+    "prop": "LastAmount",
+    "width": null
+   },
+   {
+    "name": "Amount",
+    "header": "Last Volume",
+    "visible": true,
+    "prop": "LastVolume",
+    "width": null
+   },
+   {
+    "name": "TruePay",
+    "header": "Fuel Type",
+    "visible": true,
+    "prop": "OilType",
+    "width": null
+   },
+   {
+    "name": "TrueTime",
+    "header": "Price",
+    "visible": true,
+    "prop": "PPU",
+    "width": null
+   },
+   {
+    "name": "Statue",
+    "header": "Statue",
+    "visible": true,
+    "prop": "Statue",
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OilPrice": {
+   "Click": "CardMake_Click"
+  },
+  "StationPrint": {
+   "Click": "CardMake_Click"
+  },
+  "CardMake": {
+   "Click": "CardMake_Click"
+  },
+  "CardUpDate": {
+   "Click": "CardMake_Click"
+  },
+  "CardLost": {
+   "Click": "CardMake_Click"
+  },
+  "CardChange": {
+   "Click": "CardMake_Click"
+  },
+  "Deposit": {
+   "Click": "CardMake_Click"
+  },
+  "TransactionSearch": {
+   "Click": "CardMake_Click"
+  },
+  "EmpManager": {
+   "Click": "CardMake_Click"
+  },
+  "Shift": {
+   "Click": "CardMake_Click"
+  },
+  "DailyReport": {
+   "Click": "CardMake_Click"
+  },
+  "MonthReport": {
+   "Click": "CardMake_Click"
+  },
+  "CardSearch": {
+   "Click": "CardMake_Click"
+  },
+  "ScoreDeal": {
+   "Click": "CardMake_Click"
+  },
+  "DisCount": {
+   "Click": "CardMake_Click"
+  },
+  "KeyManagement": {
+   "Click": "CardMake_Click"
+  },
+  "PSAMMake": {
+   "Click": "CardMake_Click"
+  },
+  "BusinessReport": {
+   "Click": "CardMake_Click"
+  },
+  "PasswodLost": {
+   "Click": "CardMake_Click"
+  },
+  "AuthorityManagement": {
+   "Click": "CardMake_Click"
+  },
+  "ShiftCancel": {
+   "Click": "CardMake_Click"
+  },
+  "OilDataView": {
+   "CellDoubleClick": "OilDataView_CellDoubleClick"
+  },
+  "UpdateTime": {
+   "Tick": "UpdateTime_Tick"
+  },
+  "BaseMessage": {
+   "Click": "BaseMessage_Click"
+  },
+  "SuperviseItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "PortItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "TankItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "TankVolumeItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "TankPortItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "NozItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "ShiftItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "EmpLoginItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "ExitItem": {
+   "Click": "BaseMessage_Click"
+  },
+  "ShiftReport": {
+   "Click": "BaseMessage_Click"
+  },
+  "DailyR": {
+   "Click": "BaseMessage_Click"
+  },
+  "MonthR": {
+   "Click": "BaseMessage_Click"
+  },
+  "TransactionR": {
+   "Click": "BaseMessage_Click"
+  },
+  "StockManager": {
+   "Click": "BaseMessage_Click"
+  },
+  "CardMessage": {
+   "Click": "BaseMessage_Click"
+  },
+  "GetOilTransaction": {
+   "Click": "GetOilTransaction_Click"
+  },
+  "Relieve": {
+   "Click": "GetOilTransaction_Click"
+  },
+  "AppItem": {
+   "Click": "DisplayPay_Click"
+  },
+  "RFIDItem": {
+   "Click": "DisplayPay_Click"
+  },
+  "PriceDisplay": {
+   "Click": "DisplayPay_Click"
+  },
+  "DisplayPay": {
+   "Click": "DisplayPay_Click"
+  },
+  "RegisiterValid": {
+   "Click": "BaseMessage_Click"
+  },
+  "VirtueScore": {
+   "Click": "BaseMessage_Click"
+  },
+  "CarNoManager": {
+   "Click": "DisplayPay_Click"
+  },
+  "CarNoVerify": {
+   "Click": "DisplayPay_Click"
+  },
+  "SurveillanceCamera": {
+   "Click": "DisplayPay_Click"
+  },
+  "OtherSet": {
+   "Click": "BaseMessage_Click"
+  },
+  "LogSet": {
+   "Click": "BaseMessage_Click"
+  },
+  "UserList": {
+   "Click": "UserList_Click"
+  },
+  "ChineseLanguage": {
+   "Click": "ChineseLanguage_Click"
+  },
+  "EnglishLanguage": {
+   "Click": "ChineseLanguage_Click"
+  },
+  "$this": {
+   "FormClosing": "Station_FormClosing",
+   "Load": "Station_Load"
+  }
+ }
+}

@@ -103,32 +103,51 @@
     "name": "ID",
     "header": "Shift No",
     "visible": true,
+    "prop": "ID",
     "width": null
    },
    {
     "name": "OilType",
     "header": "Shift Name",
     "visible": true,
+    "prop": "Name",
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Start Time",
     "visible": true,
+    "prop": "StartTime",
     "width": null
    },
    {
     "name": "EndTime",
     "header": "End Time",
     "visible": true,
+    "prop": "EndTime",
     "width": null
    },
    {
     "name": "Scope",
     "header": "Interval(minutes)",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "ShiftItemView": {
+   "CellEndEdit": "ShiftItemView_CellEndEdit"
+  },
+  "Delete": {
+   "Click": "Delete_Click"
+  },
+  "AddShift": {
+   "Click": "AddShift_Click"
+  },
+  "$this": {
+   "Load": "ShiftItemForm_Load"
+  }
  }
 }

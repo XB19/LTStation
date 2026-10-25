@@ -1,0 +1,235 @@
+{
+ "name": "KeyMainBoard",
+ "title": "",
+ "size": [
+  414,
+  233
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    406,
+    195
+   ],
+   "text": "Seed Code Information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    14,
+    151
+   ],
+   "size": [
+    365,
+    12
+   ],
+   "text": "All keys length should be 16",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinButton2",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    324,
+    166
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Cancle",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    214,
+    166
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "Update",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "SeedBnew",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    214,
+    115
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    212,
+    91
+   ],
+   "size": [
+    119,
+    12
+   ],
+   "text": "New Password B",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "SeedAnew",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    214,
+    41
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    212,
+    17
+   ],
+   "size": [
+    119,
+    12
+   ],
+   "text": "New Password A",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "SeedBold",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    115
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    91
+   ],
+   "size": [
+    119,
+    12
+   ],
+   "text": "Old Password B",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "SeedAold",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    41
+   ],
+   "size": [
+    185,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    17
+   ],
+   "size": [
+    119,
+    12
+   ],
+   "text": "Old Password A",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "KeyMainBoard_Load"
+  }
+ }
+}

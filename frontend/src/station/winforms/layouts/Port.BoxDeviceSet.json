@@ -1,0 +1,292 @@
+{
+ "name": "Port.BoxDeviceSet",
+ "title": "Device Message",
+ "size": [
+  344,
+  365
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    336,
+    327
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "DeleteBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    215,
+    279
+   ],
+   "size": [
+    107,
+    37
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    27,
+    279
+   ],
+   "size": [
+    107,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DeviceParitySelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    239
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    242
+   ],
+   "size": [
+    70,
+    24
+   ],
+   "text": "Device Parity:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "DeviceStopSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    195
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    198
+   ],
+   "size": [
+    70,
+    24
+   ],
+   "text": "Device Stop:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "DeviceIntervalSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    151
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    154
+   ],
+   "size": [
+    90,
+    24
+   ],
+   "text": "Device Time:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "DeviceBuadSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    107
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    110
+   ],
+   "size": [
+    70,
+    24
+   ],
+   "text": "Device Buad:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "DeviceAddress",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    66
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    69
+   ],
+   "size": [
+    50,
+    24
+   ],
+   "text": "Device Address:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "DeviceTypeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    101,
+    26
+   ],
+   "size": [
+    221,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    29
+   ],
+   "size": [
+    90,
+    24
+   ],
+   "text": "Device Select:",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  }
+ ],
+ "columns": {},
+ "events": {
+  "DeleteBtn": {
+   "Click": "DeleteBtn_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "BoxDeviceSet_Load"
+  }
+ }
+}

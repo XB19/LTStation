@@ -1,0 +1,109 @@
+{
+ "name": "Register",
+ "title": "Registration Information",
+ "size": [
+  366,
+  179
+ ],
+ "controls": [
+  {
+   "name": "Info",
+   "type": "SkinTextBox",
+   "parent": "$this",
+   "loc": [
+    96,
+    45
+   ],
+   "size": [
+    230,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    25,
+    53
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Activation Code:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 999
+  },
+  {
+   "name": "ActiveInfo",
+   "type": "SkinTextBox",
+   "parent": "$this",
+   "loc": [
+    96,
+    90
+   ],
+   "size": [
+    230,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    25,
+    95
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Verification Code:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    128,
+    131
+   ],
+   "size": [
+    138,
+    41
+   ],
+   "text": "SAVE",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "Register_Load"
+  }
+ }
+}

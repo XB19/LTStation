@@ -1,0 +1,127 @@
+{
+ "name": "NormalForm.ExtendMachine",
+ "title": "External device connection",
+ "size": [
+  610,
+  87
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    602,
+    49
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Save",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    510,
+    7
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    254,
+    10
+   ],
+   "size": [
+    90,
+    23
+   ],
+   "text": "Port",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SerialPortCombox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    350,
+    7
+   ],
+   "size": [
+    149,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    10
+   ],
+   "size": [
+    90,
+    23
+   ],
+   "text": "Device",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "MachineTypeCombox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    99,
+    7
+   ],
+   "size": [
+    149,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Save": {
+   "Click": "Save_Click"
+  },
+  "$this": {
+   "Load": "ExtendMachine_Load"
+  }
+ }
+}

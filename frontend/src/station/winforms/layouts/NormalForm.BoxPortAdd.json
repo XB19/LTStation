@@ -1,0 +1,325 @@
+{
+ "name": "NormalForm.BoxPortAdd",
+ "title": "Box_Port_Set",
+ "size": [
+  268,
+  365
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    260,
+    327
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "DeviceTypeAdd",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    241
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    242
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Device",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ParitySelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    130
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "StopBitSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    92
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "BuadSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    54
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    142,
+    276
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    276
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "IntervalTime",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    206
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    207
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Interval",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "CommunicationSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    168
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    169
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Agreement",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    131
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Parity",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    93
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Stop",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    55
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Buad",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "PortSelect",
+   "type": "SkinComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    97,
+    16
+   ],
+   "size": [
+    150,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    17
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Port",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  }
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "name": "NormalForm.BoxCommunication",
+ "title": "Communication box configuration",
+ "size": [
+  512,
+  490
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    504,
+    452
+   ],
+   "text": "Communication box configuration",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "BoxPortView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    5,
+    26
+   ],
+   "size": [
+    494,
+    420
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "BoxPortView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "Box Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Box Code",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Box Mode",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "GradeName",
+    "header": "Box Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "BoxPortView": {
+   "CellDoubleClick": "BoxPortView_CellDoubleClick"
+  },
+  "BoxAdd": {
+   "Click": "BoxAdd_Click"
+  },
+  "$this": {
+   "Load": "BoxCommunication_Load"
+  }
+ }
+}

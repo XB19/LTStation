@@ -373,32 +373,51 @@
     "name": "dataGridViewTextBoxColumn1",
     "header": "Card No",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn2",
     "header": "User Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "CardOperate",
     "header": "Card Statue",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn3",
     "header": "Phone",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "dataGridViewTextBoxColumn4",
     "header": "Car No",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "Page": {
+   "TextChanged": "Page_TextChanged"
+  },
+  "EmpReadButton": {
+   "Click": "EmpReadButton_Click"
+  }
  }
 }

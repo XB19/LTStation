@@ -1,0 +1,446 @@
+{
+ "name": "NormalForm.HandShiftReport",
+ "title": "Hand Shift",
+ "size": [
+  1218,
+  797
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1210,
+    759
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "SumAmount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    699,
+    27
+   ],
+   "size": [
+    157,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    598,
+    30
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Sum Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SumVolume",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    452,
+    27
+   ],
+   "size": [
+    140,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    351,
+    30
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Sum Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "OnDutyBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    923,
+    25
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "Onduty",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "OffDutyBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1018,
+    25
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "OffDuty",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "HandDutyBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1113,
+    25
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "Report",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "HandShiftBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    149,
+    27
+   ],
+   "size": [
+    196,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    30
+   ],
+   "size": [
+    135,
+    23
+   ],
+   "text": "Currnet Hand Shift:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "TotalSumView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    1200,
+    153
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    5,
+    262
+   ],
+   "size": [
+    1200,
+    233
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ShiftDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    1200,
+    232
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    69
+   ],
+   "size": [
+    1210,
+    501
+   ],
+   "text": "Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    570
+   ],
+   "size": [
+    1210,
+    189
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1210,
+    69
+   ],
+   "text": "Summary",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "TankDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "Tank",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "Starting stock",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "End of Stock",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "Sales volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "Quantity in storage",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn9",
+    "header": "Deviation",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "ShiftDataView": [
+   {
+    "name": "CardType",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Count",
+    "header": "Grade",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilCount",
+    "header": "Count",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "Start Volume Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EndVolumeTotal",
+    "header": "End Volume Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftVolumeTotal",
+    "header": "Sum Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftAmountTotal",
+    "header": "Sum Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftError",
+    "header": "Error",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "TotalSumView": [
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Sum Volume Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Sum Amount Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OnDutyBtn": {
+   "Click": "OnDutyBtn_Click"
+  },
+  "OffDutyBtn": {
+   "Click": "OffDutyBtn_Click"
+  },
+  "HandDutyBtn": {
+   "Click": "HandDutyBtn_Click"
+  },
+  "$this": {
+   "Load": "HandShiftReport_Load"
+  }
+ }
+}

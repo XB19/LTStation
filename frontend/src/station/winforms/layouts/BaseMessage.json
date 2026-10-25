@@ -349,5 +349,17 @@
    "order": 17
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "CreateStation": {
+   "Click": "CreateStation_Click",
+   "MouseEnter": "CreateStation_MouseEnter"
+  },
+  "NextButton": {
+   "Click": "NextButton_Click"
+  },
+  "$this": {
+   "Load": "BaseMessage_Load"
+  }
+ }
 }

@@ -619,5 +619,22 @@
    "order": 2
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "ShiftClose": {
+   "Click": "ShiftClose_Click"
+  },
+  "AddAuthority": {
+   "Click": "AddAuthority_Click"
+  },
+  "AuthoritySelect": {
+   "SelectedIndexChanged": "AuthoritySelect_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "Authority_Load"
+  }
+ }
 }

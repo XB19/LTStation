@@ -1,0 +1,425 @@
+{
+ "name": "NormalForm.HandReport",
+ "title": "Hand Shift Report",
+ "size": [
+  1218,
+  797
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1210,
+    101
+   ],
+   "text": "Summary",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    135
+   ],
+   "size": [
+    1210,
+    469
+   ],
+   "text": "Data",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    604
+   ],
+   "size": [
+    1210,
+    189
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "SumAmount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    707,
+    27
+   ],
+   "size": [
+    157,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    606,
+    30
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Sum Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SumVolume",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    460,
+    27
+   ],
+   "size": [
+    140,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    359,
+    30
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Sum Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "TimeLine",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    109,
+    67
+   ],
+   "size": [
+    0,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": false,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    67
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Shift Time:",
+   "dock": null,
+   "visible": false,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "HandShiftBox",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    149,
+    27
+   ],
+   "size": [
+    204,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "HandDutyBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1113,
+    25
+   ],
+   "size": [
+    89,
+    33
+   ],
+   "text": "Export",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    30
+   ],
+   "size": [
+    135,
+    23
+   ],
+   "text": "Current Hand Shift:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "TotalSumView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    1200,
+    153
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    5,
+    262
+   ],
+   "size": [
+    1200,
+    201
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ShiftDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    5,
+    30
+   ],
+   "size": [
+    1200,
+    232
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "ShiftDataView": [
+   {
+    "name": "CardType",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Count",
+    "header": "Grade",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalVolume",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilCount",
+    "header": "Count",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TotalAmount",
+    "header": "Start Volume Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "EndVolumeTotal",
+    "header": "End Volume Total",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftVolumeTotal",
+    "header": "Sum Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftAmountTotal",
+    "header": "Sum Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ShiftError",
+    "header": "Error",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "TotalSumView": [
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Sum Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Sum Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "TankDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "储罐",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn5",
+    "header": "起始库存",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn6",
+    "header": "截止库存",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn7",
+    "header": "销量",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn8",
+    "header": "入库量",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn9",
+    "header": "偏差",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "HandShiftBox": {
+   "SelectedIndexChanged": "HandShiftBox_SelectedIndexChanged"
+  },
+  "HandDutyBtn": {
+   "Click": "HandDutyBtn_Click"
+  },
+  "$this": {
+   "Load": "HandReport_Load"
+  }
+ }
+}

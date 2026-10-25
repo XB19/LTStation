@@ -169,5 +169,16 @@
    "order": 7
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "DeleteButton": {
+   "Click": "DeleteButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "AddDisCountForm_Load"
+  }
+ }
 }

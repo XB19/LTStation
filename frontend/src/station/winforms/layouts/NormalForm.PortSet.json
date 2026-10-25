@@ -1,0 +1,188 @@
+{
+ "name": "NormalForm.PortSet",
+ "title": "Port Setting",
+ "size": [
+  1223,
+  394
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1215,
+    356
+   ],
+   "text": "Port List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ComConfigView",
+   "type": "SkinDataGridView",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    24
+   ],
+   "size": [
+    1211,
+    291
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinPanel1",
+   "type": "SkinPanel",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    2,
+    315
+   ],
+   "size": [
+    1211,
+    39
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Delopy",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    971,
+    3
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Setting",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Delete",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    1133,
+    3
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "skinPanel1",
+   "loc": [
+    1052,
+    3
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "ComConfigView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Buad",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Data",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "HighOil",
+    "header": "Stop",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Parity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "SerialType",
+    "header": "Port Type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "ComConfigView": {
+   "CellDoubleClick": "ComConfigView_CellDoubleClick"
+  },
+  "Delopy": {
+   "Click": "Delopy_Click"
+  },
+  "Delete": {
+   "Click": "Delete_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  },
+  "$this": {
+   "Load": "PortSet_Load"
+  }
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "name": "NormalForm.BoxPortSet",
+ "title": "Box_Setting",
+ "size": [
+  1056,
+  450
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1048,
+    357
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    391
+   ],
+   "size": [
+    1048,
+    55
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "DowLoad",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    2,
+    10
+   ],
+   "size": [
+    94,
+    33
+   ],
+   "text": "Dowload",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Box_Noz_Set",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    889,
+    10
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "NozSet",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    970,
+    10
+   ],
+   "size": [
+    75,
+    33
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BoxPortView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1042,
+    337
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "BoxPortView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Buad",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Stop",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Parity",
+    "header": "Parity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Communication_Type",
+    "header": "Agreement",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceType",
+    "header": "Device Type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_IntervalTime",
+    "header": "Interval",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "DowLoad": {
+   "Click": "DowLoad_Click"
+  },
+  "Box_Noz_Set": {
+   "Click": "Box_Noz_Set_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  },
+  "BoxPortView": {
+   "CellDoubleClick": "BoxPortView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "BoxPortSet_Load"
+  }
+ }
+}

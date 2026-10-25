@@ -1,0 +1,595 @@
+{
+ "name": "NormalForm.NormalTransaction",
+ "title": "Transaction",
+ "size": [
+  1563,
+  691
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1555,
+    59
+   ],
+   "text": "Query",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    93
+   ],
+   "size": [
+    1555,
+    530
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    623
+   ],
+   "size": [
+    1555,
+    64
+   ],
+   "text": "Summary",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "EnergyCheck",
+   "type": "CheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    669,
+    26
+   ],
+   "size": [
+    15,
+    14
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NozCheck",
+   "type": "CheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    492,
+    26
+   ],
+   "size": [
+    15,
+    14
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "EnergySelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    755,
+    23
+   ],
+   "size": [
+    100,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    690,
+    26
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Grade:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "NozSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    554,
+    23
+   ],
+   "size": [
+    100,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    513,
+    26
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Noz:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "Export",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1476,
+    19
+   ],
+   "size": [
+    73,
+    29
+   ],
+   "text": "Export",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1397,
+    19
+   ],
+   "size": [
+    73,
+    29
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "DTEnd",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    324,
+    23
+   ],
+   "size": [
+    154,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    259,
+    29
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "End Time:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "DTStart",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    87,
+    23
+   ],
+   "size": [
+    154,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    22,
+    29
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Start Time:",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    1520,
+    35
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    1467,
+    35
+   ],
+   "size": [
+    47,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    1432,
+    35
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PageLabel",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    1474,
+    17
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "VolumeSum",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    276,
+    24
+   ],
+   "size": [
+    118,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    211,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Summary Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "AmountSum",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    87,
+    24
+   ],
+   "size": [
+    118,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    22,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "Summary Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1549,
+    510
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Noz",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Grade",
+    "header": "Grade",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardNo",
+    "header": "CardNo",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardBalance",
+    "header": "Card Balance",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Price",
+    "header": "Price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "AmountTotal",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "HighOil",
+    "header": "VolumeTotal",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "RealAmount",
+    "header": "Real Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DiscountValue",
+    "header": "Discount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "HandShift",
+    "header": "Hand Shift",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardName",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardNumber",
+    "header": "Car Number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardGroup",
+    "header": "Group",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Mileage",
+    "header": "Mileage",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Export": {
+   "Click": "Export_Click"
+  },
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "TransactionView": {
+   "CellDoubleClick": "TransactionView_CellDoubleClick"
+  },
+  "DeviceTransactionPrint": {
+   "Click": "DeviceTransactionPrint_Click"
+  }
+ }
+}

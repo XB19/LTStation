@@ -1,0 +1,88 @@
+{
+ "name": "NormalForm.OverCountForm",
+ "title": "Over Control",
+ "size": [
+  219,
+  120
+ ],
+ "controls": [
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    6,
+    28
+   ],
+   "size": [
+    73,
+    19
+   ],
+   "text": "Count:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "OverCountText",
+   "type": "TextBox",
+   "parent": "$this",
+   "loc": [
+    9,
+    50
+   ],
+   "size": [
+    204,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    9,
+    81
+   ],
+   "size": [
+    107,
+    32
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "Cancle",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    122,
+    81
+   ],
+   "size": [
+    91,
+    32
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  }
+ }
+}

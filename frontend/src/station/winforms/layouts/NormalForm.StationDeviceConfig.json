@@ -1,0 +1,110 @@
+{
+ "name": "NormalForm.StationDeviceConfig",
+ "title": "Site payment device management",
+ "size": [
+  898,
+  629
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    890,
+    591
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "DeviceDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    890,
+    591
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "DeviceDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "RFIDNo",
+    "header": "Equipment type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "StationName",
+    "header": "Device Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "MachinePay",
+    "header": "Payment type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "DeviceAddress",
+    "header": "Correspondence Address",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "SerialPort",
+    "header": "Serial port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "BindNozID",
+    "header": "Bind the Noz number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "DeviceDataView": {
+   "CellDoubleClick": "DeviceDataView_CellDoubleClick"
+  },
+  "AddItemBtn": {
+   "Click": "AddItemBtn_Click"
+  },
+  "$this": {
+   "Load": "StationDeviceConfig_Load"
+  }
+ }
+}

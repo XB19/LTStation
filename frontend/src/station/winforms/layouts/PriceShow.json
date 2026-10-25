@@ -1,0 +1,196 @@
+{
+ "name": "PriceShow",
+ "title": "PriceSet",
+ "size": [
+  276,
+  239
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    32
+   ],
+   "size": [
+    268,
+    203
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NewPrice",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    74,
+    96
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NowPrice",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    74,
+    51
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GradeSelect",
+   "type": "SkinComboBox",
+   "parent": "panel1",
+   "loc": [
+    74,
+    9
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ValidTime",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    74,
+    137
+   ],
+   "size": [
+    185,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    143
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Valid Time",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    99
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "New Price",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    74,
+    163
+   ],
+   "size": [
+    102,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    54
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Current Price",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    3,
+    12
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "OilType",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  }
+ }
+}

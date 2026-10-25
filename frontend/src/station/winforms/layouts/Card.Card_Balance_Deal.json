@@ -1,0 +1,343 @@
+{
+ "name": "Card.Card_Balance_Deal",
+ "title": "Card Balance Deal",
+ "size": [
+  404,
+  426
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    396,
+    153
+   ],
+   "text": "Card Message",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    187
+   ],
+   "size": [
+    396,
+    235
+   ],
+   "text": "Balance",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "FactoryBox",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    139,
+    28
+   ],
+   "size": [
+    250,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    14,
+    31
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Card Factory:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    139,
+    107
+   ],
+   "size": [
+    251,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    14,
+    110
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "CardNoBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    139,
+    70
+   ],
+   "size": [
+    251,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    14,
+    73
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Card:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    14,
+    107
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Score:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ScoreBal",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    120,
+    104
+   ],
+   "size": [
+    269,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CardReadBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    18,
+    187
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Card Read",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    265,
+    187
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    120,
+    141
+   ],
+   "size": [
+    269,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    14,
+    144
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "OperateBox",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    120,
+    30
+   ],
+   "size": [
+    269,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    14,
+    33
+   ],
+   "size": [
+    55,
+    23
+   ],
+   "text": "Operate:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "BalanceBox",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    120,
+    67
+   ],
+   "size": [
+    269,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    14,
+    70
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CardReadBtn": {
+   "Click": "CardReadBtn_Click"
+  },
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  }
+ }
+}

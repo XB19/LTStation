@@ -139,32 +139,48 @@
     "name": "TankID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Grade Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Height",
     "header": "Tank Height",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Tank Volume",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Current Volume",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "DirectButton": {
+   "Click": "DirectButton_Click"
+  },
+  "TransactionView": {
+   "DoubleClick": "TransactionView_DoubleClick"
+  },
+  "$this": {
+   "Load": "StockManager_Load"
+  }
  }
 }

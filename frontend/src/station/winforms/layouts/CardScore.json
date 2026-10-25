@@ -265,26 +265,44 @@
     "name": "ID",
     "header": "Card Number",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "User Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Phone",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Score",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "NextBtn": {
+   "Click": "NextBtn_Click"
+  },
+  "PreBtn": {
+   "Click": "NextBtn_Click"
+  },
+  "TransactionView": {
+   "CellDoubleClick": "TransactionView_CellDoubleClick_1"
+  }
  }
 }

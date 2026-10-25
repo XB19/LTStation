@@ -1,0 +1,1055 @@
+{
+ "name": "BoxScreenView.CustomerInfo",
+ "title": "Customer Info - Personal Credit",
+ "size": [
+  1023,
+  669
+ ],
+ "controls": [
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    440,
+    504
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    444,
+    34
+   ],
+   "size": [
+    575,
+    504
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    538
+   ],
+   "size": [
+    1015,
+    127
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "textBox13",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    364,
+    378
+   ],
+   "size": [
+    209,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PhoneBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    138,
+    444
+   ],
+   "size": [
+    435,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    2,
+    446
+   ],
+   "size": [
+    129,
+    19
+   ],
+   "text": "Telephone number",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "NoteBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    138,
+    410
+   ],
+   "size": [
+    435,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    91,
+    413
+   ],
+   "size": [
+    40,
+    19
+   ],
+   "text": "Note",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "AmountToBePaidBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    377
+   ],
+   "size": [
+    220,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    3,
+    380
+   ],
+   "size": [
+    128,
+    19
+   ],
+   "text": "Amount to be Paid",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "CreditAmountLimitBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    343
+   ],
+   "size": [
+    220,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    -3,
+    346
+   ],
+   "size": [
+    134,
+    19
+   ],
+   "text": "Credit amount limit",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "StatusBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    139,
+    309
+   ],
+   "size": [
+    220,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    83,
+    312
+   ],
+   "size": [
+    49,
+    19
+   ],
+   "text": "Status",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "AccountNameBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    276
+   ],
+   "size": [
+    435,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    30,
+    279
+   ],
+   "size": [
+    101,
+    19
+   ],
+   "text": "Account name",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "AccountNumberBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    242
+   ],
+   "size": [
+    220,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    17,
+    245
+   ],
+   "size": [
+    114,
+    19
+   ],
+   "text": "Account number",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "CustomerPage",
+   "loc": [
+    17,
+    145
+   ],
+   "size": [
+    340,
+    90
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "CustomerPage",
+   "loc": [
+    363,
+    78
+   ],
+   "size": [
+    209,
+    190
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "CarNumberBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    112
+   ],
+   "size": [
+    220,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    13,
+    115
+   ],
+   "size": [
+    118,
+    19
+   ],
+   "text": "Car license plate",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "CardHolderNameBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    138,
+    44
+   ],
+   "size": [
+    435,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    7,
+    47
+   ],
+   "size": [
+    124,
+    19
+   ],
+   "text": "Card holder name",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "CardNumberBox",
+   "type": "TextBox",
+   "parent": "CustomerPage",
+   "loc": [
+    137,
+    10
+   ],
+   "size": [
+    435,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "CustomerPage",
+   "loc": [
+    39,
+    13
+   ],
+   "size": [
+    92,
+    19
+   ],
+   "text": "Card number",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "CustomerPage",
+   "type": "SkinTabPage",
+   "parent": "CustomerTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    575,
+    479
+   ],
+   "text": "Customer information",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QuotaShow",
+   "type": "SkinTabPage",
+   "parent": "CustomerTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    575,
+    479
+   ],
+   "text": "Quota",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PointShow",
+   "type": "SkinTabPage",
+   "parent": "CustomerTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    575,
+    479
+   ],
+   "text": "Point",
+   "dock": "fill",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "skinDataGridView1",
+   "type": "SkinDataGridView",
+   "parent": "QuotaShow",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    575,
+    336
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "QuotaShow",
+   "loc": [
+    0,
+    336
+   ],
+   "size": [
+    575,
+    143
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    756,
+    74
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "OK",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    884,
+    74
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "textBox24",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    803,
+    41
+   ],
+   "size": [
+    201,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "textBox23",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    804,
+    8
+   ],
+   "size": [
+    200,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "textBox22",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    232,
+    74
+   ],
+   "size": [
+    201,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "textBox21",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    232,
+    41
+   ],
+   "size": [
+    201,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "textBox20",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    232,
+    8
+   ],
+   "size": [
+    201,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    38
+   ],
+   "size": [
+    440,
+    466
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    440,
+    38
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CustomerTab",
+   "type": "SkinTabControl",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    575,
+    504
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    232,
+    5
+   ],
+   "size": [
+    201,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "comboBox1",
+   "type": "ComboBox",
+   "parent": "panel4",
+   "loc": [
+    4,
+    5
+   ],
+   "size": [
+    221,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "textBox18",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    419,
+    85
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "textBox19",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    136,
+    85
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    48,
+    88
+   ],
+   "size": [
+    82,
+    19
+   ],
+   "text": "Daily today",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    307,
+    88
+   ],
+   "size": [
+    106,
+    19
+   ],
+   "text": "Amount money",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "textBox16",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    419,
+    52
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "textBox17",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    136,
+    52
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    27,
+    55
+   ],
+   "size": [
+    103,
+    19
+   ],
+   "text": "Monthly quota",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    307,
+    55
+   ],
+   "size": [
+    106,
+    19
+   ],
+   "text": "Amount money",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "textBox14",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    419,
+    19
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "textBox15",
+   "type": "TextBox",
+   "parent": "panel5",
+   "loc": [
+    136,
+    19
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    47,
+    22
+   ],
+   "size": [
+    83,
+    19
+   ],
+   "text": "Daily quota",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    307,
+    22
+   ],
+   "size": [
+    106,
+    19
+   ],
+   "text": "Amount money",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Account Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Telephone number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "skinDataGridView1": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Group of product",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "CancelBtn": {
+   "Click": "CancelBtn_Click"
+  },
+  "OilDataView": {
+   "CellClick": "OilDataView_CellClick"
+  },
+  "$this": {
+   "Load": "CustomerInfo_Load"
+  }
+ }
+}

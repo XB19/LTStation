@@ -1,0 +1,146 @@
+{
+ "name": "PriceDeviceSet",
+ "title": "Price Device",
+ "size": [
+  554,
+  379
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    546,
+    341
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PriceConfigView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    540,
+    270
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    287
+   ],
+   "size": [
+    540,
+    51
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "DeviceDelete",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    459,
+    15
+   ],
+   "size": [
+    75,
+    30
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Add",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    361,
+    15
+   ],
+   "size": [
+    75,
+    30
+   ],
+   "text": "Add",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "PriceConfigView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "PriceName",
+    "header": "Name",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "TankType",
+    "header": "Type",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "PriceConfigView": {
+   "CellDoubleClick": "PriceConfigView_CellDoubleClick"
+  },
+  "DeviceDelete": {
+   "Click": "DeviceDelete_Click"
+  },
+  "Add": {
+   "Click": "Add_Click"
+  },
+  "$this": {
+   "Load": "PriceDeviceSet_Load"
+  }
+ }
+}

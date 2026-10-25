@@ -1,0 +1,354 @@
+{
+ "name": "BoxScreenView.InternalUserView",
+ "title": "Sale Record",
+ "size": [
+  1552,
+  663
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1544,
+    64
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    98
+   ],
+   "size": [
+    1544,
+    561
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GunPage",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1544,
+    536
+   ],
+   "text": "List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TankShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1544,
+    536
+   ],
+   "text": "Receipt of total",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "GunPage",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1544,
+    536
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ShiftSelectCom",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    690,
+    13
+   ],
+   "size": [
+    382,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    633,
+    16
+   ],
+   "size": [
+    51,
+    26
+   ],
+   "text": "Shift",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "GradeSelectCom",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    417,
+    13
+   ],
+   "size": [
+    210,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    302,
+    16
+   ],
+   "size": [
+    109,
+    26
+   ],
+   "text": "GradeType:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "NozSelectCom",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    86,
+    13
+   ],
+   "size": [
+    210,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    17,
+    16
+   ],
+   "size": [
+    63,
+    26
+   ],
+   "text": "NozID",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    1292,
+    6
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    1420,
+    6
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Close",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "GunAndTankTab",
+   "type": "SkinTabControl",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1544,
+    561
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "BillOrder",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CreateTime",
+    "header": "CreateTime",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Transaction number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Product",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "PumpID",
+    "header": "PumpID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "Nozzle",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column3",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column4",
+    "header": "Unit price",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column5",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column7",
+    "header": "Payment method",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OpenAllPumpBtn": {
+   "Click": "OpenAllPumpBtn_Click"
+  },
+  "skinButton1": {
+   "Click": "skinButton1_Click"
+  },
+  "$this": {
+   "Load": "InternalUserView_Load"
+  }
+ }
+}

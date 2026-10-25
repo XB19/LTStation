@@ -1,0 +1,73 @@
+{
+ "name": "TankPortMonitor",
+ "title": "ATG Setting",
+ "size": [
+  386,
+  74
+ ],
+ "controls": [
+  {
+   "name": "SaveBtn",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    253,
+    32
+   ],
+   "size": [
+    96,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "TankPort",
+   "type": "ComboBox",
+   "parent": "$this",
+   "loc": [
+    88,
+    37
+   ],
+   "size": [
+    121,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    29,
+    40
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Port:",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveBtn": {
+   "Click": "SaveBtn_Click"
+  },
+  "$this": {
+   "Load": "TankPortMonitor_Load"
+  }
+ }
+}

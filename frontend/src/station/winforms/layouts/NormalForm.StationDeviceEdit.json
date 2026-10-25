@@ -1,0 +1,382 @@
+{
+ "name": "NormalForm.StationDeviceEdit",
+ "title": "Site payment device management",
+ "size": [
+  737,
+  385
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    729,
+    347
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PINBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    489,
+    101
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    377,
+    104
+   ],
+   "size": [
+    48,
+    26
+   ],
+   "text": "PIN:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "PasswordBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    489,
+    62
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    377,
+    65
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    489,
+    23
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    377,
+    26
+   ],
+   "size": [
+    84,
+    26
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "PortSelectBox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    141
+   ],
+   "size": [
+    232,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    144
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Port:",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "DeviceTypeBox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    62
+   ],
+   "size": [
+    232,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "PayMentBox",
+   "type": "ComboBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    101
+   ],
+   "size": [
+    232,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    118,
+    260
+   ],
+   "size": [
+    166,
+    43
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "BindNozBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    220
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    223
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Bind the Noz number",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "BindAddressBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    181
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    184
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Correspondence Address",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    104
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Payment type:",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    65
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Equipment type:",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "DeviceNameBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    139,
+    23
+   ],
+   "size": [
+    232,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    27,
+    26
+   ],
+   "size": [
+    106,
+    26
+   ],
+   "text": "Device Name:",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  }
+ ],
+ "columns": {},
+ "events": {
+  "DeviceTypeBox": {
+   "SelectedIndexChanged": "DeviceTypeBox_SelectedIndexChanged"
+  },
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "$this": {
+   "Load": "StationDeviceEdit_Load"
+  }
+ }
+}

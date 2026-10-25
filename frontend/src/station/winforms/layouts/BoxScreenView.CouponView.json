@@ -1,0 +1,38 @@
+{
+ "name": "BoxScreenView.CouponView",
+ "title": "CouponView",
+ "size": [
+  779,
+  275
+ ],
+ "controls": [
+  {
+   "name": "AddDiscountBtn",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    8,
+    39
+   ],
+   "size": [
+    284,
+    96
+   ],
+   "text": "Coupon",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "AddDiscountBtn": {
+   "Click": "AddDiscountBtn_Click"
+  },
+  "$this": {
+   "FormClosed": "CouponView_FormClosed",
+   "Load": "CouponView_Load"
+  }
+ }
+}

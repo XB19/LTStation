@@ -1,0 +1,598 @@
+{
+ "name": "NormalForm.TankUpdate",
+ "title": "Tank Update",
+ "size": [
+  666,
+  310
+ ],
+ "controls": [
+  {
+   "name": "skinCaptionPanel1",
+   "type": "SkinCaptionPanel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    658,
+    272
+   ],
+   "text": "Update",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "OverImport",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    134,
+    221
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    223
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Feed Volume",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    535,
+    38
+   ],
+   "size": [
+    14,
+    16
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TankNo",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    553,
+    36
+   ],
+   "size": [
+    100,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    469,
+    37
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Tank No",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    448,
+    78
+   ],
+   "size": [
+    14,
+    16
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    116,
+    77
+   ],
+   "size": [
+    14,
+    16
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    306,
+    36
+   ],
+   "size": [
+    14,
+    16
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label36",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    71,
+    37
+   ],
+   "size": [
+    14,
+    16
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "LowerTempMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    469,
+    190
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    340,
+    191
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Temp Low",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "OverTempMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    134,
+    185
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    187
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Temp High",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  },
+  {
+   "name": "LowerWaterMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    469,
+    155
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 13,
+   "order": 13
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    340,
+    156
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Water Low",
+   "dock": null,
+   "visible": true,
+   "z": 14,
+   "order": 14
+  },
+  {
+   "name": "OverWaterMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    134,
+    149
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 15,
+   "order": 15
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    151
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Water High",
+   "dock": null,
+   "visible": true,
+   "z": 16,
+   "order": 16
+  },
+  {
+   "name": "LowerHeightMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    469,
+    118
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 17,
+   "order": 17
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    340,
+    119
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "Low Level",
+   "dock": null,
+   "visible": true,
+   "z": 18,
+   "order": 18
+  },
+  {
+   "name": "OverHeightMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    134,
+    113
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 19,
+   "order": 19
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    115
+   ],
+   "size": [
+    123,
+    19
+   ],
+   "text": "High Level",
+   "dock": null,
+   "visible": true,
+   "z": 20,
+   "order": 20
+  },
+  {
+   "name": "TankNameMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    89,
+    35
+   ],
+   "size": [
+    128,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 21,
+   "order": 21
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    36
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Name",
+   "dock": null,
+   "visible": true,
+   "z": 22,
+   "order": 22
+  },
+  {
+   "name": "GradeSelect",
+   "type": "SkinComboBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    327,
+    34
+   ],
+   "size": [
+    136,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 23,
+   "order": 23
+  },
+  {
+   "name": "TankVolumeMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    469,
+    78
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 24,
+   "order": 24
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    340,
+    79
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Volume",
+   "dock": null,
+   "visible": true,
+   "z": 25,
+   "order": 25
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    223,
+    36
+   ],
+   "size": [
+    85,
+    19
+   ],
+   "text": "Energy",
+   "dock": null,
+   "visible": true,
+   "z": 26,
+   "order": 26
+  },
+  {
+   "name": "TankHeightMess",
+   "type": "TextBox",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    134,
+    77
+   ],
+   "size": [
+    185,
+    24
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 27,
+   "order": 27
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    5,
+    79
+   ],
+   "size": [
+    66,
+    19
+   ],
+   "text": "Height",
+   "dock": null,
+   "visible": true,
+   "z": 28,
+   "order": 28
+  },
+  {
+   "name": "CanelButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    548,
+    227
+   ],
+   "size": [
+    105,
+    45
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 29,
+   "order": 29
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    344,
+    222
+   ],
+   "size": [
+    102,
+    45
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 30,
+   "order": 30
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CanelButton": {
+   "Click": "CanelButton_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "TankUpdate_Load"
+  }
+ }
+}

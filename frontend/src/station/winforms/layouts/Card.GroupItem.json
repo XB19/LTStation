@@ -1,0 +1,268 @@
+{
+ "name": "Card.GroupItem",
+ "title": "GroupItem",
+ "size": [
+  353,
+  365
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    345,
+    327
+   ],
+   "text": "Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GroupType",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    25
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    28
+   ],
+   "size": [
+    106,
+    27
+   ],
+   "text": "Group Type:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    277
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "GroupCNoBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    235
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label19",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    238
+   ],
+   "size": [
+    84,
+    27
+   ],
+   "text": "Certificate:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "GroupEmailBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    193
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "label20",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    196
+   ],
+   "size": [
+    62,
+    27
+   ],
+   "text": "Email:",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "GroupPhoneBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    151
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    154
+   ],
+   "size": [
+    106,
+    27
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "GroupAddressBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    109
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    112
+   ],
+   "size": [
+    106,
+    27
+   ],
+   "text": "Address:",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "GroupNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    118,
+    67
+   ],
+   "size": [
+    209,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    70
+   ],
+   "size": [
+    106,
+    27
+   ],
+   "text": "Name:",
+   "dock": null,
+   "visible": true,
+   "z": 12,
+   "order": 12
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  }
+ }
+}

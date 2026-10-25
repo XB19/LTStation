@@ -1,0 +1,73 @@
+{
+ "name": "NormalForm.AuthShiftBox",
+ "title": "Automatic Shift",
+ "size": [
+  208,
+  83
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    200,
+    45
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "radioButtonForbid",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    111,
+    20
+   ],
+   "size": [
+    47,
+    16
+   ],
+   "text": "Forbid",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "radioButtonAllow",
+   "type": "RadioButton",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    20
+   ],
+   "size": [
+    47,
+    16
+   ],
+   "text": "Allow",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "radioButtonForbid": {
+   "CheckedChanged": "radioButtonAllow_CheckedChanged"
+  },
+  "radioButtonAllow": {
+   "CheckedChanged": "radioButtonAllow_CheckedChanged"
+  }
+ }
+}

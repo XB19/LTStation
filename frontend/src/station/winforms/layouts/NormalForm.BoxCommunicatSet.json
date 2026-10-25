@@ -1,0 +1,348 @@
+{
+ "name": "NormalForm.BoxCommunicatSet",
+ "title": "Box_Setting",
+ "size": [
+  916,
+  647
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    908,
+    112
+   ],
+   "text": "Port",
+   "dock": "top",
+   "visible": true,
+   "z": 3,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    146
+   ],
+   "size": [
+    908,
+    446
+   ],
+   "text": "Box_Port_Setting",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    592
+   ],
+   "size": [
+    908,
+    51
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 2,
+   "order": 999
+  },
+  {
+   "name": "AddBox",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    285,
+    28
+   ],
+   "size": [
+    140,
+    32
+   ],
+   "text": "Box Manager",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ErrorTip",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    433,
+    84
+   ],
+   "size": [
+    42,
+    17
+   ],
+   "text": "label3",
+   "dock": null,
+   "visible": false,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "VersionCheck",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    282,
+    75
+   ],
+   "size": [
+    143,
+    33
+   ],
+   "text": "Check",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "VersionCode",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    112,
+    75
+   ],
+   "size": [
+    162,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    22,
+    80
+   ],
+   "size": [
+    68,
+    17
+   ],
+   "text": "Version:",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "Cancel",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    817,
+    66
+   ],
+   "size": [
+    82,
+    33
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": false,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    817,
+    21
+   ],
+   "size": [
+    82,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": false,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "BoxSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    112,
+    33
+   ],
+   "size": [
+    165,
+    25
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    22,
+    37
+   ],
+   "size": [
+    82,
+    17
+   ],
+   "text": "Port:",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "BoxPortView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    4,
+    22
+   ],
+   "size": [
+    900,
+    420
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PB",
+   "type": "ProgressBar",
+   "parent": "groupBox3",
+   "loc": [
+    4,
+    22
+   ],
+   "size": [
+    900,
+    25
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "BoxPortView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_PortSet",
+    "header": "Box_Port",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Baud",
+    "header": "Baud",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Stop",
+    "header": "Stop",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "GradeName",
+    "header": "Parity",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Box_Parity",
+    "header": "AgreeMent",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "DeviceType",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "Interval",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "AddBox": {
+   "Click": "AddBox_Click"
+  },
+  "VersionCheck": {
+   "Click": "VersionCheck_Click"
+  },
+  "Cancel": {
+   "Click": "Cancel_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "BoxSelect": {
+   "SelectedIndexChanged": "BoxSelect_SelectedIndexChanged"
+  },
+  "AddPort": {
+   "Click": "AddPort_Click"
+  },
+  "BoxPortView": {
+   "CellDoubleClick": "BoxPortView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "BoxCommunicatSet_Load"
+  }
+ }
+}

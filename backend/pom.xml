@@ -69,6 +69,16 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!-- Mises en page des fenêtres du logiciel Station (générées depuis les .resx d'origine) -->
+            <resource>
+                <directory>../frontend/src/station/winforms/layouts</directory>
+                <targetPath>station/layouts</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

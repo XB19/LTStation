@@ -247,44 +247,62 @@
     "name": "CustomerID",
     "header": "用户ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "NozID",
     "header": "Name",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "ASN",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "Card Type",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "Phone",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Amount",
     "header": "Car Number",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "TruePay",
     "header": "Balance",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "QuerySearch": {
+   "Click": "QuerySearch_Click"
+  }
  }
 }

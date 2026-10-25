@@ -1,0 +1,207 @@
+{
+ "name": "TankVolume",
+ "title": "Gage Table Set",
+ "size": [
+  562,
+  555
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    554,
+    517
+   ],
+   "text": "Base Set",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    198,
+    497
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DisPlayView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    201,
+    17
+   ],
+   "size": [
+    350,
+    497
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaveBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    10,
+    110
+   ],
+   "size": [
+    175,
+    37
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DowloadBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    10,
+    165
+   ],
+   "size": [
+    175,
+    37
+   ],
+   "text": "Dowload To ATG",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ImportButton",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    10,
+    57
+   ],
+   "size": [
+    175,
+    37
+   ],
+   "text": "Gage Table Import",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "TankSelect",
+   "type": "SkinComboBox",
+   "parent": "panel1",
+   "loc": [
+    10,
+    29
+   ],
+   "size": [
+    185,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    8,
+    14
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "Tank Select",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "ProgressMess",
+   "type": "RichTextBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    208
+   ],
+   "size": [
+    198,
+    289
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 5,
+   "order": 5
+  }
+ ],
+ "columns": {
+  "DisPlayView": [
+   {
+    "name": "ID",
+    "header": "Height",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ExtendType",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "SaveBtn": {
+   "Click": "SaveBtn_Click"
+  },
+  "DowloadBtn": {
+   "Click": "DowloadBtn_Click"
+  },
+  "ImportButton": {
+   "Click": "ImportButton_Click"
+  },
+  "TankSelect": {
+   "SelectedIndexChanged": "TankSelect_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "TankVolume_Load"
+  }
+ }
+}

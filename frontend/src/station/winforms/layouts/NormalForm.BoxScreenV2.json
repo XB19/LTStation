@@ -1,0 +1,1936 @@
+{
+ "name": "NormalForm.BoxScreenV2",
+ "title": "BoxScreenV2",
+ "size": [
+  1229,
+  846
+ ],
+ "controls": [
+  {
+   "name": "FirstTopPanel",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1229,
+    35
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    35
+   ],
+   "size": [
+    1229,
+    811
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CenterRightPanel",
+   "type": "Panel",
+   "parent": "BigRightPanel",
+   "loc": [
+    0,
+    33
+   ],
+   "size": [
+    409,
+    504
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CommandPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "BigRightPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    409,
+    33
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "BottomPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "BottomBtnPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1123,
+    103
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NextButtnPanel",
+   "type": "Panel",
+   "parent": "BottomBtnPanel",
+   "loc": [
+    1123,
+    0
+   ],
+   "size": [
+    106,
+    103
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TankChartBtn",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Tank Chart",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinButton3",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    157,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Sales Record",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "skinButton4",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    309,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Print Shift",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "skinButton5",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    461,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Print Day Sum.",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "skinButton6",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    613,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Print Month Sum.",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "skinButton7",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    765,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Tax Invoice",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CancelInvoiceBtn",
+   "type": "SkinButton",
+   "parent": "BottomPanel",
+   "loc": [
+    917,
+    5
+   ],
+   "size": [
+    147,
+    45
+   ],
+   "text": "Cancel Invoice",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "PersonalCreditBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Personal Credit",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CouponBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    208,
+    5
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Coupon",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ShowReceiptBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    5,
+    63
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Show  Receipt",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "DiscountBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    208,
+    63
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Discount",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "ShowVatBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    5,
+    121
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Show VAT",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "InternalUseBtn",
+   "type": "SkinButton",
+   "parent": "CenterBottomPanel",
+   "loc": [
+    208,
+    121
+   ],
+   "size": [
+    198,
+    53
+   ],
+   "text": "Internal Use",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "CenterBottomPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterBoxPanel",
+   "loc": [
+    0,
+    301
+   ],
+   "size": [
+    411,
+    203
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CenterMiddlePanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterBoxPanel",
+   "loc": [
+    0,
+    152
+   ],
+   "size": [
+    411,
+    149
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CenterTopPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterBoxPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    411,
+    152
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    174
+   ],
+   "size": [
+    409,
+    259
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    433
+   ],
+   "size": [
+    409,
+    37
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "MessageBoxPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    112
+   ],
+   "size": [
+    409,
+    62
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "LeftButtonPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    470
+   ],
+   "size": [
+    409,
+    67
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "OrderLeftPanel",
+   "type": "Panel",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    67
+   ],
+   "size": [
+    409,
+    45
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "PumpControlPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterLeftPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    409,
+    67
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "OKBtn",
+   "type": "SkinButton",
+   "parent": "CenterMiddlePanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    195,
+    135
+   ],
+   "text": "OK",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CenterMiddleRightPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterMiddlePanel",
+   "loc": [
+    208,
+    3
+   ],
+   "size": [
+    200,
+    139
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "QRCODEBtn",
+   "type": "SkinButton",
+   "parent": "CenterMiddleRightPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    190,
+    61
+   ],
+   "text": "QR CODE",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BankTransferBtn",
+   "type": "SkinButton",
+   "parent": "CenterMiddleRightPanel",
+   "loc": [
+    5,
+    76
+   ],
+   "size": [
+    190,
+    61
+   ],
+   "text": "Bank Transfer",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "CenterPanel",
+   "loc": [
+    409,
+    0
+   ],
+   "size": [
+    411,
+    537
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BigRightPanel",
+   "type": "Panel",
+   "parent": "CenterPanel",
+   "loc": [
+    820,
+    0
+   ],
+   "size": [
+    409,
+    537
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CenterLeftPanel",
+   "type": "Panel",
+   "parent": "CenterPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    409,
+    537
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CenterPayMentLabel",
+   "type": "Label",
+   "parent": "CenterPayMentPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "PAYMENT",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RightPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterRightPanel",
+   "loc": [
+    0,
+    160
+   ],
+   "size": [
+    409,
+    344
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RightTopPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterRightPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    409,
+    160
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CashBtn",
+   "type": "SkinButton",
+   "parent": "CenterTopPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    195,
+    138
+   ],
+   "text": "Cash",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CenterTopRightPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "CenterTopPanel",
+   "loc": [
+    208,
+    3
+   ],
+   "size": [
+    200,
+    142
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CreditCardBtn",
+   "type": "SkinButton",
+   "parent": "CenterTopRightPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    190,
+    61
+   ],
+   "text": "Credit Card",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "FleetCardBtn",
+   "type": "SkinButton",
+   "parent": "CenterTopRightPanel",
+   "loc": [
+    5,
+    76
+   ],
+   "size": [
+    190,
+    61
+   ],
+   "text": "Fleet Card",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "CommandCenterPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "Command",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "LeftCommandPanel",
+   "type": "Panel",
+   "parent": "CommandPanel",
+   "loc": [
+    3,
+    3
+   ],
+   "size": [
+    116,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CommandCenterPanel",
+   "type": "Panel",
+   "parent": "CommandPanel",
+   "loc": [
+    125,
+    3
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "RightCommandPanel",
+   "type": "Panel",
+   "parent": "CommandPanel",
+   "loc": [
+    262,
+    3
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "FirstTopPanel",
+   "loc": [
+    826,
+    0
+   ],
+   "size": [
+    147,
+    35
+   ],
+   "text": "DELT POS V.19290",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TimeLabel",
+   "type": "Label",
+   "parent": "FirstTopPanel",
+   "loc": [
+    973,
+    0
+   ],
+   "size": [
+    256,
+    35
+   ],
+   "text": "12/6/2025   11:05:56",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "ImagePanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    147,
+    116
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "ImagePanel",
+   "loc": [
+    0,
+    116
+   ],
+   "size": [
+    147,
+    55
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "ClearBtn",
+   "type": "SkinButton",
+   "parent": "LeftButtonPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Clear",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ItemCancelBtn",
+   "type": "SkinButton",
+   "parent": "LeftButtonPanel",
+   "loc": [
+    106,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Item\nCancel",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "SaleCancelBtn",
+   "type": "SkinButton",
+   "parent": "LeftButtonPanel",
+   "loc": [
+    207,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Sale\nCancel",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "HomeBtn",
+   "type": "SkinButton",
+   "parent": "LeftButtonPanel",
+   "loc": [
+    308,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Home",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "MessageBoxPanel",
+   "loc": [
+    3,
+    3
+   ],
+   "size": [
+    285,
+    33
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AmountLabel",
+   "type": "Label",
+   "parent": "MessageBoxPanel",
+   "loc": [
+    294,
+    0
+   ],
+   "size": [
+    110,
+    36
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "MessageLabel",
+   "type": "Label",
+   "parent": "MessageBoxPanel",
+   "loc": [
+    3,
+    39
+   ],
+   "size": [
+    403,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "BottomNextBtn",
+   "type": "SkinButton",
+   "parent": "NextButtnPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    106,
+    103
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OrderListPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "OrderLeftPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    359,
+    45
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AddBillOrderBtn",
+   "type": "SkinButton",
+   "parent": "OrderLeftPanel",
+   "loc": [
+    359,
+    0
+   ],
+   "size": [
+    50,
+    45
+   ],
+   "text": "+",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "LeftPayMentPanel",
+   "type": "Panel",
+   "parent": "PayMentPanel",
+   "loc": [
+    3,
+    3
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CenterPayMentPanel",
+   "type": "Panel",
+   "parent": "PayMentPanel",
+   "loc": [
+    140,
+    3
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "RightPayMentPanel",
+   "type": "Panel",
+   "parent": "PayMentPanel",
+   "loc": [
+    277,
+    3
+   ],
+   "size": [
+    131,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "StopOnePumpBtn",
+   "type": "SkinButton",
+   "parent": "PumpControlPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Stop One Pump",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "OpenOnePumpBtn",
+   "type": "SkinButton",
+   "parent": "PumpControlPanel",
+   "loc": [
+    106,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Open One Pump",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "StopAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "PumpControlPanel",
+   "loc": [
+    207,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Stop All Pump",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "PumpControlPanel",
+   "loc": [
+    308,
+    5
+   ],
+   "size": [
+    96,
+    57
+   ],
+   "text": "Open All Pump",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "SevenBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "7",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "EightBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    139,
+    5
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "8",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NineBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    273,
+    5
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "9",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "FourBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    5,
+    98
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "4",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "FiveBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    139,
+    98
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "5",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "SixBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    273,
+    98
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "6",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "OneBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    5,
+    191
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "TwoBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    139,
+    191
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "2",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "ThreeBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    273,
+    191
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "3",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "PQBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    5,
+    284
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "Products\nQuantity",
+   "dock": null,
+   "visible": true,
+   "z": 9,
+   "order": 9
+  },
+  {
+   "name": "PointBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    139,
+    284
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": ".",
+   "dock": null,
+   "visible": true,
+   "z": 10,
+   "order": 10
+  },
+  {
+   "name": "ZeroBtn",
+   "type": "SkinButton",
+   "parent": "RightPanel",
+   "loc": [
+    273,
+    284
+   ],
+   "size": [
+    129,
+    88
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 11,
+   "order": 11
+  },
+  {
+   "name": "OpenCashBoxBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    5,
+    5
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Open Cash box",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "MeterBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    141,
+    5
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Meter",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "OtherProductBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    277,
+    5
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Other Product",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "PrinterBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    5,
+    55
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Printer",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "QuickPrintBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    141,
+    55
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Quick Print",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "CustomerBtn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    277,
+    55
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "Customer",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  },
+  {
+   "name": "Note100Btn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    5,
+    105
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "100 Note",
+   "dock": null,
+   "visible": true,
+   "z": 6,
+   "order": 6
+  },
+  {
+   "name": "Note500Btn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    141,
+    105
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "500 Note",
+   "dock": null,
+   "visible": true,
+   "z": 7,
+   "order": 7
+  },
+  {
+   "name": "Note1000Btn",
+   "type": "SkinButton",
+   "parent": "RightTopPanel",
+   "loc": [
+    277,
+    105
+   ],
+   "size": [
+    131,
+    45
+   ],
+   "text": "1000 Note",
+   "dock": null,
+   "visible": true,
+   "z": 8,
+   "order": 8
+  },
+  {
+   "name": "NozViewPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "TopPanel",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1082,
+    171
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ImagePanel",
+   "type": "Panel",
+   "parent": "TopPanel",
+   "loc": [
+    1082,
+    0
+   ],
+   "size": [
+    147,
+    171
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "CenterPanel",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    171
+   ],
+   "size": [
+    1229,
+    537
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "BottomBtnPanel",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    708
+   ],
+   "size": [
+    1229,
+    103
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TopPanel",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1229,
+    171
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "CenterBoxPanel",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    33
+   ],
+   "size": [
+    411,
+    504
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PayMentPanel",
+   "type": "FlowLayoutPanel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    411,
+    33
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "TotalAmountLabel",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    202,
+    0
+   ],
+   "size": [
+    207,
+    37
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ChangeLabel",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    202,
+    37
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 1,
+   "order": 1
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "IDType",
+    "header": "IDType",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "PersonalCreditBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "CouponBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "ShowReceiptBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "DiscountBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "ShowVatBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "InternalUseBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "OKBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "QRCODEBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "BankTransferBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "CashBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "CreditCardBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "FleetCardBtn": {
+   "Click": "CashBtn_Click"
+  },
+  "SevenBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "EightBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "NineBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "FourBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "FiveBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "SixBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "OneBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "TwoBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "ThreeBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "PointBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "ZeroBtn": {
+   "Click": "SevenBtn_Click"
+  },
+  "OpenCashBoxBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "MeterBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "OtherProductBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "PrinterBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "QuickPrintBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "CustomerBtn": {
+   "Click": "OpenCashBoxBtn_Click"
+  },
+  "Note100Btn": {
+   "Click": "Note100Btn_Click"
+  },
+  "Note500Btn": {
+   "Click": "Note100Btn_Click"
+  },
+  "Note1000Btn": {
+   "Click": "Note100Btn_Click"
+  },
+  "ClearBtn": {
+   "Click": "ClearBtn_Click"
+  },
+  "ItemCancelBtn": {
+   "Click": "ClearBtn_Click"
+  },
+  "SaleCancelBtn": {
+   "Click": "ClearBtn_Click"
+  },
+  "HomeBtn": {
+   "Click": "ClearBtn_Click"
+  },
+  "AddBillOrderBtn": {
+   "Click": "AddBillOrderBtn_Click"
+  },
+  "StopOnePumpBtn": {
+   "Click": "StopOnePumpBtn_Click"
+  },
+  "OpenOnePumpBtn": {
+   "Click": "StopOnePumpBtn_Click"
+  },
+  "StopAllPumpBtn": {
+   "Click": "StopOnePumpBtn_Click"
+  },
+  "OpenAllPumpBtn": {
+   "Click": "StopOnePumpBtn_Click"
+  },
+  "TankChartBtn": {
+   "Click": "TankChartBtn_Click"
+  },
+  "BottomNextBtn": {
+   "Click": "BottomNextBtn_Click"
+  },
+  "$this": {
+   "Load": "BoxScreenV2_Load"
+  }
+ }
+}

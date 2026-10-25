@@ -1,0 +1,202 @@
+{
+ "name": "NormalForm.BoxRFIDConfig",
+ "title": "RFID Setting",
+ "size": [
+  274,
+  224
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    266,
+    134
+   ],
+   "text": "RFID",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    168
+   ],
+   "size": [
+    266,
+    52
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 1,
+   "order": 999
+  },
+  {
+   "name": "DeleteBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    147,
+    18
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Delete",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SaveButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    18
+   ],
+   "size": [
+    102,
+    28
+   ],
+   "text": "Save",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "NozSelect",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    91
+   ],
+   "size": [
+    156,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    18,
+    94
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "NozID:",
+   "dock": null,
+   "visible": true,
+   "z": 1,
+   "order": 1
+  },
+  {
+   "name": "Address",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    55
+   ],
+   "size": [
+    156,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 2,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    42,
+    58
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "Address:",
+   "dock": null,
+   "visible": true,
+   "z": 3,
+   "order": 3
+  },
+  {
+   "name": "RFIDNo",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    83,
+    20
+   ],
+   "size": [
+    156,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 4,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    6,
+    23
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Device ID:",
+   "dock": null,
+   "visible": true,
+   "z": 5,
+   "order": 5
+  }
+ ],
+ "columns": {},
+ "events": {
+  "DeleteBtn": {
+   "Click": "DeleteBtn_Click"
+  },
+  "SaveButton": {
+   "Click": "SaveButton_Click"
+  },
+  "$this": {
+   "Load": "BoxRFIDConfig_Load"
+  }
+ }
+}

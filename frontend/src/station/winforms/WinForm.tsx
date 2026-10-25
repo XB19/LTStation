@@ -24,6 +24,8 @@ export interface Ctrl {
 
 export interface Column {
   name: string
+  /** Propriété liée (DataPropertyName) */
+  prop?: string | null
   header: string
   visible: boolean
   width: number | null
@@ -35,6 +37,8 @@ export interface Layout {
   size: [number, number]
   controls: Ctrl[]
   columns: Record<string, Column[]>
+  /** Gestionnaires d'événements du .cs d'origine : contrôle ('$this' = fenêtre) → événement → méthode */
+  events?: Record<string, Record<string, string>>
 }
 
 const layouts = import.meta.glob<Layout>('./layouts/*.json', { eager: true, import: 'default' })

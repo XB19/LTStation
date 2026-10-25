@@ -85,26 +85,38 @@
     "name": "NozID",
     "header": "ID",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilType",
     "header": "Energy",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "OilPrice",
     "header": "TransformType",
     "visible": true,
+    "prop": null,
     "width": null
    },
    {
     "name": "Volume",
     "header": "TransformScale",
     "visible": true,
+    "prop": null,
     "width": null
    }
   ]
+ },
+ "events": {
+  "NextButton": {
+   "Click": "NextButton_Click"
+  },
+  "TransactionView": {
+   "CellDoubleClick": "TransactionView_CellDoubleClick"
+  }
  }
 }

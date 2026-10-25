@@ -1,0 +1,371 @@
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { Modal } from 'antd'
+import dayjs from 'dayjs'
+import { http } from '../../api/http'
+import Win from './Win'
+import WinForm, { getLayout, tr, type GridProps, type Option } from './WinForm'
+
+/**
+ * Fenêtre du logiciel Station dont la logique s'exécute sur le serveur (/api/sw/form) : la mise en
+ * page d'origine est affichée par WinForm, chaque événement déclaré dans le .cs d'origine (Click,
+ * SelectedIndexChanged, CellClick, Tick…) est envoyé au serveur avec la saisie, puis l'état
+ * modifié, les messages et les questions (Oui/Non, sous-fenêtre) sont appliqués.
+ */
+
+type Props = Record<string, unknown>
+type Row = Record<string, unknown>
+
+interface GridState {
+  rows: Row[]
+  current: number
+  visible?: Record<string, boolean>
+  headers?: Record<string, string>
+}
+
+interface Suspend {
+  type: 'confirm' | 'dialog'
+  key: string
+  text?: string
+  form?: string
+  args?: Props
+}
+
+interface Message {
+  text?: string
+  caption?: string
+  error?: boolean
+  open?: string
+  args?: Props
+  download?: string
+  contentType?: string
+  data?: string
+  print?: string[]
+  /** Sous-fenêtre / question dont la suite est exécutée sur le serveur ($continue) */
+  dialog?: string
+  confirm?: string
+  key?: string
+}
+
+interface FormState {
+  id?: string
+  controls: Record<string, Props>
+  grids: Record<string, GridState>
+  messages: Message[]
+  timers?: Record<string, number>
+  title?: string
+  suspend?: Suspend
+  close?: string
+  result?: Props
+}
+
+export interface RemoteFormProps {
+  form: string
+  args?: Props
+  /** Fermeture : résultat (OK / Cancel…) et valeurs renvoyées à la fenêtre parente */
+  onClose: (result: string, data: Props) => void
+  /** Ouverture d'une autre fenêtre sans attendre (Form.Show()) */
+  onOpen?: (form: string, args: Props) => void
+  /** Affichage dans une fenêtre modale (par défaut) ou directement dans la page */
+  framed?: boolean
+  extra?: Record<string, ReactNode>
+}
+
+const TEXT_TYPES = /TextBox|NumericUpDown|Label|Button|GroupBox|CaptionPanel|TabPage|RadioButton|CheckBox/
+const isCombo = (t: string) => t.endsWith('ComboBox') || t === 'ListBox'
+const isDate = (t: string) => t.endsWith('DateTimePicker')
+const isCheck = (t: string) => t.endsWith('CheckBox') || t.endsWith('RadioButton')
+
+function download(m: Message) {
+  const bin = atob(m.data ?? '')
+  const bytes = new Uint8Array(bin.length)
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+  const url = URL.createObjectURL(new Blob([bytes], { type: m.contentType }))
+  const a = document.createElement('a')
+  a.href = url
+  a.download = m.download ?? 'export'
+  a.click()
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+function printLines(lines: string[]) {
+  const w = window.open('', '_blank', 'width=420,height=640')
+  if (!w) return
+  const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]!)
+  w.document.write(`<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:monospace;font-size:12px;white-space:pre;margin:8px}</style></head>
+<body>${lines.map(esc).join('\n')}<script>window.onload=()=>{window.print();setTimeout(()=>window.close(),300)}</script></body></html>`)
+  w.document.close()
+}
+
+const ask = (text: string) => new Promise<boolean>((resolve) => Modal.confirm({
+  title: tr(text), okText: 'Oui', cancelText: 'Non', onOk: () => resolve(true), onCancel: () => resolve(false),
+}))
+
+const show = (m: Message) => new Promise<void>((resolve) => (m.error ? Modal.error : Modal.info)({
+  title: m.caption ? tr(m.caption) : undefined, content: tr(m.text ?? ''), okText: 'OK', onOk: () => resolve(), onCancel: () => resolve(),
+}))
+
+export default function RemoteForm({ form, args, onClose, onOpen, framed = true, extra }: RemoteFormProps) {
+  const layout = useMemo(() => getLayout(form), [form])
+  const types = useMemo(() => Object.fromEntries(layout.controls.map((c) => [c.name, c.type])), [layout])
+  const events = layout.events ?? {}
+  const [id, setId] = useState<string>()
+  const [ctl, setCtl] = useState<Record<string, Props>>({})
+  const [grids, setGrids] = useState<Record<string, GridState>>({})
+  const [title, setTitle] = useState<string>()
+  const [busy, setBusy] = useState<string | null>(null)
+  const [dialog, setDialog] = useState<{ form: string; args: Props; resolve: (r: { result: string; data: Props }) => void } | null>(null)
+  const ctlRef = useRef(ctl)
+  ctlRef.current = ctl
+  const gridRef = useRef(grids)
+  gridRef.current = grids
+  const idRef = useRef<string>()
+  const queue = useRef(Promise.resolve())
+  const timers = useRef<Record<string, number>>({})
+  const lastCol = useRef<Record<string, string>>({})
+  const closed = useRef(false)
+
+  const merge = (patch: Record<string, Props>) => setCtl((c) => {
+    const n = { ...c }
+    for (const [k, v] of Object.entries(patch)) n[k] = { ...n[k], ...v }
+    ctlRef.current = n
+    return n
+  })
+
+  /** Saisie de l'opérateur envoyée avec chaque événement. */
+  const clientValues = () => {
+    const out: Record<string, Props> = {}
+    for (const [k, p] of Object.entries(ctlRef.current)) {
+      const t = types[k] ?? ''
+      const v: Props = {}
+      if ('Text' in p && !isCombo(t)) v.Text = p.Text
+      if ('Checked' in p) v.Checked = p.Checked
+      if ('SelectedIndex' in p) v.SelectedIndex = p.SelectedIndex
+      if ('Value' in p) v.Value = p.Value
+      if (Object.keys(v).length) out[k] = v
+    }
+    return out
+  }
+
+  const clientGrids = () => Object.fromEntries(Object.entries(gridRef.current).map(([k, g]) => [k, g.current]))
+
+  const sub = (f: string, a: Props) => new Promise<{ result: string; data: Props }>((resolve) => setDialog({ form: f, args: a, resolve }))
+
+  /** Applique une réponse du serveur ; renvoie la question en attente éventuelle. */
+  const apply = async (s: FormState) => {
+    merge(s.controls ?? {})
+    if (s.grids && Object.keys(s.grids).length) {
+      setGrids((g) => {
+        const n = { ...g, ...s.grids }
+        gridRef.current = n
+        return n
+      })
+    }
+    if (s.title) setTitle(s.title)
+    for (const [h, ms] of Object.entries(s.timers ?? {})) {
+      window.clearInterval(timers.current[h])
+      delete timers.current[h]
+      if (ms > 0) timers.current[h] = window.setInterval(() => fire(h, '', {}, true), ms)
+    }
+    for (const m of s.messages ?? []) {
+      if (m.dialog) {
+        const r = await sub(m.dialog, m.args ?? {})
+        fire('$continue', '', { key: m.key, result: r.result, data: r.data })
+      } else if (m.confirm !== undefined) {
+        const yes = await ask(m.confirm)
+        fire('$continue', '', { key: m.key, result: yes ? 'OK' : 'Cancel', data: {} })
+      } else if (m.open) onOpen?.(m.open, m.args ?? {})
+      else if (m.download) download(m)
+      else if (m.print) printLines(m.print)
+      else await show(m)
+    }
+    if (s.close && !closed.current) {
+      closed.current = true
+      onClose(s.close, s.result ?? {})
+    }
+    return s.suspend
+  }
+
+  /** Envoie un événement ; les questions sont posées puis l'événement est rejoué avec les réponses. */
+  const fire = (handler: string, sender: string, e: Props, quiet = false): Promise<void> => {
+    const run = async () => {
+      if (!idRef.current || closed.current) return
+      const answers: Props = {}
+      if (!quiet) setBusy(sender || handler)
+      try {
+        for (;;) {
+          const { data } = await http.post<FormState>(`/sw/form/${idRef.current}/event`,
+            { handler, sender, e, values: clientValues(), grids: clientGrids(), answers })
+          const q = await apply(data)
+          if (!q) break
+          answers[q.key] = q.type === 'confirm' ? await ask(q.text ?? '') : await sub(q.form!, q.args ?? {})
+        }
+      } finally {
+        if (!quiet) setBusy(null)
+      }
+    }
+    queue.current = queue.current.then(run, run)
+    return queue.current
+  }
+
+  useEffect(() => {
+    closed.current = false
+    let alive = true
+    ;(async () => {
+      const answers: Props = {}
+      for (;;) {
+        const { data } = await http.post<FormState>('/sw/form/open', { form, args: args ?? {}, answers })
+        if (!alive) {
+          if (data.id) http.post(`/sw/form/${data.id}/close`, {}).catch(() => undefined)
+          return
+        }
+        idRef.current = data.id
+        setId(data.id)
+        const q = await apply(data)
+        if (!q) break
+        answers[q.key] = q.type === 'confirm' ? await ask(q.text ?? '') : await sub(q.form!, q.args ?? {})
+      }
+    })().catch(() => { if (alive) onClose('Cancel', {}) })
+    return () => {
+      alive = false
+      Object.values(timers.current).forEach((t) => window.clearInterval(t))
+      timers.current = {}
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form])
+
+  /** Fermeture par la croix (FormClosing peut l'annuler). */
+  const requestClose = () => {
+    const run = async () => {
+      if (!idRef.current) { onClose('Cancel', {}); return }
+      const { data } = await http.post<FormState>(`/sw/form/${idRef.current}/close`, { values: clientValues(), grids: clientGrids() })
+      await apply(data)
+    }
+    queue.current = queue.current.then(run, run)
+  }
+
+  const on = (name: string, ev: string) => events[name]?.[ev]
+
+  // ------------------------------------------------------------ valeurs pour WinForm
+  const values: Record<string, unknown> = {}
+  const options: Record<string, Option[]> = {}
+  const hidden: string[] = []
+  const disabled: string[] = []
+  const readOnly: string[] = []
+  const texts: Record<string, string> = {}
+  for (const c of layout.controls) {
+    const p = ctl[c.name]
+    if (!p) continue
+    const t = c.type
+    if (isCombo(t)) {
+      options[c.name] = ((p.Items as unknown[]) ?? []).map((x, i) => ({ value: i, label: String(x ?? '') }))
+      const i = Number(p.SelectedIndex ?? -1)
+      values[c.name] = i >= 0 ? i : undefined
+    } else if (isDate(t)) values[c.name] = p.Value ? dayjs(String(p.Value)) : undefined
+    else if (isCheck(t)) values[c.name] = !!p.Checked
+    else values[c.name] = p.Text ?? ''
+    if ('Text' in p && TEXT_TYPES.test(t) && !/TextBox|NumericUpDown/.test(t)) texts[c.name] = tr(String(p.Text ?? ''))
+    if (p.Visible === false) hidden.push(c.name)
+    if (p.Enabled === false) disabled.push(c.name)
+    if (p.ReadOnly === true) readOnly.push(c.name)
+  }
+  // Champs encore jamais envoyés par le serveur : texte d'origine
+  for (const c of layout.controls) {
+    if (ctl[c.name] || values[c.name] !== undefined) continue
+    if (isCheck(c.type)) values[c.name] = false
+    else if (/TextBox|NumericUpDown/.test(c.type)) values[c.name] = c.text ?? ''
+  }
+
+  const onChange = (name: string, v: unknown) => {
+    const t = types[name] ?? ''
+    let patch: Props
+    let ev: string | undefined
+    if (isCombo(t)) { patch = { SelectedIndex: v as number, Text: undefined }; ev = on(name, 'SelectedIndexChanged') ?? on(name, 'SelectedValueChanged') }
+    else if (isDate(t)) { patch = { Value: dayjs(v as dayjs.Dayjs).format('YYYY-MM-DD HH:mm:ss') }; ev = on(name, 'ValueChanged') }
+    else if (isCheck(t)) { patch = { Checked: !!v }; ev = on(name, 'CheckedChanged') ?? on(name, 'CheckStateChanged') }
+    else { patch = { Text: String(v ?? '') }; ev = on(name, 'TextChanged') }
+    if (isCombo(t)) {
+      setCtl((c) => {
+        const n = { ...c, [name]: { ...c[name], SelectedIndex: v as number } }
+        delete (n[name] as Props).Text
+        ctlRef.current = n
+        return n
+      })
+    } else merge({ [name]: patch })
+    if (ev) fire(ev, name, {}, true)
+  }
+
+  const buttons: Record<string, () => unknown> = {}
+  for (const c of layout.controls) {
+    const h = on(c.name, 'Click')
+    if (h && (c.type.includes('Button') || c.type.endsWith('Label') || c.type === 'PictureBox')) buttons[c.name] = () => fire(h, c.name, {})
+  }
+
+  const gridProps: Record<string, GridProps> = {}
+  for (const [name, cols] of Object.entries(layout.columns)) {
+    const g = grids[name]
+    const colIndex = (col?: string) => (col ? cols.findIndex((x) => x.name === col) : -1)
+    const select = (r: Row) => {
+      const i = Number(r.__i)
+      setGrids((gs) => {
+        const n = { ...gs, [name]: { ...(gs[name] ?? { rows: [] }), current: i } }
+        gridRef.current = n
+        return n
+      })
+      return i
+    }
+    const cellArgs = (r: Row) => {
+      const col = lastCol.current[name]
+      return { RowIndex: Number(r.__i), ColumnIndex: colIndex(col), ColumnName: col ?? '' }
+    }
+    gridProps[name] = {
+      rows: g?.rows ?? [],
+      rowKey: '__i',
+      selectedKey: g && g.current >= 0 ? g.current : undefined,
+      hideColumns: Object.entries(g?.visible ?? {}).filter(([, v]) => !v).map(([k]) => k),
+      headers: g?.headers,
+      pagination: (g?.rows.length ?? 0) > 200 ? { pageSize: 100, showSizeChanger: false } : false,
+      render: Object.fromEntries(cols.map((x) => [x.name, (v: unknown) => (
+        <span onClick={() => { lastCol.current[name] = x.name }}>{v === null || v === undefined ? '' : String(v)}</span>
+      )])),
+      onClick: (r) => {
+        const prev = gridRef.current[name]?.current
+        select(r)
+        const e = cellArgs(r)
+        if (prev !== Number(r.__i)) {
+          const sc = on(name, 'SelectionChanged') ?? on(name, 'CurrentCellChanged')
+          if (sc) fire(sc, name, e, true)
+        }
+        for (const ev of ['CellClick', 'CellContentClick', 'Click']) {
+          const h = on(name, ev)
+          if (h) fire(h, name, e)
+        }
+      },
+      onDoubleClick: (r) => {
+        select(r)
+        for (const ev of ['CellDoubleClick', 'CellContentDoubleClick', 'DoubleClick']) {
+          const h = on(name, ev)
+          if (h) fire(h, name, cellArgs(r))
+        }
+      },
+    }
+  }
+
+  const body = (
+    <>
+      <WinForm layout={layout} values={values} onChange={onChange} buttons={buttons} options={options} grids={gridProps}
+        hidden={hidden} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
+        passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar || /pass|pwd|pin/i.test(c.name)).map((c) => c.name)}
+        extra={extra} />
+      {dialog && (
+        <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen}
+          onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />
+      )}
+    </>
+  )
+  if (!framed) return id ? body : null
+  return (
+    <Win layout={layout} title={title ? tr(title) : undefined} onClose={requestClose}>
+      {body}
+    </Win>
+  )
+}

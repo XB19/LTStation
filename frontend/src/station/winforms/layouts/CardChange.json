@@ -673,5 +673,22 @@
    "order": 2
   }
  ],
- "columns": {}
+ "columns": {},
+ "events": {
+  "SearchButton": {
+   "Click": "SearchButton_Click"
+  },
+  "CardTypeSelect": {
+   "SelectedIndexChanged": "CardTypeSelect_SelectedIndexChanged"
+  },
+  "ChangeCardNo": {
+   "SelectedIndexChanged": "ChangeCardNo_SelectedIndexChanged"
+  },
+  "IniButton": {
+   "Click": "IniButton_Click"
+  },
+  "ChangeButton": {
+   "Click": "ChangeButton_Click"
+  }
+ }
 }
