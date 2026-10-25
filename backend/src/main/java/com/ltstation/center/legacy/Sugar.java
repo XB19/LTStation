@@ -487,7 +487,7 @@ public class Sugar {
         MapSqlParameterSource s = new MapSqlParameterSource();
         if (params != null) {
             params.forEach((k, v) -> s.addValue(k, v instanceof LocalDateTime dt ? Timestamp.valueOf(dt)
-                : (v instanceof Collection<?> c && c.isEmpty() ? List.of("\u0000") : v)));
+                : (v instanceof Collection<?> c && c.isEmpty() ? java.util.Collections.singletonList(null) : v)));
         }
         return s;
     }

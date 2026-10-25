@@ -96,6 +96,26 @@ public abstract class ServerDealBase {
         return ret(false, enc(m == null ? ex.getClass().getSimpleName() : m), 0);
     }
 
+    /** Liste d'entités sérialisée comme la classe Modal.&lt;Classe&gt; d'origine (toutes ses propriétés). */
+    protected List<Row> ent(String cls, List<Row> rows) {
+        String full = "Modal." + cls;
+        return deal.dto().has(full) ? deal.dto().shapeAll(full, rows) : rows;
+    }
+
+    protected Row ent(String cls, Row row) {
+        String full = "Modal." + cls;
+        return row == null || !deal.dto().has(full) ? row : deal.dto().shape(full, row);
+    }
+
+    /** Station désignée par son code ; sinon « requête illégale » comme l'original. */
+    protected Row stationByCode(String code) {
+        Row st = db.first("Stations", "{Code} = :c", p("c", code));
+        if (st == null) {
+            throw fail("Requête illégale : la station n'existe pas");
+        }
+        return st;
+    }
+
     protected static Map<String, Object> p(Object... kv) {
         return Sugar.p(kv);
     }
