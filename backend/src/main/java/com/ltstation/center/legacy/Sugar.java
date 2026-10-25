@@ -451,6 +451,14 @@ public class Sugar {
         return tx;
     }
 
+    /** Annule les transactions encore ouvertes sur ce fil (gestionnaire interrompu). */
+    public void rollbackOpen() {
+        java.util.Deque<Tx> d = txs.get();
+        while (!d.isEmpty()) {
+            d.peek().rollback();
+        }
+    }
+
     public final class Tx implements AutoCloseable {
         private final TransactionStatus status;
         private boolean done;

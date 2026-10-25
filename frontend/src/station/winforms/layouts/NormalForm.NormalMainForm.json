@@ -314,6 +314,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -321,6 +322,7 @@
     "header": "RFID No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -328,6 +330,7 @@
     "header": "Station Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -335,6 +338,7 @@
     "header": "Address",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -342,6 +346,7 @@
     "header": "Bind Noz",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -349,6 +354,7 @@
     "header": "Tag",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -356,6 +362,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -363,6 +370,7 @@
     "header": "Car No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -370,6 +378,7 @@
     "header": "Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -377,6 +386,7 @@
     "header": "Statue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -384,6 +394,7 @@
     "header": "UpdateTime",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -393,6 +404,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -400,6 +412,7 @@
     "header": "Noz",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -407,6 +420,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -414,6 +428,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -421,6 +436,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -430,6 +446,7 @@
     "header": "GradeName",
     "visible": true,
     "prop": "GradeName",
+    "readOnly": true,
     "width": null
    },
    {
@@ -437,6 +454,7 @@
     "header": "VolumeTotal",
     "visible": true,
     "prop": "TotalVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -444,6 +462,7 @@
     "header": "AmountTotal",
     "visible": true,
     "prop": "TotalAmount",
+    "readOnly": true,
     "width": null
    }
   ]

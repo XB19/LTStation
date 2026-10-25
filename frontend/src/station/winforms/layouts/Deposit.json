@@ -2096,6 +2096,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2103,6 +2104,7 @@
     "header": "GroupName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2110,6 +2112,7 @@
     "header": "GroupID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2117,6 +2120,7 @@
     "header": "Asn",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2124,6 +2128,7 @@
     "header": "BillDate",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2131,6 +2136,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2138,6 +2144,7 @@
     "header": "Repay",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -2145,6 +2152,7 @@
     "header": "Statue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

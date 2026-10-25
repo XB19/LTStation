@@ -89,6 +89,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -96,6 +97,7 @@
     "header": "Energy",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -103,6 +105,7 @@
     "header": "TransformType",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -110,6 +113,7 @@
     "header": "TransformScale",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

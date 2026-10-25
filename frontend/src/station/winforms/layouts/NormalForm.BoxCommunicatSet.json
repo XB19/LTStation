@@ -272,6 +272,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -279,6 +280,7 @@
     "header": "Box_Port",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -286,6 +288,7 @@
     "header": "Baud",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -293,6 +296,7 @@
     "header": "Stop",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -300,6 +304,7 @@
     "header": "Parity",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -307,6 +312,7 @@
     "header": "AgreeMent",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -314,6 +320,7 @@
     "header": "DeviceType",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -321,6 +328,7 @@
     "header": "Interval",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

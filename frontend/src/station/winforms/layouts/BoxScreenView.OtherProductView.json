@@ -708,6 +708,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -715,6 +716,7 @@
     "header": "Product lD",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -722,6 +724,7 @@
     "header": "Product Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -729,6 +732,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -736,6 +740,7 @@
     "header": "Quantity",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -743,6 +748,7 @@
     "header": "Group",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -750,6 +756,7 @@
     "header": "Status",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

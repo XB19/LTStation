@@ -176,6 +176,7 @@
     "header": "Height",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -183,6 +184,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    }
   ]

@@ -35,6 +35,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -42,6 +43,7 @@
     "header": "Product",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -49,6 +51,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -56,6 +59,7 @@
     "header": "Discount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -63,6 +67,7 @@
     "header": "Announcement price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -70,6 +75,7 @@
     "header": "Shipping cost",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -77,6 +83,7 @@
     "header": "Rate of change",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -84,6 +91,7 @@
     "header": "Tax cost",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -91,6 +99,7 @@
     "header": "ValidTime",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

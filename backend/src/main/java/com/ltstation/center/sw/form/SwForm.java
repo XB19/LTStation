@@ -21,8 +21,11 @@ import java.util.function.Consumer;
  */
 public abstract class SwForm {
 
-    /** Interruption d'un gestionnaire en attente d'une réponse du client. */
-    public static final class Suspend extends RuntimeException {
+    /**
+     * Interruption d'un gestionnaire en attente d'une réponse du client. Hérite de Error pour
+     * traverser les « catch (Exception) » des gestionnaires d'origine, comme une attente modale.
+     */
+    public static final class Suspend extends Error {
         final Map<String, Object> request;
 
         Suspend(Map<String, Object> request) {
@@ -126,6 +129,9 @@ public abstract class SwForm {
             if (e.getCause() instanceof RuntimeException re) {
                 throw re;
             }
+            if (e.getCause() instanceof Error err) {
+                throw err;
+            }
             throw new IllegalStateException(e.getCause());
         } catch (IllegalAccessException e) {
             throw new IllegalStateException(e);
@@ -173,14 +179,26 @@ public abstract class SwForm {
 
     // ------------------------------------------------------------ boîtes de dialogue
 
+    /** Message .NET d'une référence nulle (NullReferenceException) à la place du message Java. */
+    static String dotNet(String text) {
+        if (text == null || text.startsWith("Cannot invoke \"") || text.startsWith("Cannot read field") || text.startsWith("Cannot load from")
+            || text.startsWith("Cannot store to") || text.startsWith("Cannot read the array length")) {
+            return "Object reference not set to an instance of an object.";
+        }
+        if (text.startsWith("Index ") && text.contains("out of bounds for length")) {
+            return "Index was outside the bounds of the array.";
+        }
+        return text;
+    }
+
     /** MessageBox.Show(texte) */
     protected void MessageBox(String text) {
-        messages.add(Map.of("text", text == null ? "" : text));
+        messages.add(Map.of("text", dotNet(text)));
     }
 
     /** MessageBox.Show(texte, titre) */
     protected void MessageBox(String text, String caption) {
-        messages.add(Map.of("text", text == null ? "" : text, "caption", caption == null ? "" : caption));
+        messages.add(Map.of("text", dotNet(text), "caption", caption == null ? "" : caption));
     }
 
     private String nextKey() {

@@ -386,6 +386,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -393,6 +394,7 @@
     "header": "Transaction No.",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -400,6 +402,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -407,6 +410,7 @@
     "header": "#",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

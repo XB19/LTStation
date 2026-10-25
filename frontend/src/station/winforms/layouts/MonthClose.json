@@ -13,6 +13,7 @@
     "header": "dataGridViewTextBoxColumn10",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -20,6 +21,7 @@
     "header": "dataGridViewTextBoxColumn12",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -27,6 +29,7 @@
     "header": "dataGridViewTextBoxColumn13",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -34,6 +37,7 @@
     "header": "dataGridViewTextBoxColumn14",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -41,6 +45,7 @@
     "header": "dataGridViewTextBoxColumn15",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -48,6 +53,7 @@
     "header": "dataGridViewTextBoxColumn16",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -55,6 +61,7 @@
     "header": "dataGridViewTextBoxColumn17",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -62,6 +69,7 @@
     "header": "dataGridViewTextBoxColumn18",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -71,6 +79,7 @@
     "header": "dataGridViewTextBoxColumn1",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -78,6 +87,7 @@
     "header": "dataGridViewTextBoxColumn2",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -85,6 +95,7 @@
     "header": "EmpAmount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -92,6 +103,7 @@
     "header": "EmpVolumeSum",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -99,6 +111,7 @@
     "header": "UserAmount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -106,6 +119,7 @@
     "header": "UserVolume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -113,6 +127,7 @@
     "header": "OtherM",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -120,6 +135,7 @@
     "header": "OtherV",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -127,6 +143,7 @@
     "header": "dataGridViewTextBoxColumn5",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -134,6 +151,7 @@
     "header": "dataGridViewTextBoxColumn4",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -143,6 +161,7 @@
     "header": "TotalVolume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -150,6 +169,7 @@
     "header": "TotalAmount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

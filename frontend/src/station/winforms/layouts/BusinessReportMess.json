@@ -603,6 +603,7 @@
     "header": "Card No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -610,6 +611,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -617,6 +619,7 @@
     "header": "Card Operate Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -624,6 +627,7 @@
     "header": "Deposit",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -631,6 +635,7 @@
     "header": "Present Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -638,6 +643,7 @@
     "header": "Consume Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -645,6 +651,7 @@
     "header": "Consume Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -652,6 +659,7 @@
     "header": "Transaction Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -659,6 +667,7 @@
     "header": "Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -668,6 +677,7 @@
     "header": "Total Record",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -675,6 +685,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -682,6 +693,7 @@
     "header": "Total Present Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -689,6 +701,7 @@
     "header": "Total Deduction Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -696,6 +709,7 @@
     "header": "Total Non Fuel Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -703,6 +717,7 @@
     "header": "Total Consume Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -710,6 +725,7 @@
     "header": "Total Consume Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -717,6 +733,7 @@
     "header": "消费升数",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -724,6 +741,7 @@
     "header": "交易时间",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -731,6 +749,7 @@
     "header": "卡余额",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

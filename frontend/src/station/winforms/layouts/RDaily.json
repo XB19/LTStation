@@ -377,6 +377,7 @@
     "header": "Total Record",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -384,6 +385,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -391,6 +393,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -398,6 +401,7 @@
     "header": "Volume(User)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -405,6 +409,7 @@
     "header": "Amount(User)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -412,6 +417,7 @@
     "header": "Volume(Emp)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -419,6 +425,7 @@
     "header": "Amount(Emp)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -426,6 +433,7 @@
     "header": "Volume(Credit)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -433,6 +441,7 @@
     "header": "Amount(Credit)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -440,6 +449,7 @@
     "header": "Volume(Repair)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -447,6 +457,7 @@
     "header": "Amount(Repair)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -454,6 +465,7 @@
     "header": "Volume(NoCard)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -461,6 +473,7 @@
     "header": "Amount(NoCard)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -470,6 +483,7 @@
     "header": "Noz ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -477,6 +491,7 @@
     "header": "Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -484,6 +499,7 @@
     "header": "Start Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -491,6 +507,7 @@
     "header": "End Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -498,6 +515,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -505,6 +523,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -512,6 +531,7 @@
     "header": "Start Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -519,6 +539,7 @@
     "header": "End Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -526,6 +547,7 @@
     "header": "Error",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -535,6 +557,7 @@
     "header": "Fule Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -542,6 +565,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -549,6 +573,7 @@
     "header": "Density",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -556,6 +581,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -563,6 +589,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -570,6 +597,7 @@
     "header": "Amount(Emp)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -577,6 +605,7 @@
     "header": "Volume(Emp)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -584,6 +613,7 @@
     "header": "Amount(User)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -591,6 +621,7 @@
     "header": "Volume(User)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -598,6 +629,7 @@
     "header": "Amount(Credit)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -605,6 +637,7 @@
     "header": "Volume(Credit)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -612,6 +645,7 @@
     "header": "Amount(Repair)",
     "visible": true,
     "prop": "CashCouponsM",
+    "readOnly": true,
     "width": null
    },
    {
@@ -619,6 +653,7 @@
     "header": "Volume(Repair)",
     "visible": true,
     "prop": "CashCouponsV",
+    "readOnly": true,
     "width": null
    },
    {
@@ -626,6 +661,7 @@
     "header": "Amount(NoCard)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -633,6 +669,7 @@
     "header": "Volume(NoCard)",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -642,6 +679,7 @@
     "header": "Card Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -649,6 +687,7 @@
     "header": "Record",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -656,6 +695,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -663,6 +703,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -670,6 +711,7 @@
     "header": "Start Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -677,6 +719,7 @@
     "header": "End Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

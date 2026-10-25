@@ -143,6 +143,7 @@
     "header": "编号",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -150,6 +151,7 @@
     "header": "类型",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -157,6 +159,7 @@
     "header": "端口号",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -164,6 +167,7 @@
     "header": "IP地址",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

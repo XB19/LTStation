@@ -467,6 +467,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -474,6 +475,7 @@
     "header": "Noz",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -481,6 +483,7 @@
     "header": "Grade",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -488,6 +491,7 @@
     "header": "CardNo",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -495,6 +499,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -502,6 +507,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -509,6 +515,7 @@
     "header": "Card Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -516,6 +523,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -523,6 +531,7 @@
     "header": "AmountTotal",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -530,6 +539,7 @@
     "header": "VolumeTotal",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -537,6 +547,7 @@
     "header": "Real Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -544,6 +555,7 @@
     "header": "Discount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -551,6 +563,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -558,6 +571,7 @@
     "header": "Hand Shift",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -565,6 +579,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -572,6 +587,7 @@
     "header": "Car Number",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -579,6 +595,7 @@
     "header": "Group",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -586,6 +603,7 @@
     "header": "Mileage",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

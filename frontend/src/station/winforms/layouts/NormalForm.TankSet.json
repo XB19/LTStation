@@ -179,6 +179,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -186,6 +187,7 @@
     "header": "Tank Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -193,6 +195,7 @@
     "header": "Tank ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -200,6 +203,7 @@
     "header": "Energy",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -207,6 +211,7 @@
     "header": "Tank Height",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -214,6 +219,7 @@
     "header": "Tank Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -221,6 +227,7 @@
     "header": "High Level",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -228,6 +235,7 @@
     "header": "Low Level",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -235,6 +243,7 @@
     "header": "High Water",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

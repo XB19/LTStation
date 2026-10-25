@@ -251,6 +251,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -258,6 +259,7 @@
     "header": "UserName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -265,6 +267,7 @@
     "header": "Phone",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -272,6 +275,7 @@
     "header": "Current Score",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

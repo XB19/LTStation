@@ -614,6 +614,7 @@
     "header": "纳税人ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -621,6 +622,7 @@
     "header": "用户名",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -628,6 +630,7 @@
     "header": "地址",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -635,6 +638,7 @@
     "header": "分支机构",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -642,6 +646,7 @@
     "header": "车辆标签",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -649,6 +654,7 @@
     "header": "车辆城市",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -656,6 +662,7 @@
     "header": "用户编码",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -663,6 +670,7 @@
     "header": "联系方式",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

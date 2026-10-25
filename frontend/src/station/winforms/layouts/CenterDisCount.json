@@ -125,6 +125,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -132,6 +133,7 @@
     "header": "Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -139,6 +141,7 @@
     "header": "Discount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

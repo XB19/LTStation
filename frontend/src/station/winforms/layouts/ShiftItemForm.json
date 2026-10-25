@@ -104,6 +104,7 @@
     "header": "Shift No",
     "visible": true,
     "prop": "ID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -111,6 +112,7 @@
     "header": "Shift Name",
     "visible": true,
     "prop": "Name",
+    "readOnly": false,
     "width": null
    },
    {
@@ -118,6 +120,7 @@
     "header": "Start Time",
     "visible": true,
     "prop": "StartTime",
+    "readOnly": false,
     "width": null
    },
    {
@@ -125,6 +128,7 @@
     "header": "End Time",
     "visible": true,
     "prop": "EndTime",
+    "readOnly": false,
     "width": null
    },
    {
@@ -132,6 +136,7 @@
     "header": "Interval(minutes)",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    }
   ]

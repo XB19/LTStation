@@ -233,6 +233,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -240,6 +241,7 @@
     "header": "Operate",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -247,6 +249,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -254,6 +257,7 @@
     "header": "Final Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -261,6 +265,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

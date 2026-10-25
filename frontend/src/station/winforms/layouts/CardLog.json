@@ -638,6 +638,7 @@
     "header": "Asn",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -645,6 +646,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -652,6 +654,7 @@
     "header": "Operate Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -659,6 +662,7 @@
     "header": "Deposit Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -666,6 +670,7 @@
     "header": "Gift Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -673,6 +678,7 @@
     "header": "Consume Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -680,6 +686,7 @@
     "header": "Consume Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -687,6 +694,7 @@
     "header": "Trade Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -694,6 +702,7 @@
     "header": "Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -703,6 +712,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -710,6 +720,7 @@
     "header": "Deposit Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -717,6 +728,7 @@
     "header": "Charge Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -724,6 +736,7 @@
     "header": "Gift Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -731,6 +744,7 @@
     "header": "Consume Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -738,6 +752,7 @@
     "header": "Consume Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

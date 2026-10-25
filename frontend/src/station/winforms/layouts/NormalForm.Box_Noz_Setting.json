@@ -89,6 +89,7 @@
     "header": "NozRowID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -96,6 +97,7 @@
     "header": "Box",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -103,6 +105,7 @@
     "header": "Port",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -110,6 +113,7 @@
     "header": "Noz",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -117,6 +121,7 @@
     "header": "Tank",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -124,6 +129,7 @@
     "header": "Energy",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -131,6 +137,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

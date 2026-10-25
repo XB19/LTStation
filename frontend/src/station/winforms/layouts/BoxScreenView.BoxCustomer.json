@@ -347,6 +347,7 @@
     "header": "UserName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -354,6 +355,7 @@
     "header": "CardType",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -361,6 +363,7 @@
     "header": "CardNumber",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -370,6 +373,7 @@
     "header": "UserName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -379,6 +383,7 @@
     "header": "GroupName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

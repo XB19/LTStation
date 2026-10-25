@@ -21,7 +21,10 @@ public class Grid {
     private final List<Row> rows = new ArrayList<>();
     private final Map<String, Boolean> visible = new LinkedHashMap<>();
     private final Map<String, String> headers = new LinkedHashMap<>();
+    /** Colonnes à liste déroulante (DataGridViewComboBoxCell) : valeur → libellé. */
+    private final Map<String, List<Map<String, Object>>> options = new LinkedHashMap<>();
     private int current = -1;
+    private int currentColumn = -1;
     private boolean dirty;
 
     Grid(String name, List<Layouts.Column> columns) {
@@ -47,6 +50,23 @@ public class Grid {
 
     void setCurrent(int i) {
         current = i;
+    }
+
+    void setCurrentColumn(int c) {
+        currentColumn = c;
+    }
+
+    /** CurrentCell.ColumnIndex (-1 si aucune). */
+    public int CurrentCellColumnIndex() {
+        return currentColumn;
+    }
+
+    /** Valeur saisie dans une cellule (CellEndEdit) : sans marquer le tableau comme modifié. */
+    void fromClient(int row, String col, Object value) {
+        Row r = Row(row);
+        if (r != null) {
+            r.put(key(col), value);
+        }
     }
 
     /** DataSource = liste ; null vide le tableau. */
@@ -134,6 +154,20 @@ public class Grid {
         return Cell(CurrentRowIndex(), col);
     }
 
+    /** Cellules à liste déroulante d'une colonne : DataSource, DisplayMember, ValueMember. */
+    public Grid ComboColumn(String col, List<? extends Map<String, ?>> source, String display, String value) {
+        List<Map<String, Object>> l = new ArrayList<>();
+        for (Map<String, ?> r : source) {
+            Map<String, Object> o = new LinkedHashMap<>();
+            o.put("value", Conv.toStr(r.get(value)));
+            o.put("label", Conv.toStr(r.get(display)));
+            l.add(o);
+        }
+        options.put(col, l);
+        dirty = true;
+        return this;
+    }
+
     public Grid ColumnVisible(String col, boolean v) {
         visible.put(col, v);
         dirty = true;
@@ -182,6 +216,9 @@ public class Grid {
         }
         if (!headers.isEmpty()) {
             g.put("headers", headers);
+        }
+        if (!options.isEmpty()) {
+            g.put("options", options);
         }
         return g;
     }

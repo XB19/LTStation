@@ -30,6 +30,9 @@ public class Ctl {
         return name;
     }
 
+    /** Valeurs par défaut des propriétés (pour ne déclencher un événement que sur un vrai changement). */
+    private static final Map<String, Object> DEFAULTS = Map.of("Text", "", "Checked", false, "SelectedIndex", -1);
+
     private static final Map<String, String[]> EVENTS = Map.of(
         "Text", new String[] {"TextChanged"},
         "Checked", new String[] {"CheckedChanged", "CheckStateChanged"},
@@ -37,10 +40,11 @@ public class Ctl {
         "Value", new String[] {"ValueChanged"});
 
     private Ctl set(String k, Object v) {
-        Object old = props.get(k);
+        Object old = props.containsKey(k) ? props.get(k) : DEFAULTS.get(k);
         props.put(k, v);
         dirty = true;
-        boolean changed = old == null ? v != null : !old.equals(v);
+        Object now = v == null ? DEFAULTS.get(k) : v;
+        boolean changed = old == null ? now != null : !old.equals(now);
         if (changed && owner != null) {
             if ("Checked".equals(k) && Boolean.TRUE.equals(v)) {
                 owner.radioChecked(name);

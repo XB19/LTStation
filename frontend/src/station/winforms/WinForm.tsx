@@ -25,11 +25,12 @@ export interface Ctrl {
 
 export interface Column {
   name: string
-  /** Propriété liée (DataPropertyName) */
-  prop?: string | null
   header: string
   visible: boolean
   width: number | null
+  /** Propriété liée (DataPropertyName) */
+  prop?: string | null
+  readOnly?: boolean
 }
 
 export interface Layout {
@@ -82,6 +83,27 @@ export interface GridProps {
   /** En-têtes remplacés (nom de colonne d'origine → texte) */
   headers?: Record<string, string>
   summary?: () => ReactNode
+  /** Cellules modifiables (CellEndEdit d'origine) : valeur saisie pour une ligne et une colonne */
+  editable?: boolean
+  onCellEdit?: (r: Row, col: string, value: string) => void
+  /** Colonnes à liste déroulante (DataGridViewComboBoxCell) */
+  options?: Record<string, { value: string; label: string }[]>
+}
+
+/** Cellule modifiable : double-clic pour saisir, Entrée ou sortie du champ pour valider (CellEndEdit). */
+function EditableCell({ value, onCommit }: { value: unknown; onCommit: (v: string) => void }) {
+  const [editing, setEditing] = useState(false)
+  const [text, setText] = useState('')
+  if (!editing) {
+    return (
+      <span className="wf-cell-edit" onDoubleClick={(e) => { e.stopPropagation(); setText(value === null || value === undefined ? '' : String(value)); setEditing(true) }}>
+        {value === null || value === undefined || value === '' ? ' ' : String(value)}
+      </span>
+    )
+  }
+  const commit = () => { setEditing(false); onCommit(text) }
+  return <Input size="small" autoFocus value={text} onChange={(e) => setText(e.target.value)} onPressEnter={commit} onBlur={commit}
+    onClick={(e) => e.stopPropagation()} />
 }
 
 export interface Option {
@@ -114,10 +136,14 @@ export interface WinFormProps {
   extra?: Record<string, ReactNode>
   /** Clic sur un élément de menu (nom d'origine) */
   onMenu?: (item: string) => void
+  /** Événements d'un champ : Click, MouseLeave, Validated (sortie du champ après modification) */
+  onCtlEvent?: (name: string, event: string) => void
   /** Ouverture / fermeture de la liste d'une ComboBox (DropDown / DropDownClosed) */
   onDropDown?: (name: string, open: boolean) => void
   /** Couleurs d'origine (BackColor / ForeColor) et images (Image / BackgroundImage, chemins sous station-web) */
   styles?: Record<string, CSSProperties>
+  /** Conserver la pagination d'origine (boutons Cur / Next, libellés de page) */
+  keepPager?: boolean
   images?: Record<string, string>
   backgrounds?: Record<string, string>
 }
@@ -138,12 +164,12 @@ export default function WinForm(p: WinFormProps) {
     const m: Record<string, Ctrl[]> = {}
     const hidden = new Set(p.hidden ?? [])
     for (const c of layout.controls) {
-      if (!c.visible || hidden.has(c.name) || PAGER.has(c.name) || isPagerLabel(c)) continue
+      if (!c.visible || hidden.has(c.name) || (!p.keepPager && (PAGER.has(c.name) || isPagerLabel(c)))) continue
       if (isLabel(c) && !c.text && !p.texts?.[c.name]) continue
       ;(m[c.parent] ??= []).push(c)
     }
     return m
-  }, [layout, p.hidden, p.texts])
+  }, [layout, p.hidden, p.texts, p.keepPager])
 
   const inFlow = useMemo(() => new Set(layout.controls.filter((c) => !c.dock && !isLabel(c) && !c.type.includes('Button') && !c.type.includes('CheckBox')
     && !CONTAINERS.has(c.type) && !isGrid(c) && !isStrip(c)).map((c) => c.name)), [layout])
@@ -225,7 +251,10 @@ export default function WinForm(p: WinFormProps) {
       case 'NumericUpDown': {
         const Comp = p.passwords?.includes(c.name) ? Input.Password : Input
         return <Comp size="small" style={{ width: w }} value={(v as string) ?? ''} readOnly={ro} disabled={dis}
-          className={ro ? 'wf-ro' : undefined} onChange={(e) => p.onChange(c.name, e.target.value)} />
+          className={ro ? 'wf-ro' : undefined} onChange={(e) => p.onChange(c.name, e.target.value)}
+          onFocus={(e) => { (e.target as HTMLInputElement).dataset.orig = e.target.value }}
+          onBlur={(e) => { if ((e.target as HTMLInputElement).dataset.orig !== e.target.value) p.onCtlEvent?.(c.name, 'Validated') }}
+          onClick={() => p.onCtlEvent?.(c.name, 'Click')} onMouseLeave={() => p.onCtlEvent?.(c.name, 'MouseLeave')} />
       }
       case 'SkinComboBox':
       case 'ComboBox':
@@ -270,6 +299,14 @@ export default function WinForm(p: WinFormProps) {
       ellipsis: true,
       render: (_: unknown, r: Row) => {
         const val = g?.value?.[x.name] ? g.value[x.name](r) : r[x.name]
+        const opts = g?.options?.[x.name]
+        if (opts) {
+          const cur = val === null || val === undefined ? undefined : String(val)
+          if (!g?.editable || !g.onCellEdit) return opts.find((o) => o.value === cur)?.label ?? cur
+          return <Select size="small" style={{ width: '100%' }} value={cur} options={opts} popupMatchSelectWidth={false}
+            onClick={(e) => e.stopPropagation()} onChange={(v) => g.onCellEdit!(r, x.name, String(v))} />
+        }
+        if (g?.editable && !x.readOnly && g.onCellEdit) return <EditableCell value={val} onCommit={(v) => g.onCellEdit!(r, x.name, v)} />
         return g?.render?.[x.name] ? g.render[x.name](val, r) : (val as ReactNode)
       },
     }))

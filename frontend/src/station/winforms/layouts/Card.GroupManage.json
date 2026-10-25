@@ -53,6 +53,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -60,6 +61,7 @@
     "header": "Group",
     "visible": true,
     "prop": "ID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -67,6 +69,7 @@
     "header": "Group type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

@@ -20,6 +20,7 @@ interface GridState {
   current: number
   visible?: Record<string, boolean>
   headers?: Record<string, string>
+  options?: Record<string, { value: string; label: string }[]>
 }
 
 interface Suspend {
@@ -342,7 +343,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     if (isCombo(t)) {
       options[c.name] = ((p.Items as unknown[]) ?? []).map((x, i) => ({ value: i, label: String(x ?? '') }))
       const i = Number(p.SelectedIndex ?? -1)
-      values[c.name] = i >= 0 ? i : undefined
+      // DropDown : texte libre (Text) quand aucun élément n'est choisi
+      values[c.name] = i >= 0 ? i : (p.Text ? String(p.Text) : undefined)
     } else if (isDate(t)) values[c.name] = p.Value ? dayjs(String(p.Value)) : undefined
     else if (isCheck(t)) values[c.name] = !!p.Checked
     else values[c.name] = p.Text ?? ''
@@ -363,6 +365,23 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     if (ctl[c.name] || values[c.name] !== undefined) continue
     if (isCheck(c.type)) values[c.name] = false
     else if (/TextBox|NumericUpDown/.test(c.type)) values[c.name] = c.text ?? ''
+  }
+
+  // Onglets : SelectedIndex du TabControl (serveur) ↔ onglet affiché
+  const pagesOf = (tabControl: string) => layout.controls.filter((x) => x.parent === tabControl && x.type.endsWith('TabPage'))
+    .sort((a, b) => a.order - b.order).map((x) => x.name)
+  const tabs: Record<string, string> = {}
+  for (const c of layout.controls) {
+    if (!/TabControl$/.test(c.type)) continue
+    const i = Number(ctl[c.name]?.SelectedIndex ?? -1)
+    const pages = pagesOf(c.name)
+    if (i >= 0 && i < pages.length) tabs[c.name] = pages[i]
+  }
+  const onTab = (tabControl: string, page: string) => {
+    const i = pagesOf(tabControl).indexOf(page)
+    merge({ [tabControl]: { SelectedIndex: i } })
+    const h = on(tabControl, 'SelectedIndexChanged')
+    if (h) fire(h, tabControl, {}, true)
   }
 
   const onChange = (name: string, v: unknown) => {
@@ -392,6 +411,11 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       }
     }
     if (ev) fire(ev, name, {}, true)
+    // ComboBox : choix de l'utilisateur (après SelectedIndexChanged)
+    if (isCombo(t)) {
+      const sc = on(name, 'SelectionChangeCommitted')
+      if (sc) fire(sc, name, {}, true)
+    }
   }
 
   const buttons: Record<string, () => unknown> = {}
@@ -423,6 +447,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       selectedKey: g && g.current >= 0 ? g.current : undefined,
       hideColumns: Object.entries(g?.visible ?? {}).filter(([, v]) => !v).map(([k]) => k),
       headers: g?.headers,
+      options: g?.options,
       pagination: (g?.rows.length ?? 0) > 200 ? { pageSize: 100, showSizeChanger: false } : false,
       render: Object.fromEntries(cols.map((x) => [x.name, (v: unknown) => (
         <span onClick={() => { lastCol.current[name] = x.name }}>{v === null || v === undefined ? '' : String(v)}</span>
@@ -439,6 +464,19 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
           const h = on(name, ev)
           if (h) fire(h, name, e)
         }
+      },
+      editable: !!on(name, 'CellEndEdit') && ctl[name]?.ReadOnly !== true,
+      onCellEdit: (r, col, value) => {
+        const i = Number(r.__i)
+        setGrids((gs) => {
+          const cur = gs[name] ?? { rows: [], current: -1 }
+          const rows = cur.rows.map((x) => (Number(x.__i) === i ? { ...x, [col]: value } : x))
+          const n = { ...gs, [name]: { ...cur, rows, current: i } }
+          gridRef.current = n
+          return n
+        })
+        const h = on(name, 'CellEndEdit')
+        if (h) fire(h, name, { RowIndex: i, ColumnIndex: colIndex(col), ColumnName: col, EditValue: value })
       },
       onDoubleClick: (r) => {
         select(r)
@@ -458,7 +496,9 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
         timeOnly={layout.controls.filter((c) => ctl[c.name]?.Format === 'Time').map((c) => c.name)}
         extra={{ ...extra, ...Object.fromEntries(Object.entries(embeds).map(([into, e]) => [into,
           <RemoteForm key={e.id} form={e.form} attachId={e.id} framed={false} onOpen={onOpen} onClose={() => setEmbeds((x) => { const n = { ...x }; delete n[into]; return n })} />])) }} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }}
-        styles={styles} images={images} backgrounds={backgrounds}
+        styles={styles} images={images} backgrounds={backgrounds} keepPager
+        onCtlEvent={(name, ev) => { const h = on(name, ev); if (h) fire(h, name, {}) }}
+        tab={tabs} onTab={onTab}
         onDropDown={(name, open) => { const h = on(name, open ? 'DropDown' : 'DropDownClosed'); if (h) fire(h, name, {}) }} />
       {dialog && (
         <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}

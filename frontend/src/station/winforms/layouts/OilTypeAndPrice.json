@@ -143,6 +143,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -150,6 +151,7 @@
     "header": "Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -157,6 +159,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -164,6 +167,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

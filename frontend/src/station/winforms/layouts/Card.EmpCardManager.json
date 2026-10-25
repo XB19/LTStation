@@ -167,6 +167,7 @@
     "header": "员工姓名",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -174,6 +175,7 @@
     "header": "CardNumber",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -181,6 +183,7 @@
     "header": "CardStatue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

@@ -197,6 +197,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -204,6 +205,7 @@
     "header": "Column4",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -211,6 +213,7 @@
     "header": "Pos",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -218,6 +221,7 @@
     "header": "Nozzle",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -225,6 +229,7 @@
     "header": "Product Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -232,6 +237,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -239,6 +245,7 @@
     "header": "Unit Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -246,6 +253,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -253,6 +261,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

@@ -125,6 +125,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -132,6 +133,7 @@
     "header": "Phone",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -139,6 +141,7 @@
     "header": "Card Number",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -146,6 +149,7 @@
     "header": "Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -153,6 +157,7 @@
     "header": "Score",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

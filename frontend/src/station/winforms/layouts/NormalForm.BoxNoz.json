@@ -543,6 +543,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -550,6 +551,7 @@
     "header": "NozID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -557,6 +559,7 @@
     "header": "Address",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -564,6 +567,7 @@
     "header": "Tank",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -571,6 +575,7 @@
     "header": "Grade",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -578,6 +583,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -587,6 +593,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -594,6 +601,7 @@
     "header": "DeviceID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -601,6 +609,7 @@
     "header": "Address",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -608,6 +617,7 @@
     "header": "NozID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -617,6 +627,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -624,6 +635,7 @@
     "header": "DeviceType",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -631,6 +643,7 @@
     "header": "DeviceAddress",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -638,6 +651,7 @@
     "header": "Buad",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -645,6 +659,7 @@
     "header": "Interval",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -652,6 +667,7 @@
     "header": "Stop",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -659,6 +675,7 @@
     "header": "Parity",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

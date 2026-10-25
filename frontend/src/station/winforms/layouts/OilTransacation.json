@@ -935,6 +935,7 @@
     "header": "Noz ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -942,6 +943,7 @@
     "header": "Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -949,6 +951,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -956,6 +959,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -963,6 +967,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -970,6 +975,7 @@
     "header": "TruePay",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -977,6 +983,7 @@
     "header": "Transaction Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -984,6 +991,7 @@
     "header": "Asn",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -991,6 +999,7 @@
     "header": "Balance",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -998,6 +1007,7 @@
     "header": "Trade Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1005,6 +1015,7 @@
     "header": "Pay Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1012,6 +1023,7 @@
     "header": "Com",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1019,6 +1031,7 @@
     "header": "POSTTC",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1026,6 +1039,7 @@
     "header": "Employee",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1033,6 +1047,7 @@
     "header": "Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1040,6 +1055,7 @@
     "header": "Shift",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1047,6 +1063,7 @@
     "header": "Car No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1054,6 +1071,7 @@
     "header": "Mileage",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1061,6 +1079,7 @@
     "header": "Discount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1068,6 +1087,7 @@
     "header": "Coupon",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1075,6 +1095,7 @@
     "header": "Par",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -1084,6 +1105,7 @@
     "header": "Card Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1091,6 +1113,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1098,6 +1121,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -1105,6 +1129,7 @@
     "header": "Total Record",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

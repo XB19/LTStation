@@ -347,6 +347,7 @@
     "header": "UserName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -354,6 +355,7 @@
     "header": "Phone",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -361,6 +363,7 @@
     "header": "ScoreType",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -368,6 +371,7 @@
     "header": "ScoreValue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -375,6 +379,7 @@
     "header": "FinalScore",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -382,6 +387,7 @@
     "header": "Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -389,6 +395,7 @@
     "header": "Employee",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

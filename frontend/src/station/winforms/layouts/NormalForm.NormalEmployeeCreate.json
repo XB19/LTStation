@@ -89,6 +89,7 @@
     "header": "Emp ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -96,6 +97,7 @@
     "header": "Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -103,6 +105,7 @@
     "header": "Login Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -110,6 +113,7 @@
     "header": "Password",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

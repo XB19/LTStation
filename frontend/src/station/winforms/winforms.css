@@ -169,3 +169,4 @@ input.wf-ro {
 .wf-sep { width: 1px; align-self: stretch; background: #d0d8e2; margin: 2px 4px; }
 .wf-status { display: flex; gap: 16px; align-items: center; padding: 3px 8px; font-size: 12px; background: #f3f6fa; border-top: 1px solid #d9e1ea; }
 .wf-status-pro { width: 90px; height: 10px; }
+.wf-cell-edit { display: block; min-height: 18px; cursor: text; }

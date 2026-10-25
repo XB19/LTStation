@@ -153,6 +153,7 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
         columns[m.group(1)] = [{'name': c, 'header': (en.get(f'{c}.HeaderText') or neutral.get(f'{c}.HeaderText') or headers.get(c) or c).strip(),
                                 'visible': not re.search(rf'this\.{c}\.Visible = false', cs),
                                 'prop': (pm.group(1) if (pm := re.search(rf'this\.{c}\.DataPropertyName = "(\w+)"', cs)) else None),
+                                'readOnly': bool(re.search(rf'this\.{c}\.ReadOnly = true', cs)),
                                 'width': int(w.group(1)) if (w := re.search(rf'this\.{c}\.Width = (\d+)', cs)) else None} for c in cols]
     # Menus : ContextMenuStrip (clic droit sur un contrôle), MenuStrip / ToolStrip / StatusStrip (barres)
     item_types = {m.group(1): m.group(2).split('.')[-1] for m in re.finditer(r'this\.(\w+) = new ([\w.]+)\(', cs)}

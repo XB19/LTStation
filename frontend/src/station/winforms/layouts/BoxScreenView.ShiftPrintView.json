@@ -107,6 +107,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -114,6 +115,7 @@
     "header": "Shift No.",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

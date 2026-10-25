@@ -233,6 +233,15 @@ public class SwFormController {
         f.answers = body.get("answers") instanceof Map<?, ?> a ? new LinkedHashMap<>((Map<String, Object>) a) : new LinkedHashMap<>();
         f.e = body.get("e") instanceof Map<?, ?> e ? new Row((Map<String, ?>) e) : new Row();
         f.sender = String.valueOf(body.getOrDefault("sender", ""));
+        // Cellule modifiée par l'opérateur (CellEndEdit) / cellule courante
+        if (f.e.containsKey("RowIndex") && f.grids.containsKey(f.sender) || f.e.containsKey("EditValue")) {
+            Grid g = f.g(f.sender);
+            g.setCurrent(f.e.i("RowIndex"));
+            g.setCurrentColumn(f.e.i("ColumnIndex"));
+            if (f.e.containsKey("EditValue")) {
+                g.fromClient(f.e.i("RowIndex"), f.e.s("ColumnName"), f.e.get("EditValue"));
+            }
+        }
     }
 
     /**
@@ -277,6 +286,9 @@ public class SwFormController {
             error = se.getMessage();
         } catch (ReflectiveOperationException ex) {
             error = ex.getMessage();
+        } finally {
+            // Transaction restée ouverte (question en attente, exception) : annulée
+            com.ltstation.center.sw.core.SW.db().rollbackOpen();
         }
         return state(f, full, suspend, error);
     }
@@ -305,7 +317,7 @@ public class SwFormController {
             f.messages.clear();
         }
         if (error != null) {
-            msgs.add(Map.of("text", error, "error", true));
+            msgs.add(Map.of("text", SwForm.dotNet(error), "error", true));
         }
         out.put("messages", msgs);
         if (!f.timers.isEmpty()) {

@@ -599,6 +599,7 @@
     "header": "Asn",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -606,6 +607,7 @@
     "header": "Employee",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -613,6 +615,7 @@
     "header": "Station",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -620,6 +623,7 @@
     "header": "Create Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -627,6 +631,7 @@
     "header": "Card Statue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -634,6 +639,7 @@
     "header": "消费金额",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -641,6 +647,7 @@
     "header": "消费升数",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -648,6 +655,7 @@
     "header": "交易时间",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -655,6 +663,7 @@
     "header": "卡余额",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

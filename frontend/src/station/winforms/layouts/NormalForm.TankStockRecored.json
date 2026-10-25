@@ -317,6 +317,7 @@
     "header": "Tank Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -324,6 +325,7 @@
     "header": "Tank ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -331,6 +333,7 @@
     "header": "Stock Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -338,6 +341,7 @@
     "header": "Start Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -345,6 +349,7 @@
     "header": "End Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -352,6 +357,7 @@
     "header": "Start Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -359,6 +365,7 @@
     "header": "End Time",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

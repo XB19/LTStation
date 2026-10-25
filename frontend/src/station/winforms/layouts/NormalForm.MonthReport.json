@@ -320,6 +320,7 @@
     "header": "Noz",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -327,6 +328,7 @@
     "header": "Energy",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -334,6 +336,7 @@
     "header": "Start Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -341,6 +344,7 @@
     "header": "End Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -348,6 +352,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -355,6 +360,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -362,6 +368,7 @@
     "header": "Error",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -371,6 +378,7 @@
     "header": "Energy",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -378,6 +386,7 @@
     "header": "Count",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -385,6 +394,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -392,6 +402,7 @@
     "header": "TotalAmount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -399,6 +410,7 @@
     "header": "TotalVolume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -408,6 +420,7 @@
     "header": "Tank",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -415,6 +428,7 @@
     "header": "Start Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -422,6 +436,7 @@
     "header": "End Pump",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -429,6 +444,7 @@
     "header": "Saler",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -436,6 +452,7 @@
     "header": "Stock",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -443,6 +460,7 @@
     "header": "Error",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -452,6 +470,7 @@
     "header": "Statistical",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -459,6 +478,7 @@
     "header": "Total Count",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -466,6 +486,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -473,6 +494,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

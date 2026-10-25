@@ -299,6 +299,7 @@
     "header": "NozID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -306,6 +307,7 @@
     "header": "Grade",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -313,6 +315,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -320,6 +323,7 @@
     "header": "Count",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -327,6 +331,7 @@
     "header": "Start Volume Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -334,6 +339,7 @@
     "header": "End Volume Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -341,6 +347,7 @@
     "header": "Sum Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -348,6 +355,7 @@
     "header": "Sum Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -355,6 +363,7 @@
     "header": "Error",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -364,6 +373,7 @@
     "header": "Card Number",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -371,6 +381,7 @@
     "header": "Sum Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -378,6 +389,7 @@
     "header": "Sum Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -387,6 +399,7 @@
     "header": "储罐",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -394,6 +407,7 @@
     "header": "起始库存",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -401,6 +415,7 @@
     "header": "截止库存",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -408,6 +423,7 @@
     "header": "销量",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -415,6 +431,7 @@
     "header": "入库量",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -422,6 +439,7 @@
     "header": "偏差",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

@@ -800,6 +800,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -807,6 +808,7 @@
     "header": "UserName",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

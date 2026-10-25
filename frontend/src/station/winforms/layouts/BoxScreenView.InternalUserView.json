@@ -272,6 +272,7 @@
     "header": "ID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -279,6 +280,7 @@
     "header": "BillOrder",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -286,6 +288,7 @@
     "header": "CreateTime",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -293,6 +296,7 @@
     "header": "Transaction number",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -300,6 +304,7 @@
     "header": "Product",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -307,6 +312,7 @@
     "header": "PumpID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -314,6 +320,7 @@
     "header": "Nozzle",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -321,6 +328,7 @@
     "header": "Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -328,6 +336,7 @@
     "header": "Unit price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -335,6 +344,7 @@
     "header": "Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -342,6 +352,7 @@
     "header": "Payment method",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

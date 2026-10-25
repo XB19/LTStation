@@ -275,6 +275,7 @@
     "header": "ID",
     "visible": false,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -282,6 +283,7 @@
     "header": "用户名",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -289,6 +291,7 @@
     "header": "车牌号",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -296,6 +299,7 @@
     "header": "车辆类型",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -303,6 +307,7 @@
     "header": "余额",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -310,6 +315,7 @@
     "header": "所属集团",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

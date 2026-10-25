@@ -545,6 +545,7 @@
     "header": "FuelType",
     "visible": true,
     "prop": "TypeName",
+    "readOnly": true,
     "width": null
    },
    {
@@ -552,6 +553,7 @@
     "header": "Price",
     "visible": true,
     "prop": "PPU",
+    "readOnly": true,
     "width": null
    },
    {
@@ -559,6 +561,7 @@
     "header": "TotalVolume",
     "visible": true,
     "prop": "TotalVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -566,6 +569,7 @@
     "header": "TotalAmount",
     "visible": true,
     "prop": "TotalAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -573,6 +577,7 @@
     "header": "EmpVolume",
     "visible": true,
     "prop": "EmpVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -580,6 +585,7 @@
     "header": "EmpAmount",
     "visible": true,
     "prop": "EmpAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -587,6 +593,7 @@
     "header": "UserVolume",
     "visible": true,
     "prop": "UserVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -594,6 +601,7 @@
     "header": "UserAmount",
     "visible": true,
     "prop": "UserAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -601,6 +609,7 @@
     "header": "CreditVolume",
     "visible": true,
     "prop": "CreditAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -608,6 +617,7 @@
     "header": "CreditAmount",
     "visible": true,
     "prop": "CreditVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -615,6 +625,7 @@
     "header": "NotCardVolume",
     "visible": true,
     "prop": "NotCardVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -622,6 +633,7 @@
     "header": "NotCardAmount",
     "visible": true,
     "prop": "NotCardAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -629,6 +641,7 @@
     "header": "RepairVoulme",
     "visible": true,
     "prop": "CashCouponsV",
+    "readOnly": true,
     "width": null
    },
    {
@@ -636,6 +649,7 @@
     "header": "RepairAmount",
     "visible": true,
     "prop": "CashCouponsM",
+    "readOnly": true,
     "width": null
    }
   ],
@@ -645,6 +659,7 @@
     "header": "Noz ID",
     "visible": true,
     "prop": "GunID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -652,6 +667,7 @@
     "header": "Fuel Type",
     "visible": true,
     "prop": "OilType",
+    "readOnly": true,
     "width": null
    },
    {
@@ -659,6 +675,7 @@
     "header": "Start Pump",
     "visible": true,
     "prop": "StartVolumeTotal",
+    "readOnly": true,
     "width": null
    },
    {
@@ -666,6 +683,7 @@
     "header": "End Pump",
     "visible": true,
     "prop": "EndVolumeTotal",
+    "readOnly": true,
     "width": null
    },
    {
@@ -673,6 +691,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": "SumVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -680,6 +699,7 @@
     "header": "Error",
     "visible": true,
     "prop": "Error",
+    "readOnly": true,
     "width": null
    },
    {
@@ -687,6 +707,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": "SumAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -694,6 +715,7 @@
     "header": "Start Time",
     "visible": true,
     "prop": "StartTime",
+    "readOnly": true,
     "width": null
    },
    {
@@ -701,6 +723,7 @@
     "header": "End Time",
     "visible": true,
     "prop": "EndTime",
+    "readOnly": true,
     "width": null
    }
   ],
@@ -710,6 +733,7 @@
     "header": "POSTTC",
     "visible": true,
     "prop": "Posttc",
+    "readOnly": true,
     "width": null
    },
    {
@@ -717,6 +741,7 @@
     "header": "Noz",
     "visible": true,
     "prop": "GunID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -724,6 +749,7 @@
     "header": "EmpNo",
     "visible": true,
     "prop": "EmpID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -731,6 +757,7 @@
     "header": "ASN",
     "visible": true,
     "prop": "Asn",
+    "readOnly": true,
     "width": null
    },
    {
@@ -738,6 +765,7 @@
     "header": "Volume",
     "visible": true,
     "prop": "Volume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -745,6 +773,7 @@
     "header": "Amount",
     "visible": true,
     "prop": "Amount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -752,6 +781,7 @@
     "header": "Time",
     "visible": true,
     "prop": "TrueTime",
+    "readOnly": true,
     "width": null
    },
    {
@@ -759,6 +789,7 @@
     "header": "Pump",
     "visible": true,
     "prop": "VolumeTotal",
+    "readOnly": true,
     "width": null
    },
    {
@@ -766,6 +797,7 @@
     "header": "Fuel Type",
     "visible": true,
     "prop": "OilType",
+    "readOnly": true,
     "width": null
    },
    {
@@ -773,6 +805,7 @@
     "header": "Price",
     "visible": true,
     "prop": "PPU",
+    "readOnly": true,
     "width": null
    },
    {
@@ -780,6 +813,7 @@
     "header": "Type",
     "visible": true,
     "prop": "TType",
+    "readOnly": true,
     "width": null
    },
    {
@@ -787,6 +821,7 @@
     "header": "Balance",
     "visible": true,
     "prop": "Balance",
+    "readOnly": true,
     "width": null
    },
    {
@@ -794,6 +829,7 @@
     "header": "Pay Type",
     "visible": true,
     "prop": "PayMent",
+    "readOnly": true,
     "width": null
    }
   ],
@@ -803,6 +839,7 @@
     "header": "Employee",
     "visible": true,
     "prop": "Emp",
+    "readOnly": true,
     "width": null
    },
    {
@@ -810,6 +847,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": "Amount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -817,6 +855,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": "Volume",
+    "readOnly": true,
     "width": null
    }
   ]

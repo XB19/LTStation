@@ -353,6 +353,7 @@
     "header": "卡号",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -360,6 +361,7 @@
     "header": "用户名",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -367,6 +369,7 @@
     "header": "积分操作",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -374,6 +377,7 @@
     "header": "积分值",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -381,6 +385,7 @@
     "header": "当前积分",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -388,6 +393,7 @@
     "header": "时间",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

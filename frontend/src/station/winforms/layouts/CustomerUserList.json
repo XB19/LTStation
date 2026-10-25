@@ -390,6 +390,7 @@
     "header": "Card No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -397,6 +398,7 @@
     "header": "User Name",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -404,6 +406,7 @@
     "header": "Card Statue",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -411,6 +414,7 @@
     "header": "Phone",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -418,6 +422,7 @@
     "header": "Car No",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

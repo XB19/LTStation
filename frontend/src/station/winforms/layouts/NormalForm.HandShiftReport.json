@@ -320,6 +320,7 @@
     "header": "Tank",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -327,6 +328,7 @@
     "header": "Starting stock",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -334,6 +336,7 @@
     "header": "End of Stock",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -341,6 +344,7 @@
     "header": "Sales volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -348,6 +352,7 @@
     "header": "Quantity in storage",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -355,6 +360,7 @@
     "header": "Deviation",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -364,6 +370,7 @@
     "header": "NozID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -371,6 +378,7 @@
     "header": "Grade",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -378,6 +386,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -385,6 +394,7 @@
     "header": "Count",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -392,6 +402,7 @@
     "header": "Start Volume Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -399,6 +410,7 @@
     "header": "End Volume Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -406,6 +418,7 @@
     "header": "Sum Volume",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -413,6 +426,7 @@
     "header": "Sum Amount",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -420,6 +434,7 @@
     "header": "Error",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -429,6 +444,7 @@
     "header": "Card Number",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -436,6 +452,7 @@
     "header": "Sum Volume Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -443,6 +460,7 @@
     "header": "Sum Amount Total",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

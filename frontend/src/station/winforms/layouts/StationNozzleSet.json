@@ -161,6 +161,7 @@
     "header": "Noz ID",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -168,6 +169,7 @@
     "header": "CABLENO.",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -175,6 +177,7 @@
     "header": "TankType",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -182,6 +185,7 @@
     "header": "Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -189,6 +193,7 @@
     "header": "Pos Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -196,6 +201,7 @@
     "header": "PosIP",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ],
@@ -205,6 +211,7 @@
     "header": "TankID",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -212,6 +219,7 @@
     "header": "Type",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -219,6 +227,7 @@
     "header": "Price",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    }
   ]

@@ -296,6 +296,7 @@
     "header": "ID",
     "visible": true,
     "prop": "ID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -303,6 +304,7 @@
     "header": "Valid",
     "visible": true,
     "prop": "PayMentDealID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -310,6 +312,7 @@
     "header": "Noz",
     "visible": true,
     "prop": "GunID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -317,6 +320,7 @@
     "header": "Volume",
     "visible": true,
     "prop": "Volume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -324,6 +328,7 @@
     "header": "Amount",
     "visible": true,
     "prop": "TruePay",
+    "readOnly": true,
     "width": null
    },
    {
@@ -331,6 +336,7 @@
     "header": "Time",
     "visible": true,
     "prop": "TrueTime",
+    "readOnly": true,
     "width": null
    }
   ],
@@ -340,6 +346,7 @@
     "header": "Emp",
     "visible": true,
     "prop": "EmpName",
+    "readOnly": true,
     "width": null
    },
    {
@@ -347,6 +354,7 @@
     "header": "Total Volume",
     "visible": true,
     "prop": "TotalVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -354,6 +362,7 @@
     "header": "Total Amount",
     "visible": true,
     "prop": "TotalAmount",
+    "readOnly": true,
     "width": null
    }
   ],
@@ -363,6 +372,7 @@
     "header": "NozID",
     "visible": true,
     "prop": "GunID",
+    "readOnly": true,
     "width": null
    },
    {
@@ -370,6 +380,7 @@
     "header": "Last Time",
     "visible": true,
     "prop": "LastTime",
+    "readOnly": true,
     "width": null
    },
    {
@@ -377,6 +388,7 @@
     "header": "Volume Total",
     "visible": true,
     "prop": "VolumeTotal",
+    "readOnly": true,
     "width": null
    },
    {
@@ -384,6 +396,7 @@
     "header": "Last Amount",
     "visible": true,
     "prop": "LastAmount",
+    "readOnly": true,
     "width": null
    },
    {
@@ -391,6 +404,7 @@
     "header": "Last Volume",
     "visible": true,
     "prop": "LastVolume",
+    "readOnly": true,
     "width": null
    },
    {
@@ -398,6 +412,7 @@
     "header": "Fuel Type",
     "visible": true,
     "prop": "OilType",
+    "readOnly": true,
     "width": null
    },
    {
@@ -405,6 +420,7 @@
     "header": "Price",
     "visible": true,
     "prop": "PPU",
+    "readOnly": true,
     "width": null
    },
    {
@@ -412,6 +428,7 @@
     "header": "Statue",
     "visible": true,
     "prop": "Statue",
+    "readOnly": true,
     "width": null
    }
   ]

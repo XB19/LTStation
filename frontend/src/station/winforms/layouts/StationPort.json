@@ -122,6 +122,7 @@
     "header": "CABLENO.",
     "visible": true,
     "prop": null,
+    "readOnly": true,
     "width": null
    },
    {
@@ -129,6 +130,7 @@
     "header": "COMID",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -136,6 +138,7 @@
     "header": "Baud",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -143,6 +146,7 @@
     "header": "DataBit",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -150,6 +154,7 @@
     "header": "StopBit",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    },
    {
@@ -157,6 +162,7 @@
     "header": "Parity",
     "visible": true,
     "prop": null,
+    "readOnly": false,
     "width": null
    }
   ]
