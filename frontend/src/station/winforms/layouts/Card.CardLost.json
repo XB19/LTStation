@@ -94,7 +94,13 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "Employee Card",
+     "Non Employee Card"
+    ]
+   }
   },
   {
    "name": "Confirm",
@@ -130,7 +136,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label8",
@@ -166,7 +175,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label7",
@@ -202,7 +214,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label6",
@@ -238,7 +253,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -432,5 +450,6 @@
   "CardReaderBtn": {
    "Click": "CardReaderBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

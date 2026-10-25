@@ -310,7 +310,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -381,5 +384,6 @@
   "$this": {
    "Load": "NormalStationCreate_Load"
   }
- }
+ },
+ "menus": {}
 }

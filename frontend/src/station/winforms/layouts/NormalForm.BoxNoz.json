@@ -148,7 +148,14 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "None",
+     "Even",
+     "Odd"
+    ]
+   }
   },
   {
    "name": "label7",
@@ -184,7 +191,14 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Items": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
   },
   {
    "name": "label6",
@@ -220,7 +234,13 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Items": [
+     "664",
+     "886"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -256,7 +276,24 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Items": [
+     "None",
+     "BlueSky",
+     "Tatsuno",
+     "Japan",
+     "Dart",
+     "ATG",
+     "RFID",
+     "Eaglestar",
+     "HongYang",
+     "SS-Lan",
+     "BlueSkyPlus",
+     "CNG PLC",
+     "Unit price board"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -292,7 +329,37 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "init": {
+    "Items": [
+     "80",
+     "90",
+     "100",
+     "110",
+     "120",
+     "130",
+     "140",
+     "150",
+     "160",
+     "170",
+     "180",
+     "190",
+     "200",
+     "210",
+     "220",
+     "230",
+     "240",
+     "250",
+     "260",
+     "270",
+     "280",
+     "290",
+     "300",
+     "310",
+     "320",
+     "330"
+    ]
+   }
   },
   {
    "name": "label3",
@@ -328,7 +395,19 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "init": {
+    "Items": [
+     "2400",
+     "4800",
+     "9600",
+     "14400",
+     "19200",
+     "38400",
+     "57600",
+     "115200"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -364,7 +443,16 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "init": {
+    "Items": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -400,7 +488,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "RFIDView",
@@ -418,7 +509,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DeviceView",
@@ -436,7 +530,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -596,6 +693,25 @@
   },
   "$this": {
    "Load": "BoxNoz_Load"
+  }
+ },
+ "menus": {
+  "Box_Menu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "NozView",
+    "RFIDView",
+    "DeviceView"
+   ],
+   "items": [
+    {
+     "name": "Menu_Add",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

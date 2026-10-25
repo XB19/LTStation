@@ -364,7 +364,17 @@
    "dock": null,
    "visible": true,
    "z": 18,
-   "order": 18
+   "order": 18,
+   "init": {
+    "Items": [
+     "Identity Card",
+     "Driver's License",
+     "Military ID",
+     "PassPort",
+     "Work Permit",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -418,7 +428,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "User",
+     "Employee",
+     "Credit",
+     "Group User",
+     "Group Credit",
+     "Master",
+     "Child"
+    ]
+   }
   },
   {
    "name": "label11",
@@ -580,7 +601,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "Prepaid Card",
+     "Staff Card",
+     "Credit Card",
+     "Group Card",
+     "Group Credit Card",
+     "Master Card",
+     "Secondary Card"
+    ]
+   }
   },
   {
    "name": "CardTypeSelect",
@@ -598,7 +630,14 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "ACS",
+     "BlueSky1",
+     "LYZN"
+    ]
+   }
   },
   {
    "name": "label10",
@@ -690,5 +729,6 @@
   "ChangeButton": {
    "Click": "ChangeButton_Click"
   }
- }
+ },
+ "menus": {}
 }

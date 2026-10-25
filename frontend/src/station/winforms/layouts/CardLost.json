@@ -22,7 +22,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "SelectedIndex": 0
+   }
   },
   {
    "name": "CardDeposit",
@@ -112,7 +115,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "Prepaid Card",
+     "Staff Card",
+     "Credit Card",
+     "Group Card",
+     "Group Credit Card",
+     "Master Card",
+     "Secondary Card"
+    ]
+   }
   },
   {
    "name": "CardTypeID",
@@ -328,7 +342,17 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "init": {
+    "Items": [
+     "ID Number",
+     "Driver",
+     "Official Card",
+     "PassPort",
+     "Worker",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -562,7 +586,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -651,5 +678,6 @@
   "$this": {
    "Load": "CardLost_Load"
   }
- }
+ },
+ "menus": {}
 }

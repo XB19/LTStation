@@ -112,7 +112,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Format": "Short"
+   }
   }
  ],
  "columns": {},
@@ -123,5 +126,6 @@
   "$this": {
    "Load": "CancleDuty_Load"
   }
- }
+ },
+ "menus": {}
 }

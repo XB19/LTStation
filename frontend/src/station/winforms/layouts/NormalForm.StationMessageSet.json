@@ -267,5 +267,6 @@
   "$this": {
    "Load": "StationMessageSet_Load"
   }
- }
+ },
+ "menus": {}
 }

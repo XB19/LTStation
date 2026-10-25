@@ -292,7 +292,13 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Items": [
+     "积分扣除",
+     "积分增加"
+    ]
+   }
   },
   {
    "name": "label3",
@@ -328,7 +334,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -398,5 +407,6 @@
    "FormClosed": "VirtualScoreUpdate_FormClosed",
    "Load": "VirtualScoreUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

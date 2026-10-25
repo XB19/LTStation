@@ -238,7 +238,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label4",
@@ -310,7 +313,10 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -346,7 +352,10 @@
    "dock": null,
    "visible": true,
    "z": 17,
-   "order": 17
+   "order": 17,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -375,5 +384,6 @@
   "$this": {
    "Load": "BoxPriceUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

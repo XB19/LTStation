@@ -120,5 +120,6 @@
   "QueryButton": {
    "Click": "QueryButton_Click"
   }
- }
+ },
+ "menus": {}
 }

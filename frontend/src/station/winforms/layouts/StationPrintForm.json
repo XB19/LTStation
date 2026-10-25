@@ -246,5 +246,6 @@
   "SaveButton": {
    "Click": "SaveButton_Click"
   }
- }
+ },
+ "menus": {}
 }

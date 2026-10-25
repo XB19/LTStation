@@ -58,7 +58,14 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "All",
+     "Normal",
+     "Abnormal"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -202,7 +209,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "Cur",
@@ -419,5 +429,6 @@
   "EmpReadButton": {
    "Click": "EmpReadButton_Click"
   }
- }
+ },
+ "menus": {}
 }

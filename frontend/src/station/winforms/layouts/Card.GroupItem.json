@@ -40,7 +40,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "Normal Group",
+     "Share Group"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -264,5 +270,6 @@
   "ConfirmBtn": {
    "Click": "ConfirmBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

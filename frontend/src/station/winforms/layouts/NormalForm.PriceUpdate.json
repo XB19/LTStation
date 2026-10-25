@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "GradeSelect",
@@ -180,5 +183,6 @@
   "$this": {
    "Load": "PriceUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

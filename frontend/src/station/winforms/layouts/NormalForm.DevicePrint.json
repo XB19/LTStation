@@ -591,5 +591,6 @@
   "$this": {
    "Load": "DevicePrint_Load"
   }
- }
+ },
+ "menus": {}
 }

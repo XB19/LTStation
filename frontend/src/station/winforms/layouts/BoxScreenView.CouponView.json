@@ -34,5 +34,6 @@
    "FormClosed": "CouponView_FormClosed",
    "Load": "CouponView_Load"
   }
- }
+ },
+ "menus": {}
 }

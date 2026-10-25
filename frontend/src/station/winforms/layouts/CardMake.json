@@ -1606,7 +1606,14 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "ACS",
+     "Bluesky1",
+     "RYZN"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -1804,7 +1811,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "GroupName",
@@ -2902,7 +2912,17 @@
    "dock": null,
    "visible": true,
    "z": 23,
-   "order": 23
+   "order": 23,
+   "init": {
+    "Items": [
+     "Identity Card",
+     "Drivers License",
+     "Military Officer",
+     "Passport",
+     "Work Permit",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label84",
@@ -3262,7 +3282,15 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "init": {
+    "Items": [
+     "No Limit",
+     "Limit Region",
+     "Limit City",
+     "Limit Station"
+    ]
+   }
   },
   {
    "name": "CreditButton",
@@ -3820,7 +3848,15 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Items": [
+     "无限制",
+     "限制区域使用",
+     "限制城市使用",
+     "限制站点使用"
+    ]
+   }
   },
   {
    "name": "ChilrenConfirm",
@@ -3856,7 +3892,15 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "init": {
+    "Items": [
+     "No Limit",
+     "Limit Region",
+     "Limit City",
+     "Limit Station"
+    ]
+   }
   },
   {
    "name": "label115",
@@ -4540,7 +4584,17 @@
    "dock": null,
    "visible": true,
    "z": 23,
-   "order": 23
+   "order": 23,
+   "init": {
+    "Items": [
+     "Identity Card",
+     "Drivers License",
+     "Military Officer",
+     "Passport",
+     "Work Permit",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label135",
@@ -4738,7 +4792,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "GroupValidTime",
@@ -4756,7 +4813,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "GroupAsn",
@@ -4828,7 +4888,14 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Items": [
+     "Person Group Card",
+     "Credit Group Card",
+     "Master Group Card"
+    ]
+   }
   },
   {
    "name": "label59",
@@ -4954,7 +5021,13 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "Employee",
+     "Repair"
+    ]
+   }
   },
   {
    "name": "label109",
@@ -4990,7 +5063,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "EmpPasswordConfirm",
@@ -5044,7 +5120,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "EmpAsn",
@@ -5062,7 +5141,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label111",
@@ -5206,7 +5288,13 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "init": {
+    "Items": [
+     "1",
+     "2"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -5458,7 +5546,15 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Items": [
+     "No Limit",
+     "Limit Region",
+     "Limit City",
+     "Limit Station"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -5764,7 +5860,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "PersonAddress",
@@ -5890,7 +5989,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "PersonName",
@@ -5944,7 +6046,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "PersonValidTime",
@@ -5962,7 +6067,10 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "PersonAsn",
@@ -5980,7 +6088,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label107",
@@ -6034,7 +6145,18 @@
    "dock": null,
    "visible": true,
    "z": 17,
-   "order": 17
+   "order": 17,
+   "init": {
+    "Items": [
+     "Taxi",
+     "Bus",
+     "Medium-Sized Bus",
+     "Lorry",
+     "Private Car",
+     "Unit Car",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label108",
@@ -6088,7 +6210,18 @@
    "dock": null,
    "visible": true,
    "z": 20,
-   "order": 20
+   "order": 20,
+   "init": {
+    "Items": [
+     "Blue",
+     "Yellow",
+     "Yellow Green",
+     "Green",
+     "Black",
+     "Unknow",
+     "Compressor"
+    ]
+   }
   },
   {
    "name": "label106",
@@ -6178,7 +6311,17 @@
    "dock": null,
    "visible": true,
    "z": 25,
-   "order": 25
+   "order": 25,
+   "init": {
+    "Items": [
+     "Identity Card",
+     "Drivers License",
+     "Military Officer",
+     "Passport",
+     "Work Permit",
+     "Other"
+    ]
+   }
   },
   {
    "name": "label24",
@@ -6808,7 +6951,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 3
+   }
   }
  ],
  "columns": {},
@@ -6873,5 +7019,6 @@
   "$this": {
    "Load": "CardMake_Load"
   }
- }
+ },
+ "menus": {}
 }

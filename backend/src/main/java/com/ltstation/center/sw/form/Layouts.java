@@ -15,8 +15,13 @@ public final class Layouts {
     public record Column(String name, String prop, String header) {
     }
 
+    /**
+     * types : contrôle → type ; texts : texte d'origine ; init : état fixé dans le concepteur (Items,
+     * Enabled, ReadOnly, Checked, PasswordChar, Format…).
+     */
     public record Layout(String name, String title, Map<String, String> types, Map<String, List<Column>> columns,
-                         Map<String, Map<String, String>> events) {
+                         Map<String, Map<String, String>> events, Map<String, String> texts, Map<String, Map<String, Object>> init,
+                         Map<String, String> parents) {
     }
 
     private static final Map<String, Layout> CACHE = new ConcurrentHashMap<>();
@@ -32,11 +37,22 @@ public final class Layouts {
     private static Layout load(String name) {
         try (InputStream in = Layouts.class.getClassLoader().getResourceAsStream("station/layouts/" + name + ".json")) {
             if (in == null) {
-                return new Layout(name, name, Map.of(), Map.of(), Map.of());
+                return new Layout(name, name, Map.of(), Map.of(), Map.of(), Map.of(), Map.of(), Map.of());
             }
             JsonNode root = OM.readTree(in);
             Map<String, String> types = new ConcurrentHashMap<>();
-            root.path("controls").forEach(c -> types.put(c.path("name").asText(), c.path("type").asText()));
+            Map<String, String> texts = new ConcurrentHashMap<>();
+            Map<String, Map<String, Object>> init = new ConcurrentHashMap<>();
+            Map<String, String> parents = new ConcurrentHashMap<>();
+            root.path("controls").forEach(c -> {
+                String n = c.path("name").asText();
+                types.put(n, c.path("type").asText());
+                texts.put(n, c.path("text").asText(""));
+                parents.put(n, c.path("parent").asText("$this"));
+                if (c.has("init")) {
+                    init.put(n, OM.convertValue(c.get("init"), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() { }));
+                }
+            });
             Map<String, List<Column>> cols = new ConcurrentHashMap<>();
             root.path("columns").fields().forEachRemaining(e -> {
                 List<Column> l = new ArrayList<>();
@@ -50,7 +66,7 @@ public final class Layouts {
                 e.getValue().fields().forEachRemaining(x -> m.put(x.getKey(), x.getValue().asText()));
                 events.put(e.getKey(), m);
             });
-            return new Layout(name, root.path("title").asText(name), types, cols, events);
+            return new Layout(name, root.path("title").asText(name), types, cols, events, texts, init, parents);
         } catch (Exception e) {
             throw new IllegalStateException("Mise en page illisible : " + name, e);
         }

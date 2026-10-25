@@ -11,5 +11,6 @@
   "$this": {
    "Load": "Login_Load"
   }
- }
+ },
+ "menus": {}
 }

@@ -40,7 +40,11 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
   },
   {
    "name": "label8",
@@ -76,7 +80,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label7",
@@ -166,7 +173,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label6",
@@ -202,7 +212,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -238,7 +251,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 11
+   "order": 11,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -274,7 +290,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 13
+   "order": 13,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -310,7 +329,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 15
+   "order": 15,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -339,5 +361,6 @@
   "$this": {
    "Load": "JumpOilDeal_Load"
   }
- }
+ },
+ "menus": {}
 }

@@ -130,7 +130,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -238,7 +241,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "PB",
@@ -343,6 +349,23 @@
   },
   "$this": {
    "Load": "BoxCommunicatSet_Load"
+  }
+ },
+ "menus": {
+  "AddMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "BoxPortView"
+   ],
+   "items": [
+    {
+     "name": "AddPort",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

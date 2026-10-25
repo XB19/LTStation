@@ -508,7 +508,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 0
+   }
   },
   {
    "name": "button8",
@@ -598,7 +601,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -661,5 +667,6 @@
    }
   ]
  },
- "events": {}
+ "events": {},
+ "menus": {}
 }

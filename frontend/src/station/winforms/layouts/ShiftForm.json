@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "OilTypeView",
@@ -94,7 +97,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "CheckedLabel",
@@ -220,7 +226,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Format": "Short"
+   }
   },
   {
    "name": "ShiftClose",
@@ -256,7 +265,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "TransactionView",
@@ -274,7 +286,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel3",
@@ -823,5 +838,6 @@
    "FormClosed": "ShiftForm_FormClosed",
    "Load": "ShiftForm_Load"
   }
- }
+ },
+ "menus": {}
 }

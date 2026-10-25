@@ -148,7 +148,15 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "Manual",
+     "Automatic",
+     "Box",
+     "Advance execution"
+    ]
+   }
   },
   {
    "name": "label6",
@@ -328,7 +336,10 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -363,5 +374,6 @@
   "$this": {
    "Load": "BoxNozDetial_Load"
   }
- }
+ },
+ "menus": {}
 }

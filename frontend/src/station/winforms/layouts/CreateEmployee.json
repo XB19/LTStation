@@ -112,7 +112,15 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "Station Staff",
+     "Administrators",
+     "Cashier",
+     "Accountant"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -249,5 +257,6 @@
   "$this": {
    "Load": "CreateEmployee_Load"
   }
- }
+ },
+ "menus": {}
 }

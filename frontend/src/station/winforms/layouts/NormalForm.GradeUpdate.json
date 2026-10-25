@@ -108,5 +108,6 @@
   "$this": {
    "Load": "GradeUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

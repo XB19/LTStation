@@ -184,7 +184,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label2",
@@ -220,7 +223,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label1",
@@ -256,7 +262,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -318,5 +327,6 @@
   "CardUserView": {
    "CellDoubleClick": "CardUserView_CellDoubleClick"
   }
- }
+ },
+ "menus": {}
 }

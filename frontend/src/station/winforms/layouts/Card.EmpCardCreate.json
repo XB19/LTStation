@@ -130,7 +130,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -166,7 +169,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -202,7 +208,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label14",
@@ -231,5 +240,6 @@
   "$this": {
    "Load": "EmpCardCreate_Load"
   }
- }
+ },
+ "menus": {}
 }

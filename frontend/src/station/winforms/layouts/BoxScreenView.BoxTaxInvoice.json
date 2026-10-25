@@ -112,7 +112,11 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
   },
   {
    "name": "comboBox5",
@@ -1012,7 +1016,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label7",
@@ -1084,7 +1091,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -1149,5 +1159,6 @@
    }
   ]
  },
- "events": {}
+ "events": {},
+ "menus": {}
 }

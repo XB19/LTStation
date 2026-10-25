@@ -22,7 +22,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "SelectedIndex": 6
+   }
   },
   {
    "name": "CardDeposit",
@@ -310,7 +313,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "AsnSelect",
@@ -382,7 +388,14 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Items": [
+     "Cash",
+     "Bank",
+     "Online Payment"
+    ]
+   }
   },
   {
    "name": "label21",
@@ -688,7 +701,14 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Items": [
+     "RFID",
+     "Credit Card",
+     "Master Card"
+    ]
+   }
   },
   {
    "name": "QueryButton",
@@ -940,7 +960,13 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "init": {
+    "Items": [
+     "Transfer",
+     "Change"
+    ]
+   }
   },
   {
    "name": "STRead",
@@ -1012,7 +1038,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel1",
@@ -1174,7 +1203,14 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "Cash",
+     "Bank",
+     "Online Payment"
+    ]
+   }
   },
   {
    "name": "Score",
@@ -2168,5 +2204,6 @@
   "$this": {
    "Load": "Deposit_Load"
   }
- }
+ },
+ "menus": {}
 }

@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -105,6 +108,23 @@
   },
   "$this": {
    "Load": "StationDeviceConfig_Load"
+  }
+ },
+ "menus": {
+  "AddMenuStripBtn": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "DeviceDataView"
+   ],
+   "items": [
+    {
+     "name": "AddItemBtn",
+     "type": "ToolStripMenuItem",
+     "text": "新增",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

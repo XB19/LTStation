@@ -40,7 +40,12 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "Box"
+    ]
+   }
   },
   {
    "name": "label6",
@@ -76,7 +81,14 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "无校验",
+     "奇校验",
+     "偶校验"
+    ]
+   }
   },
   {
    "name": "StopBitSelect",
@@ -94,7 +106,13 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "1",
+     "2"
+    ]
+   }
   },
   {
    "name": "DataBitSelect",
@@ -112,7 +130,14 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "6",
+     "7",
+     "8"
+    ]
+   }
   },
   {
    "name": "BuadSelect",
@@ -130,7 +155,18 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Items": [
+     "4800",
+     "9600",
+     "14400",
+     "19200",
+     "38400",
+     "56000",
+     "115200"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -288,5 +324,6 @@
   "$this": {
    "Load": "PortAdd_Load"
   }
- }
+ },
+ "menus": {}
 }

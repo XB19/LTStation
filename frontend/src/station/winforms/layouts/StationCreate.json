@@ -135,5 +135,111 @@
   "$this": {
    "Load": "StationCreate_Load"
   }
+ },
+ "menus": {
+  "MenuTool": {
+   "type": "MenuStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "LanguageSwitch",
+     "type": "ToolStripMenuItem",
+     "text": "Language",
+     "visible": true,
+     "items": [
+      {
+       "name": "ChineseText",
+       "type": "ToolStripMenuItem",
+       "text": "Chinese",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator1",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "EnglishText",
+       "type": "ToolStripMenuItem",
+       "text": "English",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator2",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      }
+     ]
+    }
+   ]
+  },
+  "ToolShow": {
+   "type": "ToolStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "OilPrice",
+     "type": "ToolStripButton",
+     "text": "Create Station Information",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardMake",
+     "type": "ToolStripButton",
+     "text": "Create Fuel Information",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardUpDate",
+     "type": "ToolStripButton",
+     "text": "Create Tank Information",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "PortSet",
+     "type": "ToolStripButton",
+     "text": "COM Port Configuration",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardLost",
+     "type": "ToolStripButton",
+     "text": "Nozzle Configuration",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardChange",
+     "type": "ToolStripButton",
+     "text": "Create Employee",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "Deposit",
+     "type": "ToolStripButton",
+     "text": "Key Change",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "TransactionSearch",
+     "type": "ToolStripButton",
+     "text": "Station Activation",
+     "visible": true,
+     "items": []
+    }
+   ]
+  }
  }
 }

@@ -94,7 +94,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ShiftSelectCom",
@@ -256,7 +259,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 0
+   }
   }
  ],
  "columns": {
@@ -350,5 +356,6 @@
   "$this": {
    "Load": "InternalUserView_Load"
   }
- }
+ },
+ "menus": {}
 }

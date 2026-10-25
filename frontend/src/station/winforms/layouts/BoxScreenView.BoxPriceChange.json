@@ -22,7 +22,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -99,5 +102,6 @@
   "$this": {
    "Load": "BoxPriceChange_Load"
   }
- }
+ },
+ "menus": {}
 }

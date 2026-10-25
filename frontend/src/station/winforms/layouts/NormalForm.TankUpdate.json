@@ -594,5 +594,6 @@
   "$this": {
    "Load": "TankUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

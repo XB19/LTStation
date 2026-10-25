@@ -40,7 +40,10 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "UploadBtn",
@@ -544,7 +547,14 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "公交车",
+     "出租车",
+     "其他"
+    ]
+   }
   },
   {
    "name": "LimitGrade",
@@ -580,7 +590,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label21",
@@ -616,7 +629,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label20",
@@ -652,7 +668,14 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Items": [
+     "公交车",
+     "出租车",
+     "其他"
+    ]
+   }
   },
   {
    "name": "AddButton",
@@ -850,7 +873,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 17
+   "order": 17,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label1",
@@ -882,5 +908,6 @@
   "$this": {
    "Load": "CarAdd_Load"
   }
- }
+ },
+ "menus": {}
 }

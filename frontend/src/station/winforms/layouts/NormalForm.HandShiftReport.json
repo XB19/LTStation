@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -76,7 +79,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -166,7 +172,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -202,7 +211,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "TankDataView",
@@ -220,7 +232,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ShiftDataView",
@@ -238,7 +253,10 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "groupBox3",
@@ -442,5 +460,6 @@
   "$this": {
    "Load": "HandShiftReport_Load"
   }
- }
+ },
+ "menus": {}
 }

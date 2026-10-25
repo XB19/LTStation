@@ -156,5 +156,6 @@
   "AddButton": {
    "Click": "AddButton_Click"
   }
- }
+ },
+ "menus": {}
 }

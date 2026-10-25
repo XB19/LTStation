@@ -94,7 +94,13 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 999
+   "order": 999,
+   "init": {
+    "Items": [
+     "Wired",
+     "Wireless"
+    ]
+   }
   },
   {
    "name": "label3",
@@ -180,5 +186,6 @@
   "$this": {
    "Load": "BoxAdd_Load"
   }
- }
+ },
+ "menus": {}
 }

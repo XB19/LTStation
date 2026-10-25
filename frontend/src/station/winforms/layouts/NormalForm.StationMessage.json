@@ -166,7 +166,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Format": "Time"
+   }
   },
   {
    "name": "label3",
@@ -303,5 +306,6 @@
   "$this": {
    "Load": "StationMessage_Load"
   }
- }
+ },
+ "menus": {}
 }

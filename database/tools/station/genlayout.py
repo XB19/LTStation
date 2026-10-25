@@ -68,7 +68,7 @@ def designer_controls(cs):
     controls = {}
     for m in re.finditer(r'this\.(\w+) = new ([\w.]+)\(', body):
         name, typ = m.group(1), m.group(2).split('.')[-1]
-        if typ in SKIP_TYPES or typ.startswith('ToolStrip') or typ.startswith('DataGridView') and typ != 'DataGridView' \
+        if typ in SKIP_TYPES or typ.startswith('ToolStrip') and typ != 'ToolStrip' or typ.startswith('DataGridView') and typ != 'DataGridView' \
                 or name in grid_cols or name in controls:
             continue
         controls[name] = {'name': name, 'type': typ, 'parent': None, 'loc': [0, 0], 'size': [0, 0],
@@ -140,8 +140,63 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
                                 'visible': not re.search(rf'this\.{c}\.Visible = false', cs),
                                 'prop': (pm.group(1) if (pm := re.search(rf'this\.{c}\.DataPropertyName = "(\w+)"', cs)) else None),
                                 'width': int(w.group(1)) if (w := re.search(rf'this\.{c}\.Width = (\d+)', cs)) else None} for c in cols]
-    for m in re.finditer(r'(\w+)\.Columns\.Add\(', cs):
-        pass
+    # Menus : ContextMenuStrip (clic droit sur un contrôle), MenuStrip / ToolStrip / StatusStrip (barres)
+    item_types = {m.group(1): m.group(2).split('.')[-1] for m in re.finditer(r'this\.(\w+) = new ([\w.]+)\(', cs)}
+
+    def item_text(n):
+        if (x := re.search(rf'this\.{re.escape(n)}\.Text = {STR};', cs)):
+            return cs_str(x.group(1))
+        return (en.get(f'{n}.Text') or neutral.get(f'{n}.Text') or '').strip()
+
+    def items_of(owner, prop):
+        m = re.search(rf'this\.{re.escape(owner)}\.{prop}\.AddRange\(new [\w.]+\[\d*\]\s*\{{(.*?)\}}\);', cs, re.S)
+        out = []
+        for n in re.findall(r'this\.(\w+)', m.group(1)) if m else []:
+            out.append({'name': n, 'type': item_types.get(n, 'ToolStripMenuItem'), 'text': item_text(n),
+                        'visible': not re.search(rf'this\.{re.escape(n)}\.Visible = false;', cs),
+                        'items': items_of(n, 'DropDownItems')})
+        return out
+
+    menus = {}
+    for name, typ in item_types.items():
+        if typ.endswith(('ContextMenuStrip', 'MenuStrip', 'ToolStrip', 'StatusStrip')):
+            owners = re.findall(rf'this\.(\w+)\.ContextMenuStrip = this\.{re.escape(name)};', cs)
+            if re.search(rf'base\.ContextMenuStrip = this\.{re.escape(name)};', cs):
+                owners.append('$this')
+            kind = next(k for k in ('ContextMenuStrip', 'MenuStrip', 'ToolStrip', 'StatusStrip') if typ.endswith(k))
+            menus[name] = {'type': kind, 'owners': owners, 'items': items_of(name, 'Items')}
+    # État initial fixé dans le concepteur : éléments des listes, Enabled, ReadOnly, Checked, PasswordChar, format des dates
+    for name, c in controls.items():
+        n = re.escape(name)
+        init = {}
+        if (m := re.search(rf'this\.{n}\.Items\.AddRange\(new object\[\d*\]\s*\{{(.*?)\}}\);', cs, re.S)):
+            items = []
+            for part in re.finditer(rf'resources\.GetString\("([^"]+)"\)|{STR}|(-?\d+(?:\.\d+)?)', m.group(1)):
+                if part.group(1):
+                    items.append((en.get(part.group(1)) or neutral.get(part.group(1)) or '').strip())
+                elif part.group(2) is not None:
+                    items.append(cs_str(part.group(2)))
+                else:
+                    items.append(part.group(3))
+            init['Items'] = items
+        if re.search(rf'this\.{n}\.Enabled = false;', cs):
+            init['Enabled'] = False
+        if re.search(rf'this\.{n}\.ReadOnly = true;', cs):
+            init['ReadOnly'] = True
+        if re.search(rf'this\.{n}\.Checked = true;', cs):
+            init['Checked'] = True
+        if re.search(rf'this\.{n}\.(PasswordChar = \'.\'|UseSystemPasswordChar = true)', cs):
+            init['PasswordChar'] = True
+        if (m := re.search(rf'this\.{n}\.Format = System\.Windows\.Forms\.DateTimePickerFormat\.(\w+);', cs)):
+            init['Format'] = m.group(1)
+        if (m := re.search(rf'this\.{n}\.CustomFormat = {STR};', cs)):
+            init['CustomFormat'] = cs_str(m.group(1))
+        if (m := re.search(rf'this\.{n}\.SelectedIndex = (-?\d+);', cs)):
+            init['SelectedIndex'] = int(m.group(1))
+        if (m := re.search(rf'this\.{n}\.(Maximum|Minimum) = new decimal\(new int\[4\]\s*\{{\s*(\d+),', cs)):
+            init[m.group(1)] = int(m.group(2))
+        if init:
+            c['init'] = init
     # Gestionnaires d'événements : this.X.Click += new EventHandler(Y) ; base.Load += ...
     events = {}
     for m in re.finditer(r'(?:this|base)\.(?:(\w+)\.)?(\w+) \+= new [\w.]+\((?:this\.)?(\w+)\);', cs):
@@ -154,6 +209,7 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
         'controls': sorted(controls.values(), key=lambda c: (c['parent'], c['order'], c['loc'][1], c['loc'][0])),
         'columns': columns,
         'events': events,
+        'menus': menus,
     }
     with open(os.path.join(out, f'{key}.json'), 'w', encoding='utf-8') as f:
         json.dump(layout, f, ensure_ascii=False, indent=1)

@@ -177,5 +177,6 @@
   "$this": {
    "Load": "StationPort_Load"
   }
- }
+ },
+ "menus": {}
 }

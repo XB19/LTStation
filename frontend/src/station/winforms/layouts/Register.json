@@ -22,7 +22,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -105,5 +108,6 @@
   "$this": {
    "Load": "Register_Load"
   }
- }
+ },
+ "menus": {}
 }

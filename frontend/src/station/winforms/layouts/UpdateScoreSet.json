@@ -130,7 +130,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Items": [
+     "金额",
+     "升数"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -198,5 +204,6 @@
   "$this": {
    "Load": "UpdateScoreSet_Load"
   }
- }
+ },
+ "menus": {}
 }

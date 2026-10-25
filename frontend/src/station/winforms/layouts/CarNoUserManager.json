@@ -112,7 +112,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label4",
@@ -148,7 +151,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label3",
@@ -184,7 +190,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "GroupA",
@@ -274,7 +283,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -345,6 +357,23 @@
   "$this": {
    "FormClosing": "CarNoUserManager_FormClosing",
    "Load": "CarNoUserManager_Load"
+  }
+ },
+ "menus": {
+  "CarNoAdd": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "CardUserView"
+   ],
+   "items": [
+    {
+     "name": "Add_Child",
+     "type": "ToolStripMenuItem",
+     "text": "新建下属信息",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

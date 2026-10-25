@@ -49,6 +49,8 @@ public abstract class SwForm {
     protected String sender = "";
     /** Arguments de l'événement (RowIndex, ColumnIndex, KeyChar…). */
     protected Row e = new Row();
+    /** Fenêtre propriétaire (base.Owner) : celle qui a ouvert cette fenêtre. */
+    protected SwForm Owner;
     /** Valeurs renvoyées à la fenêtre parente à la fermeture. */
     protected final Row result = new Row();
 
@@ -56,7 +58,70 @@ public abstract class SwForm {
 
     /** Contrôle par son nom d'origine. */
     public Ctl c(String name) {
-        return ctls.computeIfAbsent(name, Ctl::new);
+        return ctls.computeIfAbsent(name, n -> {
+            Ctl c = new Ctl(n);
+            c.owner = this;
+            return c;
+        });
+    }
+
+    private int raiseDepth;
+
+    /** Déclenche le gestionnaire d'origine d'un événement du contrôle (modification depuis le code). */
+    void raise(String ctl, String... events) {
+        if (layout == null || raiseDepth > 8) {
+            return;
+        }
+        Map<String, String> ev = layout.events().get(ctl);
+        if (ev == null) {
+            return;
+        }
+        for (String name : events) {
+            String h = ev.get(name);
+            if (h == null) {
+                continue;
+            }
+            String prevSender = sender;
+            raiseDepth++;
+            try {
+                sender = ctl;
+                invoke(h);
+            } finally {
+                raiseDepth--;
+                sender = prevSender;
+            }
+        }
+    }
+
+    /** Bouton radio coché : les autres boutons radio du même conteneur sont décochés (avant son propre événement). */
+    void radioChecked(String name) {
+        if (layout == null || !layout.types().getOrDefault(name, "").endsWith("RadioButton")) {
+            return;
+        }
+        String parent = layout.parents().get(name);
+        layout.types().forEach((n, t) -> {
+            if (!n.equals(name) && t.endsWith("RadioButton") && parent.equals(layout.parents().get(n)) && c(n).Checked()) {
+                c(n).Checked(false);
+            }
+        });
+    }
+
+    /** Appel d'un gestionnaire par son nom (méthode sans paramètre). */
+    void invoke(String handler) {
+        java.lang.reflect.Method m = SwFormController.method(this, handler);
+        if (m == null) {
+            return;
+        }
+        try {
+            m.invoke(this);
+        } catch (java.lang.reflect.InvocationTargetException e) {
+            if (e.getCause() instanceof RuntimeException re) {
+                throw re;
+            }
+            throw new IllegalStateException(e.getCause());
+        } catch (IllegalAccessException e) {
+            throw new IllegalStateException(e);
+        }
     }
 
     /** Tableau (DataGridView) par son nom d'origine. */
@@ -192,6 +257,19 @@ public abstract class SwForm {
     /** Fichier à télécharger par le client (export Excel, impression…). */
     protected void Download(String fileName, String contentType, byte[] data) {
         messages.add(Map.of("download", fileName, "contentType", contentType, "data", java.util.Base64.getEncoder().encodeToString(data)));
+    }
+
+    /** Fichier exporté (ExportFile) envoyé au poste : Process.Start(chemin) de l'original. */
+    protected void DownloadFile(String path) {
+        try {
+            java.nio.file.Path p = java.nio.file.Path.of(path);
+            String name = p.getFileName().toString();
+            String type = name.endsWith(".pdf") ? "application/pdf" : name.endsWith(".xls") ? "application/vnd.ms-excel"
+                : "application/octet-stream";
+            Download(name, type, java.nio.file.Files.readAllBytes(p));
+        } catch (java.io.IOException e) {
+            MessageBox(e.getMessage());
+        }
     }
 
     /** Impression d'un ticket (lignes de texte) sur l'imprimante du poste. */

@@ -94,7 +94,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label8",
@@ -130,7 +133,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label7",
@@ -166,7 +172,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label6",
@@ -202,7 +211,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -238,7 +250,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -274,7 +289,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -310,7 +328,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -346,7 +367,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -375,5 +399,6 @@
   "ReadBtn": {
    "Click": "ReadBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

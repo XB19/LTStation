@@ -58,7 +58,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label3",
@@ -130,7 +136,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label2",
@@ -202,7 +211,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -238,7 +250,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "groupBox3",
@@ -358,5 +373,6 @@
   "$this": {
    "Load": "TankStockRecored_Load"
   }
- }
+ },
+ "menus": {}
 }

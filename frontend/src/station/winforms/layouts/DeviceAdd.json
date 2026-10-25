@@ -112,7 +112,13 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "Price_Normal",
+     "Price_LYX"
+    ]
+   }
   },
   {
    "name": "PortSelect",
@@ -198,5 +204,6 @@
   "$this": {
    "Load": "PriceDeviceAdd_Load"
   }
- }
+ },
+ "menus": {}
 }

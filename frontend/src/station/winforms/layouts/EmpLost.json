@@ -228,5 +228,6 @@
   "LostButton": {
    "Click": "LostButton_Click"
   }
- }
+ },
+ "menus": {}
 }

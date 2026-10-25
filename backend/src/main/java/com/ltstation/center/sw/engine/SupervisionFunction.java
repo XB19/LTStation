@@ -126,7 +126,7 @@ public final class SupervisionFunction {
                     throw new IllegalStateException("325");
                 }
             }
-            Row obj = Row.of("stationCode", IniInfo.uid, "operationTime", LocalDateTime.now().format(Conv.STD), "quantity", 9999,
+            Row obj = Row.of("stationCode", "44060401276", "operationTime", LocalDateTime.now().format(Conv.STD), "quantity", 9999,
                 "cylinderState", 0, "fillingType", 3, "isDeleted", 0, "barcode", cyl.get("ProductNo"));
             FoRan r = IniInfo.SupervisionType == 2 ? PostJson(IniInfo.FoRanUrl + "/sj-business/sjcherkfront/v1/data", Wire.json(obj))
                 : new FoRan(0, "", "");
@@ -163,7 +163,7 @@ public final class SupervisionFunction {
             String begin = Conv.toDateTime(oil.get("TrueTime")).format(Conv.STD);
             String end = Conv.toDateTime(oil.get("TrueTime")).plusMinutes(10).format(Conv.STD);
             for (Row item : SW.db().list("CylinderData", "{CarUserID} = :c", Sugar.p("c", car.i("ID")))) {
-                Row fill = Row.of("fillingType", 3, "stationCode", IniInfo.uid, "operatorName", IniInfo.LoginName, "barcode", item.get("ProductNo"),
+                Row fill = Row.of("fillingType", 3, "stationCode", "44060401276", "operatorName", IniInfo.LoginName, "barcode", item.get("ProductNo"),
                     "cylinderId", item.get("CylinderId"), "mediumId", item.get("MediumId"), "cylinderState", 0, "balance", oil.i("GunId"),
                     "modes", 1, "vehicleId", item.get("VehicleID"), "vehicleTerritory", 0, "plateNumber", oil.get("CarNumber"),
                     "vehicleState", 1, "fillingVerifyType", 1, "isDeleted", 0, "beginDateTime", begin, "endDateTime", end,
@@ -172,10 +172,10 @@ public final class SupervisionFunction {
                 if (r.code() != 0) {
                     throw new IllegalStateException(r.msg());
                 }
-                PostJson(IniInfo.FoRanUrl + "/sj-business/sjcheckback/v1/data", Wire.json(Row.of("stationCode", IniInfo.uid, "fillingType", 3,
+                PostJson(IniInfo.FoRanUrl + "/sj-business/sjcheckback/v1/data", Wire.json(Row.of("stationCode", "44060401276", "fillingType", 3,
                     "operationTime", begin, "operatorId", "nz0000000001", "operatorNum", 1, "barcode", item.get("ProductNo"),
                     "cylinderState", 0, "isDeleted", 0, "pressure", 28)));
-                Row after = Row.of("stationCode", IniInfo.uid, "operationTime", begin, "operatorId", "nz0000000001", "operatorNum", 1,
+                Row after = Row.of("stationCode", "44060401276", "operationTime", begin, "operatorId", "nz0000000001", "operatorNum", 1,
                     "barcode", item.get("ProductNo"));
                 for (String k : new String[] {"appearanceCheck", "soundCheck", "insideCheck", "waterCheck", "airtightCheck", "thicknessCheck",
                     "cylinderValveCheck", "windingLayerCheck", "metalCheck", "threadCheck", "undamagedCheck"}) {

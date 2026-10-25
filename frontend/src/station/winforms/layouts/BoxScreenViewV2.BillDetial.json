@@ -58,7 +58,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -130,7 +136,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -159,5 +168,6 @@
   "$this": {
    "Load": "BillDetial_Load"
   }
- }
+ },
+ "menus": {}
 }

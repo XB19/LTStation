@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -84,6 +87,23 @@
   },
   "$this": {
    "Load": "SurveillanceCameraForm_Load"
+  }
+ },
+ "menus": {
+  "AddMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "GroupView"
+   ],
+   "items": [
+    {
+     "name": "Menu_Add",
+     "type": "ToolStripMenuItem",
+     "text": "新增",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

@@ -648,5 +648,6 @@
   "$this": {
    "Load": "EmpUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

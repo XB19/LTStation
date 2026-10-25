@@ -699,5 +699,6 @@
   "$this": {
    "Load": "StationPrint_Load"
   }
- }
+ },
+ "menus": {}
 }

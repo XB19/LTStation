@@ -133,5 +133,6 @@
    "Load": "ScreenNoz_Load",
    "Click": "ScreenNoz_Click"
   }
- }
+ },
+ "menus": {}
 }

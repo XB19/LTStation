@@ -40,7 +40,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "手动授权",
+     "自动授权"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -112,7 +118,18 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "4800",
+     "9600",
+     "14400",
+     "19200",
+     "38400",
+     "56000",
+     "115200"
+    ]
+   }
   },
   {
    "name": "CanelButton",
@@ -219,5 +236,6 @@
   "$this": {
    "Load": "Box_Noz_Add_Load"
   }
- }
+ },
+ "menus": {}
 }

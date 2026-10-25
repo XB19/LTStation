@@ -184,7 +184,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "串口通讯",
+     "IP通讯"
+    ]
+   }
   },
   {
    "name": "label3",
@@ -220,7 +226,15 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "APP",
+     "RFID",
+     "单价显示屏",
+     "支付大屏"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -256,7 +270,14 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "所有",
+     "已交班",
+     "未交班"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -309,5 +330,6 @@
   "$this": {
    "Load": "AddExtendPay_Load"
   }
- }
+ },
+ "menus": {}
 }

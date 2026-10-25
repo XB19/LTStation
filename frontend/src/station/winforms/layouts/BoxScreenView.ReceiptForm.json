@@ -166,7 +166,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label3",
@@ -202,7 +205,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "comboBox2",
@@ -292,7 +298,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "previewControl1",
@@ -364,7 +373,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -410,5 +422,6 @@
   "$this": {
    "Load": "ReceiptForm_Load"
   }
- }
+ },
+ "menus": {}
 }

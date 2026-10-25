@@ -105,5 +105,6 @@
   "CloseBtn": {
    "Click": "OKBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

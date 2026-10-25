@@ -76,7 +76,13 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "Manual",
+     "Automatic"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -148,7 +154,14 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Items": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
   },
   {
    "name": "TankSelect",
@@ -166,7 +179,18 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Items": [
+     "4800",
+     "9600",
+     "14400",
+     "19200",
+     "38400",
+     "56000",
+     "115200"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -291,5 +315,6 @@
   "$this": {
    "Load": "NozUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

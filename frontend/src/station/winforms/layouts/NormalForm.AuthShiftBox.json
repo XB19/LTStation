@@ -69,5 +69,6 @@
   "radioButtonAllow": {
    "CheckedChanged": "radioButtonAllow_CheckedChanged"
   }
- }
+ },
+ "menus": {}
 }

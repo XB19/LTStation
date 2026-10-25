@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel5",
@@ -130,7 +133,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -184,7 +190,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label9",
@@ -220,7 +229,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label10",
@@ -256,7 +268,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label11",
@@ -292,7 +307,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label12",
@@ -328,7 +346,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label13",
@@ -364,7 +385,10 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label14",
@@ -400,7 +424,10 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label15",
@@ -436,7 +463,10 @@
    "dock": null,
    "visible": true,
    "z": 17,
-   "order": 17
+   "order": 17,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label16",
@@ -472,7 +502,10 @@
    "dock": null,
    "visible": true,
    "z": 19,
-   "order": 19
+   "order": 19,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label6",
@@ -508,7 +541,10 @@
    "dock": null,
    "visible": true,
    "z": 21,
-   "order": 21
+   "order": 21,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label8",
@@ -544,7 +580,10 @@
    "dock": null,
    "visible": true,
    "z": 23,
-   "order": 23
+   "order": 23,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -580,7 +619,10 @@
    "dock": null,
    "visible": true,
    "z": 25,
-   "order": 25
+   "order": 25,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -616,7 +658,10 @@
    "dock": null,
    "visible": true,
    "z": 27,
-   "order": 27
+   "order": 27,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -652,7 +697,10 @@
    "dock": null,
    "visible": true,
    "z": 29,
-   "order": 29
+   "order": 29,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -783,5 +831,6 @@
   "$this": {
    "Load": "PersonalCreditView_Load"
   }
- }
+ },
+ "menus": {}
 }

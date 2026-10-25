@@ -107,6 +107,11 @@ public class Grid {
         return r == null ? null : r.get(key(col));
     }
 
+    /** Rows[i].Cells[index].Value */
+    public Object Cell(int i, int colIndex) {
+        return colIndex >= 0 && colIndex < columns.size() ? Cell(i, columns.get(colIndex).name()) : null;
+    }
+
     public Grid Cell(int i, String col, Object v) {
         Row r = Row(i);
         if (r != null) {

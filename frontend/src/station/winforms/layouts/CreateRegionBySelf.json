@@ -180,5 +180,6 @@
   "$this": {
    "Load": "CreateRegionBySelf_Load"
   }
- }
+ },
+ "menus": {}
 }

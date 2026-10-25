@@ -130,7 +130,16 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "Food",
+     "Lubricants",
+     "Engine Oil",
+     "Cleaner",
+     "Tools"
+    ]
+   }
   },
   {
    "name": "ConfirmBtn",
@@ -342,5 +351,6 @@
   "$this": {
    "Load": "ProductEdit_Load"
   }
- }
+ },
+ "menus": {}
 }

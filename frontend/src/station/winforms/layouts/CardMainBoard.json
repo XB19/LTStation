@@ -90,5 +90,6 @@
   "CreateKey": {
    "Click": "CreateKey_Click"
   }
- }
+ },
+ "menus": {}
 }

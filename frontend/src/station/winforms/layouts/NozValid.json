@@ -76,7 +76,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "Radio2",
@@ -112,7 +115,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Checked": true
+   }
   }
  ],
  "columns": {},
@@ -120,5 +126,6 @@
   "Save": {
    "Click": "Save_Click"
   }
- }
+ },
+ "menus": {}
 }

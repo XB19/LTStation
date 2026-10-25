@@ -63,8 +63,10 @@ export interface RemoteFormProps {
   args?: Props
   /** Fermeture : résultat (OK / Cancel…) et valeurs renvoyées à la fenêtre parente */
   onClose: (result: string, data: Props) => void
-  /** Ouverture d'une autre fenêtre sans attendre (Form.Show()) */
-  onOpen?: (form: string, args: Props) => void
+  /** Ouverture d'une autre fenêtre sans attendre (Form.Show()) ; parent = fenêtre propriétaire (Owner) */
+  onOpen?: (form: string, args: Props, parent?: string) => void
+  /** Fenêtre propriétaire (Owner) côté serveur */
+  parent?: string
   /** Affichage dans une fenêtre modale (par défaut) ou directement dans la page */
   framed?: boolean
   extra?: Record<string, ReactNode>
@@ -104,7 +106,7 @@ const show = (m: Message) => new Promise<void>((resolve) => (m.error ? Modal.err
   title: m.caption ? tr(m.caption) : undefined, content: tr(m.text ?? ''), okText: 'OK', onOk: () => resolve(), onCancel: () => resolve(),
 }))
 
-export default function RemoteForm({ form, args, onClose, onOpen, framed = true, extra }: RemoteFormProps) {
+export default function RemoteForm({ form, args, onClose, onOpen, parent, framed = true, extra }: RemoteFormProps) {
   const layout = useMemo(() => getLayout(form), [form])
   const types = useMemo(() => Object.fromEntries(layout.controls.map((c) => [c.name, c.type])), [layout])
   const events = layout.events ?? {}
@@ -213,7 +215,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, framed = true,
     ;(async () => {
       const answers: Props = {}
       for (;;) {
-        const { data } = await http.post<FormState>('/sw/form/open', { form, args: args ?? {}, answers })
+        const { data } = await http.post<FormState>('/sw/form/open', { form, args: args ?? {}, answers, parent })
         if (!alive) {
           if (data.id) http.post(`/sw/form/${data.id}/close`, {}).catch(() => undefined)
           return
@@ -268,6 +270,13 @@ export default function RemoteForm({ form, args, onClose, onOpen, framed = true,
     if (p.Enabled === false) disabled.push(c.name)
     if (p.ReadOnly === true) readOnly.push(c.name)
   }
+  // Éléments de menu (hors liste des contrôles) : Visible / Enabled / Text
+  for (const [n, p] of Object.entries(ctl)) {
+    if (types[n]) continue
+    if (p.Visible === false) hidden.push(n)
+    if (p.Enabled === false) disabled.push(n)
+    if ('Text' in p) texts[n] = tr(String(p.Text ?? ''))
+  }
   // Champs encore jamais envoyés par le serveur : texte d'origine
   for (const c of layout.controls) {
     if (ctl[c.name] || values[c.name] !== undefined) continue
@@ -291,6 +300,16 @@ export default function RemoteForm({ form, args, onClose, onOpen, framed = true,
         return n
       })
     } else merge({ [name]: patch })
+    // Bouton radio : les autres boutons du même conteneur sont décochés, leurs événements partent d'abord
+    if (t.endsWith('RadioButton') && v) {
+      const me = layout.controls.find((c) => c.name === name)
+      for (const o of layout.controls) {
+        if (o.name === name || !o.type.endsWith('RadioButton') || o.parent !== me?.parent || !ctlRef.current[o.name]?.Checked) continue
+        merge({ [o.name]: { Checked: false } })
+        const h = on(o.name, 'CheckedChanged')
+        if (h) fire(h, o.name, {}, true)
+      }
+    }
     if (ev) fire(ev, name, {}, true)
   }
 
@@ -354,10 +373,11 @@ export default function RemoteForm({ form, args, onClose, onOpen, framed = true,
     <>
       <WinForm layout={layout} values={values} onChange={onChange} buttons={buttons} options={options} grids={gridProps}
         hidden={hidden} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
-        passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar || /pass|pwd|pin/i.test(c.name)).map((c) => c.name)}
-        extra={extra} />
+        passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar).map((c) => c.name)}
+        timeOnly={layout.controls.filter((c) => ctl[c.name]?.Format === 'Time').map((c) => c.name)}
+        extra={extra} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }} />
       {dialog && (
-        <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen}
+        <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}
           onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />
       )}
     </>

@@ -130,7 +130,12 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "SINOPEC PSAM"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -285,5 +290,6 @@
   "$this": {
    "Load": "CreatePSAM_Load"
   }
- }
+ },
+ "menus": {}
 }

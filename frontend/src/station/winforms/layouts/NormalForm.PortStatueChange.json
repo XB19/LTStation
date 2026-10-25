@@ -72,5 +72,6 @@
   "$this": {
    "Load": "PortStatueChange_Load"
   }
- }
+ },
+ "menus": {}
 }

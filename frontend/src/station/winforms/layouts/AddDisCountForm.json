@@ -180,5 +180,6 @@
   "$this": {
    "Load": "AddDisCountForm_Load"
   }
- }
+ },
+ "menus": {}
 }

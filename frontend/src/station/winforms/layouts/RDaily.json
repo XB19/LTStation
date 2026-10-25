@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "NozView",
@@ -94,7 +97,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyNoz",
@@ -166,7 +172,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -256,7 +265,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label2",
@@ -292,7 +304,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Format": "Short"
+   }
   },
   {
    "name": "label1",
@@ -328,7 +343,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyTab",
@@ -346,7 +364,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 1
+   }
   }
  ],
  "columns": {
@@ -673,5 +694,6 @@
   "$this": {
    "Load": "RDaily_Load"
   }
- }
+ },
+ "menus": {}
 }

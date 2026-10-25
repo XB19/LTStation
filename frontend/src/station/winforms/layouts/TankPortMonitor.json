@@ -69,5 +69,6 @@
   "$this": {
    "Load": "TankPortMonitor_Load"
   }
- }
+ },
+ "menus": {}
 }

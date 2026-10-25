@@ -76,7 +76,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "CarNo",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "AddButton",
@@ -166,7 +172,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label2",
@@ -202,7 +211,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label1",
@@ -228,5 +240,6 @@
   "AddButton": {
    "Click": "AddButton_Click"
   }
- }
+ },
+ "menus": {}
 }

@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -724,7 +727,12 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "5"
+    ]
+   }
   },
   {
    "name": "label12",
@@ -760,7 +768,13 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Items": [
+     "38400",
+     "115200"
+    ]
+   }
   },
   {
    "name": "PortCoboBox",
@@ -928,5 +942,6 @@
    "FormClosed": "RFIDForm_FormClosed",
    "Load": "RFIDForm_Load"
   }
- }
+ },
+ "menus": {}
 }

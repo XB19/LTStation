@@ -184,7 +184,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ToolShow",
@@ -256,7 +259,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ToatlGrade",
@@ -274,7 +280,10 @@
    "dock": "bottom",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "GunAndTankTab",
@@ -292,7 +301,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 3
+   }
   }
  ],
  "columns": {
@@ -593,6 +605,556 @@
   "$this": {
    "FormClosed": "NormalMainForm_FormClosed",
    "Load": "NormalMainForm_Load"
+  }
+ },
+ "menus": {
+  "MenuTool": {
+   "type": "MenuStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "系统配置ToolStripMenuItem",
+     "type": "ToolStripMenuItem",
+     "text": "System",
+     "visible": true,
+     "items": [
+      {
+       "name": "BaseMessage",
+       "type": "ToolStripMenuItem",
+       "text": "System Message",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "superviseSet",
+       "type": "ToolStripMenuItem",
+       "text": "Supervise",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator1",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "BoxCodeSet",
+       "type": "ToolStripMenuItem",
+       "text": "Box_Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "PortItem",
+       "type": "ToolStripMenuItem",
+       "text": "Port Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "GradeAndPrice",
+       "type": "ToolStripMenuItem",
+       "text": "Energy Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator2",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "TankItem",
+       "type": "ToolStripMenuItem",
+       "text": "Tank Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "TankVolumeItem",
+       "type": "ToolStripMenuItem",
+       "text": "Tank Table",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator3",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "NozItem",
+       "type": "ToolStripMenuItem",
+       "text": "Noz Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "SystemSeparator4",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "ShiftItem",
+       "type": "ToolStripMenuItem",
+       "text": "Shift Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "EmpLoginItem",
+       "type": "ToolStripMenuItem",
+       "text": "Emp Login",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "ExitItem",
+       "type": "ToolStripMenuItem",
+       "text": "Exit",
+       "visible": true,
+       "items": []
+      }
+     ]
+    },
+    {
+     "name": "toolStripMenuItem2",
+     "type": "ToolStripMenuItem",
+     "text": "Station",
+     "visible": true,
+     "items": [
+      {
+       "name": "EmpManager",
+       "type": "ToolStripMenuItem",
+       "text": "Emp_Manager",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "StationPrintSet",
+       "type": "ToolStripMenuItem",
+       "text": "Device Print Set",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "toolStripSeparator2",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "ShiftReport",
+       "type": "ToolStripMenuItem",
+       "text": "Shift Report",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "DailyR",
+       "type": "ToolStripMenuItem",
+       "text": "Daily Report",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "MonthR",
+       "type": "ToolStripMenuItem",
+       "text": "Month Report",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "StationSeparator",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "TransactionR",
+       "type": "ToolStripMenuItem",
+       "text": "Transaction",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "AuthShiftChange",
+       "type": "ToolStripMenuItem",
+       "text": "Auto Shift Setting",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "toolStripSeparator3",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "ComStatue",
+       "type": "ToolStripMenuItem",
+       "text": "Com_Statue",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "StationConfigSet",
+       "type": "ToolStripMenuItem",
+       "text": "Station Set",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "TankCableCheck",
+       "type": "ToolStripMenuItem",
+       "text": "Tank Calibration",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "CreateCable",
+       "type": "ToolStripMenuItem",
+       "text": "Tank capacity generation",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "toolStripSeparator4",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "ExtendSerialPort",
+       "type": "ToolStripMenuItem",
+       "text": "External device configuration",
+       "visible": true,
+       "items": []
+      }
+     ]
+    },
+    {
+     "name": "关于ToolStripMenuItem",
+     "type": "ToolStripMenuItem",
+     "text": "Extend",
+     "visible": true,
+     "items": [
+      {
+       "name": "AppItem",
+       "type": "ToolStripMenuItem",
+       "text": "APP",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "RFIDItem",
+       "type": "ToolStripMenuItem",
+       "text": "RFID",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "toolStripSeparator1",
+       "type": "ToolStripSeparator",
+       "text": "",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "PriceDisplay",
+       "type": "ToolStripMenuItem",
+       "text": "Price Display",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "DisplayPay",
+       "type": "ToolStripMenuItem",
+       "text": "Pay Display",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "DisplayButton",
+       "type": "ToolStripMenuItem",
+       "text": "Control",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "OverBtn",
+       "type": "ToolStripMenuItem",
+       "text": "Over Count",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "LogWrite",
+       "type": "ToolStripMenuItem",
+       "text": "Log",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "tESTToolStripMenuItem",
+       "type": "ToolStripMenuItem",
+       "text": "TEST",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "OtherConfig",
+       "type": "ToolStripMenuItem",
+       "text": "Other configurations",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "DeviceConfig",
+       "type": "ToolStripMenuItem",
+       "text": "Equipment configuration",
+       "visible": true,
+       "items": []
+      }
+     ]
+    },
+    {
+     "name": "ScreenShow",
+     "type": "ToolStripMenuItem",
+     "text": "Cash Register",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "关于ToolStripMenuItem2",
+     "type": "ToolStripMenuItem",
+     "text": "About",
+     "visible": true,
+     "items": [
+      {
+       "name": "HelpItem",
+       "type": "ToolStripMenuItem",
+       "text": "Help",
+       "visible": true,
+       "items": []
+      },
+      {
+       "name": "toolStripMenuItem4",
+       "type": "ToolStripMenuItem",
+       "text": "111",
+       "visible": true,
+       "items": []
+      }
+     ]
+    },
+    {
+     "name": "toolStripMenuItem3",
+     "type": "ToolStripMenuItem",
+     "text": "",
+     "visible": true,
+     "items": []
+    }
+   ]
+  },
+  "ToolShow": {
+   "type": "ToolStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "OilPrice",
+     "type": "ToolStripButton",
+     "text": "Price Setting",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "Transaction",
+     "type": "ToolStripButton",
+     "text": "Transaction",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ShiftReportCheck",
+     "type": "ToolStripButton",
+     "text": "Shift Report",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "Report",
+     "type": "ToolStripButton",
+     "text": "Daily Report",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "MonthReport",
+     "type": "ToolStripButton",
+     "text": "Month Report",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "EmpCardManager",
+     "type": "ToolStripButton",
+     "text": "EmpCard",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardMake",
+     "type": "ToolStripButton",
+     "text": "Card Make",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardUpdate",
+     "type": "ToolStripButton",
+     "text": "Card Update",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardLost",
+     "type": "ToolStripButton",
+     "text": "CardLost",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CardReplace",
+     "type": "ToolStripButton",
+     "text": "CardReplace",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "BalanceDeal",
+     "type": "ToolStripButton",
+     "text": "Balance",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "UserInfo",
+     "type": "ToolStripButton",
+     "text": "User Info",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "SPrint",
+     "type": "ToolStripButton",
+     "text": "StationPrint",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ShiftHand",
+     "type": "ToolStripButton",
+     "text": "Hand Shift",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "RInventory",
+     "type": "ToolStripButton",
+     "text": "Stock Records",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "StationStore",
+     "type": "ToolStripButton",
+     "text": "Retail Store",
+     "visible": true,
+     "items": []
+    }
+   ]
+  },
+  "BottomStrip": {
+   "type": "StatusStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "toolStripStatusLabel1",
+     "type": "ToolStripStatusLabel",
+     "text": "Blue Sky",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CurrentShift",
+     "type": "ToolStripStatusLabel",
+     "text": "Current Shift:",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ErrorMessage",
+     "type": "ToolStripStatusLabel",
+     "text": "Error",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "TransactionUp",
+     "type": "ToolStripStatusLabel",
+     "text": "Transaction",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CommunicationBoxStatue",
+     "type": "ToolStripStatusLabel",
+     "text": "",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "LoginName",
+     "type": "ToolStripStatusLabel",
+     "text": "Employee:",
+     "visible": true,
+     "items": []
+    }
+   ]
+  },
+  "Print": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "OilDataView"
+   ],
+   "items": [
+    {
+     "name": "PrintMenu",
+     "type": "ToolStripMenuItem",
+     "text": "Print",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "SettleMentBtn",
+     "type": "ToolStripMenuItem",
+     "text": "Settle",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

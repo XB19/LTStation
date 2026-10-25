@@ -112,7 +112,12 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "IC_Card"
+    ]
+   }
   },
   {
    "name": "label3",
@@ -148,7 +153,15 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "MifareOne",
+     "RFID",
+     "User",
+     "Score"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -238,7 +251,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Format": "Short"
+   }
   },
   {
    "name": "AccountBox",
@@ -256,7 +272,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -292,7 +311,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -328,7 +350,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label14",
@@ -1032,5 +1057,6 @@
   "$this": {
    "Load": "Card_Update_Load"
   }
- }
+ },
+ "menus": {}
 }

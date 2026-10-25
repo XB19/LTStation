@@ -130,7 +130,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "All",
+     "Food",
+     "Lubricants",
+     "Engine Oil",
+     "Cleaner",
+     "Tools"
+    ]
+   }
   },
   {
    "name": "StatueSelect",
@@ -400,7 +410,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -747,6 +760,30 @@
   },
   "$this": {
    "Load": "OtherProductView_Load"
+  }
+ },
+ "menus": {
+  "ProductMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "OilDataView"
+   ],
+   "items": [
+    {
+     "name": "ProductUpdateMenu",
+     "type": "ToolStripMenuItem",
+     "text": "Update",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ProductSaleMenu",
+     "type": "ToolStripMenuItem",
+     "text": "Sale",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

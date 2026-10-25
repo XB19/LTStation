@@ -591,5 +591,6 @@
   "ShiftClose": {
    "Click": "ShiftClose_Click"
   }
- }
+ },
+ "menus": {}
 }

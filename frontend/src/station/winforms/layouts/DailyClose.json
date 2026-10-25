@@ -164,5 +164,6 @@
   "DTDate": {
    "ValueChanged": "DTDate_ValueChanged"
   }
- }
+ },
+ "menus": {}
 }

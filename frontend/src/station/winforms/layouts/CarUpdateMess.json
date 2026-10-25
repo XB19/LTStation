@@ -26,5 +26,6 @@
   "$this": {
    "Load": "CarUpdateMess_Load"
   }
- }
+ },
+ "menus": {}
 }

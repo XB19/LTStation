@@ -58,7 +58,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "MifareOne",
+     "RFID"
+    ]
+   }
   },
   {
    "name": "label6",
@@ -94,7 +100,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -130,7 +139,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -184,7 +196,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "CardReadBtn",
@@ -274,7 +289,14 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Items": [
+     "Recharge",
+     "Consume",
+     "Deduct"
+    ]
+   }
   },
   {
    "name": "label4",
@@ -310,7 +332,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -339,5 +364,6 @@
   "ConfirmBtn": {
    "Click": "ConfirmBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

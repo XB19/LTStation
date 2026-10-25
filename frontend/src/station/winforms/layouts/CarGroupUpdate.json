@@ -195,5 +195,6 @@
   "$this": {
    "Load": "CarGroupUpdate_Load"
   }
- }
+ },
+ "menus": {}
 }

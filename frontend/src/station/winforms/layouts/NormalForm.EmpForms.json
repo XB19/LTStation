@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -74,6 +77,23 @@
   },
   "EmpAdd": {
    "Click": "EmpAdd_Click"
+  }
+ },
+ "menus": {
+  "Emp_Menu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "EmpView"
+   ],
+   "items": [
+    {
+     "name": "EmpAdd",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

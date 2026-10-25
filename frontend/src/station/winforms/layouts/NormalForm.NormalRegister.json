@@ -84,5 +84,48 @@
   "$this": {
    "Load": "NormalRegister_Load"
   }
+ },
+ "menus": {
+  "ToolShow": {
+   "type": "ToolStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "StationCreate",
+     "type": "ToolStripButton",
+     "text": "Station",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "GradeSet",
+     "type": "ToolStripButton",
+     "text": "Grade",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "TankSet",
+     "type": "ToolStripButton",
+     "text": "Tank",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "EmployeeCreate",
+     "type": "ToolStripButton",
+     "text": "Emp",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "StationActive",
+     "type": "ToolStripButton",
+     "text": "Active",
+     "visible": true,
+     "items": []
+    }
+   ]
+  }
  }
 }

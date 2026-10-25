@@ -184,7 +184,15 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "Items": [
+     "YMNY POS",
+     "YMNY ID+",
+     "YMNY AutoCard",
+     "YMNY QRCode"
+    ]
+   }
   },
   {
    "name": "PayMentBox",
@@ -202,7 +210,15 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Items": [
+     "POS",
+     "ID+",
+     "AutoCard",
+     "QRCode"
+    ]
+   }
   },
   {
    "name": "Confirm",
@@ -378,5 +394,6 @@
   "$this": {
    "Load": "StationDeviceEdit_Load"
   }
- }
+ },
+ "menus": {}
 }

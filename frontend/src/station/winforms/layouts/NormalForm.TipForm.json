@@ -72,5 +72,6 @@
   "$this": {
    "Load": "TipForm_Load"
   }
- }
+ },
+ "menus": {}
 }

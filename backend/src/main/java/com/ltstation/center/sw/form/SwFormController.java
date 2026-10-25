@@ -80,6 +80,10 @@ public class SwFormController {
         if (body.get("args") instanceof Map<?, ?> a) {
             f.args.putAll((Map<String, Object>) a);
         }
+        seed(f);
+        if (body.get("parent") instanceof String pid) {
+            f.Owner = forms(session).get(pid);
+        }
         forms(session).put(f.id, f);
         synchronized (f) {
             Map<String, Object> out = run(f, "init", body, true);
@@ -96,6 +100,18 @@ public class SwFormController {
             }
             return out;
         }
+    }
+
+    /** État des contrôles après InitializeComponent : texte d'origine et propriétés fixées dans le concepteur. */
+    private static void seed(SwForm f) {
+        f.layout.texts().forEach((n, text) -> {
+            String type = f.layout.types().getOrDefault(n, "");
+            if (type.endsWith("ComboBox") || type.endsWith("DataGridView") || type.endsWith("DateTimePicker")) {
+                return;
+            }
+            f.c(n).fromClient("Text", text);
+        });
+        f.layout.init().forEach((n, props) -> props.forEach((k, v) -> f.c(n).fromClient(k, v)));
     }
 
     /** Gestionnaire du Load : déclaré dans la mise en page ou nommé <Form>_Load. */
@@ -153,7 +169,7 @@ public class SwFormController {
         }
     }
 
-    private static Method method(SwForm f, String name) {
+    static Method method(SwForm f, String name) {
         for (Class<?> c = f.getClass(); c != null && c != Object.class; c = c.getSuperclass()) {
             for (Method m : c.getDeclaredMethods()) {
                 if (m.getName().equals(name) && m.getParameterCount() == 0) {

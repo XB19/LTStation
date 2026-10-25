@@ -112,7 +112,13 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "金额",
+     "升数"
+    ]
+   }
   },
   {
    "name": "label2",
@@ -174,5 +180,6 @@
   "ConfirmBtn": {
    "Click": "ConfirmBtn_Click"
   }
- }
+ },
+ "menus": {}
 }

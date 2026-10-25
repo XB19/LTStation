@@ -58,7 +58,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "NextButton",
@@ -118,5 +121,6 @@
   "TransactionView": {
    "CellDoubleClick": "TransactionView_CellDoubleClick"
   }
- }
+ },
+ "menus": {}
 }

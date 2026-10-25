@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -88,6 +91,23 @@
   },
   "AddMenu": {
    "Click": "AddMenu_Click"
+  }
+ },
+ "menus": {
+  "GroupMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "GroupView"
+   ],
+   "items": [
+    {
+     "name": "AddMenu",
+     "type": "ToolStripMenuItem",
+     "text": "新增",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

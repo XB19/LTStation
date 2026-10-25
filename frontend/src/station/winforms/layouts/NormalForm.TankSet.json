@@ -112,7 +112,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "skinPanel1",
@@ -254,6 +257,23 @@
   },
   "$this": {
    "Load": "TankSet_Load"
+  }
+ },
+ "menus": {
+  "TankImportMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "TankView"
+   ],
+   "items": [
+    {
+     "name": "TankImportHandBtn",
+     "type": "ToolStripMenuItem",
+     "text": "Manual warehousing",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

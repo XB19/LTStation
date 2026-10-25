@@ -76,7 +76,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "CardNumberBox",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ScoreBalanceLabel",
@@ -130,7 +136,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "ConsumSelect",
@@ -148,7 +157,13 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "Balance consumption",
+     "Points redemption"
+    ]
+   }
   },
   {
    "name": "ScorePriceLabel",
@@ -220,7 +235,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -256,7 +274,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "CancelBtn",
@@ -387,5 +408,6 @@
   "$this": {
    "Load": "ProductNormalSalerView_Load"
   }
- }
+ },
+ "menus": {}
 }

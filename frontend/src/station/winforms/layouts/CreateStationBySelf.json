@@ -567,5 +567,6 @@
   "$this": {
    "Load": "CreateStationBySelf_Load"
   }
- }
+ },
+ "menus": {}
 }

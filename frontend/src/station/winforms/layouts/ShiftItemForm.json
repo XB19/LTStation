@@ -149,5 +149,6 @@
   "$this": {
    "Load": "ShiftItemForm_Load"
   }
- }
+ },
+ "menus": {}
 }

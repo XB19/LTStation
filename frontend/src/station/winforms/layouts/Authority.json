@@ -636,5 +636,6 @@
   "$this": {
    "Load": "Authority_Load"
   }
- }
+ },
+ "menus": {}
 }

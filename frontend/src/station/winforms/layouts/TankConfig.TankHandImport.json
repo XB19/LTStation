@@ -159,5 +159,6 @@
   "$this": {
    "Load": "TankHandImport_Load"
   }
- }
+ },
+ "menus": {}
 }

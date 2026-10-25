@@ -166,7 +166,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Checked": true
+   }
   },
   {
    "name": "GunAndTankTab",
@@ -184,7 +187,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 0
+   }
   },
   {
    "name": "UserNameBox",
@@ -420,5 +426,6 @@
   "$this": {
    "Load": "SuperviseForm_Load"
   }
- }
+ },
+ "menus": {}
 }

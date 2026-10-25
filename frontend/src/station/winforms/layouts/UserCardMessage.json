@@ -202,7 +202,14 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "Items": [
+     "Employee",
+     "User",
+     "Group"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -238,7 +245,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -304,5 +314,6 @@
   "QuerySearch": {
    "Click": "QuerySearch_Click"
   }
- }
+ },
+ "menus": {}
 }

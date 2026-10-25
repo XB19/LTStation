@@ -1444,7 +1444,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel2",
@@ -1720,6 +1723,126 @@
   },
   "$this": {
    "Load": "BoxScreen_Load"
+  }
+ },
+ "menus": {
+  "ToolShow": {
+   "type": "ToolStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "PrintShiftBtn",
+     "type": "ToolStripButton",
+     "text": "ประวัติการขาย",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "InformalSalesFBtn",
+     "type": "ToolStripButton",
+     "text": "ใบปิดกะ",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "InformalSalesSBtn",
+     "type": "ToolStripButton",
+     "text": "ใบสรุปรายวัน",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ChangePaymentBtn",
+     "type": "ToolStripButton",
+     "text": "ใบกำกับภาษี",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CancelinvoiceBtn",
+     "type": "ToolStripButton",
+     "text": "ยกเลิกบิลขาย",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "OilTestBtn",
+     "type": "ToolStripButton",
+     "text": "ยอดขายนอกระบบ",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ExitBtn",
+     "type": "ToolStripButton",
+     "text": "ทดสอบหัวจ่าย",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "BringInMoneyBtn",
+     "type": "ToolStripButton",
+     "text": "คืนสินค้า",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "TakeOutMoneyBtn",
+     "type": "ToolStripButton",
+     "text": "เครื่องมือ",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ChangeOilPriceBtn",
+     "type": "ToolStripButton",
+     "text": "นำเงินเข้า",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ToolBtn",
+     "type": "ToolStripButton",
+     "text": "นำเงินออก",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CloseShiftBtn",
+     "type": "ToolStripButton",
+     "text": "ปิดกะ",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "CloseDayBtn",
+     "type": "ToolStripButton",
+     "text": "ปิดวัน",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "ChangeUserBtn",
+     "type": "ToolStripButton",
+     "text": "ตั้งราคาสินค้า",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "toolStripButton1",
+     "type": "ToolStripButton",
+     "text": "เปลี่ยนผู้ใช้",
+     "visible": true,
+     "items": []
+    },
+    {
+     "name": "toolStripButton2",
+     "type": "ToolStripButton",
+     "text": "ออก",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

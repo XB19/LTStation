@@ -202,7 +202,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -234,5 +237,6 @@
   "$this": {
    "Load": "NormalEmployeeAdd_Load"
   }
- }
+ },
+ "menus": {}
 }

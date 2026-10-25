@@ -112,7 +112,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label5",
@@ -328,5 +331,6 @@
   "SaveButton": {
    "Click": "SaveButton_Click"
   }
- }
+ },
+ "menus": {}
 }

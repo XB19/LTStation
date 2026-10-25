@@ -219,5 +219,6 @@
   "$this": {
    "Load": "NozFuelSet_Load"
   }
- }
+ },
+ "menus": {}
 }

@@ -40,7 +40,13 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "664",
+     "886"
+    ]
+   }
   },
   {
    "name": "label7",
@@ -76,7 +82,14 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "None",
+     "EVEN",
+     "Odd"
+    ]
+   }
   },
   {
    "name": "StopBitSelect",
@@ -94,7 +107,14 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Items": [
+     "0",
+     "1",
+     "2"
+    ]
+   }
   },
   {
    "name": "BuadSelect",
@@ -112,7 +132,18 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Items": [
+     "4800",
+     "9600",
+     "14400",
+     "19200",
+     "38400",
+     "56000",
+     "115200"
+    ]
+   }
   },
   {
    "name": "CanelButton",
@@ -166,7 +197,37 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Items": [
+     "80",
+     "90",
+     "100",
+     "110",
+     "120",
+     "130",
+     "140",
+     "150",
+     "160",
+     "170",
+     "180",
+     "190",
+     "200",
+     "210",
+     "220",
+     "230",
+     "240",
+     "250",
+     "260",
+     "270",
+     "280",
+     "290",
+     "300",
+     "310",
+     "320",
+     "330"
+    ]
+   }
   },
   {
    "name": "label6",
@@ -202,7 +263,17 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Items": [
+     "None",
+     "Bluesky",
+     "Tatsuno",
+     "Japan",
+     "Dart",
+     "Level"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -292,7 +363,15 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "init": {
+    "Items": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -321,5 +400,6 @@
   "SaveButton": {
    "Click": "SaveButton_Click"
   }
- }
+ },
+ "menus": {}
 }

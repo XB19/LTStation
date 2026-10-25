@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -88,6 +91,23 @@
   },
   "$this": {
    "Load": "TankCableCheckForm_Load"
+  }
+ },
+ "menus": {
+  "contextMenuStrip1": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "TankCableView"
+   ],
+   "items": [
+    {
+     "name": "TankCableAdd",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

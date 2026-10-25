@@ -177,5 +177,6 @@
   "$this": {
    "Load": "GetOiltransactionByHands_Load"
   }
- }
+ },
+ "menus": {}
 }

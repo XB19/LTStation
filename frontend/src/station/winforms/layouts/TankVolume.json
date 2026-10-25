@@ -203,5 +203,6 @@
   "$this": {
    "Load": "TankVolume_Load"
   }
- }
+ },
+ "menus": {}
 }

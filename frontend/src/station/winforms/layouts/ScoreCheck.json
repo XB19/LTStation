@@ -58,7 +58,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label6",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label5",
@@ -130,7 +136,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 5
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -166,7 +175,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -202,7 +214,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label2",
@@ -238,7 +253,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 11
+   "order": 11,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label1",
@@ -288,5 +306,6 @@
   "$this": {
    "Load": "ScoreCheck_Load"
   }
- }
+ },
+ "menus": {}
 }

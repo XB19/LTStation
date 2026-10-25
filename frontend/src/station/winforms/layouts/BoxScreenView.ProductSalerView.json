@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label5",
@@ -76,7 +79,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "Food",
+     "Lubricants",
+     "Engine Oil",
+     "Cleaner",
+     "Tools"
+    ],
+    "Enabled": false
+   }
   },
   {
    "name": "ConfirmBtn",
@@ -148,7 +161,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label3",
@@ -220,7 +236,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 10
+   "order": 10,
+   "init": {
+    "Enabled": false
+   }
   },
   {
    "name": "label1",
@@ -255,5 +274,6 @@
   "$this": {
    "Load": "ProductSalerView_Load"
   }
- }
+ },
+ "menus": {}
 }

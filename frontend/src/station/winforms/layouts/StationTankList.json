@@ -216,5 +216,6 @@
   "AddTank": {
    "Click": "AddTank_Click"
   }
- }
+ },
+ "menus": {}
 }

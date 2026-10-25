@@ -198,5 +198,6 @@
   "$this": {
    "Load": "BoxRFIDConfig_Load"
   }
- }
+ },
+ "menus": {}
 }

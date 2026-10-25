@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyNoz",
@@ -148,7 +151,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "TankStockView",
@@ -166,7 +172,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "skinButton1",
@@ -292,7 +301,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label1",
@@ -328,7 +340,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyTab",
@@ -346,7 +361,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 0
+   }
   }
  ],
  "columns": {
@@ -535,5 +553,6 @@
   "$this": {
    "Load": "DutyReport_Load"
   }
- }
+ },
+ "menus": {}
 }

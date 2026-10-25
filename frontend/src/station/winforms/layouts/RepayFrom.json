@@ -252,5 +252,6 @@
   "$this": {
    "Load": "RepayFrom_Load"
   }
- }
+ },
+ "menus": {}
 }

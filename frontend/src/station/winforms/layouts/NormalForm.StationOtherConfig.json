@@ -72,5 +72,6 @@
   "$this": {
    "Load": "StationOtherConfig_Load"
   }
- }
+ },
+ "menus": {}
 }

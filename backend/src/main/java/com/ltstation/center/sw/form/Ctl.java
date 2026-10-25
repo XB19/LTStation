@@ -19,6 +19,8 @@ public class Ctl {
     private final List<Object> values = new ArrayList<>();
     private final List<Map<String, ?>> bound = new ArrayList<>();
     private boolean dirty;
+    /** Fenêtre propriétaire : événements déclenchés par une modification depuis le code (comme WinForms). */
+    SwForm owner;
 
     Ctl(String name) {
         this.name = name;
@@ -28,9 +30,26 @@ public class Ctl {
         return name;
     }
 
+    private static final Map<String, String[]> EVENTS = Map.of(
+        "Text", new String[] {"TextChanged"},
+        "Checked", new String[] {"CheckedChanged", "CheckStateChanged"},
+        "SelectedIndex", new String[] {"SelectedIndexChanged", "SelectedValueChanged"},
+        "Value", new String[] {"ValueChanged"});
+
     private Ctl set(String k, Object v) {
+        Object old = props.get(k);
         props.put(k, v);
         dirty = true;
+        boolean changed = old == null ? v != null : !old.equals(v);
+        if (changed && owner != null) {
+            if ("Checked".equals(k) && Boolean.TRUE.equals(v)) {
+                owner.radioChecked(name);
+            }
+            String[] ev = EVENTS.get(k);
+            if (ev != null) {
+                owner.raise(name, ev);
+            }
+        }
         return this;
     }
 

@@ -220,7 +220,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label2",
@@ -256,7 +259,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label1",
@@ -364,7 +370,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label4",
@@ -400,7 +409,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "label3",
@@ -436,7 +448,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -590,6 +605,23 @@
   },
   "DeviceTransactionPrint": {
    "Click": "DeviceTransactionPrint_Click"
+  }
+ },
+ "menus": {
+  "contextMenuStrip1": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "TransactionView"
+   ],
+   "items": [
+    {
+     "name": "DeviceTransactionPrint",
+     "type": "ToolStripMenuItem",
+     "text": "Print By Device",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

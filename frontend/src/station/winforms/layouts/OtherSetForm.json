@@ -58,7 +58,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Items": [
+     "5",
+     "10",
+     "15",
+     "20",
+     "25",
+     "30"
+    ]
+   }
   },
   {
    "name": "label1",
@@ -84,5 +94,6 @@
   "Confirm": {
    "Click": "Confirm_Click"
   }
- }
+ },
+ "menus": {}
 }

@@ -40,7 +40,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   }
  ],
  "columns": {
@@ -78,6 +81,23 @@
   "$this": {
    "FormClosed": "GroupManage_FormClosed",
    "Load": "GroupManage_Load"
+  }
+ },
+ "menus": {
+  "AddMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "Box_Device"
+   ],
+   "items": [
+    {
+     "name": "AddItem",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
   }
  }
 }

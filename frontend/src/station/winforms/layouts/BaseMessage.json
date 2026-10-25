@@ -361,5 +361,6 @@
   "$this": {
    "Load": "BaseMessage_Load"
   }
- }
+ },
+ "menus": {}
 }

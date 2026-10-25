@@ -1,5 +1,6 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
-import { Button, Checkbox, DatePicker, Input, Select, Table, TimePicker } from 'antd'
+import { Button, Checkbox, DatePicker, Dropdown, Input, Select, Table, TimePicker } from 'antd'
+import type { MenuProps } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
 import dayjs, { type Dayjs } from 'dayjs'
 import fr from './fr.json'
@@ -39,6 +40,16 @@ export interface Layout {
   columns: Record<string, Column[]>
   /** Gestionnaires d'événements du .cs d'origine : contrôle ('$this' = fenêtre) → événement → méthode */
   events?: Record<string, Record<string, string>>
+  /** Menus : barres (MenuStrip, ToolStrip, StatusStrip) et menus contextuels (ContextMenuStrip) */
+  menus?: Record<string, { type: string; owners: string[]; items: MenuItem[] }>
+}
+
+export interface MenuItem {
+  name: string
+  type: string
+  text: string
+  visible: boolean
+  items: MenuItem[]
 }
 
 const layouts = import.meta.glob<Layout>('./layouts/*.json', { eager: true, import: 'default' })
@@ -101,6 +112,8 @@ export interface WinFormProps {
   onTab?: (tabControl: string, page: string) => void
   /** Contenu ajouté à la fin d'un conteneur */
   extra?: Record<string, ReactNode>
+  /** Clic sur un élément de menu (nom d'origine) */
+  onMenu?: (item: string) => void
 }
 
 /** Pagination d'origine remplacée par celle des tableaux */
@@ -110,6 +123,7 @@ const isPagerLabel = (c: Ctrl) => c.type.endsWith('Label') && (c.text === '/' ||
 const CONTAINERS = new Set(['SkinTabControl', 'TabControl', 'GroupBox', 'SkinCaptionPanel', 'Panel', 'SkinPanel', 'SkinGroupBox'])
 const isLabel = (c: Ctrl) => c.type === 'Label' || c.type === 'SkinLabel'
 const isGrid = (c: Ctrl) => c.type.endsWith('DataGridView')
+const isStrip = (c: Ctrl) => /(MenuStrip|ToolStrip|StatusStrip)$/.test(c.type)
 
 export default function WinForm(p: WinFormProps) {
   const { layout } = p
@@ -126,9 +140,64 @@ export default function WinForm(p: WinFormProps) {
   }, [layout, p.hidden, p.texts])
 
   const inFlow = useMemo(() => new Set(layout.controls.filter((c) => !c.dock && !isLabel(c) && !c.type.includes('Button') && !c.type.includes('CheckBox')
-    && !CONTAINERS.has(c.type) && !isGrid(c)).map((c) => c.name)), [layout])
+    && !CONTAINERS.has(c.type) && !isGrid(c) && !isStrip(c)).map((c) => c.name)), [layout])
 
   const text = (c: Ctrl) => (p.texts?.[c.name] !== undefined ? p.texts[c.name] : tr(c.text))
+  const itemText = (i: MenuItem) => (p.texts?.[i.name] !== undefined ? p.texts[i.name] : tr(i.text))
+  const shown = (i: MenuItem) => i.visible && !(p.hidden ?? []).includes(i.name)
+
+  /** Éléments d'un menu déroulant / contextuel au format antd. */
+  const menuItems = (items: MenuItem[]): MenuProps['items'] => items.filter(shown).map((i) => (
+    i.type === 'ToolStripSeparator'
+      ? { type: 'divider' as const, key: i.name }
+      : {
+          key: i.name,
+          label: itemText(i),
+          disabled: (p.disabled ?? []).includes(i.name),
+          children: i.items.length ? menuItems(i.items) : undefined,
+          onClick: i.items.length ? undefined : () => p.onMenu?.(i.name),
+        }
+  ))
+
+  /** Barre de menus, d'outils ou d'état. */
+  const renderStrip = (c: Ctrl) => {
+    const m = layout.menus?.[c.name]
+    if (!m) return null
+    const items = m.items.filter(shown)
+    if (m.type === 'StatusStrip') {
+      return (
+        <div className="wf-status">
+          {items.map((i) => (i.type === 'ToolStripProgressBar'
+            ? <progress key={i.name} className="wf-status-pro" />
+            : <span key={i.name} className="wf-status-item">{itemText(i)}</span>))}
+        </div>
+      )
+    }
+    return (
+      <div className={m.type === 'MenuStrip' ? 'wf-menubar' : 'wf-toolbar'}>
+        {items.map((i) => {
+          if (i.type === 'ToolStripSeparator') return <span key={i.name} className="wf-sep" />
+          const dis = (p.disabled ?? []).includes(i.name)
+          if (i.items.length) {
+            return (
+              <Dropdown key={i.name} trigger={['click']} disabled={dis} menu={{ items: menuItems(i.items) }}>
+                <button type="button" className="wf-menu-btn">{itemText(i)}</button>
+              </Dropdown>
+            )
+          }
+          return <button key={i.name} type="button" className="wf-menu-btn" disabled={dis} onClick={() => p.onMenu?.(i.name)}>{itemText(i)}</button>
+        })}
+      </div>
+    )
+  }
+
+  /** Menu contextuel (clic droit) du contrôle, s'il en a un. */
+  const contextMenu = (name: string) => Object.values(layout.menus ?? {}).find((m) => m.type === 'ContextMenuStrip' && m.owners.includes(name))
+  const withContext = (name: string, node: ReactNode) => {
+    const m = contextMenu(name)
+    if (!m || !node) return node
+    return <Dropdown trigger={['contextMenu']} menu={{ items: menuItems(m.items) }}><div>{node}</div></Dropdown>
+  }
 
   const renderControl = (c: Ctrl): ReactNode => {
     const ro = p.readOnly?.includes(c.name)
@@ -171,7 +240,8 @@ export default function WinForm(p: WinFormProps) {
           loading={p.busy === c.name} style={{ minWidth: Math.min(Math.max(c.size[0], 70), 140), height: c.size[1] >= 30 ? 34 : 26 }}
           onClick={() => p.buttons?.[c.name]?.()}>{text(c)}</Button>
       default:
-        if (isGrid(c)) return renderGrid(c)
+        if (/(MenuStrip|ToolStrip|StatusStrip)$/.test(c.type)) return renderStrip(c)
+        if (isGrid(c)) return withContext(c.name, renderGrid(c))
         if (CONTAINERS.has(c.type) || c.type.endsWith('TabPage')) return renderContainer(c)
         return null
     }
@@ -264,7 +334,9 @@ export default function WinForm(p: WinFormProps) {
   /** Conteneur : champs libres puis enfants ancrés (haut, gauche/remplissage/droite, bas). */
   const renderBody = (parent: string) => {
     const kids = (children[parent] ?? []).filter((c) => !c.type.endsWith('TabPage'))
-    const docked = kids.filter((c) => c.dock && (CONTAINERS.has(c.type) || isGrid(c)))
+    // Barres de menus / d'outils / d'état : ancrées en haut (en bas pour la barre d'état) même sans Dock explicite
+    const docked = kids.filter((c) => (c.dock || isStrip(c)) && (CONTAINERS.has(c.type) || isGrid(c) || isStrip(c)))
+      .map((c) => (isStrip(c) && !c.dock ? { ...c, dock: c.type.endsWith('StatusStrip') ? 'bottom' as const : 'top' as const } : c))
     const free = kids.filter((c) => !docked.includes(c))
     const top = docked.filter((c) => c.dock === 'top')
     const bottom = docked.filter((c) => c.dock === 'bottom')

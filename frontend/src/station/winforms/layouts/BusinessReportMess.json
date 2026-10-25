@@ -40,7 +40,15 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Items": [
+     "All",
+     "Open Account",
+     "Deposit",
+     "Consumption"
+    ]
+   }
   },
   {
    "name": "label5",
@@ -76,7 +84,18 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Items": [
+     "All",
+     "Employee Card",
+     "User Card",
+     "Manage Credit Card",
+     "Group Card",
+     "Master Card",
+     "Credit Card"
+    ]
+   }
   },
   {
    "name": "label114",
@@ -130,7 +149,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label3",
@@ -166,7 +188,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Format": "Short"
+   }
   },
   {
    "name": "label4",
@@ -202,7 +227,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label2",
@@ -238,7 +266,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "init": {
+    "Format": "Short"
+   }
   },
   {
    "name": "label1",
@@ -274,7 +305,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel2",
@@ -364,7 +398,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel4",
@@ -711,5 +748,6 @@
   "$this": {
    "Load": "BusinessReportMess_Load"
   }
- }
+ },
+ "menus": {}
 }

@@ -544,7 +544,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel5",
@@ -706,7 +709,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "panel4",
@@ -742,7 +748,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 0
+   }
   },
   {
    "name": "textBox1",
@@ -1051,5 +1060,6 @@
   "$this": {
    "Load": "CustomerInfo_Load"
   }
- }
+ },
+ "menus": {}
 }

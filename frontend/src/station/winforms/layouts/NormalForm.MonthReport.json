@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyNoz",
@@ -148,7 +151,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "TankStockView",
@@ -166,7 +172,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "SettleClose",
@@ -238,7 +247,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Format": "Custom"
+   }
   },
   {
    "name": "label1",
@@ -274,7 +286,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
   },
   {
    "name": "DailyTab",
@@ -292,7 +307,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "SelectedIndex": 2
+   }
   }
  ],
  "columns": {
@@ -478,5 +496,6 @@
   "MonthTime": {
    "ValueChanged": "MonthTime_ValueChanged"
   }
- }
+ },
+ "menus": {}
 }
