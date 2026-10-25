@@ -2,15 +2,283 @@
  "name": "DailyClose",
  "title": "DailyClose",
  "size": [
-  800,
-  600
+  1305,
+  642
  ],
- "controls": [],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1297,
+    58
+   ],
+   "text": "日选择",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    92
+   ],
+   "size": [
+    1297,
+    470
+   ],
+   "text": "报表数据",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    562
+   ],
+   "size": [
+    1297,
+    76
+   ],
+   "text": "数据汇总",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NozView",
+   "type": "SkinDataGridView",
+   "parent": "DailyNoz",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1291,
+    425
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "DailyNoz",
+   "type": "SkinTabPage",
+   "parent": "DailyTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1291,
+    425
+   ],
+   "text": "枪日结",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DailyTank",
+   "type": "SkinTabPage",
+   "parent": "DailyTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    1291,
+    425
+   ],
+   "text": "能源日结",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "TankView",
+   "type": "SkinDataGridView",
+   "parent": "DailyTank",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    1291,
+    425
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "Export",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1205,
+    14
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "导出",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ReportClosed",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    179,
+    20
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "已结算",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "DailyReport",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1113,
+    14
+   ],
+   "size": [
+    86,
+    33
+   ],
+   "text": "日结",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "DTDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    14
+   ],
+   "size": [
+    102,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "Format": "Short"
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    20
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "结算日期:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "TotalSumView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1291,
+    56
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "DailyTab",
+   "type": "SkinTabControl",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1291,
+    450
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "SelectedIndex": 1
+   }
+  }
+ ],
  "columns": {
   "TotalSumView": [
    {
     "name": "TotalVolume",
-    "header": "TotalVolume",
+    "header": "总销量",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -18,7 +286,7 @@
    },
    {
     "name": "TotalAmount",
-    "header": "TotalAmount",
+    "header": "总金额",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -28,7 +296,7 @@
   "NozView": [
    {
     "name": "dataGridViewTextBoxColumn10",
-    "header": "dataGridViewTextBoxColumn10",
+    "header": "枪号",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -36,7 +304,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn12",
-    "header": "dataGridViewTextBoxColumn12",
+    "header": "起始泵码",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -44,7 +312,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn13",
-    "header": "dataGridViewTextBoxColumn13",
+    "header": "结束泵码",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -52,7 +320,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn14",
-    "header": "dataGridViewTextBoxColumn14",
+    "header": "总销量",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -60,7 +328,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn15",
-    "header": "dataGridViewTextBoxColumn15",
+    "header": "总金额",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -68,7 +336,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn16",
-    "header": "dataGridViewTextBoxColumn16",
+    "header": "开始时间",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -76,7 +344,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn17",
-    "header": "dataGridViewTextBoxColumn17",
+    "header": "结束时间",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -84,7 +352,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn18",
-    "header": "dataGridViewTextBoxColumn18",
+    "header": "误差",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -94,7 +362,7 @@
   "TankView": [
    {
     "name": "dataGridViewTextBoxColumn1",
-    "header": "dataGridViewTextBoxColumn1",
+    "header": "能源类型",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -102,7 +370,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn2",
-    "header": "dataGridViewTextBoxColumn2",
+    "header": "单价",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -110,7 +378,7 @@
    },
    {
     "name": "EmpAmount",
-    "header": "EmpAmount",
+    "header": "员工卡金额合计",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -118,7 +386,7 @@
    },
    {
     "name": "EmpVolumeSum",
-    "header": "EmpVolumeSum",
+    "header": "员工卡总量合计",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -126,7 +394,7 @@
    },
    {
     "name": "UserAmount",
-    "header": "UserAmount",
+    "header": "用户卡金额合计",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -134,7 +402,7 @@
    },
    {
     "name": "UserVolume",
-    "header": "UserVolume",
+    "header": "用户卡总量合计",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -142,7 +410,7 @@
    },
    {
     "name": "OtherM",
-    "header": "OtherM",
+    "header": "其他(金额合计)",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -150,7 +418,7 @@
    },
    {
     "name": "OtherV",
-    "header": "OtherV",
+    "header": "其他(总量合计)",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -158,7 +426,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn5",
-    "header": "dataGridViewTextBoxColumn5",
+    "header": "总金额",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -166,7 +434,7 @@
    },
    {
     "name": "dataGridViewTextBoxColumn4",
-    "header": "dataGridViewTextBoxColumn4",
+    "header": "总销量",
     "visible": true,
     "prop": null,
     "readOnly": true,

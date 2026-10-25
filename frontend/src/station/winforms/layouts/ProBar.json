@@ -2,10 +2,32 @@
  "name": "ProBar",
  "title": "ProBar",
  "size": [
-  800,
-  600
+  397,
+  319
  ],
- "controls": [],
+ "controls": [
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    397,
+    319
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "init": {
+    "Image": "res/forms/ProBar/label1.Image.gif"
+   }
+  }
+ ],
  "columns": {},
  "events": {},
  "menus": {}

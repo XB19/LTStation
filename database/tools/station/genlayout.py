@@ -137,7 +137,7 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
             }
     title = size = None
     headers = {}
-    if not neutral and cs:
+    if not controls and cs:
         controls, title, size, headers = designer_controls(cs)
     # Ordre d'ajout dans les conteneurs (ordre des onglets)
     order = {}

@@ -2,10 +2,974 @@
  "name": "CarUpdateMess",
  "title": "CarUpdateMess",
  "size": [
-  800,
-  600
+  842,
+  393
  ],
- "controls": [],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    379,
+    355
+   ],
+   "text": "用户信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CarBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    383,
+    34
+   ],
+   "size": [
+    455,
+    355
+   ],
+   "text": "气瓶信息",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CyDowload",
+   "type": "SkinButton",
+   "parent": "CarBox",
+   "loc": [
+    240,
+    304
+   ],
+   "size": [
+    129,
+    35
+   ],
+   "text": "气瓶同步",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "CarBox",
+   "loc": [
+    402,
+    310
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "init": {
+    "Image": "res/forms/CarUpdateMess/Next.Image.png"
+   }
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "CarBox",
+   "loc": [
+    36,
+    310
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "Image": "res/forms/CarUpdateMess/Cur.Image.png"
+   }
+  },
+  {
+   "name": "UploadBtn",
+   "type": "SkinButton",
+   "parent": "CarBox",
+   "loc": [
+    103,
+    304
+   ],
+   "size": [
+    129,
+    35
+   ],
+   "text": "上报",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "Enabled": false
+   }
+  },
+  {
+   "name": "BfDateBox",
+   "type": "DateTimePicker",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    234
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM"
+   }
+  },
+  {
+   "name": "label19",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    237
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "报废时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "XjDateBox",
+   "type": "DateTimePicker",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    190
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM"
+   }
+  },
+  {
+   "name": "label18",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    193
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "下检时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "MJDateBox",
+   "type": "DateTimePicker",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    148
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM"
+   }
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    151
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "末检时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "OWNoBox",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    110
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    115
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "条码:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "PDCode",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    72
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    77
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "产品编号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "PDDate",
+   "type": "DateTimePicker",
+   "parent": "CarBox",
+   "loc": [
+    303,
+    28
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM"
+   }
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    238,
+    31
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "制造时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "ManufactorBox",
+   "type": "ComboBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    278
+   ],
+   "size": [
+    376,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    281
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "厂家名称:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17
+  },
+  {
+   "name": "WallThicknessBox",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    234
+   ],
+   "size": [
+    161,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    234
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "壁厚:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 19
+  },
+  {
+   "name": "CubageBox",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    188
+   ],
+   "size": [
+    161,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    189
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "容积:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21
+  },
+  {
+   "name": "WorkPressureBox",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    148
+   ],
+   "size": [
+    161,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 22
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    150
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "充装压力:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 23
+  },
+  {
+   "name": "DielectricBox",
+   "type": "ComboBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    110
+   ],
+   "size": [
+    161,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 24
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    112
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "介质:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 25
+  },
+  {
+   "name": "PDName",
+   "type": "TextBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    72
+   ],
+   "size": [
+    161,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 26
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    75
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "产品名称:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 27
+  },
+  {
+   "name": "CylinderBox",
+   "type": "ComboBox",
+   "parent": "CarBox",
+   "loc": [
+    71,
+    28
+   ],
+   "size": [
+    161,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 28
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "CarBox",
+   "loc": [
+    6,
+    31
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "设备品种:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 29
+  },
+  {
+   "name": "LimitGradeCombox",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    266
+   ],
+   "size": [
+    266,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "LimitGrade",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    272
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "能源类型:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "AccountBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    238,
+    232
+   ],
+   "size": [
+    135,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "Enabled": false
+   }
+  },
+  {
+   "name": "label21",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    197,
+    238
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "账户:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "AsnBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    47,
+    234
+   ],
+   "size": [
+    144,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "Enabled": false
+   }
+  },
+  {
+   "name": "label20",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    238
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "卡号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "CarTypeSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    132
+   ],
+   "size": [
+    266,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "Items": [
+     "公交车",
+     "出租车",
+     "其他"
+    ]
+   }
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    304
+   ],
+   "size": [
+    148,
+    35
+   ],
+   "text": "保存",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "GroupSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    199
+   ],
+   "size": [
+    266,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    204
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "申请使用单位:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "STDate",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    165
+   ],
+   "size": [
+    266,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM"
+   }
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    170
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "投入使用时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    136
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "车辆类型:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "CarNoBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    98
+   ],
+   "size": [
+    266,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    102
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "车牌号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    64
+   ],
+   "size": [
+    266,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    68
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "用户名:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  },
+  {
+   "name": "LocalGroup",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    31
+   ],
+   "size": [
+    266,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17,
+   "init": {
+    "Enabled": false
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    34
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "所属集团:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  }
+ ],
  "columns": {},
  "events": {
   "CyDowload": {
