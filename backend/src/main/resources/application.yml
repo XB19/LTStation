@@ -78,6 +78,7 @@ app:
   # API des stations (/ServerDeal/*), réglages du Web.config d'origine
   server-deal:
     platform-key: ${PLATFORM_KEY:}
+    extend-app-key: ${EXTEND_APP_KEY:}
     station-control: ${STATION_CONTROL:false}
     credit-day: ${CREDIT_DAY:21}
     pluse-base: ${PLUSE_BASE:1250}
