@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<es>
+  <Amount>Cantidad</Amount>
+	<RealAmount>Importe original</RealAmount>
+	<DiscountValue>Descuentos</DiscountValue>
+  <Volume>Ventas</Volume>
+  <Price>precio unitario</Price>
+  <NoCard>Sin tarjeta</NoCard>
+  <OpenPortError>Falló la apertura del puerto serie</OpenPortError>
+  <PLSWriteName>Por favor ingrese el nombre del permiso</PLSWriteName>
+  <OperateSuccess>Operación exitosa</OperateSuccess>
+  <UnvalidatedInput>Entrada ilegal</UnvalidatedInput>
+  <CardNo>número de tarjeta</CardNo>
+  <UserName>nombre de usuario</UserName>
+  <TransactionType>Tipo de operación de tarjeta</TransactionType>
+  <Recharge>Monto de recarga</Recharge>
+  <GiftAmount>Crédito</GiftAmount>
+  <ConsumptionAmount>Cantidad de consumo</ConsumptionAmount>
+  <Time>Horario de negociación</Time>
+  <Balance>Balance</Balance>
+  <Total>total</Total>
+  <TotalRecord>Total de registros</TotalRecord>
+  <TotalRecharge>Monto total del depósito</TotalRecharge>
+  <TotalDeduction>Monto total del bono</TotalDeduction>
+  <TotalNonFuelAmount>Consumo total no petrolero</TotalNonFuelAmount>
+  <TotalConsumptionAmount>Cantidad total de consumo</TotalConsumptionAmount>
+  <SummaryVolume>Consumo total de litros</SummaryVolume>
+  <SummaryDiscount>Importe total del regalo</SummaryDiscount>
+  <OneWordOnly>Por favor, introduzca sólo una letra o un número.</OneWordOnly>
+  <InformationLoss>Por favor complete toda la información</InformationLoss>
+  <UnvalidatedRequest>Solicitud no válida</UnvalidatedRequest>
+  <DuplicateInformation>Información duplicada</DuplicateInformation>
+  <PLSSelectRegion>Por favor seleccione una región primero</PLSSelectRegion>
+  <ReadCardFailed>Error en la lectura de la tarjeta</ReadCardFailed>
+  <GetSecretError>Error en la lectura de la clave</GetSecretError>
+  <InitPasswordFailed>Error al restablecer la contraseña</InitPasswordFailed>
+  <PasswordFormatError>Error de formato de contraseña</PasswordFormatError>
+  <PlsReadCard>Por favor, lea la tarjeta primero.</PlsReadCard>
+  <InvalidInformation>Información no válida</InvalidInformation>
+  <ShiftSetError>Por favor, configure su turno primero</ShiftSetError>
+  <ShiftComplete>Turno completado</ShiftComplete>
+  <LastPage>Ya en la última página</LastPage>
+  <FirstPage>Ya en la primera pagina</FirstPage>
+  <DataEmpty>No hay información de datos</DataEmpty>
+  <ShiftAlreadlyComplete>Este turno ha sido entregado</ShiftAlreadlyComplete>
+  <Shift>Noticias de la clase</Shift>
+  <TimeError>La hora introducida es incorrecta</TimeError>
+  <NoShift>No hay vuelos actualmente</NoShift>
+  <ObjectEmpty>La información de datos está vacía</ObjectEmpty>
+  <PriceShow>Etiqueta de precio unitario</PriceShow>
+  <ValidError>Errores de validación</ValidError>
+  <FormatError>Error de formato</FormatError>
+  <DownLoad>Iniciar descarga</DownLoad>
+  <DownLoadComplete>Descarga completa</DownLoadComplete>
+  <NeedQueryCondition>Las condiciones de consulta no pueden estar vacías.</NeedQueryCondition>
+  <NeedCardNo>El número de tarjeta no puede estar vacío</NeedCardNo>
+  <CardMakeErrorReturn>Falló la producción de la tarjeta, cancelar y reemplazar</CardMakeErrorReturn>
+  <CardChangeComplete>Tarjeta de reemplazo completada</CardChangeComplete>
+  <CardChangeFailed>El reemplazo falló</CardChangeFailed>
+  <CardCompleteButStatueError>El cambio de estado falló, el reemplazo se completó</CardCompleteButStatueError>
+  <CardReaderDisconnect>Por favor, confirme si el lector de tarjetas está conectado</CardReaderDisconnect>
+  <CardPublishMessageFailed>Error al generar la información de la tarjeta</CardPublishMessageFailed>
+  <CardWriteError>No se pudo escribir la tarjeta</CardWriteError>
+  <BalanceReturnError>Error en la recuperación del saldo</BalanceReturnError>
+  <UserInexistence>El usuario no existe</UserInexistence>
+  <ExternalValidationError>Error de autenticación externa</ExternalValidationError>
+  <InitializeError>Error de inicialización</InitializeError>
+  <InitializeSuccess>Inicialización exitosa</InitializeSuccess>
+  <DepositError>Recarga fallida</DepositError>
+  <LostSuccess>Reporte perdido exitosamente</LostSuccess>
+  <Normal>normal</Normal>
+  <GetReaderFailed>Falló la adquisición del lector de tarjetas</GetReaderFailed>
+  <MaxLength>La longitud no puede exceder 3</MaxLength>
+  <ValuetTooLarge>El valor introducido es demasiado grande</ValuetTooLarge>
+  <NoLimit>Sin restricciones</NoLimit>
+  <NoDiscount>Sin descuento</NoDiscount>
+  <PlSSelectCardType>Por favor seleccione el tipo de tarjeta</PlSSelectCardType>
+  <CardMakeSuccess>Éxito en la fabricación de tarjetas</CardMakeSuccess>
+  <CardMakeError>La fabricación de la tarjeta falló</CardMakeError>
+  <OutOfCreditLine>El límite de crédito no puede exceder el límite de crédito disponible del grupo.</OutOfCreditLine>
+  <PasswordInconformity>Las contraseñas ingresadas dos veces no coinciden</PasswordInconformity>
+  <NeedCardValidTime>El período de validez de la tarjeta no puede estar vacío</NeedCardValidTime>
+  <NeedUserAccount>La cuenta de usuario no puede estar vacía</NeedUserAccount>
+  <NeedPasswordMaxLength>La contraseña debe tener cuatro caracteres.</NeedPasswordMaxLength>
+  <PasswordIsNumber>La contraseña sólo puede constar de números.</PasswordIsNumber>
+  <UserNameEmpty>El nombre de usuario no puede estar vacío</UserNameEmpty>
+  <UserIDEmpty>El ID de usuario no puede estar vacío</UserIDEmpty>
+  <IdentificationEmpty>El número de certificado no puede estar vacío</IdentificationEmpty>
+  <PhoneError>Error en el formato de la información de contacto</PhoneError>
+  <CarNoLength>La longitud normal de un número de vehículo es 7.</CarNoLength>
+  <CarFormatError>Error de formato del número de vehículo</CarFormatError>
+  <PostCodeFormatError>El formato del código postal es incorrecto</PostCodeFormatError>
+  <EamilFormatError>Error de formato de correo electrónico</EamilFormatError>
+  <LimitVolumeError>El formato del valor del límite de cada litro es incorrecto</LimitVolumeError>
+  <NumberOrDecimal>Sólo se pueden introducir números o decimales</NumberOrDecimal>
+  <OutOfStationDigits>El número de decimales ingresado excede el número de decimales para la actualización del sitio</OutOfStationDigits>
+  <PLSCheckDigits>Verifique si el número de entrada o la configuración del sitio son correctos.</PLSCheckDigits>
+  <LimitVolumeExceeded>El valor de entrada de cada límite de litro es demasiado grande</LimitVolumeExceeded>
+  <LimitDayTimeError>Límite diario: solo se pueden ingresar números</LimitDayTimeError>
+  <LimitAmountDailyError>El formato del valor límite diario es incorrecto</LimitAmountDailyError>
+  <LimitAmountDailyExceeded>El valor de entrada del límite de cantidad de reabastecimiento diario es demasiado grande</LimitAmountDailyExceeded>
+  <LimitVolumeMonthError>El formato del valor del límite de litros mensual es incorrecto</LimitVolumeMonthError>
+  <LimitVolumeMonthExceeded>El valor de entrada del límite de litros mensual es demasiado grande</LimitVolumeMonthExceeded>
+  <LimitAmountMonthError>El formato del valor límite del importe mensual es incorrecto</LimitAmountMonthError>
+  <LimitAmountMonthExceeded>El valor de entrada del límite de combustible mensual es demasiado grande</LimitAmountMonthExceeded>
+  <FuelConsumptionError>El consumo de combustible cada 100 kilómetros solo se puede introducir en números.</FuelConsumptionError>
+  <MileageNumber>La tolerancia de kilometraje solo se puede ingresar en números</MileageNumber>
+  <SelectEmployee>Por favor seleccione empleado</SelectEmployee>
+  <GroupNameEmpty>El nombre del grupo no puede estar vacío</GroupNameEmpty>
+  <GroupIDEmpty>El número de grupo no puede estar vacío</GroupIDEmpty>
+  <BusinessNoEmpty>El número de licencia comercial no puede estar vacío</BusinessNoEmpty>
+  <CreditLineEmpty>El límite de crédito no puede estar vacío</CreditLineEmpty>
+  <BillCreateDayEmpty>La fecha de generación de la factura no puede estar vacía</BillCreateDayEmpty>
+  <DayRange>El rango de valores de entrada está entre 1 y 30.</DayRange>
+  <RepayDayEmpty>La fecha de reembolso no puede estar vacía</RepayDayEmpty>
+  <LimitLevelError>El formato del valor del umbral límite es incorrecto.</LimitLevelError>
+  <Person>Grupo personal</Person>
+  <CardTypeError>Tipo de tarjeta incorrecto</CardTypeError>
+  <EmployeeCard>Tarjeta de empleado</EmployeeCard>
+  <UserCard>Tarjeta de usuario</UserCard>
+  <GroupCard>Tarjeta de grupo</GroupCard>
+  <GroupCreditCard>Tarjeta de débito grupal</GroupCreditCard>
+  <CreditCard>Tarjeta de débito</CreditCard>
+  <AssistantCard>Tarjeta suplementaria</AssistantCard>
+  <NonCard>Sin tarjeta</NonCard>
+  <UpdateSuccess>Modificación exitosa</UpdateSuccess>
+  <UpdateFailed>La modificación falló</UpdateFailed>
+  <CardNotSupport>La tarjeta no permite esta operación</CardNotSupport>
+  <InputValidationError>Error de validación de entrada</InputValidationError>
+  <DepositSuccess>Recarga exitosa</DepositSuccess>
+  <DepositFailed>Recarga fallida</DepositFailed>
+  <Deposit>Recarga</Deposit>
+  <DepositAmount>Monto de recarga</DepositAmount>
+  <DataBaseError>Error de base de datos</DataBaseError>
+  <Deduction>Rojo</Deduction>
+  <OldCardBalance>Saldo original de la tarjeta</OldCardBalance>
+  <DeductionAmount>Monto de reembolso</DeductionAmount>
+  <AfterDeductionBalance>Saldo después del canje</AfterDeductionBalance>
+  <CarNo>Número de vehículo</CarNo>
+  <EndBalance>Saldo final</EndBalance>
+  <ServiceFee>Tarifa de servicio</ServiceFee>
+  <PayMent>Métodos de pago</PayMent>
+  <CheckNo>Número de cheque</CheckNo>
+  <Operator>Operador</Operator>
+  <PrintTime>Tiempo de impresión</PrintTime>
+  <PreferentialStartEnd>Hora de inicio y finalización del descuento</PreferentialStartEnd>
+  <Memo>Observación</Memo>
+  <Sign>firmar</Sign>
+  <Score>integral</Score>
+  <DepositAmountError>El importe del valor almacenado se ha introducido incorrectamente</DepositAmountError>
+  <GiftAmountError>El importe del crédito se introdujo incorrectamente</GiftAmountError>
+  <ScoreError>Error de entrada de puntos</ScoreError>
+  <FuelEmployee>Empleado de gasolinera</FuelEmployee>
+  <Administrators>administrador</Administrators>
+  <Cashier>Cajero</Cashier>
+  <Accounting>Contabilidad</Accounting>
+  <SecretLength>La longitud de la clave debe ser de 16 caracteres.</SecretLength>
+  <PassowrdError>La clave original fue ingresada incorrectamente, por favor inténtelo nuevamente</PassowrdError>
+  <EndOutofStatrt>La hora de finalización no puede ser menor que la hora de inicio</EndOutofStatrt>
+  <Transaction>Historial de transacciones</Transaction>
+  <PlsQuery>Por favor pregunte primero</PlsQuery>
+  <PlsQueryTerms>Por favor, introduzca los criterios de búsqueda</PlsQueryTerms>
+  <SettlementComplete>Ya está establecido, no es necesario establecerse nuevamente</SettlementComplete>
+  <DailyReport>a diario</DailyReport>
+  <MonthReport>Informe mensual</MonthReport>
+  <SetlementTimeForDaily>Esta vez es el momento de finalizar el asentamiento. La regla de liquidación diaria es el período de tiempo un día antes de la hora actual seleccionada.</SetlementTimeForDaily>
+  <DailyReportData>Datos diarios</DailyReportData>
+  <CardDailyReport>Día de la tarjeta</CardDailyReport>
+  <NozDailyReport>Acuerdo del Día de las Armas</NozDailyReport>
+  <EnergyDailyReport>Liquidación diaria de energía</EnergyDailyReport>
+  <SetlementTimeForMonth>Esta vez es el momento de finalizar el asentamiento. La regla de liquidación mensual es el período de tiempo un mes antes de la hora actual seleccionada.</SetlementTimeForMonth>
+  <MonthReportData>Datos diarios</MonthReportData>
+  <CardMonthReport>Día de la tarjeta</CardMonthReport>
+  <NozMonthReport>Nudo de luna de pistola</NozMonthReport>
+  <EnergyMonthReport>Liquidación mensual de energía</EnergyMonthReport>
+  <DiscountError>Error de entrada del valor de descuento</DiscountError>
+  <CommunicationFailed>Fallo de comunicación</CommunicationFailed>
+  <ExportSuccess>Éxito exportador</ExportSuccess>
+  <ExportFailed>Exportación fallida</ExportFailed>
+  <NotChanged>Este campo no se puede cambiar</NotChanged>
+  <EnergyExist>La energía ya existe</EnergyExist>
+  <PriceFormatError>Error en el formato del precio unitario</PriceFormatError>
+  <PLSCreateStation>Por favor, crea un sitio primero</PLSCreateStation>
+  <PlsWriteCode>Por favor, introduzca el código</PlsWriteCode>
+  <StartCodeError>El código de inicio ingresado es incorrecto.</StartCodeError>
+  <EndCodeError>Entrada de código de corte incorrecta</EndCodeError>
+  <Confirm>Seguro</Confirm>
+  <MacError>Error en la lectura de información, verifique si la configuración de la computadora cumple con los requisitos</MacError>
+  <ActiveFailed>La activación falló</ActiveFailed>
+  <ScoreIsZero>Los puntos de consumo no pueden ser 0</ScoreIsZero>
+  <ScoreOutOfBalance>Los puntos de consumo no pueden ser mayores que los puntos de usuario</ScoreOutOfBalance>
+  <PlsSetSerial>Primero configure el puerto serie de comunicación</PlsSetSerial>
+  <PlsSetTank>Primero configure la información del tanque de aceite</PlsSetTank>
+  <CreateStationBySelf>Actualmente en proceso de autoconstrucción.</CreateStationBySelf>
+  <PlsWriteStationCode>Por favor, introduzca el código del sitio</PlsWriteStationCode>
+  <AuthorityProblem>Problemas de permisos</AuthorityProblem>
+  <Unknow>desconocido</Unknow>
+  <PortNotExsit>El puerto no existe</PortNotExsit>
+  <PlSCreateStation>Por favor, cree primero la información del sitio</PlSCreateStation>
+  <PlSCreateOilType>Por favor, cree primero la información energética</PlSCreateOilType>
+  <PlsCreateTank>Por favor, cree primero la información del tanque</PlsCreateTank>
+  <PlsCreatePort>Por favor, configure el puerto primero</PlsCreatePort>
+  <PlsCreateNoz>Por favor, cree primero la información del arma</PlsCreateNoz>
+  <PlsCreateEmp>Por favor, cree primero la información del personal de inicio de sesión</PlsCreateEmp>
+  <SystemNotActive>El sistema aún no está activado</SystemNotActive>
+  <SystemActiveError>Excepción de activación del sitio</SystemActiveError>
+  <OpenAccount>Abrir una cuenta</OpenAccount>
+  <CardLost>Reportar pérdida</CardLost>
+  <PasswordLost>Contraseña perdida</PasswordLost>
+  <DealGrey>Descenso en línea</DealGrey>
+  <CardUpdate>Modificación de la información</CardUpdate>
+  <CardChangeOpen>Apertura de cuenta de tarjeta de reemplazo</CardChangeOpen>
+  <CardChangeDeposit>Reemplazo y recarga de tarjeta</CardChangeDeposit>
+  <ClearAccount>Autorización</ClearAccount>
+  <Transfer>Vertedero</Transfer>
+  <Consume>Consumo</Consume>
+  <Nonoilconsumption>Consumo no petrolero</Nonoilconsumption>
+  <Repay>Reembolso</Repay>
+  <ClearAccountTransfer>Transferencia de compensación de cuenta</ClearAccountTransfer>
+  <MasterTransfer>Transferencia de tarjeta de gestión</MasterTransfer>
+  <EscapeCard>Tarjeta de escape</EscapeCard>
+  <WrongCard>Tarjeta equivocada</WrongCard>
+  <Patching>Deducción</Patching>
+  <Replenish>Reponer</Replenish>
+  <OnDuty>trabajar</OnDuty>
+  <OffDuty>salir del trabajo</OffDuty>
+  <PriceChange>Cambio de precio unitario</PriceChange>
+  <CardRefuse>Rechazo por error de tarjeta</CardRefuse>
+  <Other>otro</Other>
+  <Cash>dinero</Cash>
+  <ICCard>Tarjeta IC</ICCard>
+  <BankCard>tarjeta bancaria</BankCard>
+  <CurrentShift>Vuelos actuales</CurrentShift>
+  <LoginEmployee>Personal de inicio de sesión</LoginEmployee>
+  <CardStatueError>Estado de la tarjeta anormal</CardStatueError>
+  <TotalTankHeightStr>Altura del tanque</TotalTankHeightStr>
+  <TotalTankVolumeStr>Volumen del tanque</TotalTankVolumeStr>
+  <CurrentHeightStr>Nivel actual de líquido</CurrentHeightStr>
+  <CurrentVolumeStr>Volumen actual</CurrentVolumeStr>
+  <CurrentWaterStr>Nivel actual del agua</CurrentWaterStr>
+  <CurrentTempStr>Temperatura actual</CurrentTempStr>
+  <NoEmployee>Sin empleados</NoEmployee>
+  <Tips>pista</Tips>
+  <OperationExecution>¿Ejecutar acción?</OperationExecution>
+  <IICACBD>La información ha sido configurada y no se puede eliminar.</IICACBD>
+  <DataSend>Envío de información</DataSend>
+  <DataReveive>Recepción de información</DataReveive>
+  <REISSUED>Reemplazado</REISSUED>
+  <Stop>Suspender el uso</Stop>
+  <NozID>Número de arma</NozID>
+  <TType>tipo</TType>
+  <TruePay>Pago real</TruePay>
+  <OilDataType>Tipo de transacción</OilDataType>
+  <Port>puerto</Port>
+  <Employee>personal</Employee>
+  <TotalVolume>Código de bomba</TotalVolume>
+  <Mileage>kilometraje</Mileage>
+  <Discount>Descuento</Discount>
+  <Coupon>Cupones</Coupon>
+  <Parvalue>Valor nominal</Parvalue>
+  <Energy>energía</Energy>
+  <StartPump>Código de arranque de la bomba</StartPump>
+  <EndPump>Código de bomba de corte</EndPump>
+  <Spread>diferencia</Spread>
+  <Table>superficie</Table>
+  <ID>número de serie</ID>
+  <EnergySaler>Ventas de energía</EnergySaler>
+  <LoginFailed>Nombre de usuario o contraseña incorrectos</LoginFailed>
+  <CardConsume>Consumo de tarjetas</CardConsume>
+  <AfterConsume>Saldo después del consumo</AfterConsume>
+  <LostTankOrPrice>Falta la información del tanque o el precio unitario, complétela primero</LostTankOrPrice>
+  <LostTank>Falta información del equipo del tanque, por favor complétela</LostTank>
+  <AmountFormatError>Error de formato de importe</AmountFormatError>
+  <TrasnlateObjectEmpty>El objeto de volcado no puede estar vacío</TrasnlateObjectEmpty>
+  <UnRepay>Pago pendiente</UnRepay>
+  <PartialRepayment>Reembolso parcial</PartialRepayment>
+  <PaidOff>Reembolsado</PaidOff>
+  <QueryIsEmpty>Las condiciones de consulta no pueden estar todas vacías</QueryIsEmpty>
+  <ProgramRuned>Programa iniciado</ProgramRuned>
+  <InformationLost>Información faltante</InformationLost>
+  <InformationError>Error de información</InformationError>
+  <PayMentError>Monto de reembolso incorrecto</PayMentError>
+  <OutOfPayMent>El importe del reembolso no puede ser mayor que el importe adeudado</OutOfPayMent>
+  <PageError>El número total de páginas es 0 o el número de página se ingresó incorrectamente</PageError>
+  <NotAllowUseStock>El sistema actual no permite el almacenamiento manual</NotAllowUseStock>
+  <TankMissing>El tanque no existe</TankMissing>
+  <OilOutput>Aceite</OilOutput>
+  <OilStock>Depósito</OilStock>
+  <StationName>Nombre del sitio</StationName>
+  <AmountTotal>Importe total</AmountTotal>
+  <VolumeTotal>Litros totales</VolumeTotal>
+  <CreateTime>Fecha de creación</CreateTime>
+  <SumAmount>Importe total</SumAmount>
+  <SumVolume>Litros totales</SumVolume>
+
+  <Quality>calidad</Quality>
+  <TotalQuality>Masa total</TotalQuality>
+  <KKG>Kilogramo</KKG>
+  <KG>Consumo kg</KG>
+  <TotalKG>Consumo total kg</TotalKG>
+  <StartKG>kg de partida</StartKG>
+  <EndKG>kg de corte</EndKG>
+
+  <None>ninguno</None>
+  <Even>Paridad uniforme</Even>
+  <Odd>Paridad impar</Odd>
+
+  <BlueSky>BlueSky</BlueSky>
+  <Tatsuno>Tatsuno</Tatsuno>
+  <Japan>Japan</Japan>
+  <Dart>Dart</Dart>
+  <ATG>ATG</ATG>
+
+  <SerialPortError>El puerto serie de comunicación no está configurado</SerialPortError>
+  <StationNameEmpty>El nombre del sitio no puede estar vacío</StationNameEmpty>
+  <LongitudeError>Error de formato de longitud</LongitudeError>
+  <LatitudeError>Error de formato de latitud</LatitudeError>
+  <ApplicationNumberEmpty>El ID de la aplicación no puede estar vacío</ApplicationNumberEmpty>
+  <GetApplicationNumber>El número de solicitud es el número correspondiente de la plataforma, obténgalo de la plataforma</GetApplicationNumber>
+  <PortExists>El puerto ya existe</PortExists>
+  <DevicePortError>Puerto del dispositivo no configurado</DevicePortError>
+  <NormalSystem>Ventana principal del sistema normal</NormalSystem>
+  <DeviceNotExist>El dispositivo no existe</DeviceNotExist>
+  <NozFormatError>Error de formato del número de arma</NozFormatError>
+  <AddressFormatError>Formato de dirección incorrecto</AddressFormatError>
+  <NozRepeat>Repetición del número de arma</NozRepeat>
+  <AddressRepeat>Dirección duplicada</AddressRepeat>
+  <Automaticallyauthorize>automático</Automaticallyauthorize>
+  <Manualauthorization>Manual</Manualauthorization>
+	<BoxAuth>Caja de comunicación</BoxAuth>
+  <Authorizationmodel>Modo de autorización</Authorizationmodel>
+  <PreSet>Ajustes preestablecidos</PreSet>
+  <MachineStop>Falta del tiempo</MachineStop>
+  <MachineUpdate>Revisar</MachineUpdate>
+  <DeleteConfirm>Borrar</DeleteConfirm>
+  <hints>Consejos de operación</hints>
+  <AssociatedError>La energía actual tiene una asociación de precio unitario, por favor cancélela antes de eliminarla</AssociatedError>
+  <GradeNone>El tipo de energía no existe</GradeNone>
+  <PriceExist>No existe información de precio unitario</PriceExist>
+  <GradeEmpty>La información energética no puede estar vacía</GradeEmpty>
+  <PriceReapt>El precio unitario ya existe</PriceReapt>
+  <PriceDone>El precio actual de la energía ya está fijado</PriceDone>
+  <EmpEmpty>El empleado no existe</EmpEmpty>
+  <EmpRepeat>Información duplicada de empleados</EmpRepeat>
+
+  <DailyClosed>Liquidación diaria</DailyClosed>
+  <NozSettleError>Error en la liquidación del informe de armas</NozSettleError>
+  <EnergySettleError>Errores en la facturación de energía</EnergySettleError>
+  <StockSettleError>Error de liquidación de inventario</StockSettleError>
+  <TotalSettleError>Errores de asentamiento agregado</TotalSettleError>
+  <SettleComplete>Liquidación completada</SettleComplete>
+  <SettleNotComplete>El informe no se puede exportar porque no está liquidado.</SettleNotComplete>
+  <StationDailyReport>Sitio diario</StationDailyReport>
+  <StationMonthReport>Informe mensual del sitio</StationMonthReport>
+  <StationShiftReport>Informe de cambio de sitio</StationShiftReport>
+
+  <ShiftEmpty>Aún no se ha establecido información de turno</ShiftEmpty>
+  <ShiftError>Cambio equivocado</ShiftError>
+
+  <TankHeightFormatError>Error de formato de altura del tanque</TankHeightFormatError>
+  <TankVolumeFormatError>Error de formato del volumen del tanque</TankVolumeFormatError>
+  <TankHeightLevelAlarmFormatError>Error de formato de escala de alarma de altura de líquido</TankHeightLevelAlarmFormatError>
+  <TankLowLevelAlarmFormatError>El formato de la escala de alarma de líquido bajo es incorrecto</TankLowLevelAlarmFormatError>
+  <WaterHeightFormatError>Error de formato de escala de alarma de nivel alto de agua</WaterHeightFormatError>
+  <WaterLowFormatError>Error de formato de escala de alarma de nivel bajo de agua</WaterLowFormatError>
+  <HighTempFormatError>Error de formato de escala de alarma de alta temperatura</HighTempFormatError>
+  <LowTempFormatError>Error de formato de escala de alarma de baja temperatura</LowTempFormatError>
+  <TankNoFormatError>Error de formato del número de tanque</TankNoFormatError>
+  <TankNoEmpty>El número de tanque no puede estar vacío</TankNoEmpty>
+  <TankNoRepeat>Números de tanque duplicados</TankNoRepeat>
+  <TankNameRepeat>Nombre de frasco duplicado</TankNameRepeat>
+  <TankEmpty>No existe información del tanque</TankEmpty>
+
+  <ReprotTime>tiempo</ReprotTime>
+  <SumReportVolume>Ventas totales</SumReportVolume>
+  <TotalCount>Tiempos totales</TotalCount>
+  <SumGrade>Estadísticas de energía</SumGrade>
+  <Count>frecuencia</Count>
+  <SumStock>Estadísticas de inventario</SumStock>
+  <Tank>Tanque de almacenamiento</Tank>
+  <Stock>Inventario</Stock>
+  <Sales>Volumen saliente</Sales>
+  <Error>error</Error>
+  <SumNoz>Estadísticas de armas</SumNoz>
+
+  <AmountPreset>Cantidad preestablecida</AmountPreset>
+  <VolumePreset>Preajuste de litros</VolumePreset>
+  <TotalSumVolume>Ventas totales</TotalSumVolume>
+
+  <PreSetValueError>El formato de entrada del valor preestablecido es incorrecto.</PreSetValueError>
+  <PreSetPriceError>Error de precio unitario preestablecido</PreSetPriceError>
+  <NozError>El número de arma no existe</NozError>
+  <CarPay>Pago de matrícula</CarPay>
+
+  <VersionUpdate>La versión actual del programa es diferente de la última versión. ¿Quieres actualizarlo?</VersionUpdate>
+  <ProgramFileMissing>El archivo del programa no existe</ProgramFileMissing>
+  <Updating>El programa se está actualizando, por favor espere.</Updating>
+
+  <Repair>reparar</Repair>
+  <RepairCard>Tarjeta de mantenimiento</RepairCard>
+
+  <CommunicationBroken>Falló la comunicación de la caja de comunicación</CommunicationBroken>
+  <CommunicationNormal>Caja de comunicación comunicando</CommunicationNormal>
+  <OpenCard>Activar la tarjeta</OpenCard>
+
+  <CardType>Tipo de tarjeta</CardType>
+  <IssueDatetime>Tiempo de emisión de la tarjeta</IssueDatetime>
+  <ValidDatetime>Periodo de validez</ValidDatetime>
+  <Issuer>emisor de la tarjeta</Issuer>
+
+  <ICSystem>Software de control de estación</ICSystem>
+
+  <DepositTime>Tiempo de recarga</DepositTime>
+  <MasterCard>Tarjeta principal</MasterCard>
+
+  <KangYuProbe>KangYu Probe</KangYuProbe>
+  <MAGNEHELIC>Manómetro de presión diferencial</MAGNEHELIC>
+
+  <PortNoNeedDevice>No se requiere equipo adicional para el puerto actual</PortNoNeedDevice>
+  <DataRollbackTran>Reversión de datos completada</DataRollbackTran>
+
+  <PasswordError>Contraseña incorrecta</PasswordError>
+
+  <Address>Configuración de dirección</Address>
+  <BindNoz>Vincular número de arma</BindNoz>
+  <Tag>Etiqueta</Tag>
+  <Free>inactivo</Free>
+  <Work>En uso</Work>
+
+  <IsUsing>La información actual se está utilizando y no se puede eliminar.</IsUsing>
+  
+  <BoxLost>El puerto de la caja de comunicación no existe</BoxLost>
+  <RFIDIDError>Error de formato del número RFID</RFIDIDError>
+  <RFIDAddressError>Error de formato de dirección RFID</RFIDAddressError>
+  <RFIDIDRepeat>Número RFID duplicado</RFIDIDRepeat>
+  <RFIDAddressRepeat>Dirección RFID duplicada</RFIDAddressRepeat>
+  <NoGrey>Registro sin cenizas</NoGrey>
+  <NotGreyCard>Tarjeta no gris</NotGreyCard>
+  <DealGreyFore>No se encontró ningún registro gris, ¿desea forzar la eliminación del gris?</DealGreyFore>
+  <AmountError>Cantidad incorrecta de deducción</AmountError>
+
+  <SlipNo>Número de serie</SlipNo>
+  <Productgrade>Tipo de energía</Productgrade>
+
+  <CashAmount>Monto en efectivo</CashAmount>
+  <CashVolume>Mejora de efectivo</CashVolume>
+  <CardAmount>Monto de la tarjeta</CardAmount>
+  <CardVolume>Litros de tarjetas</CardVolume>
+
+  <PriceRadioError>El número de decimales en el precio unitario es incorrecto. El límite actual es</PriceRadioError>
+  <ProductTotal>Subtotal de energía</ProductTotal>
+
+  <TankRemain>Información restante de cada tanque:</TankRemain>
+	<RemainVolume>Volumen restante:</RemainVolume>
+	<TotalAmount>suma global</TotalAmount>
+	<UnitPrice>precio unitario</UnitPrice>
+
+	<SettleTime>Hora de liquidación</SettleTime>
+	<NozMessage>Datos de armas</NozMessage>
+	<StockMessage>Datos de llenado de aceite del tanque</StockMessage>
+	<OverImprotVolumeError>El formato del cálculo del volumen de admisión de aceite es incorrecto</OverImprotVolumeError>
+	<TransactionLost>El registro de transacción no existe</TransactionLost>
+
+	<Printer>impresora</Printer>
+
+	<ParamError>Error de parámetro</ParamError>
+
+	<Eaglestar>Eaglestar</Eaglestar>
+	<HongYang>HongYang</HongYang>
+
+	<CardStatueNow>El estado actual de la tarjeta es:</CardStatueNow>
+	<CantLost>No es necesario informar de la pérdida</CantLost>
+	<CantGetCard>No hay información de la tarjeta</CantGetCard>
+
+	<CableHeightError>Error de altura</CableHeightError>
+	<CableVolumeError>Error de volumen</CableVolumeError>
+	<CableExists>El valor inicial ya existe</CableExists>
+
+	<CardMiss>La información de la tarjeta no existe</CardMiss>
+	<CardAccountMiss>La cuenta de tarjeta no existe</CardAccountMiss>
+	<PLSSelectEmp>Por favor seleccione un empleado</PLSSelectEmp>
+	<Replaced>La tarjeta ha sido reemplazada</Replaced>
+
+	<CardCantdoit>La tarjeta actual no admite esta operación.</CardCantdoit>
+	<NeedOnDuty>Necesito ir a trabajar primero</NeedOnDuty>
+
+	<DigitalMeterReading>Resumen de energía</DigitalMeterReading>
+	<Opening>comenzar</Opening>
+	<Closing>Finalizar</Closing>
+	<Liters>Litros</Liters>
+	<Calibration>legumbres</Calibration>
+	<LitersSold>Volumen de ventas</LitersSold>
+	<TransCount>frecuencia</TransCount>
+	<PriceLiter>precio unitario</PriceLiter>
+	<Sale>Monto de ventas</Sale>
+	<Value>Ventas</Value>
+
+	<BoxNameEmpty>El nombre del cuadro de comunicación no puede estar vacío</BoxNameEmpty>
+	<BoxCodeEmpty>El código del cuadro de comunicación no puede estar vacío</BoxCodeEmpty>
+	<BoxNameCodeRepeat>Se repite el nombre o código del cuadro de comunicación</BoxNameCodeRepeat>
+	<BoxPortUsed>El puerto de la caja de comunicación ya está en uso</BoxPortUsed>
+	<BoxUsed>La caja de comunicación está actualmente en uso.</BoxUsed>
+	<Wired>cableado</Wired>
+	<Wireless>inalámbrico</Wireless>
+
+	<SaleRecord>Registro de ventas</SaleRecord>
+	<Printshift>Turno de impresión</Printshift>
+	<Printdaysummary>Imprima el total del día</Printdaysummary>
+	<PrintMonthsummary>Imprimir el total del mes</PrintMonthsummary>
+	<Taxinvoice>Factura de impuestos</Taxinvoice>
+	<Cancelinvoice>Cancelar factura</Cancelinvoice>
+	<Informalsale>Negocios no petroleros</Informalsale>
+	<Testnozzle>Boquilla de prueba</Testnozzle>
+	<Returntheproduct>Devolución de productos</Returntheproduct>
+	<Tools>herramienta</Tools>
+	<Addincash>Agregar efectivo</Addincash>
+	<Takeoutcash>Retirar efectivo</Takeoutcash>
+	<Closeshift>Liquidación de turnos</Closeshift>
+	<Closeday>Liquidación diaria</Closeday>
+	<CloseMonth>Liquidación mensual</CloseMonth>
+	<Changeoilprice>Cambios de precios</Changeoilprice>
+	<Changeuser>Cambio de usuario</Changeuser>
+	<Exit>abandonar</Exit>
+
+	<PLSSelectBox>Por favor seleccione un cuadro de comunicación</PLSSelectBox>
+	<BoxDeviceLost>El cuadro de comunicación no existe</BoxDeviceLost>
+
+	<NeedEmployeeCertification>En el modo de autenticación de empleados solo se pueden utilizar tarjetas de empleados</NeedEmployeeCertification>
+
+	<DeleteBtnShow>borrar</DeleteBtnShow>
+
+	<CarNumber>Número de matrícula</CarNumber>
+	<CardGroup>Grupo</CardGroup>
+
+	<NormalGroup>Grupo normal</NormalGroup>
+	<SharedGroup>Grupo compartido</SharedGroup>
+
+	<BoxSelectPump>Por favor seleccione la bomba</BoxSelectPump>
+
+	<A_Up_Point>Punto de inversión en el cilindro A(mm)</A_Up_Point>
+	<A_Down_Point>Un punto de inversión inferior del cilindro(mm)</A_Down_Point>
+	<A_Current_Piston>Un valor de corriente de pistón(mm)</A_Current_Piston>
+	<InletPressure>Presión de entrada(MPa)</InletPressure>
+	<MediumPressure>Presión media(MPa)</MediumPressure>
+	<ProtectivePressure>Presión protectora(MPa)</ProtectivePressure>
+	<WaterTemperature>Temperatura del agua(℃)</WaterTemperature>
+	<GasConcentration>Concentración de gas en el patín del compresor(%)</GasConcentration>
+	<GasConcentrationSecond>Concentración de gas del grupo de cilindros de gas(%)</GasConcentrationSecond>
+	<GasConcentrationThird>Concentración de gas del dispensador de gas(%)</GasConcentrationThird>
+	<A_Average_Time>Tiempos promedio de inversión del cilindro A</A_Average_Time>
+	<B_Up_Point>Punto de inversión en el cilindro B(mm)</B_Up_Point>
+	<B_Down_Point>Punto de inversión inferior del cilindro B(mm)</B_Down_Point>
+	<B_Current_Piston>Valor actual del pistón B(mm)</B_Current_Piston>
+	<Spare>repuesto</Spare>
+	<HighPressure>Presión alta(MPa)</HighPressure>
+	<InstrumentAirPressure>Presión de aire del instrumento(MPa)</InstrumentAirPressure>
+	<HydraulicOilLevel>Nivel de aceite hidráulico</HydraulicOilLevel>
+	<HydraulicOilTemperature>Temperatura del aceite hidráulico(℃)</HydraulicOilTemperature>
+	<B_Average_Time>Tiempos promedio de inversión del cilindro B</B_Average_Time>
+	<LowPressure>Baja presión</LowPressure>
+
+	<Online>En línea</Online>
+	<Offline>Desconectado</Offline>
+
+	<PLC100>Sensor de temperatura del aceite hidráulico desconectado</PLC100>
+	<PLC102>El sensor de concentración de gas combustible está desconectado</PLC102>
+	<PLC103>La presión media es inferior al valor sin aire</PLC103>
+	<PLC104>Proteja el sensor de presión contra rotura de cables</PLC104>
+	<PLC105>Sensor de alta presión desconectado</PLC105>
+	<PLC106>Sensor de presión media desconectado</PLC106>
+	<PLC107>Sensor de presión de aire de admisión desconectado</PLC107>
+	<PLC109>La concentración de gas combustible supera el 25</PLC109>
+	<PLC110>Presión de aire del instrumento baja</PLC110>
+	<PLC111>La temperatura del agua circulante es superior al valor establecido</PLC111>
+	<PLC112>La temperatura del aceite hidráulico es superior al valor establecido</PLC112>
+	<PLC113>escasez de aceite hidráulico</PLC113>
+	<PLC114>Presión de protección superior al valor establecido</PLC114>
+	<PLC115>La presión de entrada es inferior al valor sin aire</PLC115>
+	<PLC204>B Fallo del motor</PLC204>
+	<PLC205>Desconexión del sensor de posición B</PLC205>
+	<PLC206>Una falla del motor</PLC206>
+	<PLC207>Una desconexión del sensor de posición</PLC207>
+	<PLC300>La presión de entrada es inferior al valor de alarma de entrada</PLC300>
+	<PLC301>La temperatura del aceite hidráulico es superior al valor de alarma.</PLC301>
+	<PLC303>La válvula neumática autocirculante no está completamente abierta</PLC303>
+	<PLC305>La válvula neumática de presión media no está completamente abierta</PLC305>
+	<PLC308>Sensor de viento del instrumento desconectado</PLC308>
+	<PLC309>Falla del ventilador de refrigeración n.º 2</PLC309>
+	<PLC310>Falla número 1 del ventilador de refrigeración</PLC310>
+
+	<Advanceexe>Ejecutar primero</Advanceexe>
+
+	<Food>La comida</Food>
+	<Lubricants>lubriclubriclubric</Lubricants>
+	<EngineOil>Aceite para motores</EngineOil>
+	<Cleaner>Más limpia</Cleaner>
+	<ProductNameRepeat>Duplicación de nombres comerciales</ProductNameRepeat>
+	<ProductInexistence>La mercancía no existe</ProductInexistence>
+	<ServerRefuse>Servidor rechazar</ServerRefuse>
+	<QuantityOver>Exceso de cantidad</QuantityOver>
+	<ScorePrice>Puntos precio unitario</ScorePrice>
+	<BalanceNotEnough>Falta de balance</BalanceNotEnough>
+
+	<SumType>Tipos de estadísticas</SumType>
+	<OutOfTime>Fuera de tiempo</OutOfTime>
+	<PersonalBill>Factura Personal</PersonalBill>
+	<Paid>Ya pagado</Paid>
+	<Unpaid>Falta de pago</Unpaid>
+	<Query>consulta</Query>
+</es>

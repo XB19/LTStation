@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * tickets, employés, points de distribution, transports) et remontée de l'état des cuves.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealSyncController extends ServerDealBase {
 
     private static final DateTimeFormatter FFF = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");

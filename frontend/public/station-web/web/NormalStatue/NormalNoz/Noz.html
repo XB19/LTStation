@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!--Required Meta Tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- WOW CSS -->
+    <link rel="stylesheet" href="css/wow.min.css">
+    <!--Owl Carousel Css-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="css/color.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="css/button..min.css" rel="stylesheet" />
+
+    <script src="../../tank/js/jquery-3.3.1.min.js"></script>
+    <script src="js/phanimate.jquery.js"></script>
+    <style type="text/css">
+        .row{
+            width:370px;
+            margin-right:10px;
+            margin-bottom:10px;
+        }
+        .footcontainer {
+        }
+
+        .input-form-control {
+            display: block;
+            width: 45%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        .custom-input {
+            position: relative;
+            padding-top: 2px;
+/*            margin-bottom: 5px;*/
+            display: flex;
+            justify-content: space-around;
+        }
+
+            .custom-input input {
+                padding-left: 15px;
+            }
+
+            .custom-input label {
+                cursor: text;
+                margin: 0;
+                padding: 0;
+                left: 15px;
+                top: 23px;
+                position: absolute;
+                font-size: 14px;
+                color: #ccc;
+                font-weight: normal;
+                transition: all .3s ease;
+            }
+
+                .custom-input label.active {
+                    top: 0;
+                    left: 0;
+                    font-size: 12px;
+                }
+
+                    .custom-input label.active.focusIn {
+                        color: #66afe9;
+                    }
+        .span_font {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-family: "Calibri";
+        }
+
+        button {
+            display: block;
+            position: relative;
+            top: 0;
+            border: 0;
+            color: white;
+            border-radius: 2rem;
+            line-height: 1;
+            /*font-size: 20px;*/
+            padding: 5px 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            font-family: "Calibri";
+        }
+
+            button.red {
+                background: linear-gradient(-45deg, #fb2222 50%, #920a0a 60%, #d42e2e 70%);
+            }
+
+            button.blue {
+                background: linear-gradient(-45deg, #2284fb 50%, #0a0e92 60%, #2e59d4 70%);
+            }
+
+            button.yellow {
+                background: linear-gradient(-45deg, #f9d154 50%, #ffc107 60%, #edc33e 70%);
+            }
+            button.shiny {
+                background-size: 600% 100%;
+                /*-webkit-animation: shine 20s infinite;*/
+                animation: shine 20s infinite;
+                /*-webkit-animation-delay: 0s;*/
+                animation-delay: 0s;
+                /*-webkit-animation-timing-function: linear;*/
+                animation-timing-function: linear;
+            }
+
+            button:active {
+                top: 2px;
+            }
+    </style>
+</head>
+<body>
+    <section id="offer">
+        <!--position:absolute;-->
+        <div class="container" style="max-width: 97%; display: flex; flex-flow: wrap;" id="NozContain">
+
+        </div>
+
+        <!--<button class="shiny red">预置</button>-->
+        <script>
+            function NozViewUpdate(OldNozID, NozID, GradeName, TankName, Amount, Volume, AmountTotal, VolumeTotal, Price, isRun, isControl, Auth,AuthStatue) {
+                //alert(OldNozID);
+                try {
+                    if (GradeName != "-1")
+                        $("#GradeName" + OldNozID).html(GradeName);
+                    if (TankName != "-1")
+                        $("#TankID" + OldNozID).html(TankName);
+                    if (Amount != "-1")
+                        $("#Amount" + OldNozID).html(Amount);
+                    if (Volume != "-1")
+                        $("#Volume" + OldNozID).html(Volume);
+                    if (AmountTotal != "-1")
+                        $("#AmountTotal" + OldNozID).html(AmountTotal);
+                    if (VolumeTotal != "-1")
+                        $("#VolumeTotal" + OldNozID).html(VolumeTotal);
+                    if (Price != "-1")
+                        $("#Price" + OldNozID + "").html(Price);
+
+                    if (isControl != "-1") {
+                        if (isControl == "0") {
+                            $("#ControlText" + OldNozID).html("自控");
+                            $("#ControlValue" + OldNozID).attr("checked", false);
+                        }
+                        else {
+                            $("#ControlText" + OldNozID).html("受控");
+                            $("#ControlValue" + OldNozID).attr("checked", true)
+                        }
+                    }
+
+                    if (isRun != "-1") {
+                        if (isRun == "0")
+                            $("#Fuel" + OldNozID).attr('src', "image/Online.png");
+                        else if (isRun == "1")
+                            $("#Fuel" + OldNozID).attr('src', "image/Fuel.png");
+                        else if (isRun == "3")
+                            $("#Fuel" + OldNozID).attr('src', "image/Fueling.gif");
+                        else if (isRun == "4")
+                            $("#Fuel" + OldNozID).attr('src', "image/offline.png");
+                    } else {
+                        //$("#Fuel" + OldNozID).attr('src', "image/offline.png");
+                    }
+
+                    //$("#Auth" + OldNozID).hide();
+                    //if (Auth == "1") {
+                    //    $("#Auth" + OldNozID).html("已授权");
+                    //    $("#Auth" + OldNozID).show();
+                    //}
+
+                    if (Auth!="-1")
+                        $("#Auth" + OldNozID).html(Auth);
+
+                    if (AuthStatue != "-1")
+                        $("#AuthStatue" + OldNozID).html(AuthStatue);
+
+                    if (NozID != "-1") {
+                        $("#NozID" + OldNozID).html("" + NozID + "");
+
+                        $("#row" + OldNozID).attr("id", "row" + NozID + "");
+                        $("#Fuel" + OldNozID).attr("id", "Fuel" + NozID + "");
+                        $("#NozID" + OldNozID).attr("id", "NozID" + NozID + "");
+                        $("#GradeName" + OldNozID).attr("id", "GradeName" + NozID + "");
+                        $("#Amount" + OldNozID).attr("id", "Amount" + NozID + "");
+                        $("#Volume" + OldNozID).attr("id", "Volume" + NozID + "");
+                        $("#TankID" + OldNozID).attr("id", "TankID" + NozID + "");
+                        $("#ControlText" + OldNozID).attr("id", "ControlText" + NozID + "");
+                        $("#ControlValue" + OldNozID).attr("id", "ControlValue" + NozID + "");
+                        $("#AmountTotal" + OldNozID).attr("id", "AmountTotal" + NozID + "");
+                        $("#VolumeTotal" + OldNozID).attr("id", "VolumeTotal" + NozID + "");
+                        $("#Price" + OldNozID).attr("id", "Price" + NozID + "");
+                        $("#Pre" + OldNozID + "").attr("id", "Pre" + NozID + "");
+                        $("#Sta" + OldNozID + "").attr("id", "Sta" + NozID + "");
+                        $("#Sto" + OldNozID + "").attr("id", "Sto" + NozID + "");
+                        $("#Upd" + OldNozID + "").attr("id", "Upd" + NozID + "");
+                        $("#NozID" + OldNozID + "").attr("id", "NozID" + NozID + "");
+                    }
+                } catch (e) {
+                    alert(e.Error);
+                }
+
+            }
+        </script>
+        <!--<button onclick="NozCreate('2','1','1',300)">123</button>
+        <button onclick="NozViewUpdate('2', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '1','自动授权')">321</button>-->
+        <!--<button onclick="ButtonClick(2,'123')">456</button>-->
+    </section>
+
+    <!--Offer Section Ends-->
+    <!--<button onclick="NozUpdate('-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '0')">1232</button>-->
+    <script>
+        $(function () {
+            //$('.custom-input input').phAnim();
+            //NozCreate('1', '99', 'Ручной', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate('2', '98', 'авто', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate('3', '99', 'Ручной', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate('4', '99', 'Ручной', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate('5', '99', 'Ручной', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate('6', '99', 'Ручной', 315, 'нос Айдахо', 'Сумма', 'Продажи', 'Цены', 'Авторизация', 'Суммы устали', 'Продажи устали', 'Энергетика', 'Начинать', 'стоять', 'Изменения')
+            //NozCreate("1", "2", "3", 150);
+            //NozViewUpdate('1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '2', '-1');
+        })
+
+        //function Deal() {
+        //    NozViewUpdate('2', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '3', '-1', '-1');
+        //}
+
+        $("#ControlValue").change(function () {
+            var checkval = $('input[type="checkbox"]').is(':checked');
+            if (checkval) my.ControlLoad("1");
+            else my.ControlLoad("0");
+        })
+
+        function NozSet(NozID, GradeName, Amount, Volume, TankID, AmountTotal, VolumeTotal, Price) {
+            $("#NozID").html(NozID);
+            $("#GradeName").html(GradeName);
+            $("#Amount").html(Amount);
+            $("#Volume").html(Volume);
+            $("#TankID").html(TankID);
+            //$("#AmountTotal").html(AmountTotal);
+            //$("#VolumeTotal").html(VolumeTotal);
+            //$("#Price").html(Price);
+        }
+
+        function NozUpdate(NozID, GradeName, Amount, Volume, TankID, AmountTotal, VolumeTotal, Price, isRun,IsControl) {
+            if (NozID.indexOf("-") == -1)
+                $("#NozID").html(NozID);
+            if (GradeName != "-1")
+                $("#GradeName").html(GradeName);
+            if (Amount.indexOf("-") == -1)
+                $("#Amount").html(Amount);
+            if (Volume.indexOf("-") == -1)
+                $("#Volume").html(Volume);
+            if (TankID != -1)
+                $("#TankID").html(TankID);
+            if (AmountTotal.indexOf("-") == -1)
+                $("#AmountTotal").html(AmountTotal);
+            if (VolumeTotal.indexOf("-") == -1)
+                $("#VolumeTotal").html(VolumeTotal);
+            if (Price.indexOf("-") == -1)
+                $("#Price").html(Price);
+
+            if (IsControl != "-1") {
+                if (IsControl == "0") {
+                    $("#ControlText").html("自控");
+                    $("#ControlValue").attr("checked", false);
+                }
+                else {
+                    $("#ControlText").html("受控");
+                    $("#ControlValue").attr("checked", true)
+                }
+            }
+
+            if (isRun != "-1") {
+                if (isRun == "1")
+                    $("#Fuel").attr('src', "image/Online.png");
+                else if (isRun == "0")
+                    $("#Fuel").attr('src', "image/Fuel.png");
+                else if (isRun == "3")
+                    $("#Fuel").attr('src', "image/Fueling.gif");
+            } else {
+                $("#Fuel").attr('src', "image/offline.png");
+            }
+
+        }
+
+        function ButtonClick(self, Mess) {
+            //alert(self.id);
+            var nozid = self.id.substring(3);
+            var price = $("#Price" + nozid).html();
+            my.ViewUpdate(self.id + "|" + Mess + "|" + price);
+        }
+        //background - image: url(bb / bg.jpg); background - repeat: no - repeat; background - size: cover;
+        function NozCreate(NozID, GradeName, Auth, widthvalue, Noz, Amount, Volume, Price, AuthModal, AmountTotal, VolumeTotal, GradeType, PreSet, MachineStop, Update) {
+
+            var html = '<div class="row" id="row' + NozID + '">'
+                + '<div class="col-12 col-sm-12">'
+                + '<div class="offer-items expert-teacher text-center gradient-text-one" style="padding:5px;border: 1px solid #000;">'
+                + '<div id="Auth' + NozID + '" style="position: absolute;top: 6.8rem;color:red;"></div>'
+                + '<div style="display:inline-flex;margin-bottom:2px;width:100%;">'
+                + '<div style="width:30%;">'
+                + '<img src="image/offline.png" id="Fuel' + NozID + '" name="Fuel' + NozID + '" class="img-fluid">'
+                //+ '<div style="position:absolute">123<div>'
+                + '</div>'
+                + '<div style="width:70%;">'
+                + '<div class="contact-content3-body">'
+                + '<ul style="margin-top:-18px;">'
+                + '<li><span class="span_font" style="float:left">' + Noz+':</span><span class="span_font" style="float:right;" id="NozID' + NozID + '" name="NozID' + NozID + '">' + NozID + '</span></li>'
+                + '<li><span class="span_font" style="float:left">' + Amount+':</span>  <span class="span_font" style="float:right;" id="Amount' + NozID + '" name="Amount' + NozID + '">0</span></li>'
+                + '<li><span class="span_font" style="float:left">' + Volume+':</span><span class="span_font" style="float:right;" id="Volume' + NozID + '" name="Volume' + NozID + '">0</span></li>'
+                //+ '<li><span class="span_font" style="float:left">能源:</span><span class="span_font" style="float:right;" id="GradeName' + NozID + '" name="GradeName' + NozID + '">' + GradeName + '</span></li>'
+                + '<li><span class="span_font" style="float:left">' + Price+':</span><span class="span_font" style="float:right;" id="Price' + NozID + '" name="Price' + NozID + '">0</span></li>'
+                + '<li><span class="span_font" style="float:left">' + AuthModal+':</span><span class="span_font" style="float:right;" id="AuthStatue' + NozID + '" name="AuthStatue' + NozID + '">' + Auth+'</span></li>'
+                //+ '<li><span class="span_font" style="float:left">受控:</span><span class="span_font" style="float:right;" id="ControlText' + NozID + '">自控</span><input style="float:right;margin-top: 5px;" type="checkbox" id="ControlValue' + NozID + '" /></li>'
+                + '</ul>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '<div class="items-footer justify-content-between" style="padding:0px;">'
+                + '<div class="pricing-items" style="padding:0;border:1px solid #dddddd;border-radius:30px;margin-top:5px;width:33%;">'
+                + '<div id="single-pricing" style="box-shadow:0px 0px 6px -3px #000;border:1px solid #dddddd;border-radius:30px;">'
+                + '<h6 style="font-family:Calibri;padding-top:5px;font-size:15px;font-weight: bold;">' + AmountTotal+'</h6>'
+                + '<p style="color:#ff3684;font-weight: bold;" id="AmountTotal' + NozID + '" name="AmountTotal' + NozID + '">0</p>'
+                + '</div>'
+                + '</div>'
+                + '<div class="pricing-items" style="padding:0;border:1px solid #dddddd;border-radius:30px;margin-top:5px;width:33%;">'
+                + '<div id="single-pricing" style="box-shadow:0px 0px 6px -3px #000;border:1px solid #dddddd;border-radius:30px;">'
+                + '<h6 style="font-family: Calibri;;padding-top:5px;font-size:15px;font-weight: bold;">' + VolumeTotal+'</h6>'
+                + '<p style="color:#00e2ff;font-weight: bold;" id="VolumeTotal' + NozID + '" name="VolumeTotal' + NozID + '">0</p>'
+                + '</div>'
+                + '</div>'
+                + '<div class="pricing-items" style="padding:0;border:1px solid #dddddd;border-radius:30px;margin-top:5px;width:33%;">'
+                + '<div id="single-pricing" style="box-shadow:0px 0px 6px -3px #000;border:1px solid #dddddd;border-radius:30px;">'
+                + '<h6 style="font-family: Calibri;;padding-top:5px;font-size:15px;font-weight: bold;">' + GradeType+'</h6>'
+                + '<p style="color:#000;font-weight: bold;" id="GradeName' + NozID + '" name="GradeName' + NozID + '">' + GradeName + '</p>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '<div>'
+                + '<div class="footcontainer">'
+                + '<div>'
+                + '<div class="custom-input">'
+                + '<button id="Pre' + NozID + '" type="button" onclick="ButtonClick(this,' + 0 + ')" class="shiny red">' + PreSet+'</button>'
+                //+ '<button id="Sta' + NozID + '" type="button" onclick="ButtonClick(this,' + 1 + ')" class="btn btn-primary btn-fill fill-top" style="width:20%;border-color: #FFC107;color: #ff0081;margin-right: 5px;">启动</button>'
+                + '<button id="Sto' + NozID + '" type="button" onclick="ButtonClick(this,' + 2 + ')" class="shiny blue">' + MachineStop + '</button>'
+                //+ '<button id="Upd' + NozID + '" type="button" onclick="ButtonClick(this,' + 3 + ')" class="shiny yellow">' + Update + '</button>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div>'
+                + '</div >';
+
+            $("#NozContain").append(html);
+        }
+
+        function NozRemove(NozID) {
+            $("#row" + NozID + "").remove();
+        }
+    </script>
+</body>
+</html>

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * paginée des cartes, rapports de soldes (utilisateurs, employés, dépôts) et relevés de comptes.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealReportController extends ServerDealBase {
 
     private static final String TS = "trans_datetime";

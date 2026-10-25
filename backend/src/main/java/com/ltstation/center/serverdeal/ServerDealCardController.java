@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * et fiches de cartes.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealCardController extends ServerDealBase {
 
     private final boolean secretSame;

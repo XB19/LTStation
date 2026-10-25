@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Russian>
+  <Amount>Сумма</Amount>
+	<RealAmount>Первоначальная сумма</RealAmount>
+	<DiscountValue>Скидка</DiscountValue>
+  <Volume>Продажи</Volume>
+  <Price>Цены</Price>
+  <NoCard>Без карты</NoCard>
+  <OpenPortError>Ошибка последовательного открытия</OpenPortError>
+  <PLSWriteName>Введите имя прав</PLSWriteName>
+  <OperateSuccess>Операция прошла успешно</OperateSuccess>
+  <UnvalidatedInput>Незаконный ввоз</UnvalidatedInput>
+  <CardNo>Номер карты</CardNo>
+  <UserName>Имя пользователя</UserName>
+  <TransactionType>Тип операции карты</TransactionType>
+  <Recharge>Сумма сбережений</Recharge>
+  <GiftAmount>Сумма дара</GiftAmount>
+  <ConsumptionAmount>Потребление</ConsumptionAmount>
+  <Time>Время</Time>
+  <Balance>Остаток</Balance>
+  <Total>Всего</Total>
+  <TotalRecord>Общее число записей</TotalRecord>
+  <TotalRecharge>Общая сумма сбережений</TotalRecharge>
+  <TotalDeduction>Общая сумма красных</TotalDeduction>
+  <TotalNonFuelAmount>Общий объем потребления, не связанного с нефтью</TotalNonFuelAmount>
+  <TotalConsumptionAmount>Общий объем потребления</TotalConsumptionAmount>
+  <SummaryVolume>Общий объем потребления в литрах</SummaryVolume>
+  <SummaryDiscount>Общая сумма дара</SummaryDiscount>
+  <OneWordOnly>Введите только одну букву или цифру.</OneWordOnly>
+  <InformationLoss>Пожалуйста, дополните всю информацию.</InformationLoss>
+  <UnvalidatedRequest>Неверный запрос</UnvalidatedRequest>
+  <DuplicateInformation>Повторение информации</DuplicateInformation>
+  <PLSSelectRegion>Сначала выберите регион.</PLSSelectRegion>
+  <ReadCardFailed>Ошибка чтения карт</ReadCardFailed>
+  <GetSecretError>Ошибка чтения ключа</GetSecretError>
+  <InitPasswordFailed>Ошибка сброса пароля</InitPasswordFailed>
+  <PasswordFormatError>Ошибка формата пароля</PasswordFormatError>
+  <PlsReadCard>Сначала прочтите карточку.</PlsReadCard>
+  <InvalidInformation>Неверное сообщение</InvalidInformation>
+  <ShiftSetError>Пожалуйста, начните с расписания.</ShiftSetError>
+  <ShiftComplete>Сдача завершена.</ShiftComplete>
+  <LastPage>Уже на последней странице.</LastPage>
+  <FirstPage>Уже на первой странице.</FirstPage>
+  <DataEmpty>Информация о данных отсутствует</DataEmpty>
+  <ShiftAlreadlyComplete>Эта смена уже сдана.</ShiftAlreadlyComplete>
+  <Shift>Бань</Shift>
+  <TimeError>Ошибка ввода времени.</TimeError>
+  <NoShift>В настоящее время нет</NoShift>
+  <ObjectEmpty>Данные пусты</ObjectEmpty>
+  <PriceShow>Цена за единицу</PriceShow>
+  <ValidError>Ошибка проверки</ValidError>
+  <FormatError>Ошибка формата</FormatError>
+  <DownLoad>Начать загрузку</DownLoad>
+  <DownLoadComplete>Загрузка завершена</DownLoadComplete>
+  <NeedQueryCondition>Условия поиска не могут быть пустыми.</NeedQueryCondition>
+  <NeedCardNo>Номер карты не может быть пустым.</NeedCardNo>
+  <CardMakeErrorReturn>Ошибка изготовления карты, отмена замены</CardMakeErrorReturn>
+  <CardChangeComplete>Замена карт завершена</CardChangeComplete>
+  <CardChangeFailed>Ошибка замены</CardChangeFailed>
+  <CardCompleteButStatueError>Не удалось изменить статус, замена завершена</CardCompleteButStatueError>
+  <CardReaderDisconnect>Убедитесь, что устройство для чтения карт подключено</CardReaderDisconnect>
+  <CardPublishMessageFailed>Ошибка генерации информации карты</CardPublishMessageFailed>
+  <CardWriteError>Ошибка записи карты</CardWriteError>
+  <BalanceReturnError>Невозможно восстановить баланс</BalanceReturnError>
+  <UserInexistence>Пользователь не существует</UserInexistence>
+  <ExternalValidationError>Ошибка внешней проверки</ExternalValidationError>
+  <InitializeError>Ошибка инициализации</InitializeError>
+  <InitializeSuccess>Успешная инициализация</InitializeSuccess>
+  <DepositError>Ошибка сохранения</DepositError>
+  <LostSuccess>Потерянный успех</LostSuccess>
+  <Normal>Нормально.</Normal>
+  <GetReaderFailed>Ошибка считывания карт</GetReaderFailed>
+  <MaxLength>Длина не должна превышать 3.</MaxLength>
+  <ValuetTooLarge>Введите слишком много значений</ValuetTooLarge>
+  <NoLimit>Без ограничений</NoLimit>
+  <NoDiscount>Без скидки</NoDiscount>
+  <PlSSelectCardType>Выберите тип карты</PlSSelectCardType>
+  <CardMakeSuccess>Карты успешно</CardMakeSuccess>
+  <CardMakeError>Ошибка изготовления карт</CardMakeError>
+  <OutOfCreditLine>Кредитный лимит не может превышать имеющийся у группы</OutOfCreditLine>
+  <PasswordInconformity>Двойной ввод пароля не совпадает</PasswordInconformity>
+  <NeedCardValidTime>Срок действия карты не может быть пустым.</NeedCardValidTime>
+  <NeedUserAccount>Счет пользователя не может быть пустым</NeedUserAccount>
+  <NeedPasswordMaxLength>Длина пароля должна быть 4 бита.</NeedPasswordMaxLength>
+  <PasswordIsNumber>Пароль может состоять только из цифр.</PasswordIsNumber>
+  <UserNameEmpty>Имя пользователя не может быть пустым</UserNameEmpty>
+  <UserIDEmpty>Идентификатор пользователя не может быть пустым</UserIDEmpty>
+  <IdentificationEmpty>Номер документа не может быть пустым.</IdentificationEmpty>
+  <PhoneError>Ошибка формата контакта</PhoneError>
+  <CarNoLength>Обычная длина автомобиля 7.</CarNoLength>
+  <CarFormatError>Ошибка формата автомобиля</CarFormatError>
+  <PostCodeFormatError>Ошибка формата почтового индекса</PostCodeFormatError>
+  <EamilFormatError>Ошибка формата почтового ящика</EamilFormatError>
+  <LimitVolumeError>Ошибка форматирования значений ограничения на литр</LimitVolumeError>
+  <NumberOrDecimal>Введите только цифры или десятичные дроби.</NumberOrDecimal>
+  <OutOfStationDigits>Введите десятичный разряд</OutOfStationDigits>
+  <PLSCheckDigits>Проверьте правильность ввода цифр или конфигурации сайта.</PLSCheckDigits>
+  <LimitVolumeExceeded>Ограниченный вход на литр слишком велик</LimitVolumeExceeded>
+  <LimitDayTimeError>Количество дней ограничено только цифрами.</LimitDayTimeError>
+  <LimitAmountDailyError>Ошибка в форматировании значений ограничения суммы в день</LimitAmountDailyError>
+  <LimitAmountDailyExceeded>Ежедневный лимит заправки слишком велик.</LimitAmountDailyExceeded>
+  <LimitVolumeMonthError>Ошибка форматирования лимитов на литры в месяц</LimitVolumeMonthError>
+  <LimitVolumeMonthExceeded>Ежемесячный лимит на литры</LimitVolumeMonthExceeded>
+  <LimitAmountMonthError>Ежемесячные ограничения на сумму Ошибка формата</LimitAmountMonthError>
+  <LimitAmountMonthExceeded>Ежемесячный лимит на дозаправку слишком велик.</LimitAmountMonthExceeded>
+  <FuelConsumptionError>Сто километров расхода топлива только цифры.</FuelConsumptionError>
+  <MileageNumber>Допустимая погрешность - только цифры.</MileageNumber>
+  <SelectEmployee>Пожалуйста, выберите работника.</SelectEmployee>
+  <GroupNameEmpty>Название группы не может быть пустым</GroupNameEmpty>
+  <GroupIDEmpty>Номер группы не может быть пустым.</GroupIDEmpty>
+  <BusinessNoEmpty>Номер лицензии не может быть пустым.</BusinessNoEmpty>
+  <CreditLineEmpty>Кредитная линия не может быть пустой.</CreditLineEmpty>
+  <BillCreateDayEmpty>Дата выставления счета не может быть пустой</BillCreateDayEmpty>
+  <DayRange>Входные значения варьируются от 1 до 30.</DayRange>
+  <RepayDayEmpty>Дата платежа не может быть пустой</RepayDayEmpty>
+  <LimitLevelError>Ошибка форматирования пороговых значений</LimitLevelError>
+  <Person>Индивидуальные группы</Person>
+  <CardTypeError>Ошибка типа карты</CardTypeError>
+  <EmployeeCard>Карточка сотрудника</EmployeeCard>
+  <UserCard>Карта пользователя</UserCard>
+  <GroupCard>Групповая карта</GroupCard>
+  <GroupCreditCard>Групповая бухгалтерская карточка</GroupCreditCard>
+  <CreditCard>Бухгалтерская карточка</CreditCard>
+  <AssistantCard>Дополнительные карточки</AssistantCard>
+  <NonCard>Неккар</NonCard>
+  <UpdateSuccess>Изменение успешно</UpdateSuccess>
+  <UpdateFailed>Ошибка изменения</UpdateFailed>
+  <CardNotSupport>Карта не позволяет эту операцию</CardNotSupport>
+  <InputValidationError>Ошибка проверки ввода</InputValidationError>
+  <DepositSuccess>Сохранение успешно</DepositSuccess>
+  <DepositFailed>Ошибка сохранения</DepositFailed>
+  <Deposit>Стоимость хранения</Deposit>
+  <DepositAmount>Сумма сбережений</DepositAmount>
+  <DataBaseError>Ошибка базы данных</DataBaseError>
+  <Deduction>Красный</Deduction>
+  <OldCardBalance>Сальдо по первоначальной карте</OldCardBalance>
+  <DeductionAmount>Красная сумма</DeductionAmount>
+  <AfterDeductionBalance>Остаток после покраснения</AfterDeductionBalance>
+  <CarNo>Номер машины</CarNo>
+  <EndBalance>Конечный остаток</EndBalance>
+  <ServiceFee>Расходы на обслуживание</ServiceFee>
+  <PayMent>Способы оплаты</PayMent>
+  <CheckNo>Номер чека</CheckNo>
+  <Operator>Оператор</Operator>
+  <PrintTime>Время печати</PrintTime>
+  <PreferentialStartEnd>Преференциальное время начала и окончания</PreferentialStartEnd>
+  <Memo>Примечания</Memo>
+  <Sign>Подпись</Sign>
+  <Score>Интеграция</Score>
+  <DepositAmountError>Ошибка ввода суммы сбережения</DepositAmountError>
+  <GiftAmountError>Неправильный ввод суммы пожертвования</GiftAmountError>
+  <ScoreError>Ошибка ввода интеграла</ScoreError>
+  <FuelEmployee>заправщик</FuelEmployee>
+  <Administrators>Администратор</Administrators>
+  <Cashier>Кассир</Cashier>
+  <Accounting>Бухгалтерский учет</Accounting>
+  <SecretLength>Длина ключа должна быть 16 бит.</SecretLength>
+  <PassowrdError>Ошибка ввода исходного ключа, попробуйте снова</PassowrdError>
+  <EndOutofStatrt>Время окончания не может быть меньше начального.</EndOutofStatrt>
+  <Transaction>Регистрация операций</Transaction>
+  <PlsQuery>Пожалуйста, сначала проверьте.</PlsQuery>
+  <PlsQueryTerms>Введите условия запроса.</PlsQueryTerms>
+  <SettlementComplete>Расчеты произведены, двойной расчет не требуется</SettlementComplete>
+  <DailyReport>Ежедневные газеты</DailyReport>
+  <MonthReport>Ежемесячные отчеты</MonthReport>
+  <SetlementTimeForDaily>Это время является временем окончания расчетов, а правило закрытия - временем, которое переносится на один день вперед в выбранное время.</SetlementTimeForDaily>
+  <DailyReportData>Ежедневные данные</DailyReportData>
+  <CardDailyReport>узел Каржа</CardDailyReport>
+  <NozDailyReport>Оружейный узел</NozDailyReport>
+  <EnergyDailyReport>Энергетический узел</EnergyDailyReport>
+  <SetlementTimeForMonth>Это время является временем окончания расчетов, а правило окончания месяца - временем, которое переносится на январь в выбранное время.</SetlementTimeForMonth>
+  <MonthReportData>Ежедневные данные</MonthReportData>
+  <CardMonthReport>узел Каржа</CardMonthReport>
+  <NozMonthReport>Оружейный узел</NozMonthReport>
+  <EnergyMonthReport>Энергетический месячный</EnergyMonthReport>
+  <DiscountError>Ошибка ввода скидок</DiscountError>
+  <CommunicationFailed>Связь не удалась</CommunicationFailed>
+  <ExportSuccess>Экспорт успешно</ExportSuccess>
+  <ExportFailed>Ошибка экспорта</ExportFailed>
+  <NotChanged>Это поле не может быть изменено</NotChanged>
+  <EnergyExist>Энергия уже существует.</EnergyExist>
+  <PriceFormatError>Ошибка формата единицы</PriceFormatError>
+  <PLSCreateStation>Сначала создайте сайт.</PLSCreateStation>
+  <PlsWriteCode>Введите код.</PlsWriteCode>
+  <StartCodeError>Ошибка ввода начального кода</StartCodeError>
+  <EndCodeError>Ошибка закрытия ввода кода</EndCodeError>
+  <Confirm>Определение</Confirm>
+  <MacError>Ошибка чтения информации, проверьте конфигурацию компьютера на соответствие требованиям</MacError>
+  <ActiveFailed>Ошибка активации</ActiveFailed>
+  <ScoreIsZero>Потребление не может быть 0</ScoreIsZero>
+  <ScoreOutOfBalance>Потребительский балл не должен превышать пользовательский.</ScoreOutOfBalance>
+  <PlsSetSerial>Сначала установите канал связи.</PlsSetSerial>
+  <PlsSetTank>Пожалуйста, установите информацию о резервуаре.</PlsSetTank>
+  <CreateStationBySelf>В настоящее время находится автономная станция.</CreateStationBySelf>
+  <PlsWriteStationCode>Введите код сайта.</PlsWriteStationCode>
+  <AuthorityProblem>Вопросы компетенции</AuthorityProblem>
+  <Unknow>Неизвестно</Unknow>
+  <PortNotExsit>Порт не существует</PortNotExsit>
+  <PlSCreateStation>Сначала создайте информацию о сайте.</PlSCreateStation>
+  <PlSCreateOilType>Сначала создайте энергетическую информацию.</PlSCreateOilType>
+  <PlsCreateTank>Сначала создайте информацию о резервуаре.</PlsCreateTank>
+  <PlsCreatePort>Сначала установите порт.</PlsCreatePort>
+  <PlsCreateNoz>Пожалуйста, создайте информацию об оружии.</PlsCreateNoz>
+  <PlsCreateEmp>Сначала создайте информацию о сотруднике.</PlsCreateEmp>
+  <SystemNotActive>Система не активирована.</SystemNotActive>
+  <SystemActiveError>Необычная активация сайта</SystemActiveError>
+  <OpenAccount>Открытие счета</OpenAccount>
+  <CardLost>Потеря</CardLost>
+  <PasswordLost>Пароль потерян.</PasswordLost>
+  <DealGrey>Сетевое удаление золы</DealGrey>
+  <CardUpdate>Изменение информации</CardUpdate>
+  <CardChangeOpen>Открытие дополнительных карт</CardChangeOpen>
+  <CardChangeDeposit>Запасные карточки</CardChangeDeposit>
+  <ClearAccount>Чистая семья</ClearAccount>
+  <Transfer>дамп</Transfer>
+  <Consume>Потребление</Consume>
+  <Nonoilconsumption>Потребление, не связанное с нефтью</Nonoilconsumption>
+  <Repay>Возмещение</Repay>
+  <ClearAccountTransfer>Чистые переводы</ClearAccountTransfer>
+  <MasterTransfer>Перевод управленческой карточки</MasterTransfer>
+  <EscapeCard>Убегающая карточка</EscapeCard>
+  <WrongCard>Неправильная карта</WrongCard>
+  <Patching>Дополнение</Patching>
+  <Replenish>Дополнения</Replenish>
+  <OnDuty>На работу</OnDuty>
+  <OffDuty>С работы.</OffDuty>
+  <PriceChange>Изменение цены единицы</PriceChange>
+  <CardRefuse>Ошибка отказа</CardRefuse>
+  <Other>Прочее</Other>
+  <Cash>Наличные средства</Cash>
+  <ICCard>МКА</ICCard>
+  <BankCard>Банковские карточки</BankCard>
+  <CurrentShift>Текущая смена</CurrentShift>
+  <LoginEmployee>Регистрация сотрудников</LoginEmployee>
+  <CardStatueError>Необычное состояние карты</CardStatueError>
+  <TotalTankHeightStr>Высота цистерны</TotalTankHeightStr>
+  <TotalTankVolumeStr>Объем цистерны</TotalTankVolumeStr>
+  <CurrentHeightStr>Текущий уровень</CurrentHeightStr>
+  <CurrentVolumeStr>Текущий объем</CurrentVolumeStr>
+  <CurrentWaterStr>Текущий уровень воды</CurrentWaterStr>
+  <CurrentTempStr>Текущая температура</CurrentTempStr>
+  <NoEmployee>Без работников</NoEmployee>
+  <Tips>Подсказка</Tips>
+  <OperationExecution>Выполнить операцию?</OperationExecution>
+  <IICACBD>Информация настроена и не может быть удалена</IICACBD>
+  <DataSend>Передача информации</DataSend>
+  <DataReveive>Прием информации</DataReveive>
+  <REISSUED>Заменено</REISSUED>
+  <Stop>Приостановление использования</Stop>
+  <NozID>нос Айдахо</NozID>
+	<TType>Тип</TType>
+  <TruePay>Фактические выплаты</TruePay>
+  <OilDataType>Тип операции</OilDataType>
+  <Port>Порт</Port>
+  <Employee>Работники</Employee>
+  <TotalVolume>Код насоса</TotalVolume>
+  <Mileage>Пробег</Mileage>
+  <Discount>Скидка</Discount>
+  <Coupon>Купоны</Coupon>
+  <Parvalue>Номинальная стоимость билета</Parvalue>
+  <Energy>Энергия</Energy>
+  <StartPump>код начального насоса</StartPump>
+  <EndPump>код запорного насоса</EndPump>
+  <Spread>Разница</Spread>
+  <Table>Таблицы</Table>
+  <ID>Номер</ID>
+  <EnergySaler>Продажа энергии</EnergySaler>
+  <LoginFailed>Ошибка имени пользователя или пароля</LoginFailed>
+  <CardConsume>Потребление карт</CardConsume>
+  <AfterConsume>Остаток средств после потребления</AfterConsume>
+  <LostTankOrPrice>Информация о резервуаре или о цене за единицу отсутствует, сначала заполните ее полностью</LostTankOrPrice>
+  <LostTank>Информация об оборудовании резервуара отсутствует, пожалуйста, дополните полностью</LostTank>
+  <AmountFormatError>Ошибка формата суммы</AmountFormatError>
+  <TrasnlateObjectEmpty>Объект дампа не может быть пустым</TrasnlateObjectEmpty>
+  <UnRepay>Невыплаченные суммы</UnRepay>
+  <PartialRepayment>Частичное погашение</PartialRepayment>
+  <PaidOff>Все.</PaidOff>
+  <QueryIsEmpty>Условия поиска не могут быть пустыми.</QueryIsEmpty>
+  <ProgramRuned>Программа запущена.</ProgramRuned>
+  <InformationLost>Отсутствие информации</InformationLost>
+  <InformationError>Информационная ошибка</InformationError>
+  <PayMentError>Ошибка с суммой платежа</PayMentError>
+  <OutOfPayMent>Сумма возврата не может превышать сумму, подлежащую возврату</OutOfPayMent>
+  <PageError>Общее количество страниц 0 или ошибка ввода номера страницы</PageError>
+  <NotAllowUseStock>Текущая система не допускает ручного ввода</NotAllowUseStock>
+  <TankMissing>Емкости не существует.</TankMissing>
+  <OilOutput>Выход нефти</OilOutput>
+  <OilStock>На складе</OilStock>
+  <StationName>Название сайта</StationName>
+  <AmountTotal>Общая сумма</AmountTotal>
+  <VolumeTotal>Всего литров</VolumeTotal>
+  <CreateTime>Дата создания</CreateTime>
+  <SumAmount>Общая сумма</SumAmount>
+  <SumVolume>Итого, литры</SumVolume>
+
+  <Quality>Качество</Quality>
+  <TotalQuality>Общее качество</TotalQuality>
+  <KKG>Килограммы</KKG>
+  <KG>Потребление кг</KG>
+  <TotalKG>Общий объем потребления кг</TotalKG>
+  <StartKG>Начальный кг</StartKG>
+  <EndKG>Крайний кг.</EndKG>
+
+  <None>Нет</None>
+  <Even>Контроль пары</Even>
+  <Odd>нечётная проверка</Odd>
+
+  <BlueSky>Голубое небо</BlueSky>
+  <Tatsuno>Лунно</Tatsuno>
+  <Japan>Япония</Japan>
+  <Dart>Dart</Dart>
+  <ATG>Уровень жидкости</ATG>
+
+  <SerialPortError>Связь не установлена</SerialPortError>
+  <StationNameEmpty>Название сайта не может быть пустым</StationNameEmpty>
+  <LongitudeError>Ошибка формата долготы</LongitudeError>
+  <LatitudeError>Ошибка формата широты</LatitudeError>
+  <ApplicationNumberEmpty>Номер приложения не может быть пустым</ApplicationNumberEmpty>
+  <GetApplicationNumber>Номер приложения соответствует номеру платформы, пожалуйста, получите его от платформы</GetApplicationNumber>
+  <PortExists>Порт уже существует</PortExists>
+  <DevicePortError>Порт устройства не установлен</DevicePortError>
+  <NormalSystem>Главное окно общей системы</NormalSystem>
+  <DeviceNotExist>Оборудование не существует</DeviceNotExist>
+  <NozFormatError>Ошибка формата пистолета</NozFormatError>
+  <AddressFormatError>Ошибка формата адреса</AddressFormatError>
+  <NozRepeat>Оружие повторяется.</NozRepeat>
+  <AddressRepeat>Адрес повторяется</AddressRepeat>
+  <Automaticallyauthorize>авто</Automaticallyauthorize>
+  <Manualauthorization>Ручной</Manualauthorization>
+  <BoxAuth>Коробка</BoxAuth>
+  <Authorizationmodel>Авторизация</Authorizationmodel>
+  <PreSet>Начинать</PreSet>
+  <MachineStop>стоять</MachineStop>
+  <MachineUpdate>Изменения</MachineUpdate>
+  <DeleteConfirm>Удалить</DeleteConfirm>
+  <hints>Настройка</hints>
+  <AssociatedError>В настоящее время существует привязка цены за единицу энергии, пожалуйста, отмените ее после удаления</AssociatedError>
+  <GradeNone>Видов энергии не существует</GradeNone>
+  <PriceExist>Информация о стоимости не существует</PriceExist>
+  <GradeEmpty>Энергетическая информация не может быть пустой</GradeEmpty>
+  <PriceReapt>Цена уже существует.</PriceReapt>
+  <PriceDone>Цены на энергоносители уже установлены.</PriceDone>
+  <EmpEmpty>Работников не существует.</EmpEmpty>
+  <EmpRepeat>Информация о сотрудниках повторяется</EmpRepeat>
+
+  <DailyClosed>Ежедневные расчеты.</DailyClosed>
+  <NozSettleError>Ошибка расчетов с оружием</NozSettleError>
+  <EnergySettleError>Энергетическая ошибка</EnergySettleError>
+  <StockSettleError>Ошибка расчета запасов</StockSettleError>
+  <TotalSettleError>Ошибка агрегирования расчетов</TotalSettleError>
+  <SettleComplete>Завершение расчетов</SettleComplete>
+  <SettleNotComplete>Невозможно экспортировать неоплаченные отчеты</SettleNotComplete>
+  <StationDailyReport>Веб - газета</StationDailyReport>
+  <StationMonthReport>Ежемесячный бюллетень сайта</StationMonthReport>
+  <StationShiftReport>Веб - газета</StationShiftReport>
+
+  <ShiftEmpty>Информация о смене не установлена</ShiftEmpty>
+  <ShiftError>Ошибка смены</ShiftError>
+
+  <TankHeightFormatError>Ошибка формата высоты резервуара</TankHeightFormatError>
+  <TankVolumeFormatError>Ошибка формата емкости</TankVolumeFormatError>
+  <TankHeightLevelAlarmFormatError>Ошибка форматирования сигнализации уровня жидкости</TankHeightLevelAlarmFormatError>
+  <TankLowLevelAlarmFormatError>Ошибка форматирования нижнего уровня напоминания @ info: whatsthis</TankLowLevelAlarmFormatError>
+  <WaterHeightFormatError>Ошибка формата сигнализации высокого уровня</WaterHeightFormatError>
+  <WaterLowFormatError>Ошибка формата низкого напоминания @ info: whatsthis</WaterLowFormatError>
+  <HighTempFormatError>Ошибка форматирования шкалы сигнализации о высокой температуре</HighTempFormatError>
+  <LowTempFormatError>Ошибка формата криогенного напоминания</LowTempFormatError>
+  <TankNoFormatError>Ошибка формата номера резервуара</TankNoFormatError>
+  <TankNoEmpty>Номер баллона не должен быть пустым.</TankNoEmpty>
+  <TankNoRepeat>Номер резервуара повторяется</TankNoRepeat>
+  <TankNameRepeat>Название резервуара повторяется</TankNameRepeat>
+  <TankEmpty>Информация о резервуаре отсутствует.</TankEmpty>
+
+  <ReprotTime>Время</ReprotTime>
+  <SumReportVolume>Общий объем продаж</SumReportVolume>
+  <TotalCount>Общее число</TotalCount>
+  <SumGrade>Статистика энергетики</SumGrade>
+  <Count>Количество</Count>
+  <SumStock>Статистика запасов</SumStock>
+  <Tank>Резервуар</Tank>
+  <Stock>Объем складирования</Stock>
+  <Sales>Выход из хранилища</Sales>
+  <Error>Ошибка</Error>
+  <SumNoz>Статистика оружия</SumNoz>
+
+  <AmountPreset>Предельная сумма</AmountPreset>
+  <VolumePreset>Предустановка литров</VolumePreset>
+  <TotalSumVolume>Общий объем продаж</TotalSumVolume>
+
+  <PreSetValueError>Ошибка ввода значений</PreSetValueError>
+  <PreSetPriceError>Ошибка предварительной стоимости единицы</PreSetPriceError>
+  <NozError>Оружие не существует.</NozError>
+  <CarPay>Номерной знак оплачен.</CarPay>
+
+  <VersionUpdate>Текущая версия программы отличается от последней версии и обновляется ли она?</VersionUpdate>
+  <ProgramFileMissing>Файл программы не существует</ProgramFileMissing>
+  <Updating>Программа обновляется, пожалуйста, подождите</Updating>
+
+  <Repair>Техническое обслуживание</Repair>
+  <RepairCard>Ремонтные карточки</RepairCard>
+
+  <CommunicationBroken>Ошибка связи</CommunicationBroken>
+  <CommunicationNormal>Телефонный ящик в системе связи.</CommunicationNormal>
+  <OpenCard>Открыть карточку</OpenCard>
+
+  <CardType>Тип карты</CardType>
+  <IssueDatetime>Время выдачи карт</IssueDatetime>
+  <ValidDatetime>Эффективное время</ValidDatetime>
+  <Issuer>Отправитель карт</Issuer>
+
+  <ICSystem>Программное обеспечение для управления станцией</ICSystem>
+
+  <DepositTime>Время хранения</DepositTime>
+  <MasterCard>Главная карта</MasterCard>
+
+  <KangYuProbe>зонд Кан У</KangYuProbe>
+  <MAGNEHELIC>Дифференциальный манометр</MAGNEHELIC>
+
+  <PortNoNeedDevice>Текущий порт не требует дополнительных устройств</PortNoNeedDevice>
+  <DataRollbackTran>Возвращение данных завершено</DataRollbackTran>
+
+  <PasswordError>Ошибка пароля</PasswordError>
+
+  <Address>Адрес</Address>
+  <BindNoz>Номер привязанного пистолета.</BindNoz>
+  <Tag>Метки</Tag>
+  <Free>Свободное время</Free>
+  <Work>В эксплуатации</Work>
+
+  <IsUsing>Текущая информация используется и не может быть удалена</IsUsing>
+  
+  <BoxLost>Порт ящика связи не существует</BoxLost>
+  <RFIDIDError>Ошибка формата RFID</RFIDIDError>
+  <RFIDAddressError>Ошибка формата RFID - адреса</RFIDAddressError>
+  <RFIDIDRepeat>Повторение номера RFID</RFIDIDRepeat>
+  <RFIDAddressRepeat>Повторение RFID - адресов</RFIDAddressRepeat>
+  <NoGrey>Серый рекорд</NoGrey>
+  <NotGreyCard>Серая карта</NotGreyCard>
+  <DealGreyFore>Не найдена запись пепла, принудительное ли удаление пепла?</DealGreyFore>
+  <AmountError>Ошибка с суммой</AmountError>
+
+  <SlipNo>Серийный номер</SlipNo>
+
+  <Productgrade>Вид энергии</Productgrade>
+
+  <CashAmount>Сумма денежной наличности</CashAmount>
+  <CashVolume>Увеличение объема денежной наличности</CashVolume>
+  <CardAmount>Сумма карты</CardAmount>
+  <CardVolume>Количество литров</CardVolume>
+
+  <PriceRadioError>Ошибка десятичного знака, текущее ограничение десятичного знака</PriceRadioError>
+  <ProductTotal>Итого, энергетика</ProductTotal>
+
+  <TankRemain>Остальная информация по цистернам:</TankRemain>
+	<RemainVolume>Остаточный объем:</RemainVolume>
+	<TotalAmount>Общая сумма</TotalAmount>
+	<UnitPrice>Стоимость единицы</UnitPrice>
+
+	<SettleTime>Время расчетов</SettleTime>
+	<NozMessage>Данные по оружию</NozMessage>
+	<StockMessage>Данные о подаче топлива в резервуар</StockMessage>
+	<OverImprotVolumeError>Ошибка определения объема</OverImprotVolumeError>
+	<TransactionLost>Нет записей о сделках.</TransactionLost>
+
+	<Printer>Принтер</Printer>
+
+	<ParamError>Ошибка параметра</ParamError>
+
+	<Eaglestar>Ингао</Eaglestar>
+	<HongYang>Пропаганда</HongYang>
+
+	<CardStatueNow>Текущий статус карты:</CardStatueNow>
+	<CantLost>Не нужно терять</CantLost>
+	<CantGetCard>Нет информации о карте</CantGetCard>
+
+	<CableHeightError>Ошибка высоты</CableHeightError>
+	<CableVolumeError>Ошибка объема</CableVolumeError>
+	<CableExists>Начальное значение уже существует</CableExists>
+
+	<CardMiss>Информация о карте не существует</CardMiss>
+	<CardAccountMiss>Карточный счет не существует</CardAccountMiss>
+	<PLSSelectEmp>Пожалуйста, выберите работника.</PLSSelectEmp>
+	<Replaced>Карты были заменены.</Replaced>
+	<CardCantdoit>Текущая карта не поддерживает эту операцию</CardCantdoit>
+	<NeedOnDuty>Сейчас работа.</NeedOnDuty>
+
+	<DigitalMeterReading>Показания цифровых приборов</DigitalMeterReading>
+	<Opening>Церемония открытия</Opening>
+	<Closing>Церемония закрытия</Closing>
+	<Liters>Б</Liters>
+	<Calibration>Калибровка</Calibration>
+	<LitersSold>Продано литров</LitersSold>
+	<TransCount>Количество операций</TransCount>
+	<PriceLiter>Цена / литр</PriceLiter>
+	<Sale>Специальная цена</Sale>
+	<Value>Ценности</Value>
+
+	<BoxNameEmpty>Имя ящика не может быть пустым</BoxNameEmpty>
+	<BoxCodeEmpty>Код ячейки связи не может быть пустым.</BoxCodeEmpty>
+	<BoxNameCodeRepeat>Название ящика или код повторяются.</BoxNameCodeRepeat>
+	<BoxPortUsed>Порт уже используется.</BoxPortUsed>
+	<BoxUsed>В настоящее время используется ящик связи.</BoxUsed>
+	<Wired>Проводной</Wired>
+	<Wireless>Беспроводная связь</Wireless>
+
+	<SaleRecord>ประวัติการขาย</SaleRecord>
+	<Printshift>ใบปิดกะ</Printshift>
+	<Printdaysummary>ใบสรุปรายวัน</Printdaysummary>
+	<PrintMonthsummary>Печать ежемесячных сводок</PrintMonthsummary>
+	<Taxinvoice>ใบกำกับภาษี</Taxinvoice>
+	<Cancelinvoice>ยกเลิกบิลขาย</Cancelinvoice>
+	<Informalsale>ยอดขายนอกระบบ</Informalsale>
+	<Testnozzle>ทดสอบหัวจ่าย</Testnozzle>
+	<Returntheproduct>คืนสินค้า</Returntheproduct>
+	<Tools>инструмент</Tools>
+	<Addincash>นำเงินเข้า</Addincash>
+	<Takeoutcash>นำเงินออก</Takeoutcash>
+	<Closeshift>ปิดกะ</Closeshift>
+	<Closeday>ปิดวัน</Closeday>
+	<CloseMonth>Закрытый месяц</CloseMonth>
+	<Changeoilprice>ตั้งราคาสินค้า</Changeoilprice>
+	<Changeuser>เปลี่ยนผู้ใช้</Changeuser>
+	<Exit>ออก</Exit>
+
+	<PLSSelectBox>Выберите поле</PLSSelectBox>
+	<BoxDeviceLost>Ящик пропал.</BoxDeviceLost>
+
+	<NeedEmployeeCertification>Требуется сертификация сотрудников.</NeedEmployeeCertification>
+
+	<DeleteBtnShow>Удалить</DeleteBtnShow>
+
+	<CarNumber>Номер автомобиля</CarNumber>
+	<CardGroup>Группа</CardGroup>
+
+	<NormalGroup>Нормальная группа</NormalGroup>
+	<SharedGroup>Общие группы</SharedGroup>
+
+	<BoxSelectPump>Пожалуйста, выберите насос</BoxSelectPump>
+
+	<A_Up_Point>Точка возврата на цилиндре А(mm)</A_Up_Point>
+	<A_Down_Point>Нижняя точка возврата цилиндра(mm)</A_Down_Point>
+	<A_Current_Piston>Значение тока поршня(mm)</A_Current_Piston>
+	<InletPressure>Давление на входе(MPa)</InletPressure>
+	<MediumPressure>Среднее давление(MPa)</MediumPressure>
+	<ProtectivePressure>Защитное давление(MPa)</ProtectivePressure>
+	<WaterTemperature>Температура воды(℃)</WaterTemperature>
+	<GasConcentration>Концентрация газа в компрессорном блоке(%)</GasConcentration>
+	<GasConcentrationSecond>Концентрация газа в группе газовых баллонов(%)</GasConcentrationSecond>
+	<GasConcentrationThird>Концентрация газа в газораспределительной установке(%)</GasConcentrationThird>
+	<A_Average_Time>Среднее время реверсирования цилиндра А</A_Average_Time>
+	<B_Up_Point>Точка возврата на цилиндре B(mm)</B_Up_Point>
+	<B_Down_Point>Нижняя точка возврата цилиндра B(mm)</B_Down_Point>
+	<B_Current_Piston>Значение тока поршня B(mm)</B_Current_Piston>
+	<Spare>запасной</Spare>
+	<HighPressure>Высокое давление(MPa)</HighPressure>
+	<InstrumentAirPressure>Давление воздуха в приборе(MPa)</InstrumentAirPressure>
+	<HydraulicOilLevel>Уровень гидравлического масла</HydraulicOilLevel>
+	<HydraulicOilTemperature>Температура гидравлического масла(℃)</HydraulicOilTemperature>
+	<B_Average_Time>Среднее время реверсирования цилиндра B</B_Average_Time>
+	<LowPressure>Низкое давление</LowPressure>
+
+	<Online>Онлайн</Online>
+	<Offline>Оффлайн</Offline>
+
+	<PLC100>Датчик температуры гидравлического масла отсоединен</PLC100>
+	<PLC102>Датчик концентрации горючих газов отключен</PLC102>
+	<PLC103>Среднее давление ниже безвоздушного значения</PLC103>
+	<PLC104>Защитите датчик давления от обрыва провода</PLC104>
+	<PLC105>Датчик высокого давления отсоединен</PLC105>
+	<PLC106>Датчик среднего давления отключен</PLC106>
+	<PLC107>Датчик давления всасываемого воздуха отсоединен</PLC107>
+	<PLC109>Концентрация горючего газа превышает 25</PLC109>
+	<PLC110>Низкое давление воздуха в приборе</PLC110>
+	<PLC111>Температура циркулирующей воды выше установленного значения</PLC111>
+	<PLC112>Температура гидравлического масла выше установленного значения</PLC112>
+	<PLC113>Нехватка гидравлического масла</PLC113>
+	<PLC114>Давление защиты выше установленного значения</PLC114>
+	<PLC115>Давление на входе ниже безвоздушного значения</PLC115>
+	<PLC204>B Отказ двигателя</PLC204>
+	<PLC205>Отключение датчика положения B</PLC205>
+	<PLC206>А. Отказ двигателя</PLC206>
+	<PLC207>Отключение датчика положения</PLC207>
+	<PLC300>Входное давление ниже входного аварийного значения</PLC300>
+	<PLC301>Температура гидравлического масла выше аварийного значения</PLC301>
+	<PLC303>Самоциркуляционный пневматический клапан открыт не полностью</PLC303>
+	<PLC305>Пневматический клапан среднего давления открыт не полностью</PLC305>
+	<PLC308>Датчик ветра прибора отключен</PLC308>
+	<PLC309>№ 2. Неисправность вентилятора охлаждения</PLC309>
+	<PLC310>№ 1. Неисправность вентилятора охлаждения.</PLC310>
+
+	<Advanceexe>Казнь.</Advanceexe>
+
+	<Food>Продукт питан</Food>
+	<Lubricants>Смазка.</Lubricants>
+	<EngineOil>Моторн масл</EngineOil>
+	<Cleaner>Чистящее средство.</Cleaner>
+	<ProductNameRepeat>Повторение названия товара</ProductNameRepeat>
+	<ProductInexistence>Товара не существует.</ProductInexistence>
+	<ServerRefuse>Отказ от сервера</ServerRefuse>
+	<QuantityOver>Количественный перевес</QuantityOver>
+	<ScorePrice>Интегральная цена</ScorePrice>
+	<BalanceNotEnough>Недостаточный баланс</BalanceNotEnough>
+
+	<SumType>Статистический тип</SumType>
+	<OutOfTime>Время вышло из строя</OutOfTime>
+	<PersonalBill>Личный счет</PersonalBill>
+	<Paid>Ya pagado</Paid>
+	<Unpaid>Falta de pago</Unpaid>
+	<Query>запрос</Query>
+</Russian>

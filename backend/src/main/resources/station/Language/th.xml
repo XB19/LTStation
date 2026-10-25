@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<th>
+  <Amount>จำนวนเงิน</Amount>
+	<RealAmount>จำนวนเงินเดิม</RealAmount>
+	<DiscountValue>ส่วนลด</DiscountValue>
+  <Volume>ปริมาณ</Volume>
+  <Price>ราคา</Price>
+  <NoCard>ไม่พบบัตร</NoCard>
+  <OpenPortError>ไม่สามารถเปิดพอร์ตได้</OpenPortError>
+  <PLSWriteName>โปรดเพิ่มชื่อ</PLSWriteName>
+  <OperateSuccess>ดำเนินการสำเร็จ</OperateSuccess>
+  <UnvalidatedInput>ข้อมูลไม่ถูกต้อง</UnvalidatedInput>
+  <CardNo>หมายเลขบัตร</CardNo>
+  <UserName>ชื่อผู้ใช้</UserName>
+  <TransactionType>ประเภทธุรกรรม</TransactionType>
+  <Recharge>รีชาร์จ</Recharge>
+  <GiftAmount>จำนวนเงินของขวัญ</GiftAmount>
+  <ConsumptionAmount>ยอดการใช้งาน</ConsumptionAmount>
+  <Time>เวลา</Time>
+  <Balance>ยอดคงเหลือ</Balance>
+  <Total>รวม</Total>
+  <TotalRecord>รวมบันทึกทั้งหมด</TotalRecord>
+  <TotalRecharge>รีชาร์จทั้งหมด</TotalRecharge>
+  <TotalDeduction>ยอดหักเงินรวม</TotalDeduction>
+  <TotalNonFuelAmount>ยอดรวมNonFuel</TotalNonFuelAmount>
+  <TotalConsumptionAmount>ยอดการใช้งานทั้งหมด</TotalConsumptionAmount>
+  <SummaryVolume>สรุปปริมาณรวม</SummaryVolume>
+  <SummaryDiscount>สรุปส่วนลดรวม</SummaryDiscount>
+  <OneWordOnly>จำกัดหนึ่งตัวเลขหรือหนึ่งตัวอักษร</OneWordOnly>
+  <InformationLoss>สูญเสียข้อมูล</InformationLoss>
+  <UnvalidatedRequest>คำขอไม่ถูกต้อง</UnvalidatedRequest>
+  <DuplicateInformation>ข้อมูลซ้ำซ้อน</DuplicateInformation>
+  <PLSSelectRegion>กรุณาเลือกภูมิภาค</PLSSelectRegion>
+  <ReadCardFailed>อ่านบัตรล้มเหลว</ReadCardFailed>
+  <GetSecretError>รหัสผ่านผิดพลาด</GetSecretError>
+  <InitPasswordFailed>รหัสผ่านเริ่มต้นไม่ถูกต้อง</InitPasswordFailed>
+  <PasswordFormatError>ฟอร์แมตรหัสผ่านผิดพลาด</PasswordFormatError>
+  <PlsReadCard>กรุณาอ่านบัตร</PlsReadCard>
+  <InvalidInformation>ข้อมูลไม่ถูกต้อง</InvalidInformation>
+  <ShiftSetError>กรุณาตั้งค่ากะทำงานก่อน</ShiftSetError>
+  <ShiftComplete>กะทำงานเสร็จสมบูรณ์</ShiftComplete>
+  <LastPage>หน้าสุดท้าย</LastPage>
+  <FirstPage>หน้าแรก</FirstPage>
+  <DataEmpty>ข้อมูลว่างเปล่า</DataEmpty>
+  <ShiftAlreadlyComplete>กะทำงานสิ้นสุดแล้ว</ShiftAlreadlyComplete>
+  <Shift>กะทำงาน</Shift>
+  <TimeError>เวลาผิดพลาด</TimeError>
+  <NoShift>ไม่พบกะทำงาน</NoShift>
+  <ObjectEmpty>ไม่พบข้อมูล</ObjectEmpty>
+  <PriceShow>แสดงราคา</PriceShow>
+  <ValidError>Valid Error</ValidError>
+  <FormatError>ฟอร์แมตผิดพลาด</FormatError>
+  <DownLoad>กำลังดาวน์โหลด</DownLoad>
+  <DownLoadComplete>ดาวน์โหลดสำเร็จ</DownLoadComplete>
+  <NeedQueryCondition>ต้องการเพิ่มเงื่อนไขการค้นหา</NeedQueryCondition>
+  <NeedCardNo>หมายเลขบัตรไม่สามารถปล่อยว่างได้</NeedCardNo>
+  <CardMakeErrorReturn>เพิ่มบัตรล้มเหลว ยกเลิกดำเนินการ</CardMakeErrorReturn>
+  <CardChangeComplete>เปลี่ยนบัตรเสร็จสมบูรณ์</CardChangeComplete>
+  <CardChangeFailed>เปลี่ยนบัตรล้มเหลว</CardChangeFailed>
+  <CardCompleteButStatueError>เปลี่ยนบัตรเสร็จสมบูรณ์ แต่Statusไม่ถูกต้อง</CardCompleteButStatueError>
+  <CardReaderDisconnect>เครื่องอ่านการ์ดไม่ได้เชื่อมต่อ</CardReaderDisconnect>
+  <CardPublishMessageFailed>ข้อความเผยแพร่บนการ์ดล้มเหลว</CardPublishMessageFailed>
+  <CardWriteError>การเขียนการ์ดล้มเหลว</CardWriteError>
+  <BalanceReturnError>ข้อผิดพลาดการกู้คืนยอดคงเหลือ</BalanceReturnError>
+  <UserInexistence>ไม่พบผู้ใช้งาน</UserInexistence>
+  <ExternalValidationError>ข้อผิดพลาดการตรวจสอบภายนอก</ExternalValidationError>
+  <InitializeError>ข้อผิดพลาดในการเริ่มต้น</InitializeError>
+  <InitializeSuccess>การเริ่มต้นสำเร็จ</InitializeSuccess>
+  <DepositError>ข้อผิดพลาดในการฝากเงิน</DepositError>
+  <LostSuccess>สูญเสียความสำเร็จ</LostSuccess>
+  <Normal>ปกติ</Normal>
+  <GetReaderFailed>เครื่องอ่านบัตรล้มเหลว</GetReaderFailed>
+  <MaxLength>ความยาวสูงสุด3หลัก</MaxLength>
+  <ValuetTooLarge>ค่าอินพุตมีขนาดใหญ่เกินไป</ValuetTooLarge>
+  <NoLimit>ไม่พบลิมิต</NoLimit>
+  <NoDiscount>ไม่พบส่วนลด</NoDiscount>
+  <PlSSelectCardType>กรุณาเลือกประเภทบัตร</PlSSelectCardType>
+  <CardMakeSuccess>เพิ่มบัตรสำเร็จ</CardMakeSuccess>
+  <CardMakeError>เพิ่มบัตรล้มเหลว</CardMakeError>
+  <OutOfCreditLine>เครดิตไม่เพียงพอ</OutOfCreditLine>
+  <PasswordInconformity>รหัสผ่านไม่สอดคล้อง</PasswordInconformity>
+  <NeedCardValidTime>ต้องการบัตรวันหมดอายุ</NeedCardValidTime>
+  <NeedUserAccount>ต้องการบัญชีผู้ใช้</NeedUserAccount>
+  <NeedPasswordMaxLength>ความยาวรหัสผ่าน4หลัก</NeedPasswordMaxLength>
+  <PasswordIsNumber>รหัสผ่านต้องเป็นตัวเลข</PasswordIsNumber>
+  <UserNameEmpty>ชื่อผู้ใช้ไม่สามารถเว้นว่างไว้ได้</UserNameEmpty>
+  <UserIDEmpty>IDไม่สามารถเว้นว่างไว้ได้</UserIDEmpty>
+  <IdentificationEmpty>กรุณาเพิ่มหมายเลขประจำตัว</IdentificationEmpty>
+  <PhoneError>รูปแบบเบอร์โทรไม่ถูกต้อง</PhoneError>
+  <CarNoLength>หมายเลขรถความยาว7หลัก</CarNoLength>
+  <CarFormatError>รูปแบบหมายเลขรถไม่ถูกต้อง</CarFormatError>
+  <PostCodeFormatError>รูปแบบรหัสไปรษณีย์ไม่ถูกต้อง</PostCodeFormatError>
+  <EamilFormatError>รูปแบบemailไม่ถูกต้อง</EamilFormatError>
+  <LimitVolumeError>ลิมิตปริมาณไม่ถูกต้อง</LimitVolumeError>
+  <NumberOrDecimal>ลิมิตเป็นตัวเลขหรือทศนิยม</NumberOrDecimal>
+  <OutOfStationDigits>ไม่มีตัวเลขเหลือเพียงพอ</OutOfStationDigits>
+  <PLSCheckDigits>กรุณาตรวจสอบตัวเลข</PLSCheckDigits>
+  <LimitVolumeExceeded>เกินขีดจำกัด ลิมิตปริมาณลิตรที่ตั้งไว้</LimitVolumeExceeded>
+  <LimitDayTimeError>ลิมิตจำนวนครั้งต่อวัน รูปแบบไม่ถูกต้อง</LimitDayTimeError>
+  <LimitAmountDailyError>ลิมิตจำนวนเงินต่อวัน รูปแบบไม่ถูกต้อง</LimitAmountDailyError>
+  <LimitAmountDailyExceeded>ลิมิตจำนวนเงินต่อวัน เกินขีดจำกัด</LimitAmountDailyExceeded>
+  <LimitVolumeMonthError>ลิมิตปริมาณลิตรต่อเดือน รูปแบบไม่ถูกต้อง</LimitVolumeMonthError>
+  <LimitVolumeMonthExceeded>ลิมิตปริมาณลิตรต่อเดือน เกินขีดจำกัด</LimitVolumeMonthExceeded>
+  <LimitAmountMonthError>ลิมิตจำนวนเงินต่อเดือน รูปแบบไม่ถูกต้อง</LimitAmountMonthError>
+  <LimitAmountMonthExceeded>ลิมิตจำนวนเงินต่อเดือน เกินขีดจำกัด</LimitAmountMonthExceeded>
+  <FuelConsumptionError>การใช้เชื่อเพลิง รูปแบบไม่ถูกต้อง</FuelConsumptionError>
+  <MileageNumber>เลขไมล์ รูปแบบไม่ถูกต้อง</MileageNumber>
+  <SelectEmployee>กรุณาเลือกพนักงาน</SelectEmployee>
+  <GroupNameEmpty>ชื่อกลุ่ม ว่างเปล่า</GroupNameEmpty>
+  <GroupIDEmpty>เลขIDกลุ่ม ว่างเปล่า</GroupIDEmpty>
+  <BusinessNoEmpty>Business Number ว่างเปล่า</BusinessNoEmpty>
+  <CreditLineEmpty>จำนวนเครดิต ว่างเปล่า</CreditLineEmpty>
+  <BillCreateDayEmpty>วันที่สร้างบิล ว่างเปล่า</BillCreateDayEmpty>
+  <DayRange>ค่าต้องอยู่ระหว่าง 1 ถึง 30</DayRange>
+  <RepayDayEmpty>วันชำระคืน ว่างเปล่า</RepayDayEmpty>
+  <LimitLevelError>ลิมิตLevel รูปแบบไม่ถูกต้อง</LimitLevelError>
+  <Person>บุคคล</Person>
+  <CardTypeError>ข้อผิดพลาดประเภทบัตร</CardTypeError>
+  <EmployeeCard>บัตรพนักงาน</EmployeeCard>
+  <UserCard>บัตรผู้ใช้งาน</UserCard>
+  <GroupCard>บัตรกลุ่ม</GroupCard>
+  <GroupCreditCard>บัตรเครดิตกลุ่ม</GroupCreditCard>
+  <CreditCard>บัตรเครดิต</CreditCard>
+  <AssistantCard>บัตรผู้ช่วย</AssistantCard>
+  <NonCard>ไม่มีบัตร</NonCard>
+  <UpdateSuccess>อัปเดตสำเร็จ</UpdateSuccess>
+  <UpdateFailed>อัปเดตล้มเหลว</UpdateFailed>
+  <CardNotSupport>การ์ดไม่รองรับ</CardNotSupport>
+  <InputValidationError>ข้อผิดพลาดในการตรวจสอบข้อมูลอินพุต</InputValidationError>
+  <DepositSuccess>การฝากเงินสำเร็จ</DepositSuccess>
+  <DepositFailed>การฝากเงินล้มเหลว</DepositFailed>
+  <Deposit>การฝากเงิน</Deposit>
+  <DepositAmount>จำนวนเงินฝาก</DepositAmount>
+  <DataBaseError>ข้อผิดพลาดฐานข้อมูล</DataBaseError>
+  <Deduction>การหักเงิน</Deduction>
+  <OldCardBalance>ยอดคงเหลือเก่า</OldCardBalance>
+  <DeductionAmount>ยอดหักเงิน</DeductionAmount>
+  <AfterDeductionBalance>ยอดคงเหลือหลังหักเงิน</AfterDeductionBalance>
+  <CarNo>หมายเลขรถ</CarNo>
+  <EndBalance>ยอดคงเหลือสุดท้าย</EndBalance>
+  <ServiceFee>ค่าธรรมเนียมบริการ</ServiceFee>
+  <PayMent>การชำระเงิน</PayMent>
+  <CheckNo>ตรวจสอบหมายเลข</CheckNo>
+  <Operator>ผู้ดำเนินการ</Operator>
+  <PrintTime>เวลาที่พิมพ์</PrintTime>
+  <PreferentialStartEnd>การเริ่มต้นและการสิ้นสุดตามสิทธิพิเศษ</PreferentialStartEnd>
+  <Memo>บันทึกข้อความ</Memo>
+  <Sign>เครื่องหมาย</Sign>
+  <Score>คะแนน</Score>
+  <DepositAmountError>ข้อผิดพลาดจำนวนเงินฝาก</DepositAmountError>
+  <GiftAmountError>ข้อผิดพลาดจำนวนเงินของขวัญ</GiftAmountError>
+  <ScoreError>ข้อผิดพลาดคะแนน</ScoreError>
+  <FuelEmployee>พนักงานน้ำมัน</FuelEmployee>
+  <Administrators>ผู้ดูแลระบบ</Administrators>
+  <Cashier>แคชเชียร์</Cashier>
+  <Accounting>การบัญชี</Accounting>
+  <SecretLength>รหัสผ่านต้องมีความยาว16หลัก</SecretLength>
+  <PassowrdError>ข้อผิดพลาดรหัสผ่าน</PassowrdError>
+  <EndOutofStart>เวลาสิ้นสุดไม่สามารถอยู่ก่อนเวลาเริ่มต้น</EndOutofStart>
+  <Transaction>ธุรกรรม</Transaction>
+  <PlsQuery>กรุณาค้นหาก่อน</PlsQuery>
+  <PlsQueryTerms>กรุณาเลือกเงื่อนไขการค้นหา</PlsQueryTerms>
+  <SettlementComplete>การส่งต่อกะทำงานสำเร็จ</SettlementComplete>
+  <DailyReport>รายงานสรุปวัน</DailyReport>
+  <MonthReport>รายงานประจำเดือน</MonthReport>
+  <SetlementTimeForDaily>เวลาสิ้นสุดรอบวัน</SetlementTimeForDaily>
+  <DailyReportData>ข้อมูลรายงานสรุปวัน</DailyReportData>
+  <CardDailyReport>รายงานสรุปวันตามบัตร</CardDailyReport>
+  <NozDailyReport>รายงานสรุปวันตามหัวจ่าย</NozDailyReport>
+  <EnergyDailyReport>รายงานสรุปวันตามชนิดน้ำมัน</EnergyDailyReport>
+  <SetlementTimeForMonth>เวลาสิ้นสุดรอบเดือน</SetlementTimeForMonth>
+  <MonthReportData>ข้อมูลรายงานประจำเดือน</MonthReportData>
+  <CardMonthReport>รายงานประจำเดือนตามบัตร</CardMonthReport>
+  <NozMonthReport>รายงานประจำเดือนตามหัวจ่าย</NozMonthReport>
+  <EnergyMonthReport>รายงานประจำเดือนตามชนิดน้ำมัน</EnergyMonthReport>
+  <DiscountError>ข้อผิดพลาดส่วนลด</DiscountError>
+  <CommunicationFailed>การเชื่อมต่อล้มเหลว</CommunicationFailed>
+  <ExportSuccess>ส่งออกข้อมูลสำเร็จ</ExportSuccess>
+  <ExportFailed>ส่งออกข้อมูลล้มเหลว</ExportFailed>
+  <NotChanged>ไม่สามารถเปลี่ยนแปลงได้</NotChanged>
+  <EnergyExist>น้ำมันมีอยู่</EnergyExist>
+  <PriceFormatError>ข้อผิดพลาดรูปแบบราคา</PriceFormatError>
+  <PLSCreateStation>กรุณาเพิ่มสถานี</PLSCreateStation>
+  <PlsWriteCode>กรุณาเพิ่มโค้ด</PlsWriteCode>
+  <StartCodeError>รหัสเริ่มต้นผิดพลาด</StartCodeError>
+  <EndCodeError>รหัสสิ้นสุดผิดพลาด</EndCodeError>
+  <Confirm>ยืนยัน</Confirm>
+  <MacError>พบข้อความผิดพลาด โปรดตรวจสอบ</MacError>
+  <ActiveFailed>เปิดใช้งานล้มเหลว</ActiveFailed>
+  <ScoreIsZero>คะแนนเป็นศูนย์</ScoreIsZero>
+  <ScoreOutOfBalance>คะแนนมากเกินไป</ScoreOutOfBalance>
+  <PlsSetSerial>กรุณาตั้งค่าซีเรียลก่อน</PlsSetSerial>
+  <PlsSetTank>กรุณาตั้งค่าถังก่อน</PlsSetTank>
+  <CreateStationBySelf>เพิ่มสถานีด้วยตนเอง</CreateStationBySelf>
+  <PlsWriteStationCode>กรุณาเพิ่มรหัสสถานี</PlsWriteStationCode>
+  <AuthorityProblem>ปัญหาการอนุญาต</AuthorityProblem>
+  <Unknow>ไม่รู้จัก</Unknow>
+  <PortNotExsit>ไม่พบพอร์ต</PortNotExsit>
+  <PlSCreateStation>กรุณาเพิ่มสถานีก่อน</PlSCreateStation>
+  <PlSCreateOilType>กรุณาเพิ่มชนิดน้ำมันก่อน</PlSCreateOilType>
+  <PlsCreateTank>กรุณาเพิ่มถังน้ำมันก่อน</PlsCreateTank>
+  <PlsCreatePort>กรุณาเพิ่มพอร์ตก่อน</PlsCreatePort>
+  <PlsCreateNoz>กรุณาเพิ่มหัวจ่ายก่อน</PlsCreateNoz>
+  <PlsCreateEmp>กรุณาเพิ่มพนักงานก่อน</PlsCreateEmp>
+  <SystemNotActive>จำเป็นต้องเปิดใช้งานระบบ</SystemNotActive>
+  <SystemActiveError>เปิดใช้งานระบบล้มเหลว</SystemActiveError>
+  <OpenAccount>เปิดบัญชี</OpenAccount>
+  <CardLost>บัตรสูญหาย</CardLost>
+  <PasswordLost>รหัสผ่านสูญหาย</PasswordLost>
+  <DealGrey>Deal Grey card</DealGrey>
+  <CardUpdate>อัปเดตบัตร</CardUpdate>
+  <CardChangeOpen>เพิ่มบัตรใหม่ทดแทนบัตรเดิม</CardChangeOpen>
+  <CardChangeDeposit>เพิ่มบัตรใหม่โอนย้ายยอดคงเหลือ</CardChangeDeposit>
+  <ClearAccount>เคลียร์บัญชี</ClearAccount>
+  <Transfer>โอนย้าย</Transfer>
+  <Consume>การใช้งาน</Consume>
+  <Nonoilconsumption>สินค้าที่ไม่ใช่น้ำมัน</Nonoilconsumption>
+  <Repay>ชำระเงินคืน</Repay>
+  <ClearAccountTransfer>เคลียร์การโอนบัญชี</ClearAccountTransfer>
+  <MasterTransfer>การโอนมาสเตอร์การ์ด</MasterTransfer>
+  <EscapeCard>Escape Card</EscapeCard>
+  <WrongCard>การ์ดผิด</WrongCard>
+  <Patching>Patching</Patching>
+  <Replenish>เติมเต็ม</Replenish>
+  <OnDuty>เริ่มกะทำงาน</OnDuty>
+  <OffDuty>สิ้นสุดกะทำงาน</OffDuty>
+  <PriceChange>เปลี่ยนราคา</PriceChange>
+  <CardRefuse>บัตรถูกปฏิเสธ</CardRefuse>
+  <Other>อื่นๆ</Other>
+  <Cash>เงินสด</Cash>
+  <ICCard>IC Card</ICCard>
+  <BankCard>Bank Card</BankCard>
+  <CurrentShift>กะทำงานปัจจุบัน</CurrentShift>
+  <LoginEmployee>พนักงานเข้าสู่ระบบ</LoginEmployee>
+  <CardStatueError>ข้อผิดพลาดสถานะบัตร</CardStatueError>
+  <TotalTankHeightStr>ความสูงถัง</TotalTankHeightStr>
+  <TotalTankVolumeStr>ปริมาตรถัง</TotalTankVolumeStr>
+  <CurrentHeightStr>ความสูงน้ำมัน</CurrentHeightStr>
+  <CurrentVolumeStr>ปริมาตรน้ำมัน</CurrentVolumeStr>
+  <CurrentWaterStr>ปริมาตรน้ำ</CurrentWaterStr>
+  <CurrentTempStr>อุณหภูมิ</CurrentTempStr>
+  <NoEmployee>ไม่พบพนักงาน</NoEmployee>
+  <Tips>Tips</Tips>
+  <OperationExecution>ต้องการดำเนินการต่อ？</OperationExecution>
+  <IICACBD>ข้อมูลถูกกำหนดค่าไว้แล้วและไม่สามารถลบได้</IICACBD>
+  <DataSend>ส่งข้อมูล</DataSend>
+  <DataReveive>รับข้อมูล</DataReveive>
+  <REISSUED>ส่งอีกครั้ง</REISSUED>
+  <Stop>หยุด</Stop>
+  <NozID>หมายเลขหัวจ่าย</NozID>
+  <TType>TType</TType>
+  <TruePay>True Pay</TruePay>
+  <OilDataType>ประเภทธุรกรรม</OilDataType>
+  <Port>พอร์ต</Port>
+  <Employee>พนักงาน</Employee>
+  <TotalVolume>ปริมาณรวม</TotalVolume>
+  <Mileage>เลขไมล์</Mileage>
+  <Discount>ส่วนลด</Discount>
+  <Coupon>คูปอง</Coupon>
+  <Parvalue>Par Value</Parvalue>
+  <Energy>น้ำมัน</Energy>
+  <StartPump>อนุมัติปั๊ม</StartPump>
+  <EndPump>หยุดปั๊ม</EndPump>
+  <Spread>การกระจาย</Spread>
+  <Table>ตาราง</Table>
+  <ID>ID</ID>
+  <EnergySaler>ผู้ขายน้ำมัน</EnergySaler>
+  <LoginFailed>ชื่อผู้ใช้งานหรือรหัสผ่านผิด</LoginFailed>
+  <CardConsume>การใช้งานบัตร</CardConsume>
+  <AfterConsume>ยอดคงเหลือหลังการใช้งาน</AfterConsume>
+  <LostTankOrPrice>ไม่พบข้อมูลถังหรือราคาน้ำมัน โปรดตรวจสอบ</LostTankOrPrice>
+  <LostTank>ไม่พบข้อมูลถัง</LostTank>
+  <AmountFormatError>จำนวนเงิน รูปแบบไม่ถูกต้อง</AmountFormatError>
+  <TrasnlateObjectEmpty>ไม่พบแหล่งโอนข้อมูล</TrasnlateObjectEmpty>
+  <UnRepay>ไม่ชำระเงินคืน</UnRepay>
+  <PartialRepayment>การแบ่งชำระ</PartialRepayment>
+  <PaidOff>ชำระเงินแล้ว</PaidOff>
+  <QueryIsEmpty>เกณฑ์การค้นหา ว่างเปล่า</QueryIsEmpty>
+  <ProgramRuned>โปรแกรมกำลังทำงานอยู่</ProgramRuned>
+  <InformationLost>ข้อมูลสูญหาย</InformationLost>
+  <InformationError>ข้อมูลผิดพลาด</InformationError>
+  <PayMentError>ข้อผิดพลาดการชำระเงิน</PayMentError>
+  <OutOfPayMent>การจ่ายเงินไม่เพียงพอ</OutOfPayMent>
+  <PageError>พบข้อผิดพลาดในหน้านี้</PageError>
+  <NotAllowUseStock>ระบบไม่อนุญาตให้ใช้สต๊อก</NotAllowUseStock>
+  <TankMissing>ไม่พบถังน้ำมัน</TankMissing>
+  <OilOutput>น้ำมันที่จ่ายออก</OilOutput>
+  <OilStock>น้ำมันคงคลัง</OilStock>
+  <StationName>ชื่อสถานี</StationName>
+  <AmountTotal>จำนวนเงินรวม</AmountTotal>
+  <VolumeTotal>ปริมาณรวม</VolumeTotal>
+  <CreateTime>เวลาที่สร้าง</CreateTime>
+  <SumAmount>สรุปจำนวนเงิน</SumAmount>
+  <SumVolume>สรุปปริมาณ</SumVolume>
+
+  <Quality>Quality</Quality>
+  <TotalQuality>Total Quality</TotalQuality>
+  <KKG>ปริมาณ</KKG>
+  <KG>ขาย</KG>
+  <TotalKG>รวมขาย</TotalKG>
+  <StartKG>Start KG</StartKG>
+  <EndKG>End KG</EndKG>
+
+  <None>None</None>
+  <Even>Even</Even>
+  <Odd>Odd</Odd>
+  
+  <BlueSky>BlueSky</BlueSky>
+  <Tatsuno>Tatsuno</Tatsuno>
+  <Japan>Japan</Japan>
+  <Dart>Dart</Dart>
+  <ATG>ATG</ATG>
+
+  <SerialPortError>พอร์ตสื่อสารยังไม่ได้รับการกำหนดค่า</SerialPortError>
+  <StationNameEmpty>กรุณาเพิ่มชื่อสถานี</StationNameEmpty>
+  <LongitudeError>ลองจิจูด รูปแบบไม่ถูกต้อง</LongitudeError>
+  <LatitudeError>ละติจูด รูปแบบไม่ถูกต้อง</LatitudeError>
+  <ApplicationNumberEmpty>หมายเลขใบสมัครไม่สามารถเว้นว่างไว้ได้</ApplicationNumberEmpty>
+  <GetApplicationNumber>หมายเลขใบสมัครจะต้องตรงกับหมายเลขบนแพลตฟอร์ม รับหมายเลขใบสมัครจากแพลตฟอร์ม</GetApplicationNumber>
+  <PortExists>พอร์ตมีข้อมูลอยู่แล้ว</PortExists>
+  <DevicePortError>พอร์ตอุปกรณ์ไม่ได้รับการกำหนดค่า</DevicePortError>
+  <NormalSystem>Station</NormalSystem>
+  <DeviceNotExist>ไม่พบอุปกรณ์</DeviceNotExist>
+  <NozFormatError>NozID รูปแบบไม่ถูกต้อง</NozFormatError>
+  <AddressFormatError>Address รูปแบบไม่ถูกต้อง</AddressFormatError>
+  <NozRepeat>NozID พบข้อมูลซ้ำ</NozRepeat>
+  <AddressRepeat>Address พบข้อมูลซ้ำ</AddressRepeat>
+  <Automaticallyauthorize>Auto</Automaticallyauthorize>
+  <Manualauthorization>Manual</Manualauthorization>
+	<BoxAuth>กล่องควบคุม</BoxAuth>
+  <Authorizationmodel>การอนุญาต</Authorizationmodel>
+  <PreSet>ตั้งจำนวน</PreSet>
+  <MachineStop>หยุด</MachineStop>
+  <MachineUpdate>อัปเดต</MachineUpdate>
+  <DeleteConfirm>ต้องการลบข้อมูลหรือไม่?</DeleteConfirm>
+  <hints>คำแนะนำ</hints>
+  <AssociatedError>น้ำมันปัจจุบันพบความสัมพันธ์ทางราคา โปรดทำการยกเลิกหรือลบ</AssociatedError>
+  <GradeNone>ไม่พบชนิดน้ำมัน</GradeNone>
+  <PriceExist>ไม่พบข้อมูลราคาน้ำมัน</PriceExist>
+  <GradeEmpty>กรุณาเพิ่มข้อมูลชนิดน้ำมัน</GradeEmpty>
+  <PriceReapt>ราคาน้ำมันมีข้อมูลอยู่แล้ว</PriceReapt>
+  <PriceDone>ราคาน้ำมันชนิดนี้ได้รับการกำหนดไว้แล้ว</PriceDone>
+  <EmpEmpty>ไม่พบข้อมูลพนักงาน</EmpEmpty>
+  <EmpRepeat>ข้อมูลพนักงานซ้ำ</EmpRepeat>
+
+  <DailyClosed>ปิดรอบวันทำงานสำเร็จแล้ว</DailyClosed>
+  <NozSettleError>ข้อผิดพลาดหัวจ่าย</NozSettleError>
+  <EnergySettleError>ข้อผิดพลาดชนิดน้ำมัน</EnergySettleError>
+  <StockSettleError>ข้อผิดพลาดถังน้ำมัน</StockSettleError>
+  <TotalSettleError>ข้อผิดพลาด ข้อมูลสรุป</TotalSettleError>
+  <SettleComplete>สำเร็จ ปิดกะทำงาน</SettleComplete>
+  <SettleNotComplete>ไม่สามารถส่งออกรายงาน หากยังไม่ปิดกะ</SettleNotComplete>
+  <StationDailyReport>รายงานประจำวันสถานี</StationDailyReport>
+  <StationMonthReport>รายงานประจำเดือนสถานี</StationMonthReport>
+  <StationShiftReport>รายงานปิดกะสถานี</StationShiftReport>
+
+  <ShiftEmpty>กรุณาเพิ่มข้อมูลกะทำงาน</ShiftEmpty>
+  <ShiftError>กะทำงานไม่ถูกต้อง</ShiftError>
+  
+  <TankHeightFormatError>ความสูงถัง รูปแบบไม่ถูกต้อง</TankHeightFormatError>
+  <TankVolumeFormatError>ปริมาณความจุถัง รูปแบบไม่ถูกต้อง</TankVolumeFormatError>
+  <TankHeightLevelAlarmFormatError>แจ้งเตือนระดับน้ำมันสูง รูปแบบไม่ถูกต้อง</TankHeightLevelAlarmFormatError>
+  <TankLowLevelAlarmFormatError>แจ้งเตือนระดับน้ำมันต่ำ รูปแบบไม่ถูกต้อง</TankLowLevelAlarmFormatError>
+  <WaterHeightFormatError>ระดับน้ำสูง รูปแบบไม่ถูกต้อง</WaterHeightFormatError>
+  <WaterLowFormatError>ระดับน้ำต่ำ รูปแบบไม่ถูกต้อง</WaterLowFormatError>
+  <HighTempFormatError>อุณหภูมิสูง รูปแบบไม่ถูกต้อง</HighTempFormatError>
+  <LowTempFormatError>อุณหภูมิต่ำ รูปแบบไม่ถูกต้อง</LowTempFormatError>
+  <TankNoFormatError>หมายเลขถัง รูปแบบไม่ถูกต้อง</TankNoFormatError>
+  <TankNoEmpty>กรุณาเพิ่มหมายเลขถัง</TankNoEmpty>
+  <TankNoRepeat>หมายเลขถังข้อมูลซ้ำ</TankNoRepeat>
+  <TankNameRepeat>ชื่อถังข้อมูลซ้ำ</TankNameRepeat>
+  <TankEmpty>กรุณาเพิ่มถังน้ำมัน</TankEmpty>
+
+  <ReprotTime>เวลา</ReprotTime>
+  <SumReportVolume>ปริมาณรวม</SumReportVolume>
+  <TotalCount>นับรายการทั้งหมด</TotalCount>
+  <SumGrade>รวมข้อมูลน้ำมัน</SumGrade>
+  <Count>นับจำนวน</Count>
+  <SumStock>รวมข้อมูลถังน้ำมัน</SumStock>
+  <Tank>ถังน้ำมัน</Tank>
+  <Stock>ปริมาณคงคลัง</Stock>
+  <Sales>ปริมาณขาย</Sales>
+  <Error>ค่าผิดพลาด</Error>
+  <SumNoz>รวมข้อมูลหัวจ่าย</SumNoz>
+
+  <AmountPreset>ตั้งจำนวนเงิน</AmountPreset>
+  <VolumePreset>ตั้งจำนวนลิตร</VolumePreset>
+  <TotalSumVolume>ปริมาณลิตรรวม</TotalSumVolume>
+
+  <PreSetValueError>ตั้งจำนวนเงิน พบข้อผิดพลาด</PreSetValueError>
+  <PreSetPriceError>ตั้งจำนวนลิตร พบข้อผิดพลาด</PreSetPriceError>
+  <NozError>หัวจ่าย พบข้อผิดพลาด</NozError>
+  <CarPay>รถจ่ายเงิน</CarPay>
+
+  <VersionUpdate>โปรแกรมปัจจุบันไม่ใช่เวอร์ชันล่าสุด ต้องการอัปเดตหรือไม่?</VersionUpdate>
+  <ProgramFileMissing>ไม่พบไฟล์โปรแกรม</ProgramFileMissing>
+  <Updating>กำลังอัปเดตโปรแกรม กรุณารอสักครู่</Updating>
+
+  <Repair>ซ่อมแซม</Repair>
+  <RepairCard>ซ่อมแซมบัตร</RepairCard>
+
+  <CommunicationBroken>กล่องควบคุม ขาดการเชื่อมต่อ</CommunicationBroken>
+  <CommunicationNormal>กล่องควบคุม การเชื่อมต่อปกติ</CommunicationNormal>
+  <OpenCard>เปิดบัตร</OpenCard>
+
+  <CardType>ประเภทบัตร</CardType>
+
+  <IssueDatetime>วันที่ออกให้</IssueDatetime>
+  <ValidDatetime>วันที่หมดอายุ</ValidDatetime>
+  <Issuer>ผู้ออกให้</Issuer>
+
+  <ICSystem>ซอฟต์แวร์สถานี</ICSystem>
+  <DepositTime>เวลาฝากเงิน</DepositTime>
+  <MasterCard>มาสเตอร์การ์ด</MasterCard>
+
+  <KangYuProbe>Kang Yu Probe</KangYuProbe>
+  <MAGNEHELIC>MAGNEHELIC</MAGNEHELIC>
+
+  <PortNoNeedDevice>ไม่จำเป็นต้องเพิ่มอุปกรณ์ลงในพอร์ตปัจจุบัน</PortNoNeedDevice>
+  <DataRollbackTran>การย้อนกลับข้อมูลเสร็จสมบูรณ์</DataRollbackTran>
+
+  <PasswordError>รหัสผ่านผิดพลาด</PasswordError>
+
+  <Address>ที่อยู่</Address>
+  <BindNoz>สวัสดี</BindNoz>
+  <Tag>ป้ายกำกับ</Tag>
+  <Free>ฟรี</Free>
+  <Work>กำลังทำงาน</Work>
+
+  <IsUsing>ไม่สามารถลบได้ เนื่องจากมีผู้อื่นใช้งานอยู่</IsUsing>
+
+  <BoxLost>ข้อมูลพอร์ตสูญหาย</BoxLost>
+  <RFIDIDError>RFID ID ผิดพลาด</RFIDIDError>
+  <RFIDAddressError>RFID Address ผิดพลาด</RFIDAddressError>
+  <RFIDIDRepeat>RFID ID ข้อมูลซ้ำ</RFIDIDRepeat>
+  <RFIDAddressRepeat>RFID Address ข้อมูลซ้ำ</RFIDAddressRepeat>
+  <NoGrey>ไม่พบ Grey Card</NoGrey>
+  <NotGreyCard>ไม่ใช่ Grey Card</NotGreyCard>
+  <DealGreyFore>ไม่พบข้อมูลGray records ต้องการบังคับGreyลบออกหรือไม่?</DealGreyFore>
+  <AmountError>ข้อผิดพลาดในการหักลดจำนวนเงินเพิ่มเติม</AmountError>
+
+  <SlipNo>หมายเลขสลิป</SlipNo>
+  <Productgrade>ชนิดของผลิตภัณฑ์</Productgrade>
+
+  <CashAmount>Cash จำนวนเงิน</CashAmount>
+  <CashVolume>Cash ปริมาณ</CashVolume>
+  <CardAmount>Card จำนวนเงิน</CardAmount>
+  <CardVolume>Card ปริมาณ</CardVolume>
+
+	<PriceRadioError>ตำแหน่งทศนิยมของราคาน้ำมันไม่ถูกต้อง</PriceRadioError>
+	<ProductTotal>ยอดรวมย่อยของสินค้าแต่ละชนิด</ProductTotal>
+	<TankRemain>ปริมาณน้ำมันที่เหลือในแต่ละถัง:</TankRemain>
+	<RemainVolume>ปริมาณที่ว่างคงเหลือ:</RemainVolume>
+
+	<TotalAmount>จำนวนเงินรวม</TotalAmount>
+	<UnitPrice>ราคาน้ำมัน</UnitPrice>
+
+	<SettleTime>เวลาปิดรอบกะ</SettleTime>
+	<NozMessage>ข้อมูลหัวจ่าย</NozMessage>
+	<StockMessage>สต๊อกปริมาณน้ำมันในแต่ละถัง</StockMessage>
+	<OverImprotVolumeError>ข้อผิดพลาดเกี่ยวกับรูปแบบปริมาณการนำเข้าเกิน</OverImprotVolumeError>
+	<TransactionLost>ธุรกรรมสูญหาย</TransactionLost>
+
+	<Printer>เครื่องพิมพ์</Printer>
+
+	<ParamError>ข้อผิดพลาดพารามิเตอร์</ParamError>
+
+	<Eaglestar>Eaglestar</Eaglestar>
+	<HongYang>HongYang</HongYang>
+
+	<CardStatueNow>สถานะบัตร:</CardStatueNow>
+	<CantLost>Can't do Lost</CantLost>
+	<CantGetCard>ไม่สามารถรับข้อมูลบัตร</CantGetCard>
+
+	<CableHeightError>Cable Height Error</CableHeightError>
+	<CableVolumeError>Cable Volume Error</CableVolumeError>
+	<CableExists>ค่าเริ่มต้นมีอยู่แล้ว</CableExists>
+
+	<CardMiss>ไม่พบบัตร</CardMiss>
+	<CardAccountMiss>ไม่พบบัญชีบัตร</CardAccountMiss>
+	<PLSSelectEmp>กรุณาเลือกพนักงาน</PLSSelectEmp>
+	<Replaced>เปลี่ยนบัตรทดแทน</Replaced>
+
+	<CardCantdoit>การ์ดไม่สามารถรองรับการทำงานนี้ได้</CardCantdoit>
+	<NeedOnDuty>ยังไม่ได้เริ่มกะทำงาน</NeedOnDuty>
+
+	<DigitalMeterReading>การอ่านมิเตอร์แบบดิจิตอล</DigitalMeterReading>
+	<Opening>กำลังเปิด</Opening>
+	<Closing>กำลังปิด</Closing>
+	<Liters>จำนวนลิตร</Liters>
+	<Calibration>การสอบเทียบ</Calibration>
+	<LitersSold>จำนวนลิตรขาย</LitersSold>
+	<TransCount>นับจำนวนธุรกรรม</TransCount>
+	<PriceLiter>ราคาต่อลิตร</PriceLiter>
+	<Sale>ขาย</Sale>
+	<Value>มูลค่า</Value>
+
+	<BoxNameEmpty>กรุณาเพิ่มชื่อกล่องควบคุม</BoxNameEmpty>
+	<BoxCodeEmpty>กรุณาเพิ่มรหัสกล่องควบคุม</BoxCodeEmpty>
+	<BoxNameCodeRepeat>กล่องควบคุม ชื่อหรือรหัส ข้อมูลซ้ำ</BoxNameCodeRepeat>
+	<BoxPortUsed>พอร์ตถูกใช้งานแล้ว</BoxPortUsed>
+	<BoxUsed>กล่องควบคุมถูกใช้งานแล้ว</BoxUsed>
+	<Wired>สายสัญญาณ</Wired>
+	<Wireless>Wireless</Wireless>
+
+	<SaleRecord>ประวัติการขาย</SaleRecord>
+	<Printshift>ใบปิดกะ</Printshift>
+	<Printdaysummary>ใบสรุปรายวัน</Printdaysummary>
+	<PrintMonthsummary>พิมพ์สรุปเดือน</PrintMonthsummary>
+	<Taxinvoice>ใบกำกับภาษี</Taxinvoice>
+	<Cancelinvoice>ยกเลิกบิลขาย</Cancelinvoice>
+	<Informalsale>ยอดขายนอกระบบ</Informalsale>
+	<Testnozzle>ทดสอบหัวจ่าย</Testnozzle>
+	<Returntheproduct>คืนสินค้า</Returntheproduct>
+	<Tools>เครื่องมือ</Tools>
+	<Addincash>นำเงินเข้า</Addincash>
+	<Takeoutcash>นำเงินออก</Takeoutcash>
+	<Closeshift>ปิดกะ</Closeshift>
+	<Closeday>ปิดวัน</Closeday>
+	<CloseMonth>ปิดเดือน</CloseMonth>
+	<Changeoilprice>ตั้งราคาสินค้า</Changeoilprice>
+	<Changeuser>เปลี่ยนผู้ใช้</Changeuser>
+	<Exit>กลับหน้าหลัก</Exit>
+
+	<PLSSelectBox>กรุณาเลือกกล่องควบคุม</PLSSelectBox>
+	<BoxDeviceLost>กล่องควบคุมสูญหาย</BoxDeviceLost>
+
+	<NeedEmployeeCertification>ต้องมีใบรับรองพนักงาน</NeedEmployeeCertification>
+
+	<DeleteBtnShow>ลบ</DeleteBtnShow>
+
+	<CarNumber>หมายเลขรถ</CarNumber>
+	<CardGroup>กลุ่ม</CardGroup>
+
+	<NormalGroup>กลุ่มปกติ</NormalGroup>
+	<SharedGroup>กลุ่มแชร์</SharedGroup>
+
+	<BoxSelectPump>กรุณาเลือกปั๊ม</BoxSelectPump>
+
+	<A_Up_Point>จุดกลับตัวบนกระบอกสูบ A(mm)</A_Up_Point>
+	<A_Down_Point>จุดกลับตัวของกระบอกสูบด้านล่าง(mm)</A_Down_Point>
+	<A_Current_Piston>ค่ากระแสไฟฟ้าลูกสูบ(mm)</A_Current_Piston>
+	<InletPressure>แรงดันขาเข้า(MPa)</InletPressure>
+	<MediumPressure>แรงดันปานกลาง(MPa)</MediumPressure>
+	<ProtectivePressure>แรงดันป้องกัน(MPa)</ProtectivePressure>
+	<WaterTemperature>อุณหภูมิของน้ำ(℃)</WaterTemperature>
+	<GasConcentration>ความเข้มข้นของก๊าซในสกิดคอมเพรสเซอร์(%)</GasConcentration>
+	<GasConcentrationSecond>ความเข้มข้นของแก๊สในกลุ่มถังแก๊ส(%)</GasConcentrationSecond>
+	<GasConcentrationThird>ความเข้มข้นของก๊าซในตู้จ่ายก๊าซ(%)</GasConcentrationThird>
+	<A_Average_Time>เวลาเฉลี่ยในการถอยหลังของกระบอกสูบ A</A_Average_Time>
+	<B_Up_Point>จุดกลับตัวบนกระบอกสูบ B(mm)</B_Up_Point>
+	<B_Down_Point>จุดกลับตัวล่างของกระบอกสูบ B(mm)</B_Down_Point>
+	<B_Current_Piston>ค่ากระแสไฟฟ้าของลูกสูบ B(mm)</B_Current_Piston>
+	<Spare>สำรอง</Spare>
+	<HighPressure>แรงดันสูง(MPa)</HighPressure>
+	<InstrumentAirPressure>เครื่องวัดความดันอากาศ(MPa)</InstrumentAirPressure>
+	<HydraulicOilLevel>ระดับน้ำมันไฮโดรลิก</HydraulicOilLevel>
+	<HydraulicOilTemperature>อุณหภูมิน้ำมันไฮโดรลิก(℃)</HydraulicOilTemperature>
+	<B_Average_Time>เวลาเฉลี่ยในการถอยหลังของกระบอกสูบ B</B_Average_Time>
+	<LowPressure>แรงดันต่ำ</LowPressure>
+
+	<Online>ออนไลน์</Online>
+	<Offline>ออฟไลน์</Offline>
+
+	<PLC100>เซ็นเซอร์อุณหภูมิน้ำมันไฮดรอลิกถูกตัดการเชื่อมต่อ</PLC100>
+	<PLC102>เซ็นเซอร์ความเข้มข้นของก๊าซติดไฟถูกตัดการเชื่อมต่อ</PLC102>
+	<PLC103>แรงดันปานกลางจะต่ำกว่าค่าไร้อากาศ</PLC103>
+	<PLC104>ปกป้องเซนเซอร์แรงดันจากสายขาด</PLC104>
+	<PLC105>เซ็นเซอร์แรงดันสูงถูกตัดการเชื่อมต่อ</PLC105>
+	<PLC106>เซ็นเซอร์แรงดันปานกลางถูกตัดการเชื่อมต่อ</PLC106>
+	<PLC107>เซ็นเซอร์วัดแรงดันอากาศเข้าถูกตัดการเชื่อมต่อ</PLC107>
+	<PLC109>ความเข้มข้นของก๊าซติดไฟเกิน 25</PLC109>
+	<PLC110>เครื่องวัดความกดอากาศต่ำ</PLC110>
+	<PLC111>อุณหภูมิของน้ำหมุนเวียนสูงกว่าค่าที่ตั้งไว้</PLC111>
+	<PLC112>อุณหภูมิของน้ำมันไฮดรอลิกสูงกว่าค่าที่ตั้งไว้</PLC112>
+	<PLC113>ปัญหาการขาดแคลนน้ำมันไฮดรอลิก</PLC113>
+	<PLC114>แรงดันป้องกันสูงกว่าค่าที่ตั้งไว้</PLC114>
+	<PLC115>แรงดันทางเข้าต่ำกว่าค่าไร้อากาศ</PLC115>
+	<PLC204>B ความผิดปกติของมอเตอร์</PLC204>
+	<PLC205>การตัดการเชื่อมต่อเซ็นเซอร์ตำแหน่ง B</PLC205>
+	<PLC206>ความผิดปกติของมอเตอร์</PLC206>
+	<PLC207>การตัดการเชื่อมต่อเซ็นเซอร์ตำแหน่ง</PLC207>
+	<PLC300>แรงดันทางเข้าต่ำกว่าค่าสัญญาณเตือนทางเข้า</PLC300>
+	<PLC301>อุณหภูมิของน้ำมันไฮดรอลิกสูงเกินกว่าค่าสัญญาณเตือน</PLC301>
+	<PLC303>วาล์วลมหมุนเวียนอัตโนมัติไม่ได้เปิดเต็มที่</PLC303>
+	<PLC305>วาล์วลมแรงดันปานกลางไม่ได้เปิดเต็มที่</PLC305>
+	<PLC308>เซ็นเซอร์วัดลมถูกตัดการเชื่อมต่อ</PLC308>
+	<PLC309>พัดลมระบายความร้อนเสียอันดับที่ 2</PLC309>
+	<PLC310>พัดลมระบายความร้อนเสียอันดับที่ 1</PLC310>
+
+	<Advanceexe>ให้ประหารก่อน</Advanceexe>
+
+	<TankChart>ระดับน้ำมันในถัง</TankChart>
+	<ShowVat>แสดง VAT</ShowVat>
+	<NoShowVat>ไม่แสดง VAT</NoShowVat>
+
+	<Food>อาหาร</Food>
+	<Lubricants>สารหล่อลื่น</Lubricants>
+	<EngineOil>น้ำมันเครื่องยนต์</EngineOil>
+	<Cleaner>ขาว</Cleaner>
+	<ProductNameRepeat>ชื่อรายการซ้ำ</ProductNameRepeat>
+	<ProductInexistence>ไม่มีสินค้า</ProductInexistence>
+	<ServerRefuse>ปฏิเสธเซิร์ฟเวอร์</ServerRefuse>
+	<QuantityOver>จำนวนเงินเกิน</QuantityOver>
+	<ScorePrice>ตั้งค่าหน่วยงาน</ScorePrice>
+	<BalanceNotEnough>ไม่สมดุล</BalanceNotEnough>
+
+	<SumType>ประเภทสถิติ</SumType>
+	<OutOfTime>หมดเวลาแล้ว</OutOfTime>
+	<PersonalBill>บิลส่วนตัว</PersonalBill>
+	<Paid>จ่ายไปแล้ว</Paid>
+	<Unpaid>ยังไม่จ่าย</Unpaid>
+	<Query>ค้นหา</Query>
+</th>

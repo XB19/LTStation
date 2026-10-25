@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <!--移动端版本兼容 -->
+    <script type="text/javascript">
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth / 640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            // andriod 2.3
+            if (version > 2.3) {
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+                // andriod 2.3以上
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+            // 其他系统
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if (RegExp("MicroMessenger").test(navigator.userAgent)) {
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!--<script src="js/IniPie.js"></script>-->
+
+</head>
+<body>
+
+    <div style="display:flex;flex-flow:wrap;" id="divContain">
+
+    </div>
+    <!--<button onclick="uu()">123</button>-->
+    <script>
+        var waveHeight = 0;
+        var waterHeight = 0;
+        var waveNum = 0;
+        var waterwave = 0;
+
+        function waves() {
+            if (waveHeight != Math.round(waveNum)) {
+                $(".wave").css("height", waveHeight + "%");
+                if (waveHeight < waveNum)
+                    waveHeight++;
+                else
+                    waveHeight--
+            }
+
+            if (waterHeight != Math.round(waterwave)) {
+                $(".wave2").css("height", waveHeight + "%");
+                if (waterHeight < waterwave)
+                    waterHeight++;
+                else
+                    waterHeight--;
+            }
+            setTimeout(function () { waves() }, 15);
+        }
+
+        $(function () {
+            //$("#denfenjs").html(waveNum + "%");
+            waves();
+
+/*            CreateTank("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");*/
+        })
+
+        //function uu() {
+        //    TankUpdate('1', '1', '123321', '5000.000', '10000.000', '922.5114', '0', '10', '25.5625', '18', '0', 'Tank Height', 'Tank Volume', 'Current Height', 'Current Volume', 'Current Water', 'Current Temp')
+        //}
+
+        function TankSet(GradeName, TotalHeight, TotalVolume) {
+            $("#GradeName").html(GradeName);
+            $("#TotalHeight").html("总罐高度:" + TotalHeight);
+            $("#TotalVolume").html("总罐容积:" + TotalVolume);
+            $("#wer").append("123");
+        }
+
+        function CreateTank(TankID, GradeName, TankHeight, TankVolume, TotalTankHeightStr, TotalTankVolumeStr, CurrentHeightStr, CurrentVolumeStr, CurrentWaterStr, CurrentTempStr, CurrentHeight, CurrentVolume, CurrentWaterHeight, CurrentTemp, Per, Wper) {
+            var html = '<div class="fensug" id="wer' + TankID + '">'
+                + '<div class="wavenum">'
+                + '<b id="denfenjs' + TankID + '" style="padding-left:35px;">0%</b>'
+                + '<tt id="GradeName' + TankID + '">' + GradeName + '</tt>'
+                + '</div>'
+                + '<div class="waven">'
+                + '<div class="wave" style="height:' + Per + '%;" id="TH' + TankID + '">&nbsp;</div>'
+                + '<div class="wave2" style="height:' + Wper + '%;" id="WH' + TankID + '" >&nbsp;</div>'
+                + '</div>'
+                + '<div class="rightTankMessage" id="message">'
+                + '<tt id="TotalHeight' + TankID + '">' + TotalTankHeightStr+':' + TankHeight + '</tt>'
+                + '<tt id="TotalVolume' + TankID + '">' + TotalTankVolumeStr + ':' + TankVolume + '</tt>'
+                + '<tt id="CurrentHeight' + TankID + '">' + CurrentHeightStr + ':' + CurrentHeight + '</tt>'
+                + '<tt id="CurrentVolume' + TankID + '">' + CurrentVolumeStr + ':' + CurrentVolume + '</tt>'
+                + '<tt id="CurrentWater' + TankID + '">' + CurrentWaterStr + ':' + CurrentWaterHeight + '</tt>'
+                + '<tt id="CurrentTemp' + TankID + '">' + CurrentTempStr + ':' + CurrentTemp + '</tt>'
+                + '<tt id="Error' + TankID + '" style="color: #F44336;display:none">123</tt>'
+                + '</div>'
+                + '</div >';
+            $("#divContain").append(html);
+        }
+
+        function TankUpdate(OldTankID, TankID, GradeName, TankHeight, TnakVolume, CurrentHeight, CurrentVolume, CurrentWaterHeight, CurrentTemp, Per, Wper, TotalTankHeightStr, TotalTankVolumeStr, CurrentHeightStr, CurrentVolumeStr, CurrentWaterStr, CurrentTempStr) {
+            if (GradeName != "-1")
+                $("#GradeName" + OldTankID + "").html(GradeName);
+            if (TankHeight != "-1")
+                $("#TotalHeight" + OldTankID + "").html("" + TotalTankHeightStr+":" + TankHeight);
+            if (TnakVolume != "-1")
+                $("#TotalVolume" + OldTankID + "").html("" + TotalTankVolumeStr+":" + TnakVolume);
+            if (CurrentHeight != "-1") {
+                $("#CurrentHeight" + OldTankID + "").html("" + CurrentHeightStr+":" + CurrentHeight);
+                $("#TH" + TankID + "").css("height", Per + "%");
+            }
+            if (CurrentVolume != "-1")
+                $("#CurrentVolume" + OldTankID + "").html("" + CurrentVolumeStr+":" + CurrentVolume);
+            if (CurrentWaterHeight != "-1") {
+                $("#CurrentWater" + OldTankID + "").html("" + CurrentWaterStr+":" + CurrentWaterHeight);
+                $("#WH" + OldTankID + "").css("height", Wper + "%");
+            }
+            if (CurrentTemp != "-1")
+                $("#CurrentTemp" + OldTankID + "").html("" + CurrentTempStr+":" + CurrentTemp);
+
+            if (Per != "-1")
+                $("#denfenjs" + OldTankID + "").html(Per + "%");
+
+            if (TankID != "-1") {
+
+            }
+        }
+
+        function TankRemove(ID) {
+            $("#wer" + ID + "").remove();
+        }
+
+        function ClearLoad() {
+            $("#divContain").html("");
+        }
+
+    </script>
+
+</body>
+</html>

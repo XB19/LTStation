@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * les stations, codes App, commandes, points virtuels, points des cartes et fiche station.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealCoreController extends ServerDealBase {
 
     private final boolean secretSame;

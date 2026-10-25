@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="../../tank/js/jquery-3.3.1.min.js"></script>
+    <title></title>
+
+    <style>
+        .PLC_Right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: linear-gradient(rgb(245, 245, 245), rgb(224, 224, 224));
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+            transition: 0.3s;
+        }
+
+        .PLC_Right_Down {
+            font-weight: bold;
+            font-size: 15px;
+            padding-right: 10px;
+            min-width: 60px;
+            text-align: right;
+            color: rgb(0, 204, 102);
+        }
+
+        .PLC_Span {
+            font-size: 14px;
+            color: rgb(51, 51, 51);
+            min-width: 135px;
+        }
+
+        /* 页面容器 */
+        .page-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* 错误提示主容器 */
+        .error-card {
+            width: 100%;
+            max-width: 32rem; /* 512px */
+            background-color: #fff;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+            /* 悬停效果 */
+            .error-card:hover {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+            }
+
+        /* 错误内容容器 */
+        .error-content {
+            border-left: 4px solid #ef4444; /* border-red-500 */
+            background-color: #fef2f2; /* bg-red-50 */
+            padding: 0.5rem; /* p-6 */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* space-x-4 */
+        }
+
+        /* 图标容器 */
+        .error-icon {
+            flex-shrink: 0;
+            color: #ef4444; /* text-red-500 */
+        }
+
+            /* 图标样式 */
+            .error-icon svg {
+                width: 1.5rem; /* h-6 */
+                height: 1.5rem; /* w-6 */
+                fill: none;
+                stroke: currentColor;
+                stroke-width: 2;
+            }
+
+        /* 文字内容容器 */
+        .error-text {
+            flex-grow: 1;
+        }
+
+        /* 标题样式 */
+        .error-title {
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 600; /* font-medium */
+            color: #991b1b; /* text-red-800 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        /* 消息文本样式 */
+        .error-message {
+            font-size: 0.875rem; /* text-sm */
+            color: #c2413b; /* text-red-700 */
+            line-height: 1.5;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 640px) {
+            .error-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .error-icon {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .StatueContainer {
+            position: absolute;
+            top: 0;
+            right: 10px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+            /* 在线状态 */
+            .dot.online {
+                background: linear-gradient(145deg, #1e90ff, #4169e1);
+                box-shadow: 0 0 8px rgba(65, 105, 225, 0.5), 0 0 16px rgba(65, 105, 225, 0.3) inset;
+                animation: pulse 2s infinite;
+            }
+
+            /* 离线状态 */
+            .dot.offline {
+                background: linear-gradient(145deg, #ff4444, #cc0000);
+                box-shadow: 0 0 8px rgba(204, 0, 0, 0.5), 0 0 16px rgba(204, 0, 0, 0.3) inset;
+                animation: glow 1.5s ease-in-out infinite alternate;
+            }
+
+        .status-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+            .status-text.online {
+                color: #4169e1;
+            }
+
+            .status-text.offline {
+                color: #cc0000;
+            }
+
+        .plcclass {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="plcclass">
+            <div style="display: flex;">
+                <div>
+                    <img src="image/plc.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="margin-left: 40px;">
+                    <div style="min-width: 220px;">
+                        <div style="display: flex; flex-direction: column; gap: 8px;margin-top: 50px;">
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="A_Current_Piston_label">A_Current_Piston</span><span class="PLC_Right_Down" id="A_Current_Piston_value">A_PistonCurrent</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="InletPressure_label">InletPressure</span><span class="PLC_Right_Down" id="InletPressure_value">InTake_Pressure</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="MediumPressure_label">MediumPressure</span><span class="PLC_Right_Down" id="MediumPressure_value">MediumPressure</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="ProtectivePressure_label">ProtectivePressure</span><span class="PLC_Right_Down" id="ProtectivePressure_value">ProtectivePressure</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="WaterTemperature_label">WaterTemperature</span><span class="PLC_Right_Down" id="WaterTemperature_value">WaterTemperature</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="GasConcentration_label">GasConcentration</span><span class="PLC_Right_Down" id="GasConcentration_value">GasConcentration</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="LowPressure_label">LowPressure</span><span class="PLC_Right_Down" id="LowPressure_value">LowPressure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div>
+                    <img src="image/plc.png" style="width: 100%; height: 100%; object-fit: cover;">
+
+                </div>
+                <div style="margin-left: 40px;">
+                    <div style="min-width: 220px;">
+                        <div style="display: flex; flex-direction: column; gap: 8px;margin-top: 50px;">
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="B_Current_Piston_label">B_Current_Piston</span><span class="PLC_Right_Down" id="B_Current_Piston_value">B_Current_Piston</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="HighPressure_label">HighPressure</span><span class="PLC_Right_Down" id="HighPressure_value">HighPressure</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="InstrumentAirPressure_label">InstrumentAirPressure</span><span class="PLC_Right_Down" id="InstrumentAirPressure_value">InstrumentAirPressure</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="HydraulicOilTemperature_label">HydraulicOilTemperature</span><span class="PLC_Right_Down" id="HydraulicOilTemperature_value">HydraulicOilTemperature</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="GasConcentrationSecond_label">GasConcentrationSecond</span><span class="PLC_Right_Down" id="GasConcentrationSecond_value">GasConcentrationSecond</span>
+                            </div>
+                            <div class="PLC_Right">
+                                <span class="PLC_Span" id="GasConcentrationThird_label">GasConcentrationThird</span><span class="PLC_Right_Down" id="GasConcentrationThird_value">GasConcentrationThird</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position: absolute;top: 0;left: 0;" id="alarmTitle">
+
+            </div>
+
+            <div class="StatueContainer" id="StatueContainer">
+                <div class="status-indicator">
+                    <div class="dot online"></div>
+                    <span class="status-text online">在线</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        function UpdateTextLabel(A_Current_Piston, InletPressure, MediumPressure, ProtectivePressure, WaterTemperature, GasConcentration, LowPressure
+            , B_Current_Piston, HighPressure, InstrumentAirPressure, HydraulicOilTemperature, GasConcentrationSecond, GasConcentrationThird) {
+            $("#A_Current_Piston_label").html(A_Current_Piston);
+            $("#InletPressure_label").html(InletPressure);
+            $("#MediumPressure_label").html(MediumPressure);
+            $("#ProtectivePressure_label").html(ProtectivePressure);
+            $("#WaterTemperature_label").html(WaterTemperature);
+            $("#GasConcentration_label").html(GasConcentration);
+            $("#LowPressure_label").html(LowPressure);
+            $("#B_Current_Piston_label").html(B_Current_Piston);
+            $("#HighPressure_label").html(HighPressure);
+            $("#InstrumentAirPressure_label").html(InstrumentAirPressure);
+            $("#HydraulicOilTemperature_label").html(HydraulicOilTemperature);
+            $("#GasConcentrationSecond_label").html(GasConcentrationSecond);
+            $("#GasConcentrationThird_label").html(GasConcentrationThird);
+        }
+
+        function UpdateValue(A_Current_Piston, InletPressure, MediumPressure, ProtectivePressure, WaterTemperature, GasConcentration, LowPressure
+            , B_Current_Piston, HighPressure, InstrumentAirPressure, HydraulicOilTemperature, GasConcentrationSecond, GasConcentrationThird,online,onlineText) {
+            $("#A_Current_Piston_value").html(A_Current_Piston);
+            $("#InletPressure_value").html(InletPressure);
+            $("#MediumPressure_value").html(MediumPressure);
+            $("#ProtectivePressure_value").html(ProtectivePressure);
+            $("#WaterTemperature_value").html(WaterTemperature);
+            $("#GasConcentration_value").html(GasConcentration);
+            $("#LowPressure_value").html(LowPressure);
+            $("#B_Current_Piston_value").html(B_Current_Piston);
+            $("#HighPressure_value").html(HighPressure);
+            $("#InstrumentAirPressure_value").html(InstrumentAirPressure);
+            $("#HydraulicOilTemperature_value").html(HydraulicOilTemperature);
+            $("#GasConcentrationSecond_value").html(GasConcentrationSecond);
+            $("#GasConcentrationThird_value").html(GasConcentrationThird);
+
+            if (online == "1") {
+                $("#StatueContainer").html("");
+
+                var html = '<div class="status-indicator">'
+                    + '<div class="dot online"></div >'
+                    + '<span class="status-text online">' + onlineText + '</span>'
+                    + '</div> ';
+
+                $("#StatueContainer").html(html);
+            }
+            else {
+                $("#StatueContainer").html("");
+
+                var html = '<div class="status-indicator">'
+                    + '<div class="dot offline"></div >'
+                    + '<span class="status-text offline">' + onlineText + '</span>'
+                    + '</div> ';
+
+                $("#StatueContainer").html(html);
+            }
+        }
+
+        function UpdateAlarm(alarm) {
+            if (alarm != "0") {
+                var html = "";
+                if (alarm.includes(",")) {
+                    var arr = alarm.split(",");
+                    for (var i = 0; i < arr.length; i++) {
+                        html += '<div class="page-container" v-for="(item, index) in PLC.Error" :key="index">'
+                            + '<div class="error-card" >'
+                            + '<div class="error-content">'
+                            + '<div class="error-icon" role="img" aria-label="Error icon">'
+                            + '<svg viewBox="0 0 24 24">'
+                            + '<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" />'
+                            + '</svg>'
+                            + '</div>'
+                            + '<div class="error-text">'
+                            + '<p class="error-message">' + arr[i] + '</p>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>';
+                    }
+                    $("#alarmTitle").html(html);
+                } else {
+                    html += '<div class="page-container" v-for="(item, index) in PLC.Error" :key="index">'
+                        + '<div class="error-card" >'
+                        + '<div class="error-content">'
+                        + '<div class="error-icon" role="img" aria-label="Error icon">'
+                        + '<svg viewBox="0 0 24 24">'
+                        + '<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" />'
+                        + '</svg>'
+                        + '</div>'
+                        + '<div class="error-text">'
+                        + '<p class="error-message">' + alarm + '</p>'
+                        + '</div>'
+                        + '</div>'
+                        + '</div>'
+                        + '</div>';
+                    $("#alarmTitle").html(html);
+                }
+            } else {
+                $("#alarmTitle").html("");
+            }
+        }
+    </script>
+</body>
+</html>
+

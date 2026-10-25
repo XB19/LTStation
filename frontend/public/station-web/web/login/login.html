@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" />
+</head>
+
+<body onLoad="javascript:document.yourFormName.reset()">
+    <div class="demo-app">
+        <content>
+            <div class="app-sys-command-container" style="background-color:#fff">
+                <ul class="sys-commands">
+                    <li n-ui-command="minimize">
+                        <i class="fa fa-minus"></i>
+                    </li>
+                    <li n-ui-command="close">
+                        <i class="fa fa-close"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                        <form class="login100-form validate-form">
+                            <img style="width:35%;display:block; margin:0 auto" id="LoginImg" src="images/JoyFel.png" />
+                            <div class="wrap-input100 validate-input m-b-23" id="UserValid" data-validate="请输入用户名">
+                                <span class="label-input100" id="UserNameL">用户名</span>
+                                <input class="input100" type="text" name="username" id="username" placeholder="请输入用户名" autocomplete="off">
+                                <span class="focus-input100" data-symbol="&#xf206;"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" id="PassValid" data-validate="请输入密码">
+                                <span class="label-input100" id="PassWordL">密码</span>
+                                <input class="input100" type="password" name="pass" id="pass" placeholder="请输入密码">
+                                <span class="focus-input100" data-symbol="&#xf190;"></span>
+                            </div>
+
+                            <div class="text-right p-t-8 p-b-31">
+                                <div style="float:left">
+                                    <div style="float:left" id="LanguageSet">语言:</div>
+                                    <select id="lang" onchange="LanguageChange()">
+                                        <option value="zh-CN">中文</option>
+                                        <option value="en-US">English</option>
+                                        <option value="ru-RU">Русский язык</option>
+                                        <option value="th">ภาษาไทย</option>
+                                        <option value="es">Español</option>
+                                    </select>
+                                </div>
+                                <a href="javascript:" id="VersionMessage">版本号:1.0.0</a>
+                            </div>
+
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <button id="TryLogin" class="login100-form-btn" onclick="Login()">登 录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </content>
+    </div>
+
+    <script src="../tank/js/jquery-3.3.1.min.js"></script>
+    <!--<script src="js/main.js"></script>-->
+
+    <script type="text/javascript">
+        $(function () {
+            //var s = navigator.language;
+            //if (s == "zh-CN")
+            //    setLanguageChinese();
+            //else if (s.indexOf('en')>-1)
+            //    setLanguageEnglish();
+            //else
+            //    setLanguageEnglish();
+            ////my.LanguageLoad(s);
+
+            //$("#TryLogin").on("click", function () {
+            //    var UserName = document.getElementById("username").value;
+            //    var Pass = document.getElementById("pass").value;
+            //    //var Lang = document.getElementById("lang").value;
+            //    //navigator.language = Lang;
+            //    if (UserName == "" || Pass == "") { }
+            //    else
+            //        my.LoginLoad(UserName + "|" + Pass);
+            //})
+        })
+
+        function Login() {
+            var UserName = document.getElementById("username").value;
+            var Pass = document.getElementById("pass").value;
+            //var Lang = document.getElementById("lang").value;
+            //navigator.language = Lang;
+            if (UserName == "" || Pass == "") { }
+            else
+                my.LoginLoad(UserName + "|" + Pass);
+        }
+
+        //document.getElementById("TryLogin").addEventListener("click", function (e) {
+        //    var UserName = document.getElementById("username").value;
+        //    var Pass = document.getElementById("pass").value;
+        //    var Lang = document.getElementById("lang").value;
+        //    navigator.language = Lang;
+        //    if (UserName == "" || Pass == "")
+        //        return;
+        //    else
+        //        my.LoginLoad(UserName + "|" + Pass);
+        //})
+
+        function LanguageChange() {
+            var lang = $("#lang").val();
+            if (lang == "zh-CN") {
+                setLanguageChinese();
+            }
+            if (lang == "en-US") {
+                setLanguageEnglish();
+            }
+            if (lang == "ru-RU") {
+                setLanguageRu();
+            }
+            if (lang == "th")
+            {
+                setLanguageth();
+            }
+            if (lang == "es") {
+                setLanguagees();
+            }
+            my.LanguageLoad(lang);
+        }
+
+        function setLanguageth() {
+            $("#SoftWareName").html("ระบบควบคุมสถานี");
+            $("#UserNameL").html("ชื่อผู้ใช้:");
+            $("#username").prop("placeholder", "กรุณากรอกชื่อผู้ใช้");
+            $("#UserValid").attr("data-validate", "กรุณากรอกชื่อผู้ใช้");
+            $("#PassWordL").html("รหัสผ่าน:");
+            $("#pass").prop("placeholder", "กรุณากรอกรหัสผ่าน");
+            $("#PassValid").attr("data-validate", "กรุณากรอกรหัสผ่าน");
+            $("#LanguageSet").html("ภาษา:");
+            $("#VersionMessage").html("หมายเลขรุ่น:1.3.6.0");
+            $("#TryLogin").html("เข้าสู่ระบบ");
+        }
+
+        function setLanguageChinese() {
+            $("#SoftWareName").html("BlueSky-站控系统");
+            $("#UserNameL").html("用户名:");
+            $("#username").prop("placeholder", "请输入用户名");
+            $("#UserValid").attr("data-validate", "请输入用户名");
+            $("#PassWordL").html("密码:");
+            $("#pass").prop("placeholder", "请输入密码");
+            $("#PassValid").attr("data-validate", "请输入密码");
+            $("#LanguageSet").html("语言:");
+            $("#VersionMessage").html("版本号:1.3.6.0");
+            $("#TryLogin").html("登 录");
+        }
+
+        function setLanguageEnglish() {
+            $("#SoftWareName").html("StationWare");
+            $("#UserNameL").html("UserName:");
+            $("#username").prop("placeholder", "Please Put UseName");
+            $("#UserValid").attr("data-validate", "Please Enter Your UserName");
+            $("#PassWordL").html("PassWord:");
+            $("#pass").prop("placeholder", "Please Put PassWord");
+            $("#PassValid").attr("data-validate", "Please Enter Your Password");
+            $("#LanguageSet").html("Language:");
+            $("#VersionMessage").html("Version:1.3.6.0");
+            $("#TryLogin").html("Login");
+        }
+
+        function setLanguageRu() {
+            $("#SoftWareName").html("Станционная система управления");
+            $("#UserNameL").html("Имя пользователя:");
+            $("#username").prop("placeholder", "Введите имя пользователя");
+            $("#UserValid").attr("data-validate", "Введите имя пользователя");
+            $("#PassWordL").html("Пароль:");
+            $("#pass").prop("placeholder", "Введите пароль.");
+            $("#PassValid").attr("data-validate", "Введите пароль.");
+            $("#LanguageSet").html("Язык:");
+            $("#VersionMessage").html("Номер версии:1.3.6.0");
+            $("#TryLogin").html("Регистрация");
+        }
+
+        function setLanguagees() {
+            $("#SoftWareName").html("BlueSky-Sistema de control de la estación");
+            $("#UserNameL").html("nombre de usuario:");
+            $("#username").prop("placeholder", "Por favor, introduzca su nombre de usuario");
+            $("#UserValid").attr("data-validate", "Por favor, introduzca su nombre de usuario");
+            $("#PassWordL").html("contraseña:");
+            $("#pass").prop("placeholder", "Por favor, introduzca su contraseña");
+            $("#PassValid").attr("data-validate", "Por favor, introduzca su contraseña");
+            $("#LanguageSet").html("idioma:");
+            $("#VersionMessage").html("Número de versión:1.3.6.0");
+            $("#TryLogin").html("Acceso");
+        }
+
+        function UpdateLogin(lang, url) {
+            //$("#LoginImg").attr('src', url);
+            //alert(url);
+            if (lang == "zh-CN") {
+                setLanguageChinese();
+                $("#lang ").get(0).selectedIndex = 0
+            } else if (lang == "en") {
+                setLanguageEnglish();
+                $("#lang ").get(0).selectedIndex = 1
+            } else if (lang == "ru-RU") {
+                setLanguageRu();
+                $("#lang ").get(0).selectedIndex = 2
+            } else if (lang == "th") {
+                setLanguageth();
+                $("#lang ").get(0).selectedIndex = 3
+            } else if (lang == "es") {
+                setLanguagees();
+                $("#lang ").get(0).selectedIndex = 4
+            }
+            else {
+                setLanguageEnglish();
+                $("#lang ").get(0).selectedIndex = 1
+            }
+
+            //$("#user-image").attr('src', url)
+            //document.getElementById("LoginImg").src = "";
+            //document.getElementById("LoginImg").src = url + "?s=" + (new Date()).getTime();
+        }
+    </script>
+</body>
+</html>

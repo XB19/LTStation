@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<English>
+  <Amount>Amount</Amount>
+	<RealAmount>Real Amount</RealAmount>
+	<DiscountValue>Discount</DiscountValue>
+  <Volume>Volume</Volume>
+  <Price>Price</Price>
+  <NoCard>No Card</NoCard>
+  <OpenPortError>Open Port Failed</OpenPortError>
+  <PLSWriteName>Please Write Name</PLSWriteName>
+  <OperateSuccess>Operate Success</OperateSuccess>
+  <UnvalidatedInput>Unvalidated Input</UnvalidatedInput>
+  <CardNo>Card No</CardNo>
+  <UserName>User Name</UserName>
+  <TransactionType>Transaction Type</TransactionType>
+  <Recharge>Recharge</Recharge>
+  <GiftAmount>Gift Amount</GiftAmount>
+  <ConsumptionAmount>Consumption Amount</ConsumptionAmount>
+  <Time>Time</Time>
+  <Balance>Balance</Balance>
+  <Total>Total</Total>
+  <TotalRecord>Total Record</TotalRecord>
+  <TotalRecharge>Total Recharge</TotalRecharge>
+  <TotalDeduction>Total Deduction</TotalDeduction>
+  <TotalNonFuelAmount>Total NonFuel Amount</TotalNonFuelAmount>
+  <TotalConsumptionAmount>Total Consumption Amount</TotalConsumptionAmount>
+  <SummaryVolume>Summary Volume</SummaryVolume>
+  <SummaryDiscount>Summary Discount</SummaryDiscount>
+  <OneWordOnly>Limit One Number or One letter</OneWordOnly>
+  <InformationLoss>Information Loss</InformationLoss>
+  <UnvalidatedRequest>Unvalidated Request</UnvalidatedRequest>
+  <DuplicateInformation>DuplicateInformation</DuplicateInformation>
+  <PLSSelectRegion>Please Select Region</PLSSelectRegion>
+  <ReadCardFailed>Read Card Failed</ReadCardFailed>
+  <GetSecretError>Get Secret Error</GetSecretError>
+  <InitPasswordFailed>Init Password Failed</InitPasswordFailed>
+  <PasswordFormatError>Password Format Error</PasswordFormatError>
+  <PlsReadCard>Please Read Card</PlsReadCard>
+  <InvalidInformation>Invalid Information</InvalidInformation>
+  <ShiftSetError>Please Set Shift First</ShiftSetError>
+  <ShiftComplete>Shift Complete</ShiftComplete>
+  <LastPage>Last Page</LastPage>
+  <FirstPage>First Page</FirstPage>
+  <DataEmpty>Data Empty</DataEmpty>
+  <ShiftAlreadlyComplete>Shift Alreadly Complete</ShiftAlreadlyComplete>
+  <Shift>Shift</Shift>
+  <TimeError>Time Error</TimeError>
+  <NoShift>Shift Is Empty</NoShift>
+  <ObjectEmpty>Data Empty</ObjectEmpty>
+  <PriceShow>Price Show Device</PriceShow>
+  <ValidError>Valid Error</ValidError>
+  <FormatError>Format Error</FormatError>
+  <DownLoad>DownLoading</DownLoad>
+  <DownLoadComplete>DownLoad Complete</DownLoadComplete>
+  <NeedQueryCondition>Need Query Condition</NeedQueryCondition>
+  <NeedCardNo>Card No Can't Be Empty</NeedCardNo>
+  <CardMakeErrorReturn>Card Make Error,Repeal Operate</CardMakeErrorReturn>
+  <CardChangeComplete>Card Change Complete</CardChangeComplete>
+  <CardChangeFailed>Card Change Failed</CardChangeFailed>
+  <CardCompleteButStatueError>Card Change Completed,Statue Change Error</CardCompleteButStatueError>
+  <CardReaderDisconnect>Card Reader Disconnect</CardReaderDisconnect>
+  <CardPublishMessageFailed>Card Publish Message Failed</CardPublishMessageFailed>
+  <CardWriteError>Card Write Error</CardWriteError>
+  <BalanceReturnError>Balance Recover Error</BalanceReturnError>
+  <UserInexistence>User Inexistence</UserInexistence>
+  <ExternalValidationError>External Validation Error</ExternalValidationError>
+  <InitializeError>Initialize Error</InitializeError>
+  <InitializeSuccess>Initialize Success</InitializeSuccess>
+  <DepositError>Deposit Error</DepositError>
+  <LostSuccess>Lost Success</LostSuccess>
+  <Normal>Normal</Normal>
+  <GetReaderFailed>Get Reader Failed</GetReaderFailed>
+  <MaxLength>Max Length Is 3</MaxLength>
+  <ValuetTooLarge>Input Value Is Too Large</ValuetTooLarge>
+  <NoLimit>No Limit</NoLimit>
+  <NoDiscount>No Discount</NoDiscount>
+  <PlSSelectCardType>Please Select CardType</PlSSelectCardType>
+  <CardMakeSuccess>Card Make Success</CardMakeSuccess>
+  <CardMakeError>Card Make Error</CardMakeError>
+  <OutOfCreditLine>Out Of Credit Line</OutOfCreditLine>
+  <PasswordInconformity>Password Inconformity</PasswordInconformity>
+  <NeedCardValidTime>Need Card ValidTime</NeedCardValidTime>
+  <NeedUserAccount>Need User Account</NeedUserAccount>
+  <NeedPasswordMaxLength>Password Length Is 4</NeedPasswordMaxLength>
+  <PasswordIsNumber>Password Made Up Of Numbers</PasswordIsNumber>
+  <UserNameEmpty>User Name Can't Be Empty</UserNameEmpty>
+  <UserIDEmpty>User ID Can't Be Empty</UserIDEmpty>
+  <IdentificationEmpty>Identification No Is Empty</IdentificationEmpty>
+  <PhoneError>Phone Format Error</PhoneError>
+  <CarNoLength>Car Number Length Is 7</CarNoLength>
+  <CarFormatError>Car Number Format Error</CarFormatError>
+  <PostCodeFormatError>Post Code Format Error</PostCodeFormatError>
+  <EamilFormatError>Eamil Format Error</EamilFormatError>
+  <LimitVolumeError>Limit Volume Format Error</LimitVolumeError>
+  <NumberOrDecimal>Limit At Number Or Decimal</NumberOrDecimal>
+  <OutOfStationDigits>Out Of Station Digits</OutOfStationDigits>
+  <PLSCheckDigits>Please Check Digits</PLSCheckDigits>
+  <LimitVolumeExceeded>Limit Volume Exceeded</LimitVolumeExceeded>
+  <LimitDayTimeError>Limit Day Time Format Error</LimitDayTimeError>
+  <LimitAmountDailyError>Limit Amount Daily Format Error</LimitAmountDailyError>
+  <LimitAmountDailyExceeded>Limit Amount Daily Exceeded</LimitAmountDailyExceeded>
+  <LimitVolumeMonthError>Limit Volume Month Format Error</LimitVolumeMonthError>
+  <LimitVolumeMonthExceeded>Limit Volume Month Exceeded</LimitVolumeMonthExceeded>
+  <LimitAmountMonthError>Limit Amount Month Format Error</LimitAmountMonthError>
+  <LimitAmountMonthExceeded>Limit Amount Month Exceeded</LimitAmountMonthExceeded>
+  <FuelConsumptionError>Fuel Consumption Format Error</FuelConsumptionError>
+  <MileageNumber>Mileage Format Error</MileageNumber>
+  <SelectEmployee>Please Select Employee</SelectEmployee>
+  <GroupNameEmpty>Group Name Is Empty</GroupNameEmpty>
+  <GroupIDEmpty>Group ID Is Empty</GroupIDEmpty>
+  <BusinessNoEmpty>BusinessNo Is Empty</BusinessNoEmpty>
+  <CreditLineEmpty>Credit Line Is Empty</CreditLineEmpty>
+  <BillCreateDayEmpty>Bill Create Day Is Empty</BillCreateDayEmpty>
+  <DayRange>value must between at 1 and 30</DayRange>
+  <RepayDayEmpty>Repay Day Is Empty</RepayDayEmpty>
+  <LimitLevelError>Limit Level Format Error</LimitLevelError>
+  <Person>Person</Person>
+  <CardTypeError>Card Type Error</CardTypeError>
+  <EmployeeCard>Employee Card</EmployeeCard>
+  <UserCard>User Card</UserCard>
+  <GroupCard>Group Card</GroupCard>
+  <GroupCreditCard>Group Credit Card</GroupCreditCard>
+  <CreditCard>Credit Card</CreditCard>
+  <AssistantCard>Assistant Card</AssistantCard>
+  <NonCard>Non Card</NonCard>
+  <UpdateSuccess>Update Success</UpdateSuccess>
+  <UpdateFailed>Update Failed</UpdateFailed>
+  <CardNotSupport>Card Not Support</CardNotSupport>
+  <InputValidationError>Input Validation Error</InputValidationError>
+  <DepositSuccess>Deposit Success</DepositSuccess>
+  <DepositFailed>Deposit Failed</DepositFailed>
+  <Deposit>Deposit</Deposit>
+  <DepositAmount>Deposit Amount</DepositAmount>
+  <DataBaseError>DataBase Error</DataBaseError>
+  <Deduction>Deduction</Deduction>
+  <OldCardBalance>Last Balance</OldCardBalance>
+  <DeductionAmount>Deduction Amount</DeductionAmount>
+  <AfterDeductionBalance>Balance After Deduction</AfterDeductionBalance>
+  <CarNo>CarNo</CarNo>
+  <EndBalance>End Balance</EndBalance>
+  <ServiceFee>Service Fee</ServiceFee>
+  <PayMent>PayMent</PayMent>
+  <CheckNo>Check No</CheckNo>
+  <Operator>Operator</Operator>
+  <PrintTime>Print Time</PrintTime>
+  <PreferentialStartEnd>Preferential Start And End </PreferentialStartEnd>
+  <Memo>Memo</Memo>
+  <Sign>Sign</Sign>
+  <Score>Score</Score>
+  <DepositAmountError>Deposit Amount Error</DepositAmountError>
+  <GiftAmountError>Gift Amount Error</GiftAmountError>
+  <ScoreError>Score Error</ScoreError>
+  <FuelEmployee>Fuel Employee</FuelEmployee>
+  <Administrators>Administrators</Administrators>
+  <Cashier>Cashier</Cashier>
+  <Accounting>Accounting</Accounting>
+  <SecretLength>Secret Length Must be 16</SecretLength>
+  <PassowrdError>Passowrd Error</PassowrdError>
+  <EndOutofStart>End Time Can't Less than Start Time</EndOutofStart>
+  <Transaction>Transaction</Transaction>
+  <PlsQuery>Please Query First</PlsQuery>
+  <PlsQueryTerms>Please Complete Query Terms</PlsQueryTerms>
+  <SettlementComplete>Settlement Complete</SettlementComplete>
+  <DailyReport>Daily Report</DailyReport>
+  <MonthReport>Month Report</MonthReport>
+  <SetlementTimeForDaily>SetlementTime For Daily</SetlementTimeForDaily>
+  <DailyReportData>Daily Report Data</DailyReportData>
+  <CardDailyReport>Card Daily Report</CardDailyReport>
+  <NozDailyReport>Nozzle Daily Report</NozDailyReport>
+  <EnergyDailyReport>Energy Daily Report</EnergyDailyReport>
+  <SetlementTimeForMonth>Setlement Time For Month</SetlementTimeForMonth>
+  <MonthReportData>Month Report Data</MonthReportData>
+  <CardMonthReport>Card Month Report</CardMonthReport>
+  <NozMonthReport>Nozzle Month Report</NozMonthReport>
+  <EnergyMonthReport>Energy Month Report</EnergyMonthReport>
+  <DiscountError>Discount Error</DiscountError>
+  <CommunicationFailed>Communication Failed</CommunicationFailed>
+  <ExportSuccess>Export Success</ExportSuccess>
+  <ExportFailed>Export Failed</ExportFailed>
+  <NotChanged>It Can't Change</NotChanged>
+  <EnergyExist>Energy Exist</EnergyExist>
+  <PriceFormatError>Price Format Error</PriceFormatError>
+  <PLSCreateStation>Please Create Station</PLSCreateStation>
+  <PlsWriteCode>Please Write Code</PlsWriteCode>
+  <StartCodeError>Start Code Error</StartCodeError>
+  <EndCodeError>End Code Error</EndCodeError>
+  <Confirm>Confirm</Confirm>
+  <MacError>Get Message Error,Please Check</MacError>
+  <ActiveFailed>Active Failed</ActiveFailed>
+  <ScoreIsZero>Score Is Zero</ScoreIsZero>
+  <ScoreOutOfBalance>Score Is Too Large</ScoreOutOfBalance>
+  <PlsSetSerial>Please Set Serial First</PlsSetSerial>
+  <PlsSetTank>Please Set Tank First</PlsSetTank>
+  <CreateStationBySelf>Create Station BySelf</CreateStationBySelf>
+  <PlsWriteStationCode>Please Write Station Code</PlsWriteStationCode>
+  <AuthorityProblem>Authority Problem</AuthorityProblem>
+  <Unknow>Unknow</Unknow>
+  <PortNotExsit>Port Not Exsit</PortNotExsit>
+  <PlSCreateStation>Please Create Station First</PlSCreateStation>
+  <PlSCreateOilType>Please Create OilType First</PlSCreateOilType>
+  <PlsCreateTank>Please Create Tank First</PlsCreateTank>
+  <PlsCreatePort>Please Create Port First</PlsCreatePort>
+  <PlsCreateNoz>Please Create Nozzle First</PlsCreateNoz>
+  <PlsCreateEmp>Please Create Employee First</PlsCreateEmp>
+  <SystemNotActive>System Need Active</SystemNotActive>
+  <SystemActiveError>System Active Error</SystemActiveError>
+  <OpenAccount>Open Account</OpenAccount>
+  <CardLost>Card Lost</CardLost>
+  <PasswordLost>Password Lost</PasswordLost>
+  <DealGrey>Deal Grey</DealGrey>
+  <CardUpdate>Card Update</CardUpdate>
+  <CardChangeOpen>Card Change Open</CardChangeOpen>
+  <CardChangeDeposit>Card Change Deposit</CardChangeDeposit>
+  <ClearAccount>Clear Account</ClearAccount>
+  <Transfer>Transfer</Transfer>
+  <Consume>Consume</Consume>
+  <Nonoilconsumption>Non Fuel Consume</Nonoilconsumption>
+  <Repay>Repay</Repay>
+  <ClearAccountTransfer>Clear Account Transfer</ClearAccountTransfer>
+  <MasterTransfer>Master Card Transfer</MasterTransfer>
+  <EscapeCard>Escape Card</EscapeCard>
+  <WrongCard>Wrong Card</WrongCard>
+  <Patching>Patching</Patching>
+  <Replenish>Replenish</Replenish>
+  <OnDuty>On Duty</OnDuty>
+  <OffDuty>Off Duty</OffDuty>
+  <PriceChange>Price Change</PriceChange>
+  <CardRefuse>Card Refuse</CardRefuse>
+  <Other>Other</Other>
+  <Cash>Cash</Cash>
+  <ICCard>IC Card</ICCard>
+  <BankCard>Bank Card</BankCard>
+  <CurrentShift>Current Shift</CurrentShift>
+  <LoginEmployee>Login Employee</LoginEmployee>
+  <CardStatueError>Card Statue Error</CardStatueError>
+  <TotalTankHeightStr>Tank Height</TotalTankHeightStr>
+  <TotalTankVolumeStr>Tank Volume</TotalTankVolumeStr>
+  <CurrentHeightStr>Current Height</CurrentHeightStr>
+  <CurrentVolumeStr>Current Volume</CurrentVolumeStr>
+  <CurrentWaterStr>Current Water</CurrentWaterStr>
+  <CurrentTempStr>Current Temp</CurrentTempStr>
+  <NoEmployee>No Employee</NoEmployee>
+  <Tips>Tips</Tips>
+  <OperationExecution>OperationExecution？</OperationExecution>
+  <IICACBD>Information is configured and cannot be deleted</IICACBD>
+  <DataSend>Send</DataSend>
+  <DataReveive>Reveive</DataReveive>
+  <REISSUED>REISSUED</REISSUED>
+  <Stop>Stop</Stop>
+  <NozID>Noz ID</NozID>
+  <TType>TType</TType>
+  <TruePay>True Pay</TruePay>
+  <OilDataType>Transaction Type</OilDataType>
+  <Port>Port</Port>
+  <Employee>Employee</Employee>
+  <TotalVolume>TotalVolume</TotalVolume>
+  <Mileage>Mileage</Mileage>
+  <Discount>Discount</Discount>
+  <Coupon>Coupon</Coupon>
+  <Parvalue>Par Value</Parvalue>
+  <Energy>Energy</Energy>
+  <StartPump>Start Pump</StartPump>
+  <EndPump>End Pump</EndPump>
+  <Spread>Spread</Spread>
+  <Table>Table</Table>
+  <ID>ID</ID>
+  <EnergySaler>Energy Saler</EnergySaler>
+  <LoginFailed>Login Name Or Password Error</LoginFailed>
+  <CardConsume>Card Consume</CardConsume>
+  <AfterConsume>Balance After Consume</AfterConsume>
+  <LostTankOrPrice>Tank Message Or Price Message Lost,Please Finish Tank Message Or Price Message First</LostTankOrPrice>
+  <LostTank>Tank Message Lost</LostTank>
+  <AmountFormatError>Amount Format Error</AmountFormatError>
+  <TrasnlateObjectEmpty>Transfer Object Is Empty</TrasnlateObjectEmpty>
+  <UnRepay>UnRepay</UnRepay>
+  <PartialRepayment>Partial Repayment</PartialRepayment>
+  <PaidOff>Paid Off</PaidOff>
+  <QueryIsEmpty>Query Criteria Is Empty</QueryIsEmpty>
+  <ProgramRuned>Program Is Running</ProgramRuned>
+  <InformationLost>Information Lost</InformationLost>
+  <InformationError>Information Error</InformationError>
+  <PayMentError>PayMent Error</PayMentError>
+  <OutOfPayMent>PayMent Is Out Of Amount</OutOfPayMent>
+  <PageError>Page Error</PageError>
+  <NotAllowUseStock>System not allow to use stock</NotAllowUseStock>
+  <TankMissing>Tank Non-Existent </TankMissing>
+  <OilOutput>Oil Output</OilOutput>
+  <OilStock>Oil Stock</OilStock>
+  <StationName>Station Name</StationName>
+  <AmountTotal>Amount Total</AmountTotal>
+  <VolumeTotal>Volume Total</VolumeTotal>
+  <CreateTime>Create Time</CreateTime>
+  <SumAmount>Summary Amount</SumAmount>
+  <SumVolume>Summary Volume</SumVolume>
+
+  <Quality>Quality</Quality>
+  <TotalQuality>Total Quality</TotalQuality>
+  <KKG>Volume</KKG>
+  <KG>Saler</KG>
+  <TotalKG>Total Saler</TotalKG>
+  <StartKG>Start KG</StartKG>
+  <EndKG>End KG</EndKG>
+
+  <None>None</None>
+  <Even>Even</Even>
+  <Odd>Odd</Odd>
+  
+  <BlueSky>BlueSky</BlueSky>
+  <Tatsuno>Tatsuno</Tatsuno>
+  <Japan>Japan</Japan>
+  <Dart>Dart</Dart>
+  <ATG>ATG</ATG>
+
+  <SerialPortError>The communication serial port is not configured</SerialPortError>
+  <StationNameEmpty>The Station name can't be empty</StationNameEmpty>
+  <LongitudeError>The longitude format is incorrect</LongitudeError>
+  <LatitudeError>Latitude format error</LatitudeError>
+  <ApplicationNumberEmpty>The application number can't be empty</ApplicationNumberEmpty>
+  <GetApplicationNumber>The application number corresponds to the platform number. Obtain the application number from the platform</GetApplicationNumber>
+  <PortExists>The port already exists.</PortExists>
+  <DevicePortError>The device port is not configured</DevicePortError>
+  <NormalSystem>Normal MainForm</NormalSystem>
+  <DeviceNotExist>The device doesn't exist</DeviceNotExist>
+  <NozFormatError>NozID format is incorrect</NozFormatError>
+  <AddressFormatError>Incorrect address format</AddressFormatError>
+  <NozRepeat>NozID Repeat</NozRepeat>
+  <AddressRepeat>Address Repeat</AddressRepeat>
+  <Automaticallyauthorize>Auto</Automaticallyauthorize>
+  <Manualauthorization>Manual</Manualauthorization>
+	<BoxAuth>Box</BoxAuth>
+  <Authorizationmodel>Auth model</Authorizationmodel>
+  <PreSet>PreSet</PreSet>
+  <MachineStop>Stop</MachineStop>
+  <MachineUpdate>Update</MachineUpdate>
+  <DeleteConfirm>Delete Or Not</DeleteConfirm>
+  <hints>Operating hints</hints>
+  <AssociatedError>The current energy has unit price correlation, please cancel and delete</AssociatedError>
+  <GradeNone>The energy type doesn't exist</GradeNone>
+  <PriceExist>Unit price information doesn't exist</PriceExist>
+  <GradeEmpty>Energy information cann't be empty</GradeEmpty>
+  <PriceReapt>Unit price already exists</PriceReapt>
+  <PriceDone>The current energy unit price has been set</PriceDone>
+  <EmpEmpty>employees don't exist</EmpEmpty>
+  <EmpRepeat>employee information repeat</EmpRepeat>
+
+  <DailyClosed>The daily has been settled.</DailyClosed>
+  <NozSettleError>Noz Settle Error</NozSettleError>
+  <EnergySettleError>Energy Settle Error</EnergySettleError>
+  <StockSettleError>Stock Settle Error</StockSettleError>
+  <TotalSettleError>Summary Settle Error</TotalSettleError>
+  <SettleComplete>Settle Complete</SettleComplete>
+  <SettleNotComplete>Reports cann't be exported without settlement</SettleNotComplete>
+  <StationDailyReport>Station Daily Report</StationDailyReport>
+  <StationMonthReport>Station Month Report</StationMonthReport>
+  <StationShiftReport>Station Shift Report</StationShiftReport>
+
+  <ShiftEmpty>Missing shift information</ShiftEmpty>
+  <ShiftError>Wrong shift</ShiftError>
+  
+  <TankHeightFormatError>Tank Height Format Error</TankHeightFormatError>
+  <TankVolumeFormatError>Tank Volume Format Error</TankVolumeFormatError>
+  <TankHeightLevelAlarmFormatError>Tank Height Level Alarm Format Error</TankHeightLevelAlarmFormatError>
+  <TankLowLevelAlarmFormatError>Tank Low Level Alarm Format Error</TankLowLevelAlarmFormatError>
+  <WaterHeightFormatError>Water Height Format Error</WaterHeightFormatError>
+  <WaterLowFormatError>Water Low Format Error</WaterLowFormatError>
+  <HighTempFormatError>High Temp Format Error</HighTempFormatError>
+  <LowTempFormatError>Low Temp Format Error</LowTempFormatError>
+  <TankNoFormatError>Tank No Format Error</TankNoFormatError>
+  <TankNoEmpty>TankNo is Empty</TankNoEmpty>
+  <TankNoRepeat>TankNo Repeat</TankNoRepeat>
+  <TankNameRepeat>TankName Repeat</TankNameRepeat>
+  <TankEmpty>Tank Empty</TankEmpty>
+
+  <ReprotTime>Time</ReprotTime>
+  <SumReportVolume>Sum Volume</SumReportVolume>
+  <TotalCount>Total Count</TotalCount>
+  <SumGrade>Energy Statistics</SumGrade>
+  <Count>Count</Count>
+  <SumStock>Stock Statistics</SumStock>
+  <Tank>Tank</Tank>
+  <Stock>Stock</Stock>
+  <Sales>Sales</Sales>
+  <Error>Error</Error>
+  <SumNoz>Noz Statistics</SumNoz>
+
+  <AmountPreset>Amount Preset</AmountPreset>
+  <VolumePreset>Volume Preset</VolumePreset>
+  <TotalSumVolume>Total Volume</TotalSumVolume>
+
+  <PreSetValueError>PreSet Value Error</PreSetValueError>
+  <PreSetPriceError>PreSet Price Error</PreSetPriceError>
+  <NozError>Noz Error</NozError>
+  <CarPay>CarPay</CarPay>
+
+  <VersionUpdate>The current program version is different from the latest version. Do you want to update it?</VersionUpdate>
+  <ProgramFileMissing>Program File Missing</ProgramFileMissing>
+  <Updating>Program is Updating,Please wait</Updating>
+
+  <Repair>Repair</Repair>
+  <RepairCard>Repair Card</RepairCard>
+
+  <CommunicationBroken>Box Read Time Out</CommunicationBroken>
+  <CommunicationNormal>Box Working</CommunicationNormal>
+  <OpenCard>OpenCard</OpenCard>
+
+  <CardType>Card Type</CardType>
+
+  <IssueDatetime>IssueDatetime</IssueDatetime>
+  <ValidDatetime>ValidDatetime</ValidDatetime>
+  <Issuer>Issuer</Issuer>
+
+  <ICSystem>Station SoftWare</ICSystem>
+  <DepositTime>DepositTime</DepositTime>
+  <MasterCard>MasterCard</MasterCard>
+
+  <KangYuProbe>Kang Yu Probe</KangYuProbe>
+  <MAGNEHELIC>MAGNEHELIC</MAGNEHELIC>
+
+  <PortNoNeedDevice>There is no need to add devices to the current port</PortNoNeedDevice>
+  <DataRollbackTran>Data rollback completed</DataRollbackTran>
+
+  <PasswordError>Password Error</PasswordError>
+
+  <Address>Address</Address>
+  <BindNoz>Bind Noz</BindNoz>
+  <Tag>Tag</Tag>
+  <Free>Free</Free>
+  <Work>Working</Work>
+
+  <IsUsing>it can't delete because it is using by others</IsUsing>
+
+  <BoxLost>Box Port Lost</BoxLost>
+  <RFIDIDError>RFID ID Error</RFIDIDError>
+  <RFIDAddressError>RFID Address Error</RFIDAddressError>
+  <RFIDIDRepeat>RFID ID Repeat</RFIDIDRepeat>
+  <RFIDAddressRepeat>RFID Address Repeat</RFIDAddressRepeat>
+  <NoGrey>No Grey</NoGrey>
+  <NotGreyCard>Not Grey Card</NotGreyCard>
+  <DealGreyFore>No gray records found, do you want to force gray removal?</DealGreyFore>
+  <AmountError>Error in supplementary deduction amount</AmountError>
+
+  <SlipNo>Slip No</SlipNo>
+  <Productgrade>product grade</Productgrade>
+
+  <CashAmount>Cash Amount</CashAmount>
+  <CashVolume>Cash Volume</CashVolume>
+  <CardAmount>Card Amount</CardAmount>
+  <CardVolume>Card Volume</CardVolume>
+
+	<PriceRadioError>The decimal places of the unit price are incorrect. The current limit for the decimal places of the unit price is </PriceRadioError>
+	<ProductTotal>Subtotal of every product</ProductTotal>
+	<TankRemain>Oil quantuty remainder in every tank:</TankRemain>
+	<RemainVolume>Remain Volume:</RemainVolume>
+
+	<TotalAmount>Total Amount</TotalAmount>
+	<UnitPrice>Unit Price</UnitPrice>
+
+	<SettleTime>Settle Time</SettleTime>
+	<NozMessage>Noz Message</NozMessage>
+	<StockMessage>Oil quantity stock in every tank</StockMessage>
+	<OverImprotVolumeError>Over Improt Volume Format Error</OverImprotVolumeError>
+	<TransactionLost>Transaction Lost</TransactionLost>
+
+	<Printer>Printer</Printer>
+
+	<ParamError>Param Error</ParamError>
+
+	<Eaglestar>Eaglestar</Eaglestar>
+	<HongYang>HongYang</HongYang>
+
+	<CardStatueNow>Card Statue:</CardStatueNow>
+	<CantLost>Can't do Lost</CantLost>
+	<CantGetCard>Can't Get Card Message</CantGetCard>
+
+	<CableHeightError>Height Error</CableHeightError>
+	<CableVolumeError>Volume Error</CableVolumeError>
+	<CableExists>Initial value already exists</CableExists>
+
+	<CardMiss>Card Miss</CardMiss>
+	<CardAccountMiss>Card Account Miss</CardAccountMiss>
+	<PLSSelectEmp>Please Select Employee</PLSSelectEmp>
+	<Replaced>Card replaced</Replaced>
+
+	<CardCantdoit>Card Can't Support This Operation</CardCantdoit>
+	<NeedOnDuty>Is Off Duty </NeedOnDuty>
+
+	<DigitalMeterReading>Digital Meter Reading</DigitalMeterReading>
+	<Opening>Opening</Opening>
+	<Closing>Closing</Closing>
+	<Liters>Liters</Liters>
+	<Calibration>Calibration</Calibration>
+	<LitersSold>Liters Sold</LitersSold>
+	<TransCount>Trans Count</TransCount>
+	<PriceLiter>Price/Liter</PriceLiter>
+	<Sale>Sale</Sale>
+	<Value>Value</Value>
+
+	<BoxNameEmpty>The name of the box cann't be empty</BoxNameEmpty>
+	<BoxCodeEmpty>The code of the box cann't be empty</BoxCodeEmpty>
+	<BoxNameCodeRepeat>box name or code repeat</BoxNameCodeRepeat>
+	<BoxPortUsed>The serial port is already in use</BoxPortUsed>
+	<BoxUsed>Box Is Using</BoxUsed>
+	<Wired>Wired</Wired>
+	<Wireless>Wireless</Wireless>
+
+	<SaleRecord>Sales Record</SaleRecord>
+	<Printshift>Print Shift</Printshift>
+	<Printdaysummary>Print Day Sum</Printdaysummary>
+	<PrintMonthsummary>Print Month Sum</PrintMonthsummary>
+	<Taxinvoice>Tax Invoice</Taxinvoice>
+	<Cancelinvoice>Cancel Invoice</Cancelinvoice>
+	<Informalsale>Informal Sale</Informalsale>
+	<Testnozzle>Test Nozzle</Testnozzle>
+	<Returntheproduct>Return Product</Returntheproduct>
+	<Tools>Tools</Tools>
+	<Addincash>Add In cash</Addincash>
+	<Takeoutcash>Take Out Cash</Takeoutcash>
+	<Closeshift>Close Shift</Closeshift>
+	<Closeday>Close Day</Closeday>
+	<CloseMonth>Close Month</CloseMonth>
+	<Changeoilprice>Change Oil Price</Changeoilprice>
+	<Changeuser>Change User</Changeuser>
+	<Exit>Exit</Exit>
+
+	<PLSSelectBox>Please Select Box</PLSSelectBox>
+	<BoxDeviceLost>Box Lost</BoxDeviceLost>
+
+	<NeedEmployeeCertification>Need Employee Certification</NeedEmployeeCertification>
+
+	<DeleteBtnShow>Delete</DeleteBtnShow>
+
+	<CarNumber>Car Number</CarNumber>
+	<CardGroup>Group</CardGroup>
+
+	<NormalGroup>Normal Group</NormalGroup>
+	<SharedGroup>Shared Group</SharedGroup>
+
+	<BoxSelectPump>Please Select Pump</BoxSelectPump>
+
+	<A_Up_Point>Reversing point on cylinder A(mm)</A_Up_Point>
+	<A_Down_Point>A cylinder lower reversing point(mm)</A_Down_Point>
+	<A_Current_Piston>A piston current value(mm)</A_Current_Piston>
+	<InletPressure>Inlet pressure(MPa)</InletPressure>
+	<MediumPressure>Medium pressure(MPa)</MediumPressure>
+	<ProtectivePressure>Protective pressure(MPa)</ProtectivePressure>
+	<WaterTemperature>Water temperature(℃)</WaterTemperature>
+	<GasConcentration>Gas concentration in the compressor skid(%)</GasConcentration>
+	<GasConcentrationSecond>Gas concentration of gas cylinder group(%)</GasConcentrationSecond>
+	<GasConcentrationThird>Gas concentration of gas dispenser(%)</GasConcentrationThird>
+	<A_Average_Time>Average reversing times of cylinder A</A_Average_Time>
+	<B_Up_Point>Reversing point on cylinder B(mm)</B_Up_Point>
+	<B_Down_Point>B cylinder lower reversing point(mm)</B_Down_Point>
+	<B_Current_Piston>B piston current value(mm)</B_Current_Piston>
+	<Spare>spare</Spare>
+	<HighPressure>High pressure(MPa)</HighPressure>
+	<InstrumentAirPressure>Instrument air pressure(MPa)</InstrumentAirPressure>
+	<HydraulicOilLevel>Hydraulic oil level</HydraulicOilLevel>
+	<HydraulicOilTemperature>Hydraulic oil temperature(℃)</HydraulicOilTemperature>
+	<B_Average_Time>Average reversing times of cylinder B</B_Average_Time>
+	<LowPressure>Low Pressure</LowPressure>
+
+	<Online>Online</Online>
+	<Offline>Offline</Offline>
+
+	<PLC100>Hydraulic oil temperature sensor disconnected</PLC100>
+	<PLC102>The combustible gas concentration sensor is disconnected</PLC102>
+	<PLC103>Medium pressure is lower than the airless value</PLC103>
+	<PLC104>Protect pressure sensor from wire break</PLC104>
+	<PLC105>High pressure sensor disconnected</PLC105>
+	<PLC106>Medium pressure sensor disconnected</PLC106>
+	<PLC107>Intake air pressure sensor disconnected</PLC107>
+	<PLC109>The concentration of combustible gas exceeds 25</PLC109>
+	<PLC110>Instrument air pressure low</PLC110>
+	<PLC111>The circulating water temperature is higher than the set value</PLC111>
+	<PLC112>The hydraulic oil temperature is higher than the set value</PLC112>
+	<PLC113>Hydraulic oil shortage</PLC113>
+	<PLC114>Protection pressure higher than the set value</PLC114>
+	<PLC115>Inlet pressure is lower than the airless value</PLC115>
+	<PLC204>B Motor failure</PLC204>
+	<PLC205>B position sensor disconnection</PLC205>
+	<PLC206>A Motor failure</PLC206>
+	<PLC207>A position sensor disconnection</PLC207>
+	<PLC300>The inlet pressure is lower than the inlet alarm value</PLC300>
+	<PLC301>The hydraulic oil temperature is higher than the alarm value</PLC301>
+	<PLC303>Self-circulating pneumatic valve is not fully opened</PLC303>
+	<PLC305>The medium pressure pneumatic valve is not fully opened</PLC305>
+	<PLC308>Instrument wind sensor disconnected</PLC308>
+	<PLC309>No. 2 cooling fan failure</PLC309>
+	<PLC310>No. 1 cooling fan failure</PLC310>
+
+	<Advanceexe>Advance execution</Advanceexe>
+
+	<TankChart>Tank Chart</TankChart>
+	<ShowVat>Show Vat</ShowVat>
+	<NoShowVat>No Show Vat</NoShowVat>
+
+	<Food>Food</Food>
+	<Lubricants>Lubricants</Lubricants>
+	<EngineOil>Engine Oil</EngineOil>
+	<Cleaner>Cleaner</Cleaner>
+	<ProductNameRepeat>Product Name Repeat</ProductNameRepeat>
+	<ProductInexistence>Product Inexistence</ProductInexistence>
+	<ServerRefuse>Server Refuse</ServerRefuse>
+	<QuantityOver>Over Quantity</QuantityOver>
+	<ScorePrice>Score Price</ScorePrice>
+	<BalanceNotEnough>Balance Not Enough</BalanceNotEnough>
+
+	<SumType>Statistical Type</SumType>
+	<OutOfTime>Out Of Time</OutOfTime>
+	<PersonalBill>Personal Bill</PersonalBill>
+	<Paid>Paid</Paid>
+	<Unpaid>Unpaid</Unpaid>
+	<Query>Search</Query>
+</English>

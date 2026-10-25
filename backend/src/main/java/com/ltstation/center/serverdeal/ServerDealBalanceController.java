@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * virements entre cartes et groupes, annulations et remboursements de factures de crédit.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealBalanceController extends ServerDealBase {
 
     private final boolean secretSame;

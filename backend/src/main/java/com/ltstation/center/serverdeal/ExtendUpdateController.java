@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
  * AES-CBC (clé AppKey, IV = MD5(ts + en-tête « identity »)[8..24]) et encodée en Base64.
  */
 @RestController
-@RequestMapping(value = "/ExtendUpdate", produces = ServerDealBase.TEXT)
+@RequestMapping("/ExtendUpdate")
 public class ExtendUpdateController {
 
     private final Sugar db;

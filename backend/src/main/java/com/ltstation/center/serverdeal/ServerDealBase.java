@@ -90,9 +90,6 @@ public abstract class ServerDealBase {
     /** ReturnError(ex) : Result=false, Mess=EncryptByAes(ex.Message). */
     protected String err(Exception ex) {
         String m = ex.getMessage();
-        if (!(ex instanceof Fail)) {
-            log.writeLog("Error:" + ex);
-        }
         return ret(false, enc(m == null ? ex.getClass().getSimpleName() : m), 0);
     }
 

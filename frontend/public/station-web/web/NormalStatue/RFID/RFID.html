@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+
+<html lang="zxx">
+<head>
+    <!--Required Meta Tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <script src="../../tank/js/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .box_time {
+            background: #8c40e2;
+            border: 1px solid #8c40e2;
+            box-shadow: 0 0 10px #8c40e2;
+        }
+
+            .box_time p {
+                font-size: 12px;
+                color: #fff;
+                position: absolute;
+                left: 10px;
+            }
+
+                .box_time p:nth-child(2) {
+                    font-size: 57px;
+                    font-weight: bold;
+                    top: 35px;
+                    left: 10px;
+                    margin: 0;
+                }
+
+                .box_time p:nth-child(3) {
+                    font-size: 35px;
+                    left: 105px;
+                    top: 25px;
+                }
+
+                .box_time p:nth-child(4) {
+                    top: 100px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .box_time p:nth-child(5) {
+                    top: 125px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .box_time p:last-child {
+                    top: 170px;
+                    left: 25px;
+                    width: 160px;
+                    font-size: 14px;
+                }
+
+        .box_ti i {
+            font-size: 16px;
+            display: block;
+            color: #fff;
+            font-style: normal;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+            .box_ti i::before {
+                content: "";
+                display: inline-block;
+                height: 22px;
+                width: 22px;
+                background: url(image/ci.png) no-repeat;
+                vertical-align: middle
+            }
+
+        .RFIDBox {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .RFIDBox ul {
+                width: 270px;
+                height: 385px;
+                position: relative;
+            }
+
+                .RFIDBox ul li {
+                    width: 175px;
+                    height: 210px;
+                    float: left;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    cursor: pointer;
+                    list-style: none;
+                    border-radius: 0 60px 0 60px;
+                }
+
+                    .RFIDBox ul li div {
+                        height: 210px;
+                        width: 175px;
+                        border-radius: 0 60px 0 60px;
+                    }
+
+                    .RFIDBox ul li h3 {
+                        color: #fff;
+                        font-size: 13px;
+                        margin-top: 5px;
+                    }
+
+                    .RFIDBox ul li span {
+                        display: inline-block;
+                        height: 65px;
+                        width: 60px;
+                    }
+
+                    .RFIDBox ul li .span_chilun {
+                        background: url(image/chilun.png) no-repeat;
+                    }
+
+                    .RFIDBox ul li .span_Tag {
+                        background: url(image/tag2.png) no-repeat;
+                    }
+
+                    .RFIDBox ul li .span_onLine {
+                        background: url(image/onLine.png) no-repeat;
+                        margin-top: 100px;
+                    }
+
+                    .RFIDBox ul li .span_offLine {
+                        background: url(image/offline.png) no-repeat;
+                        margin-top: 100px;
+                    }
+
+                    .RFIDBox ul li .span_Free {
+                        background: url(image/free.png) no-repeat;
+                    }
+
+                    .RFIDBox ul li .span_work {
+                        background: url(image/work.png) no-repeat;
+                    }
+
+                    .RFIDBox ul li .active_0 {
+                        background: #036cd5;
+                        border: 1px solid #036cd5;
+                        box-shadow: 0 0 10px #036cd5;
+                    }
+
+                    .RFIDBox ul li .active_first_0 {
+                        background: #ff824f;
+                        border: 1px solid #ff824f;
+                        box-shadow: 0 0 10px #ff824f;
+                    }
+
+                    .RFIDBox ul li .active_0 span .active_span_0 {
+                        display: inline-block;
+                        height: 60px;
+                        width: 60px;
+                        margin-top: 50px;
+                    }
+
+                    .RFIDBox ul li .active_0 span .active_span_1 {
+                        display: inline-block;
+                        height: 60px;
+                        width: 60px;
+                        margin-top: 50px;
+                    }
+
+                    .RFIDBox ul li:nth-child(2) {
+                        width: 110px;
+                        height: 200px;
+                        background: #1d7920;
+                        border: 1px solid #1d7920;
+                        box-shadow: 0 0 10px #1d7920;
+                        border-radius: 60px 0 60px 0;
+                        left: 176px;
+                        top: 10px;
+                    }
+
+                    .RFIDBox ul li:nth-child(3) {
+                        width: 170px;
+                        height: 195px;
+                        background: #036cd5;
+                        border: 1px solid #036cd5;
+                        box-shadow: 0 0 10px #036cd5;
+                        border-radius: 60px 0 60px 0;
+                        top: 211px;
+                        left: 5px;
+                    }
+
+                    .RFIDBox ul li:nth-child(4) {
+                        width: 80px;
+                        height: 162px;
+                        background: #ff824f;
+                        border: 1px solid #ff824f;
+                        border-radius: 0 50px 0 50px;
+                        top: 212px;
+                        left: 176px;
+                    }
+    </style>
+</head>
+<body>
+    <div class="RFIDBox" id="box">
+        <!--<ul id="RFIDul1">
+            <li>
+                <div class="box_ti box_time">
+                    <i id="RFIDStation1">StationName</i>
+                    <p id="RFIDDevice1">No.1</p>
+                    <span id="RFIDOnLine1" class="span_onLine"></span>
+                    <p id="RFIDUpdateTime1">UpdateTime</p>
+                </div>
+            </li>
+            <li>
+                <span class="span_chilun"></span>
+                <h3 id="RFIDAddress1">设定地址:1</h3>
+                <h3 id="RFIDBindNoz1">绑定枪号:1</h3>
+            </li>
+            <li class="active_0">
+                <span class="span_Tag"></span>
+                <h3 style="margin: 5px;" id="RFIDTag1">Tag:<br />11111111111111111111</h3>
+                <h3 style="margin: 5px;" id="RFIDUserName1">UserName:<br />111111</h3>
+                <h3 style="margin: 5px;" id="RFIDCarNo1">CarNo:<br />5242132</h3>
+            </li>
+            <li class="active_first_0">
+                <span class="span_Free" id="RFIDWork1"></span>
+                <h3 id="RFIDWorkStatue1">空闲</h3>
+            </li>
+        </ul>-->
+    </div>
+</body>
+</html>
+
+<script>
+    $(function () {
+        //CreateRFID("1", "3", "3", false, "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", false, "3");
+
+        setTimeout(function () {
+            //UpdateRFID("3", "4", "4", true, "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", true, "4")
+            //UpdateRFID(1, 'admin1310', 5, false, '2023-06-29 11:21:53', '设定地址', 1, '绑定枪号', 3, '标签', '-1', '用户名', '-1', '车号', '-1', '余额', -1, true, '使用中')
+        }, 5000);
+    })
+
+    function CreateRFID(RFIDDeviceID,StationName,DeviceID,isOnline,UpdateTime,BindAddressText,BindAddress,BindNozText,BindNoz,TagText,Tag,UserNameText,UserName,CarNoText,CarNo,BalText,Bal,IsWork,WorkText) {
+        var html = '<ul id="RFIDul' + RFIDDeviceID + '">'
+            + '<li>'
+            + '<div class="box_ti box_time">'
+            + '<i id="RFIDStation' + RFIDDeviceID + '">' + StationName + '</i>'
+            + '<p id="RFIDDevice' + RFIDDeviceID + '">No.' + DeviceID + '</p>';
+        if (isOnline)
+            html += '<span id="RFIDOnLine' + RFIDDeviceID + '" class="span_onLine"></span>';
+        else
+            html += '<span id="RFIDOnLine' + RFIDDeviceID + '" class="span_offLine"></span>';
+        html += '<p id="RFIDUpdateTime' + RFIDDeviceID + '">' + UpdateTime + '</p>'
+            + '</div>'
+            + '</li>'
+            + '<li>'
+            + '<span class="span_chilun"></span>'
+            + '<h3 id="RFIDAddress' + RFIDDeviceID + '">' + BindAddressText + ':' + BindAddress + '</h3>'
+            + '<h3 id="RFIDBindNoz' + RFIDDeviceID + '">' + BindNozText + ':' + BindNoz + '</h3>'
+            + '</li>'
+            + '<li class="active_0">'
+            + '<span class="span_Tag"></span>'
+            + '<h3 style="margin: 5px;" id="RFIDTag' + RFIDDeviceID + '">' + TagText + ':<br />' + Tag + '</h3>'
+            + '<h3 style="margin: 5px;" id="RFIDUserName' + RFIDDeviceID + '">' + UserNameText + ':<br />' + UserName + '</h3>'
+            + '<h3 style="margin: 5px;" id="RFIDCarNo' + RFIDDeviceID + '">' + CarNoText + ':<br />' + CarNo + '</h3>'
+            + '</li>'
+            + '<li class="active_first_0">';
+        if (IsWork) {
+            html += '<span class="span_work" id="RFIDWork' + RFIDDeviceID + '"></span>'
+        } else {
+            html += '<span class="span_Free" id="RFIDWork' + RFIDDeviceID + '"></span>';
+        }
+        html += '<h3 id="RFIDWorkStatue' + RFIDDeviceID + '">' + WorkText + '</h3>'
+            + '<h3 hidden id="RFIDBal' + RFIDDeviceID + '">' + BalText + ':<br />' + Bal + '</h3>'
+            + '</li>'
+            + '</ul>';
+
+        $("#box").append(html);
+    }
+
+    function UpdateRFID(RFIDDeviceID, StationName, DeviceID, isOnline, UpdateTime, BindAddressText, BindAddress, BindNozText, BindNoz, TagText, Tag, UserNameText, UserName, CarNoText, CarNo, BalText, Bal, IsWork, WorkText) {
+        if (StationName != "-1")
+            $("#RFIDStation" + RFIDDeviceID + "").html(StationName);
+        if (DeviceID != -1)
+            $("#RFIDDevice" + RFIDDeviceID + "").html("No." + DeviceID);
+        if (isOnline) 
+            $("#RFIDOnLine" + RFIDDeviceID + "").attr("class", "span_onLine");
+        else
+            $("#RFIDOnLine" + RFIDDeviceID + "").attr("class", "span_offLine");
+
+        $("#RFIDUpdateTime" + RFIDDeviceID + "").html(UpdateTime);
+
+        if (BindAddress != "-1")
+            $("#RFIDAddress" + RFIDDeviceID + "").html(BindAddressText + ":" + BindAddress);
+        if (BindNoz != "-1") 
+            $("#RFIDBindNoz" + RFIDDeviceID+"").html(BindNozText + ":" + BindNoz);
+        if (Tag != "-1")
+            $("#RFIDTag" + RFIDDeviceID + "").html(TagText + ":<br/>" + Tag);
+        if (UserName != "-1")
+            $("#RFIDUserName" + RFIDDeviceID+"").html(UserNameText + ":<br/>" + UserName);
+        if (CarNo != "-1")
+            $("#RFIDCarNo" + RFIDDeviceID+"").html(CarNoText + ":<br/>" + CarNo);
+        if (IsWork) {
+            $("#RFIDWork" + RFIDDeviceID+"").attr("class", "span_work");
+            $("#RFIDBal" + RFIDDeviceID+"").show();
+        }
+        else {
+            $("#RFIDWork" + RFIDDeviceID+"").attr("class", "span_Free");
+            $("#RFIDBal" + RFIDDeviceID+"").hide();
+        }
+
+        if (WorkText != "-1")
+            $("#RFIDWorkStatue" + RFIDDeviceID+"").html(WorkText);
+
+        if (Bal != -1) {
+            $("#RFIDBal" + RFIDDeviceID+"").html(BalText + ":<br/>" + Bal);
+        }
+    }
+
+    function DeleteRFID(RFIDDeviceID) {
+        $("#RFIDul" + RFIDDeviceID + "").remove();
+    }
+</script>

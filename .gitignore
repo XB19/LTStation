@@ -27,3 +27,6 @@ desktop/dist/
 # Journaux d'exécution (classe Log d'origine)
 backend/logs/
 logs/
+
+# Réglages locaux du logiciel Station (peuvent contenir des clés de services tiers)
+backend/station/

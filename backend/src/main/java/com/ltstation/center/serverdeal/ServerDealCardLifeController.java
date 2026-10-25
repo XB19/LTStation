@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * numéro maximal, journal d'état, versions et prix des carburants.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealCardLifeController extends ServerDealBase {
 
     /** Message .NET d'une NullReferenceException (comportement d'origine sur données manquantes). */

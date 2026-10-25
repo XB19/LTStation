@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * véhicules / véhicules / bouteilles, codes App et comptes NP.
  */
 @RestController
-@RequestMapping(value = "/ServerDeal", produces = ServerDealBase.TEXT)
+@RequestMapping("/ServerDeal")
 public class ServerDealNormalController extends ServerDealBase {
 
     private static final String STATION_ERROR = "Erreur de station";

@@ -1,0 +1,191 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "微软雅黑";
+    font-size: 100%;
+    font-style: normal
+}
+
+dd, dl, dt, em, i, p, textarea, a, div {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0px;
+}
+
+ul, li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+    background: #fff;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.none {
+    display: none
+}
+
+.rightTankMessage {
+    position:absolute;
+    top:0;
+    margin-top:15px;
+    display:grid;
+    right:0;
+    width:58%;
+    height:120px;
+}
+
+    .rightTankMessage tt {
+        padding-left: -10px;
+        color: #fff;
+        font-size: 15px;
+    }
+
+
+
+    .fensug {
+        width: 380px;
+        height: 168px;
+        background: #fff;
+        border: 9px #5576ac solid;
+        margin-left:5px;
+        margin-right:5px;
+        margin-bottom:10px;
+        padding: 5px;
+        -webkit-border-radius: 25em;
+        -moz-border-radius: 25em;
+        border-radius: 25em;
+        overflow: hidden;
+        position: relative
+    }
+
+    .fensug .wavenum {
+        width: 380px;
+        height: 168px;
+        overflow: hidden;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        /*text-align: center;*/
+        /*display: table-cell;*/
+        vertical-align: middle;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        z-index: 5;
+        display: flex;
+        /*align-items: center;*/
+        justify-content: center;
+        flex-direction: column;
+    }
+
+        .fensug .wavenum b {
+            color: #fff;
+            font-size: 43px;
+            /*text-align: center;*/
+            display: block;
+            position: relative;
+            z-index: 2;
+            line-height: 45px;
+        }
+
+        .fensug .wavenum tt {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            display: block;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+            width: 140px;
+            border-top: 2px #fff solid;
+            margin: 3px 1px 1px 10px;
+            line-height: 35px;
+        }
+
+
+
+.waven {
+    width: 380px;
+    height: 168px;
+    webkit-border-radius: 25em;
+    -moz-border-radius: 25em;
+    border-radius: 25em;
+    background: #5576ac;
+    overflow: hidden;
+    position: relative
+}
+
+.wave {
+    width: 500px;
+    height: 80%;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    background: url(../image/wave.png) no-repeat;
+    /*animation: move_wave 1s linear infinite;*/
+    /*-webkit-animation: move_wave 1s linear infinite;*/
+}
+
+.wave2 {
+    width: 500px;
+    height: 80%;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    background: url(../image/wave2.png) no-repeat;
+    /*animation: move_wave 1s linear infinite;*/
+    /*-webkit-animation: move_wave 1s linear infinite;*/
+}
+
+
+@-webkit-keyframes move_wave {
+    0% {
+        -webkit-transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(-25%)
+    }
+
+    100% {
+        -webkit-transform: translateX(-50%)
+    }
+}
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(-25%)
+    }
+
+    100% {
+        transform: translateX(-50%)
+    }
+}
