@@ -1,0 +1,1538 @@
+{
+ "ADContent": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AccountRole": {
+  "pk": [
+   "RoleID"
+  ],
+  "identity": [
+   "RoleID"
+  ],
+  "ignore": []
+ },
+ "AccountServiceLogs": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ActionList": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ActiveWeb": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AirDevice": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AirGetOlDTransaction": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AirTank": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AlarmType": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AmountRadio": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AppCode": {
+  "pk": [
+   "AccreditID"
+  ],
+  "identity": [
+   "AccreditID"
+  ],
+  "ignore": []
+ },
+ "AppCodeUse": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AppEvaluate": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AppOilTransactions": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "AppendBlackLists": {
+  "pk": [
+   "AppendBlackListID"
+  ],
+  "identity": [
+   "AppendBlackListID"
+  ],
+  "ignore": []
+ },
+ "Apps": {
+  "pk": [
+   "AppID"
+  ],
+  "identity": [
+   "AppID"
+  ],
+  "ignore": []
+ },
+ "AuthorityMess": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "BankSearch": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "BasicBlackLists": {
+  "pk": [
+   "BasicBlackListID"
+  ],
+  "identity": [
+   "BasicBlackListID"
+  ],
+  "ignore": []
+ },
+ "BoxPortSet": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "BoxSet": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CarAffiliate": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CarGroup": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CarUser": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CardMakerLogs": {
+  "pk": [
+   "ASN"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "CardServiceLogs": {
+  "pk": [
+   "CardServiceLogID"
+  ],
+  "identity": [
+   "CardServiceLogID"
+  ],
+  "ignore": []
+ },
+ "CardStatusTypes": {
+  "pk": [
+   "CardStatusTypeID"
+  ],
+  "identity": [
+   "CardStatusTypeID"
+  ],
+  "ignore": []
+ },
+ "CardTransfers": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CardTypes": {
+  "pk": [
+   "CardTypeID"
+  ],
+  "identity": [
+   "CardTypeID"
+  ],
+  "ignore": []
+ },
+ "CertificateTypes": {
+  "pk": [
+   "CertificateTypeID"
+  ],
+  "identity": [
+   "CertificateTypeID"
+  ],
+  "ignore": []
+ },
+ "CheckDailies": {
+  "pk": [
+   "CheckDailyID"
+  ],
+  "identity": [
+   "CheckDailyID"
+  ],
+  "ignore": []
+ },
+ "Cities": {
+  "pk": [
+   "CityID"
+  ],
+  "identity": [
+   "CityID"
+  ],
+  "ignore": []
+ },
+ "Clearinginfoes": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CmdList": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Commodities": {
+  "pk": [
+   "CommodityID"
+  ],
+  "identity": [
+   "CommodityID"
+  ],
+  "ignore": []
+ },
+ "CommodityPrices": {
+  "pk": [
+   "StationID"
+  ],
+  "identity": [
+   "StationID"
+  ],
+  "ignore": []
+ },
+ "CompanyManagements": {
+  "pk": [
+   "CompanyManagementID"
+  ],
+  "identity": [
+   "CompanyManagementID"
+  ],
+  "ignore": []
+ },
+ "CouponInfoes": {
+  "pk": [
+   "CouponInfoID"
+  ],
+  "identity": [
+   "CouponInfoID"
+  ],
+  "ignore": []
+ },
+ "CreateBillData": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CreditBill": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "CreditCardBillDetails": {
+  "pk": [
+   "CreditCardBillID"
+  ],
+  "identity": [
+   "CreditCardBillID"
+  ],
+  "ignore": []
+ },
+ "CreditCardBills": {
+  "pk": [
+   "CreditCardBillID",
+   "ASN"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "CustomerAccounts": {
+  "pk": [
+   "CustomerAccountID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "CustomerCardInfos": {
+  "pk": [
+   "ASN"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "Customers": {
+  "pk": [
+   "CustomerID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "Cylinder": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DailyCSTByPayments": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DailyCSTByUsers": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DailyGunReports": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DailyInventories": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DailySalesReports": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Data": {
+  "pk": [
+   "IDIndex"
+  ],
+  "identity": [
+   "IDIndex"
+  ],
+  "ignore": []
+ },
+ "DataVersions": {
+  "pk": [
+   "DataVersionID"
+  ],
+  "identity": [
+   "DataVersionID"
+  ],
+  "ignore": []
+ },
+ "DefCategories": {
+  "pk": [
+   "CategoryID"
+  ],
+  "identity": [
+   "CategoryID"
+  ],
+  "ignore": []
+ },
+ "DefClassifications": {
+  "pk": [
+   "ClassificationID"
+  ],
+  "identity": [
+   "ClassificationID"
+  ],
+  "ignore": []
+ },
+ "DefClosingStatus": {
+  "pk": [
+   "ClosingStatusID"
+  ],
+  "identity": [
+   "ClosingStatusID"
+  ],
+  "ignore": []
+ },
+ "DefColors": {
+  "pk": [
+   "ColorID"
+  ],
+  "identity": [
+   "ColorID"
+  ],
+  "ignore": []
+ },
+ "DefCurrencies": {
+  "pk": [
+   "CurrencyID"
+  ],
+  "identity": [
+   "CurrencyID"
+  ],
+  "ignore": []
+ },
+ "DefLocationStatus": {
+  "pk": [
+   "LocationStatusID"
+  ],
+  "identity": [
+   "LocationStatusID"
+  ],
+  "ignore": []
+ },
+ "DefPayments": {
+  "pk": [
+   "PaymentID"
+  ],
+  "identity": [
+   "PaymentID"
+  ],
+  "ignore": []
+ },
+ "DefTrashedStatus": {
+  "pk": [
+   "TrashedStatusID"
+  ],
+  "identity": [
+   "TrashedStatusID"
+  ],
+  "ignore": []
+ },
+ "DefUnitPackages": {
+  "pk": [
+   "UnitPackageID"
+  ],
+  "identity": [
+   "UnitPackageID"
+  ],
+  "ignore": []
+ },
+ "DefUnitWeights": {
+  "pk": [
+   "UnitWeightID"
+  ],
+  "identity": [
+   "UnitWeightID"
+  ],
+  "ignore": []
+ },
+ "DefUnits": {
+  "pk": [
+   "UnitID"
+  ],
+  "identity": [
+   "UnitID"
+  ],
+  "ignore": []
+ },
+ "DefVendorCategories": {
+  "pk": [
+   "VendorCategoryID"
+  ],
+  "identity": [
+   "VendorCategoryID"
+  ],
+  "ignore": []
+ },
+ "DeleteBlackLists": {
+  "pk": [
+   "DeleteBlackListID"
+  ],
+  "identity": [
+   "DeleteBlackListID"
+  ],
+  "ignore": []
+ },
+ "Device_Company_List": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DisCount": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DiscountStore": {
+  "pk": [
+   "GroupID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "Dispatcher": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DistributionPoints": {
+  "pk": [
+   "DistributionPointID"
+  ],
+  "identity": [
+   "DistributionPointID"
+  ],
+  "ignore": []
+ },
+ "DutyBrandSales": {
+  "pk": [
+   "Shift",
+   "GradeSpecificID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "DutyGunInfo": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "DutyInventories": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ElectronicInvoiceSetting": {
+  "pk": [
+   "RecID"
+  ],
+  "identity": [
+   "RecID"
+  ],
+  "ignore": []
+ },
+ "EmpScoreRate": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "EmployeeCardInfos": {
+  "pk": [
+   "ASN"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "Employees": {
+  "pk": [
+   "EmployeeID"
+  ],
+  "identity": [
+   "EmployeeID"
+  ],
+  "ignore": []
+ },
+ "ErrorFlgs": {
+  "pk": [
+   "ErrorFlgID"
+  ],
+  "identity": [
+   "ErrorFlgID"
+  ],
+  "ignore": []
+ },
+ "GPRSAccount": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSCMD": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSICCID": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSNozzle": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSOilPrice": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSRealData": {
+  "pk": [
+   "NozID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "GPRSShift": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSStation": {
+  "pk": [
+   "StationID"
+  ],
+  "identity": [
+   "StationID"
+  ],
+  "ignore": []
+ },
+ "GPRSTank": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSTankData": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSTankVolumeTable": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GPRSTransaction": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Genders": {
+  "pk": [
+   "GenderID"
+  ],
+  "identity": [
+   "GenderID"
+  ],
+  "ignore": []
+ },
+ "GradeSpecifics": {
+  "pk": [
+   "GradeSpecificID"
+  ],
+  "identity": [
+   "GradeSpecificID"
+  ],
+  "ignore": []
+ },
+ "GrayCardLists": {
+  "pk": [
+   "GrayCardListID"
+  ],
+  "identity": [
+   "GrayCardListID"
+  ],
+  "ignore": []
+ },
+ "GreyCardUnlockInfos": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "GroupAccounts": {
+  "pk": [
+   "GroupAccountID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "GroupCardInfos": {
+  "pk": [
+   "ASN"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "GroupTansfers": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Groups": {
+  "pk": [
+   "GroupID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "GunDataError": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ImportOilInfos": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Inventories": {
+  "pk": [
+   "CommodityID"
+  ],
+  "identity": [
+   "CommodityID"
+  ],
+  "ignore": []
+ },
+ "LastUpdate": {
+  "pk": [
+   "StationID"
+  ],
+  "identity": [
+   "StationID"
+  ],
+  "ignore": []
+ },
+ "Locations": {
+  "pk": [
+   "LocationID"
+  ],
+  "identity": [
+   "LocationID"
+  ],
+  "ignore": []
+ },
+ "LoginCompanyGroup": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Manufacturers": {
+  "pk": [
+   "ManufacturerID"
+  ],
+  "identity": [
+   "ManufacturerID"
+  ],
+  "ignore": []
+ },
+ "MemberDiscount": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "Merchan": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ModalStations": {
+  "pk": [
+   "Code"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "MonitorDevice": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "MonthInventories": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "MonthlyGunReports": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "MonthlySalesReports": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "NonTransaction": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "NozRealData": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "NozStatue": {
+  "pk": [
+   "StationID",
+   "NozID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "OilTransactions": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "OnlineDeposit": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "OnlineDepositOrder": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "OperatorTypes": {
+  "pk": [
+   "OperatorTypeID"
+  ],
+  "identity": [
+   "OperatorTypeID"
+  ],
+  "ignore": []
+ },
+ "OrderCheck": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ParameterFlgs": {
+  "pk": [
+   "ParameterFlgID"
+  ],
+  "identity": [
+   "ParameterFlgID"
+  ],
+  "ignore": []
+ },
+ "PlatformFee": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "PosRequest": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "PreCardNo": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "PreCard_M": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "PriceInfos": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "PriceLogs": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "PrintTable": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ProcurementDetails": {
+  "pk": [
+   "ProcurementID"
+  ],
+  "identity": [
+   "ProcurementID"
+  ],
+  "ignore": []
+ },
+ "ProcurementMains": {
+  "pk": [
+   "ProcurementID"
+  ],
+  "identity": [
+   "ProcurementID"
+  ],
+  "ignore": []
+ },
+ "PumpsProfile": {
+  "pk": [
+   "StationID"
+  ],
+  "identity": [
+   "StationID"
+  ],
+  "ignore": []
+ },
+ "Regions": {
+  "pk": [
+   "RegionID"
+  ],
+  "identity": [
+   "RegionID"
+  ],
+  "ignore": []
+ },
+ "Repositories": {
+  "pk": [
+   "RepositoryID"
+  ],
+  "identity": [
+   "RepositoryID"
+  ],
+  "ignore": []
+ },
+ "SaleDetails": {
+  "pk": [
+   "SaleID"
+  ],
+  "identity": [
+   "SaleID"
+  ],
+  "ignore": []
+ },
+ "SaleMains": {
+  "pk": [
+   "SaleID"
+  ],
+  "identity": [
+   "SaleID"
+  ],
+  "ignore": []
+ },
+ "SaveTransfer": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ScoreDepositRate": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ScoreLog": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "ScoreRate": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "SpricePriceSet": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationAD": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationNoz": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationNozStatue": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationPluse": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationPriceInfos": {
+  "pk": [
+   "Code"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "StationTank": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationTankStatue": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "StationTypes": {
+  "pk": [
+   "StationTypeID"
+  ],
+  "identity": [
+   "StationTypeID"
+  ],
+  "ignore": []
+ },
+ "Stations": {
+  "pk": [
+   "StationID"
+  ],
+  "identity": [
+   "StationID"
+  ],
+  "ignore": []
+ },
+ "Stocktakings": {
+  "pk": [
+   "StocktakingID"
+  ],
+  "identity": [
+   "StocktakingID"
+  ],
+  "ignore": []
+ },
+ "TankAlarm": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankAlarmHistory": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankHistory": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankMeasurements": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankRealData": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankStatus": {
+  "pk": [
+   "ID",
+   "StationID"
+  ],
+  "identity": [],
+  "ignore": []
+ },
+ "TankStock": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TankVolume": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TaxBill": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "TicketManagements": {
+  "pk": [
+   "TicketManagementID"
+  ],
+  "identity": [
+   "TicketManagementID"
+  ],
+  "ignore": []
+ },
+ "TransactionTypes": {
+  "pk": [
+   "TransactionTypeID"
+  ],
+  "identity": [
+   "TransactionTypeID"
+  ],
+  "ignore": []
+ },
+ "TransportInfoes": {
+  "pk": [
+   "TransportInfoID"
+  ],
+  "identity": [
+   "TransportInfoID"
+  ],
+  "ignore": []
+ },
+ "UnknowDevice": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "UserProfile": {
+  "pk": [
+   "UserId"
+  ],
+  "identity": [
+   "UserId"
+  ],
+  "ignore": []
+ },
+ "Users": {
+  "pk": [
+   "UserID"
+  ],
+  "identity": [
+   "UserID"
+  ],
+  "ignore": []
+ },
+ "VirtualScoreLog": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "VirtualScoreUser": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "WhiteCardLists": {
+  "pk": [
+   "WhiteCardListID"
+  ],
+  "identity": [
+   "WhiteCardListID"
+  ],
+  "ignore": []
+ },
+ "WxOrder": {
+  "pk": [
+   "ID"
+  ],
+  "identity": [
+   "ID"
+  ],
+  "ignore": []
+ },
+ "webpages_Membership": {
+  "pk": [
+   "UserId"
+  ],
+  "identity": [
+   "UserId"
+  ],
+  "ignore": []
+ },
+ "webpages_OAuthMembership": {
+  "pk": [
+   "Provider"
+  ],
+  "identity": [
+   "Provider"
+  ],
+  "ignore": []
+ },
+ "webpages_Roles": {
+  "pk": [
+   "RoleId"
+  ],
+  "identity": [
+   "RoleId"
+  ],
+  "ignore": []
+ },
+ "webpages_UsersInRoles": {
+  "pk": [
+   "UserId"
+  ],
+  "identity": [
+   "UserId"
+  ],
+  "ignore": []
+ }
+}

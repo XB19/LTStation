@@ -25,6 +25,14 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
 
+# Base locale de la station (StationNEW d'origine). Même serveur et même compte que Center
+# par défaut ; STATION_DB_* permet de la placer ailleurs (poste de la station).
+station:
+  datasource:
+    url: jdbc:postgresql://${STATION_DB_HOST:${DB_HOST:localhost}}:${STATION_DB_PORT:${DB_PORT:5432}}/${STATION_DB_NAME:station}
+    username: ${STATION_DB_USER:${DB_USER:postgres}}
+    password: ${STATION_DB_PASSWORD:${DB_PASSWORD:}}
+
 server:
   port: ${SERVER_PORT:8080}
   servlet:
@@ -67,6 +75,14 @@ app:
   discount-per-company: ${DISCOUNT_PER_COMPANY:true}
   # CreditPayAdvance=1 d'origine : les recharges en ligne créditent immédiatement les cartes de crédit
   credit-pay-advance: ${CREDIT_PAY_ADVANCE:true}
+  # API des stations (/ServerDeal/*), réglages du Web.config d'origine
+  server-deal:
+    platform-key: ${PLATFORM_KEY:}
+    station-control: ${STATION_CONTROL:false}
+    credit-day: ${CREDIT_DAY:21}
+    pluse-base: ${PLUSE_BASE:1250}
+    volume-by-self: ${VOLUME_BY_SELF:0}
+    settlement-day: ${SETTLEMENT_DAY:5}
   # Licence d'activation (table active_web), comme la plateforme d'origine.
   license:
     enabled: ${LICENSE_ENABLED:true}
