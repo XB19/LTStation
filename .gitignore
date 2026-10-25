@@ -23,3 +23,7 @@ backend/src/main/resources/static/
 # Application de bureau
 desktop/node_modules/
 desktop/dist/
+
+# Journaux d'exécution (classe Log d'origine)
+backend/logs/
+logs/
