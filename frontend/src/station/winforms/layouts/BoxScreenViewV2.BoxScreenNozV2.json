@@ -40,7 +40,10 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "BackgroundImage": "res/BoxScreenPump.png"
+   }
   },
   {
    "name": "flowLayoutPanel2",

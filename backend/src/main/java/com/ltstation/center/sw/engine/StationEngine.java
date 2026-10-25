@@ -41,6 +41,7 @@ public class StationEngine {
     private final LegacyLog stationLog = new LegacyLog("StationLog");
     private final List<Thread> threads = new CopyOnWriteArrayList<>();
     private volatile boolean first = true;
+    private volatile boolean started;
     private volatile boolean startReady;
     private final Row customerParam = SW.dto().make("CustomerParam");
 
@@ -67,6 +68,17 @@ public class StationEngine {
         return SW.db();
     }
 
+    private static volatile StationEngine instance;
+
+    public StationEngine() {
+        instance = this;
+    }
+
+    /** Moteur de la station (accès depuis les fenêtres). */
+    public static StationEngine get() {
+        return instance;
+    }
+
     public void register(Hardware hw) {
         hardware.add(hw);
     }
@@ -79,9 +91,10 @@ public class StationEngine {
 
     /** Station_Load : démarre les fils d'exécution (une seule fois). */
     public synchronized void start() {
-        if (IniInfo.ThreadStop) {
+        if (started) {
             return;
         }
+        started = true;
         setIniInfo();
         IniInfo.ThreadStop = true;
         first = true;
@@ -107,6 +120,7 @@ public class StationEngine {
 
     /** ExitItem / FormClosing : arrêt des fils d'exécution. */
     public synchronized void stop() {
+        started = false;
         IniInfo.ThreadStop = false;
         for (Hardware h : hardware) {
             try {

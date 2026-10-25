@@ -76,7 +76,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/UserCardMessage/Next.Image.png"
+   }
   },
   {
    "name": "Cur",
@@ -94,7 +97,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Image": "res/forms/UserCardMessage/Cur.Image.png"
+   }
   },
   {
    "name": "QuerySearch",

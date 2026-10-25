@@ -22,7 +22,10 @@
    "dock": "top",
    "visible": true,
    "z": 4,
-   "order": 999
+   "order": 999,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreen/panel1.BackgroundImage.png"
+   }
   },
   {
    "name": "NozPanel",
@@ -40,7 +43,10 @@
    "dock": "top",
    "visible": true,
    "z": 3,
-   "order": 999
+   "order": 999,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreen/NozPanel.BackgroundImage.jpg"
+   }
   },
   {
    "name": "LeftPanel",

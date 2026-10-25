@@ -11,6 +11,9 @@ import java.lang.annotation.Target;
 public @interface SwWindow {
     String value();
 
-    /** Fenêtre ouverte avant la connexion (assistant StationCreate, licence…). */
+    /** Fenêtre ouverte sans connexion (Login). */
     boolean anonymous() default false;
+
+    /** Fenêtre de l'assistant d'installation : ouverte sans connexion tant que la station n'est pas enregistrée. */
+    boolean setup() default false;
 }

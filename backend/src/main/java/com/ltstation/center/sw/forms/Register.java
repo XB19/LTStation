@@ -7,7 +7,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
 
 /** Register : activation de la licence du poste (adresse MAC chiffrée). */
-@SwWindow(value = "Register", anonymous = true)
+@SwWindow(value = "Register", setup = true)
 public class Register extends SwForm {
 
     public void Register_Load() {

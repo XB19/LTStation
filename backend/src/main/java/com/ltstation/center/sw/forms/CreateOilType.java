@@ -12,7 +12,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
 
 /** CreateOilType : nouveau type de carburant sur Center (code proposé = dernier code + 1). */
-@SwWindow(value = "CreateOilType", anonymous = true)
+@SwWindow(value = "CreateOilType", setup = true)
 public class CreateOilType extends SwForm {
 
     private final Row CustomerParam = SW.dto().make("CustomerParam");

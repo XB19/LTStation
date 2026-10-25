@@ -490,7 +490,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/CardLog/NextEnd.Image.png"
+   }
   },
   {
    "name": "Next",
@@ -508,7 +511,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Image": "res/forms/CardLog/Next.Image.png"
+   }
   },
   {
    "name": "TotalPageSecond",
@@ -598,7 +604,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "init": {
+    "Image": "res/forms/CardLog/Cur.Image.png"
+   }
   },
   {
    "name": "CurEnd",
@@ -616,7 +625,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "Image": "res/forms/CardLog/CurEnd.Image.png"
+   }
   }
  ],
  "columns": {

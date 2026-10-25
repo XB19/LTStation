@@ -11,7 +11,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
 
 /** CreateEmployee(int ID) : création d'un employé sur Center (ID 1 = assistant d'installation). */
-@SwWindow(value = "CreateEmployee", anonymous = true)
+@SwWindow(value = "CreateEmployee", setup = true)
 public class CreateEmployee extends SwForm {
 
     private int CID = 1;

@@ -298,7 +298,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Image": "res/forms/NormalForm.NormalTransaction/Next.Image.png"
+   }
   },
   {
    "name": "CurPage",
@@ -334,7 +337,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "Image": "res/forms/NormalForm.NormalTransaction/Cur.Image.png"
+   }
   },
   {
    "name": "PageLabel",

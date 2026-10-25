@@ -1077,7 +1077,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Image": "res/forms/Deposit/NextEnd.Image.png"
+   }
   },
   {
    "name": "Next",
@@ -1095,7 +1098,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/Deposit/Next.Image.png"
+   }
   },
   {
    "name": "TotalPageSecond",
@@ -1167,7 +1173,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "init": {
+    "Image": "res/forms/Deposit/Cur.Image.png"
+   }
   },
   {
    "name": "CurEnd",
@@ -1185,7 +1194,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "init": {
+    "Image": "res/forms/Deposit/CurEnd.Image.png"
+   }
   },
   {
    "name": "PayMent",

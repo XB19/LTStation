@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Modal } from 'antd'
 import dayjs from 'dayjs'
 import { http } from '../../api/http'
@@ -44,6 +44,14 @@ interface Message {
   dialog?: string
   confirm?: string
   key?: string
+  /** ExecuteJavascript d'une fenêtre web */
+  js?: string
+  /** OpenFileDialog : filtre d'origine ("Excel(*.xls)|*.xls") */
+  openFile?: string
+  /** Fenêtre enfant intégrée dans un conteneur (TopLevel = false) */
+  embed?: string
+  id?: string
+  into?: string
 }
 
 interface FormState {
@@ -54,6 +62,11 @@ interface FormState {
   timers?: Record<string, number>
   title?: string
   suspend?: Suspend
+  /** Événements branchés dans le code d'origine (en plus de ceux du concepteur) */
+  events?: Record<string, Record<string, string>>
+  /** Fenêtre web (Formium) : page d'origine et fonctions de l'objet « my » */
+  web?: string
+  my?: Record<string, string>
   close?: string
   result?: Props
 }
@@ -67,6 +80,8 @@ export interface RemoteFormProps {
   onOpen?: (form: string, args: Props, parent?: string) => void
   /** Fenêtre propriétaire (Owner) côté serveur */
   parent?: string
+  /** Fenêtre déjà créée sur le serveur (fenêtre intégrée) : rattachement sans ouverture */
+  attachId?: string
   /** Affichage dans une fenêtre modale (par défaut) ou directement dans la page */
   framed?: boolean
   extra?: Record<string, ReactNode>
@@ -106,10 +121,15 @@ const show = (m: Message) => new Promise<void>((resolve) => (m.error ? Modal.err
   title: m.caption ? tr(m.caption) : undefined, content: tr(m.text ?? ''), okText: 'OK', onOk: () => resolve(), onCancel: () => resolve(),
 }))
 
-export default function RemoteForm({ form, args, onClose, onOpen, parent, framed = true, extra }: RemoteFormProps) {
+export default function RemoteForm({ form, args, onClose, onOpen, parent, attachId, framed = true, extra }: RemoteFormProps) {
   const layout = useMemo(() => getLayout(form), [form])
   const types = useMemo(() => Object.fromEntries(layout.controls.map((c) => [c.name, c.type])), [layout])
-  const events = layout.events ?? {}
+  const [extraEvents, setExtraEvents] = useState<Record<string, Record<string, string>>>({})
+  const events = useMemo(() => {
+    const m: Record<string, Record<string, string>> = { ...(layout.events ?? {}) }
+    for (const [k, v] of Object.entries(extraEvents)) m[k] = { ...m[k], ...v }
+    return m
+  }, [layout, extraEvents])
   const [id, setId] = useState<string>()
   const [ctl, setCtl] = useState<Record<string, Props>>({})
   const [grids, setGrids] = useState<Record<string, GridState>>({})
@@ -125,6 +145,25 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
   const timers = useRef<Record<string, number>>({})
   const lastCol = useRef<Record<string, string>>({})
   const closed = useRef(false)
+  const [web, setWeb] = useState<{ url: string; my: Record<string, string> } | null>(null)
+  const [embeds, setEmbeds] = useState<Record<string, { form: string; id: string }>>({})
+  const frame = useRef<HTMLIFrameElement>(null)
+  const frameLoaded = useRef(false)
+  const jsQueue = useRef<string[]>([])
+
+  /** ExecuteJavascript : exécuté dans la page d'origine (en attente tant qu'elle n'est pas chargée). */
+  const runJs = (js: string) => {
+    const w = frame.current?.contentWindow as (Window & { eval: (s: string) => unknown }) | null
+    if (!frameLoaded.current || !w) {
+      jsQueue.current.push(js)
+      return
+    }
+    try {
+      w.eval(js)
+    } catch (err) {
+      console.error('ExecuteJavascript', js, err)
+    }
+  }
 
   const merge = (patch: Record<string, Props>) => setCtl((c) => {
     const n = { ...c }
@@ -152,6 +191,25 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
 
   const sub = (f: string, a: Props) => new Promise<{ result: string; data: Props }>((resolve) => setDialog({ form: f, args: a, resolve }))
 
+  /** OpenFileDialog : sélection d'un fichier envoyé au serveur (contenu en base64). */
+  const pickFile = (filter: string, key: string) => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    const patterns = (filter.split('|')[1] ?? '').split(';').map((x) => x.trim().replace(/^\*/, '')).filter((x) => x && x !== '.*')
+    if (patterns.length) input.accept = patterns.join(',')
+    input.onchange = () => {
+      const file = input.files?.[0]
+      if (!file) return
+      const reader = new FileReader()
+      reader.onload = () => {
+        const content = String(reader.result).split(',')[1] ?? ''
+        fire('$continue', '', { key, result: 'OK', data: { name: file.name, content } })
+      }
+      reader.readAsDataURL(file)
+    }
+    input.click()
+  }
+
   /** Applique une réponse du serveur ; renvoie la question en attente éventuelle. */
   const apply = async (s: FormState) => {
     merge(s.controls ?? {})
@@ -163,6 +221,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
       })
     }
     if (s.title) setTitle(s.title)
+    if (s.events) setExtraEvents(s.events)
+    if (s.web) setWeb({ url: s.web, my: s.my ?? {} })
     for (const [h, ms] of Object.entries(s.timers ?? {})) {
       window.clearInterval(timers.current[h])
       delete timers.current[h]
@@ -176,6 +236,9 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
         const yes = await ask(m.confirm)
         fire('$continue', '', { key: m.key, result: yes ? 'OK' : 'Cancel', data: {} })
       } else if (m.open) onOpen?.(m.open, m.args ?? {})
+      else if (m.openFile !== undefined) pickFile(m.openFile, m.key!)
+      else if (m.js !== undefined) runJs(m.js)
+      else if (m.embed && m.id && m.into) setEmbeds((x) => ({ ...x, [m.into!]: { form: m.embed!, id: m.id! } }))
       else if (m.download) download(m)
       else if (m.print) printLines(m.print)
       else await show(m)
@@ -214,6 +277,13 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
     let alive = true
     ;(async () => {
       const answers: Props = {}
+      if (attachId) {
+        idRef.current = attachId
+        setId(attachId)
+        const { data } = await http.post<FormState>(`/sw/form/${attachId}/state`, {})
+        if (alive) await apply(data)
+        return
+      }
       for (;;) {
         const { data } = await http.post<FormState>('/sw/form/open', { form, args: args ?? {}, answers, parent })
         if (!alive) {
@@ -254,6 +324,17 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
   const disabled: string[] = []
   const readOnly: string[] = []
   const texts: Record<string, string> = {}
+  const styles: Record<string, CSSProperties> = {}
+  const images: Record<string, string> = {}
+  const backgrounds: Record<string, string> = {}
+  for (const [n, pr] of Object.entries(ctl)) {
+    const st: CSSProperties = {}
+    if (pr.BackColor) st.backgroundColor = String(pr.BackColor).toLowerCase()
+    if (pr.ForeColor) st.color = String(pr.ForeColor).toLowerCase()
+    if (Object.keys(st).length) styles[n] = st
+    if (pr.Image) images[n] = String(pr.Image)
+    if (pr.BackgroundImage) backgrounds[n] = String(pr.BackgroundImage)
+  }
   for (const c of layout.controls) {
     const p = ctl[c.name]
     if (!p) continue
@@ -375,13 +456,47 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, framed
         hidden={hidden} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
         passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar).map((c) => c.name)}
         timeOnly={layout.controls.filter((c) => ctl[c.name]?.Format === 'Time').map((c) => c.name)}
-        extra={extra} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }} />
+        extra={{ ...extra, ...Object.fromEntries(Object.entries(embeds).map(([into, e]) => [into,
+          <RemoteForm key={e.id} form={e.form} attachId={e.id} framed={false} onOpen={onOpen} onClose={() => setEmbeds((x) => { const n = { ...x }; delete n[into]; return n })} />])) }} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }}
+        styles={styles} images={images} backgrounds={backgrounds}
+        onDropDown={(name, open) => { const h = on(name, open ? 'DropDown' : 'DropDownClosed'); if (h) fire(h, name, {}) }} />
       {dialog && (
         <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}
           onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />
       )}
     </>
   )
+  /** Page chargée : objet « my » injecté, scripts en attente exécutés, puis LoadHandler.OnLoadEnd. */
+  const onFrameLoad = () => {
+    const w = frame.current?.contentWindow as (Window & { my?: Record<string, (...a: unknown[]) => void> }) | null
+    if (!w || !web) return
+    w.my = {}
+    for (const [name, handler] of Object.entries(web.my)) {
+      w.my[name] = (...a: unknown[]) => {
+        const arg = a.find((x) => typeof x === 'string') ?? (a[0] === undefined ? '' : String(a[0]))
+        fire(handler, '', { arg })
+      }
+    }
+    frameLoaded.current = true
+    const q = jsQueue.current.splice(0)
+    q.forEach(runJs)
+    fire('LoadHandler_OnLoadEnd', '', {}, true)
+  }
+
+  const webBody = web && (
+    <>
+      <iframe ref={frame} title={layout.title} src={`/station-web/${web.url}`} onLoad={onFrameLoad}
+        style={{ width: '100%', height: Math.max(layout.size[1], 320), border: 0, display: 'block' }} />
+      {dialog && (
+        <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}
+          onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />
+      )}
+    </>
+  )
+  if (webBody) {
+    if (!framed) return webBody
+    return <Win layout={layout} title={title ? tr(title) : undefined} width={layout.size[0] + 48} onClose={requestClose}>{webBody}</Win>
+  }
   if (!framed) return id ? body : null
   return (
     <Win layout={layout} title={title ? tr(title) : undefined} onClose={requestClose}>

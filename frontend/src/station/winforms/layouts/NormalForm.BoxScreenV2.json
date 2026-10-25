@@ -799,7 +799,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/LeftCommandPanel.BackgroundImage.png"
+   }
   },
   {
    "name": "CommandCenterPanel",
@@ -835,7 +838,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/RightCommandPanel.BackgroundImage.png"
+   }
   },
   {
    "name": "label2",
@@ -889,7 +895,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/panel4.BackgroundImage.png"
+   }
   },
   {
    "name": "panel1",
@@ -907,7 +916,10 @@
    "dock": "bottom",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/panel1.BackgroundImage.png"
+   }
   },
   {
    "name": "ClearBtn",
@@ -1051,7 +1063,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "BackgroundImage": "res/BoxNext.png"
+   }
   },
   {
    "name": "OrderListPanel",
@@ -1105,7 +1120,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/LeftPayMentPanel.BackgroundImage.png"
+   }
   },
   {
    "name": "CenterPayMentPanel",
@@ -1141,7 +1159,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/NormalForm.BoxScreenV2/RightPayMentPanel.BackgroundImage.png"
+   }
   },
   {
    "name": "StopOnePumpBtn",

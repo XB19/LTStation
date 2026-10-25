@@ -22,7 +22,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "init": {
+    "BackgroundImage": "res/NorBase.png"
+   }
   },
   {
    "name": "NozRunLabel",
@@ -94,7 +97,10 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Image": "res/Normal.png"
+   }
   },
   {
    "name": "NozLabel",
@@ -112,7 +118,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 4
+   "order": 4,
+   "init": {
+    "Image": "res/ScreenNozOnline.png"
+   }
   }
  ],
  "columns": {},

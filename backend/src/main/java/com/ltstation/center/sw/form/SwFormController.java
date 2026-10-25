@@ -70,7 +70,7 @@ public class SwFormController {
     public Map<String, Object> open(@RequestBody Map<String, Object> body, HttpSession session) {
         String name = String.valueOf(body.getOrDefault("form", ""));
         // Fenêtres de l'assistant d'installation : ouvertes sans connexion tant que la station n'est pas enregistrée
-        if (!registry.anonymous(name) || SwBootController.registered()) {
+        if (!registry.anonymous(name) && !(registry.setup(name) && !SwBootController.registered())) {
             SwBootController.requireLogin(session);
         }
         SwForm f = registry.create(name);
@@ -84,6 +84,7 @@ public class SwFormController {
         if (body.get("parent") instanceof String pid) {
             f.Owner = forms(session).get(pid);
         }
+        f.session = session;
         forms(session).put(f.id, f);
         synchronized (f) {
             Map<String, Object> out = run(f, "init", body, true);
@@ -103,7 +104,7 @@ public class SwFormController {
     }
 
     /** État des contrôles après InitializeComponent : texte d'origine et propriétés fixées dans le concepteur. */
-    private static void seed(SwForm f) {
+    static void seed(SwForm f) {
         f.layout.texts().forEach((n, text) -> {
             String type = f.layout.types().getOrDefault(n, "");
             if (type.endsWith("ComboBox") || type.endsWith("DataGridView") || type.endsWith("DateTimePicker")) {
@@ -112,6 +113,30 @@ public class SwFormController {
             f.c(n).fromClient("Text", text);
         });
         f.layout.init().forEach((n, props) -> props.forEach((k, v) -> f.c(n).fromClient(k, v)));
+    }
+
+    static void register(HttpSession session, SwForm f) {
+        if (session != null) {
+            forms(session).put(f.id, f);
+        }
+    }
+
+    /** Fenêtre créée par une autre (Embed) : enregistrée dans la session, constructeur et Load exécutés. */
+    static void attach(SwForm parent, SwForm child, String name) {
+        child.id = UUID.randomUUID().toString();
+        child.formName = name;
+        child.layout = Layouts.get(name);
+        child.Owner = parent;
+        child.session = parent.session;
+        seed(child);
+        if (parent.session != null) {
+            forms(parent.session).put(child.id, child);
+        }
+        child.init();
+        String load = loadHandler(child);
+        if (load != null) {
+            child.invoke(load);
+        }
     }
 
     /** Gestionnaire du Load : déclaré dans la mise en page ou nommé <Form>_Load. */
@@ -130,11 +155,22 @@ public class SwFormController {
     public Map<String, Object> event(@PathVariable String id, @RequestBody Map<String, Object> body, HttpSession session) {
         SwForm f = form(session, id);
         synchronized (f) {
+            f.session = session;
             Map<String, Object> out = run(f, String.valueOf(body.getOrDefault("handler", "")), body, false);
             if (f.closeResult != null) {
                 forms(session).remove(id);
             }
             return out;
+        }
+    }
+
+    /** État complet d'une fenêtre déjà ouverte (fenêtre intégrée dans une autre). */
+    @PostMapping("/{id}/state")
+    public Map<String, Object> state(@PathVariable String id, @RequestBody(required = false) Map<String, Object> body, HttpSession session) {
+        SwForm f = form(session, id);
+        synchronized (f) {
+            f.session = session;
+            return run(f, "", body == null ? Map.of() : body, true);
         }
     }
 
@@ -207,7 +243,6 @@ public class SwFormController {
         applyClient(f, body);
         f.handler = handler;
         f.suspendCounter = 0;
-        f.messages.clear();
         Map<String, Object> suspend = null;
         String error = null;
         try {
@@ -264,18 +299,28 @@ public class SwFormController {
         });
         out.put("controls", ctls);
         out.put("grids", grids);
-        List<Map<String, Object>> msgs = new ArrayList<>(f.messages);
+        List<Map<String, Object>> msgs;
+        synchronized (f.messages) {
+            msgs = new ArrayList<>(f.messages);
+            f.messages.clear();
+        }
         if (error != null) {
             msgs.add(Map.of("text", error, "error", true));
         }
         out.put("messages", msgs);
-        f.messages.clear();
         if (!f.timers.isEmpty()) {
             out.put("timers", new LinkedHashMap<>(f.timers));
             f.timers.clear();
         }
         if (f.title != null) {
             out.put("title", f.title);
+        }
+        if (full && f instanceof SwWebForm w) {
+            out.put("web", w.Url());
+            out.put("my", w.jsFunctions);
+        }
+        if (full && !f.extraEvents.isEmpty()) {
+            out.put("events", f.extraEvents);
         }
         if (suspend != null) {
             out.put("suspend", suspend);

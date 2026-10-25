@@ -105,6 +105,24 @@ public class SwBootController {
         return Map.of("ok", true, "name", IniInfo.LoginName);
     }
 
+    /** Program.cs, Auto ≠ 0 : connexion automatique du premier employé (mode Normal). */
+    @PostMapping("/autologin")
+    public Map<String, Object> autologin(HttpSession session) {
+        if (IniInfo.Auto == 0) {
+            throw new SwException(MultiLanguage.getText("AuthorityProblem"), 403);
+        }
+        Row emp = db().first("Employees");
+        if (emp == null) {
+            throw new SwException(MultiLanguage.getText("LoginFailed"));
+        }
+        IniInfo.LoginID = emp.i("EmployeeID");
+        IniInfo.LoginName = emp.s("Name");
+        IniInfo.LoginType = Conv.toInt(emp.get("StationType"));
+        IniInfo.Auth = emp.s("Auth");
+        session.setAttribute(SESSION_KEY, IniInfo.LoginID);
+        return Map.of("ok", true, "name", IniInfo.LoginName);
+    }
+
     /** EmpLoginItem : changement d'employé sans arrêter le moteur. */
     @PostMapping("/relogin")
     public Map<String, Object> relogin(@RequestBody Map<String, String> body, HttpSession session) {

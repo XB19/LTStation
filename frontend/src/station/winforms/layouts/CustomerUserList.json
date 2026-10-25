@@ -230,7 +230,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Image": "res/forms/CustomerUserList/Cur.Image.png"
+   }
   },
   {
    "name": "Next",
@@ -248,7 +251,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/CustomerUserList/Next.Image.png"
+   }
   },
   {
    "name": "Page",

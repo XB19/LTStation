@@ -142,6 +142,15 @@ public class Ctl {
         return set("BackColor", color);
     }
 
+    /** PictureBox.Image : image d'origine (chemin sous station-web, ex. "res/OFF.png"). */
+    public Ctl Image(String path) {
+        return set("Image", path);
+    }
+
+    public String Image() {
+        return Conv.toStr(props.get("Image"));
+    }
+
     // ------------------------------------------------------------ listes (ComboBox / ListBox)
 
     @SuppressWarnings("unchecked")

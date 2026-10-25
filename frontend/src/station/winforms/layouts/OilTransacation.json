@@ -751,7 +751,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "init": {
+    "Image": "res/forms/OilTransacation/NextEnd.Image.png"
+   }
   },
   {
    "name": "Next",
@@ -769,7 +772,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/OilTransacation/Next.Image.png"
+   }
   },
   {
    "name": "TotalPageSecond",
@@ -895,7 +901,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "init": {
+    "Image": "res/forms/OilTransacation/Cur.Image.png"
+   }
   },
   {
    "name": "CurEnd",
@@ -913,7 +922,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "init": {
+    "Image": "res/forms/OilTransacation/CurEnd.Image.png"
+   }
   }
  ],
  "columns": {

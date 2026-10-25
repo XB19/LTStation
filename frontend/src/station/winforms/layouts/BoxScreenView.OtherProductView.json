@@ -467,7 +467,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/BoxScreenView.OtherProductView/skinPanel2.BackgroundImage.png"
+   }
   },
   {
    "name": "label3",
@@ -521,7 +524,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/BoxScreenView.OtherProductView/skinPanel4.BackgroundImage.png"
+   }
   },
   {
    "name": "label5",
@@ -575,7 +581,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/BoxScreenView.OtherProductView/skinPanel6.BackgroundImage.png"
+   }
   },
   {
    "name": "label7",
@@ -629,7 +638,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/BoxScreenView.OtherProductView/skinPanel8.BackgroundImage.png"
+   }
   },
   {
    "name": "label9",
@@ -683,7 +695,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "BackgroundImage": "res/forms/BoxScreenView.OtherProductView/skinPanel10.BackgroundImage.png"
+   }
   }
  ],
  "columns": {

@@ -76,7 +76,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "Image": "res/forms/Card.EmpCardManager/Next.Image.png"
+   }
   },
   {
    "name": "CurPage",
@@ -112,7 +115,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "Image": "res/forms/Card.EmpCardManager/Cur.Image.png"
+   }
   },
   {
    "name": "PageLabel",

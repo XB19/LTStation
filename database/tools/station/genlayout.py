@@ -5,8 +5,21 @@ Sources : <Form>.resx neutre (positions), <Form>.en.resx (textes anglais), <Form
 """
 import base64, json, os, re, struct, sys
 import xml.etree.ElementTree as ET
+from resimages import resx_images
 
 DECOMP, OUT = sys.argv[1], sys.argv[2]
+# Images des fenêtres : frontend/public/station-web/res/forms/<fenêtre>/
+RES = os.path.normpath(os.path.join(OUT, '..', '..', '..', '..', 'public', 'station-web', 'res'))
+APP_RES = {}
+
+
+def save_image(key, name, img):
+    data, ext = img
+    d = os.path.join(RES, 'forms', key)
+    os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, f'{name}.{ext}'), 'wb') as f:
+        f.write(data)
+    return f'res/forms/{key}/{name}.{ext}'
 
 
 def load_resx(path):
@@ -102,6 +115,7 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
     res = res or f'StationSoftWare.Forms.{form}'
     key = key or form
     neutral = load_resx(os.path.join(resx_dir, f'{res}.resx'))
+    form_images = resx_images(os.path.join(resx_dir, f'{res}.resx'))
     en = load_resx(os.path.join(en_dir, f'{res}.en.resx'))
     cs_path = os.path.join(cs_dir, f'{form}.cs')
     cs = open(cs_path, encoding='utf-8').read() if os.path.exists(cs_path) else ''
@@ -191,6 +205,14 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
             init['Format'] = m.group(1)
         if (m := re.search(rf'this\.{n}\.CustomFormat = {STR};', cs)):
             init['CustomFormat'] = cs_str(m.group(1))
+        # Images : ressources de la fenêtre (.resx) ou de l'application (Properties.Resources.X)
+        for prop in ('Image', 'BackgroundImage'):
+            img = form_images.get(f'{name}.{prop}')
+            if img:
+                init[prop] = save_image(key, f'{name}.{prop}', img)
+            elif (m := re.search(rf'this\.{n}\.{prop} = [\w.]*Resources\.(\w+);', cs)):
+                ext = next((e for e in ('png', 'jpg', 'gif', 'bmp') if os.path.exists(os.path.join(RES, f'{m.group(1)}.{e}'))), 'png')
+                init[prop] = f'res/{m.group(1)}.{ext}'
         if (m := re.search(rf'this\.{n}\.SelectedIndex = (-?\d+);', cs)):
             init['SelectedIndex'] = int(m.group(1))
         if (m := re.search(rf'this\.{n}\.(Maximum|Minimum) = new decimal\(new int\[4\]\s*\{{\s*(\d+),', cs)):

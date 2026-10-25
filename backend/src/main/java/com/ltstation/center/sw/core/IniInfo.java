@@ -50,6 +50,9 @@ public final class IniInfo {
         DEFAULTS.put("ServerIP", "127.0.0.1");
         DEFAULTS.put("Port", "7777");
         DEFAULTS.put("ExtendUrl", "");
+        DEFAULTS.put("SmsClientId", "");
+        DEFAULTS.put("SmsClientSecret", "");
+        DEFAULTS.put("SmsToken", "");
         DEFAULTS.put("CardConstKey", "");
         DEFAULTS.put("CardConstTempKey", "");
         DEFAULTS.put("clientKey", "");
@@ -109,6 +112,10 @@ public final class IniInfo {
     public static int Auto;
     public static int HandShiftPassword;
     public static String FoRanUrl = "";
+    /** Service SMS des notifications de transaction (Nozzle.SendNote) : identifiants hors du code. */
+    public static String SmsClientId = "";
+    public static String SmsClientSecret = "";
+    public static String SmsToken = "";
     public static String clientKey = "";
     public static String clientSecret = "";
     public static String uid = "";
@@ -259,6 +266,9 @@ public final class IniInfo {
         Auto = i("Auto", 0);
         HandShiftPassword = i("HandShiftPassword", 0);
         FoRanUrl = setting("FoRanUrl");
+        SmsClientId = setting("SmsClientId");
+        SmsClientSecret = setting("SmsClientSecret");
+        SmsToken = setting("SmsToken");
         BaseFunction.CONST_KEY = setting("CardConstKey");
         BaseFunction.CONST_TEMPKEY = setting("CardConstTempKey");
         clientKey = setting("clientKey");

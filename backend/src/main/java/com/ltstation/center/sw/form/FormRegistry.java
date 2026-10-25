@@ -38,6 +38,11 @@ public class FormRegistry {
         return c != null && c.getAnnotation(SwWindow.class).anonymous();
     }
 
+    public boolean setup(String name) {
+        Class<? extends SwForm> c = forms.get(name);
+        return c != null && c.getAnnotation(SwWindow.class).setup();
+    }
+
     public java.util.Set<String> names() {
         return forms.keySet();
     }

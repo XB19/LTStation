@@ -114,6 +114,12 @@ export interface WinFormProps {
   extra?: Record<string, ReactNode>
   /** Clic sur un élément de menu (nom d'origine) */
   onMenu?: (item: string) => void
+  /** Ouverture / fermeture de la liste d'une ComboBox (DropDown / DropDownClosed) */
+  onDropDown?: (name: string, open: boolean) => void
+  /** Couleurs d'origine (BackColor / ForeColor) et images (Image / BackgroundImage, chemins sous station-web) */
+  styles?: Record<string, CSSProperties>
+  images?: Record<string, string>
+  backgrounds?: Record<string, string>
 }
 
 /** Pagination d'origine remplacée par celle des tableaux */
@@ -207,7 +213,12 @@ export default function WinForm(p: WinFormProps) {
     switch (c.type) {
       case 'Label':
       case 'SkinLabel':
-        return <span className="wf-label">{text(c)}</span>
+        return <span className="wf-label" style={p.styles?.[c.name]}>{text(c)}</span>
+      case 'PictureBox':
+      case 'SkinPictureBox':
+        return p.images?.[c.name]
+          ? <img src={`/station-web/${p.images[c.name]}`} alt="" style={{ width: c.size[0], height: c.size[1], objectFit: 'contain', ...p.styles?.[c.name] }} />
+          : <span style={{ display: 'inline-block', width: c.size[0], height: c.size[1] }} />
       case 'TextBox':
       case 'SkinTextBox':
       case 'RichTextBox':
@@ -220,6 +231,7 @@ export default function WinForm(p: WinFormProps) {
       case 'ComboBox':
         return <Select size="small" style={{ width: w }} value={v as string | number | undefined} disabled={dis || ro}
           options={p.options?.[c.name] ?? []} onChange={(x) => p.onChange(c.name, x)} showSearch optionFilterProp="label"
+          onDropdownVisibleChange={(open) => p.onDropDown?.(c.name, open)}
           popupMatchSelectWidth={false} />
       case 'DateTimePicker':
       case 'SkinDateTimePicker':
@@ -393,7 +405,12 @@ export default function WinForm(p: WinFormProps) {
         </div>
       )
     }
-    return <div className="wf-panel">{renderBody(c.name)}</div>
+    const bg = p.backgrounds?.[c.name]
+    return (
+      <div className="wf-panel" style={{ ...p.styles?.[c.name], ...(bg ? { backgroundImage: `url(/station-web/${bg})`, backgroundSize: 'cover' } : {}) }}>
+        {renderBody(c.name)}
+      </div>
+    )
   }
 
   return <div className="wf-root">{renderBody('$this')}</div>

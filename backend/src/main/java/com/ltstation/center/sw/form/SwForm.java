@@ -36,7 +36,7 @@ public abstract class SwForm {
     Layouts.Layout layout;
     final Map<String, Ctl> ctls = new LinkedHashMap<>();
     final Map<String, Grid> grids = new LinkedHashMap<>();
-    final List<Map<String, Object>> messages = new ArrayList<>();
+    final List<Map<String, Object>> messages = java.util.Collections.synchronizedList(new ArrayList<>());
     final Map<String, Integer> timers = new LinkedHashMap<>();
     Map<String, Object> answers = new LinkedHashMap<>();
     String handler = "";
@@ -49,6 +49,16 @@ public abstract class SwForm {
     protected String sender = "";
     /** Arguments de l'événement (RowIndex, ColumnIndex, KeyChar…). */
     protected Row e = new Row();
+    /** Session du poste (connexion de l'employé). */
+    jakarta.servlet.http.HttpSession session;
+
+    /** Employé connecté (IniInfo.LoginID) : la session du poste est ouverte. */
+    protected void SessionLogin() {
+        if (session != null) {
+            session.setAttribute(com.ltstation.center.sw.web.SwBootController.SESSION_KEY, com.ltstation.center.sw.core.IniInfo.LoginID);
+        }
+    }
+
     /** Fenêtre propriétaire (base.Owner) : celle qui a ouvert cette fenêtre. */
     protected SwForm Owner;
     /** Valeurs renvoyées à la fenêtre parente à la fermeture. */
@@ -72,12 +82,10 @@ public abstract class SwForm {
         if (layout == null || raiseDepth > 8) {
             return;
         }
-        Map<String, String> ev = layout.events().get(ctl);
-        if (ev == null) {
-            return;
-        }
+        Map<String, String> ev = layout.events().getOrDefault(ctl, Map.of());
+        Map<String, String> extra = extraEvents.getOrDefault(ctl, Map.of());
         for (String name : events) {
-            String h = ev.get(name);
+            String h = extra.containsKey(name) ? extra.get(name) : ev.get(name);
             if (h == null) {
                 continue;
             }
@@ -127,6 +135,23 @@ public abstract class SwForm {
     /** Tableau (DataGridView) par son nom d'origine. */
     public Grid g(String name) {
         return grids.computeIfAbsent(name, n -> new Grid(n, layout == null ? List.of() : layout.columns().get(n)));
+    }
+
+    /** Controls d'un conteneur (ordre d'origine) : noms des contrôles enfants. */
+    protected List<String> Controls(String parent) {
+        return layout == null ? List.of() : layout.children().getOrDefault(parent, List.of());
+    }
+
+    /** Type d'origine d'un contrôle (ex. "CheckBox", "SkinTextBox"). */
+    protected String TypeOf(String name) {
+        return layout == null ? "" : layout.types().getOrDefault(name, "");
+    }
+
+    /** Événements branchés dans le code (X.SkinTxt.TextChanged += …) en plus de ceux du concepteur. */
+    final Map<String, Map<String, String>> extraEvents = new LinkedHashMap<>();
+
+    protected void On(String ctl, String event, String handler) {
+        extraEvents.computeIfAbsent(ctl, k -> new LinkedHashMap<>()).put(event, handler);
     }
 
     /** Raccourci : texte d'un contrôle sans espaces de début et de fin (Text.Trim()). */
@@ -210,6 +235,30 @@ public abstract class SwForm {
         messages.add(Map.of("dialog", form, "args", Row.of(kv), "key", key));
     }
 
+    /**
+     * OpenFileDialog : le poste choisit un fichier (filtre d'origine, ex. "Excel(*.xls;*.xlsx)|*.xls;*.xlsx"),
+     * qui est enregistré dans station/Upload ; la suite reçoit son chemin.
+     */
+    protected void OpenFileDialog(String filter, Consumer<String> then) {
+        String key = "c" + (++pendingSeq);
+        pending.put(key, r -> {
+            if (!r.ok()) {
+                return;
+            }
+            try {
+                String name = java.nio.file.Path.of(r.data().s("name")).getFileName().toString();
+                java.nio.file.Path dir = java.nio.file.Path.of("station", "Upload");
+                java.nio.file.Files.createDirectories(dir);
+                java.nio.file.Path file = dir.resolve(System.currentTimeMillis() + "-" + name);
+                java.nio.file.Files.write(file, java.util.Base64.getDecoder().decode(r.data().s("content")));
+                then.accept(file.toAbsolutePath().toString());
+            } catch (java.io.IOException ex) {
+                MessageBox(ex.getMessage());
+            }
+        });
+        messages.add(Map.of("openFile", filter == null ? "" : filter, "key", key));
+    }
+
     /** MessageBox Oui/Non suivi de la suite du gestionnaire (yes = réponse Oui). */
     protected void Ask(String text, Consumer<Boolean> then) {
         String key = "c" + (++pendingSeq);
@@ -252,6 +301,40 @@ public abstract class SwForm {
     /** Timer.Start() : le client appelle le gestionnaire toutes les ms millisecondes ; 0 = Stop(). */
     protected void Timer(String handlerName, int ms) {
         timers.put(handlerName, ms);
+    }
+
+    /**
+     * PrintClass.Print() : impression directe sur l'imprimante 58 mm du poste ; sans cette
+     * imprimante, le ticket est proposé à l'impression dans le navigateur (dialogue d'impression).
+     */
+    protected void PrintTicket(com.ltstation.center.sw.hw.PrintClass pc) {
+        if (!pc.Print()) {
+            Print(pc.lines());
+        }
+    }
+
+    /**
+     * Form.TopLevel = false ; Container.Controls.Add(form) ; form.Show() : la fenêtre enfant est
+     * affichée dans le conteneur indiqué. Elle reste accessible par sa référence Java.
+     */
+    protected <T extends SwForm> T Embed(T child, String container) {
+        if (child.id != null) {
+            // Fenêtre déjà créée (rechargement de la page) : rattachée à cette fenêtre et à la session
+            child.Owner = this;
+            child.session = session;
+            SwFormController.register(session, child);
+            messages.add(Map.of("embed", child.formName, "id", child.id, "into", container));
+            return child;
+        }
+        SwWindow w = child.getClass().getAnnotation(SwWindow.class);
+        SwFormController.attach(this, child, w == null ? child.getClass().getSimpleName() : w.value());
+        messages.add(Map.of("embed", child.formName, "id", child.id, "into", container));
+        return child;
+    }
+
+    /** Interrogation périodique du serveur (mises à jour venues des fils de la station). */
+    protected void Poll(int ms) {
+        timers.put("$poll", ms);
     }
 
     /** Fichier à télécharger par le client (export Excel, impression…). */

@@ -4,8 +4,7 @@ import { App as AntApp, ConfigProvider } from 'antd'
 import frFR from 'antd/locale/fr_FR'
 import dayjs from 'dayjs'
 import 'dayjs/locale/fr'
-import { StationAuthProvider } from './auth'
-import StationApp from './StationApp'
+import SwApp from './SwApp'
 import './station.css'
 
 dayjs.locale('fr')
@@ -20,9 +19,7 @@ createRoot(document.getElementById('root')!).render(
       }}
     >
       <AntApp>
-        <StationAuthProvider>
-          <StationApp />
-        </StationAuthProvider>
+        <SwApp />
       </AntApp>
     </ConfigProvider>
   </StrictMode>,
