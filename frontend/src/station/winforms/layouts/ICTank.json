@@ -1,0 +1,11 @@
+{
+ "name": "ICTank",
+ "title": "ICTank",
+ "size": [
+  800,
+  450
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {}
+}

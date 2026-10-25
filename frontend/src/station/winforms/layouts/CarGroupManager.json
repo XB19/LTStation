@@ -1,0 +1,93 @@
+{
+ "name": "CarGroupManager",
+ "title": "CarGroupManager",
+ "size": [
+  777,
+  437
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    769,
+    399
+   ],
+   "text": "集团信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GroupView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    763,
+    379
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "GroupView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "集团名称",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LoginName",
+    "header": "集团地址",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Type",
+    "header": "社会信用代码",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Bal",
+    "header": "余额",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "GroupView": {
+   "CellDoubleClick": "GroupView_CellDoubleClick"
+  },
+  "AddMenu": {
+   "Click": "AddMenu_Click"
+  }
+ }
+}

@@ -1,0 +1,391 @@
+{
+ "name": "CardScoreMess",
+ "title": "CardScoreMess",
+ "size": [
+  1059,
+  545
+ ],
+ "controls": [
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1051,
+    59
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    93
+   ],
+   "size": [
+    1051,
+    388
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    481
+   ],
+   "size": [
+    1051,
+    60
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NextBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    985,
+    31
+   ],
+   "size": [
+    60,
+    23
+   ],
+   "text": "下一页",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PreBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    919,
+    31
+   ],
+   "size": [
+    60,
+    23
+   ],
+   "text": "上一页",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    973,
+    16
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1045,
+    368
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ScoreValue",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    806,
+    24
+   ],
+   "size": [
+    107,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    741,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "消费积分:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "DelBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    919,
+    22
+   ],
+   "size": [
+    126,
+    23
+   ],
+   "text": "积分扣除",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "CurrentScore",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    628,
+    24
+   ],
+   "size": [
+    107,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    563,
+    27
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "当前积分:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "CardPhone",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    435,
+    24
+   ],
+   "size": [
+    122,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    382,
+    27
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "手机号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "CardName",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    254,
+    24
+   ],
+   "size": [
+    122,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    201,
+    27
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "用户名:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "CardNo",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    47,
+    24
+   ],
+   "size": [
+    148,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    27
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "卡号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "卡号",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "用户名",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ScoreType",
+    "header": "积分操作",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Score",
+    "header": "积分值",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "当前积分",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Time",
+    "header": "时间",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "NextBtn": {
+   "Click": "NextBtn_Click"
+  },
+  "PreBtn": {
+   "Click": "NextBtn_Click"
+  },
+  "DelBtn": {
+   "Click": "DelBtn_Click"
+  }
+ }
+}

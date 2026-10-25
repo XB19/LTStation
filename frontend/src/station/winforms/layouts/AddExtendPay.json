@@ -1,0 +1,313 @@
+{
+ "name": "AddExtendPay",
+ "title": "AddExtendPay",
+ "size": [
+  299,
+  223
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    291,
+    185
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    75
+   ],
+   "size": [
+    285,
+    76
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    75
+   ],
+   "size": [
+    285,
+    76
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": false,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "groupBox1",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    285,
+    58
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    291,
+    154
+   ],
+   "text": "基本信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    154
+   ],
+   "size": [
+    291,
+    31
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "CancleButton",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    213,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "取消",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    132,
+    3
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "确定",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    3,
+    32
+   ],
+   "size": [
+    80,
+    16
+   ],
+   "text": "通讯方式:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ComminuateType",
+   "type": "SkinComboBox",
+   "parent": "panel3",
+   "loc": [
+    89,
+    32
+   ],
+   "size": [
+    188,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    3,
+    5
+   ],
+   "size": [
+    80,
+    16
+   ],
+   "text": "设备类型:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "TypeSelect",
+   "type": "SkinComboBox",
+   "parent": "panel3",
+   "loc": [
+    89,
+    3
+   ],
+   "size": [
+    188,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    3,
+    10
+   ],
+   "size": [
+    64,
+    16
+   ],
+   "text": "串口号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PortSelect",
+   "type": "SkinComboBox",
+   "parent": "panel4",
+   "loc": [
+    89,
+    10
+   ],
+   "size": [
+    188,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel5",
+   "loc": [
+    3,
+    11
+   ],
+   "size": [
+    64,
+    16
+   ],
+   "text": "IP地址:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "IPAddress",
+   "type": "SkinTextBox",
+   "parent": "panel5",
+   "loc": [
+    89,
+    6
+   ],
+   "size": [
+    188,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "AddButton": {
+   "Click": "CancleButton_Click"
+  },
+  "CancleButton": {
+   "Click": "CancleButton_Click"
+  },
+  "ComminuateType": {
+   "SelectedIndexChanged": "ComminuateType_SelectedIndexChanged"
+  },
+  "$this": {
+   "Load": "AddExtendPay_Load"
+  }
+ }
+}

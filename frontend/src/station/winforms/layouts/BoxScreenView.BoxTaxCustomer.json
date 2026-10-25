@@ -1,0 +1,665 @@
+{
+ "name": "BoxScreenView.BoxTaxCustomer",
+ "title": "BoxTaxCustomer",
+ "size": [
+  972,
+  636
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    964,
+    195
+   ],
+   "text": "搜索条件",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    229
+   ],
+   "size": [
+    964,
+    403
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "RFIDShow",
+   "type": "SkinTabPage",
+   "parent": "GunAndTankTab",
+   "loc": [
+    0,
+    25
+   ],
+   "size": [
+    964,
+    378
+   ],
+   "text": "用户信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "RFIDShow",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    836,
+    378
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "RFIDShow",
+   "loc": [
+    836,
+    0
+   ],
+   "size": [
+    128,
+    378
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button4",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    583,
+    142
+   ],
+   "size": [
+    181,
+    48
+   ],
+   "text": "退出",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button3",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    777,
+    132
+   ],
+   "size": [
+    181,
+    48
+   ],
+   "text": "查询(在线)",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button2",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    777,
+    78
+   ],
+   "size": [
+    181,
+    48
+   ],
+   "text": "查询(离线)",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    17,
+    137
+   ],
+   "size": [
+    73,
+    19
+   ],
+   "text": "客户类型",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "textBox9",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    162
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    542,
+    82
+   ],
+   "size": [
+    73,
+    19
+   ],
+   "text": "联系方式",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "textBox8",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    546,
+    107
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    367,
+    79
+   ],
+   "size": [
+    73,
+    19
+   ],
+   "text": "用户编码",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "textBox7",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    371,
+    107
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    192,
+    79
+   ],
+   "size": [
+    105,
+    19
+   ],
+   "text": "汽车登记城市",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "textBox6",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    196,
+    107
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "checkBox1",
+   "type": "CheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    78
+   ],
+   "size": [
+    124,
+    23
+   ],
+   "text": "汽车登记标签",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "textBox5",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    107
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "button1",
+   "type": "Button",
+   "parent": "groupBox1",
+   "loc": [
+    777,
+    24
+   ],
+   "size": [
+    181,
+    48
+   ],
+   "text": "键盘",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "textBox4",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    546,
+    45
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    542,
+    23
+   ],
+   "size": [
+    73,
+    19
+   ],
+   "text": "分支机构",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "textBox3",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    371,
+    45
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    367,
+    23
+   ],
+   "size": [
+    41,
+    19
+   ],
+   "text": "地址",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17
+  },
+  {
+   "name": "textBox2",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    196,
+    45
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    192,
+    23
+   ],
+   "size": [
+    57,
+    19
+   ],
+   "text": "用户名",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 19
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    45
+   ],
+   "size": [
+    145,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    17,
+    23
+   ],
+   "size": [
+    71,
+    19
+   ],
+   "text": "纳税人ID",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21
+  },
+  {
+   "name": "GunAndTankTab",
+   "type": "SkinTabControl",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    964,
+    403
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button8",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    0,
+    282
+   ],
+   "size": [
+    128,
+    94
+   ],
+   "text": "选择",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button7",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    0,
+    188
+   ],
+   "size": [
+    128,
+    94
+   ],
+   "text": "button7",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button6",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    0,
+    94
+   ],
+   "size": [
+    128,
+    94
+   ],
+   "text": "用户编辑",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "button5",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    128,
+    94
+   ],
+   "text": "新增用户",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    836,
+    378
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "纳税人ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "用户名",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "地址",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "分支机构",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "车辆标签",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "车辆城市",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "用户编码",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column3",
+    "header": "联系方式",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {}
+}

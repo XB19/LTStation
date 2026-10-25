@@ -1,0 +1,11 @@
+{
+ "name": "Tank",
+ "title": "Tank",
+ "size": [
+  433,
+  218
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {}
+}

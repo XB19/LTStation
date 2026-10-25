@@ -1,0 +1,160 @@
+{
+ "name": "BoxScreenViewV2.BoxScreenNozV2",
+ "title": "BoxScreenNozV2",
+ "size": [
+  166,
+  97
+ ],
+ "controls": [
+  {
+   "name": "flowLayoutPanel1",
+   "type": "FlowLayoutPanel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    81,
+    27
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NozStatuePanel",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    81,
+    0
+   ],
+   "size": [
+    85,
+    97
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "flowLayoutPanel2",
+   "type": "FlowLayoutPanel",
+   "parent": "$this",
+   "loc": [
+    0,
+    27
+   ],
+   "size": [
+    81,
+    70
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PumpIDLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    3,
+    0
+   ],
+   "size": [
+    24,
+    27
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "NozHandLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel1",
+   "loc": [
+    33,
+    0
+   ],
+   "size": [
+    40,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "RealCountLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    3,
+    0
+   ],
+   "size": [
+    85,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "RealGradeNameLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    3,
+    20
+   ],
+   "size": [
+    0,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "RealAmountLabel",
+   "type": "Label",
+   "parent": "flowLayoutPanel2",
+   "loc": [
+    9,
+    20
+   ],
+   "size": [
+    0,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  }
+ ],
+ "columns": {},
+ "events": {
+  "$this": {
+   "Click": "BoxScreenNozV2_Click"
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "Login",
+ "title": "Login",
+ "size": [
+  864,
+  568
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {
+  "$this": {
+   "Load": "Login_Load"
+  }
+ }
+}

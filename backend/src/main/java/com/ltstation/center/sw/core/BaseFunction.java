@@ -37,8 +37,9 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public final class BaseFunction {
 
-    public static final String CONST_KEY = "";
-    public static final String CONST_TEMPKEY = "";
+    /** Clés maîtresses des cartes : lues dans StationSoftware.properties (CardConstKey / CardConstTempKey), jamais dans le code. */
+    public static String CONST_KEY = "";
+    public static String CONST_TEMPKEY = "";
     public static final String CON_TEMPKEY = "11111111111111111111111111111111";
     public static final String CON_BIN = "11FFFFFFFFFFFFFF";
     public static final String CON_USERINFO = "0100111111111111111111111111111111111111111111111111111111111111111111111111111101";

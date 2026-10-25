@@ -1,0 +1,276 @@
+{
+ "name": "StockImport",
+ "title": "StockImport",
+ "size": [
+  793,
+  449
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    785,
+    67
+   ],
+   "text": "Tank",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    101
+   ],
+   "size": [
+    785,
+    344
+   ],
+   "text": "Tank Record",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CurrentPage",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    614,
+    24
+   ],
+   "size": [
+    71,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    525,
+    27
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "Current Page:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "AddImoort",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    437,
+    23
+   ],
+   "size": [
+    82,
+    21
+   ],
+   "text": "Storage",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "DirectButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    691,
+    23
+   ],
+   "size": [
+    82,
+    21
+   ],
+   "text": "Jump",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "TPage",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    736,
+    52
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "GradeName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    289,
+    24
+   ],
+   "size": [
+    131,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    214,
+    27
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Grade Type:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "TankID",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    24
+   ],
+   "size": [
+    131,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    24,
+    27
+   ],
+   "size": [
+    53,
+    12
+   ],
+   "text": "Tank ID:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    779,
+    324
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Operate",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilPrice",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Volume",
+    "header": "Final Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Time",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "AddImoort": {
+   "Click": "AddImoort_Click"
+  },
+  "DirectButton": {
+   "Click": "DirectButton_Click"
+  },
+  "$this": {
+   "Load": "StockImport_Load"
+  }
+ }
+}

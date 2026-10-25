@@ -1,0 +1,76 @@
+{
+ "name": "NormalForm.TipForm",
+ "title": "TipForm",
+ "size": [
+  455,
+  171
+ ],
+ "controls": [
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "$this",
+   "loc": [
+    7,
+    34
+   ],
+   "size": [
+    61,
+    24
+   ],
+   "text": "label1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    56,
+    123
+   ],
+   "size": [
+    153,
+    41
+   ],
+   "text": "确定",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "StopAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "$this",
+   "loc": [
+    252,
+    123
+   ],
+   "size": [
+    163,
+    41
+   ],
+   "text": "取消",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 999
+  }
+ ],
+ "columns": {},
+ "events": {
+  "OpenAllPumpBtn": {
+   "Click": "OpenAllPumpBtn_Click"
+  },
+  "StopAllPumpBtn": {
+   "Click": "StopAllPumpBtn_Click"
+  },
+  "$this": {
+   "Load": "TipForm_Load"
+  }
+ }
+}

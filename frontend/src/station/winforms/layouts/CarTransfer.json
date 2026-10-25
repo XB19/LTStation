@@ -1,0 +1,232 @@
+{
+ "name": "CarTransfer",
+ "title": "CarTransfer",
+ "size": [
+  325,
+  300
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    317,
+    262
+   ],
+   "text": "转储信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    121
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转入账户:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    94
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "车牌号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "Account",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    118
+   ],
+   "size": [
+    198,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "CarNo",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    91
+   ],
+   "size": [
+    198,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    195
+   ],
+   "size": [
+    148,
+    41
+   ],
+   "text": "保存",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "Amount",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    157
+   ],
+   "size": [
+    198,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    160
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转出金额:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    65
+   ],
+   "size": [
+    198,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    68
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转入对象:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "GroupName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    27
+   ],
+   "size": [
+    198,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    28,
+    30
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转出集团:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  }
+ ],
+ "columns": {},
+ "events": {
+  "AddButton": {
+   "Click": "AddButton_Click"
+  }
+ }
+}

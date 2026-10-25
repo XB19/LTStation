@@ -1,0 +1,199 @@
+{
+ "name": "CarGroupUpdate",
+ "title": "CarGroupUpdate",
+ "size": [
+  425,
+  324
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    417,
+    286
+   ],
+   "text": "集团信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "GroupPhoneBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    127,
+    173
+   ],
+   "size": [
+    249,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    38,
+    176
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "联系方式:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    127,
+    217
+   ],
+   "size": [
+    148,
+    59
+   ],
+   "text": "删除",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "GroupCreditBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    127,
+    128
+   ],
+   "size": [
+    249,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    38,
+    131
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "社会信用代码:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "GroupAddressBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    127,
+    77
+   ],
+   "size": [
+    249,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    38,
+    80
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "集团单位地址:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "GroupNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    127,
+    29
+   ],
+   "size": [
+    249,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    38,
+    32
+   ],
+   "size": [
+    83,
+    12
+   ],
+   "text": "集团单位名称:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  }
+ ],
+ "columns": {},
+ "events": {
+  "AddButton": {
+   "Click": "AddButton_Click"
+  },
+  "$this": {
+   "Load": "CarGroupUpdate_Load"
+  }
+ }
+}

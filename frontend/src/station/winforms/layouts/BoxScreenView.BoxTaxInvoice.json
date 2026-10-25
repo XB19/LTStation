@@ -1,0 +1,1153 @@
+{
+ "name": "BoxScreenView.BoxTaxInvoice",
+ "title": "BoxTaxInvoice",
+ "size": [
+  1160,
+  891
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1152,
+    155
+   ],
+   "text": "Search Condition",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    189
+   ],
+   "size": [
+    1152,
+    698
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "textBox11",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    625,
+    39
+   ],
+   "size": [
+    178,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    1000,
+    86
+   ],
+   "size": [
+    144,
+    60
+   ],
+   "text": "Search",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    809,
+    86
+   ],
+   "size": [
+    185,
+    60
+   ],
+   "text": "Show Keyboard",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "dateTimePicker1",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    222,
+    76
+   ],
+   "size": [
+    211,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "comboBox5",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    625,
+    76
+   ],
+   "size": [
+    178,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    457,
+    79
+   ],
+   "size": [
+    128,
+    23
+   ],
+   "text": "Customer Code",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    457,
+    42
+   ],
+   "size": [
+    162,
+    23
+   ],
+   "text": "Tax Invoice Number",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "comboBox3",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    222,
+    113
+   ],
+   "size": [
+    211,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    31,
+    116
+   ],
+   "size": [
+    112,
+    23
+   ],
+   "text": "Shift Number",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    31,
+    79
+   ],
+   "size": [
+    185,
+    23
+   ],
+   "text": "Sale date,Account date",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "comboBox1",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    222,
+    39
+   ],
+   "size": [
+    211,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    31,
+    42
+   ],
+   "size": [
+    87,
+    23
+   ],
+   "text": "Select Pos",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    585,
+    0
+   ],
+   "size": [
+    567,
+    698
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    585,
+    698
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button12",
+   "type": "Button",
+   "parent": "panel10",
+   "loc": [
+    386,
+    404
+   ],
+   "size": [
+    173,
+    84
+   ],
+   "text": "Print-out",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button11",
+   "type": "Button",
+   "parent": "panel10",
+   "loc": [
+    386,
+    314
+   ],
+   "size": [
+    173,
+    84
+   ],
+   "text": "button11",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button10",
+   "type": "Button",
+   "parent": "panel10",
+   "loc": [
+    386,
+    224
+   ],
+   "size": [
+    173,
+    84
+   ],
+   "text": "button10",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "button9",
+   "type": "Button",
+   "parent": "panel10",
+   "loc": [
+    386,
+    134
+   ],
+   "size": [
+    173,
+    84
+   ],
+   "text": "Add new customer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "textBox10",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    386,
+    494
+   ],
+   "size": [
+    173,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "label17",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    333,
+    497
+   ],
+   "size": [
+    47,
+    23
+   ],
+   "text": "Note",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "textBox9",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    171,
+    494
+   ],
+   "size": [
+    156,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "label16",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    497
+   ],
+   "size": [
+    47,
+    23
+   ],
+   "text": "Note",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "textBox8",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    170,
+    457
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label15",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    460
+   ],
+   "size": [
+    61,
+    23
+   ],
+   "text": "Milage",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "textBox7",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    170,
+    420
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    423
+   ],
+   "size": [
+    161,
+    23
+   ],
+   "text": "Car registration city",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "textBox6",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    170,
+    383
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "label13",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    386
+   ],
+   "size": [
+    158,
+    23
+   ],
+   "text": "Car registration tag",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "textBox5",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    170,
+    346
+   ],
+   "size": [
+    210,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    349
+   ],
+   "size": [
+    64,
+    23
+   ],
+   "text": "Branch",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "textBox4",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    162,
+    170
+   ],
+   "size": [
+    218,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    173
+   ],
+   "size": [
+    150,
+    23
+   ],
+   "text": "Customer address",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17
+  },
+  {
+   "name": "textBox3",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    162,
+    133
+   ],
+   "size": [
+    218,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    136
+   ],
+   "size": [
+    134,
+    23
+   ],
+   "text": "Customer Name",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 19
+  },
+  {
+   "name": "textBox2",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    162,
+    96
+   ],
+   "size": [
+    218,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    99
+   ],
+   "size": [
+    126,
+    23
+   ],
+   "text": "Customer code",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "panel10",
+   "loc": [
+    162,
+    59
+   ],
+   "size": [
+    218,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 22
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel10",
+   "loc": [
+    6,
+    62
+   ],
+   "size": [
+    135,
+    23
+   ],
+   "text": "Select form type",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 23
+  },
+  {
+   "name": "checkBox1",
+   "type": "CheckBox",
+   "parent": "panel10",
+   "loc": [
+    6,
+    19
+   ],
+   "size": [
+    275,
+    27
+   ],
+   "text": "Input tax invoice number by self",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 24
+  },
+  {
+   "name": "panel6",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    23
+   ],
+   "size": [
+    449,
+    675
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel5",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    449,
+    23
+   ],
+   "size": [
+    136,
+    675
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    585,
+    23
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "panel8",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    23
+   ],
+   "size": [
+    567,
+    675
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel7",
+   "type": "Panel",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    567,
+    23
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    202,
+    23
+   ],
+   "text": "Please Select Transaction",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button8",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    588
+   ],
+   "size": [
+    136,
+    87
+   ],
+   "text": "Exit",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button7",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    504
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Add new customer",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "button6",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    420
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Full tax invoice sample page",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "button5",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    336
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Cancel all",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "button4",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    252
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Cancel 1 order",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "button3",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    168
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Select all",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "button2",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    84
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Select 1 order",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "button1",
+   "type": "Button",
+   "parent": "panel5",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    136,
+    84
+   ],
+   "text": "Show receipt sample",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel6",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    449,
+    675
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel7",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    365,
+    23
+   ],
+   "text": "List of selected transaction to make tax invoice",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel10",
+   "type": "Panel",
+   "parent": "panel8",
+   "loc": [
+    0,
+    137
+   ],
+   "size": [
+    567,
+    538
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "panel9",
+   "type": "Panel",
+   "parent": "panel8",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    567,
+    137
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "skinDataGridView1",
+   "type": "SkinDataGridView",
+   "parent": "panel9",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    567,
+    137
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "skinDataGridView1": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn2",
+    "header": "Sale date",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn3",
+    "header": "Transaction number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "Total amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Sale date",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Transaction number",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Total amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {}
+}

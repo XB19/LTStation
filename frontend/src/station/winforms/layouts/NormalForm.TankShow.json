@@ -1,0 +1,11 @@
+{
+ "name": "NormalForm.TankShow",
+ "title": "TankShow",
+ "size": [
+  800,
+  450
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {}
+}

@@ -1,0 +1,185 @@
+{
+ "name": "DisplayPayShow",
+ "title": "DisplayPayShow",
+ "size": [
+  705,
+  421
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    697,
+    383
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "panel1",
+   "loc": [
+    0,
+    355
+   ],
+   "size": [
+    697,
+    28
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PayView",
+   "type": "SkinDataGridView",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    697,
+    383
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    457,
+    2
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "新增",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "DeleteButton",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    538,
+    2
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "删除",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "CloseButton",
+   "type": "SkinButton",
+   "parent": "panel2",
+   "loc": [
+    619,
+    2
+   ],
+   "size": [
+    75,
+    23
+   ],
+   "text": "关闭",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel2",
+   "loc": [
+    3,
+    8
+   ],
+   "size": [
+    185,
+    12
+   ],
+   "text": "修改成功后需要重启软件才能生效",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  }
+ ],
+ "columns": {
+  "PayView": [
+   {
+    "name": "ID",
+    "header": "编号",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "ExtendType",
+    "header": "类型",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "dataGridViewComboBoxColumn1",
+    "header": "端口号",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "IPAddress",
+    "header": "IP地址",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "AddButton": {
+   "Click": "CloseButton_Click"
+  },
+  "DeleteButton": {
+   "Click": "CloseButton_Click"
+  },
+  "CloseButton": {
+   "Click": "CloseButton_Click"
+  },
+  "PayView": {
+   "CellDoubleClick": "PayView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "DisplayPayShow_Load"
+  }
+ }
+}

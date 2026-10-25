@@ -1,0 +1,199 @@
+{
+ "name": "AddStock",
+ "title": "AddStock",
+ "size": [
+  258,
+  281
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    250,
+    243
+   ],
+   "text": "Stock Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Confirm",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    93,
+    200
+   ],
+   "size": [
+    82,
+    21
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "StockValue",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    163
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    54,
+    166
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "CurrentStock",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    117
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    120
+   ],
+   "size": [
+    95,
+    12
+   ],
+   "text": "Current Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "GradeName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    71
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    30,
+    74
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "Grade Type:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "TankID",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    107,
+    25
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    78,
+    28
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "ID:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  }
+ ],
+ "columns": {},
+ "events": {
+  "Confirm": {
+   "Click": "Confirm_Click"
+  },
+  "$this": {
+   "Load": "AddStock_Load"
+  }
+ }
+}

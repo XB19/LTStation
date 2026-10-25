@@ -1,0 +1,400 @@
+{
+ "name": "BoxScreenView.BoxCustomer",
+ "title": "BoxCustomer",
+ "size": [
+  1456,
+  775
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    600,
+    737
+   ],
+   "text": "UserCard",
+   "dock": "left",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox5",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    604,
+    34
+   ],
+   "size": [
+    414,
+    737
+   ],
+   "text": "Group",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    1018,
+    34
+   ],
+   "size": [
+    434,
+    737
+   ],
+   "text": "PersonCredit",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "UserCardDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    32
+   ],
+   "size": [
+    588,
+    642
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    674
+   ],
+   "size": [
+    588,
+    57
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "UserCardNextBtn",
+   "type": "Button",
+   "parent": "groupBox2",
+   "loc": [
+    322,
+    19
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "UserCardPageLabel",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    258,
+    26
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "99/99",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "UserCardPreBtn",
+   "type": "Button",
+   "parent": "groupBox2",
+   "loc": [
+    155,
+    19
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "PersonCreditDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    32
+   ],
+   "size": [
+    422,
+    642
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "groupBox3",
+   "loc": [
+    6,
+    674
+   ],
+   "size": [
+    422,
+    57
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "PersonCreditNextBtn",
+   "type": "Button",
+   "parent": "groupBox4",
+   "loc": [
+    260,
+    19
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "PersonCreditPageLabel",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    196,
+    26
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "99/99",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "PersonCreditPreBtn",
+   "type": "Button",
+   "parent": "groupBox4",
+   "loc": [
+    93,
+    19
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "GroupDataView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox5",
+   "loc": [
+    6,
+    32
+   ],
+   "size": [
+    402,
+    642
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox6",
+   "type": "GroupBox",
+   "parent": "groupBox5",
+   "loc": [
+    6,
+    674
+   ],
+   "size": [
+    402,
+    57
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "GroupNextBtn",
+   "type": "Button",
+   "parent": "groupBox6",
+   "loc": [
+    247,
+    22
+   ],
+   "size": [
+    98,
+    33
+   ],
+   "text": ">",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GroupPage",
+   "type": "Label",
+   "parent": "groupBox6",
+   "loc": [
+    183,
+    29
+   ],
+   "size": [
+    58,
+    23
+   ],
+   "text": "99/99",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "GroupPreBtn",
+   "type": "Button",
+   "parent": "groupBox6",
+   "loc": [
+    80,
+    22
+   ],
+   "size": [
+    97,
+    33
+   ],
+   "text": "<",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "UserCardDataView": [
+   {
+    "name": "UserName",
+    "header": "UserName",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardType",
+    "header": "CardType",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "CardNumber",
+    "header": "CardNumber",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "PersonCreditDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn1",
+    "header": "UserName",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ],
+  "GroupDataView": [
+   {
+    "name": "dataGridViewTextBoxColumn4",
+    "header": "GroupName",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "UserCardNextBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "UserCardPreBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "GroupNextBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "GroupPreBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "PersonCreditNextBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "PersonCreditPreBtn": {
+   "Click": "UserCardPreBtn_Click"
+  },
+  "$this": {
+   "Load": "BoxCustomer_Load"
+  }
+ }
+}

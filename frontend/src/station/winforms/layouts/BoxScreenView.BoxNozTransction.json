@@ -1,0 +1,154 @@
+{
+ "name": "BoxScreenView.BoxNozTransction",
+ "title": "BoxNozTransction",
+ "size": [
+  593,
+  484
+ ],
+ "controls": [
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    585,
+    398
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    432
+   ],
+   "size": [
+    585,
+    48
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "OpenAllPumpBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    345,
+    0
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Confirm",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QuitBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    465,
+    0
+   ],
+   "size": [
+    120,
+    48
+   ],
+   "text": "Quit",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel2",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    585,
+    398
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "NozID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "Amount",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "Time",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "OpenAllPumpBtn": {
+   "Click": "OpenAllPumpBtn_Click"
+  },
+  "QuitBtn": {
+   "Click": "QuitBtn_Click"
+  },
+  "OilDataView": {
+   "CellContentClick": "OilDataView_CellContentClick",
+   "SelectionChanged": "OilDataView_SelectionChanged"
+  },
+  "$this": {
+   "Load": "BoxNozTransction_Load"
+  }
+ }
+}

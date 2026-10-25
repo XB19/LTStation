@@ -1,0 +1,292 @@
+{
+ "name": "ScoreCheck",
+ "title": "ScoreCheck",
+ "size": [
+  266,
+  313
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    258,
+    275
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "skinButton1",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    246
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "打印",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TimeBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    199
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    202
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "时间:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "GradeBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    164
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    167
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "能源类型:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    94
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    97
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "金额:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "NozBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    59
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    62
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "枪号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "VolBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    129
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    132
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "销量:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "IDBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    24
+   ],
+   "size": [
+    178,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    21,
+    27
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "编号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    154,
+    246
+   ],
+   "size": [
+    95,
+    23
+   ],
+   "text": "结算",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  }
+ ],
+ "columns": {},
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "skinButton1": {
+   "Click": "skinButton1_Click"
+  },
+  "$this": {
+   "Load": "ScoreCheck_Load"
+  }
+ }
+}

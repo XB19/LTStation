@@ -1,0 +1,350 @@
+{
+ "name": "CarNoUserManager",
+ "title": "CarNoUserManager",
+ "size": [
+  979,
+  550
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    971,
+    80
+   ],
+   "text": "集团信息",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    114
+   ],
+   "size": [
+    971,
+    432
+   ],
+   "text": "下属信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    748,
+    25
+   ],
+   "size": [
+    71,
+    12
+   ],
+   "text": "车牌号查询:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    825,
+    22
+   ],
+   "size": [
+    140,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "BalBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    439,
+    16
+   ],
+   "size": [
+    102,
+    30
+   ],
+   "text": "余额变动",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "GroupBalance",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    574,
+    52
+   ],
+   "size": [
+    121,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    509,
+    55
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "集团余额:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "GroupPhone",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    382,
+    52
+   ],
+   "size": [
+    121,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    329,
+    55
+   ],
+   "size": [
+    47,
+    12
+   ],
+   "text": "手机号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "GroupAddress",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    87,
+    52
+   ],
+   "size": [
+    236,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "GroupA",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    55
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "集团地址:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    331,
+    16
+   ],
+   "size": [
+    102,
+    30
+   ],
+   "text": "集团管理",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "GroupSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    87,
+    26
+   ],
+   "size": [
+    236,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    29
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "集团选择:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "CardUserView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    965,
+    412
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "CardUserView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "用户名",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LoginName",
+    "header": "车牌号",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Type",
+    "header": "车辆类型",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Bal",
+    "header": "余额",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "GroupName",
+    "header": "所属集团",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "BalBtn": {
+   "Click": "BalBtn_Click"
+  },
+  "AddButton": {
+   "Click": "AddButton_Click"
+  },
+  "GroupSelect": {
+   "SelectedIndexChanged": "GroupSelect_SelectedIndexChanged"
+  },
+  "CardUserView": {
+   "CellDoubleClick": "CardUserView_CellDoubleClick"
+  },
+  "Add_Child": {
+   "Click": "Add_Child_Click"
+  },
+  "textBox1": {
+   "MouseLeave": "textBox1_MouseLeave"
+  },
+  "$this": {
+   "FormClosing": "CarNoUserManager_FormClosing",
+   "Load": "CarNoUserManager_Load"
+  }
+ }
+}

@@ -1,0 +1,343 @@
+{
+ "name": "BoxScreenViewV2.JumpOilDeal",
+ "title": "JumpOilDeal",
+ "size": [
+  407,
+  537
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    399,
+    499
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "RealTimeBox",
+   "type": "DateTimePicker",
+   "parent": "panel1",
+   "loc": [
+    143,
+    383
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    389
+   ],
+   "size": [
+    111,
+    24
+   ],
+   "text": "CreateTime:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "TimeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    282
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    285
+   ],
+   "size": [
+    56,
+    24
+   ],
+   "text": "Time:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel1",
+   "loc": [
+    78,
+    438
+   ],
+   "size": [
+    217,
+    47
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "DealVolumeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    334
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    337
+   ],
+   "size": [
+    115,
+    24
+   ],
+   "text": "DealVolume:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "VolumeTotalBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    230
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    233
+   ],
+   "size": [
+    119,
+    24
+   ],
+   "text": "VolumeTotal:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "PriceBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    178
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    181
+   ],
+   "size": [
+    55,
+    24
+   ],
+   "text": "Price:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    126
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    129
+   ],
+   "size": [
+    83,
+    24
+   ],
+   "text": "Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "VolumeBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    74
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    77
+   ],
+   "size": [
+    78,
+    24
+   ],
+   "text": "Volume:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "NozIDBox",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    143,
+    22
+   ],
+   "size": [
+    234,
+    32
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    22,
+    25
+   ],
+   "size": [
+    64,
+    24
+   ],
+   "text": "NozID:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "JumpOilDeal_Load"
+  }
+ }
+}

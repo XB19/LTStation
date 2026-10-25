@@ -1,0 +1,15 @@
+{
+ "name": "BoxScreenView.TankChartDisplay",
+ "title": "TankChartDisplay",
+ "size": [
+  628,
+  454
+ ],
+ "controls": [],
+ "columns": {},
+ "events": {
+  "$this": {
+   "Load": "TankChartDisplay_Load"
+  }
+ }
+}

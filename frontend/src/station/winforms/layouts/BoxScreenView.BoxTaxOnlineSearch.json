@@ -1,0 +1,287 @@
+{
+ "name": "BoxScreenView.BoxTaxOnlineSearch",
+ "title": "BoxTaxOnlineSearch",
+ "size": [
+  834,
+  537
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    826,
+    58
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    92
+   ],
+   "size": [
+    826,
+    389
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "panel2",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    481
+   ],
+   "size": [
+    826,
+    52
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "button2",
+   "type": "Button",
+   "parent": "panel1",
+   "loc": [
+    722,
+    16
+   ],
+   "size": [
+    101,
+    36
+   ],
+   "text": "查询",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button1",
+   "type": "Button",
+   "parent": "panel1",
+   "loc": [
+    615,
+    16
+   ],
+   "size": [
+    101,
+    36
+   ],
+   "text": "键盘",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "textBox2",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    360,
+    15
+   ],
+   "size": [
+    146,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    245,
+    18
+   ],
+   "size": [
+    109,
+    19
+   ],
+   "text": "分支机构编码:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "textBox1",
+   "type": "TextBox",
+   "parent": "panel1",
+   "loc": [
+    93,
+    15
+   ],
+   "size": [
+    146,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    12,
+    18
+   ],
+   "size": [
+    75,
+    19
+   ],
+   "text": "纳税人ID:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "button3",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    722,
+    6
+   ],
+   "size": [
+    101,
+    36
+   ],
+   "text": "退出",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "button4",
+   "type": "Button",
+   "parent": "panel2",
+   "loc": [
+    615,
+    6
+   ],
+   "size": [
+    101,
+    36
+   ],
+   "text": "选择",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "OilDataView",
+   "type": "SkinDataGridView",
+   "parent": "panel3",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    826,
+    389
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {
+  "OilDataView": [
+   {
+    "name": "ID",
+    "header": "纳税人ID",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "用户名",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Baud",
+    "header": "地址",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "OilType",
+    "header": "分支机构",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "LowOil",
+    "header": "车辆标签",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column1",
+    "header": "车辆城市",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column2",
+    "header": "用户编码",
+    "visible": true,
+    "prop": null,
+    "width": null
+   },
+   {
+    "name": "Column3",
+    "header": "联系方式",
+    "visible": true,
+    "prop": null,
+    "width": null
+   }
+  ]
+ },
+ "events": {}
+}

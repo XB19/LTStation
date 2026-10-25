@@ -50,6 +50,8 @@ public final class IniInfo {
         DEFAULTS.put("ServerIP", "127.0.0.1");
         DEFAULTS.put("Port", "7777");
         DEFAULTS.put("ExtendUrl", "");
+        DEFAULTS.put("CardConstKey", "");
+        DEFAULTS.put("CardConstTempKey", "");
         DEFAULTS.put("clientKey", "");
         DEFAULTS.put("clientSecret", "");
         DEFAULTS.put("uid", "");
@@ -257,6 +259,8 @@ public final class IniInfo {
         Auto = i("Auto", 0);
         HandShiftPassword = i("HandShiftPassword", 0);
         FoRanUrl = setting("FoRanUrl");
+        BaseFunction.CONST_KEY = setting("CardConstKey");
+        BaseFunction.CONST_TEMPKEY = setting("CardConstTempKey");
         clientKey = setting("clientKey");
         clientSecret = setting("clientSecret");
         uid = setting("uid");

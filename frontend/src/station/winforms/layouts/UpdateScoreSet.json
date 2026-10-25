@@ -1,0 +1,202 @@
+{
+ "name": "UpdateScoreSet",
+ "title": "UpdateScoreSet",
+ "size": [
+  247,
+  250
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    239,
+    212
+   ],
+   "text": "信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "UpdateBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    14,
+    158
+   ],
+   "size": [
+    96,
+    26
+   ],
+   "text": "修改",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    128
+   ],
+   "size": [
+    219,
+    27
+   ],
+   "text": "转换规则:依据升数或者金额进行转换,100:1转换,在转换比例里输入1即可",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "ScoreRate",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    104
+   ],
+   "size": [
+    154,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "DelBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    135,
+    158
+   ],
+   "size": [
+    96,
+    26
+   ],
+   "text": "删除",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    107
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转换比例:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "ScoreType",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    62
+   ],
+   "size": [
+    154,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    65
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "转换依据:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "GradeType",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    77,
+    21
+   ],
+   "size": [
+    154,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    12,
+    24
+   ],
+   "size": [
+    59,
+    12
+   ],
+   "text": "能源类型:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  }
+ ],
+ "columns": {},
+ "events": {
+  "DelBtn": {
+   "Click": "DelBtn_Click"
+  },
+  "UpdateBtn": {
+   "Click": "UpdateBtn_Click"
+  },
+  "$this": {
+   "Load": "UpdateScoreSet_Load"
+  }
+ }
+}

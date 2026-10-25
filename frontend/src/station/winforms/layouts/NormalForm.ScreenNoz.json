@@ -1,0 +1,137 @@
+{
+ "name": "NormalForm.ScreenNoz",
+ "title": "ScreenNoz",
+ "size": [
+  150,
+  80
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    150,
+    80
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NozRunLabel",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    41,
+    9
+   ],
+   "size": [
+    0,
+    12
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "GradeLabel",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    0,
+    38
+   ],
+   "size": [
+    88,
+    22
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "AmountLabel",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    0,
+    60
+   ],
+   "size": [
+    88,
+    20
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "PumpStatue",
+   "type": "PictureBox",
+   "parent": "panel1",
+   "loc": [
+    88,
+    0
+   ],
+   "size": [
+    62,
+    80
+   ],
+   "text": "",
+   "dock": "right",
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "NozLabel",
+   "type": "Label",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    36,
+    38
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  }
+ ],
+ "columns": {},
+ "events": {
+  "panel1": {
+   "Click": "ScreenNoz_Click"
+  },
+  "GradeLabel": {
+   "Click": "ScreenNoz_Click"
+  },
+  "AmountLabel": {
+   "Click": "ScreenNoz_Click"
+  },
+  "PumpStatue": {
+   "Click": "ScreenNoz_Click"
+  },
+  "$this": {
+   "Load": "ScreenNoz_Load",
+   "Click": "ScreenNoz_Click"
+  }
+ }
+}

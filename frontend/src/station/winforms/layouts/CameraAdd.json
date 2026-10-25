@@ -1,0 +1,160 @@
+{
+ "name": "CameraAdd",
+ "title": "CameraAdd",
+ "size": [
+  311,
+  246
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    303,
+    208
+   ],
+   "text": "摄像头信息",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "NozSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    74,
+    124
+   ],
+   "size": [
+    197,
+    20
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "AddButton",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    74,
+    163
+   ],
+   "size": [
+    148,
+    35
+   ],
+   "text": "保存",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    127
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "枪号:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "IPBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    74,
+    78
+   ],
+   "size": [
+    197,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    81
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "IP:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    74,
+    30
+   ],
+   "size": [
+    197,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    33,
+    33
+   ],
+   "size": [
+    35,
+    12
+   ],
+   "text": "名称:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  }
+ ],
+ "columns": {},
+ "events": {
+  "AddButton": {
+   "Click": "AddButton_Click"
+  }
+ }
+}

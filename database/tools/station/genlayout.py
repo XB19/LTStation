@@ -48,6 +48,54 @@ def enum(v, names):
 DOCK = {0: None, 1: 'top', 2: 'bottom', 3: 'left', 4: 'right', 5: 'fill'}
 
 
+STR = r'"((?:[^"\\]|\\.)*)"'
+SKIP_TYPES = ('Container', 'ComponentResourceManager', 'DataGridViewCellStyle', 'ContextMenuStrip', 'Timer', 'ImageList',
+              'ToolTip', 'BindingSource', 'ErrorProvider', 'SerialPort', 'PrintDocument', 'PrintPreviewDialog')
+
+
+def cs_str(v):
+    """Littéral de chaîne C# → texte."""
+    return re.sub(r'\\(.)', lambda m: {'n': '\n', 't': '\t', 'r': ''}.get(m.group(1), m.group(1)), v).strip()
+
+
+def designer_controls(cs):
+    """Contrôles décrits dans InitializeComponent (fenêtres sans .resx : textes et positions dans le code)."""
+    m = re.search(r'private void InitializeComponent\(\)\s*\{(.*)', cs, re.S)
+    body = m.group(1) if m else ''
+    grid_cols = set()
+    for g in re.finditer(r'this\.\w+\.Columns\.AddRange\(([^;]*?)\);', body, re.S):
+        grid_cols.update(re.findall(r'this\.(\w+)', g.group(1)))
+    controls = {}
+    for m in re.finditer(r'this\.(\w+) = new ([\w.]+)\(', body):
+        name, typ = m.group(1), m.group(2).split('.')[-1]
+        if typ in SKIP_TYPES or typ.startswith('ToolStrip') or typ.startswith('DataGridView') and typ != 'DataGridView' \
+                or name in grid_cols or name in controls:
+            continue
+        controls[name] = {'name': name, 'type': typ, 'parent': None, 'loc': [0, 0], 'size': [0, 0],
+                          'text': '', 'dock': None, 'visible': True, 'z': 0}
+    for m in re.finditer(r'(?:this\.(\w+)|base)\.Controls\.Add\(this\.(\w+)\);', body):
+        if m.group(2) in controls:
+            controls[m.group(2)]['parent'] = m.group(1) or '$this'
+    # Contrôles jamais ajoutés à un conteneur : composants (ignorés)
+    controls = {k: v for k, v in controls.items() if v['parent']}
+    for name, c in controls.items():
+        n = re.escape(name)
+        if (x := re.search(rf'this\.{n}\.Location = new System\.Drawing\.Point\((-?\d+), (-?\d+)\);', body)):
+            c['loc'] = [int(x.group(1)), int(x.group(2))]
+        if (x := re.search(rf'this\.{n}\.Size = new System\.Drawing\.Size\((\d+), (\d+)\);', body)):
+            c['size'] = [int(x.group(1)), int(x.group(2))]
+        if (x := re.search(rf'this\.{n}\.Text = {STR};', body)):
+            c['text'] = cs_str(x.group(1))
+        if (x := re.search(rf'this\.{n}\.Dock = System\.Windows\.Forms\.DockStyle\.(\w+);', body)):
+            c['dock'] = None if x.group(1) == 'None' else x.group(1).lower()
+        if re.search(rf'this\.{n}\.Visible = false;', body):
+            c['visible'] = False
+    title = cs_str(x.group(1)) if (x := re.search(rf'base\.Text = {STR};', body)) else ''
+    size = [int(x.group(1)), int(x.group(2))] if (x := re.search(r'base\.ClientSize = new System\.Drawing\.Size\((\d+), (\d+)\);', body)) else None
+    headers = {c: cs_str(x.group(1)) for c in grid_cols if (x := re.search(rf'this\.{re.escape(c)}\.HeaderText = {STR};', body))}
+    return controls, title, size, headers
+
+
 def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
     """form : nom de la classe ; res : nom complet de la ressource (StationSoftWare.Forms.X par défaut) ;
     key : nom du fichier de sortie (form par défaut)."""
@@ -73,6 +121,10 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
                 'visible': neutral.get(f'{name}.Visible', '').strip().lower() != 'false',
                 'z': int(neutral.get(f'>>{name}.ZOrder', '0') or 0),
             }
+    title = size = None
+    headers = {}
+    if not neutral and cs:
+        controls, title, size, headers = designer_controls(cs)
     # Ordre d'ajout dans les conteneurs (ordre des onglets)
     order = {}
     for m in re.finditer(r'this\.(\w+)\.Controls\.Add\(this\.(\w+)\)', cs):
@@ -84,7 +136,7 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
     columns = {}
     for m in re.finditer(r'this\.(\w+)\.Columns\.AddRange\(([^;]*?)\);', cs, re.S):
         cols = re.findall(r'this\.(\w+)', m.group(2))
-        columns[m.group(1)] = [{'name': c, 'header': (en.get(f'{c}.HeaderText') or neutral.get(f'{c}.HeaderText') or c).strip(),
+        columns[m.group(1)] = [{'name': c, 'header': (en.get(f'{c}.HeaderText') or neutral.get(f'{c}.HeaderText') or headers.get(c) or c).strip(),
                                 'visible': not re.search(rf'this\.{c}\.Visible = false', cs),
                                 'prop': (pm.group(1) if (pm := re.search(rf'this\.{c}\.DataPropertyName = "(\w+)"', cs)) else None),
                                 'width': int(w.group(1)) if (w := re.search(rf'this\.{c}\.Width = (\d+)', cs)) else None} for c in cols]
@@ -97,8 +149,8 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
         events.setdefault(ctl, {})[m.group(2)] = m.group(3)
     layout = {
         'name': key,
-        'title': (en.get('$this.Text') or neutral.get('$this.Text') or form).strip(),
-        'size': pair(neutral.get('$this.ClientSize')) or [800, 600],
+        'title': (en.get('$this.Text') or neutral.get('$this.Text') or title or form).strip(),
+        'size': pair(neutral.get('$this.ClientSize')) or size or [800, 600],
         'controls': sorted(controls.values(), key=lambda c: (c['parent'], c['order'], c['loc'][1], c['loc'][0])),
         'columns': columns,
         'events': events,
@@ -125,6 +177,22 @@ def all_forms(base):
         else:
             continue
         out.append((form, res, os.path.join(base, ns), key))
+    # Fenêtres sans .resx : conception entièrement dans le code
+    have = {k for *_, k in out}
+    dirs = [('StationSoftWare.Forms', '')] + [(f'StationSoftware.NormalStatue.{d}', d + '.') for d in
+                                             ('BoxScreenView', 'BoxScreenViewV2', 'Card', 'NormalForm', 'Port', 'Station', 'TankConfig')]
+    for ns, prefix in dirs:
+        d = os.path.join(base, ns)
+        if not os.path.isdir(d):
+            continue
+        for fn in sorted(os.listdir(d)):
+            form = fn[:-3]
+            key = prefix + form
+            if not fn.endswith('.cs') or key in have:
+                continue
+            src = open(os.path.join(d, fn), encoding='utf-8').read()
+            if 'private void InitializeComponent()' in src and re.search(r'class ' + form + r'\s*:\s*\w+', src):
+                out.append((form, f'{ns}.{form}', d, key))
     return out
 
 

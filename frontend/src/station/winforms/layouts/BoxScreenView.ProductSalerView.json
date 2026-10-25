@@ -1,0 +1,259 @@
+{
+ "name": "BoxScreenView.ProductSalerView",
+ "title": "ProductSalerView",
+ "size": [
+  423,
+  547
+ ],
+ "controls": [
+  {
+   "name": "panel3",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    415,
+    509
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "AmountBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    304
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    274
+   ],
+   "size": [
+    86,
+    27
+   ],
+   "text": "Amount",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "GroupSelect",
+   "type": "ComboBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    393
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    31,
+    435
+   ],
+   "size": [
+    157,
+    57
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "panel3",
+   "loc": [
+    230,
+    435
+   ],
+   "size": [
+    155,
+    57
+   ],
+   "text": "Cancel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    363
+   ],
+   "size": [
+    70,
+    27
+   ],
+   "text": "Group",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "PriceBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    208
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    178
+   ],
+   "size": [
+    56,
+    27
+   ],
+   "text": "Price",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "QuantityBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    126
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "0",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    96
+   ],
+   "size": [
+    91,
+    27
+   ],
+   "text": "Quantity",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "panel3",
+   "loc": [
+    31,
+    47
+   ],
+   "size": [
+    354,
+    34
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel3",
+   "loc": [
+    26,
+    17
+   ],
+   "size": [
+    66,
+    27
+   ],
+   "text": "Name",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "CancelBtn": {
+   "Click": "CancelBtn_Click"
+  },
+  "QuantityBox": {
+   "TextChanged": "QuantityBox_TextChanged"
+  },
+  "$this": {
+   "Load": "ProductSalerView_Load"
+  }
+ }
+}
