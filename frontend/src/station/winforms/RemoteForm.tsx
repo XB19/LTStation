@@ -493,6 +493,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       <WinForm layout={layout} values={values} onChange={onChange} buttons={buttons} options={options} grids={gridProps}
         hidden={hidden} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
         passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar).map((c) => c.name)}
+        autoComplete={Object.fromEntries(Object.entries(ctl).filter(([, pr]) => Array.isArray(pr.AutoCompleteCustomSource))
+          .map(([n, pr]) => [n, (pr.AutoCompleteCustomSource as unknown[]).map(String)]))}
         timeOnly={layout.controls.filter((c) => ctl[c.name]?.Format === 'Time').map((c) => c.name)}
         extra={{ ...extra, ...Object.fromEntries(Object.entries(embeds).map(([into, e]) => [into,
           <RemoteForm key={e.id} form={e.form} attachId={e.id} framed={false} onOpen={onOpen} onClose={() => setEmbeds((x) => { const n = { ...x }; delete n[into]; return n })} />])) }} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }}

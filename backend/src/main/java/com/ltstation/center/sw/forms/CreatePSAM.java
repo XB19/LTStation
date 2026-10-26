@@ -62,7 +62,7 @@ public class CreatePSAM extends SwForm {
                     }
                 }
                 case "LYZN" -> {
-                    sTransferKey = IniInfo.PsamTransferKeyLYZN;
+                    sTransferKey = IniInfo.DHTransferKey;
                     if (!CardWrite.DeleteMF(operate, sTransferKey, 1)) {
                         throw new IllegalStateException("83");
                     }

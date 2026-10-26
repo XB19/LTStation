@@ -124,6 +124,11 @@ public class Ctl {
         return set("ReadOnly", v);
     }
 
+    /** TextBox.AutoCompleteCustomSource (AutoCompleteMode.SuggestAppend, AutoCompleteSource.CustomSource). */
+    public Ctl AutoCompleteCustomSource(java.util.List<String> items) {
+        return set("AutoCompleteCustomSource", new java.util.ArrayList<>(items));
+    }
+
     public Ctl Focus() {
         return set("Focus", System.nanoTime());
     }

@@ -55,7 +55,8 @@ public final class IniInfo {
         DEFAULTS.put("SmsToken", "");
         DEFAULTS.put("CardConstKey", "");
         DEFAULTS.put("CardConstTempKey", "");
-        DEFAULTS.put("PsamTransferKeyLYZN", "");
+        DEFAULTS.put("DHTransferKey", "");
+        DEFAULTS.put("FlyingAppKey", "");
         DEFAULTS.put("clientKey", "");
         DEFAULTS.put("clientSecret", "");
         DEFAULTS.put("uid", "");
@@ -86,8 +87,10 @@ public final class IniInfo {
     public static int SupervisionType;
     public static int Port;
     public static String USN = "";
-    /** Clé de transport des PSAM LYZN : lue dans StationSoftware.properties, jamais dans le code. */
-    public static String PsamTransferKeyLYZN = "";
+    /** Clé de transport des cartes et PSAM LYZN (DH) : lue dans StationSoftware.properties, jamais dans le code. */
+    public static String DHTransferKey = "";
+    /** Clé d'application écrite sur les cartes BSky : lue dans StationSoftware.properties, jamais dans le code. */
+    public static String FlyingAppKey = "";
     public static String UNITID = "";
     public static String ServerIP = "";
     public static int TransactionType;
@@ -274,7 +277,8 @@ public final class IniInfo {
         SmsToken = setting("SmsToken");
         BaseFunction.CONST_KEY = setting("CardConstKey");
         BaseFunction.CONST_TEMPKEY = setting("CardConstTempKey");
-        PsamTransferKeyLYZN = setting("PsamTransferKeyLYZN") == null ? "" : setting("PsamTransferKeyLYZN");
+        DHTransferKey = setting("DHTransferKey") == null ? "" : setting("DHTransferKey");
+        FlyingAppKey = setting("FlyingAppKey") == null ? "" : setting("FlyingAppKey");
         clientKey = setting("clientKey");
         clientSecret = setting("clientSecret");
         uid = setting("uid");

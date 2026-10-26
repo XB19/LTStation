@@ -146,6 +146,8 @@ export interface WinFormProps {
   keepPager?: boolean
   images?: Record<string, string>
   backgrounds?: Record<string, string>
+  /** Suggestions de saisie (AutoCompleteCustomSource, mode SuggestAppend) */
+  autoComplete?: Record<string, string[]>
 }
 
 /** Pagination d'origine remplacée par celle des tableaux */
@@ -250,11 +252,13 @@ export default function WinForm(p: WinFormProps) {
       case 'RichTextBox':
       case 'NumericUpDown': {
         const Comp = p.passwords?.includes(c.name) ? Input.Password : Input
-        return <Comp size="small" style={{ width: w }} value={(v as string) ?? ''} readOnly={ro} disabled={dis}
+        const ac = p.autoComplete?.[c.name]
+        return <>{ac && <datalist id={`wf-ac-${c.name}`}>{ac.map((x) => <option key={x} value={x} />)}</datalist>}
+        <Comp size="small" style={{ width: w }} value={(v as string) ?? ''} readOnly={ro} disabled={dis} list={ac ? `wf-ac-${c.name}` : undefined}
           className={ro ? 'wf-ro' : undefined} onChange={(e) => p.onChange(c.name, e.target.value)}
           onFocus={(e) => { (e.target as HTMLInputElement).dataset.orig = e.target.value }}
           onBlur={(e) => { if ((e.target as HTMLInputElement).dataset.orig !== e.target.value) p.onCtlEvent?.(c.name, 'Validated') }}
-          onClick={() => p.onCtlEvent?.(c.name, 'Click')} onMouseLeave={() => p.onCtlEvent?.(c.name, 'MouseLeave')} />
+          onClick={() => p.onCtlEvent?.(c.name, 'Click')} onMouseLeave={() => p.onCtlEvent?.(c.name, 'MouseLeave')} /></>
       }
       case 'SkinComboBox':
       case 'ComboBox':
