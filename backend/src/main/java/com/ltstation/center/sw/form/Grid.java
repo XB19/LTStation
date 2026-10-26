@@ -23,6 +23,7 @@ public class Grid {
     private final Map<String, String> headers = new LinkedHashMap<>();
     /** Colonnes à liste déroulante (DataGridViewComboBoxCell) : valeur → libellé. */
     private final Map<String, List<Map<String, Object>>> options = new LinkedHashMap<>();
+    private static final String FORE = "__fore";
     private int current = -1;
     private int currentColumn = -1;
     private boolean dirty;
@@ -97,6 +98,16 @@ public class Grid {
         rows.add(r);
         dirty = true;
         return rows.size() - 1;
+    }
+
+    /** Couleur du texte de toutes les cellules d'une ligne (Cell.Style.ForeColor) : nom CSS. */
+    public Grid RowForeColor(int i, String color) {
+        Row r = Row(i);
+        if (r != null) {
+            r.put(FORE, color);
+            dirty = true;
+        }
+        return this;
     }
 
     public int RowCount() {
@@ -200,8 +211,15 @@ public class Grid {
             Row r = rows.get(i);
             Map<String, Object> m = new LinkedHashMap<>();
             m.put("__i", i);
+            if (r.get(FORE) != null) {
+                m.put(FORE, r.get(FORE));
+            }
             if (columns.isEmpty()) {
-                r.forEach((k, v) -> m.put(k, display(v)));
+                r.forEach((k, v) -> {
+                    if (!FORE.equals(k)) {
+                        m.put(k, display(v));
+                    }
+                });
             }
             for (Layouts.Column c : columns) {
                 m.put(c.name(), display(r.get(c.prop() != null ? c.prop() : c.name())));
