@@ -38,7 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * (autorisations, prix, initialisation, téléchargement de programmes…).
  *
  * Les méthodes DealLTAgreedMent, MakeCmd, GetByteBit et DealTankCable de l'original ne sont jamais appelées :
- * elles ne sont pas reprises. SendMessToMainForm (message Windows à NormalMainForm) devient MainFormMessage.
+ * elles ne sont pas reprises. SendMessToMainForm (message Windows à NormalMainForm) passe par NormalFunction.MainFormMessage.
  */
 public class NozSerial {
 
@@ -46,14 +46,6 @@ public class NozSerial {
     public interface TransferData {
         void accept(int NozID, String Value, int Statue);
     }
-
-    /** Message Windows (CmdType, wParam, lParam) envoyé à la fenêtre « NormalSystem ». */
-    public interface MainMessage {
-        void accept(int CmdType, long data1, long data2);
-    }
-
-    /** SendMessToMainForm : abonné unique (NormalMainForm.WndProc). */
-    public static volatile MainMessage MainFormMessage = (a, b, c) -> { };
 
     private static final Charset DEFAULT = Charset.forName("GBK");
     private static final BigDecimal M1 = BigDecimal.valueOf(-1);
@@ -2549,7 +2541,7 @@ public class NozSerial {
 
     private void SendMessToMainForm(int CmdType, long data1, long data2) {
         try {
-            MainFormMessage.accept(CmdType, data1, data2);
+            NormalFunction.MainFormMessage.accept(CmdType, data1, data2);
         } catch (RuntimeException ex) {
             Log.writeLog("Send Mess Error:" + ex.getMessage());
         }

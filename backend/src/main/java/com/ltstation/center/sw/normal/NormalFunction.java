@@ -30,6 +30,14 @@ public final class NormalFunction {
         return SW.db();
     }
 
+    /** Message Windows (Msg, wParam, lParam) envoyé à la fenêtre « NormalSystem » (NormalMainForm.WndProc). */
+    public interface MainMessage {
+        void accept(int Msg, long wParam, long lParam);
+    }
+
+    /** SendMessage(FindWindow(null, « NormalSystem »), …) : NormalMainForm s'y abonne à l'ouverture. */
+    public static volatile MainMessage MainFormMessage = (a, b, c) -> { };
+
     /** BaseFunction.PumpNozData : dernier état « en cours » de chaque pompe. */
     public static final ConcurrentHashMap<Integer, NormalNozStatue> PumpNozData = new ConcurrentHashMap<>();
 
