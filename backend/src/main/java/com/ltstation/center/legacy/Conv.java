@@ -270,6 +270,11 @@ public final class Conv {
         return d.setScale(n, RoundingMode.HALF_EVEN);
     }
 
+    /** Math.Round(decimal, n) de .NET sans ajout de zéros : l'échelle n'augmente jamais (12.5 arrondi à 3 reste 12.5). */
+    public static BigDecimal netRound(BigDecimal d, int n) {
+        return d == null ? BigDecimal.ZERO : d.scale() > n ? d.setScale(n, RoundingMode.HALF_EVEN) : d;
+    }
+
     /** Math.Round(double, n) de .NET : arrondi bancaire. */
     public static double round(double d, int n) {
         return new BigDecimal(Double.toString(d)).setScale(n, RoundingMode.HALF_EVEN).doubleValue();

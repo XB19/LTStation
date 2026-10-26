@@ -18,7 +18,22 @@ public abstract class SwWebForm extends SwForm {
 
     /** ExecuteJavascript(script) : exécuté dans la page une fois chargée. */
     protected void ExecuteJavascript(String script) {
-        messages.add(Map.of("js", script));
+        synchronized (messages) {
+            // Vue tenue par un fil de la station sans page ouverte : les appels les plus anciens sont abandonnés
+            if (messages.size() >= MAX_PENDING) {
+                messages.remove(0);
+            }
+            messages.add(Map.of("js", script));
+        }
+    }
+
+    private static final int MAX_PENDING = 2000;
+
+    /** Page rechargée : les appels en attente visaient l'ancienne page (elle est redessinée en entier). */
+    protected void ClearPendingScripts() {
+        synchronized (messages) {
+            messages.removeIf(m -> m.containsKey("js"));
+        }
     }
 
     /** jSObject.AddFunction(nom).Execute += gestionnaire */

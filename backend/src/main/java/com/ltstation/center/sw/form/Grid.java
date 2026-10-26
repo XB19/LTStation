@@ -24,6 +24,7 @@ public class Grid {
     /** Colonnes à liste déroulante (DataGridViewComboBoxCell) : valeur → libellé. */
     private final Map<String, List<Map<String, Object>>> options = new LinkedHashMap<>();
     private static final String FORE = "__fore";
+    private static final String BACK = "__back";
     private int current = -1;
     private int currentColumn = -1;
     private boolean dirty;
@@ -105,6 +106,16 @@ public class Grid {
         Row r = Row(i);
         if (r != null) {
             r.put(FORE, color);
+            dirty = true;
+        }
+        return this;
+    }
+
+    /** Couleur de fond d'une ligne (DefaultCellStyle.BackColor) : nom CSS. */
+    public Grid RowBackColor(int i, String color) {
+        Row r = Row(i);
+        if (r != null) {
+            r.put(BACK, color);
             dirty = true;
         }
         return this;
@@ -214,9 +225,12 @@ public class Grid {
             if (r.get(FORE) != null) {
                 m.put(FORE, r.get(FORE));
             }
+            if (r.get(BACK) != null) {
+                m.put(BACK, r.get(BACK));
+            }
             if (columns.isEmpty()) {
                 r.forEach((k, v) -> {
-                    if (!FORE.equals(k)) {
+                    if (!FORE.equals(k) && !BACK.equals(k)) {
                         m.put(k, display(v));
                     }
                 });

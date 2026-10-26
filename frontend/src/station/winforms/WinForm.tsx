@@ -321,7 +321,7 @@ export default function WinForm(p: WinFormProps) {
           rowKey={g?.rowKey ?? ((r) => String(r.id ?? r.key ?? JSON.stringify(r)))}
           pagination={g?.pagination ?? false} scroll={{ x: 'max-content', y: scrollY }} summary={g?.summary}
           rowClassName={(r) => (g?.selectedKey !== undefined && (typeof g.rowKey === 'string' ? r[g.rowKey] : undefined) === g.selectedKey ? 'wf-row-sel' : '')}
-          onRow={(r) => ({ onDoubleClick: () => g?.onDoubleClick?.(r), onClick: () => g?.onClick?.(r), style: r.__fore ? { color: String(r.__fore).toLowerCase() } : undefined })} />
+          onRow={(r) => ({ onDoubleClick: () => g?.onDoubleClick?.(r), onClick: () => g?.onClick?.(r), style: r.__fore || r.__back ? { color: r.__fore ? String(r.__fore).toLowerCase() : undefined, background: r.__back ? String(r.__back).toLowerCase() : undefined } : undefined })} />
       </div>
     )
   }
