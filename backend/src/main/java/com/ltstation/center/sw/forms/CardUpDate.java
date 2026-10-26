@@ -8,7 +8,6 @@ import com.ltstation.center.sw.core.BaseFunction;
 import com.ltstation.center.sw.core.BaseFunction.CustomerRespone;
 import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.SW;
-import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import com.ltstation.center.sw.hw.CardWrite;
 import java.math.BigDecimal;
@@ -19,13 +18,10 @@ import java.util.List;
 
 /** CardUpDate : modification des cartes (utilisateur, employé, groupe, crédit, enfant) sur la carte et sur Center. */
 @SwWindow("CardUpDate")
-public class CardUpDate extends SwForm {
+public class CardUpDate extends CardFormBase {
 
-    private static final String PHONE = "^(0[0-9]{2,3}\\-)([2-9][0-9]{6,7})?(\\-[0-9]{1,4})?$|(^(13[0-9]|15[0-9]|17[0-9]|18[0-9])\\d{8}$)";
     private static final String CAR = "^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$";
-    private static final String POST = "^\\d{6}$";
     private static final String MAIL = "^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$";
-    private static final String DEC = "^[0-9]+(.[0-9]{1,3})?$";
     private static final String NUM = "^[0-9]*$";
 
     private String ID_NeedPwdBefore = "";
@@ -640,72 +636,6 @@ public class CardUpDate extends SwForm {
         }
     }
 
-    // ------------------------------------------------------------ contrôles de saisie (Regular)
-
-    private static void need(boolean ok, String message) {
-        if (!ok) {
-            throw new IllegalStateException(message);
-        }
-    }
-
-    private static boolean valid(String text, String pattern) {
-        return BaseFunction.ValidMessage(text, pattern);
-    }
-
-    /** Limite décimale journalière : 10^(position du point) comparé au format de la station. */
-    private void limitDaily(String box, String errKey, int format, double max, String exceededKey) {
-        String t = c(box).Text();
-        if (t.isEmpty()) {
-            return;
-        }
-        need(valid(t, DEC), L(errKey) + "\n" + L("NumberOrDecimal"));
-        int idx = t.lastIndexOf('.');
-        need(!(Math.pow(10.0, idx) > format), L(errKey) + "\n" + L("OutOfStationDigits") + "\n" + L("PLSCheckDigits"));
-        need(!(Conv.toDouble(t) * Math.pow(10.0, idx) > max), L(exceededKey));
-    }
-
-    /** Limite décimale mensuelle : position du point comparée au format de la station. */
-    private void limitMonthly(String box, String errKey, int format, double max, String exceededKey, String digitsMessage) {
-        String t = c(box).Text();
-        if (t.isEmpty()) {
-            return;
-        }
-        need(valid(t, DEC), L(errKey) + "\n" + L("NumberOrDecimal"));
-        int idx = t.lastIndexOf('.');
-        need(idx <= format, L(errKey) + digitsMessage);
-        need(!(Conv.toDouble(t) * Math.pow(10.0, idx) > max), L(exceededKey));
-    }
-
-    private String digits() {
-        return "\n" + L("OutOfStationDigits") + "\n" + L("PLSCheckDigits");
-    }
-
-    private void password(String box) {
-        String t = c(box).Text();
-        if (!t.isEmpty()) {
-            need(t.length() == 4, L("NeedPasswordMaxLength"));
-            need(valid(t, NUM), L("PasswordIsNumber"));
-        }
-    }
-
-    private void contact(String phone, String post, String mail, boolean phoneCheck) {
-        need(!phoneCheck || c(phone).Text().isEmpty() || valid(c(phone).Text(), PHONE), L("PhoneError"));
-        need(c(post).Text().isEmpty() || valid(c(post).Text(), POST), L("PostCodeFormatError"));
-        need(c(mail).Text().isEmpty() || valid(c(mail).Text(), MAIL), L("EamilFormatError"));
-    }
-
-    private void carNo(String box) {
-        String t = c(box).Text();
-        if (!t.isEmpty()) {
-            need(t.length() == 7, L("CarNoLength"));
-            need(valid(t, CAR), L("CarFormatError"));
-        }
-    }
-
-    private void numeric(String box, String key) {
-        need(c(box).Text().isEmpty() || valid(c(box).Text(), NUM), L(key));
-    }
-
     private boolean Regular(String btn) {
         try {
             int vf = IniInfo.VFormat;
@@ -751,7 +681,9 @@ public class CardUpDate extends SwForm {
                     need(!c("GroupName").Text().isEmpty(), L("GroupNameEmpty"));
                     need(!c("GroupID").Text().isEmpty(), L("GroupIDEmpty"));
                     need(!c("GroupCertificateNo").Text().isEmpty(), L("BusinessNoEmpty"));
-                    contact("GroupPhone", "GroupPostCode", "GroupEamil", true);
+                    match("GroupPhone", PHONE, L("PhoneError"));
+                    match("GroupPostCode", POST, L("PostCodeFormatError"));
+                    match("GroupEamil", MAIL, L("EamilFormatError"));
                     limitDaily("GroupLimitVolume", "LimitVolumeError", vf, 65535.0, "LimitVolumeExceeded");
                     numeric("GroupLimitTime", "LimitDayTimeError");
                     limitDaily("GroupLimitAmountDay", "LimitAmountDailyError", mf, 4294967295.0, "LimitAmountDailyExceeded");
@@ -792,22 +724,6 @@ public class CardUpDate extends SwForm {
             return true;
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
-            return false;
-        }
-    }
-
-    private void days(String box, String emptyKey) {
-        String t = c(box).Text();
-        need(!t.isEmpty(), L(emptyKey));
-        need(valid(t, NUM), L("NumberOrDecimal"));
-        need(Conv.toInt(t) <= 30, L("DayRange"));
-    }
-
-    private static boolean isDouble(String s) {
-        try {
-            Double.parseDouble(s.trim());
-            return true;
-        } catch (NumberFormatException e) {
             return false;
         }
     }
