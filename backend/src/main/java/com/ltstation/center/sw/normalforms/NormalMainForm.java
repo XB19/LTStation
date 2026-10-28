@@ -173,7 +173,7 @@ public class NormalMainForm extends SwForm {
                 case "ShiftReportCheck" -> ShowDialog("NormalForm.DutyReport", r -> { });
                 case "ShiftHand" -> ShowDialog("NormalForm.HandShiftReport", r -> { });
                 case "EmpCardManager" -> ShowDialog("Card.EmpCardManager", r -> { });
-                case "StationStore" -> ShowDialog("BoxScreenView.OtherProductView", r -> { }, "Type", "BillRun");
+                case "StationStore" -> ShowDialog("BoxScreenView.OtherProductView", r -> { }, "BillOrderNumber", "BillRun");
                 default -> {
                 }
             }

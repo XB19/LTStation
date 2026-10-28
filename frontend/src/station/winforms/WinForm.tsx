@@ -259,7 +259,10 @@ export default function WinForm(p: WinFormProps) {
     switch (c.type) {
       case 'Label':
       case 'SkinLabel':
-        return <span className="wf-label" style={p.styles?.[c.name]}>{text(c)}</span>
+        // Label.Image : image de fond derrière le texte
+        return <span className="wf-label" style={{ ...p.styles?.[c.name], ...(p.images?.[c.name]
+          ? { backgroundImage: `url(/station-web/${p.images[c.name]})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minWidth: c.size[0], minHeight: c.size[1], display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }
+          : {}) }}>{text(c)}</span>
       case 'PictureBox':
       case 'SkinPictureBox':
         return p.images?.[c.name]
@@ -300,7 +303,8 @@ export default function WinForm(p: WinFormProps) {
       case 'SkinButton':
       case 'Button':
         return <Button size="small" type={c.size[1] >= 30 ? 'primary' : 'default'} disabled={dis || !p.buttons?.[c.name]}
-          loading={p.busy === c.name} style={{ minWidth: Math.min(Math.max(c.size[0], 70), 140), height: c.size[1] >= 30 ? 34 : 26 }}
+          loading={p.busy === c.name} style={{ minWidth: Math.min(Math.max(c.size[0], 70), 140), height: c.size[1] >= 30 ? 34 : 26,
+            ...(p.styles?.[c.name]?.backgroundColor ? { borderColor: p.styles[c.name].backgroundColor as string } : {}), ...p.styles?.[c.name] }}
           onClick={() => p.buttons?.[c.name]?.()}>{text(c)}</Button>
       case 'PreviewControl':
         return <PdfPreview data={String(v ?? '')} />

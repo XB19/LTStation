@@ -143,9 +143,77 @@ public abstract class SwForm {
         return grids.computeIfAbsent(name, n -> new Grid(n, layout == null ? List.of() : layout.columns().get(n)));
     }
 
-    /** Controls d'un conteneur (ordre d'origine) : noms des contrôles enfants. */
+    private static final class Mutex implements java.io.Serializable {
+        private static final long serialVersionUID = 1L;
+    }
+
+    /**
+     * Verrou commun aux fenêtres d'une session : une seule action à la fois, comme le fil d'interface WinForms
+     * (une fenêtre enfant peut modifier sa fenêtre propriétaire, et les fils du moteur les vignettes).
+     */
+    public Object lock() {
+        jakarta.servlet.http.HttpSession s = session;
+        if (s == null) {
+            return this;
+        }
+        synchronized (Mutex.class) {
+            Object m = s.getAttribute("sw.lock");
+            if (m == null) {
+                m = new Mutex();
+                s.setAttribute("sw.lock", m);
+            }
+            return m;
+        }
+    }
+
+    /** Controls d'un conteneur (ordre d'origine, puis contrôles ajoutés par le code) : noms des contrôles enfants. */
     protected List<String> Controls(String parent) {
-        return layout == null ? List.of() : layout.children().getOrDefault(parent, List.of());
+        List<String> out = new ArrayList<>(layout == null ? List.of() : layout.children().getOrDefault(parent, List.of()));
+        out.removeAll(cleared);
+        for (Map<String, Object> d : dynControls) {
+            if (parent.equals(d.get("parent"))) {
+                out.add(String.valueOf(d.get("name")));
+            }
+        }
+        return out;
+    }
+
+    /** Contrôles créés par le code (new SkinButton { … } ; Container.Controls.Add) : {name, type, parent, text, size}. */
+    final List<Map<String, Object>> dynControls = new ArrayList<>();
+    /** Contrôles d'origine retirés par Controls.Clear() / Controls.Remove(). */
+    private final java.util.Set<String> cleared = new java.util.HashSet<>();
+    boolean dynDirty;
+    boolean eventsDirty;
+
+    /** parent.Controls.Add(new type { Name, Text, Width, Height }) ; les événements se branchent avec On(). */
+    protected Ctl AddControl(String parent, String name, String type, String text, int width, int height) {
+        RemoveControl(name);
+        Map<String, Object> d = new LinkedHashMap<>();
+        d.put("name", name);
+        d.put("type", type);
+        d.put("parent", parent);
+        d.put("text", text == null ? "" : text);
+        d.put("size", List.of(width, height));
+        dynControls.add(d);
+        dynDirty = true;
+        return c(name).Text(text == null ? "" : text);
+    }
+
+    /** parent.Controls.Remove(control) ; control.Dispose(). */
+    protected void RemoveControl(String name) {
+        if (dynControls.removeIf(d -> name.equals(d.get("name")))) {
+            dynDirty = true;
+            ctls.remove(name);
+        } else if (layout != null && layout.types().containsKey(name) && cleared.add(name)) {
+            c(name).Visible(false);
+        }
+    }
+
+    /** parent.Controls.Clear(). */
+    protected void ClearControls(String parent) {
+        for (String n : Controls(parent)) {
+            RemoveControl(n);
+        }
     }
 
     /** Type d'origine d'un contrôle (ex. "CheckBox", "SkinTextBox"). */
@@ -158,6 +226,7 @@ public abstract class SwForm {
 
     protected void On(String ctl, String event, String handler) {
         extraEvents.computeIfAbsent(ctl, k -> new LinkedHashMap<>()).put(event, handler);
+        eventsDirty = true;
     }
 
     /** Raccourci : texte d'un contrôle sans espaces de début et de fin (Text.Trim()). */
@@ -381,6 +450,18 @@ public abstract class SwForm {
         SwFormController.attach(this, child, w == null ? child.getClass().getSimpleName() : w.value());
         messages.add(Map.of("open", child.formName, "id", child.id));
         return child;
+    }
+
+    /** child.Close() d'une fenêtre ouverte par Show() : fermée sur le poste et retirée de la session. */
+    protected void CloseChild(SwForm child) {
+        if (child == null || child.id == null) {
+            return;
+        }
+        child.closeResult = "Cancel";
+        if (session != null) {
+            SwFormController.forms(session).remove(child.id);
+        }
+        messages.add(Map.of("closeForm", child.id));
     }
 
     /** report.Preview = previewControl ; report.Prepare() ; report.ShowPrepared(). */

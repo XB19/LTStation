@@ -41,7 +41,7 @@ public class SwFormController {
     }
 
     @SuppressWarnings("unchecked")
-    private static Map<String, SwForm> forms(HttpSession session) {
+    static Map<String, SwForm> forms(HttpSession session) {
         Object o = session.getAttribute(SESSION_FORMS);
         if (o == null) {
             o = new ConcurrentHashMap<String, SwForm>();
@@ -86,7 +86,7 @@ public class SwFormController {
         }
         f.session = session;
         forms(session).put(f.id, f);
-        synchronized (f) {
+        synchronized (f.lock()) {
             Map<String, Object> out = run(f, "init", body, true);
             if (out.get("suspend") == null && f.closeResult == null) {
                 String load = loadHandler(f);
@@ -154,7 +154,7 @@ public class SwFormController {
     @PostMapping("/{id}/event")
     public Map<String, Object> event(@PathVariable String id, @RequestBody Map<String, Object> body, HttpSession session) {
         SwForm f = form(session, id);
-        synchronized (f) {
+        synchronized (f.lock()) {
             f.session = session;
             Map<String, Object> out = run(f, String.valueOf(body.getOrDefault("handler", "")), body, false);
             if (f.closeResult != null) {
@@ -168,7 +168,7 @@ public class SwFormController {
     @PostMapping("/{id}/state")
     public Map<String, Object> state(@PathVariable String id, @RequestBody(required = false) Map<String, Object> body, HttpSession session) {
         SwForm f = form(session, id);
-        synchronized (f) {
+        synchronized (f.lock()) {
             f.session = session;
             return run(f, "", body == null ? Map.of() : body, true);
         }
@@ -182,8 +182,10 @@ public class SwFormController {
         if (f == null) {
             return Map.of("close", "Cancel");
         }
-        synchronized (f) {
-            Map<String, String> ev = f.layout.events().getOrDefault("$this", Map.of());
+        synchronized (f.lock()) {
+            Map<String, String> ev = new LinkedHashMap<>(f.layout.events().getOrDefault("$this", Map.of()));
+            // FormClosed += … branché dans le code
+            ev.putAll(f.extraEvents.getOrDefault("$this", Map.of()));
             Map<String, Object> b = body == null ? Map.of() : body;
             Map<String, Object> out = null;
             for (String k : List.of("FormClosing", "FormClosed")) {
@@ -302,7 +304,7 @@ public class SwFormController {
         // Modifications de la fenêtre propriétaire faites par l'enfant (événements TransferConfirm…) : renvoyées tout de suite
         SwForm owner = f.Owner;
         if (owner != null && owner.id != null && suspend == null) {
-            synchronized (owner) {
+            synchronized (owner.lock()) {
                 Map<String, Object> o = state(owner, false, null, null);
                 o.put("id", owner.id);
                 out.put("owner", o);
@@ -349,9 +351,15 @@ public class SwFormController {
             out.put("web", w.Url());
             out.put("my", w.jsFunctions);
         }
-        if (full && !f.extraEvents.isEmpty()) {
+        // Événements branchés et contrôles créés par le code, renvoyés dès qu'ils changent
+        if ((full || f.eventsDirty) && !f.extraEvents.isEmpty()) {
             out.put("events", f.extraEvents);
         }
+        f.eventsDirty = false;
+        if (full || f.dynDirty) {
+            out.put("dyn", new ArrayList<>(f.dynControls));
+        }
+        f.dynDirty = false;
         if (suspend != null) {
             out.put("suspend", suspend);
         }

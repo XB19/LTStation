@@ -3,7 +3,7 @@ import { Button, Checkbox, Modal, Space } from 'antd'
 import dayjs from 'dayjs'
 import { http } from '../../api/http'
 import Win from './Win'
-import WinForm, { getLayout, tr, type GridProps, type Option } from './WinForm'
+import WinForm, { getLayout, tr, type Ctrl, type GridProps, type Option } from './WinForm'
 
 /**
  * Fenêtre du logiciel Station dont la logique s'exécute sur le serveur (/api/sw/form) : la mise en
@@ -53,6 +53,8 @@ interface Message {
   openFile?: string
   /** SaveFileDialog : filtre d'origine ("PDF(*.pdf)|*.pdf|Excel(*.xls)|*.xls") ; le poste choisit le type */
   saveFile?: string
+  /** Form.Close() d'une fenêtre non modale ouverte par le code */
+  closeForm?: string
   /** Fenêtre enfant intégrée dans un conteneur (TopLevel = false) */
   embed?: string
   id?: string
@@ -74,6 +76,7 @@ interface FormState {
   my?: Record<string, string>
   close?: string
   result?: Props
+  dyn?: { name: string; type: string; parent: string; text: string; size: [number, number] }[]
   /** Modifications de la fenêtre propriétaire faites par cette fenêtre */
   owner?: FormState & { id: string }
 }
@@ -154,7 +157,12 @@ const show = (m: Message) => new Promise<void>((resolve) => (m.error ? Modal.err
 }))
 
 export default function RemoteForm({ form, args, onClose, onOpen, parent, attachId, framed = true, extra }: RemoteFormProps) {
-  const layout = useMemo(() => getLayout(form), [form])
+  /** Contrôles créés par le code (Controls.Add), ajoutés à la mise en page d'origine */
+  const [dyn, setDyn] = useState<Ctrl[]>([])
+  const layout = useMemo(() => {
+    const base = getLayout(form)
+    return dyn.length ? { ...base, controls: [...base.controls, ...dyn] } : base
+  }, [form, dyn])
   const types = useMemo(() => Object.fromEntries(layout.controls.map((c) => [c.name, c.type])), [layout])
   const [extraEvents, setExtraEvents] = useState<Record<string, Record<string, string>>>({})
   const events = useMemo(() => {
@@ -178,7 +186,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   const lastCol = useRef<Record<string, string>>({})
   const closed = useRef(false)
   const [web, setWeb] = useState<{ url: string; my: Record<string, string> } | null>(null)
-  const [embeds, setEmbeds] = useState<Record<string, { form: string; id: string }>>({})
+  /** Fenêtres intégrées par conteneur (plusieurs possibles : Controls.Add de chaque fenêtre enfant) */
+  const [embeds, setEmbeds] = useState<Record<string, { form: string; id: string }[]>>({})
   const frame = useRef<HTMLIFrameElement>(null)
   const frameLoaded = useRef(false)
   const jsQueue = useRef<string[]>([])
@@ -254,6 +263,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     }
     if (s.title) setTitle(s.title)
     if (s.events) setExtraEvents(s.events)
+    if (s.dyn) setDyn(s.dyn.map((d, i) => ({ name: d.name, type: d.type, parent: d.parent, text: d.text, size: d.size, loc: [0, 0], dock: null, visible: true, order: 10000 + i })))
     if (s.web) setWeb({ url: s.web, my: s.my ?? {} })
     for (const [h, ms] of Object.entries(s.timers ?? {})) {
       window.clearInterval(timers.current[h])
@@ -274,7 +284,11 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
         fire('$continue', '', { key: m.key, result: ext === null ? 'Cancel' : 'OK', data: { ext: ext ?? '' } })
       }
       else if (m.js !== undefined) runJs(m.js)
-      else if (m.embed && m.id && m.into) setEmbeds((x) => ({ ...x, [m.into!]: { form: m.embed!, id: m.id! } }))
+      else if (m.closeForm) live.get(m.closeForm)?.apply({ controls: {}, grids: {}, messages: [], close: 'Cancel' })
+      else if (m.embed && m.id && m.into) {
+        const e = { form: m.embed, id: m.id }
+        setEmbeds((x) => ({ ...x, [m.into!]: [...(x[m.into!] ?? []).filter((y) => y.id !== e.id), e] }))
+      }
       else if (m.download) download(m)
       else if (m.print) printLines(m.print)
       else await show(m)
@@ -556,8 +570,10 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
         autoComplete={Object.fromEntries(Object.entries(ctl).filter(([, pr]) => Array.isArray(pr.AutoCompleteCustomSource))
           .map(([n, pr]) => [n, (pr.AutoCompleteCustomSource as unknown[]).map(String)]))}
         timeOnly={layout.controls.filter((c) => ctl[c.name]?.Format === 'Time').map((c) => c.name)}
-        extra={{ ...extra, ...Object.fromEntries(Object.entries(embeds).map(([into, e]) => [into,
-          <RemoteForm key={e.id} form={e.form} attachId={e.id} framed={false} onOpen={onOpen} onClose={() => setEmbeds((x) => { const n = { ...x }; delete n[into]; return n })} />])) }} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }}
+        extra={{ ...extra, ...Object.fromEntries(Object.entries(embeds).map(([into, list]) => [into, <div key={into} className="wf-embeds">
+          {list.map((e) => <RemoteForm key={e.id} form={e.form} attachId={e.id} parent={idRef.current} framed={false} onOpen={onOpen}
+            onClose={() => setEmbeds((x) => ({ ...x, [into]: (x[into] ?? []).filter((y) => y.id !== e.id) }))} />)}
+        </div>])) }} onMenu={(item) => { const h = on(item, 'Click'); if (h) fire(h, item, {}) }}
         styles={styles} images={images} backgrounds={backgrounds} keepPager
         onCtlEvent={(name, ev) => { const h = on(name, ev); if (h) fire(h, name, {}) }}
         tab={tabs} onTab={onTab}
