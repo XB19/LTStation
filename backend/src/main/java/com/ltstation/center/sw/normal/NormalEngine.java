@@ -176,9 +176,7 @@ public final class NormalEngine {
             // EFD (TRA, Tanzanie) : certificat, enregistrement, puis reçus, rapports Z et clients TIN de Center
             BoxBase.EFDPFXNumber = java.util.Base64.getEncoder().encodeToString(BoxBase.ReadPFXNumber().getBytes(java.nio.charset.StandardCharsets.UTF_8));
             if (BoxBase.EFDRegistration()) {
-                BoxBase.EFDDealRun = true;
-                spawn("EFDThread", BoxBase::DealTransactionSp);
-                spawn("EFDZReportThread", BoxBase::DealEFDZReport);
+                StartEFD();
                 spawn("EFDCustomerPrint", NormalEngine::CenterTanPrintDowload);
             }
         }
@@ -197,6 +195,13 @@ public final class NormalEngine {
                 }
             }
         });
+    }
+
+    /** Fils EFD (TRA) : reçus et rapports Z (aussi lancés par SuperviseForm après un nouvel enregistrement). */
+    public static void StartEFD() {
+        BoxBase.EFDDealRun = true;
+        spawn("EFDThread", BoxBase::DealTransactionSp);
+        spawn("EFDZReportThread", BoxBase::DealEFDZReport);
     }
 
     /** eTIMS (KRA, Kenya) : identifiants et listes de référence, puis envoi des ventes toutes les 2 s (KenyaTransactionUp). */
