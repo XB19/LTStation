@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { Button, Modal, Space } from 'antd'
+import { Button, Checkbox, Modal, Space } from 'antd'
 import dayjs from 'dayjs'
 import { http } from '../../api/http'
 import Win from './Win'
@@ -21,6 +21,8 @@ interface GridState {
   visible?: Record<string, boolean>
   headers?: Record<string, string>
   options?: Record<string, { value: string; label: string }[]>
+  /** Colonnes ajoutées par le code (Columns.Add) */
+  added?: { name: string; header: string; width: number; check: boolean }[]
 }
 
 interface Suspend {
@@ -473,8 +475,10 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   }
 
   const gridProps: Record<string, GridProps> = {}
-  for (const [name, cols] of Object.entries(layout.columns)) {
+  for (const [name, layoutCols] of Object.entries(layout.columns)) {
     const g = grids[name]
+    const extra = (g?.added ?? []).map((a) => ({ name: a.name, header: a.header, visible: true, width: a.width, readOnly: true, check: a.check }))
+    const cols = [...layoutCols, ...extra]
     const colIndex = (col?: string) => (col ? cols.findIndex((x) => x.name === col) : -1)
     const select = (r: Row) => {
       const i = Number(r.__i)
@@ -498,7 +502,15 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       options: g?.options,
       pagination: (g?.rows.length ?? 0) > 200 ? { pageSize: 100, showSizeChanger: false } : false,
       render: Object.fromEntries(cols.map((x) => [x.name, (v: unknown) => (
-        <span onClick={() => { lastCol.current[name] = x.name }}>{v === null || v === undefined ? '' : String(v)}</span>
+        <span onClick={() => { lastCol.current[name] = x.name }}>
+          {typeof v === 'boolean' || ('check' in x && x.check) ? <Checkbox checked={!!v} /> : v === null || v === undefined ? '' : String(v)}
+        </span>
+      )])),
+      extraColumns: extra,
+      // En-tête d une colonne à cocher (CellPainting + CellMouseUp sur la ligne -1 dans l original)
+      headerNodes: Object.fromEntries(extra.filter((x) => x.check).map((x) => [x.name, (
+        <Checkbox checked={(g?.rows.length ?? 0) > 0 && (g?.rows ?? []).every((r) => r[x.name] === true)}
+          onChange={() => { const h = on(name, 'CellMouseUp'); if (h) fire(h, name, { RowIndex: -1, ColumnIndex: colIndex(x.name) }) }} />
       )])),
       onClick: (r) => {
         const prev = gridRef.current[name]?.current

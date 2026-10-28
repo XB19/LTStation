@@ -25,13 +25,15 @@ public class Grid {
     private final Map<String, List<Map<String, Object>>> options = new LinkedHashMap<>();
     private static final String FORE = "__fore";
     private static final String BACK = "__back";
+    /** Colonnes ajoutées par le code (Columns.Add) : nom → en-tête et type. */
+    private final List<Map<String, Object>> added = new ArrayList<>();
     private int current = -1;
     private int currentColumn = -1;
     private boolean dirty;
 
     Grid(String name, List<Layouts.Column> columns) {
         this.name = name;
-        this.columns = columns == null ? List.of() : columns;
+        this.columns = columns == null ? new ArrayList<>() : new ArrayList<>(columns);
     }
 
     public String name() {
@@ -190,6 +192,14 @@ public class Grid {
         return this;
     }
 
+    /** Columns.Add(new DataGridView[CheckBox|TextBox]Column { Name, HeaderText, Width }). */
+    public Grid ColumnsAdd(String colName, String header, int width, boolean checkBox) {
+        columns.add(new Layouts.Column(colName, null, header));
+        added.add(Map.of("name", colName, "header", header, "width", width, "check", checkBox));
+        dirty = true;
+        return this;
+    }
+
     public Grid ColumnVisible(String col, boolean v) {
         visible.put(col, v);
         dirty = true;
@@ -251,6 +261,9 @@ public class Grid {
         }
         if (!options.isEmpty()) {
             g.put("options", options);
+        }
+        if (!added.isEmpty()) {
+            g.put("added", added);
         }
         return g;
     }

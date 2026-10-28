@@ -97,6 +97,9 @@ export interface GridProps {
   hideColumns?: string[]
   /** En-têtes remplacés (nom de colonne d'origine → texte) */
   headers?: Record<string, string>
+  /** Colonnes ajoutées par le code (Columns.Add) et en-têtes dessinés (case « tout cocher ») */
+  extraColumns?: Column[]
+  headerNodes?: Record<string, ReactNode>
   summary?: () => ReactNode
   /** Cellules modifiables (CellEndEdit d'origine) : valeur saisie pour une ligne et une colonne */
   editable?: boolean
@@ -315,9 +318,9 @@ export default function WinForm(p: WinFormProps) {
   const renderGrid = (c: Ctrl) => {
     const g = p.grids?.[c.name]
     const hide = new Set(g?.hideColumns ?? [])
-    const cols: ColumnsType<Row> = (layout.columns[c.name] ?? []).filter((x) => x.visible && !hide.has(x.name)).map((x) => ({
+    const cols: ColumnsType<Row> = [...(layout.columns[c.name] ?? []), ...(g?.extraColumns ?? [])].filter((x) => x.visible && !hide.has(x.name)).map((x) => ({
       key: x.name,
-      title: g?.headers?.[x.name] ?? tr(x.header),
+      title: g?.headerNodes?.[x.name] ?? g?.headers?.[x.name] ?? tr(x.header),
       dataIndex: x.name,
       width: Math.max(x.width ?? 0, (g?.headers?.[x.name] ?? tr(x.header)).length * 8 + 28, 70),
       ellipsis: true,
