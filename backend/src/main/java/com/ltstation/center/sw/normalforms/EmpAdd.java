@@ -9,51 +9,10 @@ import com.ltstation.center.sw.core.SW;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import java.time.LocalDateTime;
-import java.util.Map;
 
 /** EmpAdd : nouvel employé créé sur Center (identifiant donné par Center) avec ses droits (Auth = « 1,3,… »). */
 @SwWindow(value = "NormalForm.EmpAdd", setup = true)
 public class EmpAdd extends SwForm {
-
-    /** Case à cocher → code du droit (menus de la fenêtre principale). */
-    private static final Map<String, String> AUTH = Map.ofEntries(
-        Map.entry("BaseCheck", "1"), Map.entry("Box_Set", "2"), Map.entry("EnergySet", "3"), Map.entry("TankSet", "4"), Map.entry("ShiftSet", "5"),
-        Map.entry("EmployeeLogin", "6"), Map.entry("EmpSet", "7"), Map.entry("ShiftReport", "8"), Map.entry("DayReport", "9"),
-        Map.entry("MonthReport", "10"), Map.entry("TransactionQuery", "11"), Map.entry("AuthShift", "12"), Map.entry("CardMakeBtn", "13"),
-        Map.entry("CardUpdateBtn", "14"), Map.entry("BalanceBtn", "15"), Map.entry("CardLostBtn", "16"), Map.entry("CardReplaceBtn", "17"),
-        Map.entry("EmpManagerBtn", "18"), Map.entry("UserMessageCheck", "19"), Map.entry("PrintMessageCheck", "20"),
-        Map.entry("HandShiftCheck", "21"), Map.entry("TankImportCheck", "22"), Map.entry("RetailStoreCheck", "23"));
-
-    /** Droits cochés dans le groupe, dans l'ordre des contrôles. */
-    static String authOf(EmpAddLike f, String group) {
-        StringBuilder text = new StringBuilder();
-        for (String name : f.controls(group)) {
-            String code = AUTH.get(name);
-            if (code != null && f.checked(name)) {
-                text.append(code).append(',');
-            }
-        }
-        return text.toString();
-    }
-
-    /** Accès aux cases à cocher (partagé avec EmpUpdate). */
-    interface EmpAddLike {
-        java.util.List<String> controls(String group);
-
-        boolean checked(String name);
-    }
-
-    private final EmpAddLike self = new EmpAddLike() {
-        @Override
-        public java.util.List<String> controls(String group) {
-            return Controls(group);
-        }
-
-        @Override
-        public boolean checked(String name) {
-            return c(name).Checked();
-        }
-    };
 
     public void SaveButton_Click() {
         try {
@@ -71,7 +30,7 @@ public class EmpAdd extends SwForm {
             String code = String.valueOf((max == null ? 0 : max) + 1);
             Row emp = Row.of("Name", name, "Gender", "1", "StationID", IniInfo.StationID, "Code", code, "Memo1", name, "Memo2", password,
                 "Telephone", phone, "Birthday", LocalDateTime.now(), "Status", "0", "Address", "", "PostCode", "", "StationType", "Add",
-                "Auth", authOf(self, "groupBox4"));
+                "Auth", EmpAuth.authOf(Controls("groupBox4"), n -> c(n).Checked()));
             CustomerRespone r = BaseFunction.post("ServerDeal/NormalEmpUpload", SW.dto().has("Employees") ? SW.dto().shape("Employees", emp) : emp);
             if (r.Result()) {
                 // la réponse de Center n'est pas chiffrée pour cette action
