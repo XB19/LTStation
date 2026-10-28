@@ -44,6 +44,16 @@ public class TankUpdate extends SwForm {
         }
     }
 
+    /** eTIMS (Kenya) : article créé pour une cuve qui n'a pas encore de KenyaCode. */
+    private static void kenyaCode(Row tank, Row grade) {
+        if (IniInfo.SupervisionType == 4 && (tank.str("KenyaCode") == null || tank.str("KenyaCode").isEmpty())) {
+            String code = KenyaItems.newTankItem(grade);
+            if (code != null) {
+                tank.put("KenyaCode", code);
+            }
+        }
+    }
+
     public void CanelButton_Click() {
         Close("Cancel");
     }
@@ -100,6 +110,7 @@ public class TankUpdate extends SwForm {
                 // comme l'original : la cuve retirée de même nom ou numéro est réactivée avec ces valeurs
                 other.putAll(limits);
                 other.put("IsUsing", true);
+                kenyaCode(other, grade);
                 db().update("NormalTank", other);
                 Close("OK");
                 return;
@@ -123,7 +134,7 @@ public class TankUpdate extends SwForm {
             tank.putAll(limits);
             tank.put("TankName", tankName);
             tank.put("TankNo", tankNo);
-            // SupervisionType 4 : article eTIMS (KenyaCode) par BoxBase.kenyaDeal.saveItem, pas encore porté
+            kenyaCode(tank, grade);
             db().update("NormalTank", tank);
             BaseFunction.post("ServerDeal/NormalTankUpdate", obj);
             if (IniInfo.WifiMode == 1) {

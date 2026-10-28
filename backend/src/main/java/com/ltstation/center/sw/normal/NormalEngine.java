@@ -163,9 +163,27 @@ public final class NormalEngine {
         spawn("CenterCommandLoad", NormalEngine::CenterCommandLoad);
         spawn("DealTankAlarm", NormalEngine::DealTankAlarm);
         spawn("DealScreenPumpData", NormalEngine::DealScreenPumpData);
-        if (IniInfo.SupervisionType == 3 || IniInfo.SupervisionType == 4) {
-            // EFD (Tanzanie) et eTIMS (Kenya) passent par BoxBase, pas encore porté
-            NormalSync.MainLog.writeLog("Supervision " + IniInfo.SupervisionType + " : BoxBase non disponible");
+        Row cfg = db().first("StationConfig");
+        if (cfg != null) {
+            BoxBase.sc.Branch = cfg.str("StationBranch");
+            BoxBase.sc.StationCompany = cfg.str("StationCompany");
+            BoxBase.sc.Tel = cfg.str("StationTel");
+            BoxBase.sc.StationTax = cfg.str("StationTaxer");
+            BoxBase.sp.NAME = cfg.str("StationName");
+            BoxBase.sp.CITY = cfg.str("StationAddress");
+        }
+        if (IniInfo.SupervisionType == 3) {
+            // EFD (TRA, Tanzanie) : certificat, enregistrement, puis reçus, rapports Z et clients TIN de Center
+            BoxBase.EFDPFXNumber = java.util.Base64.getEncoder().encodeToString(BoxBase.ReadPFXNumber().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            if (BoxBase.EFDRegistration()) {
+                BoxBase.EFDDealRun = true;
+                spawn("EFDThread", BoxBase::DealTransactionSp);
+                spawn("EFDZReportThread", BoxBase::DealEFDZReport);
+                spawn("EFDCustomerPrint", NormalEngine::CenterTanPrintDowload);
+            }
+        }
+        if (IniInfo.SupervisionType == 4) {
+            StartKenya();
         }
         spawn("DealUnTransaction", NormalEngine::DealUnTransaction);
         BoxShiftInit();
@@ -181,10 +199,50 @@ public final class NormalEngine {
         });
     }
 
+    /** eTIMS (KRA, Kenya) : identifiants et listes de référence, puis envoi des ventes toutes les 2 s (KenyaTransactionUp). */
+    public static void StartKenya() {
+        BoxBase.kenyaDeal.InitData(new String[1]);
+        BoxBase.EtimDealRun = true;
+        spawn("KenyaOilThread", () -> {
+            while (BoxBase.EtimDealRun) {
+                try {
+                    BoxBase.kenyaDeal.KenyaTransactionSend();
+                } catch (RuntimeException ignored) {
+                    // comme l'original
+                }
+                sleep(2000);
+            }
+        });
+    }
+
+    /** CenterTanPrintDowload : clients TIN à imprimer sur les reçus EFD, demandés à Center toutes les 0,5 s. */
+    private static void CenterTanPrintDowload() {
+        while (IniInfo.ThreadStop) {
+            try {
+                CustomerRespone r = BaseFunction.post("Station/GetTanSanPrint", SW.dto().make("CustomerParam", "CompanyID", IniInfo.CompanyID,
+                    "StationID", IniInfo.StationID));
+                if (r.Result()) {
+                    for (Row item : Wire.parseRows(BaseFunction.DecryptByAES(r.Mess()))) {
+                        if (!db().any("TanSanCustomerPrint", "{CreateTime} = :c", p("c", item.get("CreateTime")))) {
+                            db().insert("TanSanCustomerPrint", Row.of("CreateTime", item.get("CreateTime"), "CustomerName", item.get("CustomerName"),
+                                "CustomerTIN", item.get("CustomerTIN"), "IsPrint", false, "MobileNumber", item.get("MobileNumber"), "NozID", item.get("NozID"),
+                                "Operator", item.get("Operator"), "PayMent", item.get("PayMent")));
+                        }
+                    }
+                }
+            } catch (RuntimeException ignored) {
+                // comme l'original
+            }
+            sleep(500);
+        }
+    }
+
     /** NormalMainForm_FormClosed / ExitItem : arrêt des fils, des ports et du serveur des boîtiers. */
     public static synchronized void Stop() {
         IniInfo.ThreadStop = false;
         started = false;
+        BoxBase.EFDDealRun = false;
+        BoxBase.EtimDealRun = false;
         for (NozSerial p : Ports) {
             p.PortRun = false;
             p.Stop();

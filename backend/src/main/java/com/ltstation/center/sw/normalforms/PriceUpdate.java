@@ -73,7 +73,15 @@ public class PriceUpdate extends SwForm {
             if (BaseFunction.ConvertDateTimeToInt() >= valid) {
                 NormalFunction.MainFormMessage.accept(1027, info.i("ID"), 0);
             }
-            // SupervisionType 4 (eTIMS Kenya) : prix envoyé par BoxBase.kenyaDeal.saveItem, pas encore porté
+            if (IniInfo.SupervisionType == 4) {
+                // eTIMS (Kenya) : nouveau prix des articles des cuves de ce produit
+                for (Row tank : db().list("NormalTank", "{GradeID} = :g", p("g", gradeId))) {
+                    Row item = db().first("KenyaSelectItemList", "{itemCd} = :c", p("c", tank.str("KenyaCode")));
+                    if (item != null) {
+                        KenyaItems.saveItem(item.str("itemCd"), item.str("itemClsCd"), item.str("itemNm"), result);
+                    }
+                }
+            }
             Close("OK");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());

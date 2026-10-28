@@ -125,8 +125,17 @@ public class NormalMainForm extends SwForm {
                 Close();
             }
             case "EmpLoginItem" -> ShowDialog("Login", r -> Switch_Auth());
-            // EFD / eTIMS (fil KenyaTransactionUp) relèvent de BoxBase, pas encore porté
-            case "superviseSet" -> ShowDialog("Station.SuperviseForm", r -> { });
+            case "superviseSet" -> ShowDialog("Station.SuperviseForm", r -> {
+                if ("OK".equals(r.result())) {
+                    // fil d'envoi eTIMS (Kenya) démarré ou arrêté selon la nouvelle supervision
+                    if (IniInfo.SupervisionType == 4) {
+                        NormalEngine.StartKenya();
+                    }
+                    if (IniInfo.SupervisionType == 0) {
+                        com.ltstation.center.sw.normal.BoxBase.EtimDealRun = false;
+                    }
+                }
+            });
             case "GradeAndPrice" -> ShowDialog("NormalForm.GradeSet", r -> { });
             case "NozItem" -> ShowDialog("NormalForm.NozSet", r -> { });
             case "BaseMessage" -> ShowDialog("NormalForm.NormalStationCreate", r -> { });

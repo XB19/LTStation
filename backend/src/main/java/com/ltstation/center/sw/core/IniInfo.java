@@ -57,6 +57,7 @@ public final class IniInfo {
         DEFAULTS.put("CardConstTempKey", "");
         DEFAULTS.put("DHTransferKey", "");
         DEFAULTS.put("FlyingAppKey", "");
+        DEFAULTS.put("EFDPfxPassword", "");
         DEFAULTS.put("clientKey", "");
         DEFAULTS.put("clientSecret", "");
         DEFAULTS.put("uid", "");
@@ -91,6 +92,8 @@ public final class IniInfo {
     public static String DHTransferKey = "";
     /** Clé d'application écrite sur les cartes BSky : lue dans StationSoftware.properties, jamais dans le code. */
     public static String FlyingAppKey = "";
+    /** Mot de passe du certificat PFX de l'EFD (Tanzanie), dans le fichier de réglages local uniquement. */
+    public static String EFDPfxPassword = "";
     public static String UNITID = "";
     public static String ServerIP = "";
     public static int TransactionType;
@@ -279,6 +282,7 @@ public final class IniInfo {
         BaseFunction.CONST_TEMPKEY = setting("CardConstTempKey");
         DHTransferKey = setting("DHTransferKey") == null ? "" : setting("DHTransferKey");
         FlyingAppKey = setting("FlyingAppKey") == null ? "" : setting("FlyingAppKey");
+        EFDPfxPassword = setting("EFDPfxPassword") == null ? "" : setting("EFDPfxPassword");
         clientKey = setting("clientKey");
         clientSecret = setting("clientSecret");
         uid = setting("uid");

@@ -94,7 +94,12 @@ public class TankAdd extends SwForm {
                 "UpdateType", "Add", "NTankNo", result9, "LowerHeight", result4, "LowerTemp", result8, "LowerWaterHeight", result6, "OverHeight", result3,
                 "OverTemp", result7, "OverWaterHeight", result5, "TankHeight", result, "TankName", tankName, "TankVolume", result2,
                 "GradeID", grade.get("ID"), "OverImportLevel", result10));
-            // SupervisionType 4 : article eTIMS (KenyaCode) créé par BoxBase.kenyaDeal.saveItem, pas encore porté
+            if (IniInfo.SupervisionType == 4) {
+                String code = KenyaItems.newTankItem(grade);
+                if (code != null) {
+                    tank.put("KenyaCode", code);
+                }
+            }
             db().insert("NormalTank", tank);
             if (IniInfo.WifiMode == 1) {
                 BaseInfo.ResetTank(new String[1]);

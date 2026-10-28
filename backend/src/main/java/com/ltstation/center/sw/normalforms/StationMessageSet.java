@@ -41,7 +41,13 @@ public class StationMessageSet extends SwForm {
                 s.put("StationAddress", address);
                 db().update("StationConfig", s);
             }
-            // BoxBase.sp / BoxBase.sc (en-têtes EFD) : repris au chargement de BoxBase, pas encore porté
+            // en-têtes des reçus EFD et des tickets de caisse
+            com.ltstation.center.sw.normal.BoxBase.sp.NAME = name;
+            com.ltstation.center.sw.normal.BoxBase.sp.CITY = address;
+            com.ltstation.center.sw.normal.BoxBase.sc.Tel = c("StationTel").Text();
+            com.ltstation.center.sw.normal.BoxBase.sc.StationCompany = c("StationCompany").Text();
+            com.ltstation.center.sw.normal.BoxBase.sc.Branch = c("StationBranch").Text();
+            com.ltstation.center.sw.normal.BoxBase.sc.StationTax = c("TaxerBox").Text();
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }

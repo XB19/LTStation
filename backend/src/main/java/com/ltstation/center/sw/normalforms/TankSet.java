@@ -41,7 +41,9 @@ public class TankSet extends SwForm {
         ShowDialog("NormalForm.TankAdd", r -> {
             if ("OK".equals(r.result())) {
                 ShowTankList();
-                // SupervisionType 4 : BoxBase.kenyaDeal.selectItemList (eTIMS Kenya, pas encore porté)
+                if (IniInfo.SupervisionType == 4) {
+                    com.ltstation.center.sw.normal.BoxBase.kenyaDeal.selectItemList(new String[1]);
+                }
             }
         });
     }
