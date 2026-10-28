@@ -6,7 +6,7 @@ import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** EmpForms : liste des employés (ajout, modification par double-clic). */
-@SwWindow("NormalForm.EmpForms")
+@SwWindow(value = "NormalForm.EmpForms", setup = true)
 public class EmpForms extends SwForm {
 
     @Override

@@ -8,7 +8,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import com.ltstation.center.sw.normal.NormalEngine;
 
 /** GradeUpdate : nom d'un produit (argument ID), repris sur les pistolets et envoyé à Center. */
-@SwWindow("NormalForm.GradeUpdate")
+@SwWindow(value = "NormalForm.GradeUpdate", setup = true)
 public class GradeUpdate extends SwForm {
 
     public void GradeUpdate_Load() {

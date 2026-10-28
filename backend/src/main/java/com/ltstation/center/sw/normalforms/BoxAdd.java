@@ -7,7 +7,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import com.ltstation.center.sw.hw.SerialClass;
 
 /** BoxAdd : nouveau boîtier (BoxList) filaire (port série) ou sans fil. */
-@SwWindow("NormalForm.BoxAdd")
+@SwWindow(value = "NormalForm.BoxAdd", setup = true)
 public class BoxAdd extends SwForm {
 
     public void BoxAdd_Load() {

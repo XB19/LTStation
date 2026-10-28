@@ -12,7 +12,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import java.math.BigDecimal;
 
 /** NormalStationCreate : création de la station sur Center (code suivant, clé de la société) ou affichage de la station existante. */
-@SwWindow("NormalForm.NormalStationCreate")
+@SwWindow(value = "NormalForm.NormalStationCreate", setup = true)
 public class NormalStationCreate extends SwForm {
 
     public void NormalStationCreate_Load() {

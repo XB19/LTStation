@@ -6,7 +6,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import com.ltstation.center.sw.hw.SerialClass;
 
 /** BoxUpdate : modification ou suppression d'un boîtier (argument boxID). */
-@SwWindow("NormalForm.BoxUpdate")
+@SwWindow(value = "NormalForm.BoxUpdate", setup = true)
 public class BoxUpdate extends SwForm {
 
     private Row box() {

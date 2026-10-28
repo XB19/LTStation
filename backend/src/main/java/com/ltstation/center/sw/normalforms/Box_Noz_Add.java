@@ -9,7 +9,7 @@ import com.ltstation.center.sw.normal.NormalFunction;
 import java.math.BigDecimal;
 
 /** Box_Noz_Add : nouveau pistolet sur un port de boîtier (arguments CPort, BPort), signalé à la fenêtre principale (1028). */
-@SwWindow("NormalForm.Box_Noz_Add")
+@SwWindow(value = "NormalForm.Box_Noz_Add", setup = true)
 public class Box_Noz_Add extends SwForm {
 
     private int comPort() {

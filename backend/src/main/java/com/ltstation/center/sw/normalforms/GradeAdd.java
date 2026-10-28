@@ -10,7 +10,7 @@ import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** GradeAdd : nouveau produit, créé d'abord sur Center (identifiant et code donnés par Center). */
-@SwWindow("NormalForm.GradeAdd")
+@SwWindow(value = "NormalForm.GradeAdd", setup = true)
 public class GradeAdd extends SwForm {
 
     public void SaveButton_Click() {

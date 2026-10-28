@@ -12,7 +12,7 @@ import com.ltstation.center.sw.form.SwWindow;
 import java.math.BigDecimal;
 
 /** PriceAdd : prix d'un produit, enregistré d'abord sur Center (identifiant donné par Center). */
-@SwWindow("NormalForm.PriceAdd")
+@SwWindow(value = "NormalForm.PriceAdd", setup = true)
 public class PriceAdd extends SwForm {
 
     public void PriceAdd_Load() {

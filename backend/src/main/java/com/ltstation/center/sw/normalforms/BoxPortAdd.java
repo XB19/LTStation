@@ -5,7 +5,7 @@ import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** BoxPortAdd : ajout d'un port d'un boîtier (Box_Set) ; argument PID = boîtier. */
-@SwWindow("NormalForm.BoxPortAdd")
+@SwWindow(value = "NormalForm.BoxPortAdd", setup = true)
 public class BoxPortAdd extends SwForm {
 
     public void SaveButton_Click() {

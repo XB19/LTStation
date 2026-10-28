@@ -6,7 +6,7 @@ import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** Box_Noz_Setting : pistolets d'un port de boîtier (arguments ComPortID, Box_Port). */
-@SwWindow("NormalForm.Box_Noz_Setting")
+@SwWindow(value = "NormalForm.Box_Noz_Setting", setup = true)
 public class Box_Noz_Setting extends SwForm {
 
     public void Box_Noz_Setting_Load() {

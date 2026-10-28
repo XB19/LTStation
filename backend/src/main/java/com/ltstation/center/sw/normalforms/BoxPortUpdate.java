@@ -5,7 +5,7 @@ import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** BoxPortUpdate : modification d'un port de boîtier (argument ID) ; « Annuler » le supprime, comme l'original. */
-@SwWindow("NormalForm.BoxPortUpdate")
+@SwWindow(value = "NormalForm.BoxPortUpdate", setup = true)
 public class BoxPortUpdate extends SwForm {
 
     private static final int[] BAUDS = {4800, 9600, 14400, 19200, 38400, 56000, 115200};
