@@ -61,6 +61,16 @@
    "order": 1,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -79,7 +89,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DeleteButton",
@@ -97,7 +110,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CloseButton",
@@ -115,7 +131,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label1",
@@ -133,7 +152,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "style": {
+    "fore": "red"
+   }
   }
  ],
  "columns": {

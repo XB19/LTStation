@@ -58,7 +58,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TankShow",
@@ -76,7 +86,17 @@
    "dock": "fill",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OilDataView",
@@ -97,6 +117,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -223,7 +253,17 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton1",
@@ -241,7 +281,17 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "GunAndTankTab",
@@ -368,5 +418,14 @@
    "Load": "InternalUserView_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 15.75,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

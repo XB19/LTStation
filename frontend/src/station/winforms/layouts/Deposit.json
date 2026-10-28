@@ -43,7 +43,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "Transfer",
@@ -61,7 +64,10 @@
    "dock": "fill",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "CardDeduction",
@@ -79,7 +85,10 @@
    "dock": "fill",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "CardConsume",
@@ -97,7 +106,10 @@
    "dock": "fill",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "STransfer",
@@ -115,7 +127,10 @@
    "dock": "fill",
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "CreditPay",
@@ -133,7 +148,10 @@
    "dock": "fill",
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "DepositForMasterCard",
@@ -151,7 +169,10 @@
    "dock": "fill",
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "skinCaptionPanel3",
@@ -316,6 +337,9 @@
    "order": 1,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -352,7 +376,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label22",
@@ -431,7 +458,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label20",
@@ -485,7 +515,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "MasterDisCount",
@@ -503,7 +536,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label18",
@@ -557,7 +593,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CarNoSearch",
@@ -575,7 +614,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label26",
@@ -611,7 +653,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label25",
@@ -647,7 +692,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label24",
@@ -726,7 +774,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "MasterName",
@@ -744,7 +795,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label19",
@@ -780,7 +834,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label28",
@@ -852,7 +909,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "STConfirm",
@@ -870,7 +930,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label29",
@@ -906,7 +969,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label30",
@@ -984,7 +1050,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "STAsn",
@@ -1002,7 +1071,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label32",
@@ -1041,6 +1113,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -1080,6 +1162,9 @@
    "order": 0,
    "init": {
     "Image": "res/forms/Deposit/NextEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -1101,6 +1186,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/Deposit/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -1176,6 +1264,9 @@
    "order": 5,
    "init": {
     "Image": "res/forms/Deposit/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -1197,6 +1288,9 @@
    "order": 6,
    "init": {
     "Image": "res/forms/Deposit/CurEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -1240,7 +1334,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -1276,7 +1373,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label6",
@@ -1312,7 +1412,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label5",
@@ -1348,7 +1451,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label4",
@@ -1384,7 +1490,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ASN",
@@ -1402,7 +1511,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DepositButton",
@@ -1420,7 +1532,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "SaveButton",
@@ -1438,7 +1553,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",
@@ -1510,7 +1628,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label10",
@@ -1546,7 +1667,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label11",
@@ -1582,7 +1706,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DeductionASN",
@@ -1600,7 +1727,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DeductionButton",
@@ -1618,7 +1748,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardReader",
@@ -1636,7 +1769,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label13",
@@ -1690,7 +1826,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label7",
@@ -1726,7 +1865,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label9",
@@ -1762,7 +1904,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ConsumeASN",
@@ -1780,7 +1925,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ConsumeButton",
@@ -1798,7 +1946,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardConsumeRead",
@@ -1816,7 +1967,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label12",
@@ -1924,7 +2078,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label37",
@@ -1960,7 +2117,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label38",
@@ -1996,7 +2156,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TransferAsn",
@@ -2014,7 +2177,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TransferBtn",
@@ -2032,7 +2198,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TransferReader",
@@ -2050,7 +2219,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label40",

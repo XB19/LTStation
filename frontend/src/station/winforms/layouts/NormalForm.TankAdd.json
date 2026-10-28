@@ -22,7 +22,16 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "Times New Roman",
+     "size": 10.5,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OverImport",
@@ -58,7 +67,16 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label14",
@@ -76,7 +94,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "TankNo",
@@ -112,7 +133,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label13",
@@ -130,7 +160,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label12",
@@ -148,7 +181,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label11",
@@ -166,7 +202,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label36",
@@ -184,7 +223,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "LowerTempMess",
@@ -220,7 +262,16 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OverTempMess",
@@ -256,7 +307,16 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "LowerWaterMess",
@@ -292,7 +352,16 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OverWaterMess",
@@ -328,7 +397,16 @@
    "dock": null,
    "visible": true,
    "z": 16,
-   "order": 16
+   "order": 16,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "LowerHeightMess",
@@ -364,7 +442,16 @@
    "dock": null,
    "visible": true,
    "z": 18,
-   "order": 18
+   "order": 18,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OverHeightMess",
@@ -400,7 +487,16 @@
    "dock": null,
    "visible": true,
    "z": 20,
-   "order": 20
+   "order": 20,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TankNameMess",
@@ -436,7 +532,16 @@
    "dock": null,
    "visible": true,
    "z": 22,
-   "order": 22
+   "order": 22,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "GradeSelect",
@@ -490,7 +595,16 @@
    "dock": null,
    "visible": true,
    "z": 25,
-   "order": 25
+   "order": 25,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label6",
@@ -508,7 +622,16 @@
    "dock": null,
    "visible": true,
    "z": 26,
-   "order": 26
+   "order": 26,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TankHeightMess",
@@ -544,7 +667,16 @@
    "dock": null,
    "visible": true,
    "z": 28,
-   "order": 28
+   "order": 28,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CanelButton",
@@ -562,7 +694,17 @@
    "dock": null,
    "visible": true,
    "z": 29,
-   "order": 29
+   "order": 29,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SaveButton",
@@ -580,7 +722,17 @@
    "dock": null,
    "visible": true,
    "z": 30,
-   "order": 30
+   "order": 30,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},

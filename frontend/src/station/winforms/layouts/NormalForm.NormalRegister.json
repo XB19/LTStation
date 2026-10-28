@@ -58,7 +58,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},
@@ -95,35 +105,70 @@
      "type": "ToolStripButton",
      "text": "Station",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalRegister/StationCreate.Image.png",
+     "size": [
+      120,
+      100
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "GradeSet",
      "type": "ToolStripButton",
      "text": "Grade",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalRegister/GradeSet.Image.png",
+     "size": [
+      120,
+      100
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "TankSet",
      "type": "ToolStripButton",
      "text": "Tank",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalRegister/TankSet.Image.png",
+     "size": [
+      120,
+      100
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "EmployeeCreate",
      "type": "ToolStripButton",
      "text": "Emp",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalRegister/EmployeeCreate.Image.png",
+     "size": [
+      120,
+      100
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "StationActive",
      "type": "ToolStripButton",
      "text": "Active",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalRegister/StationActive.Image.png",
+     "size": [
+      120,
+      100
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     }
    ]
   }

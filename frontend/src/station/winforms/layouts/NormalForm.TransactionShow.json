@@ -157,7 +157,17 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TimeBox",
@@ -478,5 +488,14 @@
    "Click": "Confirm_Click"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 14.25,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

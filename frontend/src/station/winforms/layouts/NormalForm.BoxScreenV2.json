@@ -22,7 +22,10 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "panel2",
@@ -40,7 +43,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "#0965ca"
+   }
   },
   {
    "name": "CenterRightPanel",
@@ -76,7 +82,10 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "#0965ca"
+   }
   },
   {
    "name": "BottomPanel",
@@ -130,7 +139,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton3",
@@ -148,7 +167,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton4",
@@ -166,7 +195,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton5",
@@ -184,7 +223,17 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton6",
@@ -202,7 +251,17 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton7",
@@ -220,7 +279,17 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CancelInvoiceBtn",
@@ -238,7 +307,17 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 10.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PersonalCreditBtn",
@@ -256,7 +335,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CouponBtn",
@@ -274,7 +364,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ShowReceiptBtn",
@@ -292,7 +393,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "DiscountBtn",
@@ -310,7 +421,18 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ShowVatBtn",
@@ -328,7 +450,18 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "InternalUseBtn",
@@ -346,7 +479,18 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CenterBottomPanel",
@@ -421,6 +565,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -529,7 +683,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 25.5,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CenterMiddleRightPanel",
@@ -565,7 +729,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Calibri",
+     "size": 15.7,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BankTransferBtn",
@@ -583,7 +758,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Calibri",
+     "size": 15.7,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "panel3",
@@ -655,7 +841,18 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "top-center"
+   }
   },
   {
    "name": "RightPanel",
@@ -709,7 +906,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Calibri",
+     "size": 25.5,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CenterTopRightPanel",
@@ -745,7 +953,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Calibri",
+     "size": 15.7,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FleetCardBtn",
@@ -763,7 +982,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Calibri",
+     "size": 15.7,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label1",
@@ -781,7 +1011,18 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "top-center"
+   }
   },
   {
    "name": "LeftCommandPanel",
@@ -859,7 +1100,17 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 8.8,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "TimeLabel",
@@ -877,7 +1128,17 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "bottom-center"
+   }
   },
   {
    "name": "panel4",
@@ -937,7 +1198,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "black",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ItemCancelBtn",
@@ -955,7 +1227,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SaleCancelBtn",
@@ -973,7 +1256,18 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "HomeBtn",
@@ -991,7 +1285,18 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "fore": "black",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AmountBox",
@@ -1009,7 +1314,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AmountLabel",
@@ -1027,7 +1341,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "MessageLabel",
@@ -1045,7 +1370,18 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-left"
+   }
   },
   {
    "name": "BottomNextBtn",
@@ -1066,6 +1402,17 @@
    "order": 0,
    "init": {
     "BackgroundImage": "res/BoxNext.png"
+   },
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 60.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -1102,7 +1449,17 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 21.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "LeftPayMentPanel",
@@ -1180,7 +1537,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenOnePumpBtn",
@@ -1198,7 +1566,18 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "StopAllPumpBtn",
@@ -1216,7 +1595,18 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenAllPumpBtn",
@@ -1234,7 +1624,18 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SevenBtn",
@@ -1252,7 +1653,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "EightBtn",
@@ -1270,7 +1681,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NineBtn",
@@ -1288,7 +1709,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FourBtn",
@@ -1306,7 +1737,17 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FiveBtn",
@@ -1324,7 +1765,17 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SixBtn",
@@ -1342,7 +1793,17 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OneBtn",
@@ -1360,7 +1821,17 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TwoBtn",
@@ -1378,7 +1849,17 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ThreeBtn",
@@ -1396,7 +1877,17 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PQBtn",
@@ -1414,7 +1905,17 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PointBtn",
@@ -1432,7 +1933,17 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ZeroBtn",
@@ -1450,7 +1961,17 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenCashBoxBtn",
@@ -1468,7 +1989,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "MeterBtn",
@@ -1486,7 +2017,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OtherProductBtn",
@@ -1504,7 +2045,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PrinterBtn",
@@ -1522,7 +2073,17 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "QuickPrintBtn",
@@ -1540,7 +2101,17 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CustomerBtn",
@@ -1558,7 +2129,17 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Note100Btn",
@@ -1576,7 +2157,17 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Note500Btn",
@@ -1594,7 +2185,17 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Note1000Btn",
@@ -1612,7 +2213,17 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NozViewPanel",
@@ -1756,7 +2367,18 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-right"
+   }
   },
   {
    "name": "ChangeLabel",
@@ -1774,7 +2396,18 @@
    "dock": "left",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-left"
+   }
   }
  ],
  "columns": {

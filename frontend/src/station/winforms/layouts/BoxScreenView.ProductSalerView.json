@@ -43,6 +43,15 @@
    "order": 0,
    "init": {
     "Enabled": false
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -61,7 +70,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "GroupSelect",
@@ -89,6 +107,15 @@
      "Tools"
     ],
     "Enabled": false
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -107,7 +134,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CancelBtn",
@@ -125,7 +163,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label4",
@@ -143,7 +192,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 5
+   "order": 5,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PriceBox",
@@ -164,6 +222,15 @@
    "order": 6,
    "init": {
     "Enabled": false
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -182,7 +249,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7
+   "order": 7,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "QuantityBox",
@@ -200,7 +276,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 8
+   "order": 8,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label2",
@@ -218,7 +303,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9
+   "order": 9,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NameBox",
@@ -239,6 +333,15 @@
    "order": 10,
    "init": {
     "Enabled": false
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -257,7 +360,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 11
+   "order": 11,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},

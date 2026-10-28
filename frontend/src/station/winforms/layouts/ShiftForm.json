@@ -79,6 +79,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -100,6 +110,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -118,7 +138,10 @@
    "dock": null,
    "visible": false,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label4",
@@ -136,7 +159,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label3",
@@ -154,7 +180,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label2",
@@ -247,7 +276,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TotalView",
@@ -268,6 +300,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -289,6 +331,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -400,6 +452,9 @@
    "order": 0,
    "init": {
     "Image": "res/forms/ShiftForm/NextEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -421,6 +476,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/ShiftForm/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -496,6 +554,9 @@
    "order": 5,
    "init": {
     "Image": "res/forms/ShiftForm/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -517,6 +578,9 @@
    "order": 6,
    "init": {
     "Image": "res/forms/ShiftForm/CurEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {

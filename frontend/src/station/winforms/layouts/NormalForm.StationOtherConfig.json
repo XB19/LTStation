@@ -73,5 +73,14 @@
    "Load": "StationOtherConfig_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 15.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

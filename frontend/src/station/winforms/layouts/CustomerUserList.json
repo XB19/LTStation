@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardStatue",
@@ -212,6 +215,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -233,6 +246,9 @@
    "order": 0,
    "init": {
     "Image": "res/forms/CustomerUserList/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -254,6 +270,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/CustomerUserList/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {

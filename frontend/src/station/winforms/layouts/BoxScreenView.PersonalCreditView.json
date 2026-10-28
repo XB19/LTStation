@@ -79,6 +79,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -172,7 +182,18 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CreditUseBox",
@@ -772,7 +793,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "PreBtn",
@@ -834,5 +865,14 @@
    "Load": "PersonalCreditView_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 15.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

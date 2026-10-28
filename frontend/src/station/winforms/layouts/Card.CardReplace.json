@@ -43,6 +43,16 @@
    "order": 999,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "back": "#ffffff",
+    "font": {
+     "family": "Times New Roman",
+     "size": 20.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -61,7 +71,16 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "黑体",
+     "size": 20.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Confirm",
@@ -79,7 +98,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BalanceInput",
@@ -100,6 +129,15 @@
    "order": 1,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -118,7 +156,16 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AccountInput",
@@ -139,6 +186,15 @@
    "order": 3,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -157,7 +213,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardNumberSelect",
@@ -175,7 +240,16 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label3",
@@ -193,7 +267,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label9",
@@ -211,7 +294,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardTyoeSelect",
@@ -235,6 +327,15 @@
      "Employee Card",
      "Non Employee Card"
     ]
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -253,7 +354,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CNOInput",
@@ -271,7 +382,16 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label1",
@@ -289,7 +409,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PhoneInput",
@@ -307,7 +436,16 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label5",
@@ -325,7 +463,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "UserNameInput",
@@ -343,7 +490,16 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label2",
@@ -361,7 +517,16 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "groupBox3",

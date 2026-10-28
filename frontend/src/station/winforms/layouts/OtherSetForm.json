@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "SpeedSelectBox",
@@ -95,5 +98,14 @@
    "Click": "Confirm_Click"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 14.25,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

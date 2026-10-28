@@ -40,7 +40,10 @@
    "dock": null,
    "visible": false,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DisCountValue",
@@ -58,7 +61,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DisCountID",
@@ -76,7 +82,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label4",
@@ -112,7 +121,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "SaveButton",
@@ -130,7 +142,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",

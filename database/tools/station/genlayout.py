@@ -6,6 +6,7 @@ Sources : <Form>.resx neutre (positions), <Form>.en.resx (textes anglais), <Form
 import base64, json, os, re, struct, sys
 import xml.etree.ElementTree as ET
 from resimages import resx_images
+from resstyle import ALIGN, TIR, enum_value, style_of
 
 DECOMP, OUT = sys.argv[1], sys.argv[2]
 # Images des fenêtres : frontend/public/station-web/res/forms/<fenêtre>/
@@ -167,9 +168,22 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
         m = re.search(rf'this\.{re.escape(owner)}\.{prop}\.AddRange\(new [\w.]+\[\d*\]\s*\{{(.*?)\}}\);', cs, re.S)
         out = []
         for n in re.findall(r'this\.(\w+)', m.group(1)) if m else []:
-            out.append({'name': n, 'type': item_types.get(n, 'ToolStripMenuItem'), 'text': item_text(n),
-                        'visible': not re.search(rf'this\.{re.escape(n)}\.Visible = false;', cs),
-                        'items': items_of(n, 'DropDownItems')})
+            it = {'name': n, 'type': item_types.get(n, 'ToolStripMenuItem'), 'text': item_text(n),
+                  'visible': not re.search(rf'this\.{re.escape(n)}\.Visible = false;', cs),
+                  'items': items_of(n, 'DropDownItems')}
+            # Apparence des boutons des barres : image, taille, position du texte
+            if (img := form_images.get(f'{n}.Image')):
+                it['image'] = save_image(key, f'{n}.Image', img)
+            elif (im := re.search(rf'this\.{re.escape(n)}\.Image = [\w.]*Resources\.(\w+);', cs)):
+                ext = next((e for e in ('png', 'jpg', 'gif', 'bmp') if os.path.exists(os.path.join(RES, f'{im.group(1)}.{e}'))), 'png')
+                it['image'] = f'res/{im.group(1)}.{ext}'
+            if (sz := pair(neutral.get(f'{n}.Size'))) and neutral.get(f'{n}.AutoSize', '').strip().lower() == 'false':
+                it['size'] = sz
+            if (a := enum_value(neutral.get(f'{n}.TextAlign'))) in ALIGN:
+                it['align'] = ALIGN[a]
+            if (t := enum_value(neutral.get(f'{n}.TextImageRelation'))) in TIR:
+                it['tir'] = TIR[t]
+            out.append(it)
         return out
 
     menus = {}
@@ -220,6 +234,8 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
             init[m.group(1)] = int(m.group(2))
         if init:
             c['init'] = init
+        if (st := style_of(name, neutral, cs)):
+            c['style'] = st
     # Gestionnaires d'événements : this.X.Click += new EventHandler(Y) ; base.Load += ...
     events = {}
     for m in re.finditer(r'(?:this|base)\.(?:(\w+)\.)?(\w+) \+= new [\w.]+\((?:this\.)?(\w+)\);', cs):
@@ -234,6 +250,8 @@ def gen(form, cs_dir, resx_dir, en_dir, out, res=None, key=None):
         'events': events,
         'menus': menus,
     }
+    if (st := style_of('$this', neutral, cs, 'base')):
+        layout['style'] = st
     with open(os.path.join(out, f'{key}.json'), 'w', encoding='utf-8') as f:
         json.dump(layout, f, ensure_ascii=False, indent=1)
     return layout

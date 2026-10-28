@@ -43,7 +43,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "EmployeePage",
@@ -61,7 +64,10 @@
    "dock": "fill",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "PersonGroup",
@@ -79,7 +85,10 @@
    "dock": "fill",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "CreditCard",
@@ -97,7 +106,10 @@
    "dock": "fill",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "ChildCard",
@@ -115,7 +127,10 @@
    "dock": "fill",
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "panel8",
@@ -241,7 +256,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label67",
@@ -259,7 +277,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label66",
@@ -277,7 +298,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label64",
@@ -907,7 +931,10 @@
    "dock": null,
    "visible": true,
    "z": 28,
-   "order": 28
+   "order": 28,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "EmployeeUpdateButton",
@@ -925,7 +952,10 @@
    "dock": null,
    "visible": true,
    "z": 29,
-   "order": 29
+   "order": 29,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "groupBox3",
@@ -979,7 +1009,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "PersonButton",
@@ -997,7 +1030,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "GPrice6",
@@ -1771,7 +1807,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",
@@ -1789,7 +1828,10 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label81",
@@ -1807,7 +1849,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label101",
@@ -1825,7 +1870,10 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label102",
@@ -1843,7 +1891,10 @@
    "dock": null,
    "visible": true,
    "z": 16,
-   "order": 16
+   "order": 16,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "ChildCerTypeID",
@@ -2339,7 +2390,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label69",
@@ -2357,7 +2411,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label53",
@@ -2627,7 +2684,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "GroupLimitOil",
@@ -2663,7 +2723,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label58",
@@ -2789,7 +2852,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ChildMileageTolerance",
@@ -2933,7 +3006,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ChildStation",
@@ -2969,7 +3045,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label117",
@@ -2987,7 +3066,11 @@
    "dock": null,
    "visible": false,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "fore": "red",
+    "align": "middle-left"
+   }
   },
   {
    "name": "ChildLimitType",
@@ -3103,7 +3186,17 @@
    "dock": null,
    "visible": true,
    "z": 17,
-   "order": 17
+   "order": 17,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ChildLimitOil",
@@ -3661,7 +3754,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label88",
@@ -3941,7 +4037,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CreditMileageTolerance",
@@ -4085,7 +4191,10 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CreditStation",
@@ -4121,7 +4230,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CreditLimitType",
@@ -4237,7 +4349,17 @@
    "dock": null,
    "visible": true,
    "z": 16,
-   "order": 16
+   "order": 16,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CreditLimitOilType",
@@ -4676,7 +4798,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "EmpAccount",
@@ -4946,7 +5078,11 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "red",
+    "align": "middle-left"
+   }
   },
   {
    "name": "PersonGroupSelect",
@@ -5000,7 +5136,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PersonMileageTolerance",
@@ -5162,7 +5308,11 @@
    "dock": null,
    "visible": false,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "fore": "red",
+    "align": "middle-left"
+   }
   },
   {
    "name": "LimitType",
@@ -5278,7 +5428,17 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PersonLimitOilType",
@@ -5458,7 +5618,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "CardNoType",
@@ -5523,7 +5686,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "CardNoColor",
@@ -5837,7 +6003,10 @@
    "dock": null,
    "visible": true,
    "z": 19,
-   "order": 19
+   "order": 19,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label37",
@@ -5855,7 +6024,10 @@
    "dock": null,
    "visible": true,
    "z": 20,
-   "order": 20
+   "order": 20,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label36",
@@ -5873,7 +6045,10 @@
    "dock": null,
    "visible": true,
    "z": 21,
-   "order": 21
+   "order": 21,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "label35",
@@ -5891,7 +6066,10 @@
    "dock": null,
    "visible": true,
    "z": 22,
-   "order": 22
+   "order": 22,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "PersonCertificate",

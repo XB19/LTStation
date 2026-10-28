@@ -22,7 +22,16 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "Times New Roman",
+     "size": 10.5,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BackLen",
@@ -58,7 +67,16 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "IsVoice",
@@ -112,7 +130,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "VoiceAddress",
@@ -148,7 +175,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BackUpTime",
@@ -187,7 +223,16 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BackUpAddress",
@@ -223,7 +268,16 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "StName",
@@ -259,7 +313,17 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SaveButton",
@@ -277,7 +341,17 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label1",
@@ -295,7 +369,16 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},

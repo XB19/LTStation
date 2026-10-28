@@ -131,7 +131,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "DTEndTime",
@@ -308,6 +311,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -401,6 +414,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -458,6 +481,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/BusinessReportMess/NextEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -479,6 +505,9 @@
    "order": 2,
    "init": {
     "Image": "res/forms/BusinessReportMess/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -515,7 +544,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -572,6 +604,9 @@
    "order": 7,
    "init": {
     "Image": "res/forms/BusinessReportMess/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -593,6 +628,9 @@
    "order": 8,
    "init": {
     "Image": "res/forms/BusinessReportMess/CurEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   }
  ],

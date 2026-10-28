@@ -22,7 +22,10 @@
    "dock": "top",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "NozStatuePanel",
@@ -43,6 +46,9 @@
    "order": 999,
    "init": {
     "BackgroundImage": "res/BoxScreenPump.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -61,7 +67,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "PumpIDLabel",
@@ -79,7 +88,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "NozHandLabel",
@@ -97,7 +116,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "RealCountLabel",
@@ -115,7 +145,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "RealGradeNameLabel",
@@ -133,7 +174,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "bottom-left"
+   }
   },
   {
    "name": "RealAmountLabel",
@@ -151,7 +203,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "#f9f9f9",
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "bottom-left"
+   }
   }
  ],
  "columns": {},

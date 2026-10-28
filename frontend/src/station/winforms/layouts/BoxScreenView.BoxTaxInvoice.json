@@ -22,7 +22,15 @@
    "dock": "top",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "padding": [
+     5,
+     6,
+     5,
+     6
+    ]
+   }
   },
   {
    "name": "panel1",
@@ -76,7 +84,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenAllPumpBtn",
@@ -94,7 +112,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "dateTimePicker1",
@@ -1019,6 +1047,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -1094,6 +1132,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   }
  ],

@@ -76,7 +76,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel1",
@@ -94,7 +97,11 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white",
+    "border": "single"
+   }
   },
   {
    "name": "skinPanel2",
@@ -112,7 +119,11 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white",
+    "border": "single"
+   }
   },
   {
    "name": "skinPanel7",
@@ -130,7 +141,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "panel1",
@@ -166,7 +180,10 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "NozzleStatue",
@@ -187,6 +204,9 @@
    "order": 0,
    "init": {
     "Image": "res/OFF.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -205,7 +225,19 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "turquoise",
+    "fore": "white",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "NozName",
@@ -223,7 +255,20 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "lightseagreen",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   },
   {
    "name": "Volume",
@@ -241,7 +286,20 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "steelblue",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   },
   {
    "name": "PPU",
@@ -259,7 +317,20 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "steelblue",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   },
   {
    "name": "skinPanel4",
@@ -277,7 +348,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel3",
@@ -295,7 +369,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "EmpName",
@@ -313,7 +390,20 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "lightseagreen",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   },
   {
    "name": "CardNo",
@@ -331,7 +421,20 @@
    "dock": "bottom",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "lightseagreen",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 9.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   },
   {
    "name": "FuelType",
@@ -349,7 +452,19 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "dimgray",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "panel4",
@@ -385,7 +500,10 @@
    "dock": "bottom",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel11",
@@ -403,7 +521,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel12",
@@ -421,7 +542,10 @@
    "dock": "bottom",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel9",
@@ -439,7 +563,10 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "OilType",
@@ -457,7 +584,19 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "steelblue",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 9.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "Amount",
@@ -475,7 +614,20 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "steelblue",
+    "fore": "whitesmoke",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center",
+    "border": "fixed3d"
+   }
   }
  ],
  "columns": {},

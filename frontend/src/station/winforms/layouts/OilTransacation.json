@@ -79,7 +79,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OilCodeCheck",
@@ -97,7 +107,17 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OrderSelect",
@@ -160,6 +180,16 @@
    "order": 6,
    "init": {
     "Checked": true
+   },
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -181,6 +211,16 @@
    "order": 7,
    "init": {
     "Checked": true
+   },
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -227,6 +267,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -248,6 +298,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -284,7 +344,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "QuerySearch",
@@ -302,7 +365,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "StartDate",
@@ -344,6 +410,16 @@
    "order": 3,
    "init": {
     "Checked": true
+   },
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -401,7 +477,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardTypeCheck",
@@ -419,7 +498,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "UserCheck",
@@ -437,7 +526,17 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardTypeSelect",
@@ -481,7 +580,17 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "EmpSelect",
@@ -535,7 +644,17 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AsnCheck",
@@ -553,7 +672,17 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AsnSelect",
@@ -571,7 +700,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardNoCheck",
@@ -589,7 +721,17 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardNoSelect",
@@ -607,7 +749,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "panel3",
@@ -754,6 +899,9 @@
    "order": 0,
    "init": {
     "Image": "res/forms/OilTransacation/NextEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -775,6 +923,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/OilTransacation/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -829,7 +980,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ExportPage",
@@ -847,7 +1001,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -904,6 +1061,9 @@
    "order": 8,
    "init": {
     "Image": "res/forms/OilTransacation/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -925,6 +1085,9 @@
    "order": 9,
    "init": {
     "Image": "res/forms/OilTransacation/CurEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   }
  ],

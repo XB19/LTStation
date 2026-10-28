@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label15",
@@ -76,7 +79,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label14",
@@ -112,7 +118,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "LogBalance",
@@ -130,7 +139,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -166,7 +178,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label9",
@@ -202,7 +217,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label5",
@@ -238,7 +256,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "UserID",
@@ -256,7 +277,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label4",
@@ -292,7 +316,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",
@@ -328,7 +355,10 @@
    "dock": null,
    "visible": true,
    "z": 16,
-   "order": 16
+   "order": 16,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label2",
@@ -457,7 +487,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "IniButton",
@@ -475,7 +508,10 @@
    "dock": null,
    "visible": false,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "ChangeButton",
@@ -493,7 +529,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardAsn",
@@ -511,7 +550,10 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label7",
@@ -547,7 +589,10 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label6",

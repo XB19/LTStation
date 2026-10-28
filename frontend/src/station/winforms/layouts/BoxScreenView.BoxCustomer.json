@@ -22,7 +22,15 @@
    "dock": "left",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "padding": [
+     6,
+     6,
+     6,
+     6
+    ]
+   }
   },
   {
    "name": "groupBox5",
@@ -40,7 +48,15 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "padding": [
+     6,
+     6,
+     6,
+     6
+    ]
+   }
   },
   {
    "name": "groupBox3",
@@ -58,7 +74,15 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "padding": [
+     6,
+     6,
+     6,
+     6
+    ]
+   }
   },
   {
    "name": "UserCardDataView",
@@ -79,6 +103,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -133,7 +167,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "UserCardPreBtn",
@@ -172,6 +215,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -226,7 +279,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PersonCreditPreBtn",
@@ -265,6 +327,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -319,7 +391,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 13.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "GroupPreBtn",

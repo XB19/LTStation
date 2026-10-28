@@ -184,7 +184,10 @@
    "dock": null,
    "visible": false,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -346,7 +349,10 @@
    "dock": null,
    "visible": true,
    "z": 17,
-   "order": 17
+   "order": 17,
+   "style": {
+    "back": "transparent"
+   }
   }
  ],
  "columns": {},

@@ -151,7 +151,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",

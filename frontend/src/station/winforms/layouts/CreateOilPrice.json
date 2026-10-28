@@ -94,7 +94,17 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "fore": "red",
+    "font": {
+     "family": "宋体",
+     "size": 7.5,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ValidTime",
@@ -151,7 +161,10 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label4",
@@ -205,7 +218,10 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "Code",
@@ -223,7 +239,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CanelButton",
@@ -241,7 +260,10 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "SaveButton",
@@ -259,7 +281,10 @@
    "dock": null,
    "visible": true,
    "z": 12,
-   "order": 12
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",

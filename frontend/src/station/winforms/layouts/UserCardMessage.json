@@ -58,7 +58,16 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "宋体",
+     "size": 10.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Next",
@@ -79,6 +88,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/UserCardMessage/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -100,6 +112,9 @@
    "order": 2,
    "init": {
     "Image": "res/forms/UserCardMessage/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -118,7 +133,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "PhoneQuery",
@@ -154,7 +172,16 @@
    "dock": null,
    "visible": true,
    "z": 5,
-   "order": 5
+   "order": 5,
+   "style": {
+    "font": {
+     "family": "宋体",
+     "size": 11.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NameQuery",
@@ -190,7 +217,16 @@
    "dock": null,
    "visible": true,
    "z": 7,
-   "order": 7
+   "order": 7,
+   "style": {
+    "font": {
+     "family": "宋体",
+     "size": 11.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardTypeSelect",
@@ -233,7 +269,16 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "font": {
+     "family": "宋体",
+     "size": 11.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "UserView",
@@ -254,6 +299,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   }
  ],

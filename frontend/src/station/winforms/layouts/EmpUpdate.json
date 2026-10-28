@@ -220,7 +220,10 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",

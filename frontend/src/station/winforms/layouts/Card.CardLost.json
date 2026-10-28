@@ -118,7 +118,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BalanceInput",
@@ -157,7 +167,16 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AccountInput",
@@ -196,7 +215,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NameInput",
@@ -235,7 +263,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PhonePut",
@@ -274,7 +311,16 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardNumberSelect",
@@ -310,7 +356,16 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CardReaderBtn",
@@ -328,7 +383,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CNOInput",
@@ -364,7 +429,16 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PhoneInput",
@@ -400,7 +474,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "UserNameInput",
@@ -436,7 +519,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},
@@ -451,5 +543,14 @@
    "Click": "CardReaderBtn_Click"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 14.25,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

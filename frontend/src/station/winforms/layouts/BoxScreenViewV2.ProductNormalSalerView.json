@@ -40,7 +40,18 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label7",
@@ -58,7 +69,16 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BalanceBox",
@@ -79,6 +99,15 @@
    "order": 2,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -100,6 +129,15 @@
    "order": 3,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -118,7 +156,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NameBox",
@@ -139,6 +186,15 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -163,6 +219,15 @@
      "Balance consumption",
      "Points redemption"
     ]
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -181,7 +246,16 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "QuantityBox",
@@ -199,7 +273,16 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label4",
@@ -217,7 +300,16 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PriceBox",
@@ -238,6 +330,15 @@
    "order": 5,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -256,7 +357,16 @@
    "dock": null,
    "visible": true,
    "z": 6,
-   "order": 6
+   "order": 6,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "AmountBox",
@@ -277,6 +387,15 @@
    "order": 7,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
    }
   },
   {
@@ -295,7 +414,18 @@
    "dock": null,
    "visible": true,
    "z": 8,
-   "order": 8
+   "order": 8,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ConfirmBtn",
@@ -313,7 +443,18 @@
    "dock": null,
    "visible": true,
    "z": 9,
-   "order": 9
+   "order": 9,
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label5",
@@ -331,7 +472,16 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label1",
@@ -349,7 +499,16 @@
    "dock": null,
    "visible": true,
    "z": 11,
-   "order": 11
+   "order": 11,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 16.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "groupBox2",
@@ -409,5 +568,14 @@
    "Load": "ProductNormalSalerView_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 12.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

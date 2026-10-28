@@ -61,7 +61,17 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "Cancle",
@@ -79,7 +89,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},
@@ -88,5 +108,14 @@
    "Click": "Confirm_Click"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 12.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

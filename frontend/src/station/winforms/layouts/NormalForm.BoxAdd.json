@@ -172,7 +172,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   }
  ],
  "columns": {},
@@ -187,5 +197,14 @@
    "Load": "BoxAdd_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 12.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

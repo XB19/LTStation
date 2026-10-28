@@ -472,7 +472,17 @@
    "dock": null,
    "visible": true,
    "z": 24,
-   "order": 24
+   "order": 24,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "华文新魏",
+     "size": 14.25,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SixthBox",
@@ -700,5 +710,14 @@
    "Load": "StationPrint_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 14.25,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

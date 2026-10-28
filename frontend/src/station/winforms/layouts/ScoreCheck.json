@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TimeBox",
@@ -292,7 +295,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 13
+   "order": 13,
+   "style": {
+    "back": "transparent"
+   }
   }
  ],
  "columns": {},

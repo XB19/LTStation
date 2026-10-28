@@ -25,6 +25,9 @@
    "order": 999,
    "init": {
     "BackgroundImage": "res/NorBase.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -43,7 +46,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "GradeLabel",
@@ -61,7 +67,18 @@
    "dock": "bottom",
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "red",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-left"
+   }
   },
   {
    "name": "AmountLabel",
@@ -79,7 +96,18 @@
    "dock": "bottom",
    "visible": true,
    "z": 0,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "red",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-left"
+   }
   },
   {
    "name": "PumpStatue",
@@ -121,6 +149,18 @@
    "order": 4,
    "init": {
     "Image": "res/ScreenNozOnline.png"
+   },
+   "style": {
+    "back": "transparent",
+    "fore": "white",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
    }
   }
  ],

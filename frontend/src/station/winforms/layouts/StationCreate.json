@@ -22,7 +22,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "groupBox2",
@@ -76,7 +79,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "宋体",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ToolShow",
@@ -188,56 +201,112 @@
      "type": "ToolStripButton",
      "text": "Create Station Information",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/OilPrice.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardMake",
      "type": "ToolStripButton",
      "text": "Create Fuel Information",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/CardMake.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardUpDate",
      "type": "ToolStripButton",
      "text": "Create Tank Information",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/CardUpDate.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "PortSet",
      "type": "ToolStripButton",
      "text": "COM Port Configuration",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/PortSet.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardLost",
      "type": "ToolStripButton",
      "text": "Nozzle Configuration",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/CardLost.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardChange",
      "type": "ToolStripButton",
      "text": "Create Employee",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/CardChange.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "Deposit",
      "type": "ToolStripButton",
      "text": "Key Change",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/Deposit.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "TransactionSearch",
      "type": "ToolStripButton",
      "text": "Station Activation",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/StationCreate/TransactionSearch.Image.png",
+     "size": [
+      180,
+      130
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     }
    ]
   }

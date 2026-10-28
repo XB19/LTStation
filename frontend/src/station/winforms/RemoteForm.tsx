@@ -577,7 +577,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
         styles={styles} images={images} backgrounds={backgrounds} keepPager
         onCtlEvent={(name, ev) => { const h = on(name, ev); if (h) fire(h, name, {}) }}
         tab={tabs} onTab={onTab}
-        onDropDown={(name, open) => { const h = on(name, open ? 'DropDown' : 'DropDownClosed'); if (h) fire(h, name, {}) }} />
+        onDropDown={(name, open) => { const h = on(name, open ? 'DropDown' : 'DropDownClosed'); if (h) fire(h, name, {}) }}
+        classic={framed ? undefined : attachId ? 'fixed' : 'fill'} />
       {dialog && (
         <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}
           onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />
@@ -607,7 +608,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   const webBody = web && (
     <>
       <iframe ref={frame} title={layout.title} src={`/station-web/${web.url}`} onLoad={onFrameLoad}
-        style={{ width: '100%', height: Math.max(layout.size[1], 320), border: 0, display: 'block' }} />
+        style={{ width: '100%', height: framed ? Math.max(layout.size[1], 320) : '100%', minHeight: framed ? undefined : 200, border: 0, display: 'block' }} />
       {dialog && (
         <RemoteForm form={dialog.form} args={dialog.args} onOpen={onOpen} parent={idRef.current}
           onClose={(result, data) => { const d = dialog; setDialog(null); d.resolve({ result, data }) }} />

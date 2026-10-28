@@ -178,3 +178,56 @@ input.wf-ro {
   gap: 5px;
   align-items: flex-start;
 }
+
+/* ------------------------------------------------------------ rendu fidèle WinForms (fenêtres principales et intégrées) */
+.wfc-root { position: relative; overflow: hidden; background: #f0f0f0; color: #000; box-sizing: border-box;
+  font: 12px "Microsoft YaHei", "Segoe UI", sans-serif; }
+.wfc-root.wfc-fill { width: 100%; height: 100vh; }
+.wfc-root *, .wfc-root *::before, .wfc-root *::after { box-sizing: border-box; }
+.wfc-slot { position: absolute; overflow: hidden; }
+.wfc-panel, .wfc-flow, .wfc-tabs, .wfc-field, .wfc-measure { position: relative; width: 100%; height: 100%; }
+.wfc-flow { display: flex; flex-wrap: wrap; align-content: flex-start; overflow: auto; }
+.wfc-extra { position: absolute; inset: 0; overflow: auto; }
+.wfc-extra > .wf-embeds { gap: 0; padding: 0; }
+.wfc-label { width: 100%; height: 100%; display: flex; overflow: hidden; white-space: pre-wrap; line-height: 1.15; cursor: default; }
+.wfc-picture { width: 100%; height: 100%; background-repeat: no-repeat; background-position: center; background-size: contain; }
+.wfc-group { border: 1px solid #c9c9c9; border-radius: 2px; }
+.wfc-group-title { position: absolute; top: -1px; left: 8px; padding: 0 3px; background: inherit; z-index: 1; }
+.wfc-field > * { width: 100% !important; height: 100% !important; min-width: 0 !important; }
+.wfc-field .ant-btn { height: 100% !important; }
+
+/* Onglets */
+.wfc-tabbar { position: absolute; top: 0; left: 0; right: 0; height: 22px; display: flex; gap: 2px; padding-left: 2px;
+  border-bottom: 1px solid #a0a0a0; background: #f0f0f0; }
+.wfc-tabbar button { border: 1px solid #b5b5b5; border-bottom: 0; background: #e6e6e6; padding: 0 12px; font: inherit; font-size: 12px;
+  cursor: pointer; border-radius: 2px 2px 0 0; margin-top: 2px; }
+.wfc-tabbar button.active { background: #fff; margin-top: 0; color: #c00; }
+.wfc-tabpage { position: absolute; top: 22px; left: 0; right: 0; bottom: 0; background: #fff; overflow: hidden; }
+
+/* Barres : menus, outils (image et texte), état */
+.wfc-menubar { height: 100%; background: linear-gradient(#f7f9fc, #e6ecf5); }
+.wfc-menubar .wf-menubar { background: transparent; border: 0; padding: 1px 4px; gap: 0; }
+.wfc-menubar .wf-menu-btn { border: 0; background: transparent; padding: 2px 8px; font-size: 12px; }
+.wfc-menubar .wf-menu-btn:hover { background: #cde3f8; }
+.wfc-toolstrip { height: 100%; display: flex; flex-wrap: nowrap; align-items: stretch; overflow: hidden;
+  background: linear-gradient(#fbfcfe, #e3eaf4); border-bottom: 1px solid #c5d3e3; }
+.wfc-tool { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px;
+  padding: 4px 2px 3px; border: 1px solid transparent; background: transparent; font: inherit; font-size: 12px; cursor: pointer; }
+.wfc-tool:hover:not(:disabled) { background: linear-gradient(#fdf6d8, #fbe49c); border-color: #e5c365; }
+.wfc-tool:disabled { opacity: .45; cursor: default; }
+.wfc-tool-img { flex: 1 1 auto; width: 100%; background-repeat: no-repeat; background-position: center; background-size: auto; }
+.wfc-tool-text { white-space: nowrap; }
+.wfc-tool-sep { width: 1px; margin: 6px 3px; background: #c5d3e3; }
+.wfc-status { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 8px;
+  font-size: 12px; background: #f0f0f0; border-top: 1px solid #d0d0d0; }
+
+/* Tableaux compacts, comme les DataGridView d'origine */
+.wfc-root .wf-grid .ant-table { font-size: 12px; border-radius: 0; }
+.wfc-root .wf-grid .ant-table-container { border-radius: 0 !important; }
+.wfc-root .wf-grid .ant-table-thead > tr > th { padding: 3px 6px !important; background: #f3f3f3; font-weight: 400; border-radius: 0 !important; }
+.wfc-root .wf-grid .ant-table-tbody > tr > td { padding: 2px 6px !important; }
+.wfc-root .wf-grid .ant-table-tbody > tr.wf-row-sel > td { background: #0078d7 !important; color: #fff; }
+.wfc-root .wf-grid .ant-empty-normal { margin: 8px 0; }
+.wfc-extra > .wf-embeds { height: 100%; align-content: flex-start; }
+.wfc-extra > .wf-embeds > iframe { flex: 1 0 100%; height: 100% !important; }
+.wfc-root .wfc-measure { background: #fff; }

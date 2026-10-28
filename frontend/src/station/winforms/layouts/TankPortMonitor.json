@@ -22,7 +22,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "TankPort",

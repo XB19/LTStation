@@ -22,7 +22,17 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinPanel1",
@@ -40,7 +50,10 @@
    "dock": "top",
    "visible": true,
    "z": 3,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "skinPanel2",
@@ -58,7 +71,10 @@
    "dock": "fill",
    "visible": true,
    "z": 1,
-   "order": 999
+   "order": 999,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "BottomStrip",
@@ -94,7 +110,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "宋体",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TankShow",
@@ -112,7 +138,17 @@
    "dock": "fill",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "white",
+    "font": {
+     "family": "宋体",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "RFIDShow",
@@ -130,7 +166,10 @@
    "dock": "fill",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "RFIDPage",
@@ -148,7 +187,10 @@
    "dock": "fill",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "PLCShow",
@@ -166,7 +208,10 @@
    "dock": "fill",
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "white"
+   }
   },
   {
    "name": "RFIDDataView",
@@ -187,6 +232,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -223,7 +278,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "whitesmoke"
+   }
   },
   {
    "name": "skinPanel3",
@@ -241,7 +299,10 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "OilDataView",
@@ -262,6 +323,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -283,6 +354,16 @@
    "order": 1,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -996,112 +1077,224 @@
      "type": "ToolStripButton",
      "text": "Price Setting",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/OilPrice.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "Transaction",
      "type": "ToolStripButton",
      "text": "Transaction",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/Transaction.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "ShiftReportCheck",
      "type": "ToolStripButton",
      "text": "Shift Report",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/ShiftReportCheck.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "Report",
      "type": "ToolStripButton",
      "text": "Daily Report",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/Report.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "MonthReport",
      "type": "ToolStripButton",
      "text": "Month Report",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/MonthReport.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "EmpCardManager",
      "type": "ToolStripButton",
      "text": "EmpCard",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/EmpCardManager.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardMake",
      "type": "ToolStripButton",
      "text": "Card Make",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/CardMake.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardUpdate",
      "type": "ToolStripButton",
      "text": "Card Update",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/CardUpdate.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardLost",
      "type": "ToolStripButton",
      "text": "CardLost",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/CardLost.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "CardReplace",
      "type": "ToolStripButton",
      "text": "CardReplace",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/CardReplace.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "BalanceDeal",
      "type": "ToolStripButton",
      "text": "Balance",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/BalanceDeal.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "UserInfo",
      "type": "ToolStripButton",
      "text": "User Info",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/UserInfo.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "SPrint",
      "type": "ToolStripButton",
      "text": "StationPrint",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/SPrint.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "ShiftHand",
      "type": "ToolStripButton",
      "text": "Hand Shift",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/ShiftHand.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "RInventory",
      "type": "ToolStripButton",
      "text": "Stock Records",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/RInventory.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     },
     {
      "name": "StationStore",
      "type": "ToolStripButton",
      "text": "Retail Store",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.NormalMainForm/StationStore.Image.png",
+     "size": [
+      100,
+      85
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
     }
    ]
   },
@@ -1121,7 +1314,11 @@
      "type": "ToolStripStatusLabel",
      "text": "Current Shift:",
      "visible": true,
-     "items": []
+     "items": [],
+     "size": [
+      246,
+      21
+     ]
     },
     {
      "name": "ErrorMessage",
@@ -1142,14 +1339,22 @@
      "type": "ToolStripStatusLabel",
      "text": "",
      "visible": true,
-     "items": []
+     "items": [],
+     "size": [
+      246,
+      21
+     ]
     },
     {
      "name": "LoginName",
      "type": "ToolStripStatusLabel",
      "text": "Employee:",
      "visible": true,
-     "items": []
+     "items": [],
+     "size": [
+      246,
+      21
+     ]
     }
    ]
   },
@@ -1174,6 +1379,15 @@
      "items": []
     }
    ]
+  }
+ },
+ "style": {
+  "font": {
+   "family": "宋体",
+   "size": 9.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
   }
  }
 }

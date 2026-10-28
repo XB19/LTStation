@@ -236,7 +236,17 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "BindNozBox",
@@ -395,5 +405,14 @@
    "Load": "StationDeviceEdit_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 15.75,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

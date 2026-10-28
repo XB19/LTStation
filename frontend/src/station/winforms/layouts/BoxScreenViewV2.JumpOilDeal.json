@@ -119,7 +119,17 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "DealVolumeBox",

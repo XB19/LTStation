@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Button, Checkbox, DatePicker, Dropdown, Input, Progress, Select, Table, TimePicker } from 'antd'
 import type { MenuProps } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
 import dayjs, { type Dayjs } from 'dayjs'
 import fr from './fr.json'
+import './winforms.css'
 
 /**
  * Rendu d'une fenêtre du logiciel Station d'origine à partir de sa description (layouts/*.json, générés depuis
@@ -21,6 +22,19 @@ export interface Ctrl {
   dock: 'top' | 'bottom' | 'left' | 'right' | 'fill' | null
   visible: boolean
   order: number
+  /** Ordre d'empilement d'origine (ZOrder) : l'ancrage (Dock) se fait du plus grand au plus petit */
+  z?: number
+  /** Apparence d'origine : couleurs, police, alignement du texte, bordure */
+  style?: CtlStyle
+}
+
+export interface CtlStyle {
+  back?: string
+  fore?: string
+  font?: { family: string; size: number; bold: boolean; italic: boolean; underline: boolean }
+  align?: string
+  border?: 'single' | 'fixed3d'
+  padding?: number[]
 }
 
 export interface Column {
@@ -43,6 +57,7 @@ export interface Layout {
   events?: Record<string, Record<string, string>>
   /** Menus : barres (MenuStrip, ToolStrip, StatusStrip) et menus contextuels (ContextMenuStrip) */
   menus?: Record<string, { type: string; owners: string[]; items: MenuItem[] }>
+  style?: CtlStyle
 }
 
 export interface MenuItem {
@@ -51,6 +66,11 @@ export interface MenuItem {
   text: string
   visible: boolean
   items: MenuItem[]
+  /** Boutons des barres d'outils : image (chemin sous station-web), taille fixe, position du texte */
+  image?: string
+  size?: [number, number]
+  align?: string
+  tir?: string
 }
 
 const layouts = import.meta.glob<Layout>('./layouts/*.json', { eager: true, import: 'default' })
@@ -166,6 +186,81 @@ export interface WinFormProps {
   backgrounds?: Record<string, string>
   /** Suggestions de saisie (AutoCompleteCustomSource, mode SuggestAppend) */
   autoComplete?: Record<string, string[]>
+  /**
+   * Rendu fidèle de WinForms (fenêtres principales et fenêtres intégrées) : positions et ancrages d'origine, couleurs,
+   * polices ; « fill » occupe toute la place disponible, « fixed » garde la taille d'origine de la fenêtre.
+   */
+  classic?: 'fill' | 'fixed'
+}
+
+const PT = 96 / 72
+
+/** Apparence d'origine → CSS. */
+export function cssOf(st?: CtlStyle): CSSProperties {
+  if (!st) return {}
+  const out: CSSProperties = {}
+  if (st.back) out.background = st.back
+  if (st.fore) out.color = st.fore
+  if (st.font) {
+    out.fontFamily = `"${st.font.family}", "Microsoft YaHei", "Segoe UI", sans-serif`
+    out.fontSize = Math.round(st.font.size * PT * 10) / 10
+    if (st.font.bold) out.fontWeight = 700
+    if (st.font.italic) out.fontStyle = 'italic'
+    if (st.font.underline) out.textDecoration = 'underline'
+  }
+  if (st.border === 'single') out.border = '1px solid #7a7a7a'
+  if (st.border === 'fixed3d') out.border = '2px inset #d4d4d4'
+  if (st.padding) out.padding = st.padding.map((x) => `${x}px`).join(' ')
+  return out
+}
+
+/** ContentAlignment → alignement flex du texte. */
+function alignOf(a?: string): CSSProperties {
+  const [v, h] = (a ?? 'top-left').split('-')
+  const map: Record<string, string> = { top: 'flex-start', middle: 'center', bottom: 'flex-end', left: 'flex-start', center: 'center', right: 'flex-end' }
+  return { alignItems: map[v] ?? 'flex-start', justifyContent: map[h] ?? 'flex-start', textAlign: (h === 'center' ? 'center' : h === 'right' ? 'right' : 'left') }
+}
+
+/** Hauteur disponible d'un conteneur (tableaux qui remplissent leur zone). */
+function Measured({ children }: { children: (h: number) => ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [h, setH] = useState(0)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const ro = new ResizeObserver(() => setH(el.clientHeight))
+    ro.observe(el)
+    setH(el.clientHeight)
+    return () => ro.disconnect()
+  }, [])
+  return <div ref={ref} className="wfc-measure">{h > 0 && children(h)}</div>
+}
+
+const dockOf = (c: Ctrl): Ctrl['dock'] => c.dock ?? (c.type.endsWith('StatusStrip') ? 'bottom' : /(MenuStrip|ToolStrip)$/.test(c.type) ? 'top' : null)
+
+/**
+ * Placement WinForms des enfants d'un conteneur : contrôles ancrés traités du dernier au premier de l'ordre
+ * d'empilement (haut, bas, gauche, droite, remplissage), les autres à leur position d'origine.
+ */
+function placeChildren(kids: Ctrl[], offset: [number, number]): Map<string, CSSProperties> {
+  const useZ = kids.some((k) => (k.z ?? 0) !== 0)
+  const key = (k: Ctrl) => (useZ ? k.z ?? 0 : k.order === 999 ? 0 : k.order)
+  let l = 0, t = 0, r = 0, b = 0
+  const pos = new Map<string, CSSProperties>()
+  for (const k of kids.filter((x) => dockOf(x)).sort((a, c) => key(c) - key(a))) {
+    const [w, h] = k.size
+    switch (dockOf(k)) {
+      case 'top': pos.set(k.name, { left: l, right: r, top: t, height: h }); t += h; break
+      case 'bottom': pos.set(k.name, { left: l, right: r, bottom: b, height: h }); b += h; break
+      case 'left': pos.set(k.name, { left: l, top: t, bottom: b, width: w }); l += w; break
+      case 'right': pos.set(k.name, { right: r, top: t, bottom: b, width: w }); r += w; break
+      default: pos.set(k.name, { left: l, top: t, right: r, bottom: b })
+    }
+  }
+  for (const k of kids.filter((x) => !dockOf(x))) {
+    pos.set(k.name, { left: k.loc[0] - offset[0], top: k.loc[1] - offset[1], width: k.size[0], height: k.size[1] })
+  }
+  return pos
 }
 
 /** Pagination d'origine remplacée par celle des tableaux */
@@ -248,7 +343,7 @@ export default function WinForm(p: WinFormProps) {
   const withContext = (name: string, node: ReactNode) => {
     const m = contextMenu(name)
     if (!m || !node) return node
-    return <Dropdown trigger={['contextMenu']} menu={{ items: menuItems(m.items) }}><div>{node}</div></Dropdown>
+    return <Dropdown trigger={['contextMenu']} menu={{ items: menuItems(m.items) }}><div style={{ height: '100%' }}>{node}</div></Dropdown>
   }
 
   const renderControl = (c: Ctrl): ReactNode => {
@@ -319,7 +414,7 @@ export default function WinForm(p: WinFormProps) {
     }
   }
 
-  const renderGrid = (c: Ctrl) => {
+  const renderGrid = (c: Ctrl, fillH?: number) => {
     const g = p.grids?.[c.name]
     const hide = new Set(g?.hideColumns ?? [])
     const cols: ColumnsType<Row> = [...(layout.columns[c.name] ?? []), ...(g?.extraColumns ?? [])].filter((x) => x.visible && !hide.has(x.name)).map((x) => ({
@@ -344,9 +439,9 @@ export default function WinForm(p: WinFormProps) {
         return val as ReactNode
       },
     }))
-    const scrollY = Math.max(c.size[1] - 60, 80)
+    const scrollY = fillH ? Math.max(fillH - 34, 30) : Math.max(c.size[1] - 60, 80)
     return (
-      <div className="wf-grid" style={{ minHeight: Math.min(c.size[1], 520), minWidth: 0, overflow: 'hidden' }}>
+      <div className="wf-grid" style={fillH ? { height: fillH, minWidth: 0, overflow: 'hidden' } : { minHeight: Math.min(c.size[1], 520), minWidth: 0, overflow: 'hidden' }}>
         <Table<Row> size="small" bordered columns={cols} dataSource={g?.rows ?? []} loading={g?.loading}
           rowKey={g?.rowKey ?? ((r) => String(r.id ?? r.key ?? JSON.stringify(r)))}
           pagination={g?.pagination ?? false} scroll={{ x: 'max-content', y: scrollY }} summary={g?.summary}
@@ -484,6 +579,158 @@ export default function WinForm(p: WinFormProps) {
       </div>
     )
   }
+
+  // ------------------------------------------------------------ rendu fidèle (fenêtres principales et intégrées)
+
+  const classicKids = useMemo(() => {
+    const m: Record<string, Ctrl[]> = {}
+    const hidden = new Set(p.hidden ?? [])
+    for (const c of layout.controls) {
+      if (!c.visible || hidden.has(c.name)) continue
+      ;(m[c.parent] ??= []).push(c)
+    }
+    return m
+  }, [layout, p.hidden])
+
+  /** Décalage de la zone cliente (barre de titre des fenêtres Skin dessinée dans la fenêtre d'origine). */
+  const rootOffset = useMemo((): [number, number] => {
+    const top = (classicKids.$this ?? []).filter((c) => dockOf(c))
+    if (!top.length) return [0, 0]
+    return [Math.min(...top.map((c) => c.loc[0])), Math.min(...top.map((c) => c.loc[1]))]
+  }, [classicKids])
+
+  const classicStyle = (c: Ctrl): CSSProperties => {
+    const st: CSSProperties = { ...cssOf(c.style), ...p.styles?.[c.name] }
+    const bg = p.backgrounds?.[c.name]
+    if (bg) Object.assign(st, { backgroundImage: `url(/station-web/${bg})`, backgroundSize: '100% 100%' })
+    return st
+  }
+
+  const classicStrip = (c: Ctrl) => {
+    const m = layout.menus?.[c.name]
+    if (!m) return null
+    const items = m.items.filter(shown)
+    if (m.type === 'StatusStrip') {
+      return (
+        <div className="wfc-status" style={classicStyle(c)}>
+          {items.map((i) => (i.type === 'ToolStripProgressBar'
+            ? <progress key={i.name} className="wf-status-pro" />
+            : <span key={i.name}>{itemText(i)}</span>))}
+        </div>
+      )
+    }
+    if (m.type === 'MenuStrip') return <div className="wfc-menubar" style={classicStyle(c)}>{renderStrip(c)}</div>
+    return (
+      <div className="wfc-toolstrip" style={classicStyle(c)}>
+        {items.map((i) => {
+          if (i.type === 'ToolStripSeparator') return <span key={i.name} className="wfc-tool-sep" />
+          const dis = (p.disabled ?? []).includes(i.name)
+          const btn = (
+            <button key={i.name} type="button" className="wfc-tool" disabled={dis} style={i.size ? { width: i.size[0], height: i.size[1] } : undefined}
+              onClick={i.items.length ? undefined : () => p.onMenu?.(i.name)}>
+              {i.image && <span className="wfc-tool-img" style={{ backgroundImage: `url(/station-web/${i.image})` }} />}
+              <span className="wfc-tool-text">{itemText(i)}</span>
+            </button>
+          )
+          return i.items.length
+            ? <Dropdown key={i.name} trigger={['click']} disabled={dis} menu={{ items: menuItems(i.items) }}>{btn}</Dropdown>
+            : btn
+        })}
+      </div>
+    )
+  }
+
+  const classicTabs = (c: Ctrl) => {
+    const pages = (classicKids[c.name] ?? []).filter((x) => x.type.endsWith('TabPage')).sort((a, b) => a.order - b.order)
+    const active = p.tab?.[c.name] ?? tabs[c.name] ?? pages[0]?.name
+    return (
+      <div className="wfc-tabs" style={classicStyle(c)}>
+        <div className="wfc-tabbar">
+          {pages.map((pg) => (
+            <button key={pg.name} type="button" className={pg.name === active ? 'active' : ''}
+              onClick={() => { setTabs((t) => ({ ...t, [c.name]: pg.name })); p.onTab?.(c.name, pg.name) }}>{text(pg)}</button>
+          ))}
+        </div>
+        {/* Toutes les pages restent montées (fenêtres intégrées conservées) ; seule la page active est visible */}
+        {pages.map((pg) => (
+          <div key={pg.name} className="wfc-tabpage" style={{ ...classicStyle(pg), display: pg.name === active ? 'block' : 'none' }}>
+            {classicBody(pg.name, [0, 0])}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  const click = (c: Ctrl) => () => (p.buttons?.[c.name] ? p.buttons[c.name]() : p.onCtlEvent?.(c.name, 'Click'))
+
+  const classicCtl = (c: Ctrl): ReactNode => {
+    if (c.type.endsWith('TabControl')) return classicTabs(c)
+    if (isStrip(c)) return classicStrip(c)
+    if (isGrid(c)) return withContext(c.name, <Measured>{(h) => renderGrid(c, h)}</Measured>)
+    if (isLabel(c)) {
+      const img = p.images?.[c.name]
+      return (
+        <div className="wfc-label" onClick={click(c)}
+          style={{ ...alignOf(c.style?.align), ...classicStyle(c), ...(img ? { backgroundImage: `url(/station-web/${img})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center' } : {}) }}>
+          {text(c)}
+        </div>
+      )
+    }
+    if (c.type.endsWith('PictureBox')) {
+      const img = p.images?.[c.name]
+      return <div className="wfc-picture" onClick={click(c)} style={{ ...classicStyle(c), ...(img ? { backgroundImage: `url(/station-web/${img})` } : {}) }} />
+    }
+    if (c.type === 'FlowLayoutPanel') {
+      return (
+        <div className="wfc-flow" style={classicStyle(c)} onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.(c.name, 'Click') }}>
+          {[...(classicKids[c.name] ?? [])].sort((a, b) => a.order - b.order).map((k) => (
+            <div key={k.name} style={{ width: k.size[0], height: k.size[1], position: 'relative', flex: '0 0 auto' }}>{classicCtl(k)}</div>
+          ))}
+          {p.extra?.[c.name]}
+        </div>
+      )
+    }
+    if (CONTAINERS.has(c.type) || c.type.endsWith('Panel') || c.type.endsWith('GroupBox') || c.type.endsWith('TabPage')) {
+      const group = c.type.endsWith('GroupBox')
+      return (
+        <div className={group ? 'wfc-panel wfc-group' : 'wfc-panel'} style={classicStyle(c)}
+          onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.(c.name, 'Click') }}>
+          {group && c.text && <span className="wfc-group-title">{text(c)}</span>}
+          {classicBody(c.name, [0, 0])}
+        </div>
+      )
+    }
+    // Champs et boutons : contrôle habituel, à la taille de sa zone
+    return <div className="wfc-field" style={classicStyle(c)}>{renderControl(c)}</div>
+  }
+
+  function classicBody(parent: string, offset: [number, number]): ReactNode {
+    const kids = (classicKids[parent] ?? []).filter((c) => !c.type.endsWith('TabPage'))
+    const pos = placeChildren(kids, offset)
+    // Le premier de l'ordre d'empilement est devant
+    const useZ = kids.some((k) => (k.z ?? 0) !== 0)
+    return (
+      <>
+        {kids.map((c) => (
+          <div key={c.name} className="wfc-slot" style={{ ...pos.get(c.name), zIndex: 100 - (useZ ? c.z ?? 0 : 0) }}>{classicCtl(c)}</div>
+        ))}
+        {p.extra?.[parent] && <div className="wfc-extra">{p.extra[parent]}</div>}
+      </>
+    )
+  }
+
+  if (p.classic) {
+    const bg = p.backgrounds?.['$this']
+    return (
+      <div className={p.classic === 'fill' ? 'wfc-root wfc-fill' : 'wfc-root'}
+        style={{ ...cssOf(layout.style), ...p.styles?.$this, ...(p.classic === 'fixed' ? { width: layout.size[0], height: layout.size[1] } : {}),
+          ...(bg ? { backgroundImage: `url(/station-web/${bg})`, backgroundSize: '100% 100%' } : {}) }}
+        onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.('$this', 'Click') }}>
+        {classicBody('$this', rootOffset)}
+      </div>
+    )
+  }
+
 
   const rootBg = p.backgrounds?.['$this']
   // Clic sur le fond (Panel / fenêtre) : seulement s il ne vient pas d un contrôle enfant, comme en WinForms

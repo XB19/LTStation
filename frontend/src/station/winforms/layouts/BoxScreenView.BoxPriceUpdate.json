@@ -220,7 +220,17 @@
    "dock": null,
    "visible": true,
    "z": 10,
-   "order": 10
+   "order": 10,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ValidTimeBox",
@@ -385,5 +395,14 @@
    "Load": "BoxPriceUpdate_Load"
   }
  },
- "menus": {}
+ "menus": {},
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 10.5,
+   "bold": false,
+   "italic": false,
+   "underline": false
+  }
+ }
 }

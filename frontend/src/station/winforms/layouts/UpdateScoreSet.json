@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label4",
@@ -58,7 +61,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 1
+   "order": 1,
+   "style": {
+    "fore": "red"
+   }
   },
   {
    "name": "ScoreRate",
@@ -94,7 +100,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label3",

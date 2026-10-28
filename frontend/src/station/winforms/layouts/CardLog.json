@@ -40,7 +40,10 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label7",
@@ -76,7 +79,11 @@
    "dock": null,
    "visible": false,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "fore": "red",
+    "align": "middle-left"
+   }
   },
   {
    "name": "CertificateNo",
@@ -94,7 +101,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label6",
@@ -286,7 +296,10 @@
    "dock": null,
    "visible": true,
    "z": 13,
-   "order": 13
+   "order": 13,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardNoSearch",
@@ -304,7 +317,10 @@
    "dock": null,
    "visible": true,
    "z": 14,
-   "order": 14
+   "order": 14,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "CardNo",
@@ -322,7 +338,10 @@
    "dock": null,
    "visible": true,
    "z": 15,
-   "order": 15
+   "order": 15,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label1",
@@ -379,6 +398,16 @@
    "order": 1,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -436,6 +465,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -493,6 +532,9 @@
    "order": 1,
    "init": {
     "Image": "res/forms/CardLog/NextEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -514,6 +556,9 @@
    "order": 2,
    "init": {
     "Image": "res/forms/CardLog/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -550,7 +595,10 @@
    "dock": null,
    "visible": true,
    "z": 4,
-   "order": 4
+   "order": 4,
+   "style": {
+    "back": "transparent"
+   }
   },
   {
    "name": "label8",
@@ -607,6 +655,9 @@
    "order": 7,
    "init": {
     "Image": "res/forms/CardLog/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   },
   {
@@ -628,6 +679,9 @@
    "order": 8,
    "init": {
     "Image": "res/forms/CardLog/CurEnd.Image.png"
+   },
+   "style": {
+    "back": "transparent"
    }
   }
  ],

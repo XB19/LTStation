@@ -25,6 +25,9 @@
    "order": 999,
    "init": {
     "BackgroundImage": "res/forms/NormalForm.BoxScreen/panel1.BackgroundImage.png"
+   },
+   "style": {
+    "back": "white"
    }
   },
   {
@@ -46,6 +49,10 @@
    "order": 999,
    "init": {
     "BackgroundImage": "res/forms/NormalForm.BoxScreen/NozPanel.BackgroundImage.jpg"
+   },
+   "style": {
+    "back": "transparent",
+    "fore": "transparent"
    }
   },
   {
@@ -136,7 +143,17 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 26.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label5",
@@ -154,7 +171,10 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "align": "middle-left"
+   }
   },
   {
    "name": "BillLastPanel",
@@ -226,7 +246,16 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label1",
@@ -244,7 +273,17 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "PQBtn",
@@ -262,7 +301,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OneNumberBtn",
@@ -280,7 +329,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FourNumberBtn",
@@ -298,7 +357,17 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SevenNumberBtn",
@@ -316,7 +385,17 @@
    "dock": "top",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ThirdLineNumber",
@@ -388,7 +467,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "StopAllPumpBtn",
@@ -406,7 +495,17 @@
    "dock": "left",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenOnePumpBtn",
@@ -424,7 +523,17 @@
    "dock": "left",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "StopOnePumpBtn",
@@ -442,7 +551,17 @@
    "dock": "left",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label2",
@@ -460,7 +579,18 @@
    "dock": "left",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "panel7",
@@ -532,7 +662,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SaleCancelBtn",
@@ -550,7 +690,17 @@
    "dock": "left",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ItemSaleCancelBtn",
@@ -568,7 +718,17 @@
    "dock": "left",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ClearBtn",
@@ -586,7 +746,17 @@
    "dock": "left",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 16.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FleetCardBtn",
@@ -604,7 +774,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CreditBtn",
@@ -622,7 +802,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CashBtn",
@@ -640,7 +830,17 @@
    "dock": "left",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "KeyBoardPanel",
@@ -802,7 +1002,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "QRCodeBtn",
@@ -820,7 +1030,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OKBtn",
@@ -838,7 +1058,17 @@
    "dock": "left",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 30.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton9",
@@ -856,7 +1086,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 15.75,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ReceiptBtn",
@@ -874,7 +1114,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "PresonCreditBtn",
@@ -892,7 +1142,17 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "MiddleThirdRightPanel",
@@ -946,7 +1206,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "DiscountBtn",
@@ -964,7 +1234,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "CouponBtn",
@@ -982,7 +1262,17 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 20.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label3",
@@ -1000,7 +1290,18 @@
    "dock": "left",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 14.25,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "MiddleLastPanel",
@@ -1108,7 +1409,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TwoNumberBtn",
@@ -1126,7 +1437,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "FiveNumberBtn",
@@ -1144,7 +1465,17 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "EightNumberBtn",
@@ -1162,7 +1493,17 @@
    "dock": "top",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ZeroNumberBtn",
@@ -1180,7 +1521,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ThreeNumberBtn",
@@ -1198,7 +1549,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "SixNumberBtn",
@@ -1216,7 +1577,17 @@
    "dock": "top",
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "NineNumberBtn",
@@ -1234,7 +1605,17 @@
    "dock": "top",
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 38.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "label4",
@@ -1252,7 +1633,18 @@
    "dock": "right",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "TimeLabel",
@@ -1270,7 +1662,18 @@
    "dock": "right",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-center"
+   }
   },
   {
    "name": "label7",
@@ -1288,7 +1691,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-right"
+   }
   },
   {
    "name": "label6",
@@ -1306,7 +1719,17 @@
    "dock": "left",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 15.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    },
+    "align": "middle-left"
+   }
   },
   {
    "name": "PrintBtn",
@@ -1324,7 +1747,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "OpenCashDrawerBtn",
@@ -1342,7 +1775,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton14",
@@ -1360,7 +1803,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "MeterBtn",
@@ -1378,7 +1831,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "skinButton13",
@@ -1396,7 +1859,17 @@
    "dock": "fill",
    "visible": true,
    "z": 0,
-   "order": 0
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "TankChartBtn",
@@ -1414,7 +1887,17 @@
    "dock": "top",
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Dindan Mai",
+     "size": 18.0,
+     "bold": true,
+     "italic": false,
+     "underline": false
+    }
+   }
   },
   {
    "name": "ToolShow",
@@ -1453,6 +1936,16 @@
    "order": 0,
    "init": {
     "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
    }
   },
   {
@@ -1746,114 +2239,215 @@
      "type": "ToolStripButton",
      "text": "ประวัติการขาย",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/PrintShiftBtn.Image.png",
+     "size": [
+      100,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "InformalSalesFBtn",
      "type": "ToolStripButton",
      "text": "ใบปิดกะ",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/InformalSalesFBtn.Image.png",
+     "size": [
+      130,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "InformalSalesSBtn",
      "type": "ToolStripButton",
      "text": "ใบสรุปรายวัน",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/InformalSalesSBtn.Image.png",
+     "size": [
+      160,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "ChangePaymentBtn",
      "type": "ToolStripButton",
      "text": "ใบกำกับภาษี",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/ChangePaymentBtn.Image.png",
+     "size": [
+      150,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "CancelinvoiceBtn",
      "type": "ToolStripButton",
      "text": "ยกเลิกบิลขาย",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/CancelinvoiceBtn.Image.png",
+     "size": [
+      150,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "OilTestBtn",
      "type": "ToolStripButton",
      "text": "ยอดขายนอกระบบ",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/OilTestBtn.Image.png",
+     "size": [
+      130,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "ExitBtn",
      "type": "ToolStripButton",
      "text": "ทดสอบหัวจ่าย",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/ExitBtn.Image.png",
+     "size": [
+      100,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "BringInMoneyBtn",
      "type": "ToolStripButton",
      "text": "คืนสินค้า",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/BringInMoneyBtn.Image.png",
+     "size": [
+      150,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "TakeOutMoneyBtn",
      "type": "ToolStripButton",
      "text": "เครื่องมือ",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/TakeOutMoneyBtn.Image.png",
+     "size": [
+      140,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "ChangeOilPriceBtn",
      "type": "ToolStripButton",
      "text": "นำเงินเข้า",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/ChangeOilPriceBtn.Image.png",
+     "size": [
+      140,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "ToolBtn",
      "type": "ToolStripButton",
      "text": "นำเงินออก",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/ToolBtn.Image.png",
+     "size": [
+      100,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "CloseShiftBtn",
      "type": "ToolStripButton",
      "text": "ปิดกะ",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/CloseShiftBtn.Image.png",
+     "size": [
+      100,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "CloseDayBtn",
      "type": "ToolStripButton",
      "text": "ปิดวัน",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/CloseDayBtn.Image.png",
+     "size": [
+      100,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "ChangeUserBtn",
      "type": "ToolStripButton",
      "text": "ตั้งราคาสินค้า",
      "visible": true,
-     "items": []
+     "items": [],
+     "image": "res/forms/NormalForm.BoxScreen/ChangeUserBtn.Image.png",
+     "size": [
+      130,
+      40
+     ],
+     "tir": "overlay"
     },
     {
      "name": "toolStripButton1",
      "type": "ToolStripButton",
      "text": "เปลี่ยนผู้ใช้",
      "visible": true,
-     "items": []
+     "items": [],
+     "size": [
+      130,
+      40
+     ]
     },
     {
      "name": "toolStripButton2",
      "type": "ToolStripButton",
      "text": "ออก",
      "visible": true,
-     "items": []
+     "items": [],
+     "size": [
+      130,
+      40
+     ]
     }
    ]
+  }
+ },
+ "style": {
+  "font": {
+   "family": "Calibri",
+   "size": 9.0,
+   "bold": false,
+   "italic": false,
+   "underline": false
   }
  }
 }
