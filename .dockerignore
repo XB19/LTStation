@@ -1,0 +1,20 @@
+# Secrets et réglages locaux : fournis au démarrage par docker-compose.yml, jamais copiés dans l'image
+.env
+**/.env
+backend/station/
+backend/config/application-local.yml
+database/docker/dumps/
+
+# Produits de construction et dépendances
+**/node_modules/
+backend/target/
+backend/src/main/resources/static/
+frontend/dist/
+desktop/
+logs/
+backend/logs/
+**/*.log
+.git/
+.idea/
+.vscode/
+**/__pycache__/

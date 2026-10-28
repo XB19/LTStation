@@ -31,3 +31,6 @@ logs/
 
 # Réglages locaux du logiciel Station (peuvent contenir des clés de services tiers)
 backend/station/
+
+# Copies des bases locales pour Docker (contiennent les données)
+database/docker/dumps/

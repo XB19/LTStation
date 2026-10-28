@@ -71,6 +71,26 @@ java -jar target/*.jar            # un seul processus sert l'API et l'interface
 
 Le fichier `.env` doit se trouver à côté du jar ou dans le dossier parent.
 
+## Docker
+
+PostgreSQL (bases `center` et `station`) et le serveur (site Center, logiciel Station dans le navigateur) :
+
+```bash
+python database/tools/docker_dump.py   # facultatif : copie des bases locales (database/docker/dumps/, hors git)
+docker compose up -d --build           # Center : http://localhost:8080 — Station : http://localhost:8080/station/
+docker compose logs -f app             # journal du serveur
+docker compose down                    # arrêt (les données restent dans les volumes pgdata et appdata)
+```
+
+- Identifiants : fichier `.env` (passé au démarrage, jamais copié dans l'image). `DB_HOST` est remplacé par le service `db`.
+- Premier démarrage : bases restaurées depuis `database/docker/dumps/*.sql` s'ils existent, sinon schémas vides
+  (la station se configure alors avec l'assistant d'installation). Pour repartir de zéro : `docker compose down -v`.
+- Réglages locaux de la station (`backend/station/`, clés des cartes) : montés dans le conteneur.
+- Ports : `APP_PORT` (8080 par défaut) et `DOCKER_DB_PORT` (5433, pour ne pas gêner un PostgreSQL déjà installé) ;
+  fuseau horaire : `TZ` (Africa/Lome par défaut).
+- Le matériel (ports série, lecteurs de cartes, imprimante du poste) n'est pas accessible depuis un conteneur :
+  sur le poste de la station, utiliser l'application de bureau.
+
 ## Logiciel Station (caisse)
 
 Le logiciel Station reproduit l'application d'origine **Station SoftWare**, logiciel CardMake inclus. On y retrouve :
