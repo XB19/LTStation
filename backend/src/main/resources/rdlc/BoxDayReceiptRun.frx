@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/03/2025 16:14:15" ReportInfo.Modified="04/01/2025 09:39:36" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="NozTable" ReferenceName="Data.NozTable" DataType="System.Int32" Enabled="true">
+      <Column Name="NozRunID" DataType="System.String" PropName="Column"/>
+      <Column Name="GradeName" DataType="System.String" PropName="Column"/>
+      <Column Name="StartVolume" DataType="System.String" PropName="Column"/>
+      <Column Name="EndVolume" DataType="System.String" PropName="Column"/>
+      <Column Name="Volume" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="TestTable" ReferenceName="Data.TestTable" DataType="System.Int32" Enabled="true">
+      <Column Name="NozID" DataType="System.String" PropName="Column"/>
+      <Column Name="GradeName" DataType="System.String" PropName="Column"/>
+      <Column Name="Volume" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="ProductSaleTable" ReferenceName="Data.ProductSaleTable" DataType="System.Int32" Enabled="true">
+      <Column Name="ProductName" DataType="System.String" PropName="Column"/>
+      <Column Name="Volume" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="ProductRefundTable" ReferenceName="Data.ProductRefundTable" DataType="System.Int32" Enabled="true">
+      <Column Name="ProductName" DataType="System.String" PropName="Column"/>
+      <Column Name="Volume" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="PayMentSumTable" ReferenceName="Data.PayMentSumTable" DataType="System.Int32" Enabled="true">
+      <Column Name="PayType" DataType="System.String" PropName="Column"/>
+      <Column Name="Volume" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="DiscountSumTable" ReferenceName="Data.DiscountSumTable" DataType="System.Int32" Enabled="true">
+      <Column Name="Discount" DataType="System.String" PropName="Column"/>
+      <Column Name="Quantity" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="MoneySubmitTable" ReferenceName="Data.MoneySubmitTable" DataType="System.Int32" Enabled="true">
+      <Column Name="SubmitType" DataType="System.String" PropName="Column"/>
+      <Column Name="Quantity" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="AbnormalTable" ReferenceName="Data.AbnormalTable" DataType="System.Int32" Enabled="true">
+      <Column Name="itemType" DataType="System.String" PropName="Column"/>
+      <Column Name="Quantity" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <Parameter Name="CompanyName" DataType="System.String"/>
+    <Parameter Name="BranchValue" DataType="System.String"/>
+    <Parameter Name="ShiftPrintDate" DataType="System.String"/>
+    <Parameter Name="ShiftPosNumber" DataType="System.String"/>
+    <Parameter Name="ShiftCasher" DataType="System.String"/>
+    <Parameter Name="ShiftNumber" DataType="System.String"/>
+    <Parameter Name="ShiftOpenTime" DataType="System.String"/>
+    <Parameter Name="ShiftCloseTime" DataType="System.String"/>
+    <Parameter Name="ShiftDayWork" DataType="System.String"/>
+    <Parameter Name="NozSumAmount" DataType="System.String"/>
+    <Parameter Name="NozSumVolume" DataType="System.String"/>
+    <Parameter Name="TestNozSumAmount" DataType="System.String"/>
+    <Parameter Name="TestNozSumVolume" DataType="System.String"/>
+    <Parameter Name="NozRemainAmount" DataType="System.String"/>
+    <Parameter Name="NozRemainVolume" DataType="System.String"/>
+    <Parameter Name="ProductCount" DataType="System.String"/>
+    <Parameter Name="ProductAmount" DataType="System.String"/>
+    <Parameter Name="PayMentCount" DataType="System.String"/>
+    <Parameter Name="PayMentAmount" DataType="System.String"/>
+    <Parameter Name="DiscountTime" DataType="System.String"/>
+    <Parameter Name="DiscountAmount" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,62.37,151.2,37.8,189">
+    <ReportTitleBand Name="ReportTitle1" Width="226.8" Height="122.85" Guides="0,15.12,30.24,45.36,136.08,143.64,56.7,11.34,22.68,34.02,68.04,79.38">
+      <TextObject Name="Text1" Width="226.8" Height="15.12" Dock="Top" Text="รายงานปิดวัน(น้ำมัน)" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text2" Top="15.12" Width="226.8" Height="15.12" Dock="Top" Text="[CompanyName]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text3" Top="30.24" Width="226.8" Height="15.12" Dock="Top" Text="[BranchValue]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text4" Top="115.29" Width="226.8" Height="7.56" Dock="Bottom" Text="=====================================================" HorzAlign="Center" VertAlign="Center" Font="Calibri, 6pt"/>
+      <TableObject Name="Table3" Top="47.25" Width="226.8" Height="68.04" Dock="Bottom">
+        <TableColumn Name="Column1" Width="62.37"/>
+        <TableColumn Name="Column2" Width="164.43"/>
+        <TableRow Name="Row1" Height="11.34">
+          <TableCell Name="Cell1" Text="วันที่พิมพ์" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell2" Text="[ShiftPrintDate]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="11.34">
+          <TableCell Name="Cell6" Text="หมายเลขเครื่อง" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell7" Text="[ShiftPosNumber]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="11.34">
+          <TableCell Name="Cell11" Text="พนักงาน" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell12" Text="[ShiftCasher]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="11.34">
+          <TableCell Name="Cell895" Text="เวลาเปิดกะ" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell896" Text="[ShiftOpenTime]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="11.34">
+          <TableCell Name="Cell21" Text="เวลาปิดกะ" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell22" Text="[ShiftCloseTime]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="11.34">
+          <TableCell Name="Cell23" Text="วันทำงาน" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <TableCell Name="Cell24" Text="[ShiftDayWork]" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+      </TableObject>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="123.99" Width="226.8" Height="62.37" Guides="0,15.12,30.24,62.37">
+      <TextObject Name="Text5" Width="226.8" Height="15.12" Dock="Top" Text="1. สรุปยอดขายน้ำมันใส" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text6" Top="15.12" Width="226.8" Height="15.12" Dock="Top" Text="1.1 สรุปยอดขายจากมิเตอร์" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <SubreportObject Name="Subreport1" Top="30.24" Width="226.8" Height="32.13" Dock="Top" ReportPage="Page2"/>
+      <ChildBand Name="Child1" Top="187.51" Width="226.8" Height="11.34" Guides="0,11.34">
+        <TableObject Name="Table10" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+          <TableColumn Name="Column201" Width="37.8"/>
+          <TableColumn Name="Column202" Width="37.8"/>
+          <TableColumn Name="Column203" Width="37.8"/>
+          <TableColumn Name="Column204" Width="37.8"/>
+          <TableColumn Name="Column205" Width="37.8"/>
+          <TableColumn Name="Column206" Width="37.8"/>
+          <TableRow Name="Row41" Height="11.34">
+            <TableCell Name="Cell565" Text="รวมยอดขายน้ำมัน" Font="Dindan Mai, 5pt" ColSpan="4"/>
+            <TableCell Name="Cell566"/>
+            <TableCell Name="Cell567"/>
+            <TableCell Name="Cell568"/>
+            <TableCell Name="Cell569" Text="[NozSumVolume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+            <TableCell Name="Cell590" Text="[NozSumAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+        </TableObject>
+        <ChildBand Name="Child2" Top="199.99" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+          <TextObject Name="Text7" Width="226.8" Height="15.12" Dock="Top" Text="1.2 ยอดทดสอบน้ำมัน" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          <SubreportObject Name="Subreport2" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page3"/>
+          <ChildBand Name="Child3" Top="235.15" Width="226.8" Height="30.24" Guides="0,11.34,18.9,30.24">
+            <TableObject Name="Table28" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+              <TableColumn Name="Column207" Width="37.8"/>
+              <TableColumn Name="Column208" Width="37.8"/>
+              <TableColumn Name="Column209" Width="37.8"/>
+              <TableColumn Name="Column210" Width="37.8"/>
+              <TableColumn Name="Column211" Width="37.8"/>
+              <TableColumn Name="Column212" Width="37.8"/>
+              <TableRow Name="Row42" Height="11.34">
+                <TableCell Name="Cell591" Text="รวมยอดทดสอบน้ำมัน" Font="Dindan Mai, 5pt" ColSpan="4"/>
+                <TableCell Name="Cell592"/>
+                <TableCell Name="Cell593"/>
+                <TableCell Name="Cell594"/>
+                <TableCell Name="Cell595" Text="[TestNozSumVolume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                <TableCell Name="Cell596" Text="[TestNozSumAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+              </TableRow>
+            </TableObject>
+            <TextObject Name="Text8" Top="11.34" Width="226.8" Height="7.56" Dock="Top" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+            <TableObject Name="Table29" Top="18.9" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+              <TableColumn Name="Column213" Width="37.8"/>
+              <TableColumn Name="Column214" Width="37.8"/>
+              <TableColumn Name="Column215" Width="37.8"/>
+              <TableColumn Name="Column216" Width="37.8"/>
+              <TableColumn Name="Column217" Width="37.8"/>
+              <TableColumn Name="Column218" Width="37.8"/>
+              <TableRow Name="Row43" Height="11.34">
+                <TableCell Name="Cell597" Text="ยอดขายน้ำมันสุทธิ (1)=(1.1-1.2)" Font="Dindan Mai, 5pt" ColSpan="4"/>
+                <TableCell Name="Cell598"/>
+                <TableCell Name="Cell599"/>
+                <TableCell Name="Cell600"/>
+                <TableCell Name="Cell601" Text="[NozRemainVolume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                <TableCell Name="Cell602" Text="[NozRemainAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+              </TableRow>
+            </TableObject>
+            <ChildBand Name="Child4" Top="266.53" Width="226.8" Height="49.14" Guides="0,15.12,30.24,49.14">
+              <TextObject Name="Text9" Width="226.8" Height="15.12" Dock="Top" Text="2. สินค้าอื่นๆและสินค้าพิเศษ" Font="Dindan Mai, 6pt"/>
+              <TextObject Name="Text10" Top="15.12" Width="226.8" Height="15.12" Dock="Top" Text="2.1 รายการขายสินค้า" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+              <SubreportObject Name="Subreport3" Top="30.24" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page4"/>
+              <ChildBand Name="Child5" Top="316.82" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+                <TextObject Name="Text11" Width="226.8" Height="15.12" Dock="Top" Text="2.2 รายการคืนสินค้า" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+                <SubreportObject Name="Subreport4" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page5"/>
+                <ChildBand Name="Child6" Top="351.98" Width="226.8" Height="11.34" Guides="0,11.34">
+                  <TableObject Name="Table11" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+                    <TableColumn Name="Column219" Width="37.8"/>
+                    <TableColumn Name="Column220" Width="37.8"/>
+                    <TableColumn Name="Column221" Width="37.8"/>
+                    <TableColumn Name="Column222" Width="37.8"/>
+                    <TableColumn Name="Column223" Width="37.8"/>
+                    <TableColumn Name="Column224" Width="37.8"/>
+                    <TableRow Name="Row44" Height="11.34">
+                      <TableCell Name="Cell603" Text="รวม (2)=(2.1-2.2)" VertAlign="Center" Font="Dindan Mai, 5pt" ColSpan="4"/>
+                      <TableCell Name="Cell604"/>
+                      <TableCell Name="Cell605"/>
+                      <TableCell Name="Cell606"/>
+                      <TableCell Name="Cell607" Text="[ProductCount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                      <TableCell Name="Cell628" Text="[ProductAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                    </TableRow>
+                  </TableObject>
+                  <ChildBand Name="Child7" Top="364.46" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+                    <TextObject Name="Text12" Width="226.8" Height="15.12" Dock="Top" Text="3. สรุปยอดขายตามประเภทการชำระเงิน" Font="Dindan Mai, 6pt"/>
+                    <SubreportObject Name="Subreport5" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page6"/>
+                    <ChildBand Name="Child8" Top="399.63" Width="226.8" Height="11.34" Guides="0,11.34">
+                      <TableObject Name="Table12" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+                        <TableColumn Name="Column225" Width="37.8"/>
+                        <TableColumn Name="Column226" Width="37.8"/>
+                        <TableColumn Name="Column227" Width="37.8"/>
+                        <TableColumn Name="Column228" Width="37.8"/>
+                        <TableColumn Name="Column229" Width="37.8"/>
+                        <TableColumn Name="Column230" Width="37.8"/>
+                        <TableRow Name="Row45" Height="11.34">
+                          <TableCell Name="Cell629" Text="รวม (3)" VertAlign="Center" Font="Dindan Mai, 5pt" ColSpan="4"/>
+                          <TableCell Name="Cell630"/>
+                          <TableCell Name="Cell631"/>
+                          <TableCell Name="Cell632"/>
+                          <TableCell Name="Cell633" Text="[PayMentCount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                          <TableCell Name="Cell654" Text="[PayMentAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                        </TableRow>
+                      </TableObject>
+                      <ChildBand Name="Child9" Top="412.11" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+                        <TextObject Name="Text13" Width="226.8" Height="15.12" Dock="Top" Text="4. สรุปยอดการให้ส่วนลดตามประเภท" Font="Dindan Mai, 6pt"/>
+                        <SubreportObject Name="Subreport6" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page7"/>
+                        <ChildBand Name="Child10" Top="447.27" Width="226.8" Height="30.24" Guides="0,11.34,18.9,30.24">
+                          <TableObject Name="Table13" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+                            <TableColumn Name="Column231" Width="37.8"/>
+                            <TableColumn Name="Column232" Width="37.8"/>
+                            <TableColumn Name="Column233" Width="37.8"/>
+                            <TableColumn Name="Column234" Width="37.8"/>
+                            <TableColumn Name="Column235" Width="37.8"/>
+                            <TableColumn Name="Column236" Width="37.8"/>
+                            <TableRow Name="Row46" Height="11.34">
+                              <TableCell Name="Cell655" Text="รวม (4)" VertAlign="Center" Font="Dindan Mai, 5pt" ColSpan="4"/>
+                              <TableCell Name="Cell656"/>
+                              <TableCell Name="Cell657"/>
+                              <TableCell Name="Cell658"/>
+                              <TableCell Name="Cell659" Text="[DiscountTime]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                              <TableCell Name="Cell680" Text="[DiscountAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                            </TableRow>
+                          </TableObject>
+                          <TextObject Name="Text14" Top="11.34" Width="226.8" Height="7.56" Dock="Top" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                          <TableObject Name="Table30" Top="18.9" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Top, Bottom" Border.Width="0.25">
+                            <TableColumn Name="Column237" Width="37.8"/>
+                            <TableColumn Name="Column238" Width="37.8"/>
+                            <TableColumn Name="Column239" Width="37.8"/>
+                            <TableColumn Name="Column240" Width="37.8"/>
+                            <TableColumn Name="Column241" Width="37.8"/>
+                            <TableColumn Name="Column242" Width="37.8"/>
+                            <TableRow Name="Row47" Height="11.34">
+                              <TableCell Name="Cell681" Text="ยอดขาด/เกิน (( 1 )+( 2 )] - [( 3 )+( 4 ))" VertAlign="Center" Font="Dindan Mai, 5pt" ColSpan="5"/>
+                              <TableCell Name="Cell682"/>
+                              <TableCell Name="Cell683"/>
+                              <TableCell Name="Cell684"/>
+                              <TableCell Name="Cell685" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                              <TableCell Name="Cell686" Text="[DiscountAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+                            </TableRow>
+                          </TableObject>
+                          <ChildBand Name="Child11" Top="478.65" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+                            <TextObject Name="Text15" Width="226.8" Height="15.12" Dock="Top" Text="5. สรุปการส่งเงิน" Font="Dindan Mai, 6pt"/>
+                            <SubreportObject Name="Subreport7" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page8"/>
+                            <ChildBand Name="Child12" Top="513.82" Width="226.8" Height="34.02" Guides="0,15.12,34.02">
+                              <TextObject Name="Text16" Width="226.8" Height="15.12" Dock="Top" Text="6. รายการที่ผิดปกติ" Font="Dindan Mai, 6pt"/>
+                              <SubreportObject Name="Subreport8" Top="15.12" Width="226.8" Height="18.9" Dock="Top" ReportPage="Page9"/>
+                            </ChildBand>
+                          </ChildBand>
+                        </ChildBand>
+                      </ChildBand>
+                    </ChildBand>
+                  </ChildBand>
+                </ChildBand>
+              </ChildBand>
+            </ChildBand>
+          </ChildBand>
+        </ChildBand>
+      </ChildBand>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="548.98" Width="226.8" Height="11.34" Guides="0,11.34">
+      <TextObject Name="Text17" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Bottom" Border.Style="Double" Border.Width="0.25" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+  <ReportPage Name="Page2" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,37.8,75.6,113.4,151.2,189">
+    <DataBand Name="Data2" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="NozTable">
+      <TableObject Name="Table14" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column243" Width="37.8"/>
+        <TableColumn Name="Column244" Width="37.8"/>
+        <TableColumn Name="Column245" Width="37.8"/>
+        <TableColumn Name="Column246" Width="37.8"/>
+        <TableColumn Name="Column247" Width="37.8"/>
+        <TableColumn Name="Column248" Width="37.8"/>
+        <TableRow Name="Row48" Height="11.34">
+          <TableCell Name="Cell687" Text="[NozTable.NozRunID]" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell688" Text="[NozTable.GradeName]" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell689" Text="[NozTable.StartVolume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell690" Text="[NozTable.EndVolume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell691" Text="[NozTable.Volume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell712" Text="[NozTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page3" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,37.8,151.2,75.6,113.4,189">
+    <DataBand Name="Data3" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="TestTable">
+      <TableObject Name="Table4" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column249" Width="37.8"/>
+        <TableColumn Name="Column250" Width="37.8"/>
+        <TableColumn Name="Column251" Width="37.8"/>
+        <TableColumn Name="Column252" Width="37.8"/>
+        <TableColumn Name="Column253" Width="37.8"/>
+        <TableColumn Name="Column254" Width="37.8"/>
+        <TableRow Name="Row49" Height="11.34">
+          <TableCell Name="Cell713" Text="[TestTable.NozID]" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell714" Text="[TestTable.GradeName]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="3"/>
+          <TableCell Name="Cell715"/>
+          <TableCell Name="Cell716"/>
+          <TableCell Name="Cell717" Text="[TestTable.Volume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell738" Text="[TestTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page4" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data4" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="ProductSaleTable">
+      <TableObject Name="Table1" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column255" Width="37.8"/>
+        <TableColumn Name="Column256" Width="37.8"/>
+        <TableColumn Name="Column257" Width="37.8"/>
+        <TableColumn Name="Column258" Width="37.8"/>
+        <TableColumn Name="Column259" Width="37.8"/>
+        <TableColumn Name="Column260" Width="37.8"/>
+        <TableRow Name="Row50" Height="11.34">
+          <TableCell Name="Cell739" Text="[ProductSaleTable.ProductName]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell740"/>
+          <TableCell Name="Cell741"/>
+          <TableCell Name="Cell742"/>
+          <TableCell Name="Cell743" Text="[ProductSaleTable.Volume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell764" Text="[ProductSaleTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page5" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data5" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="ProductRefundTable">
+      <TableObject Name="Table2" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column261" Width="37.8"/>
+        <TableColumn Name="Column262" Width="37.8"/>
+        <TableColumn Name="Column263" Width="37.8"/>
+        <TableColumn Name="Column264" Width="37.8"/>
+        <TableColumn Name="Column265" Width="37.8"/>
+        <TableColumn Name="Column266" Width="37.8"/>
+        <TableRow Name="Row51" Height="11.34">
+          <TableCell Name="Cell765" Text="[ProductRefundTable.ProductName]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell766"/>
+          <TableCell Name="Cell767"/>
+          <TableCell Name="Cell768"/>
+          <TableCell Name="Cell769" Text="[ProductRefundTable.Volume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell790" Text="[ProductRefundTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page6" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data6" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="PayMentSumTable">
+      <TableObject Name="Table5" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column267" Width="37.8"/>
+        <TableColumn Name="Column268" Width="37.8"/>
+        <TableColumn Name="Column269" Width="37.8"/>
+        <TableColumn Name="Column270" Width="37.8"/>
+        <TableColumn Name="Column271" Width="37.8"/>
+        <TableColumn Name="Column272" Width="37.8"/>
+        <TableRow Name="Row52" Height="11.34">
+          <TableCell Name="Cell791" Text="[PayMentSumTable.PayType]" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell792"/>
+          <TableCell Name="Cell793"/>
+          <TableCell Name="Cell794"/>
+          <TableCell Name="Cell795" Text="[PayMentSumTable.Volume]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell816" Text="[PayMentSumTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page7" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data7" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="DiscountSumTable">
+      <TableObject Name="Table6" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column273" Width="37.8"/>
+        <TableColumn Name="Column274" Width="37.8"/>
+        <TableColumn Name="Column275" Width="37.8"/>
+        <TableColumn Name="Column276" Width="37.8"/>
+        <TableColumn Name="Column277" Width="37.8"/>
+        <TableColumn Name="Column278" Width="37.8"/>
+        <TableRow Name="Row53" Height="11.34">
+          <TableCell Name="Cell817" Text="[DiscountSumTable.Discount]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell818"/>
+          <TableCell Name="Cell819"/>
+          <TableCell Name="Cell820"/>
+          <TableCell Name="Cell821" Text="[DiscountSumTable.Quantity]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell842" Text="[DiscountSumTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page8" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data8" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="MoneySubmitTable">
+      <TableObject Name="Table7" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column279" Width="37.8"/>
+        <TableColumn Name="Column280" Width="37.8"/>
+        <TableColumn Name="Column281" Width="37.8"/>
+        <TableColumn Name="Column282" Width="37.8"/>
+        <TableColumn Name="Column283" Width="37.8"/>
+        <TableColumn Name="Column284" Width="37.8"/>
+        <TableRow Name="Row54" Height="11.34">
+          <TableCell Name="Cell843" Text="[MoneySubmitTable.SubmitType]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell844"/>
+          <TableCell Name="Cell845"/>
+          <TableCell Name="Cell846"/>
+          <TableCell Name="Cell847" Text="[MoneySubmitTable.Quantity]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell868" Text="[MoneySubmitTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page9" PaperWidth="80" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,151.2,37.8,75.6,113.4,189">
+    <DataBand Name="Data9" Width="226.8" Height="11.34" Guides="0,11.34" DataSource="AbnormalTable">
+      <TableObject Name="Table8" Width="226.8" Height="11.34" Dock="Top">
+        <TableColumn Name="Column285" Width="37.8"/>
+        <TableColumn Name="Column286" Width="37.8"/>
+        <TableColumn Name="Column287" Width="37.8"/>
+        <TableColumn Name="Column288" Width="37.8"/>
+        <TableColumn Name="Column289" Width="37.8"/>
+        <TableColumn Name="Column290" Width="37.8"/>
+        <TableRow Name="Row55" Height="11.34">
+          <TableCell Name="Cell869" Text="[AbnormalTable.itemType]" VertAlign="Center" Font="Calibri, 5pt" ColSpan="4"/>
+          <TableCell Name="Cell870"/>
+          <TableCell Name="Cell871"/>
+          <TableCell Name="Cell872"/>
+          <TableCell Name="Cell873" Text="[AbnormalTable.Quantity]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell894" Text="[AbnormalTable.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

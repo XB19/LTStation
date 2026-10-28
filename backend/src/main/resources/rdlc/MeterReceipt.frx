@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/24/2024 11:17:49" ReportInfo.Modified="02/10/2025 11:12:58" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="Table1" ReferenceName="Data.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="PumpID" DataType="System.String" PropName="Column"/>
+      <Column Name="NozID" DataType="System.String" PropName="Column"/>
+      <Column Name="GradeName" DataType="System.String" PropName="Column" />
+      <Column Name="VolumeTotal" DataType="System.String" PropName="Column" />
+    </TableDataSource>
+    <Parameter Name="StationCodeParam" DataType="System.String"/>
+    <Parameter Name="StationNameParam" DataType="System.String"/>
+    <Parameter Name="PrintParam" DataType="System.String"/>
+    <Parameter Name="EmployeeParam" DataType="System.String"/>
+    <Parameter Name="ChangeTimeParam" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" TopMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,69.93,56.7,113.4,170.1">
+    <ColumnHeaderBand Name="ColumnHeader1" Width="226.8" Height="94.5" CanGrow="true" CanShrink="true" Guides="0,94.5,23.62,47.24,70.86,94.48">
+      <TableObject Name="Table2" Width="226.8" Height="94.5" Dock="Fill">
+        <TableColumn Name="Column1" Width="69.93"/>
+        <TableColumn Name="Column2" Width="156.87"/>
+        <TableRow Name="Row1" Height="23.62">
+          <TableCell Name="Cell1" Text="รหัสสถานี:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell2" Text="[StationCodeParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="23.62">
+          <TableCell Name="Cell6" Text="ชื่อสถานี:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell7" Text="[StationNameParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="23.62">
+          <TableCell Name="Cell11" Text="วันที่พิมพ์:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell12" Text="[PrintParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="23.62">
+          <TableCell Name="Cell16" Text="พนักงาน:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell17" Text="[EmployeeParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <ChildBand Name="Child1" Top="95.64" Width="226.8" Height="13.23" Guides="0,13.23">
+        <TableObject Name="Table5" Width="226.8" Height="13.23" Dock="Fill">
+          <TableColumn Name="Column14" Width="56.7"/>
+          <TableColumn Name="Column15" Width="56.7"/>
+          <TableColumn Name="Column16" Width="56.7"/>
+          <TableColumn Name="Column17" Width="56.7"/>
+          <TableRow Name="Row9" Height="13.23">
+            <TableCell Name="Cell33" Text="หน้าจ่าย" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+            <TableCell Name="Cell34" Text="'หัวจ่าย" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+            <TableCell Name="Cell35" Text="ชนิดน้ำมัน" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+            <TableCell Name="Cell36" Text="มิเตอร์" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+          </TableRow>
+        </TableObject>
+      </ChildBand>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="110.02" Width="226.8" Height="13.23" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,13.23" DataSource="Table1">
+      <TableObject Name="Table4" Width="226.8" Height="13.23">
+        <TableColumn Name="Column10" Width="56.7"/>
+        <TableColumn Name="Column11" Width="56.7"/>
+        <TableColumn Name="Column12" Width="56.7"/>
+        <TableColumn Name="Column13" Width="56.7"/>
+        <TableRow Name="Row8" Height="13.23">
+          <TableCell Name="Cell29" Text="[Table1.PumpID]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell30" Text="[Table1.NozID]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell31" Text="[Table1.GradeName]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell32" Text="[Table1.VolumeTotal]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

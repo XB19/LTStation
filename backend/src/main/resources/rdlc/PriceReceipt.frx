@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/24/2024 11:17:49" ReportInfo.Modified="02/07/2025 11:05:04" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="Table1" ReferenceName="Data.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="GradeM" DataType="System.String" PropName="Column"/>
+      <Column Name="OldPrice" DataType="System.String" PropName="Column"/>
+      <Column Name="NewPrice" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <Parameter Name="StationCodeParam" DataType="System.String"/>
+    <Parameter Name="StationNameParam" DataType="System.String"/>
+    <Parameter Name="PrintParam" DataType="System.String"/>
+    <Parameter Name="EmployeeParam" DataType="System.String"/>
+    <Parameter Name="ChangeTimeParam" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" TopMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1" Guides="0,226.8,69.93,75.6,151.2">
+    <ColumnHeaderBand Name="ColumnHeader1" Width="226.8" Height="94.5" CanGrow="true" CanShrink="true" Guides="0,94.5,15.75,31.5,47.25,63,78.75">
+      <TableObject Name="Table2" Width="226.8" Height="94.5" Dock="Fill">
+        <TableColumn Name="Column1" Width="69.93"/>
+        <TableColumn Name="Column2" Width="156.87"/>
+        <TableRow Name="Row1" Height="15.75">
+          <TableCell Name="Cell1" Text="รหัสสถานี:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell2" Text="[StationCodeParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="15.75">
+          <TableCell Name="Cell6" Text="ชื่อสถานี:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell7" Text="[StationNameParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="15.75">
+          <TableCell Name="Cell11" Text="วันที่พิมพ์:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell12" Text="[PrintParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="15.75">
+          <TableCell Name="Cell16" Text="พนักงาน:" VertAlign="Center" Font="Dindan Mai, 9pt"/>
+          <TableCell Name="Cell17" Text="[EmployeeParam]" VertAlign="Center" Font="Calibri, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="15.75">
+          <TableCell Name="Cell18" Text="เปลี่ยนราคา" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell19"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="15.75">
+          <TableCell Name="Cell20" Text="[ChangeTimeParam]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell21"/>
+        </TableRow>
+      </TableObject>
+      <ChildBand Name="Child1" Top="95.64" Width="226.8" Height="13.23" Guides="0,13.23">
+        <TableObject Name="Table3" Width="226.8" Height="13.23" Dock="Fill" Border.Lines="Bottom" Border.Width="0.25">
+          <TableColumn Name="Column3" Width="75.6"/>
+          <TableColumn Name="Column4" Width="75.6"/>
+          <TableColumn Name="Column5" Width="75.6"/>
+          <TableRow Name="Row7" Height="13.23">
+            <TableCell Name="Cell22" Text="ผลิตภัณฑ์" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+            <TableCell Name="Cell23" Text="'ราคาเก่า" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+            <TableCell Name="Cell24" Text="'ราคาใหม่" HorzAlign="Right" Font="Dindan Mai, 6pt"/>
+          </TableRow>
+        </TableObject>
+      </ChildBand>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="110.02" Width="226.8" Height="11.34" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,11.34" DataSource="Table1">
+      <TableObject Name="Table4" Width="226.8" Height="11.34" Dock="Fill">
+        <TableColumn Name="Column6" Width="75.6"/>
+        <TableColumn Name="Column7" Width="75.6"/>
+        <TableColumn Name="Column8" Width="75.6"/>
+        <TableRow Name="Row8" Height="11.34">
+          <TableCell Name="Cell25" Text="[Table1.GradeM]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell26" Text="[Table1.OldPrice]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell27" Text="[Table1.NewPrice]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="122.5" Width="226.8" Height="11.34" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,11.34">
+      <TextObject Name="Text1" Width="226.8" Height="11.34" Dock="Fill" Border.Lines="Bottom" Border.Style="Dash" Border.Width="0.5" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

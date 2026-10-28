@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/24/2024 11:17:49" ReportInfo.Modified="09/04/2025 13:54:54" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="Table1" ReferenceName="Data.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="GradeM" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+      <Column Name="CardNumber" Enabled="false" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <Parameter Name="CashOrder" DataType="System.String"/>
+    <Parameter Name="CashCompanyName" DataType="System.String"/>
+    <Parameter Name="CashAddTel" DataType="System.String"/>
+    <Parameter Name="CashTax" DataType="System.String"/>
+    <Parameter Name="CashBranch" DataType="System.String"/>
+    <Parameter Name="CashTranNo" DataType="System.String"/>
+    <Parameter Name="CashTime" DataType="System.String"/>
+    <Parameter Name="CashPos" DataType="System.String"/>
+    <Parameter Name="CashEmpty" DataType="System.String"/>
+    <Parameter Name="CashOldOrder" DataType="System.String"/>
+    <Parameter Name="CashPay" DataType="System.String"/>
+    <Parameter Name="CashNumber" DataType="System.String"/>
+    <Parameter Name="CashAmount" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" TopMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1" Guides="0,224.91,228.69,-1.89,226.8,1.89,43.47,147.42,153.09">
+    <ReportTitleBand Name="ReportTitle1" Width="226.8" Height="20.79" CanGrow="true" CanShrink="true" Guides="3.78,18.9">
+      <TextObject Name="Text1" Top="3.78" Width="224.91" Height="15.12" Text="[CashOrder]" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 7pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="21.93" Width="226.8" Height="128.52" CanGrow="true" CanShrink="true" Guides="1.89,15.12,9.45,28.35,52.92,58.59,69.93,86.94,115.3,0,14.18,28.36,117.18,126.63,71.82,85.05">
+      <TextObject Name="Text2" Top="1.89" Width="228.69" Height="13.23" Text="ใบเสร็จรับเงิน" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text4" Top="9.45" Width="228.69" Height="18.9" Text="[CashCompanyName]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text5" Left="-1.89" Top="28.35" Width="228.69" Height="24.57" Text="[CashAddTel]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text6" Top="58.59" Width="228.69" Height="11.34" Text="เลขที่ประจำตัวผู้เสียภาษี&#13; [CashTax]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TableObject Name="Table1" Left="1.89" Top="86.94" Width="224.91" Height="28.36">
+        <TableColumn Name="Column1" Width="41.58"/>
+        <TableColumn Name="Column2" Width="103.95"/>
+        <TableColumn Name="Column7" Width="79.38"/>
+        <TableRow Name="Row1" Height="14.18">
+          <TableCell Name="Cell1" Text="Tran No." VertAlign="Center" Font="Calibri, 7pt"/>
+          <TableCell Name="Cell2" Text="[CashTranNo]" VertAlign="Center" Font="Calibri, 7pt"/>
+          <TableCell Name="Cell17" Text="#RD" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="14.18">
+          <TableCell Name="Cell6" Text="POS [CashPos]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell7" Text=" (VAT INCLUDED)" VertAlign="Center" Font="Calibri, 5pt"/>
+          <TableCell Name="Cell18" Text="[CashTime]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text8" Left="1.89" Top="117.18" Width="226.8" Height="9.45" Text="===============================================" HorzAlign="Center" VertAlign="Center" Font="Arial Narrow, 7pt"/>
+      <TextObject Name="Text7" Left="-1.89" Top="71.82" Width="228.69" Height="13.23" Text="[CashBranch]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="151.6" Width="226.8" Height="13.23" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,11.34">
+      <TableObject Name="Table2" Width="226.8" Height="13.23" Dock="Fill" GrowToBottom="true">
+        <TableColumn Name="Column3" Width="146.79"/>
+        <TableColumn Name="Column4" Width="81.9"/>
+        <TableRow Name="Row3" Height="13.23">
+          <TableCell Name="Cell8" Text="[Table1.GradeM]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell9" Text="[Table1.Amount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 6pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="165.97" Width="226.8" Height="51.03" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,13.23,26.46,37.8">
+      <TableObject Name="Table3" Width="226.8" Height="13.23" Dock="Top" GrowToBottom="true">
+        <TableColumn Name="Column8" Width="72.45"/>
+        <TableColumn Name="Column9" Width="85.05"/>
+        <TableColumn Name="Column10" Width="69.3"/>
+        <TableRow Name="Row4" Height="13.23">
+          <TableCell Name="Cell19" Text="[CashPay]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell20" Text="[CashNumber]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell21" Text="[CashAmount]" HorzAlign="Right" Font="Calibri, 6pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text10" Top="13.23" Width="226.8" Height="13.23" Dock="Top" Text="=====================================================" HorzAlign="Center" VertAlign="Center" Font="Calibri, 6pt"/>
+      <TextObject Name="Text9" Top="26.46" Width="226.8" Height="11.34" Dock="Top" Text="****** Thank you for using our service&#13; ******" HorzAlign="Center" VertAlign="Center" Font="Calibri, 6pt"/>
+      <TextObject Name="Text3" Top="37.8" Width="226.8" Height="13.23" Dock="Top" Text="[CashOldOrder]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 6pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

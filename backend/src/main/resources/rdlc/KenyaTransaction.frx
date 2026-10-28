@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/21/2024 09:51:31" ReportInfo.Modified="10/18/2025 14:01:57" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <Parameter Name="StationName" DataType="System.String"/>
+    <Parameter Name="Address" DataType="System.String"/>
+    <Parameter Name="Pin" DataType="System.String"/>
+    <Parameter Name="Price" DataType="System.String"/>
+    <Parameter Name="Volume" DataType="System.String"/>
+    <Parameter Name="Amount" DataType="System.String"/>
+    <Parameter Name="BarImage" DataType="System.String"/>
+    <Parameter Name="TotalAmount" DataType="System.String"/>
+    <Parameter Name="TotalDiscount" DataType="System.String"/>
+    <Parameter Name="TotalReal" DataType="System.String"/>
+    <Parameter Name="VatValue" DataType="System.String"/>
+    <Parameter Name="Total" DataType="System.String"/>
+    <Parameter Name="OilDate" DataType="System.String"/>
+    <Parameter Name="OilTime" DataType="System.String"/>
+    <Parameter Name="SCUID" DataType="System.String"/>
+    <Parameter Name="CUINVOICENO" DataType="System.String"/>
+    <Parameter Name="InternalData" DataType="System.String"/>
+    <Parameter Name="Signature" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" LeftMargin="5" TopMargin="1" RightMargin="5" BottomMargin="1" FirstPageSource="15" OtherPagesSource="15" Guides="0,45.36,43.47,264.79,264.6,132.3,81.27,175.77">
+    <ReportTitleBand Name="ReportTitle1" Width="264.6" Height="73.71" Guides="0,45.36,17.01,30.65">
+      <TextObject Name="Text1" Width="264.6" Height="18.9" Dock="Top" Text="[StationName]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 10pt"/>
+      <TextObject Name="Text2" Top="18.9" Width="264.6" Height="18.9" Dock="Top" Text="[Address]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 10pt"/>
+      <TextObject Name="Text3" Top="37.8" Width="264.6" Height="18.9" Dock="Top" Text="Pin:[Pin]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 10pt"/>
+      <TextObject Name="Text4" Top="56.7" Width="264.6" Height="17.01" Dock="Top" Text="TAX INVOICE" HorzAlign="Center" VertAlign="Center" Font="Consolas, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="74.85" Width="264.6" Height="257.04" Guides="5.67,22.33,24.57,41.23,43.47,60.13,62.37,79.03,81.27,97.92999,100.17,116.83,119.07,135.73">
+      <TextObject Name="Text5" Width="264.6" Height="3.78" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <TextObject Name="Text6" Top="3.78" Width="264.6" Height="18.9" Dock="Top" Text="Welcome to our shop" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <TableObject Name="Table1" Top="22.68" Width="264.6" Height="15.12" Dock="Top">
+        <TableColumn Name="Column1"/>
+        <TableColumn Name="Column2"/>
+        <TableColumn Name="Column3"/>
+        <TableColumn Name="Column4"/>
+        <TableRow Name="Row1" Height="15.12">
+          <TableCell Name="Cell1" Text="Fuel Sale" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell2" Text="[Price]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell3" Text="[Volume]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell4" Text="[Amount]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text11" Top="37.8" Width="264.6" Height="20.79" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <TableObject Name="Table2" Top="58.59" Width="264.6" Height="75.6" Dock="Top">
+        <TableColumn Name="Column5" Width="151.2"/>
+        <TableColumn Name="Column6" Width="111.51"/>
+        <TableRow Name="Row2" Height="15.12">
+          <TableCell Name="Cell5" Text="TOTAL BEFORE DISCOUNT" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell6" Text="[TotalAmount]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="15.12">
+          <TableCell Name="Cell10" Text="TOTAL DISCOUNT AWARDED" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell11" Text="[TotalDiscount]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="15.12">
+          <TableCell Name="Cell15" Text="SUB TOTAL" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell16" Text="[TotalReal]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="15.12">
+          <TableCell Name="Cell20" Text="VAT" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell21" Text="[VatValue]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="15.12">
+          <TableCell Name="Cell25" Text="TOTAL" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell26" Text="[Total]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text12" Top="134.19" Width="264.6" Height="20.79" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <TableObject Name="Table3" Top="154.98" Width="264.6" Height="30.24" Dock="Top">
+        <TableColumn Name="Column7" Width="151.2"/>
+        <TableColumn Name="Column8" Width="111.51"/>
+        <TableRow Name="Row7" Height="15.12">
+          <TableCell Name="Cell27" Text="CASH" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell28" Text="[Total]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="15.12">
+          <TableCell Name="Cell29" Text="ITEMS NUMBER" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell30" Text="1" HorzAlign="Right" VertAlign="Center" Font="Consolas, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text13" Top="185.22" Width="264.6" Height="20.79" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <TableObject Name="Table4" Top="206.01" Width="264.6" Height="30.24" Dock="Top">
+        <TableColumn Name="Column9" Width="78.75"/>
+        <TableColumn Name="Column10" Width="95.76"/>
+        <TableColumn Name="Column11" Width="88.2"/>
+        <TableRow Name="Row9" Height="15.12">
+          <TableCell Name="Cell31" Text="Tax Rate" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell32" Text="Taxable Amount" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell33" Text="VAT" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="15.12">
+          <TableCell Name="Cell36" Text="16%" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell37" Text="[TotalReal]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+          <TableCell Name="Cell38" Text="[VatValue]" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text14" Top="236.25" Width="264.6" Height="20.79" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+      <ChildBand Name="Child2" Top="333.04" Width="264.6" Height="192.78" Guides="3.78,20.44,22.68,39.34,39.69,134.19">
+        <TextObject Name="Text9" Width="264.6" Height="16.66" Dock="Top" Text="SCU INFORMATION" HorzAlign="Center" Font="Consolas, 10pt"/>
+        <TableObject Name="Table5" Top="16.66" Width="264.6" Height="75.6" Dock="Top">
+          <TableColumn Name="Column12" Width="103.95"/>
+          <TableColumn Name="Column13" Width="158.76"/>
+          <TableRow Name="Row11" Height="15.12">
+            <TableCell Name="Cell39" Text="Date: [OilDate]" VertAlign="Center" Font="Consolas, 7pt"/>
+            <TableCell Name="Cell40" Text="Time: [OilTime]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 7pt"/>
+          </TableRow>
+          <TableRow Name="Row12" Height="15.12">
+            <TableCell Name="Cell44" Text="SCU ID" VertAlign="Center" Font="Consolas, 7pt"/>
+            <TableCell Name="Cell45" Text="[SCUID]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 7pt"/>
+          </TableRow>
+          <TableRow Name="Row13" Height="15.12">
+            <TableCell Name="Cell49" Text="CU INVOICE NO.:" VertAlign="Center" Font="Consolas, 7pt"/>
+            <TableCell Name="Cell50" Text="[CUINVOICENO]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 7pt"/>
+          </TableRow>
+          <TableRow Name="Row14" Height="15.12">
+            <TableCell Name="Cell54" Text="Internal Data:" VertAlign="Center" Font="Consolas, 7pt"/>
+            <TableCell Name="Cell55" Text="[InternalData]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 6pt"/>
+          </TableRow>
+          <TableRow Name="Row15" Height="15.12">
+            <TableCell Name="Cell59" Text="Receipt Signature:" VertAlign="Center" Font="Consolas, 7pt"/>
+            <TableCell Name="Cell60" Text="[Signature]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 7pt"/>
+          </TableRow>
+        </TableObject>
+        <BarcodeObject Name="Barcode1" Left="81.27" Top="98.28" Width="94.5" Height="94.5" AutoSize="false" Text="[BarImage]" ShowText="false" AllowExpressions="true" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+        <ChildBand Name="Child1" Top="526.96" Width="264.6" Height="45.36">
+          <TextObject Name="Text15" Width="264.6" Height="7.56" Dock="Top" Text="-------------------------------------" HorzAlign="Center" VertAlign="Center" Font="Consolas, 9pt"/>
+          <TableObject Name="Table6" Top="7.56" Width="264.6" Height="37.8" Dock="Top">
+            <TableColumn Name="Column14" Width="132.3"/>
+            <TableColumn Name="Column15" Width="132.3"/>
+            <TableRow Name="Row16">
+              <TableCell Name="Cell61" Text="RECEIPT NUMBER:" VertAlign="Center" Font="Consolas, 9pt"/>
+              <TableCell Name="Cell62" Text="1" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+            </TableRow>
+            <TableRow Name="Row17">
+              <TableCell Name="Cell66" Text="DATE: [OilDate]" VertAlign="Center" Font="Consolas, 9pt"/>
+              <TableCell Name="Cell67" Text="TIME: [OilTime]" HorzAlign="Right" VertAlign="Center" Font="Consolas, 9pt"/>
+            </TableRow>
+          </TableObject>
+        </ChildBand>
+      </ChildBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="573.46" Width="264.6" Height="30.24">
+      <TextObject Name="Text7" Width="264.6" Height="30.24" Dock="Top" Text="THANK YOU&#13;&#10;WE LOOK FORWARD TO EARNING YOUR BUSINESS" HorzAlign="Center" VertAlign="Center" Font="Consolas, 8pt"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

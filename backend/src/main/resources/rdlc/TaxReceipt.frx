@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/24/2024 11:17:49" ReportInfo.Modified="02/11/2025 11:34:39" ReportInfo.CreatorVersion="2019.1.5.0">
+  <Dictionary>
+    <TableDataSource Name="Table1" ReferenceName="Data.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="GradeM" DataType="System.String" PropName="Column"/>
+      <Column Name="Amount" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <Parameter Name="TaxNumber" DataType="System.String"/>
+    <Parameter Name="TaxAccountDate" DataType="System.String"/>
+    <Parameter Name="TaxCompanyName" DataType="System.String"/>
+    <Parameter Name="TaxAddressTel" DataType="System.String"/>
+    <Parameter Name="TaxPayerID" DataType="System.String"/>
+    <Parameter Name="TaxStationCode" DataType="System.String"/>
+    <Parameter Name="TaxTranNo" DataType="System.String"/>
+    <Parameter Name="TaxSaleDate" DataType="System.String"/>
+    <Parameter Name="TaxEmployee" DataType="System.String"/>
+    <Parameter Name="TaxPrintDate" DataType="System.String"/>
+    <Parameter Name="TaxAmountText" DataType="System.String"/>
+    <Parameter Name="TaxProductAmount" DataType="System.String"/>
+    <Parameter Name="TaxProductValue" DataType="System.String"/>
+    <Parameter Name="TaxVatAmount" DataType="System.String"/>
+    <Parameter Name="TaxTotalAmount" DataType="System.String"/>
+    <Parameter Name="TaxProductList" DataType="System.String"/>
+    <Parameter Name="TaxCustomerCompany" DataType="System.String"/>
+    <Parameter Name="TaxAddress" DataType="System.String"/>
+    <Parameter Name="TaxBranch" DataType="System.String"/>
+    <Parameter Name="TaxCarTag" DataType="System.String"/>
+    <Parameter Name="TaxProvince" DataType="System.String"/>
+    <Parameter Name="TaxTransactionNumber" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" TopMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1" Guides="0,224.91,228.69,-1.89,226.8,1.89,43.47,147.42,153.09">
+    <ReportTitleBand Name="ReportTitle1" Width="226.8" Height="13.23" CanGrow="true" CanShrink="true" Guides="3.78,18.9">
+      <TextObject Name="Text1" Width="226.8" Height="13.23" Dock="Top" Text="ต้นฉบับ" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="14.37" Width="226.8" Height="60.48" CanGrow="true" CanShrink="true" Guides="1.89,15.12,9.45,28.35,52.92,58.59,69.93,86.94,115.3,0,14.18,28.36,117.18,126.63,71.82,85.05">
+      <TextObject Name="Text2" Width="226.8" Height="11.34" Dock="Top" Text="เลขที่:[TaxNumber]" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+      <TextObject Name="Text3" Top="11.34" Width="226.8" Height="11.34" Dock="Top" Text="วันที่ทางบัญชี:[TaxAccountDate]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+      <TextObject Name="Text4" Top="22.68" Width="226.8" Height="11.34" Dock="Top" Text="ใบเสร็จรับเงิน / ใบกำกับภาษี" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+      <TextObject Name="Text5" Top="34.02" Width="226.8" Height="11.34" Dock="Top" Text="[TaxCompanyName]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+      <TextObject Name="Text6" Top="45.36" Width="226.8" Height="15.12" Dock="Top" Text="[TaxAddressTel]" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 8pt"/>
+      <ChildBand Name="Child1" Top="76" Width="226.8" Height="68.04" Border.Lines="Bottom" Border.Style="Dash" Border.Width="0.25">
+        <TableObject Name="Table2" Width="226.8" Height="11.34" Dock="Top">
+          <TableColumn Name="Column1" Width="75.6"/>
+          <TableColumn Name="Column2" Width="75.6"/>
+          <TableColumn Name="Column3" Width="75.6"/>
+          <TableRow Name="Row1" Height="11.34">
+            <TableCell Name="Cell1" Text="เลขประจำตัวผู้เสียภาษี" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell2" Text="[TaxPayerID]" VertAlign="Center" Font="Calibri, 5pt"/>
+            <TableCell Name="Cell3" Text="[TaxBranch]" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          </TableRow>
+        </TableObject>
+        <TableObject Name="Table3" Top="11.34" Width="226.8" Height="56.7" Dock="Top">
+          <TableColumn Name="Column4" Width="60.48"/>
+          <TableColumn Name="Column5" Width="166.32"/>
+          <TableRow Name="Row2" Height="11.34">
+            <TableCell Name="Cell4" Text="รหัสสถานี" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell5" Text="[TaxStationCode]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row3" Height="11.34">
+            <TableCell Name="Cell9" Text="Tran No." VertAlign="Center" Font="Calibri, 5pt"/>
+            <TableCell Name="Cell10" Text="[TaxTranNo]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row4" Height="11.34">
+            <TableCell Name="Cell14" Text="วันที่ขาย" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell15" Text="[TaxSaleDate]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row5" Height="11.34">
+            <TableCell Name="Cell19" Text="พนักงาน" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell20" Text="[TaxEmployee]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row6" Height="11.34">
+            <TableCell Name="Cell24" Text="วันที่พิมพ์" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell25" Text="[TaxPrintDate]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+        </TableObject>
+      </ChildBand>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="145.18" Width="226.8" Height="56.7" Border.Lines="Bottom" Border.Style="Dash" Border.Width="0.25" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,11.34">
+      <TableObject Name="Table4" Width="226.8" Height="56.7" Dock="Top">
+        <TableColumn Name="Column6" Width="156.87"/>
+        <TableColumn Name="Column7" Width="69.93"/>
+        <TableRow Name="Row7" Height="11.34">
+          <TableCell Name="Cell26" Text="[TaxProductList]" VertAlign="Center" Font="Calibri, 6pt"/>
+          <TableCell Name="Cell27" Text="[TaxProductAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="11.34">
+          <TableCell Name="Cell31" Text="มูลค่าสินค้า :" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          <TableCell Name="Cell32" Text="[TaxProductValue]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="11.34">
+          <TableCell Name="Cell36" Text="ภาษีมูลค่าเพิ่ม 7% :" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          <TableCell Name="Cell37" Text="[TaxVatAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="11.34">
+          <TableCell Name="Cell41" Text="รวมเป็นเงิน :" HorzAlign="Right" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          <TableCell Name="Cell42" Text="[TaxTotalAmount]" HorzAlign="Right" VertAlign="Center" Font="Calibri, 5pt"/>
+        </TableRow>
+        <TableRow Name="Row11" Height="11.34">
+          <TableCell Name="Cell46" Text="รวมเป็นเงินตัวอักษร([TaxAmountText])" VertAlign="Center" Font="Dindan Mai, 6pt" ColSpan="2"/>
+          <TableCell Name="Cell47" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+        </TableRow>
+      </TableObject>
+      <ChildBand Name="Child2" Top="203.02" Width="226.8" Height="120.96">
+        <TableObject Name="Table5" Width="226.8" Height="26.46" Dock="Top">
+          <TableColumn Name="Column8" Width="58.59"/>
+          <TableColumn Name="Column9" Width="168.21"/>
+          <TableRow Name="Row12" Height="11.34">
+            <TableCell Name="Cell48" Text="ลุกค้า :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell49" Text="[TaxCustomerCompany]" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row13" Height="15.12">
+            <TableCell Name="Cell53" Text="[TaxAddress]" VertAlign="Center" Font="Dindan Mai, 7pt" ColSpan="2"/>
+            <TableCell Name="Cell54"/>
+          </TableRow>
+        </TableObject>
+        <TableObject Name="Table6" Top="26.46" Width="226.8" Height="11.34" Dock="Top">
+          <TableColumn Name="Column10" Width="75.6"/>
+          <TableColumn Name="Column11" Width="75.6"/>
+          <TableColumn Name="Column12" Width="75.6"/>
+          <TableRow Name="Row14" Height="11.34">
+            <TableCell Name="Cell55" Text="เลขประจำตัวผู้เสียภาษี :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell56" Text="[TaxPayerID]" VertAlign="Center" Font="Calibri, 5pt"/>
+            <TableCell Name="Cell57" Text="[TaxBranch]" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          </TableRow>
+        </TableObject>
+        <TableObject Name="Table7" Top="37.8" Width="226.8" Height="22.68" Dock="Top">
+          <TableColumn Name="Column13" Width="56.7"/>
+          <TableColumn Name="Column14" Width="56.7"/>
+          <TableColumn Name="Column15" Width="56.7"/>
+          <TableColumn Name="Column16" Width="56.7"/>
+          <TableRow Name="Row15" Height="11.34">
+            <TableCell Name="Cell58" Text="ทะเบียนรถ :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell59" Text="[TaxCarTag]" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell60" Text="จังหวัด :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell61" Text="[TaxProvince]" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row16" Height="11.34">
+            <TableCell Name="Cell62" Text="เลขไมล์ :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell63" ColSpan="3"/>
+            <TableCell Name="Cell64"/>
+            <TableCell Name="Cell65"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text7" Top="60.48" Width="226.8" Height="26.46" Dock="Top" Text="ได้รับสินค้าตามรายการบนนี้ไว้ถูกต้อง &#13;&#10;และในสภาพเรียบร้อยทุกประการ" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+        <TableObject Name="Table8" Top="86.94" Width="226.8" Height="22.68" Dock="Top">
+          <TableColumn Name="Column17" Width="64.26"/>
+          <TableColumn Name="Column18" Width="162.54"/>
+          <TableRow Name="Row17" Height="11.34">
+            <TableCell Name="Cell66" Text="อ้างอิงเอกสารเลขที่ :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell67" Text="[TaxTransactionNumber]" VertAlign="Center" Font="Calibri, 5pt"/>
+          </TableRow>
+          <TableRow Name="Row18" Height="11.34">
+            <TableCell Name="Cell71" Text="หมายเหตุ :" VertAlign="Center" Font="Dindan Mai, 5pt"/>
+            <TableCell Name="Cell72"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text8" Top="109.62" Width="226.8" Height="11.34" Dock="Top" Border.Lines="Bottom" Border.Width="0.25" HorzAlign="Center" VertAlign="Center" Font="Calibri, 5pt"/>
+      </ChildBand>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="325.12" Width="226.8" Height="34.02" CanGrow="true" CanShrink="true" CanBreak="true" Guides="0,13.23,26.46,37.8">
+      <TextObject Name="Text9" Width="226.8" Height="17.01" Dock="Top" Text="ลงชื่อผู้รับเงิน" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+      <TextObject Name="Text10" Top="17.01" Width="226.8" Height="17.01" Dock="Top" Text="=====  ขอบคุณที่ใช้บริการ  =====" HorzAlign="Center" VertAlign="Center" Font="Dindan Mai, 6pt"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>
