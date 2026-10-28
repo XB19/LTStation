@@ -85,7 +85,8 @@ export default function SwApp() {
   if (stage.kind === 'form') {
     return (
       <div className="sw-desktop">
-        <RemoteForm form={stage.form} onOpen={open}
+        {/* key : une fenêtre neuve à chaque étape (sinon l'état de la page de connexion passerait à la fenêtre principale) */}
+        <RemoteForm key={`form:${stage.form}`} form={stage.form} onOpen={open}
           onClose={(result) => (result === 'OK' && stage.next ? setStage({ kind: 'main', form: stage.next }) : setStage({ kind: 'exit' }))} />
         {opened.map((o) => (
           <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
@@ -96,7 +97,7 @@ export default function SwApp() {
   }
   return (
     <div className="sw-main">
-      <RemoteForm form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
+      <RemoteForm key={`main:${stage.form}`} form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
       {opened.map((o) => (
         <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
           onClose={() => setOpened((x) => x.filter((y) => y.key !== o.key))} />

@@ -588,6 +588,9 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   const onFrameLoad = () => {
     const w = frame.current?.contentWindow as (Window & { my?: Record<string, (...a: unknown[]) => void> }) | null
     if (!w || !web) return
+    // Formulaires des pages d'origine (<form> sans action, bouton de type submit) : dans NanUI la fenêtre se fermait
+    // avant le rechargement ; ici, l'envoi rechargerait la page (identifiants dans l'adresse) et couperait le lien « my ».
+    w.document.addEventListener('submit', (e) => e.preventDefault(), true)
     w.my = {}
     for (const [name, handler] of Object.entries(web.my)) {
       w.my[name] = (...a: unknown[]) => {
