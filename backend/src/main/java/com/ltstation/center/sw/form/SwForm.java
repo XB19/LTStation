@@ -372,6 +372,22 @@ public abstract class SwForm {
         return child;
     }
 
+    /**
+     * new Form() + abonnements aux événements + form.Show() : fenêtre non modale qui garde sa référence Java
+     * (ses gestionnaires appellent directement ceux de cette fenêtre).
+     */
+    protected <T extends SwForm> T Show(T child) {
+        SwWindow w = child.getClass().getAnnotation(SwWindow.class);
+        SwFormController.attach(this, child, w == null ? child.getClass().getSimpleName() : w.value());
+        messages.add(Map.of("open", child.formName, "id", child.id));
+        return child;
+    }
+
+    /** report.Preview = previewControl ; report.Prepare() ; report.ShowPrepared(). */
+    protected void ShowPrepared(com.ltstation.center.sw.hw.FrxReport report, String preview) {
+        c(preview).Pdf(report.Prepare());
+    }
+
     /** Interrogation périodique du serveur (mises à jour venues des fils de la station). */
     protected void Poll(int ms) {
         timers.put("$poll", ms);

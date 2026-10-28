@@ -261,6 +261,11 @@ public class Ctl {
         return set("Value", v == null ? null : v.format(Conv.STD));
     }
 
+    /** PreviewControl : rapport préparé (PDF) affiché dans le contrôle. */
+    public Ctl Pdf(byte[] pdf) {
+        return set("Pdf", pdf == null ? "" : java.util.Base64.getEncoder().encodeToString(pdf));
+    }
+
     /** ProgressBar.Value (entre Minimum et Maximum). */
     public Ctl Value(Number v) {
         return set("Value", v);

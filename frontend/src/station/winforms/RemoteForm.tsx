@@ -72,7 +72,12 @@ interface FormState {
   my?: Record<string, string>
   close?: string
   result?: Props
+  /** Modifications de la fenêtre propriétaire faites par cette fenêtre */
+  owner?: FormState & { id: string }
 }
+
+/** Fenêtres affichées, par identifiant serveur : saisie courante et application d une réponse (fenêtres propriétaires). */
+const live = new Map<string, { values: () => Record<string, Props>; apply: (s: FormState) => void }>()
 
 export interface RemoteFormProps {
   form: string
@@ -80,7 +85,7 @@ export interface RemoteFormProps {
   /** Fermeture : résultat (OK / Cancel…) et valeurs renvoyées à la fenêtre parente */
   onClose: (result: string, data: Props) => void
   /** Ouverture d'une autre fenêtre sans attendre (Form.Show()) ; parent = fenêtre propriétaire (Owner) */
-  onOpen?: (form: string, args: Props, parent?: string) => void
+  onOpen?: (form: string, args: Props, parent?: string, attachId?: string) => void
   /** Fenêtre propriétaire (Owner) côté serveur */
   parent?: string
   /** Fenêtre déjà créée sur le serveur (fenêtre intégrée) : rattachement sans ouverture */
@@ -260,7 +265,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       } else if (m.confirm !== undefined) {
         const yes = await ask(m.confirm)
         fire('$continue', '', { key: m.key, result: yes ? 'OK' : 'Cancel', data: {} })
-      } else if (m.open) onOpen?.(m.open, m.args ?? {})
+      } else if (m.open) onOpen?.(m.open, m.args ?? {}, idRef.current, m.id)
       else if (m.openFile !== undefined) pickFile(m.openFile, m.key!)
       else if (m.saveFile !== undefined) {
         const ext = await chooseSave(m.saveFile)
@@ -288,7 +293,9 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       try {
         for (;;) {
           const { data } = await http.post<FormState>(`/sw/form/${idRef.current}/event`,
-            { handler, sender, e, values: clientValues(), grids: clientGrids(), answers })
+            { handler, sender, e, values: clientValues(), grids: clientGrids(), answers,
+              ownerValues: parent ? live.get(parent)?.values() : undefined })
+          if (data.owner) live.get(data.owner.id)?.apply(data.owner)
           const q = await apply(data)
           if (!q) break
           answers[q.key] = q.type === 'confirm' ? await ask(q.text ?? '') : await sub(q.form!, q.args ?? {})
@@ -300,6 +307,14 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     queue.current = queue.current.then(run, run)
     return queue.current
   }
+
+  const liveRef = useRef({ values: clientValues, apply: (st: FormState) => { void apply(st) } })
+  liveRef.current = { values: clientValues, apply: (st: FormState) => { void apply(st) } }
+  useEffect(() => {
+    if (!id) return
+    live.set(id, { values: () => liveRef.current.values(), apply: (st) => liveRef.current.apply(st) })
+    return () => { live.delete(id) }
+  }, [id])
 
   useEffect(() => {
     closed.current = false
@@ -378,7 +393,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       // ProgressBar : pourcentage de Value entre Minimum et Maximum (100 par défaut)
       const max = Number(p.Maximum ?? 100), min = Number(p.Minimum ?? 0)
       values[c.name] = max > min ? Math.round((100 * (Number(p.Value ?? 0) - min)) / (max - min)) : 0
-    } else if (isCheck(t)) values[c.name] = !!p.Checked
+    } else if (t === 'PreviewControl') values[c.name] = p.Pdf ?? ''
+    else if (isCheck(t)) values[c.name] = !!p.Checked
     else values[c.name] = p.Text ?? ''
     if ('Text' in p && TEXT_TYPES.test(t) && !/TextBox|NumericUpDown/.test(t)) texts[c.name] = tr(String(p.Text ?? ''))
     if (p.Visible === false) hidden.push(c.name)

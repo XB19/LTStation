@@ -217,15 +217,23 @@ public class SwFormController {
         return null;
     }
 
-    @SuppressWarnings("unchecked")
-    private static void applyClient(SwForm f, Map<String, Object> body) {
-        if (body.get("values") instanceof Map<?, ?> vals) {
+    private static void applyValues(SwForm f, Object values) {
+        if (values instanceof Map<?, ?> vals) {
             vals.forEach((k, v) -> {
                 if (v instanceof Map<?, ?> props) {
                     Ctl c = f.c(String.valueOf(k));
                     props.forEach((pk, pv) -> c.fromClient(String.valueOf(pk), pv));
                 }
             });
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void applyClient(SwForm f, Map<String, Object> body) {
+        applyValues(f, body.get("values"));
+        // Saisie de la fenêtre propriétaire (fenêtre non modale ouverte par Show) : lue par le code de l'enfant
+        if (f.Owner != null) {
+            applyValues(f.Owner, body.get("ownerValues"));
         }
         if (body.get("grids") instanceof Map<?, ?> gs) {
             gs.forEach((k, v) -> f.g(String.valueOf(k)).setCurrent(v instanceof Number n ? n.intValue() : -1));
@@ -290,7 +298,17 @@ public class SwFormController {
             // Transaction restée ouverte (question en attente, exception) : annulée
             com.ltstation.center.sw.core.SW.db().rollbackOpen();
         }
-        return state(f, full, suspend, error);
+        Map<String, Object> out = state(f, full, suspend, error);
+        // Modifications de la fenêtre propriétaire faites par l'enfant (événements TransferConfirm…) : renvoyées tout de suite
+        SwForm owner = f.Owner;
+        if (owner != null && owner.id != null && suspend == null) {
+            synchronized (owner) {
+                Map<String, Object> o = state(owner, false, null, null);
+                o.put("id", owner.id);
+                out.put("owner", o);
+            }
+        }
+        return out;
     }
 
     private static Map<String, Object> state(SwForm f, boolean full, Map<String, Object> suspend, String error) {

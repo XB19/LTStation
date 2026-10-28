@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import { Button, Checkbox, DatePicker, Dropdown, Input, Progress, Select, Table, TimePicker } from 'antd'
 import type { MenuProps } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
@@ -54,6 +54,21 @@ export interface MenuItem {
 }
 
 const layouts = import.meta.glob<Layout>('./layouts/*.json', { eager: true, import: 'default' })
+
+/** PreviewControl de FastReport : rapport préparé (PDF en base64) affiché dans la fenêtre. */
+function PdfPreview({ data }: { data: string }) {
+  const url = useMemo(() => {
+    if (!data) return ''
+    const bin = atob(data)
+    const bytes = new Uint8Array(bin.length)
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+    return URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }))
+  }, [data])
+  useEffect(() => () => { if (url) URL.revokeObjectURL(url) }, [url])
+  return url
+    ? <iframe title="preview" src={url} style={{ width: '100%', height: '100%', minHeight: 480, border: 0 }} />
+    : <div style={{ width: '100%', minHeight: 480, background: '#f5f5f5' }} />
+}
 
 export function getLayout(name: string): Layout {
   const l = layouts[`./layouts/${name}.json`]
@@ -284,6 +299,8 @@ export default function WinForm(p: WinFormProps) {
         return <Button size="small" type={c.size[1] >= 30 ? 'primary' : 'default'} disabled={dis || !p.buttons?.[c.name]}
           loading={p.busy === c.name} style={{ minWidth: Math.min(Math.max(c.size[0], 70), 140), height: c.size[1] >= 30 ? 34 : 26 }}
           onClick={() => p.buttons?.[c.name]?.()}>{text(c)}</Button>
+      case 'PreviewControl':
+        return <PdfPreview data={String(v ?? '')} />
       case 'ProgressBar':
       case 'SkinProgressBar':
         return <Progress percent={Number(v ?? 0)} size="small" style={{ width: w, margin: 0 }} />
@@ -314,7 +331,10 @@ export default function WinForm(p: WinFormProps) {
             onClick={(e) => e.stopPropagation()} onChange={(v) => g.onCellEdit!(r, x.name, String(v))} />
         }
         if (g?.editable && !x.readOnly && g.onCellEdit) return <EditableCell value={val} onCommit={(v) => g.onCellEdit!(r, x.name, v)} />
-        return g?.render?.[x.name] ? g.render[x.name](val, r) : (val as ReactNode)
+        if (g?.render?.[x.name]) return g.render[x.name](val, r)
+        // DataGridViewCheckBoxCell
+        if (typeof val === 'boolean') return <Checkbox checked={val} />
+        return val as ReactNode
       },
     }))
     const scrollY = Math.max(c.size[1] - 60, 80)

@@ -28,6 +28,8 @@ interface Opened {
   form: string
   args: Record<string, unknown>
   parent?: string
+  /** Fenêtre déjà créée sur le serveur (Form.Show() d une instance) */
+  attachId?: string
 }
 
 export default function SwApp() {
@@ -68,8 +70,8 @@ export default function SwApp() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const open = (form: string, args: Record<string, unknown>, parent?: string) =>
-    setOpened((o) => [...o, { key: Date.now() + Math.random(), form, args, parent }])
+  const open = (form: string, args: Record<string, unknown>, parent?: string, attachId?: string) =>
+    setOpened((o) => [...o, { key: Date.now() + Math.random(), form, args, parent, attachId }])
 
   if (stage.kind === 'boot') {
     return <div style={{ height: '100vh', display: 'grid', placeItems: 'center' }}><Spin size="large" /></div>
@@ -86,7 +88,7 @@ export default function SwApp() {
         <RemoteForm form={stage.form} onOpen={open}
           onClose={(result) => (result === 'OK' && stage.next ? setStage({ kind: 'main', form: stage.next }) : setStage({ kind: 'exit' }))} />
         {opened.map((o) => (
-          <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} onOpen={open}
+          <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
             onClose={() => setOpened((x) => x.filter((y) => y.key !== o.key))} />
         ))}
       </div>
@@ -96,7 +98,7 @@ export default function SwApp() {
     <div className="sw-main">
       <RemoteForm form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
       {opened.map((o) => (
-        <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} onOpen={open}
+        <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
           onClose={() => setOpened((x) => x.filter((y) => y.key !== o.key))} />
       ))}
       {boot && null}
