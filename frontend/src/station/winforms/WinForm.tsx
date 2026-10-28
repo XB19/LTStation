@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Button, Checkbox, DatePicker, Dropdown, Input, Progress, Select, Table, TimePicker } from 'antd'
 import type { MenuProps } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
@@ -267,6 +267,15 @@ function placeChildren(kids: Ctrl[], offset: [number, number]): Map<string, CSSP
 const PAGER = new Set(['CurEnd', 'Cur', 'CurPage', 'Next', 'NextEnd', 'TotalPageSecond', 'TotalPage', 'TotalCount', 'MessageLabel', 'MLabel'])
 const isPagerLabel = (c: Ctrl) => c.type.endsWith('Label') && (c.text === '/' || /^\d+$/.test(c.text))
 
+/** Cellule de la grille des champs libres (plusieurs contrôles possibles, ex. libellé + « * »). */
+interface Slot {
+  row: number
+  col: number
+  span: number
+  label: boolean
+  items: Ctrl[]
+}
+
 const CONTAINERS = new Set(['SkinTabControl', 'TabControl', 'GroupBox', 'SkinCaptionPanel', 'Panel', 'SkinPanel', 'SkinGroupBox'])
 const isLabel = (c: Ctrl) => c.type === 'Label' || c.type === 'SkinLabel'
 const isGrid = (c: Ctrl) => c.type.endsWith('DataGridView')
@@ -440,11 +449,12 @@ export default function WinForm(p: WinFormProps) {
       },
     }))
     const scrollY = fillH ? Math.max(fillH - 34, 30) : Math.max(c.size[1] - 60, 80)
+    // Sans lignes, pas de largeur « max-content » : le message « Aucune donnée » élargissait la fenêtre sans fin
     return (
       <div className="wf-grid" style={fillH ? { height: fillH, minWidth: 0, overflow: 'hidden' } : { minHeight: Math.min(c.size[1], 520), minWidth: 0, overflow: 'hidden' }}>
         <Table<Row> size="small" bordered columns={cols} dataSource={g?.rows ?? []} loading={g?.loading}
           rowKey={g?.rowKey ?? ((r) => String(r.id ?? r.key ?? JSON.stringify(r)))}
-          pagination={g?.pagination ?? false} scroll={{ x: 'max-content', y: scrollY }} summary={g?.summary}
+          pagination={g?.pagination ?? false} scroll={{ x: g?.rows?.length ? 'max-content' : undefined, y: scrollY }} summary={g?.summary}
           rowClassName={(r) => (g?.selectedKey !== undefined && (typeof g.rowKey === 'string' ? r[g.rowKey] : undefined) === g.selectedKey ? 'wf-row-sel' : '')}
           onRow={(r) => ({ onDoubleClick: () => g?.onDoubleClick?.(r), onClick: () => g?.onClick?.(r), style: r.__fore || r.__back ? { color: r.__fore ? String(r.__fore).toLowerCase() : undefined, background: r.__back ? String(r.__back).toLowerCase() : undefined } : undefined })} />
       </div>
@@ -472,7 +482,7 @@ export default function WinForm(p: WinFormProps) {
       return best
     }
     // Cellules : plusieurs contrôles peuvent partager une cellule (ex. libellé + « * » obligatoire)
-    const slots = new Map<string, { row: number; col: number; span: number; label: boolean; items: Ctrl[] }>()
+    const slots = new Map<string, Slot>()
     rows.forEach((row, ri) => {
       row.sort((a, b) => a.loc[0] - b.loc[0])
       row.forEach((c, i) => {
@@ -495,10 +505,12 @@ export default function WinForm(p: WinFormProps) {
         else slots.set(key, { row: ri + 1, col, span, label: isLabel(c), items: [c] })
       })
     })
+    const slotItems = (s: Slot) =>
+      s.items.map((c) => <span key={c.name} style={{ display: 'contents' }}>{c.text === '*' && isLabel(c) ? <span className="wf-req">*</span> : renderControl(c)}</span>)
     const cells: ReactNode[] = [...slots.entries()].map(([key, s]) => (
       <div key={key} className={s.label ? 'wf-cell wf-cell-label' : 'wf-cell'}
         style={{ gridRow: s.row, gridColumn: s.span > 1 ? `${s.col} / span ${s.span}` : s.col, gap: 6 }}>
-        {s.items.map((c) => <span key={c.name} style={{ display: 'contents' }}>{c.text === '*' && isLabel(c) ? <span className="wf-req">*</span> : renderControl(c)}</span>)}
+        {slotItems(s)}
       </div>
     ))
     // Colonne de champ : largeur d'origine, réductible si la fenêtre manque de place
@@ -506,7 +518,44 @@ export default function WinForm(p: WinFormProps) {
     const template = anchors.length
       ? widths.map((w) => (w > 0 ? `max-content minmax(${Math.min(w, 90)}px, ${w + 20}px)` : 'max-content max-content')).join(' ') + ' auto'
       : '1fr'
-    return <div className="wf-flow" style={{ gridTemplateColumns: template }}>{cells}</div>
+    const grid = <div className="wf-flow" style={{ gridTemplateColumns: template }}>{cells}</div>
+
+    // Fenêtre trop étroite : chaque ligne d'origine devient une suite de paires « libellé (ou case) + champ »
+    // qui passent à la ligne ensemble, dans le même ordre.
+    const isField = (s: Slot) => !s.label && s.items.some((c) => inFlow.has(c.name))
+    const isLead = (s: Slot) => s.label || s.items.every((c) => c.type.includes('CheckBox') || c.type.includes('RadioButton'))
+    const lines = new Map<number, Slot[]>()
+    for (const sl of [...slots.values()].sort((a, b) => a.col - b.col)) {
+      if (!lines.has(sl.row)) lines.set(sl.row, [])
+      lines.get(sl.row)!.push(sl)
+    }
+    const wrapped = (
+      <div className="wf-flow-wrap">
+        {[...lines.entries()].sort((a, b) => a[0] - b[0]).map(([row, line]) => {
+          const groups: Slot[][] = []
+          let cur: Slot[] = []
+          const flush = () => { if (cur.length) groups.push(cur); cur = [] }
+          for (const sl of line) {
+            if (!isField(sl) && !isLead(sl)) { flush(); groups.push([sl]); continue }
+            if (cur.some(isField)) flush()
+            cur.push(sl)
+          }
+          flush()
+          return (
+            <div key={row} className="wf-wrap-row">
+              {groups.map((g, gi) => (
+                <div key={gi} className={g.every((x) => x.label) ? 'wf-pair wf-pair-text' : 'wf-pair'}>
+                  {g.map((x) => (isField(x)
+                    ? <div key={x.col} className="wf-pair-field" style={{ width: Math.max(...x.items.map((c) => (inFlow.has(c.name) ? c.size[0] : 0)), 90) + 20 }}>{slotItems(x)}</div>
+                    : <div key={x.col} className={x.label ? 'wf-pair-label' : 'wf-pair-lead'}>{slotItems(x)}</div>))}
+                </div>
+              ))}
+            </div>
+          )
+        })}
+      </div>
+    )
+    return <FitFlow grid={grid} wrapped={wrapped} />
   }
 
   /** Conteneur : champs libres puis enfants ancrés (haut, gauche/remplissage/droite, bas). */
@@ -528,8 +577,9 @@ export default function WinForm(p: WinFormProps) {
         {middle.length > 0 && (
           <div className="wf-middle">
             {middle.map((c) => box(c, c.dock === 'fill'
-              ? (isGrid(c) ? { flex: '1 1 0', minWidth: 0 } : { flex: '1 1 auto', minWidth: 'min-content' })
-              : { flex: '0 0 auto', minWidth: isGrid(c) ? c.size[0] : undefined }))}
+              // Largeur d'origine comme base : passe à la ligne si elle ne tient pas à côté des autres, puis rétrécit
+              ? (isGrid(c) ? { flex: '1 1 0', minWidth: 0 } : { flex: `1 1 ${Math.min(c.size[0], 480)}px`, minWidth: 0 })
+              : { flex: '0 1 auto', minWidth: isGrid(c) ? `min(${c.size[0]}px, 100%)` : 0 }))}
           </div>
         )}
         {bottom.sort((a, b) => a.loc[1] - b.loc[1]).map((c) => box(c))}
@@ -736,6 +786,43 @@ export default function WinForm(p: WinFormProps) {
   // Clic sur le fond (Panel / fenêtre) : seulement s il ne vient pas d un contrôle enfant, comme en WinForms
   return <div className="wf-root" style={rootBg ? { backgroundImage: `url(/station-web/${rootBg})`, backgroundSize: 'cover' } : undefined}
     onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.('$this', 'Click') }}>{renderBody('$this')}</div>
+}
+
+/**
+ * Affiche la grille alignée comme l'original tant qu'elle tient dans la largeur disponible,
+ * sinon la version en paires qui passent à la ligne ; revient à la grille si la place le permet.
+ */
+function FitFlow({ grid, wrapped }: { grid: ReactNode; wrapped: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const needed = useRef(0)
+  const [wrap, setWrap] = useState(false)
+  useLayoutEffect(() => {
+    const box = ref.current
+    if (!box) return
+    const check = () => {
+      if (!wrap) {
+        const g = box.firstElementChild as HTMLElement | null
+        if (g && g.scrollWidth > g.clientWidth + 1) {
+          needed.current = g.scrollWidth
+          setWrap(true)
+        }
+      } else if (box.clientWidth >= needed.current) setWrap(false)
+    }
+    check()
+    // Dans une fenêtre modale, le contenu n'est attaché à la page qu'après cet effet : nouvelle mesure au tick suivant
+    const t = window.setTimeout(check, 0)
+    // La largeur de la grille change aussi quand les champs finissent de s'afficher, sans que la boîte bouge
+    const ro = new ResizeObserver(check)
+    ro.observe(box)
+    if (!wrap) Array.from(box.firstElementChild?.children ?? []).forEach((cell) => ro.observe(cell))
+    window.addEventListener('resize', check)
+    return () => {
+      window.clearTimeout(t)
+      ro.disconnect()
+      window.removeEventListener('resize', check)
+    }
+  }, [wrap])
+  return <div ref={ref} className="wf-fit">{wrap ? wrapped : grid}</div>
 }
 
 /** État simple des champs d'une fenêtre. */

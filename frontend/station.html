@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LTStation Station</title>
+    <script>
+      // Thème appliqué avant le premier affichage (même clé que src/theme/ThemeProvider.tsx)
+      try {
+        var p = JSON.parse(localStorage.getItem('lt-appearance') || '{}')
+        var dark = p.modePref === 'dark' || (p.modePref !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+        document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable'
+      } catch (e) {}
+    </script>
+    <style>
+      html { background: #f3f3f9; }
+      html[data-theme='dark'] { background: #000; color-scheme: dark; }
+    </style>
   </head>
   <body>
     <div id="root"></div>

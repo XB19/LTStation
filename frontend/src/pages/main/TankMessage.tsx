@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Card, DatePicker, Form, Segmented, Space, Table, Tabs } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get } from '../../api/http'
 import PageHeader from '../../components/PageHeader'
@@ -47,7 +47,7 @@ function LevelChart() {
           series: [{ name: 'Hauteur', type: 'line', smooth: true, connectNulls: true, data: data.values }],
         }} />
       ) : (
-        <div style={{ color: '#999', padding: 24, textAlign: 'center' }}>Choisissez une station puis une cuve</div>
+        <div style={{ color: 'var(--lt-color-text-tertiary)', padding: 24, textAlign: 'center' }}>Choisissez une station puis une cuve</div>
       )}
     </Card>
   )

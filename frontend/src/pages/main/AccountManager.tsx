@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Button, Card, Col, Empty, Form, Input, Modal, Row, Select, Space, Statistic, Table, Tree, Typography, message } from 'antd'
+import { Button, Card, Col, Empty, Form, Input, Modal, Row, Select, Space, Statistic, Table, Tree, Typography, message, theme } from 'antd'
 import { PlusOutlined, EditOutlined } from '@ant-design/icons'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import { get, post, put } from '../../api/http'
 import PageHeader from '../../components/PageHeader'
 
@@ -40,6 +40,7 @@ const toTreeData = (nodes: TreeNode[]): AntTreeNode[] =>
 
 /** Gestion de la plateforme (Main/AccountManager d'origine). */
 export default function AccountManager() {
+  const { token } = theme.useToken()
   const [tree, setTree] = useState<TreeNode[]>([])
   const [selected, setSelected] = useState<{ id: number; name: string } | null>(null)
   const [totals, setTotals] = useState<Totals | null>(null)
@@ -185,7 +186,7 @@ export default function AccountManager() {
                       type: 'pie',
                       radius: ['0%', '60%'],
                       top: '15%',
-                      itemStyle: { borderRadius: 10, borderColor: '#fff', borderWidth: 2 },
+                      itemStyle: { borderRadius: 10, borderColor: token.colorBgContainer, borderWidth: 2 },
                       data: rows.map((r) => ({ name: r.name, value: r.totalAmount })),
                     },
                   ],

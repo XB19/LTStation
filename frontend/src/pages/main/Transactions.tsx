@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button, Card, DatePicker, Form, Input, InputNumber, Modal, Select, Space, Typography, message } from 'antd'
-import ReactECharts from 'echarts-for-react'
+import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get, post } from '../../api/http'
 import PageHeader from '../../components/PageHeader'

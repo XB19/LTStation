@@ -133,7 +133,7 @@ export function ScanPayBarcode() {
                   codes[id] && <a key="d" href={codes[id]} download={`qr_${stationId}_${id}.png`}><DownloadOutlined /> Télécharger</a>,
                 ].filter(Boolean)}>
                   <div style={{ height: 220, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {loading === id ? <Spin /> : codes[id] ? <Image src={codes[id]} height={200} /> : <span style={{ color: '#999' }}>Appareil {String(g.deviceNo)}</span>}
+                    {loading === id ? <Spin /> : codes[id] ? <Image src={codes[id]} height={200} /> : <span style={{ color: 'var(--lt-color-text-tertiary)' }}>Appareil {String(g.deviceNo)}</span>}
                   </div>
                 </Card>
               </Col>

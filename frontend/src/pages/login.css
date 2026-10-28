@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1e88e5 0%, #26c6da 100%);
-  padding: 16px;
+  background: var(--lt-brand-gradient);
+  padding: var(--lt-space-md);
 }
 
 .lt-login-card {
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--lt-elevation-overlay);
 }

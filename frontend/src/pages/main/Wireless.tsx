@@ -430,7 +430,7 @@ export function TcpDeviceShow() {
                         <div>Volume : <b>{fmtNum(n.volume)}</b> L</div>
                         <div>Prix : {fmtNum(n.newPpu ?? n.price, 3)}</div>
                         <div>Totalisateur : {fmtNum(n.volumeTotal)} L / {fmtNum(n.amountTotal)}</div>
-                        <div style={{ color: '#999', fontSize: 12 }}>{n.deviceNo ? `Boîtier ${n.deviceNo} · ` : ''}{fmtDateTime(n.updateTime)}</div>
+                        <div style={{ color: 'var(--lt-color-text-tertiary)', fontSize: 12 }}>{n.deviceNo ? `Boîtier ${n.deviceNo} · ` : ''}{fmtDateTime(n.updateTime)}</div>
                       </Card>
                     </Col>
                   )
@@ -451,7 +451,7 @@ export function TcpDeviceShow() {
                           <div>Hauteur : {fmtNum(t.currentHeight)} / {fmtNum(t.totalHeight)} mm</div>
                           <div>Eau : {fmtNum(t.currentWaterHeight)} mm ({fmtNum(t.waterHeightRatio)} %)</div>
                           <div>Température : {fmtNum(t.currentTemp)} °C</div>
-                          <div style={{ color: '#999', fontSize: 12 }}>{fmtDateTime(t.updateTime)}</div>
+                          <div style={{ color: 'var(--lt-color-text-tertiary)', fontSize: 12 }}>{fmtDateTime(t.updateTime)}</div>
                         </div>
                       </Space>
                     </Card>
