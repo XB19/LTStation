@@ -58,6 +58,7 @@ public final class IniInfo {
         DEFAULTS.put("DHTransferKey", "");
         DEFAULTS.put("FlyingAppKey", "");
         DEFAULTS.put("EFDPfxPassword", "");
+        DEFAULTS.put("MifareCardKey", "");
         DEFAULTS.put("clientKey", "");
         DEFAULTS.put("clientSecret", "");
         DEFAULTS.put("uid", "");
@@ -94,6 +95,8 @@ public final class IniInfo {
     public static String FlyingAppKey = "";
     /** Mot de passe du certificat PFX de l'EFD (Tanzanie), dans le fichier de réglages local uniquement. */
     public static String EFDPfxPassword = "";
+    /** Clé A/B des cartes employé Mifare (12 hex), lue dans StationSoftware.properties. */
+    public static String MifareCardKey = "";
     public static String UNITID = "";
     public static String ServerIP = "";
     public static int TransactionType;
@@ -283,6 +286,7 @@ public final class IniInfo {
         DHTransferKey = setting("DHTransferKey") == null ? "" : setting("DHTransferKey");
         FlyingAppKey = setting("FlyingAppKey") == null ? "" : setting("FlyingAppKey");
         EFDPfxPassword = setting("EFDPfxPassword") == null ? "" : setting("EFDPfxPassword");
+        MifareCardKey = setting("MifareCardKey") == null ? "" : setting("MifareCardKey");
         clientKey = setting("clientKey");
         clientSecret = setting("clientSecret");
         uid = setting("uid");
