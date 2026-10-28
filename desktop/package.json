@@ -1,8 +1,8 @@
 {
   "name": "ltstation-station",
   "productName": "LTStation Station",
-  "version": "1.0.0",
-  "description": "Logiciel Station (caisse, cartes, postes, rapports) — application de bureau",
+  "version": "1.1.0",
+  "description": "Logiciel Station (caisse, cartes, postes, rapports) — application de bureau avec serveur intégré",
   "main": "main.js",
   "private": true,
   "scripts": {
@@ -17,13 +17,36 @@
   "build": {
     "appId": "com.ltstation.station",
     "productName": "LTStation Station",
-    "directories": { "output": "dist" },
-    "files": ["main.js", "preload.js", "settings.html"],
-    "win": { "target": "nsis" },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "settings.html",
+      "setup.html",
+      "loading.html"
+    ],
+    "win": {
+      "target": "nsis"
+    },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "LTStation Station"
-    }
+      "shortcutName": "LTStation Station",
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true
+    },
+    "extraResources": [
+      {
+        "from": "build/runtime",
+        "to": "runtime"
+      },
+      {
+        "from": "../backend/target/center-1.0.0.jar",
+        "to": "server/center.jar"
+      }
+    ]
   }
 }

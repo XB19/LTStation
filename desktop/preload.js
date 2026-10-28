@@ -4,4 +4,6 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('ltDesktop', {
   getConfig: () => ipcRenderer.invoke('config:get'),
   saveServer: (url) => ipcRenderer.invoke('config:save', url),
+  getSetup: () => ipcRenderer.invoke('setup:get'),
+  saveSetup: (values) => ipcRenderer.invoke('setup:save', values),
 })

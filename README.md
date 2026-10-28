@@ -115,14 +115,27 @@ Les cartes déjà émises doivent recevoir un code PIN (« Code PIN oublié » o
 
 ### Application de bureau
 
+Comme Station.exe d'origine, l'application démarre elle-même le serveur LTStation intégré (Java et serveur fournis),
+ouvre le logiciel Station dans sa fenêtre et arrête le serveur à la fermeture.
+
 ```bash
-cd desktop
+# 1. interface et serveur
+cd frontend && npm run build                       # copiée dans backend/src/main/resources/static
+cd ../backend && ./mvnw package -Dmaven.test.skip=true
+# 2. Java embarqué (desktop/build/runtime)
+cd ../desktop
+jlink --add-modules java.base,java.sql,java.naming,java.desktop,java.management,java.instrument,java.security.jgss,java.security.sasl,java.net.http,java.xml,java.logging,java.scripting,java.prefs,java.compiler,java.smartcardio,java.transaction.xa,jdk.unsupported,jdk.crypto.ec,jdk.crypto.cryptoki,jdk.localedata,jdk.charsets,jdk.zipfs,jdk.management,jdk.naming.dns,jdk.httpserver --strip-debug --no-man-pages --no-header-files --compress=2 --output build/runtime
+# 3. application
 npm install
-npm start            # ouvre le logiciel Station (serveur par défaut : http://localhost:8080)
-npm run dist         # crée l'installateur Windows dans desktop/dist/
+npm start            # essai sans installation
+npm run dist         # installateur Windows dans desktop/dist/ (raccourcis Bureau et menu Démarrer)
 ```
 
-L'adresse du serveur se change dans le menu **Station > Adresse du serveur…**. Elle est enregistrée sur le PC de la station.
+Au premier lancement, la page **Base de données** demande le serveur PostgreSQL ; ces réglages sont écrits dans
+`%APPDATA%\LTStation Station\data\.env` (jamais dans l'installateur). Ce dossier contient aussi `station/`
+(réglages `StationSoftware.properties`, impressions, exports) et `logs/server.log`. Le menu **Station** permet de
+changer la base, d'ouvrir le journal ou le dossier des données, ou d'utiliser un serveur distant
+(**Adresse du serveur…**).
 
 ## Contenu porté
 

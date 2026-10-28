@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <title>LTStation Station — Base de données</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: 'Segoe UI', system-ui, sans-serif;
+           background: radial-gradient(circle at 20% 20%, #14b8a6 0%, #0f766e 35%, #0b2f2c 100%); }
+    .box { background: #fff; border-radius: 18px; padding: 32px 36px; width: 520px; box-shadow: 0 20px 60px rgba(0,0,0,.3); margin: 24px 0; }
+    .logo { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, #14b8a6, #0f766e); color: #fff;
+            font-weight: 800; display: grid; place-items: center; font-size: 18px; }
+    h1 { font-size: 22px; margin: 16px 0 6px; }
+    p { color: #64748b; margin: 0 0 18px; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+    .full { grid-column: 1 / -1; }
+    label { font-size: 13px; font-weight: 600; display: block; }
+    input { width: 100%; box-sizing: border-box; margin-top: 5px; padding: 10px 12px; font-size: 15px; border: 1px solid #cbd5e1; border-radius: 10px; }
+    button { margin-top: 20px; width: 100%; padding: 14px; border: none; border-radius: 10px; background: #0f766e; color: #fff; font-size: 16px; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: default; }
+    .err { background: #fee2e2; color: #b91c1c; padding: 10px 12px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; display: none; white-space: pre-wrap; }
+    .hint { color: #94a3b8; font-size: 12px; margin-top: 14px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">LT</div>
+    <h1>Base de données</h1>
+    <p>Le serveur LTStation est intégré à l'application. Indiquez le serveur PostgreSQL de la station ; ces réglages restent sur ce poste.</p>
+    <div class="err" id="err"></div>
+    <div class="grid">
+      <div><label for="DB_HOST">Serveur PostgreSQL</label><input id="DB_HOST"></div>
+      <div><label for="DB_PORT">Port</label><input id="DB_PORT"></div>
+      <div><label for="DB_USER">Utilisateur</label><input id="DB_USER"></div>
+      <div><label for="DB_PASSWORD">Mot de passe</label><input id="DB_PASSWORD" type="password" autocomplete="off"></div>
+      <div><label for="DB_NAME">Base Center</label><input id="DB_NAME"></div>
+      <div><label for="STATION_DB_NAME">Base de la station</label><input id="STATION_DB_NAME"></div>
+      <div class="full"><label for="port">Port du serveur intégré</label><input id="port"></div>
+    </div>
+    <button id="save">Enregistrer et démarrer</button>
+    <div class="hint" id="hint"></div>
+  </div>
+  <script>
+    const q = new URLSearchParams(location.search)
+    const err = document.getElementById('err')
+    const keys = ['DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'STATION_DB_NAME', 'port']
+    if (q.get('error')) { err.textContent = q.get('error'); err.style.display = 'block' }
+    window.ltDesktop.getSetup().then((s) => {
+      for (const k of keys) if (k !== 'DB_PASSWORD') document.getElementById(k).value = s[k] ?? ''
+      document.getElementById('DB_PASSWORD').placeholder = s.hasPassword ? 'inchangé' : ''
+      document.getElementById('hint').textContent = 'Dossier des données : ' + s.dataDir
+    })
+    const save = document.getElementById('save')
+    save.onclick = async () => {
+      const values = Object.fromEntries(keys.map((k) => [k, document.getElementById(k).value]))
+      save.disabled = true
+      try { await window.ltDesktop.saveSetup(values) } catch (e) {
+        err.textContent = e.message.replace(/^.*Error: /, ''); err.style.display = 'block'; save.disabled = false
+      }
+    }
+    document.querySelectorAll('input').forEach((i) => { i.onkeydown = (e) => { if (e.key === 'Enter') save.click() } })
+  </script>
+</body>
+</html>
