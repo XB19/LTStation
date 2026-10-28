@@ -291,8 +291,11 @@ public final class NormalFunction {
         return r;
     }
 
-    /** NormalNozSettle : premier / dernier relevé et totaux par pistolet, produit et prix (listes alignées par NozID, GradeID, Price). */
-    private static List<List<Row>> NormalNozSettle(long start, long end) {
+    /**
+     * NormalNozSettle : premier relevé, dernier relevé et totaux par pistolet, produit et prix (listes alignées par NozID,
+     * GradeID, Price), puis totaux des pistolets absents de NormalNoz (reportExtend).
+     */
+    public static List<List<Row>> NormalNozSettle(long start, long end) {
         String range = " where {NormalTransaction.CreateTime} between " + start + " and " + end;
         String window = "SELECT * FROM (SELECT {NormalTransaction.NozID} AS NozID, {NormalTransaction.GradeID} AS GradeID, {NormalTransaction.Price} AS Price,"
             + " {NormalTransaction.Amount} AS Amount, {NormalTransaction.Volume} AS Volume, {NormalTransaction.VolumeTotal} AS VolumeTotal,"
@@ -302,10 +305,14 @@ public final class NormalFunction {
         String summary = "select {NormalTransaction.NozID} AS NozID, {NormalTransaction.GradeID} AS GradeID, {NormalTransaction.Price} AS Price,"
             + " SUM({NormalTransaction.Amount}) as Amount, SUM({NormalTransaction.Volume}) as Volume, Count(*) as Count from [NormalTransaction]" + range
             + " group by {NormalTransaction.NozID}, {NormalTransaction.GradeID}, {NormalTransaction.Price} order by 1, 2, 3";
+        String extend = "select * from (select * from (select {NormalNoz.NozID} as NID from [NormalNoz]) a right join (select {NormalTransaction.NozID} AS NozID,"
+            + " Count(*) as Count, SUM({NormalTransaction.Amount}) as Amount, SUM({NormalTransaction.Volume}) as Volume from [NormalTransaction]" + range
+            + " group by {NormalTransaction.NozID}) b on a.NID = b.NozID) e where e.NID IS NULL";
         return List.of(
             db().query(db().sql(window.formatted("asc")), null),
             db().query(db().sql(window.formatted("desc")), null),
-            db().query(db().sql(summary), null));
+            db().query(db().sql(summary), null),
+            db().query(db().sql(extend), null));
     }
 
     /** BaseFunction.SettleNoz : une ligne NormalDailyNozSummary par pistolet / produit / prix. */
@@ -385,15 +392,20 @@ public final class NormalFunction {
         target.put("Volume", target.dec("Volume").add(item.dec("Volume")));
     }
 
+    /** NormalEnergySettle : ventes par produit et prix (tous les produits, vendus ou non : full join). */
+    public static List<Row> NormalEnergySettle(long start, long end) {
+        String sql = "select * from (select {NormalGrade.ID} AS ID, {NormalGrade.GradeName} AS GradeName from [NormalGrade]) a full join"
+            + " (select {NormalTransaction.GradeID} AS GradeID, {NormalTransaction.Price} AS Price, Count(*) as Count, SUM({NormalTransaction.Volume}) as Volume,"
+            + " SUM({NormalTransaction.Amount}) as Amount from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
+            + " group by {NormalTransaction.GradeID}, {NormalTransaction.Price}) b on a.ID = b.GradeID";
+        return db().query(db().sql(sql), null);
+    }
+
     /** BaseFunction.SettleEnery : une ligne NormalDailyEnergySummary par produit et prix, avec le détail par moyen de paiement. */
     public static boolean SettleEnery(String DailyNo, long start, long end) {
         try {
-            String sql = "select * from (select {NormalGrade.ID} AS ID, {NormalGrade.GradeName} AS GradeName from [NormalGrade]) a full join"
-                + " (select {NormalTransaction.GradeID} AS GradeID, {NormalTransaction.Price} AS Price, Count(*) as Count, SUM({NormalTransaction.Volume}) as Volume,"
-                + " SUM({NormalTransaction.Amount}) as Amount from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
-                + " group by {NormalTransaction.GradeID}, {NormalTransaction.Price}) b on a.ID = b.GradeID";
             List<Row> list = new ArrayList<>();
-            for (Row item : db().query(db().sql(sql), null)) {
+            for (Row item : NormalEnergySettle(start, end)) {
                 Row r = summaryRow(DailyNo);
                 r.put("Amount", item.dec("Amount"));
                 r.put("GradeID", item.i("ID"));
@@ -497,23 +509,29 @@ public final class NormalFunction {
         }
     }
 
-    /** BaseFunction.SettleSummary : totaux par moyen de paiement (espèces, RFID, carte IC, employé, facture). */
+    /** NormalSumSettle : totaux (CardNo, Count, Amount, Volume) par moyen de paiement : espèces, RFID, carte IC, employé, facture. */
+    public static List<Row> NormalSumSettle(long start, long end) {
+        Row[] sum = {
+            sumRow(MultiLanguage.getText("Cash")), sumRow("RFID"), sumRow(MultiLanguage.getText("ICCard")),
+            sumRow(MultiLanguage.getText("EmployeeCard")), sumRow("Bill")
+        };
+        String sql = "select SUBSTRING(CardNo, 1, 9) as CardNo, COUNT(*) as Count, Sum(Amount) as Amount, SUM(Volume) as Volume from"
+            + " (select {NormalTransaction.Amount} AS Amount, {NormalTransaction.Volume} AS Volume, CASE WHEN {NormalTransaction.CardNo} = '00000000000000000000'"
+            + " THEN NULL ELSE {NormalTransaction.CardNo} END AS CardNo from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
+            + ") a group by SUBSTRING(a.CardNo, 1, 9)";
+        for (Row item : db().query(db().sql(sql), null)) {
+            int idx = sumIndex(item.str("CardNo"), true);
+            if (idx >= 0) {
+                addSum(sum[idx], item);
+            }
+        }
+        return List.of(sum);
+    }
+
+    /** BaseFunction.SettleSummary : une ligne NormalDailySummary par moyen de paiement. */
     public static boolean SettleSummary(String DailyNo, long start, long end) {
         try {
-            Row[] sum = {
-                sumRow(MultiLanguage.getText("Cash")), sumRow("RFID"), sumRow(MultiLanguage.getText("ICCard")),
-                sumRow(MultiLanguage.getText("EmployeeCard")), sumRow("Bill")
-            };
-            String sql = "select SUBSTRING(CardNo, 1, 9) as CardNo, COUNT(*) as Count, Sum(Amount) as Amount, SUM(Volume) as Volume from"
-                + " (select {NormalTransaction.Amount} AS Amount, {NormalTransaction.Volume} AS Volume, CASE WHEN {NormalTransaction.CardNo} = '00000000000000000000'"
-                + " THEN NULL ELSE {NormalTransaction.CardNo} END AS CardNo from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
-                + ") a group by SUBSTRING(a.CardNo, 1, 9)";
-            for (Row item : db().query(db().sql(sql), null)) {
-                int idx = sumIndex(item.str("CardNo"), true);
-                if (idx >= 0) {
-                    addSum(sum[idx], item);
-                }
-            }
+            List<Row> sum = NormalSumSettle(start, end);
             String settleTime = BaseFunction.StampToDateTime(String.valueOf(start)).format(Conv.STD) + "---"
                 + BaseFunction.StampToDateTime(String.valueOf(end)).format(Conv.STD);
             List<Row> list = new ArrayList<>();
