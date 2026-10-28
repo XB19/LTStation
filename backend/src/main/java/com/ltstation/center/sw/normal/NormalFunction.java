@@ -429,24 +429,31 @@ public final class NormalFunction {
         }
     }
 
+    /** NormalStockSettle : relevé de début, ventes, relevé de fin et dépotages par cuve utilisée (listes alignées par cuve). */
+    public static List<List<Row>> NormalStockSettle(long start, long end) {
+        String tanks = "(select {NormalTank.ID} AS ID, {NormalTank.TankName} AS TankName from [NormalTank] where {NormalTank.IsUsing} = true) c";
+        String meter = "select * from " + tanks + " left join (SELECT * FROM (SELECT {NormalTankHistory.TankID} AS TankID,"
+            + " {NormalTankHistory.CurrentVolume} AS CurrentVolume, ROW_NUMBER() OVER(PARTITION BY {NormalTankHistory.TankID}"
+            + " ORDER BY " + HIST_TIME + " desc) AS NEWINDEX FROM [NormalTankHistory] where " + HIST_TIME + " <= %d) b"
+            + " WHERE NEWINDEX = 1) d on d.TankID = c.ID order by c.ID";
+        String saler = "select * from " + tanks + " left join (select {NormalTransaction.TankID} AS TankID, SUM({NormalTransaction.Volume}) as Volume"
+            + " from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
+            + " group by {NormalTransaction.TankID}) b on c.ID = b.TankID order by c.ID";
+        String stock = "select * from " + tanks + " left join (select {NormalTankStock.TankID} AS TankID, SUM({NormalTankStock.StockVolume}) as StockVolume"
+            + " from [NormalTankStock] where {NormalTankStock.CreateTime} between " + start + " and " + end
+            + " group by {NormalTankStock.TankID}) b on c.ID = b.TankID order by c.ID";
+        return List.of(db().query(db().sql(meter.formatted(start)), null), db().query(db().sql(saler), null),
+            db().query(db().sql(meter.formatted(end)), null), db().query(db().sql(stock), null));
+    }
+
     /** BaseFunction.SettleStock : mouvement de stock par cuve, plus une ligne en anomalie pour les ventes sur une cuve inconnue. */
     public static boolean SettleStock(String DailyNo, long start, long end) {
         try {
-            String tanks = "(select {NormalTank.ID} AS ID, {NormalTank.TankName} AS TankName from [NormalTank] where {NormalTank.IsUsing} = true) c";
-            String meter = "select * from " + tanks + " left join (SELECT * FROM (SELECT {NormalTankHistory.TankID} AS TankID,"
-                + " {NormalTankHistory.CurrentVolume} AS CurrentVolume, ROW_NUMBER() OVER(PARTITION BY {NormalTankHistory.TankID}"
-                + " ORDER BY " + HIST_TIME + " desc) AS NEWINDEX FROM [NormalTankHistory] where " + HIST_TIME + " <= %d) b"
-                + " WHERE NEWINDEX = 1) d on d.TankID = c.ID order by c.ID";
-            String saler = "select * from " + tanks + " left join (select {NormalTransaction.TankID} AS TankID, SUM({NormalTransaction.Volume}) as Volume"
-                + " from [NormalTransaction] where {NormalTransaction.CreateTime} between " + start + " and " + end
-                + " group by {NormalTransaction.TankID}) b on c.ID = b.TankID order by c.ID";
-            String stock = "select * from " + tanks + " left join (select {NormalTankStock.TankID} AS TankID, SUM({NormalTankStock.StockVolume}) as StockVolume"
-                + " from [NormalTankStock] where {NormalTankStock.CreateTime} between " + start + " and " + end
-                + " group by {NormalTankStock.TankID}) b on c.ID = b.TankID order by c.ID";
-            List<Row> reportStarts = db().query(db().sql(meter.formatted(start)), null);
-            List<Row> salerSums = db().query(db().sql(saler), null);
-            List<Row> reportEnds = db().query(db().sql(meter.formatted(end)), null);
-            List<Row> reportStock = db().query(db().sql(stock), null);
+            List<List<Row>> settle = NormalStockSettle(start, end);
+            List<Row> reportStarts = settle.get(0);
+            List<Row> salerSums = settle.get(1);
+            List<Row> reportEnds = settle.get(2);
+            List<Row> reportStock = settle.get(3);
             List<Row> list = new ArrayList<>();
             for (int i = 0; i < reportStarts.size(); i++) {
                 BigDecimal volumeStart = reportStarts.get(i).dec("CurrentVolume");
@@ -524,6 +531,15 @@ public final class NormalFunction {
         } catch (RuntimeException ex) {
             SettleLog.writeLog("Settle Error:" + DailyNo + " " + ex.getMessage());
             return false;
+        }
+    }
+
+    /** GetTransactionVolumeTotal(NozID, CreateTime) : transaction d'un pistolet à un instant donné (null si absente). */
+    public static Row GetTransactionVolumeTotal(int NozID, long CreateTime) {
+        try {
+            return db().first("NormalTransaction", "{NozID} = :n AND {CreateTime} = :c", p("n", NozID, "c", CreateTime));
+        } catch (RuntimeException e) {
+            return null;
         }
     }
 }

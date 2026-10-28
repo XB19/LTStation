@@ -594,10 +594,11 @@ public final class NormalEngine {
     private static final String NO_HAND_SHIFT = "COALESCE({NormalTransaction.HandShiftNo}, '') IN ('', '0')";
 
     /**
-     * Commande 21 : clôture du poste manuel (HandShiftReport) : une ligne par pistolet / produit / prix,
-     * cartes employé, transactions marquées, puis rapports du poste (Settle*).
+     * Clôture du poste manuel (HandShiftReport) : une ligne par pistolet / produit / prix, cartes employé,
+     * transactions marquées, puis rapports du poste (Settle*). Commande 21 de Center (cmdNozId = pistolet de la
+     * commande, repris tel quel comme l'original) ou bouton « fin de poste » de HandShiftReport (cmdNozId = null).
      */
-    private static void HandShiftClose(int cmdNozId) {
+    public static void HandShiftClose(Integer cmdNozId) {
         try (Sugar.Tx tx = db().begin()) {
             Row cur = db().first("HandShiftReport", "{DealStatue} = 0 ORDER BY {ID} DESC", null);
             if (cur == null) {
@@ -626,12 +627,11 @@ public final class NormalEngine {
             }
             String shift = cur.str("HandShift");
             for (Row item : list3) {
-                // comme l'original : NozID reprend celui de la commande
-                cur.put("NozID", cmdNozId);
+                cur.put("NozID", cmdNozId != null ? cmdNozId : item.i("NozID"));
                 cur.put("TotalAmount", rnd(item.dec("Amount"), IniInfo.Mradio));
                 cur.put("TotalVolume", rnd(item.dec("Volume"), IniInfo.Vradio));
-                Row first = db().first("NormalTransaction", "{NozID} = :n AND {CreateTime} = :c", p("n", item.i("NozID"), "c", item.l("MinTime")));
-                Row last = db().first("NormalTransaction", "{NozID} = :n AND {CreateTime} = :c", p("n", item.i("NozID"), "c", item.l("MaxTime")));
+                Row first = NormalFunction.GetTransactionVolumeTotal(item.i("NozID"), item.l("MinTime"));
+                Row last = NormalFunction.GetTransactionVolumeTotal(item.i("NozID"), item.l("MaxTime"));
                 BigDecimal startV = first == null ? BigDecimal.ZERO : first.dec("VolumeTotal").subtract(first.dec("Volume"));
                 BigDecimal endV = last == null ? BigDecimal.ZERO : last.dec("VolumeTotal");
                 cur.put("StartVolume", rnd(startV, IniInfo.Vradio));
@@ -669,10 +669,11 @@ public final class NormalEngine {
         }
     }
 
-    /** Commande 20 : ouverture d'un poste manuel (aaaaMMjjNN) s'il n'y en a pas d'ouvert. */
-    private static void HandShiftOpen() {
-        if (db().any("HandShiftReport", "{DealStatue} = 0", null)) {
-            return;
+    /** Ouverture d'un poste manuel (aaaaMMjjNN) s'il n'y en a pas d'ouvert (commande 20, HandShiftReport) ; renvoie le poste ouvert. */
+    public static Row HandShiftOpen() {
+        Row open = db().first("HandShiftReport", "{DealStatue} = 0", null);
+        if (open != null) {
+            return open;
         }
         String text = db().scalar(db().sql("HandShiftReport", "select MAX({HandShift}) from [HandShiftReport]"), null, String.class);
         String today = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
@@ -683,8 +684,10 @@ public final class NormalEngine {
         } else {
             text = today + "01";
         }
-        db().insert("HandShiftReport", Row.of("StartTime", now(), "Operate", IniInfo.LoginName, "HandShift", text, "CreateTime", now(), "DealStatue", 0));
+        Row shift = Row.of("StartTime", now(), "Operate", IniInfo.LoginName, "HandShift", text, "CreateTime", now(), "DealStatue", 0);
+        db().insert("HandShiftReport", shift);
         SetOnDuty(1);
+        return shift;
     }
 
     /** A1 : autorisation (préréglage) d'un pistolet par Center (application, carte…). */
