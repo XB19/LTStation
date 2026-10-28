@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { Modal } from 'antd'
+import { Button, Modal, Space } from 'antd'
 import dayjs from 'dayjs'
 import { http } from '../../api/http'
 import Win from './Win'
@@ -49,6 +49,8 @@ interface Message {
   js?: string
   /** OpenFileDialog : filtre d'origine ("Excel(*.xls)|*.xls") */
   openFile?: string
+  /** SaveFileDialog : filtre d'origine ("PDF(*.pdf)|*.pdf|Excel(*.xls)|*.xls") ; le poste choisit le type */
+  saveFile?: string
   /** Fenêtre enfant intégrée dans un conteneur (TopLevel = false) */
   embed?: string
   id?: string
@@ -117,6 +119,28 @@ function printLines(lines: string[]) {
 const ask = (text: string) => new Promise<boolean>((resolve) => Modal.confirm({
   title: tr(text), okText: 'Oui', cancelText: 'Non', onOk: () => resolve(true), onCancel: () => resolve(false),
 }))
+
+/** SaveFileDialog : choix du type de fichier parmi le filtre (null = annulé) ; le fichier est ensuite téléchargé. */
+const chooseSave = (filter: string) => new Promise<string | null>((resolve) => {
+  const parts = filter.split('|')
+  const types: { label: string; ext: string }[] = []
+  for (let i = 0; i + 1 < parts.length; i += 2) types.push({ label: parts[i], ext: parts[i + 1].split(';')[0].replace(/^\*/, '') })
+  if (types.length <= 1) {
+    resolve(types[0]?.ext ?? '')
+    return
+  }
+  const m = Modal.confirm({
+    title: 'Enregistrer sous',
+    content: (
+      <Space wrap>
+        {types.map((t) => <Button key={t.ext} onClick={() => { m.destroy(); resolve(t.ext) }}>{t.label}</Button>)}
+      </Space>
+    ),
+    okButtonProps: { style: { display: 'none' } },
+    cancelText: 'Annuler',
+    onCancel: () => resolve(null),
+  })
+})
 
 const show = (m: Message) => new Promise<void>((resolve) => (m.error ? Modal.error : Modal.info)({
   title: m.caption ? tr(m.caption) : undefined, content: tr(m.text ?? ''), okText: 'OK', onOk: () => resolve(), onCancel: () => resolve(),
@@ -238,6 +262,10 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
         fire('$continue', '', { key: m.key, result: yes ? 'OK' : 'Cancel', data: {} })
       } else if (m.open) onOpen?.(m.open, m.args ?? {})
       else if (m.openFile !== undefined) pickFile(m.openFile, m.key!)
+      else if (m.saveFile !== undefined) {
+        const ext = await chooseSave(m.saveFile)
+        fire('$continue', '', { key: m.key, result: ext === null ? 'Cancel' : 'OK', data: { ext: ext ?? '' } })
+      }
       else if (m.js !== undefined) runJs(m.js)
       else if (m.embed && m.id && m.into) setEmbeds((x) => ({ ...x, [m.into!]: { form: m.embed!, id: m.id! } }))
       else if (m.download) download(m)
@@ -346,7 +374,11 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       // DropDown : texte libre (Text) quand aucun élément n'est choisi
       values[c.name] = i >= 0 ? i : (p.Text ? String(p.Text) : undefined)
     } else if (isDate(t)) values[c.name] = p.Value ? dayjs(String(p.Value)) : undefined
-    else if (isCheck(t)) values[c.name] = !!p.Checked
+    else if (t.endsWith('ProgressBar')) {
+      // ProgressBar : pourcentage de Value entre Minimum et Maximum (100 par défaut)
+      const max = Number(p.Maximum ?? 100), min = Number(p.Minimum ?? 0)
+      values[c.name] = max > min ? Math.round((100 * (Number(p.Value ?? 0) - min)) / (max - min)) : 0
+    } else if (isCheck(t)) values[c.name] = !!p.Checked
     else values[c.name] = p.Text ?? ''
     if ('Text' in p && TEXT_TYPES.test(t) && !/TextBox|NumericUpDown/.test(t)) texts[c.name] = tr(String(p.Text ?? ''))
     if (p.Visible === false) hidden.push(c.name)

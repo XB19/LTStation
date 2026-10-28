@@ -261,6 +261,11 @@ public class Ctl {
         return set("Value", v == null ? null : v.format(Conv.STD));
     }
 
+    /** ProgressBar.Value (entre Minimum et Maximum). */
+    public Ctl Value(Number v) {
+        return set("Value", v);
+    }
+
     public Ctl Minimum(Object v) {
         return set("Minimum", v);
     }

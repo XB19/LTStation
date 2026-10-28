@@ -277,6 +277,28 @@ public abstract class SwForm {
         messages.add(Map.of("openFile", filter == null ? "" : filter, "key", key));
     }
 
+    /**
+     * SaveFileDialog : le poste choisit le type de fichier du filtre d'origine (ex. "PDF(*.pdf)|*.pdf|Excel(*.xls)|*.xls") ;
+     * la suite reçoit un chemin sous station/Export (nom proposé + extension choisie), à envoyer ensuite par DownloadFile.
+     */
+    protected void SaveFileDialog(String filter, String fileName, Consumer<String> then) {
+        String key = "c" + (++pendingSeq);
+        pending.put(key, r -> {
+            if (!r.ok()) {
+                return;
+            }
+            try {
+                java.nio.file.Path dir = java.nio.file.Path.of("station", "Export");
+                java.nio.file.Files.createDirectories(dir);
+                String safe = fileName.replaceAll("[\\\\/:*?\"<>|]", "_");
+                then.accept(dir.resolve(safe + r.data().s("ext")).toAbsolutePath().toString());
+            } catch (java.io.IOException ex) {
+                MessageBox(ex.getMessage());
+            }
+        });
+        messages.add(Map.of("saveFile", filter == null ? "" : filter, "key", key));
+    }
+
     /** MessageBox Oui/Non suivi de la suite du gestionnaire (yes = réponse Oui). */
     protected void Ask(String text, Consumer<Boolean> then) {
         String key = "c" + (++pendingSeq);

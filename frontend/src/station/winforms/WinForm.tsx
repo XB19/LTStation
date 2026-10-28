@@ -1,5 +1,5 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
-import { Button, Checkbox, DatePicker, Dropdown, Input, Select, Table, TimePicker } from 'antd'
+import { Button, Checkbox, DatePicker, Dropdown, Input, Progress, Select, Table, TimePicker } from 'antd'
 import type { MenuProps } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
 import dayjs, { type Dayjs } from 'dayjs'
@@ -284,6 +284,9 @@ export default function WinForm(p: WinFormProps) {
         return <Button size="small" type={c.size[1] >= 30 ? 'primary' : 'default'} disabled={dis || !p.buttons?.[c.name]}
           loading={p.busy === c.name} style={{ minWidth: Math.min(Math.max(c.size[0], 70), 140), height: c.size[1] >= 30 ? 34 : 26 }}
           onClick={() => p.buttons?.[c.name]?.()}>{text(c)}</Button>
+      case 'ProgressBar':
+      case 'SkinProgressBar':
+        return <Progress percent={Number(v ?? 0)} size="small" style={{ width: w, margin: 0 }} />
       default:
         if (/(MenuStrip|ToolStrip|StatusStrip)$/.test(c.type)) return renderStrip(c)
         if (isGrid(c)) return withContext(c.name, renderGrid(c))
