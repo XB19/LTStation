@@ -81,7 +81,7 @@ public class PortSet extends SwForm {
     public void Delopy_Click() {
         try {
             int id = currentId();
-            ShowDialog("NormalForm.BoxPortSet", r -> { }, "ID", id, "Index", g("ComConfigView").CurrentRowIndex());
+            ShowDialog("NormalForm.BoxPortSet", r -> { }, "PID", id, "Index", g("ComConfigView").CurrentRowIndex());
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
