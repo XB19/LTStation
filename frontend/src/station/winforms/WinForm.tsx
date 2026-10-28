@@ -474,13 +474,17 @@ export default function WinForm(p: WinFormProps) {
     }
     const bg = p.backgrounds?.[c.name]
     return (
-      <div className="wf-panel" style={{ ...p.styles?.[c.name], ...(bg ? { backgroundImage: `url(/station-web/${bg})`, backgroundSize: 'cover' } : {}) }}>
+      <div className="wf-panel" style={{ ...p.styles?.[c.name], ...(bg ? { backgroundImage: `url(/station-web/${bg})`, backgroundSize: 'cover' } : {}) }}
+        onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.(c.name, 'Click') }}>
         {renderBody(c.name)}
       </div>
     )
   }
 
-  return <div className="wf-root">{renderBody('$this')}</div>
+  const rootBg = p.backgrounds?.['$this']
+  // Clic sur le fond (Panel / fenêtre) : seulement s il ne vient pas d un contrôle enfant, comme en WinForms
+  return <div className="wf-root" style={rootBg ? { backgroundImage: `url(/station-web/${rootBg})`, backgroundSize: 'cover' } : undefined}
+    onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.('$this', 'Click') }}>{renderBody('$this')}</div>
 }
 
 /** État simple des champs d'une fenêtre. */

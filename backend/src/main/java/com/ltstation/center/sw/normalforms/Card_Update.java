@@ -25,7 +25,6 @@ public class Card_Update extends CardFormBase {
         c("FactoryBox").SelectedIndex(0);
         c("CardTypeBox").SelectedIndex(0);
         c("GroupBox").SelectedIndex(0);
-        GroupBox_SelectedIndexChanged();
     }
 
     public void CardReaderBtn_Click() {
@@ -84,7 +83,6 @@ public class Card_Update extends CardFormBase {
             c("MonthVolumeLimitBox").Text(d.dec("MonthVolumeLimit").toPlainString());
             c("MonthAmountLimitBox").Text(d.dec("MonthAmountLimit").toPlainString());
             c("GroupBox").SelectedValue(d.get("GroupID"));
-            GroupBox_SelectedIndexChanged();
             c("RuleSelect").SelectedValue(d.get("ScoreRuleID"));
             c("DiscountBox").Text(d.dec("Discount").toPlainString());
             c("GradeSelectBox").SelectedValue(Conv.toInt(d.get("LimitGrade")));

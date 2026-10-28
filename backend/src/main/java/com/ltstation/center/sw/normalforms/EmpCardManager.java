@@ -16,12 +16,9 @@ public class EmpCardManager extends SwForm {
         SetPage("1");
     }
 
-    /** CurPage.Text = … : TextChanged ne se déclenche que si le texte change, comme en WinForms. */
+    /** CurPage.Text = … : déclenche CurPage_TextChanged si le texte change, comme en WinForms. */
     private void SetPage(String page) {
-        if (!page.equals(c("CurPage").Text())) {
-            c("CurPage").Text(page);
-            CurPage_TextChanged();
-        }
+        c("CurPage").Text(page);
     }
 
     public void QueryBtn_Click() {

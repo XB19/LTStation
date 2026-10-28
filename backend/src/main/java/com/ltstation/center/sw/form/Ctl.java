@@ -156,6 +156,11 @@ public class Ctl {
         return set("Image", path);
     }
 
+    /** BackgroundImage (Panel, fenêtre "$this") : chemin sous station-web. */
+    public Ctl BackgroundImage(String path) {
+        return set("BackgroundImage", path);
+    }
+
     public String Image() {
         return Conv.toStr(props.get("Image"));
     }
