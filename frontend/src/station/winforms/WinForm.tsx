@@ -699,14 +699,14 @@ export default function WinForm(p: WinFormProps) {
     // Tous les boutons restent visibles : ils se resserrent puis passent à la ligne, et la barre s'agrandit
     return (
       <div className="wfc-toolstrip" style={classicStyle(c)}>
-        <StripRow className="wfc-toolstrip-row" onHeight={(h) => reportStrip(c.name, h)}>
+        <StripRow className="wfc-toolstrip-row" balance onHeight={(h) => reportStrip(c.name, h)}>
           {items.map((i) => {
             if (i.type === 'ToolStripSeparator') return <span key={i.name} className="wfc-tool-sep" />
             const dis = (p.disabled ?? []).includes(i.name)
             const label = itemText(i)
             const btn = (
               <button key={i.name} type="button" className="wfc-tool" disabled={dis} title={label}
-                style={i.size ? { maxWidth: i.size[0], height: i.size[1] } : undefined}
+                style={i.size ? { height: i.size[1] } : undefined}
                 onClick={i.items.length ? undefined : () => p.onMenu?.(i.name)}>
                 {i.image && <span className="wfc-tool-img" style={{ backgroundImage: `url(/station-web/${i.image})` }} />}
                 <span className="wfc-tool-text">{label}</span>
@@ -823,14 +823,29 @@ export default function WinForm(p: WinFormProps) {
  * Contenu d'une barre (outils, menus) qui peut passer sur plusieurs lignes : sa hauteur naturelle est
  * remontée au placement des contrôles ancrés, pour que le reste de la fenêtre se décale au lieu d'être recouvert.
  */
-function StripRow({ className, onHeight, children }: { className?: string; onHeight: (h: number) => void; children: ReactNode }) {
+function StripRow({ className, onHeight, balance, children }: {
+  className?: string
+  onHeight: (h: number) => void
+  /** Barre d'outils : boutons répartis à parts égales sur les lignes nécessaires, de même largeur (colonnes alignées) */
+  balance?: boolean
+  children: ReactNode
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const report = useRef(onHeight)
   report.current = onHeight
+  const [cols, setCols] = useState<number | null>(null)
   useLayoutEffect(() => {
     const el = ref.current
     if (!el) return
     const measure = () => {
+      if (balance && el.clientWidth > 0) {
+        // Autant de boutons par ligne que la largeur minimale le permet, puis répartition égale (21 → 11 + 10, pas 17 + 4)
+        const n = el.querySelectorAll('.wfc-tool').length
+        const min = parseFloat(getComputedStyle(el).getPropertyValue('--wfc-tool-min')) || 76
+        const rows = Math.max(1, Math.ceil(n / Math.max(1, Math.floor(el.clientWidth / min))))
+        const c = Math.max(1, Math.ceil(n / rows))
+        setCols((prev) => (prev === c ? prev : c))
+      }
       if (el.offsetHeight > 0) report.current(Math.ceil(el.offsetHeight))
     }
     measure()
@@ -844,8 +859,17 @@ function StripRow({ className, onHeight, children }: { className?: string; onHei
       ro.disconnect()
       window.removeEventListener('resize', measure)
     }
-  }, [])
-  return <div ref={ref} className={className}>{children}</div>
+  }, [balance])
+  // Nouveau nombre de colonnes : la hauteur ne change qu'une fois la grille redessinée
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (el && cols && el.offsetHeight > 0) report.current(Math.ceil(el.offsetHeight))
+  }, [cols])
+  return (
+    <div ref={ref} className={className} style={balance && cols ? { gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` } : undefined}>
+      {children}
+    </div>
+  )
 }
 
 /**

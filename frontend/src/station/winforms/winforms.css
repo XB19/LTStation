@@ -219,11 +219,12 @@ input.wf-ro {
 .wfc-menubar .wf-menubar { background: transparent; border: 0; padding: 1px 4px; gap: 0; }
 .wfc-menubar .wf-menu-btn { border: 0; background: transparent; padding: 2px 8px; font-size: 12px; }
 .wfc-menubar .wf-menu-btn:hover { background: #cde3f8; }
-/* Barre d'outils : les boutons gardent leur largeur d'origine (max-width) s'il y a la place, se resserrent
-   jusqu'à --wfc-tool-min, puis passent à la ligne ; la barre prend la hauteur des lignes (StripRow). */
+/* Barre d'outils : grille de boutons de même largeur ; StripRow choisit le nombre de colonnes pour répartir les
+   boutons à parts égales sur le moins de lignes possible (largeur mini --wfc-tool-min), et la barre prend leur hauteur. */
 .wfc-toolstrip { height: 100%; overflow: hidden; background: linear-gradient(#fbfcfe, #e3eaf4); border-bottom: 1px solid #c5d3e3; }
-.wfc-toolstrip-row { --wfc-tool-min: 76px; display: flex; flex-wrap: wrap; align-items: stretch; }
-.wfc-tool { flex: 1 1 var(--wfc-tool-min); min-width: var(--wfc-tool-min); display: flex; flex-direction: column; align-items: center;
+.wfc-toolstrip-row { --wfc-tool-min: 76px; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--wfc-tool-min), 1fr)); }
+.wfc-toolstrip-row > .wfc-tool-sep { display: none; }
+.wfc-tool { min-width: 0; display: flex; flex-direction: column; align-items: center;
   justify-content: flex-end; gap: 2px; padding: 4px 2px 3px; border: 1px solid transparent; background: transparent; font: inherit;
   font-size: 12px; color: inherit; cursor: pointer; }
 .wfc-tool:hover:not(:disabled) { background: linear-gradient(#fdf6d8, #fbe49c); border-color: #e5c365; }
