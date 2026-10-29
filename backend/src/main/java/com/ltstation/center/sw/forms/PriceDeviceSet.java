@@ -65,7 +65,7 @@ public class PriceDeviceSet extends SwForm {
             int num = currentId();
             Row device = db().first("Device", "{ID} = :id", p("id", num));
             if (device == null) {
-                throw new IllegalStateException("设备不存在");
+                throw new IllegalStateException("Appareil introuvable");
             }
             db().deleteEntity("Device", device);
             LoadData();

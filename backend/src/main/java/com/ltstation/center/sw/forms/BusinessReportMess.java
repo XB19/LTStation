@@ -38,7 +38,7 @@ public class BusinessReportMess extends SwForm {
         if ("zh-CN".equals(IniInfo.Language)) {
             return "共" + list.str("totalNumber") + "条记录，每页50条记录，共" + list.str("totalPage") + "页";
         }
-        return "Total Record:" + list.str("totalNumber") + "，50 records per page，Total Page:" + list.str("totalPage");
+        return "Total : " + list.str("totalNumber") + " enregistrement(s), 50 par page, " + list.str("totalPage") + " page(s)";
     }
 
     public void SearchButton_Click() {

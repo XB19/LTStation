@@ -106,7 +106,7 @@ public final class BoxTcpServer {
                 long now = System.currentTimeMillis();
                 for (Session s : clients.values()) {
                     if (now - s.lastData > 7000) {
-                        s.Close("超时无数据");
+                        s.Close("Aucune donnée (délai dépassé)");
                     }
                 }
                 sleep(1000);

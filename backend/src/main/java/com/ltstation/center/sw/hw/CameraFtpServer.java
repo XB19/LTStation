@@ -115,7 +115,7 @@ public class CameraFtpServer {
             while (true) {
                 try {
                     Socket client = listener.accept();
-                    log.writeLog("客户端（" + client.getRemoteSocketAddress() + "）与本机（" + listener.getLocalSocketAddress() + "）建立Ftp连接");
+                    log.writeLog("Client (" + client.getRemoteSocketAddress() + ") et poste local (" + listener.getLocalSocketAddress() + ") : connexion FTP établie");
                     User u = new User();
                     u.commandSession = new Session(client);
                     u.workDir = text;
@@ -151,16 +151,16 @@ public class CameraFtpServer {
                     text = user.commandSession.reader.readLine();
                 } catch (IOException ex) {
                     if (!user.commandSession.socket.isConnected()) {
-                        log.writeLog("客户端(" + user.commandSession.socket.getRemoteSocketAddress() + "断开连接！)");
+                        log.writeLog("Client (" + user.commandSession.socket.getRemoteSocketAddress() + ") déconnecté");
                     } else {
-                        log.writeLog("接收命令失败！" + ex.getMessage());
+                        log.writeLog("Échec de la réception de la commande" + ex.getMessage());
                     }
                     return;
                 }
                 if (text == null) {
                     break;
                 }
-                log.writeLog("来自" + user.commandSession.socket.getRemoteSocketAddress() + "：[" + text + "]");
+                log.writeLog("De " + user.commandSession.socket.getRemoteSocketAddress() + "：[" + text + "]");
                 if (text.contains("SIZE") && text.contains(".jpg")) {
                     dealCarNo.accept(text);
                 }
@@ -201,7 +201,7 @@ public class CameraFtpServer {
                     log.writeLog("eexx:" + ex2.getMessage());
                 }
             }
-            log.writeLog("接收字符串为null,结束线程！");
+            log.writeLog("Chaîne reçue nulle : fin du thread");
         } catch (RuntimeException ex3) {
             log.writeLog("UserProcessing Error:" + ex3.getMessage());
         }
@@ -210,9 +210,9 @@ public class CameraFtpServer {
     private void RepleyCommandToUser(User user, String str) {
         try {
             user.commandSession.writeLine(str);
-            log.writeLog("向客户端（" + user.commandSession.socket.getRemoteSocketAddress() + "）发送[" + str + "]");
+            log.writeLog("Envoi au client (" + user.commandSession.socket.getRemoteSocketAddress() + ") [" + str + "]");
         } catch (RuntimeException e) {
-            log.writeLog("向客户端（" + user.commandSession.socket.getRemoteSocketAddress() + "）发送信息失败");
+            log.writeLog("Envoi au client (" + user.commandSession.socket.getRemoteSocketAddress() + ") : échec de l'envoi");
         }
     }
 
@@ -309,10 +309,10 @@ public class CameraFtpServer {
         user.isBinary = false;
         RepleyCommandToUser(user, "150 Opening ASCII data connection");
         InitDataSession(user);
-        log.writeLog("向用户发送(字符串信息)：[" + text + "]");
+        log.writeLog("Envoi au client (texte) : [" + text + "]");
         try {
             user.dataSession.writeLine(text.toString());
-            log.writeLog("发送完毕");
+            log.writeLog("Envoi terminé");
         } finally {
             user.dataSession.close();
         }
@@ -324,7 +324,7 @@ public class CameraFtpServer {
         Path file = Path.of(user.currentDir + filename);
         RepleyCommandToUser(user, user.isBinary ? "150 Opening BINARY mode data connection for download" : "150 Opening ASCII mode data connection for download");
         InitDataSession(user);
-        log.writeLog("向用户发送(文件流)：[...");
+        log.writeLog("Envoi au client (fichier) : [...");
         try (InputStream fs = Files.newInputStream(file)) {
             if (user.isBinary) {
                 fs.transferTo(user.dataSession.out);
@@ -334,7 +334,7 @@ public class CameraFtpServer {
                     user.dataSession.writeLine(line);
                 }
             }
-            log.writeLog("...]发送完毕！");
+            log.writeLog("...] envoi terminé");
         } finally {
             user.dataSession.close();
         }
@@ -346,7 +346,7 @@ public class CameraFtpServer {
             Path file = Path.of(user.currentDir + filename);
             RepleyCommandToUser(user, user.isBinary ? "150 Opening BINARY mode data connection for upload" : "150 Opeing ASCII mode data connection for upload");
             InitDataSession(user);
-            log.writeLog("接收用户上传数据（文件流）：[...");
+            log.writeLog("Réception des données du client (fichier) : [...");
             try (OutputStream fs = Files.newOutputStream(file)) {
                 if (user.isBinary) {
                     user.dataSession.in.transferTo(fs);
@@ -356,7 +356,7 @@ public class CameraFtpServer {
                         fs.write(line.getBytes(ANSI));
                     }
                 }
-                log.writeLog("...]接收完毕");
+                log.writeLog("...] réception terminée");
             } finally {
                 user.dataSession.close();
             }
@@ -367,9 +367,9 @@ public class CameraFtpServer {
     }
 
     private void CommandDELE(User user, String filename) throws IOException {
-        log.writeLog("正在删除文件" + filename + "...");
+        log.writeLog("Suppression du fichier" + filename + "...");
         Files.deleteIfExists(Path.of(user.currentDir + filename));
-        log.writeLog("删除成功");
+        log.writeLog("Suppression réussie");
         RepleyCommandToUser(user, "250 File " + filename + " has been deleted.");
     }
 
@@ -385,7 +385,7 @@ public class CameraFtpServer {
             try {
                 user.dataListener = new ServerSocket();
                 user.dataListener.bind(new InetSocketAddress(address, port));
-                log.writeLog("TCP 数据连接已打开（被动模式）--" + address.getHostAddress() + "：" + port);
+                log.writeLog("Connexion de données TCP ouverte (mode passif) --" + address.getHostAddress() + "：" + port);
             } catch (IOException e) {
                 continue;
             }
@@ -418,10 +418,10 @@ public class CameraFtpServer {
     private void InitDataSession(User user) throws IOException {
         Socket client;
         if (user.isPassive) {
-            log.writeLog("采用被动模式返回LIST目录和文件列表");
+            log.writeLog("Liste LIST renvoyée en mode passif");
             client = user.dataListener.accept();
         } else {
-            log.writeLog("采用主动模式向用户发送LIST目录和文件列表");
+            log.writeLog("Liste LIST envoyée en mode actif");
             client = new Socket();
             client.connect(user.remoteEndPoint);
         }

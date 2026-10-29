@@ -241,14 +241,16 @@ const dockOf = (c: Ctrl): Ctrl['dock'] => c.dock ?? (c.type.endsWith('StatusStri
 /**
  * Placement WinForms des enfants d'un conteneur : contrôles ancrés traités du dernier au premier de l'ordre
  * d'empilement (haut, bas, gauche, droite, remplissage), les autres à leur position d'origine.
+ * `grow` : hauteur ajoutée aux barres passées sur plusieurs lignes et à leurs conteneurs (le reste se décale d'autant).
  */
-function placeChildren(kids: Ctrl[], offset: [number, number]): Map<string, CSSProperties> {
+function placeChildren(kids: Ctrl[], offset: [number, number], grow: Record<string, number> = {}): Map<string, CSSProperties> {
   const useZ = kids.some((k) => (k.z ?? 0) !== 0)
   const key = (k: Ctrl) => (useZ ? k.z ?? 0 : k.order === 999 ? 0 : k.order)
   let l = 0, t = 0, r = 0, b = 0
   const pos = new Map<string, CSSProperties>()
   for (const k of kids.filter((x) => dockOf(x)).sort((a, c) => key(c) - key(a))) {
-    const [w, h] = k.size
+    const w = k.size[0]
+    const h = k.size[1] + (grow[k.name] ?? 0)
     switch (dockOf(k)) {
       case 'top': pos.set(k.name, { left: l, right: r, top: t, height: h }); t += h; break
       case 'bottom': pos.set(k.name, { left: l, right: r, bottom: b, height: h }); b += h; break
@@ -642,6 +644,24 @@ export default function WinForm(p: WinFormProps) {
     return m
   }, [layout, p.hidden])
 
+  /** Hauteur mesurée des barres d'outils et de menus passées sur plusieurs lignes (voir StripRow). */
+  const [stripHeights, setStripHeights] = useState<Record<string, number>>({})
+  const reportStrip = (name: string, h: number) =>
+    setStripHeights((s) => (s[name] === h ? s : { ...s, [name]: h }))
+  /** Hauteur ajoutée à chaque barre agrandie et à chacun de ses conteneurs (une barre peut être dans un Panel ancré). */
+  const stripGrow = useMemo(() => {
+    const byName = new Map(layout.controls.map((c) => [c.name, c]))
+    const grow: Record<string, number> = {}
+    for (const [name, h] of Object.entries(stripHeights)) {
+      const extra = h - (byName.get(name)?.size[1] ?? h)
+      if (extra <= 0) continue
+      for (let n: string | undefined = name; n && n !== '$this'; n = byName.get(n)?.parent) {
+        grow[n] = Math.max(grow[n] ?? 0, extra)
+      }
+    }
+    return grow
+  }, [stripHeights, layout])
+
   /** Décalage de la zone cliente (barre de titre des fenêtres Skin dessinée dans la fenêtre d'origine). */
   const rootOffset = useMemo((): [number, number] => {
     const top = (classicKids.$this ?? []).filter((c) => dockOf(c))
@@ -669,23 +689,34 @@ export default function WinForm(p: WinFormProps) {
         </div>
       )
     }
-    if (m.type === 'MenuStrip') return <div className="wfc-menubar" style={classicStyle(c)}>{renderStrip(c)}</div>
+    if (m.type === 'MenuStrip') {
+      return (
+        <div className="wfc-menubar" style={classicStyle(c)}>
+          <StripRow onHeight={(h) => reportStrip(c.name, h)}>{renderStrip(c)}</StripRow>
+        </div>
+      )
+    }
+    // Tous les boutons restent visibles : ils se resserrent puis passent à la ligne, et la barre s'agrandit
     return (
       <div className="wfc-toolstrip" style={classicStyle(c)}>
-        {items.map((i) => {
-          if (i.type === 'ToolStripSeparator') return <span key={i.name} className="wfc-tool-sep" />
-          const dis = (p.disabled ?? []).includes(i.name)
-          const btn = (
-            <button key={i.name} type="button" className="wfc-tool" disabled={dis} style={i.size ? { width: i.size[0], height: i.size[1] } : undefined}
-              onClick={i.items.length ? undefined : () => p.onMenu?.(i.name)}>
-              {i.image && <span className="wfc-tool-img" style={{ backgroundImage: `url(/station-web/${i.image})` }} />}
-              <span className="wfc-tool-text">{itemText(i)}</span>
-            </button>
-          )
-          return i.items.length
-            ? <Dropdown key={i.name} trigger={['click']} disabled={dis} menu={{ items: menuItems(i.items) }}>{btn}</Dropdown>
-            : btn
-        })}
+        <StripRow className="wfc-toolstrip-row" onHeight={(h) => reportStrip(c.name, h)}>
+          {items.map((i) => {
+            if (i.type === 'ToolStripSeparator') return <span key={i.name} className="wfc-tool-sep" />
+            const dis = (p.disabled ?? []).includes(i.name)
+            const label = itemText(i)
+            const btn = (
+              <button key={i.name} type="button" className="wfc-tool" disabled={dis} title={label}
+                style={i.size ? { maxWidth: i.size[0], height: i.size[1] } : undefined}
+                onClick={i.items.length ? undefined : () => p.onMenu?.(i.name)}>
+                {i.image && <span className="wfc-tool-img" style={{ backgroundImage: `url(/station-web/${i.image})` }} />}
+                <span className="wfc-tool-text">{label}</span>
+              </button>
+            )
+            return i.items.length
+              ? <Dropdown key={i.name} trigger={['click']} disabled={dis} menu={{ items: menuItems(i.items) }}>{btn}</Dropdown>
+              : btn
+          })}
+        </StripRow>
       </div>
     )
   }
@@ -756,7 +787,7 @@ export default function WinForm(p: WinFormProps) {
 
   function classicBody(parent: string, offset: [number, number]): ReactNode {
     const kids = (classicKids[parent] ?? []).filter((c) => !c.type.endsWith('TabPage'))
-    const pos = placeChildren(kids, offset)
+    const pos = placeChildren(kids, offset, stripGrow)
     // Le premier de l'ordre d'empilement est devant
     const useZ = kids.some((k) => (k.z ?? 0) !== 0)
     return (
@@ -786,6 +817,35 @@ export default function WinForm(p: WinFormProps) {
   // Clic sur le fond (Panel / fenêtre) : seulement s il ne vient pas d un contrôle enfant, comme en WinForms
   return <div className="wf-root" style={rootBg ? { backgroundImage: `url(/station-web/${rootBg})`, backgroundSize: 'cover' } : undefined}
     onClick={(e) => { if (e.target === e.currentTarget) p.onCtlEvent?.('$this', 'Click') }}>{renderBody('$this')}</div>
+}
+
+/**
+ * Contenu d'une barre (outils, menus) qui peut passer sur plusieurs lignes : sa hauteur naturelle est
+ * remontée au placement des contrôles ancrés, pour que le reste de la fenêtre se décale au lieu d'être recouvert.
+ */
+function StripRow({ className, onHeight, children }: { className?: string; onHeight: (h: number) => void; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const report = useRef(onHeight)
+  report.current = onHeight
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const measure = () => {
+      if (el.offsetHeight > 0) report.current(Math.ceil(el.offsetHeight))
+    }
+    measure()
+    // Fenêtres modales : contenu attaché à la page après cet effet
+    const t = window.setTimeout(measure, 0)
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    window.addEventListener('resize', measure)
+    return () => {
+      window.clearTimeout(t)
+      ro.disconnect()
+      window.removeEventListener('resize', measure)
+    }
+  }, [])
+  return <div ref={ref} className={className}>{children}</div>
 }
 
 /**

@@ -59,12 +59,12 @@ public class UserCardMessage extends SwForm {
             int num2 = Conv.toInt(array[1]);
             if ("Next".equals(sender)) {
                 if (num == num2) {
-                    throw new IllegalStateException("当前为最后一页");
+                    throw new IllegalStateException("Vous êtes déjà sur la dernière page");
                 }
                 num++;
             } else if ("Cur".equals(sender)) {
                 if (num == 1) {
-                    throw new IllegalStateException("当前为第一页");
+                    throw new IllegalStateException("Vous êtes sur la première page");
                 }
                 num--;
             }

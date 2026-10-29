@@ -100,7 +100,7 @@ public class DailyClose extends SwForm {
         try {
             String dt = c("DTDate").Value().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
             if (db().first("DailyGunReports", "{Shift} = :s", p("s", dt)) != null) {
-                throw new IllegalStateException("不能重复日结");
+                throw new IllegalStateException("La clôture journalière a déjà été faite");
             }
             String[] error = {""};
             if (!NozDailyClose(dt, error) || !GradeDailyClose(dt, error) || !TotalDailyClosee(dt, error)) {
@@ -108,7 +108,7 @@ public class DailyClose extends SwForm {
             }
             ShowReportData(dt);
             tx.commit();
-            MessageBox("日结完成");
+            MessageBox("Clôture journalière terminée");
         } catch (RuntimeException ex) {
             tx.rollback();
             MessageBox(ex.getMessage());
@@ -120,7 +120,7 @@ public class DailyClose extends SwForm {
         try {
             List<Row> list = db().query(NOZ_SQL, p("n", 8, "dt", dt));
             if (list.isEmpty()) {
-                throw new IllegalStateException("无交班数据");
+                throw new IllegalStateException("Aucun poste clôturé");
             }
             for (Row item : list) {
                 db().insert("DailyGunReports", Row.of("Shift", dt, "StartPT", item.get("STARTPT"), "EndPT", item.get("EndPT"), "StartTime",
@@ -162,7 +162,7 @@ public class DailyClose extends SwForm {
                     "TotalVolume", t.get("TotalVolume")));
                 return true;
             }
-            throw new IllegalStateException("汇总数据为空");
+            throw new IllegalStateException("Aucune donnée à totaliser");
         } catch (RuntimeException ex) {
             error[0] = ex.getMessage();
             MessageBox(ex.getMessage());
@@ -174,7 +174,7 @@ public class DailyClose extends SwForm {
         try {
             String dt = c("DTDate").Value().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
             if (!c("ReportClosed").Visible()) {
-                throw new IllegalStateException("尚未日结处理,无法导出");
+                throw new IllegalStateException("Faites d'abord la clôture journalière pour exporter");
             }
             List<Row> nozs = new ArrayList<>();
             for (Row item : db().list("DailyGunReports", "{Shift} = :s ORDER BY {GunCode}", p("s", dt))) {

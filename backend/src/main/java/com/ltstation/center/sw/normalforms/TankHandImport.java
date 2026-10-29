@@ -36,9 +36,9 @@ public class TankHandImport extends SwForm {
     public void ConfirmBtn_Click() {
         try {
             int tid = argInt("ID");
-            BigDecimal volume = parse(c("ImportVolumeBox").Text(), "入库量格式错误");
-            BigDecimal price = parse(c("ImportPriceBox").Text(), "入库单价格式错误");
-            BigDecimal amount = parse(c("ImportAmountBox").Text(), "入库金额格式错误");
+            BigDecimal volume = parse(c("ImportVolumeBox").Text(), "Format de la quantité reçue incorrect");
+            BigDecimal price = parse(c("ImportPriceBox").Text(), "Format du prix unitaire d'entrée incorrect");
+            BigDecimal amount = parse(c("ImportAmountBox").Text(), "Format du montant d'entrée incorrect");
             Row tank = db().first("NormalTank", "{ID} = :i", p("i", tid));
             if (tank == null) {
                 throw new IllegalStateException("Lost Tank");

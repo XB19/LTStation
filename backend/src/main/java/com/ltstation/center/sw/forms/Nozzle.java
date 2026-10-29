@@ -216,9 +216,9 @@ public class Nozzle extends SwForm {
             c("OilType").Text("能源类型:" + oil);
             c("PPU").Text("单价:" + price.toPlainString());
         } else {
-            c("NozName").Text("No." + nozId);
-            c("OilType").Text("Fuel Type:" + oil);
-            c("PPU").Text("Price:" + price.toPlainString());
+            c("NozName").Text("N°" + nozId);
+            c("OilType").Text("Énergie : " + oil);
+            c("PPU").Text("Prix : " + price.toPlainString());
         }
         Row o = db().first("OilTransactions", "{GunId} = :g AND ({TType} = 5 OR {TType} = 6) ORDER BY {TrueTime} DESC", p("g", nozId));
         if (o != null) {
@@ -264,10 +264,10 @@ public class Nozzle extends SwForm {
         try {
             Row o = db().first("OilTransactions", "{GunId} = :g ORDER BY {TrueTime} DESC", p("g", NozID));
             if (o != null) {
-                c("VTLabel").Text((zh ? "总累:" : "VolumeTotal:") + o.str("VolumeTotal"));
+                c("VTLabel").Text((zh ? "总累:" : "Index : ") + o.str("VolumeTotal"));
                 VolTotal = BigDecimal.valueOf(Conv.toDouble(o.get("VolumeTotal"))).setScale(3, RoundingMode.HALF_EVEN).stripTrailingZeros();
             } else {
-                c("VTLabel").Text(zh ? "总累:0" : "VolumeTotal:0");
+                c("VTLabel").Text(zh ? "总累:0" : "Index : 0");
                 VolTotal = BigDecimal.ZERO;
             }
             Row g = db().first("GunConfig", "{GUNCODE} = :g", p("g", NozID));
@@ -276,7 +276,7 @@ public class Nozzle extends SwForm {
                 db().update("GunConfig", g);
             }
         } catch (RuntimeException e) {
-            c("VTLabel").Text(zh ? "总累:0" : "VolumeTotal:0");
+            c("VTLabel").Text(zh ? "总累:0" : "Index : 0");
         }
     }
 
@@ -388,7 +388,7 @@ public class Nozzle extends SwForm {
                         case 81 -> {
                             text = IniInfo.SupervisionType == 0 ? "00" : Cmd_Supervivon(text4);
                             text = frameEnd(BaseFunction.ConverToStr(hex(Port), 2) + "00" + hex(Frame) + "000251" + text);
-                            NozLog.writeLog("监管信息:" + text);
+                            NozLog.writeLog("Supervision : " + text);
                         }
                         case 82 -> {
                             NozLog.writeLog("App");
@@ -413,7 +413,7 @@ public class Nozzle extends SwForm {
                                 text = BaseFunction.ConverToStr(hex(Port), 2) + "00" + hex(Frame) + "000255" + BaseFunction.ConverToStr(hex(5), 2);
                             }
                             text = frameEnd(text);
-                            NozLog.writeLog("集团副卡信息:" + text);
+                            NozLog.writeLog("Carte secondaire de groupe : " + text);
                         }
                         case 86 -> NozLog.writeLog("Receive Valid");
                         default -> {
@@ -631,11 +631,11 @@ public class Nozzle extends SwForm {
             String asn = dataBlack.substring(14, 34);
             Row info = db().first("CustomerCardInfos", "{ASN} = :a AND {Suspend} = 0", p("a", asn));
             if (info == null) {
-                throw new IllegalStateException("无该用户");
+                throw new IllegalStateException("Client introuvable");
             }
             Row cus = db().first("Customers", "{CustomerID} = :c", p("c", info.get("CustomerID")));
             if (cus == null) {
-                throw new IllegalStateException("无此用户");
+                throw new IllegalStateException("Client introuvable");
             }
             if (!IniInfo.token.isEmpty()) {
                 String color = Integer.toHexString(cus.i("VehicleColorID"));
@@ -843,11 +843,11 @@ public class Nozzle extends SwForm {
             }
             String text = BaseFunction.ConverToStr(hex(Port), 2) + "00" + hex(Frame) + "001236" + (listed ? "00" : "01") + asn;
             text = frameEnd(text);
-            NozLog.writeLog("黑名单确认信息:" + text);
+            NozLog.writeLog("Liste noire (confirmation) : " + text);
             return text;
         } catch (RuntimeException ex) {
             String text = frameEnd(BaseFunction.ConverToStr(hex(NozID), 2) + "00" + hex(Frame) + "00123601" + asn);
-            NozLog.writeLog("黑名单异常信息:" + ex.getMessage());
+            NozLog.writeLog("Liste noire (erreur) : " + ex.getMessage());
             return text;
         }
     }
@@ -870,7 +870,7 @@ public class Nozzle extends SwForm {
                 text = HexFormat(Port, 2) + "00" + hex(Frame) + "00023501";
             }
             text = frameEnd(text);
-            NozLog.writeLog("灰记录查询结果:" + text);
+            NozLog.writeLog("Transactions grises (résultat) : " + text);
             return text;
         } catch (RuntimeException ex) {
             NozLog.writeLog(String.valueOf(ex.getMessage()));
@@ -901,23 +901,23 @@ public class Nozzle extends SwForm {
             switch (Conv.toInt(cus.get("Suspend"))) {
                 case 1 -> {
                     ci.SuspendType = 14;
-                    throw new Suspend("卡挂失");
+                    throw new Suspend("Carte déclarée perdue");
                 }
                 case 2, 3, 4, 5, 6, 7 -> {
                     ci.SuspendType = 14;
-                    throw new Suspend("当前卡状态处于非正常状态");
+                    throw new Suspend("La carte n'est pas dans un état normal");
                 }
                 case 8 -> {
                     ci.SuspendType = 4;
-                    throw new Suspend("当前卡状态处于非正常状态");
+                    throw new Suspend("La carte n'est pas dans un état normal");
                 }
                 case 9 -> {
                     ci.SuspendType = 3;
-                    throw new Suspend("当前卡状态处于非正常状态");
+                    throw new Suspend("La carte n'est pas dans un état normal");
                 }
                 case 10 -> {
                     ci.SuspendType = 2;
-                    throw new Suspend("当前卡状态处于非正常状态");
+                    throw new Suspend("La carte n'est pas dans un état normal");
                 }
                 default -> {
                 }
@@ -927,19 +927,19 @@ public class Nozzle extends SwForm {
                 case 1 -> {
                     if (confine.indexOf(stations.str("RegionCodeInner")) <= 0) {
                         ci.SuspendType = 11;
-                        throw new Suspend("区域限制");
+                        throw new Suspend("Région non autorisée");
                     }
                 }
                 case 2 -> {
                     if (confine.indexOf(stations.str("CityCodeInner")) <= 0) {
                         ci.SuspendType = 12;
-                        throw new Suspend("城市限制");
+                        throw new Suspend("Ville non autorisée");
                     }
                 }
                 case 4 -> {
                     if (confine.indexOf(stations.str("Code")) <= 0) {
                         ci.SuspendType = 13;
-                        throw new Suspend("站点限制");
+                        throw new Suspend("Station non autorisée");
                     }
                 }
                 default -> {
@@ -951,11 +951,11 @@ public class Nozzle extends SwForm {
                 if (limitOil.substring(1).equals("000")) {
                     if (!(code.charAt(0) + "000").equals(limitOil)) {
                         ci.SuspendType = 6;
-                        throw new Suspend("油品限制");
+                        throw new Suspend("Énergie non autorisée");
                     }
                 } else if (!limitOil.equals(code)) {
                     ci.SuspendType = 6;
-                    throw new Suspend("油品限制");
+                    throw new Suspend("Énergie non autorisée");
                 }
             }
             ci.PreferentialPrice = round(dec(cus.get("PreferentialPrice")), IniInfo.Mradio);
@@ -964,7 +964,7 @@ public class Nozzle extends SwForm {
             Row acc = db().first("CustomerAccounts", "{CustomerAccountID} = :c", p("c", cus.get("CustomerID")));
             if (acc == null) {
                 ci.SuspendType = 5;
-                throw new Suspend("账户不存在");
+                throw new Suspend("Compte introuvable");
             }
             double num2 = Conv.round(bal.doubleValue(), IniInfo.Mradio);
             int num3 = Conv.toInt(acc.get("TotalTimesDaily"));
@@ -997,23 +997,23 @@ public class Nozzle extends SwForm {
             double limitVolumeMonthly = Conv.toDouble(cus.get("LimitVolumeMonthly"));
             if (limitTime > 0 && num3 >= limitTime) {
                 ci.SuspendType = 7;
-                throw new Suspend("超出日限制次数");
+                throw new Suspend("Nombre de pleins par jour dépassé");
             }
             if (limitVolume > 0.0 && num7 >= limitVolume) {
                 ci.SuspendType = 7;
-                throw new Suspend("超过日升数限制");
+                throw new Suspend("Limite de litres par jour dépassée");
             }
             if (limitAmount > 0.0 && num4 >= limitAmount) {
                 ci.SuspendType = 8;
-                throw new Suspend("超出日金额交易量");
+                throw new Suspend("Limite de montant par jour dépassée");
             }
             if (limitAmountMonthly > 0.0 && num5 >= limitAmountMonthly) {
                 ci.SuspendType = 9;
-                throw new Suspend("超出月金额交易量");
+                throw new Suspend("Limite de montant par mois dépassée");
             }
             if (limitVolumeMonthly > 0.0 && num6 > limitVolumeMonthly) {
                 ci.SuspendType = 10;
-                throw new Suspend("超出月升数限制");
+                throw new Suspend("Limite de litres par mois dépassée");
             }
             ci.MaxVolume = BigDecimal.valueOf(-1);
             if (limitVolume > 0.0 && limitVolumeMonthly == 0.0) {
@@ -1027,7 +1027,7 @@ public class Nozzle extends SwForm {
             }
             if (ci.MaxVolume.compareTo(BigDecimal.ONE) < 0 && ci.MaxVolume.compareTo(BigDecimal.valueOf(-1)) != 0) {
                 ci.SuspendType = 10;
-                throw new Suspend("加油不能小于1升");
+                throw new Suspend("Le plein doit faire au moins 1 litre");
             }
             ci.MaxAmount = round(BigDecimal.valueOf(num2), IniInfo.Mradio);
             if (limitAmount > 0.0 && limitAmountMonthly == 0.0) {
@@ -1108,17 +1108,17 @@ public class Nozzle extends SwForm {
             }
             if (db().first("Stations") == null) {
                 ci.SuspendType = 5;
-                throw new Suspend("非法站点");
+                throw new Suspend("Station non valide");
             }
             Row ga = db().first("GroupAccounts", "{AccountNo} = :g", p("g", cus.str("GroupID")));
             if (ga == null) {
                 ci.SuspendType = 5;
-                throw new Suspend("集团不存在");
+                throw new Suspend("Groupe introuvable");
             }
             Row gc = db().first("GroupCardInfos", "{GroupID} = :g AND ({CardStatusTypeID} = 0 OR {CardStatusTypeID} = 9)", p("g", cus.get("GroupID")));
             if (gc == null || gc.i("CardStatusTypeID") == 1) {
                 ci.SuspendType = 5;
-                throw new Suspend("集团账户已冻结");
+                throw new Suspend("Le compte du groupe est bloqué");
             }
             BigDecimal num = round(dec(ga.get("Balance")), IniInfo.Mradio);
             Row gc2 = db().first("GroupCardInfos", "{GroupID} = :g", p("g", cus.get("GroupID")));
@@ -1143,27 +1143,27 @@ public class Nozzle extends SwForm {
             if (credit != null) {
                 if (db().first("Stations") == null) {
                     ci.SuspendType = 5;
-                    throw new Suspend("非法站点");
+                    throw new Suspend("Station non valide");
                 }
                 Row acc = db().first("CustomerAccounts", "{CustomerAccountID} = :c", p("c", credit.get("CustomerID")));
                 if (acc == null) {
                     ci.SuspendType = 5;
-                    throw new Suspend("用户账户不存在");
+                    throw new Suspend("Compte client introuvable");
                 }
                 if (asn.indexOf("E2") != 0) {
                     if (!IniInfo.CreditPayAdvance) {
                         Row gci = db().first("GroupCardInfos", "{GroupID} = :g", p("g", credit.get("GroupID")));
                         if (gci == null) {
                             ci.SuspendType = 5;
-                            throw new Suspend("集团不存在");
+                            throw new Suspend("Groupe introuvable");
                         }
                         Row ga = db().first("GroupAccounts", "{AccountNo} = :g", p("g", gci.str("GroupID")));
                         if (ga == null) {
-                            throw new Suspend("集团账户不存在");
+                            throw new Suspend("Compte du groupe introuvable");
                         }
                         if (Conv.toDouble(ga.get("Balance")) <= 0.0) {
                             ci.SuspendType = 5;
-                            throw new Suspend("集团余额不足");
+                            throw new Suspend("Solde du groupe insuffisant");
                         }
                     }
                 } else {
@@ -1172,7 +1172,7 @@ public class Nozzle extends SwForm {
                 return CheckStatue(credit, dec(acc.get("Balance")), preAmount);
             }
             ci.SuspendType = 5;
-            throw new Suspend("用户不存在");
+            throw new Suspend("Client introuvable");
         } catch (RuntimeException ex) {
             NozLog.writeLog(String.valueOf(ex.getMessage()));
         }
@@ -1242,10 +1242,10 @@ public class Nozzle extends SwForm {
             boolean zh = "zh-CN".equals(IniInfo.Language);
             if (i == 0) {
                 c("FuelType").BackColor("LightGreen");
-                c("FuelType").Text(zh ? "通讯正常" : "Communication Success");
+                c("FuelType").Text(zh ? "通讯正常" : "Communication établie");
             } else {
                 c("FuelType").BackColor("LightGray");
-                c("FuelType").Text(zh ? "通讯失败" : "Communication Failed");
+                c("FuelType").Text(zh ? "通讯失败" : "Échec de la communication");
             }
         }
     }

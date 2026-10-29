@@ -29,14 +29,14 @@ public class AddScoreSet extends SwForm {
             try {
                 result = new BigDecimal(c("ScoreRate").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("积分转换率输入错误");
+                throw new IllegalStateException("Taux de conversion des points incorrect");
             }
             int gradeId = c("GradeType").SelectedRow().i("GradeSpecificID");
             Row gs = SW.dto().make("GradeScore", "GradeID", gradeId, "OperateID", c("ScoreType").SelectedIndex(), "Score", result, "SOID", 2,
                 "StationID", IniInfo.StationID);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/ScoreRuleDeal", Wire.json(gs));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 Close("OK");
                 return;
             }

@@ -20,7 +20,7 @@ public class StationNozzleSet extends SwForm {
     protected void init() {
         sID = argInt("ID");
         if (sID == 1) {
-            c("NextButton").Text("en-US".equals(IniInfo.Language) ? "Confirm" : "确定");
+            c("NextButton").Text("zh-CN".equals(IniInfo.Language) ? "确定" : "Valider");
         }
         TankLoadData();
         LoadData();

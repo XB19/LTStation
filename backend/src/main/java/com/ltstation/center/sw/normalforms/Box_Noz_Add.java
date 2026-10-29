@@ -41,19 +41,19 @@ public class Box_Noz_Add extends SwForm {
             try {
                 nid = Integer.parseInt(c("NozID").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("枪号格式错误");
+                throw new IllegalStateException("Format du n° de pistolet incorrect");
             }
             BigDecimal price;
             try {
                 price = new BigDecimal(c("Price").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("价格格式错误");
+                throw new IllegalStateException("Format du prix incorrect");
             }
             Row noz = Row.of("CreateTime", BaseFunction.ConvertDateTimeToInt(), "TankID", tank.get("ID"), "GradeID", tank.get("GradeID"), "IsUsing", true,
                 "NozID", nid, "PortID", comPort(), "Box_Port_ID", boxPort(), "Price", price, "Accredit", c("AuthSelect").SelectedIndex(),
                 "UpdateTime", BaseFunction.ConvertDateTimeToInt());
             if (db().any("NormalNoz", "{NozID} = :n", p("n", nid))) {
-                throw new IllegalStateException("枪号已经存在");
+                throw new IllegalStateException("Ce n° de pistolet existe déjà");
             }
             int id = Conv.toInt(db().insert("NormalNoz", noz));
             NormalFunction.MainFormMessage.accept(1028, id, 0);

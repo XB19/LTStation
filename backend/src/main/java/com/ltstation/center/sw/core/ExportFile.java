@@ -360,11 +360,12 @@ public class ExportFile {
         try {
             String text = "Daily-" + No + ".xls";
             String dir = "Daily";
-            if (TableName.contains("月报")) {
+            // Les appelants passent « nom de la station + L("MonthReport") / L("Shift") » ; « 月报 » / « 班报 » en chinois
+            if (TableName.contains("月报") || TableName.endsWith(L("MonthReport"))) {
                 text = "Month-" + No + ".xls";
                 dir = "Month";
             }
-            if (TableName.contains("班报")) {
+            if (TableName.contains("班报") || TableName.endsWith(L("Shift"))) {
                 text = "Shift-" + No + ".xls";
                 dir = "Shift";
             }
@@ -478,7 +479,7 @@ public class ExportFile {
     private HSSFWorkbook DailyShiftExcel(String No, List<Row> NozList, List<Row> GradeList, List<Row> dataList) {
         int num = 1;
         HSSFWorkbook wb = new HSSFWorkbook();
-        String text = No.length() == 6 ? "月报" : "日报";
+        String text = L(No.length() == 6 ? "MonthReport" : "DailyReport");
         Sheet sheet = wb.createSheet(text + L("Table") + "-" + No);
         for (int i = 0; i < 14; i++) {
             sheet.setColumnWidth(i, i == 4 || i == 5 ? 4608 : 3072);
@@ -570,9 +571,9 @@ public class ExportFile {
         }
         int num7 = 6 + Math.max(NozList.size(), GradeList.size()) + 1;
         sheet.createRow(num7);
-        cell(sheet, num7, 0, "数据列表", cellStyle);
+        cell(sheet, num7, 0, "Liste des données", cellStyle);
         sheet.addMergedRegion(new CellRangeAddress(num7, num7, 0, 8));
-        String[] dhead = {"序号", "枪号", "起始泵码", "截止泵码", "开始时间", "截止时间", "总升数", "总金额", "误差"};
+        String[] dhead = {"N°", "Pistolet", "Index de début", "Index de fin", "Début", "Fin", "Litres", "Montant total", "Écart"};
         for (int i = 0; i < dataList.size(); i++) {
             int y = num7 + i + 1;
             sheet.createRow(y);
@@ -649,9 +650,9 @@ public class ExportFile {
             int n = dt.Columns.size();
             sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, Math.max(n - 1, 1)));
             sheet.createRow(1);
-            cell(sheet, 1, 0, "操作时间:", null);
+            cell(sheet, 1, 0, "Date de l'opération :", null);
             cell(sheet, 1, 1, now(), null);
-            cell(sheet, 1, n - 2, "操作人:", null);
+            cell(sheet, 1, n - 2, "Opérateur :", null);
             cell(sheet, 1, n - 1, IniInfo.LoginName, null);
             for (int j = 0; j < dt.Rows.size(); j++) {
                 sheet.setColumnWidth(j, j == 0 || j == 7 ? 5120 : 2560);
@@ -755,7 +756,7 @@ public class ExportFile {
         try {
             Row obj = SW.db().first("Stations");
             if (obj == null) {
-                throw new IllegalStateException("站点不能为空");
+                throw new IllegalStateException("La station est obligatoire");
             }
             Path file = BASE.resolve("Export").resolve("PDF").resolve(FName + stamp() + ".pdf");
             Files.createDirectories(file.getParent());

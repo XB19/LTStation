@@ -35,7 +35,7 @@ public class CarUpdateMess extends CylinderForm {
             c("Cur").Enabled(true);
             c("Next").Enabled(true);
             if (ID == -1) {
-                throw new IllegalStateException("缺失设备信息");
+                throw new IllegalStateException("Informations de l'appareil manquantes");
             }
             LoadGroupHttp();
             LoadLocalGroup();

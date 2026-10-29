@@ -23,10 +23,10 @@ public class NormalEmployeeAdd extends SwForm {
     public void SaveButton_Click() {
         try {
             if (db().any("Employees", "{Name} = :n", p("n", c("EmployeeName").Text()))) {
-                throw new IllegalStateException("员工姓名重复");
+                throw new IllegalStateException("Ce nom d'employé existe déjà");
             }
             if (db().any("Employees", "{Memo1} = :l AND {Memo2} = :p", p("l", c("LoginName").Text(), "p", c("Password").Text()))) {
-                throw new IllegalStateException("登录名密码重复");
+                throw new IllegalStateException("Cet identifiant et ce mot de passe existent déjà");
             }
             String code = c("EmpoyeeCode").Text();
             db().insert("Employees", Row.of("Code", code, "Name", c("EmployeeName").Text(), "Memo1", c("LoginName").Text(), "Memo2", c("Password").Text(),

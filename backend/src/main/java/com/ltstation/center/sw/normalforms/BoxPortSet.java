@@ -36,18 +36,18 @@ public class BoxPortSet extends SwForm {
             for (Row item : db().list("Box_Set", "{Port_ID} = :p ORDER BY {Box_PortID}", p("p", PortID()))) {
                 // comme l'original : 1 = pair, 2 = impair (inverse de NozDelopy)
                 String parity = switch (item.i("Box_Parity")) {
-                    case 0 -> "无校验";
-                    case 1 -> "偶校验";
-                    case 2 -> "奇校验";
+                    case 0 -> "Aucune";
+                    case 1 -> "Paire";
+                    case 2 -> "Impaire";
                     default -> "";
                 };
                 String type = switch (item.i("Box_CommunicationTypeID")) {
-                    case 0 -> "无协议";
-                    case 1 -> "蓝天";
-                    case 2 -> "龙野";
-                    case 3 -> "日本";
+                    case 0 -> "Aucun protocole";
+                    case 1 -> "Blue Sky";
+                    case 2 -> "Longye";
+                    case 3 -> "Japon";
                     case 4 -> "Dart";
-                    case 5 -> "液位仪";
+                    case 5 -> "Jaugeur";
                     default -> "";
                 };
                 g("BoxPortView").RowsAdd(item.get("ID"), item.get("Box_PortID"), item.get("Box_Baud"), item.get("Box_Stop"), parity, type,
@@ -60,7 +60,7 @@ public class BoxPortSet extends SwForm {
 
     private int cell(int col) {
         if (g("BoxPortView").CurrentRow() == null) {
-            throw new IllegalStateException("请先创建端口");
+            throw new IllegalStateException("Créez d'abord un port");
         }
         return Conv.toInt(g("BoxPortView").Cell(g("BoxPortView").CurrentRowIndex(), col));
     }

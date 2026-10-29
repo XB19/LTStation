@@ -92,7 +92,7 @@ public class Card_Balance_Deal extends SwForm {
                 throw new IllegalStateException(BaseFunction.DecryptByAES(r.Mess()));
             }
             ClearInput();
-            MessageBox("Deal Success");
+            MessageBox("Opération réussie");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }

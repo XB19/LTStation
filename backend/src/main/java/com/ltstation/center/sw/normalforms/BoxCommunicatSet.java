@@ -176,7 +176,7 @@ public class BoxCommunicatSet extends SwForm implements NormalEngine.BoxSetView 
             SetText(version);
             NozSerial port = NormalEngine.Ports.stream().filter(t -> t.ID == Port_ID).findFirst().orElse(null);
             if (port == null) {
-                throw new IllegalStateException("通讯盒不存在");
+                throw new IllegalStateException("Boîtier de communication introuvable");
             }
             if (port.CurrentProgram != -1) {
                 return;

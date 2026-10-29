@@ -22,14 +22,14 @@ public class CameraUpdate extends SwForm {
             String ip = c("IPBox").Text();
             int num = Conv.toInt(c("NozSelect").SelectedValue());
             if (name.isEmpty() || ip.isEmpty() || num == 0) {
-                throw new IllegalStateException("信息缺失");
+                throw new IllegalStateException("Informations manquantes");
             }
             if (db().first("CameraSupervise", "{Name} = :n AND {ID} <> :id", p("n", name, "id", ID)) != null) {
-                throw new IllegalStateException("当前设备已配置");
+                throw new IllegalStateException("Cet appareil est déjà configuré");
             }
             Row cam = db().first("CameraSupervise", "{ID} = :id", p("id", ID));
             if (cam == null) {
-                throw new IllegalStateException("设备不存在");
+                throw new IllegalStateException("Appareil introuvable");
             }
             cam.put("Name", name);
             cam.put("IP", ip);
@@ -50,7 +50,7 @@ public class CameraUpdate extends SwForm {
         try {
             Row cam = db().first("CameraSupervise", "{ID} = :id", p("id", ID));
             if (cam == null) {
-                throw new IllegalStateException("信息不存在");
+                throw new IllegalStateException("Informations introuvables");
             }
             c("NameBox").Text(cam.get("Name"));
             c("IPBox").Text(cam.get("IP"));

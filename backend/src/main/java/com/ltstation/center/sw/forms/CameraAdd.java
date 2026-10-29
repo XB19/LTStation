@@ -28,10 +28,10 @@ public class CameraAdd extends SwForm {
             String ip = c("IPBox").Text();
             int num = Conv.toInt(c("NozSelect").SelectedValue());
             if (name.isEmpty() || ip.isEmpty() || num == 0) {
-                throw new IllegalStateException("信息缺失");
+                throw new IllegalStateException("Informations manquantes");
             }
             if (db().first("CameraSupervise", "{Name} = :n", p("n", name)) != null) {
-                throw new IllegalStateException("名称重复");
+                throw new IllegalStateException("Ce nom existe déjà");
             }
             db().insert("CameraSupervise", Row.of("Name", name, "IP", ip, "NozID", num));
             Close("OK");

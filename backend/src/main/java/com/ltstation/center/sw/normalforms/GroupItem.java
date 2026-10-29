@@ -54,7 +54,7 @@ public class GroupItem extends SwForm {
             if (!r.Result()) {
                 throw new IllegalStateException(BaseFunction.DecryptByAES(r.Mess()));
             }
-            MessageBox("Deal Success");
+            MessageBox("Opération réussie");
             Close("OK");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());

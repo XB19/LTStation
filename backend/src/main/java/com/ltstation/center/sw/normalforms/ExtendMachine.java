@@ -14,7 +14,7 @@ public class ExtendMachine extends SwForm {
             int machineType = c("MachineTypeCombox").SelectedIndex();
             String text = c("SerialPortCombox").Text();
             if (machineType == -1 || text.isEmpty()) {
-                throw new IllegalStateException("设备类型或者串口丢失");
+                throw new IllegalStateException("Type d'appareil ou port série manquant");
             }
             Row ext = db().first("ExtendPort", "{MachineType} = :m", p("m", machineType));
             if (ext == null) {

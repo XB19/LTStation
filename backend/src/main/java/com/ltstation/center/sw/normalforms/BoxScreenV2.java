@@ -191,14 +191,14 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                                 }
                                 db().updateAll("BoxDayList", list2);
                             }
-                            MessageBox("Close Month Success");
+                            MessageBox("Clôture mensuelle réussie");
                         });
                     }
                 }
                 case "CloseShift" -> {
                     if (db().first("NormalTransaction", "{SaleCheck} = '' OR {SaleCheck} IS NULL", null) != null
                         || db().first("BillOrder", "{BillComplete} = 0", null) != null) {
-                        MessageBox("Shift Can't Close,Record unsettled");
+                        MessageBox("Impossible de clôturer le poste : des transactions ne sont pas réglées");
                     } else {
                         Ask("Close Shift?", yes -> {
                             if (yes) {
@@ -206,7 +206,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                                 if (error != null) {
                                     MessageBox(error);
                                 }
-                                MessageBox("Close Shift Success");
+                                MessageBox("Clôture du poste réussie");
                             }
                         });
                     }
@@ -237,7 +237,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                                 }
                                 db().updateAll("BoxShiftList", list);
                             }
-                            MessageBox("Close Day Success");
+                            MessageBox("Clôture journalière réussie");
                         });
                     }
                 }
@@ -357,7 +357,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                 num = num.add(item.dec("Amount"));
             }
             c("AmountLabel").Text(num.toPlainString());
-            c("TotalAmountLabel").Text("Total:" + num.toPlainString());
+            c("TotalAmountLabel").Text("Total : " + num.toPlainString());
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
@@ -376,7 +376,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
             c("AmountLabel").Text("0");
         }
         if (c("TotalAmountLabel").Text().isEmpty()) {
-            c("TotalAmountLabel").Text("Total:0");
+            c("TotalAmountLabel").Text("Total : 0");
         }
         BigDecimal v = parse(c("AmountLabel").Text());
         return v == null ? BigDecimal.ZERO : v;
@@ -395,7 +395,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                 }
             }
             c("AmountLabel").Text(result.toPlainString());
-            c("TotalAmountLabel").Text("Total:" + result.toPlainString());
+            c("TotalAmountLabel").Text("Total : " + result.toPlainString());
             c("ChangeLabel").Text(num.signum() != 0 ? num.subtract(result).abs().toPlainString() : "");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
@@ -412,7 +412,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                 result = result.add(item.dec("Amount"));
             }
             c("AmountLabel").Text(result.toPlainString());
-            c("TotalAmountLabel").Text("Total:" + result.toPlainString());
+            c("TotalAmountLabel").Text("Total : " + result.toPlainString());
         } catch (RuntimeException ignored) {
             // comme l'original
         }
@@ -444,7 +444,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                         }
                         c("AmountBox").Text("");
                     }
-                    c("MessageLabel").Text("Please Write " + type + " Value");
+                    c("MessageLabel").Text("Saisissez " + type + " Value");
                 }
                 case "ShowReceiptBtn" -> ShowDialog("BoxScreenView.ReceiptForm", r -> { });
                 case "InternalUseBtn" -> confirmed(() -> Ask("Are you sure?", yes -> {
@@ -463,17 +463,17 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
                 }
                 case "CreditCardBtn" -> {
                     PayWay = 1;
-                    c("MessageLabel").Text("Please Write your Credit Card");
+                    c("MessageLabel").Text("Saisissez votre carte de crédit");
                     CreditCardNumber = c("AmountBox").Text();
                 }
                 case "FleetCardBtn" -> {
                     PayWay = 2;
-                    c("MessageLabel").Text("Please Write your Fleet Card");
+                    c("MessageLabel").Text("Saisissez votre carte flotte");
                     CreditCardNumber = c("AmountBox").Text();
                 }
                 case "OKBtn" -> {
                     if (PayWay == -1) {
-                        throw new IllegalStateException("请先选择支付方式");
+                        throw new IllegalStateException("Choisissez d'abord un moyen de paiement");
                     }
                     CreditCardNumber = c("AmountBox").Text();
                     DealBill(0);
@@ -659,7 +659,7 @@ public class BoxScreenV2 extends SwForm implements NormalEngine.BoxScreenView {
         try {
             g("OilDataView").RowsClear();
             c("AmountLabel").Text("0");
-            c("TotalAmountLabel").Text("Total:0");
+            c("TotalAmountLabel").Text("Total : 0");
             c("AmountBox").Text("");
             c("MessageLabel").Text(IniInfo.LoginName);
             CreditCardNumber = "";

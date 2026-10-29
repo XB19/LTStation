@@ -22,7 +22,7 @@ public class PortUpdate extends SwForm {
         try {
             Row set = db().first("NormalPortSet", "{ID} = :i", p("i", argInt("ID")));
             if (set == null) {
-                throw new IllegalStateException("串口信息不存在");
+                throw new IllegalStateException("Port série introuvable");
             }
             c("PortSelect").Text(set.str("PortID"));
             c("BuadSelect").Text(set.str("Baud"));
@@ -51,15 +51,15 @@ public class PortUpdate extends SwForm {
         try {
             int id = argInt("ID");
             String portCom = c("PortSelect").Text();
-            int baud = parse(c("BuadSelect").Text(), "波特率选择错误");
-            int dataBit = parse(c("DataBitSelect").Text(), "数据位选择错误");
-            int stopBit = parse(c("StopBitSelect").Text(), "停止位选择错误");
+            int baud = parse(c("BuadSelect").Text(), "Débit (bauds) incorrect");
+            int dataBit = parse(c("DataBitSelect").Text(), "Bits de données incorrects");
+            int stopBit = parse(c("StopBitSelect").Text(), "Bits d'arrêt incorrects");
             Row set = db().first("NormalPortSet", "{ID} = :i", p("i", id));
             if (set == null) {
-                throw new IllegalStateException("串口信息不存在");
+                throw new IllegalStateException("Port série introuvable");
             }
             if (db().any("NormalPortSet", "{PortID} = :p AND {ID} <> :i", p("p", portCom, "i", id))) {
-                throw new IllegalStateException("串口信息已经存在");
+                throw new IllegalStateException("Ce port série existe déjà");
             }
             set.put("Parity", c("ParitySelect").SelectedIndex());
             set.put("PortID", portCom);

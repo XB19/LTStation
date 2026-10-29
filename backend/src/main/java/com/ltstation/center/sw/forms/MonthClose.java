@@ -101,13 +101,13 @@ public class MonthClose extends SwForm {
         try {
             String text = month();
             if (c("ReportClosed").Visible()) {
-                throw new IllegalStateException("月结已完成");
+                throw new IllegalStateException("Clôture mensuelle terminée");
             }
             int days = YearMonth.from(c("DTDate").Value()).lengthOfMonth();
             Long count = db().scalar(db().sql("select COUNT(*) from [DailyTotalShift] where SUBSTRING({DailyTotalShift.ShiftNumber}, 1, 6) = :t"),
                 p("t", text), Long.class);
-            if ((count == null || count < days) && !Confirm("日报尚未交满一个月,是否继续")) {
-                throw new IllegalStateException("用户取消月结");
+            if ((count == null || count < days) && !Confirm("Les rapports journaliers ne couvrent pas tout le mois. Continuer ?")) {
+                throw new IllegalStateException("Clôture mensuelle annulée");
             }
             var tx = db().begin();
             try {
@@ -170,7 +170,7 @@ public class MonthClose extends SwForm {
                     "TotalVolume", Conv.toDecimal(t.get("Volume"))));
                 return true;
             }
-            throw new IllegalStateException("当月数据为空");
+            throw new IllegalStateException("Aucune donnée pour ce mois");
         } catch (RuntimeException ex) {
             error[0] = ex.getMessage();
             return false;
@@ -186,7 +186,7 @@ public class MonthClose extends SwForm {
         try {
             String dt = month();
             if (!c("ReportClosed").Visible()) {
-                throw new IllegalStateException("尚未月结处理,无法导出");
+                throw new IllegalStateException("Faites d'abord la clôture mensuelle pour exporter");
             }
             List<Row> nozs = new ArrayList<>();
             for (Row item : db().list("MonthlyGunReports", "{Month} = :m ORDER BY {GunCode}", p("m", dt))) {

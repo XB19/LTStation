@@ -689,7 +689,7 @@ public class CardUpDate extends CardFormBase {
                     limitDaily("GroupLimitAmountDay", "LimitAmountDailyError", mf, 4294967295.0, "LimitAmountDailyExceeded");
                     limitMonthly("GroupLimitVolumeMonth", "LimitVolumeMonthError", vf, 65535.0, "LimitVolumeMonthExceeded", digits());
                     limitMonthly("GroupLimitAmountMonth", "LimitAmountMonthError", mf, 4294967295.0, "LimitAmountMonthExceeded",
-                        "\n输入的小数位数超过站点金额小数位\n请检查输入数字或者站点配置是否正确");
+                        "\nLe nombre de décimales dépasse celui des montants de la station\nVérifiez le nombre saisi ou la configuration de la station");
                     if (c("CreditBox").Visible()) {
                         need(!c("GroupCreditLine").Text().isEmpty(), L("CreditLineEmpty"));
                         need(isDouble(c("GroupCreditLine").Text()), L("NumberOrDecimal"));
@@ -705,7 +705,7 @@ public class CardUpDate extends CardFormBase {
                     need(!c("CreditAccount").Text().isEmpty(), L("NeedUserAccount"));
                     need(!c("CreditName").Text().isEmpty(), L("UserNameEmpty"));
                     need(!c("CreditID").Text().isEmpty(), L("UserIDEmpty"));
-                    need(!c("CreditCertificateNo").Text().isEmpty(), "证件号码不能为空");
+                    need(!c("CreditCertificateNo").Text().isEmpty(), "Le n° de pièce est obligatoire");
                     need(c("CreditPhone").Text().isEmpty() || !"zh-CN".equals(IniInfo.Language) || valid(c("CreditPhone").Text(), PHONE), L("PhoneError"));
                     carNo("CreditCardNo");
                     need(c("CreditPostCode").Text().isEmpty() || valid(c("CreditPostCode").Text(), POST), L("PostCodeFormatError"));

@@ -24,15 +24,15 @@ public class NozDelopy extends SwForm {
             g("NozView").RowsClear();
             for (Row item : list) {
                 String parity = switch (item.i("Box_Parity")) {
-                    case 0 -> "无校验";
-                    case 1 -> "奇校验";
-                    case 2 -> "偶校验";
+                    case 0 -> "Aucune";
+                    case 1 -> "Impaire";
+                    case 2 -> "Paire";
                     default -> "";
                 };
                 String type = switch (item.i("Box_CommunicationTypeID")) {
-                    case 0 -> "无";
-                    case 1 -> "蓝天协议";
-                    case 2 -> "蓝天通讯盒协议";
+                    case 0 -> "Aucun";
+                    case 1 -> "Protocole Blue Sky";
+                    case 2 -> "Protocole boîtier Blue Sky";
                     default -> "";
                 };
                 g("NozView").RowsAdd(item.get("ID"), item.get("Box_PortID"), item.get("Box_Baud"), item.get("Box_Stop"), parity, type,
@@ -58,11 +58,11 @@ public class NozDelopy extends SwForm {
     public void Delete_Click() {
         try {
             int id = currentId();
-            if (Confirm("是否删除")) {
+            if (Confirm("Supprimer ?")) {
                 // comme l'original : l'identifiant du port (Box_Set) sert d'identifiant de pistolet
                 Row noz = db().first("NormalNoz", "{ID} = :i", p("i", id));
                 if (noz == null) {
-                    throw new IllegalStateException("枪信息不存在");
+                    throw new IllegalStateException("Pistolet introuvable");
                 }
                 noz.put("IsUsing", false);
                 db().update("NormalNoz", noz);

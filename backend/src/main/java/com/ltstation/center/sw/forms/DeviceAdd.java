@@ -41,7 +41,7 @@ public class DeviceAdd extends SwForm {
             String name = c("DeviceName").Text();
             int selectedIndex = c("DeviceType").SelectedIndex();
             if (db().first("Device", "{Port} = :p AND {ID} <> :id", p("p", code, "id", ID)) != null) {
-                throw new IllegalStateException("端口已经被占用");
+                throw new IllegalStateException("Ce port est déjà utilisé");
             }
             if (ID != 0) {
                 Row device = db().first("Device", "{ID} = :id", p("id", ID));

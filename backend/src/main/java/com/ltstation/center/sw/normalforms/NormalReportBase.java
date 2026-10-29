@@ -103,7 +103,7 @@ abstract class NormalReportBase extends SwForm {
         try {
             ShowNoz(start, end, extend);
         } catch (RuntimeException ex) {
-            MessageBox("Noz Error:" + ex.getMessage());
+            MessageBox("Erreur pistolet : " + ex.getMessage());
         }
         try {
             ShowEnergy(start, end);

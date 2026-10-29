@@ -65,10 +65,10 @@ public class NozSet extends SwForm {
     public void Delete_Click() {
         try {
             int id = currentId();
-            if (Confirm("是否删除")) {
+            if (Confirm("Supprimer ?")) {
                 Row noz = db().first("NormalNoz", "{ID} = :i", p("i", id));
                 if (noz == null) {
-                    throw new IllegalStateException("枪信息不存在");
+                    throw new IllegalStateException("Pistolet introuvable");
                 }
                 db().deleteEntity("NormalNoz", noz);
                 NormalFunction.MainFormMessage.accept(1029, noz.i("NozID"), 0);

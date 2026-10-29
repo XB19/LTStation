@@ -51,7 +51,7 @@ public class Card_Update extends CardFormBase {
                     if ("OK".equals(res.result())) {
                         ShowCard(deal);
                     } else {
-                        MessageBox("Password Error");
+                        MessageBox("Mot de passe incorrect");
                     }
                 }, "PA", pa);
                 return;
@@ -116,7 +116,7 @@ public class Card_Update extends CardFormBase {
             if (!r.Result()) {
                 throw new IllegalStateException(BaseFunction.DecryptByAES(r.Mess()));
             }
-            MessageBox("Update Deal");
+            MessageBox("Mise à jour effectuée");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }

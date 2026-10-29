@@ -11,7 +11,7 @@ public class NormalEmployeeUpdate extends SwForm {
     private Row employee() {
         Row e = db().first("Employees", "{Code} = :c", p("c", String.valueOf(argInt("Code"))));
         if (e == null) {
-            throw new IllegalStateException("员工不存在");
+            throw new IllegalStateException("Employé introuvable");
         }
         return e;
     }
@@ -42,7 +42,7 @@ public class NormalEmployeeUpdate extends SwForm {
             Row e = employee();
             if (db().any("Employees", "{Code} <> :c AND {Memo1} = :l AND {Memo2} = :p",
                 p("c", String.valueOf(argInt("Code")), "l", c("EmpLoginName").Text(), "p", c("EmpPassword").Text()))) {
-                throw new IllegalStateException("登录名密码重复");
+                throw new IllegalStateException("Cet identifiant et ce mot de passe existent déjà");
             }
             e.put("Name", c("EmpName").Text());
             e.put("Memo1", c("EmpLoginName").Text());

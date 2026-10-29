@@ -35,7 +35,7 @@ public class DisplayPayShow extends SwForm {
             case 0 -> "APP";
             case 1 -> "RFID";
             case 2 -> L("PriceShow");
-            case 3 -> "支付屏";
+            case 3 -> "Écran de paiement";
             default -> "";
         };
     }

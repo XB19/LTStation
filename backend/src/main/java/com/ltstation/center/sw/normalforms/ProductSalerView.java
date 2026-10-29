@@ -43,7 +43,7 @@ public class ProductSalerView extends SwForm {
         try {
             Integer result = parseInt(c("QuantityBox").Text());
             if (result == null) {
-                throw new IllegalStateException("数量格式错误");
+                throw new IllegalStateException("Format de la quantité incorrect");
             }
             BigDecimal price = parse(c("PriceBox").Text());
             c("AmountBox").Text((price == null ? BigDecimal.ZERO : price).multiply(BigDecimal.valueOf(result)).toPlainString());
@@ -60,27 +60,27 @@ public class ProductSalerView extends SwForm {
         try {
             Integer result = parseInt(c("QuantityBox").Text());
             if (result == null || result < 0) {
-                throw new IllegalStateException("数据格式错误");
+                throw new IllegalStateException("Format des données incorrect");
             }
             BigDecimal amount = parse(c("AmountBox").Text());
             if (amount == null) {
-                throw new IllegalStateException("金额格式错误");
+                throw new IllegalStateException("Format du montant incorrect");
             }
             if (parse(c("PriceBox").Text()) == null) {
-                throw new IllegalStateException("单价格式错误");
+                throw new IllegalStateException("Format du prix unitaire incorrect");
             }
             Row product = db().first("ProductList", "{ID} = :i", p("i", argInt("ID")));
             if (product == null) {
                 throw new IllegalStateException("Lost");
             }
             if (result > product.i("Quantity")) {
-                throw new IllegalStateException("数量超标");
+                throw new IllegalStateException("Quantité trop élevée");
             }
             BoxBase.UpdateProductLog(product.i("ID"), product.str("ProductID"), amount, argStr("BillOrderNumber"), "", product.str("Name"),
                 product.i("Quantity") - result, product.dec("Price"), 3, result, new String[1]);
             product.put("Quantity", product.i("Quantity") - result);
             db().update("ProductList", product);
-            MessageBox("Deal Success");
+            MessageBox("Opération réussie");
             Close("OK");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());

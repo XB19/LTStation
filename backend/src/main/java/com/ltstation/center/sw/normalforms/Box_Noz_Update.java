@@ -35,7 +35,7 @@ public class Box_Noz_Update extends SwForm {
             ShowTank();
             Row noz = db().first("NormalNoz", "{ID} = :i AND {IsUsing} = true", p("i", argInt("ID")));
             if (noz == null) {
-                throw new IllegalStateException("枪信息不存在");
+                throw new IllegalStateException("Pistolet introuvable");
             }
             c("NozID").Text(noz.str("NozID"));
             c("TankSelect").SelectedValue(noz.get("TankID"));
@@ -64,22 +64,22 @@ public class Box_Noz_Update extends SwForm {
             try {
                 nid = Integer.parseInt(c("NozID").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("枪号格式错误");
+                throw new IllegalStateException("Format du n° de pistolet incorrect");
             }
             BigDecimal result;
             try {
                 result = new BigDecimal(c("Price").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("单价格式错误");
+                throw new IllegalStateException("Format du prix unitaire incorrect");
             }
             Row tank = c("TankSelect").SelectedRow();
             int accredit = c("AuthSelect").SelectedIndex();
             Row noz = db().first("NormalNoz", "{ID} = :i AND {IsUsing} = true", p("i", id));
             if (noz == null) {
-                throw new IllegalStateException("枪信息不存在");
+                throw new IllegalStateException("Pistolet introuvable");
             }
             if (db().any("NormalNoz", "{NozID} = :n AND {ID} <> :i AND {IsUsing} = true", p("n", nid, "i", id))) {
-                throw new IllegalStateException("枪号已存在");
+                throw new IllegalStateException("Ce n° de pistolet existe déjà");
             }
             BigDecimal oldPrice = noz.dec("Price");
             int oldAccredit = noz.i("Accredit");

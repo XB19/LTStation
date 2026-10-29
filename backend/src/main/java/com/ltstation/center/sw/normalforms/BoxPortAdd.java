@@ -16,7 +16,7 @@ public class BoxPortAdd extends SwForm {
                 "Box_CommunicationTypeID", c("CommunicationSelect").SelectedIndex(), "Box_IntervalTime", Integer.parseInt(c("IntervalTime").Text().trim()),
                 "Port_ID", portId, "Box_DeviceType", c("DeviceTypeAdd").SelectedIndex());
             if (db().any("Box_Set", "{Port_ID} = :p AND {Box_PortID} = :b", p("p", portId, "b", set.get("Box_PortID")))) {
-                throw new IllegalStateException("端口已设置");
+                throw new IllegalStateException("Ce port est déjà configuré");
             }
             db().insert("Box_Set", set);
             Close("OK");

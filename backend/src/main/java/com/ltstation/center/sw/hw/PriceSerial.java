@@ -44,7 +44,7 @@ public class PriceSerial {
         try {
             Row com = db().first("ComConfig", "{CODE} = :c", Sugar.p("c", Code));
             if (com == null) {
-                throw new IllegalStateException("端口不存在");
+                throw new IllegalStateException("Port introuvable");
             }
             SerialClass.Parity parity = switch (com.i("PARITY")) {
                 case 1 -> SerialClass.Parity.Odd;

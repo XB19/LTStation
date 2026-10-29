@@ -77,7 +77,7 @@ public class KenyaDeal {
     private String EtimsHttpPost(String url, Object content, Map<String, String> headers, String[] out) {
         try {
             if (url == null || url.isEmpty()) {
-                throw new IllegalStateException("请求地址为空");
+                throw new IllegalStateException("Adresse de requête vide");
             }
             HttpRequest.Builder b = HttpRequest.newBuilder(URI.create(BaseUrl + url)).timeout(Duration.ofSeconds(30))
                 .header("Content-Type", "application/json; charset=utf-8")
@@ -152,7 +152,7 @@ public class KenyaDeal {
             }
             if ("902".equals(root.str("resultCd"))) {
                 if (!InitData(Error)) {
-                    throw new IllegalStateException("初始化失败");
+                    throw new IllegalStateException("Échec de l'initialisation");
                 }
                 return true;
             }

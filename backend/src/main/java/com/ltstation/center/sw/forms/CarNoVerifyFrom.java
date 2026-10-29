@@ -25,7 +25,7 @@ public class CarNoVerifyFrom extends SwForm {
             }
             db().insert("CmdList", Row.of("CmdPlatType", 3, "CmdType", "63", "CreateTime", BaseFunction.ConvertDateTimeToInt(LocalDateTime.now()),
                 "Deal", 0, "Dowload", true, "StationID", IniInfo.StationID, "NozID", nozID, "CmdData", Wire.json(start)));
-            MessageBox("操作完成");
+            MessageBox("Opération terminée");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }

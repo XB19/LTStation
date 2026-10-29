@@ -164,7 +164,9 @@ public class CardLog extends SwForm {
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/GetCardLog", Wire.json(obj));
             if (r.Result()) {
                 int pages = r.TotalCount() / 50 + 1;
-                c("MLabel").Text("共" + r.TotalCount() + "条记录，每页50条记录，共" + pages + "页");
+                c("MLabel").Text("zh-CN".equals(IniInfo.Language)
+                    ? "共" + r.TotalCount() + "条记录，每页50条记录，共" + pages + "页"
+                    : "Total : " + r.TotalCount() + " enregistrement(s), 50 par page, " + pages + " page(s)");
                 c("TotalPageSecond").Text(String.valueOf(pages));
                 c("CurPage").Text(String.valueOf(Page));
                 SetButtonEnable(Page, pages);

@@ -958,7 +958,7 @@ public class CardMake extends CardFormBase {
     private void prices(String box) {
         for (String n : Controls(box)) {
             if (TypeOf(n).endsWith("TextBox")) {
-                need(c(n).Text().isEmpty() || valid(c(n).Text(), NUM), "优惠价格只能输入数字");
+                need(c(n).Text().isEmpty() || valid(c(n).Text(), NUM), "Le prix préférentiel doit être un nombre");
             }
         }
     }

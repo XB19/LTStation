@@ -89,13 +89,13 @@ public class VirtualScore extends SwForm {
             try {
                 result = Integer.parseInt(c("CurrentPage").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("页码格式错误");
+                throw new IllegalStateException("Format du n° de page incorrect");
             }
             if (result < 0) {
-                throw new IllegalStateException("输入页码过小");
+                throw new IllegalStateException("N° de page trop petit");
             }
             if (result > TPage) {
-                throw new IllegalStateException("输入页码过大");
+                throw new IllegalStateException("N° de page trop grand");
             }
             GetUserScoreList(result);
         } catch (RuntimeException ex) {

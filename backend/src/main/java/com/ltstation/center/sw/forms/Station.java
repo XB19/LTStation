@@ -413,9 +413,9 @@ public class Station extends SwForm {
                 String text = TCPClientQY.TcpReceive();
                 if (text.contains("ScoketBroken") || text.isEmpty()) {
                     IniInfo.token = "";
-                    StationLog.writeLog("断线");
+                    StationLog.writeLog("Déconnexion");
                     TCPClientQY.TcpConnect();
-                    StationLog.writeLog("重连");
+                    StationLog.writeLog("Reconnexion");
                     for (Nozzle n : nozzles) {
                         if (n.TCPClientQY != null && n.TCPClientQY.tcpClient != null) {
                             n.TCPClientQY.TcpConnect();
@@ -566,7 +566,7 @@ public class Station extends SwForm {
                     + " JOIN [tankConfig] ON {GunConfig.TANKCODE} = {tankConfig.ID}"
                     + " JOIN [GradeSpecifics] ON CAST({tankConfig.OilCode} AS varchar) = {GradeSpecifics.Code}", null);
                 if (list.isEmpty()) {
-                    throw new IllegalStateException("摄像头为空");
+                    throw new IllegalStateException("Aucune caméra");
                 }
                 StationLog.writeLog("Camera:Deal");
                 Row start = new Row();
@@ -575,7 +575,7 @@ public class Station extends SwForm {
                 } else {
                     Row car = db.first("CarUser", "{PlateNumber} = :p", com.ltstation.center.legacy.Sugar.p("p", carNo));
                     if (car == null) {
-                        throw new IllegalStateException("车牌不存在");
+                        throw new IllegalStateException("Immatriculation introuvable");
                     }
                     start = Row.of("Amount", car.get("Balance"), "Asn", car.get("Asn"), "Balance", car.get("Balance"), "PlNumber", carNo, "Code", 0,
                         "GradeID", car.get("GradeID"));
@@ -728,7 +728,7 @@ public class Station extends SwForm {
         }
         int d = Conv.toInt(g("OilDataView").Cell(index, "ID"));
         if (Conv.toBool(g("OilDataView").Cell(index, "Deal"))) {
-            MessageBox("已处理");
+            MessageBox("Traité");
             return;
         }
         ShowDialog("ScoreCheck", r -> {

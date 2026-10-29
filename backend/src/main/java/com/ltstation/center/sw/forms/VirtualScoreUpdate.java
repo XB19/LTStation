@@ -54,7 +54,7 @@ public class VirtualScoreUpdate extends SwForm {
                 IniInfo.LoginID, "ScoreID", ScoreID);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/UpdateVirtualScore", Wire.json(add));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 GetScoreLog(1);
                 return;
             }
@@ -87,12 +87,12 @@ public class VirtualScoreUpdate extends SwForm {
             g("TransactionView").RowsClear();
             for (Row item : list) {
                 String text = switch (item.i("ScoreType")) {
-                    case 1 -> "开户";
-                    case 2 -> "信息修改";
-                    case 3 -> "积分消费";
-                    case 4 -> "积分增加";
-                    case 5 -> "用户删除";
-                    default -> "无";
+                    case 1 -> "Ouverture";
+                    case 2 -> "Modification";
+                    case 3 -> "Utilisation de points";
+                    case 4 -> "Ajout de points";
+                    case 5 -> "Suppression du client";
+                    default -> "Aucun";
                 };
                 g("TransactionView").RowsAdd(item.get("ScoreName"), item.get("ScorePhone"), text, item.get("ScoreValue"), item.get("FinalScore"),
                     BaseFunction.StampToDateTime(item.str("Createtime")), item.get("OperateName"));
@@ -112,12 +112,12 @@ public class VirtualScoreUpdate extends SwForm {
                 // vérifié ci-dessous
             }
             if (sel < 0 || result == null) {
-                throw new IllegalStateException("信息输入错误");
+                throw new IllegalStateException("Saisie incorrecte");
             }
             Row add = SW.dto().make("CenterVirtualOperateAdd", "ScoreID", ScoreID, "ScoreType", sel, "ScoreValue", result, "EID", IniInfo.LoginID);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/DealVirtualScore", Wire.json(add));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 GetScoreLog(1);
                 return;
             }
@@ -133,13 +133,13 @@ public class VirtualScoreUpdate extends SwForm {
             try {
                 result = Integer.parseInt(c("CurrentPage").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("输入页码有误");
+                throw new IllegalStateException("N° de page incorrect");
             }
             if (result > TPage) {
-                throw new IllegalStateException("输入页码过大");
+                throw new IllegalStateException("N° de page trop grand");
             }
             if (result < 0) {
-                throw new IllegalStateException("输入页码过小");
+                throw new IllegalStateException("N° de page trop petit");
             }
             GetScoreLog(result);
         } catch (RuntimeException ex) {

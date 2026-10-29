@@ -215,18 +215,18 @@
             </li>
             <li>
                 <span class="span_chilun"></span>
-                <h3 id="RFIDAddress1">设定地址:1</h3>
-                <h3 id="RFIDBindNoz1">绑定枪号:1</h3>
+                <h3 id="RFIDAddress1">Adresse : 1</h3>
+                <h3 id="RFIDBindNoz1">Pistolet associé : 1</h3>
             </li>
             <li class="active_0">
                 <span class="span_Tag"></span>
-                <h3 style="margin: 5px;" id="RFIDTag1">Tag:<br />11111111111111111111</h3>
-                <h3 style="margin: 5px;" id="RFIDUserName1">UserName:<br />111111</h3>
-                <h3 style="margin: 5px;" id="RFIDCarNo1">CarNo:<br />5242132</h3>
+                <h3 style="margin: 5px;" id="RFIDTag1">Étiquette :<br />11111111111111111111</h3>
+                <h3 style="margin: 5px;" id="RFIDUserName1">Client :<br />111111</h3>
+                <h3 style="margin: 5px;" id="RFIDCarNo1">Immatriculation :<br />5242132</h3>
             </li>
             <li class="active_first_0">
                 <span class="span_Free" id="RFIDWork1"></span>
-                <h3 id="RFIDWorkStatue1">空闲</h3>
+                <h3 id="RFIDWorkStatue1">Libre</h3>
             </li>
         </ul>-->
     </div>
@@ -285,7 +285,7 @@
         if (StationName != "-1")
             $("#RFIDStation" + RFIDDeviceID + "").html(StationName);
         if (DeviceID != -1)
-            $("#RFIDDevice" + RFIDDeviceID + "").html("No." + DeviceID);
+            $("#RFIDDevice" + RFIDDeviceID + "").html("N°" + DeviceID);
         if (isOnline) 
             $("#RFIDOnLine" + RFIDDeviceID + "").attr("class", "span_onLine");
         else

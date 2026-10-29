@@ -92,7 +92,7 @@ public class NormalMainForm extends SwForm {
                 }
             }
             g("ToatlGrade").DataSource(NormalEngine.GradeTotal);
-            c("TransactionUp").Text("Transaction:" + NormalEngine.UnUploadCount);
+            c("TransactionUp").Text("Transaction : " + NormalEngine.UnUploadCount);
         }
         String shift = NormalEngine.CurrentShiftText;
         if (!shift.equals(shownShift)) {

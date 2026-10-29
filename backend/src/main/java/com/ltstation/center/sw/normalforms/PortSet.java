@@ -20,12 +20,12 @@ public class PortSet extends SwForm {
             g("ComConfigView").RowsClear();
             for (Row item : db().list("NormalPortSet", "ORDER BY {PortID}", null)) {
                 String parity = switch (item.i("Parity")) {
-                    case 0 -> "无校验";
-                    case 1 -> "奇校验";
-                    case 2 -> "偶校验";
+                    case 0 -> "Aucune";
+                    case 1 -> "Impaire";
+                    case 2 -> "Paire";
                     default -> "";
                 };
-                String type = item.i("AgreementTypeID") == 0 ? "通讯盒" : "";
+                String type = item.i("AgreementTypeID") == 0 ? "Boîtier de communication" : "";
                 g("ComConfigView").RowsAdd(item.get("ID"), item.str("PortID"), item.get("Baud"), item.get("DataBit"), item.get("StopBit"), parity, type);
             }
         } catch (RuntimeException ex) {
@@ -43,7 +43,7 @@ public class PortSet extends SwForm {
 
     private int currentId() {
         if (g("ComConfigView").CurrentRow() == null) {
-            throw new IllegalStateException("请先设置端口");
+            throw new IllegalStateException("Configurez d'abord un port");
         }
         return Conv.toInt(g("ComConfigView").Cell(g("ComConfigView").CurrentRowIndex(), 0));
     }
@@ -64,10 +64,10 @@ public class PortSet extends SwForm {
     public void Delete_Click() {
         try {
             int id = currentId();
-            if (Confirm("是否删除")) {
+            if (Confirm("Supprimer ?")) {
                 Row set = db().first("NormalPortSet", "{ID} = :i", p("i", id));
                 if (set == null) {
-                    throw new IllegalStateException("串口信息不存在");
+                    throw new IllegalStateException("Port série introuvable");
                 }
                 db().deleteEntity("NormalPortSet", set);
                 NormalFunction.MainFormMessage.accept(1031, set.i("ID"), 0);

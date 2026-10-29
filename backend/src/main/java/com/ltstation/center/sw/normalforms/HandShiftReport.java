@@ -111,7 +111,7 @@ public class HandShiftReport extends SwForm {
                 return;
             }
             NormalEngine.HandShiftClose(null);
-            MessageBox("Shift Completed");
+            MessageBox("Poste clôturé");
             duty(false);
             c("HandShiftBox").Text("");
             g("ShiftDataView").RowsClear();

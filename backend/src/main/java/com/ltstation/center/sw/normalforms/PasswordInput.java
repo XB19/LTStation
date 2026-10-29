@@ -12,7 +12,7 @@ public class PasswordInput extends SwForm {
             Close("OK");
             return;
         }
-        MessageBox("Password Error");
+        MessageBox("Mot de passe incorrect");
     }
 
     public void Cancle_Click() {

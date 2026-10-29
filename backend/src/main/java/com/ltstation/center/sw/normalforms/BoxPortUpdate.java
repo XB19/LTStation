@@ -38,7 +38,7 @@ public class BoxPortUpdate extends SwForm {
             int id = argInt("ID");
             Row s = db().first("Box_Set", "{ID} = :i", p("i", id));
             if (s == null) {
-                throw new IllegalStateException("端口不存在");
+                throw new IllegalStateException("Port introuvable");
             }
             s.put("Box_PortID", Integer.parseInt(c("PortSelect").Text().trim()));
             s.put("Box_Baud", Integer.parseInt(c("BuadSelect").Text().trim()));
@@ -48,7 +48,7 @@ public class BoxPortUpdate extends SwForm {
             s.put("Box_IntervalTime", Integer.parseInt(c("IntervalTime").Text().trim()));
             s.put("Box_DeviceType", c("DeviceTypeUpdate").SelectedIndex());
             if (db().any("Box_Set", "{ID} <> :i AND {Box_PortID} = :b", p("i", id, "b", s.get("Box_PortID")))) {
-                throw new IllegalStateException("通讯端口已存在");
+                throw new IllegalStateException("Ce port de communication existe déjà");
             }
             db().update("Box_Set", s);
             Close("OK");
@@ -63,7 +63,7 @@ public class BoxPortUpdate extends SwForm {
         try {
             Row s = db().first("Box_Set", "{ID} = :i", p("i", argInt("ID")));
             if (s == null) {
-                throw new IllegalStateException("通讯端口不存在");
+                throw new IllegalStateException("Port de communication introuvable");
             }
             db().deleteEntity("Box_Set", s);
             Close("OK");

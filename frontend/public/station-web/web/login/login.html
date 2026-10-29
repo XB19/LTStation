@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <META HTTP-EQUIV="pragma" CONTENT="no-cache">
@@ -34,36 +34,37 @@
                     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                         <form class="login100-form validate-form">
                             <img style="width:35%;display:block; margin:0 auto" id="LoginImg" src="images/JoyFel.png" />
-                            <div class="wrap-input100 validate-input m-b-23" id="UserValid" data-validate="请输入用户名">
-                                <span class="label-input100" id="UserNameL">用户名</span>
-                                <input class="input100" type="text" name="username" id="username" placeholder="请输入用户名" autocomplete="off">
+                            <div class="wrap-input100 validate-input m-b-23" id="UserValid" data-validate="Saisissez votre identifiant">
+                                <span class="label-input100" id="UserNameL">Identifiant :</span>
+                                <input class="input100" type="text" name="username" id="username" placeholder="Saisissez votre identifiant" autocomplete="off">
                                 <span class="focus-input100" data-symbol="&#xf206;"></span>
                             </div>
 
-                            <div class="wrap-input100 validate-input" id="PassValid" data-validate="请输入密码">
-                                <span class="label-input100" id="PassWordL">密码</span>
-                                <input class="input100" type="password" name="pass" id="pass" placeholder="请输入密码">
+                            <div class="wrap-input100 validate-input" id="PassValid" data-validate="Saisissez votre mot de passe">
+                                <span class="label-input100" id="PassWordL">Mot de passe :</span>
+                                <input class="input100" type="password" name="pass" id="pass" placeholder="Saisissez votre mot de passe">
                                 <span class="focus-input100" data-symbol="&#xf190;"></span>
                             </div>
 
                             <div class="text-right p-t-8 p-b-31">
                                 <div style="float:left">
-                                    <div style="float:left" id="LanguageSet">语言:</div>
+                                    <div style="float:left" id="LanguageSet">Langue :</div>
                                     <select id="lang" onchange="LanguageChange()">
                                         <option value="zh-CN">中文</option>
                                         <option value="en-US">English</option>
                                         <option value="ru-RU">Русский язык</option>
                                         <option value="th">ภาษาไทย</option>
                                         <option value="es">Español</option>
+                                        <option value="fr-FR" selected>Français</option>
                                     </select>
                                 </div>
-                                <a href="javascript:" id="VersionMessage">版本号:1.0.0</a>
+                                <a href="javascript:" id="VersionMessage">Version : 1.3.6.0</a>
                             </div>
 
                             <div class="container-login100-form-btn">
                                 <div class="wrap-login100-form-btn">
                                     <div class="login100-form-bgbtn"></div>
-                                    <button id="TryLogin" class="login100-form-btn" onclick="Login()">登 录</button>
+                                    <button id="TryLogin" class="login100-form-btn" onclick="Login()">Connexion</button>
                                 </div>
                             </div>
                         </form>
@@ -137,6 +138,9 @@
             if (lang == "es") {
                 setLanguagees();
             }
+            if (lang == "fr-FR") {
+                setLanguageFrench();
+            }
             my.LanguageLoad(lang);
         }
 
@@ -151,6 +155,19 @@
             $("#LanguageSet").html("ภาษา:");
             $("#VersionMessage").html("หมายเลขรุ่น:1.3.6.0");
             $("#TryLogin").html("เข้าสู่ระบบ");
+        }
+
+        function setLanguageFrench() {
+            $("#SoftWareName").html("LTStation — Logiciel de station");
+            $("#UserNameL").html("Identifiant :");
+            $("#username").prop("placeholder", "Saisissez votre identifiant");
+            $("#UserValid").attr("data-validate", "Saisissez votre identifiant");
+            $("#PassWordL").html("Mot de passe :");
+            $("#pass").prop("placeholder", "Saisissez votre mot de passe");
+            $("#PassValid").attr("data-validate", "Saisissez votre mot de passe");
+            $("#LanguageSet").html("Langue :");
+            $("#VersionMessage").html("Version : 1.3.6.0");
+            $("#TryLogin").html("Connexion");
         }
 
         function setLanguageChinese() {
@@ -211,7 +228,7 @@
             if (lang == "zh-CN") {
                 setLanguageChinese();
                 $("#lang ").get(0).selectedIndex = 0
-            } else if (lang == "en") {
+            } else if (lang == "en" || lang == "en-US") {
                 setLanguageEnglish();
                 $("#lang ").get(0).selectedIndex = 1
             } else if (lang == "ru-RU") {
@@ -225,8 +242,9 @@
                 $("#lang ").get(0).selectedIndex = 4
             }
             else {
-                setLanguageEnglish();
-                $("#lang ").get(0).selectedIndex = 1
+                // fr-FR (langue par défaut du logiciel) et langues inconnues
+                setLanguageFrench();
+                $("#lang ").get(0).selectedIndex = 5
             }
 
             //$("#user-image").attr('src', url)

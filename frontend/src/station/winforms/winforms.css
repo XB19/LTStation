@@ -189,7 +189,8 @@ input.wf-ro {
 }
 
 /* ------------------------------------------------------------ rendu fidèle WinForms (fenêtres principales et intégrées) */
-.wfc-root { position: relative; overflow: hidden; background: #f0f0f0; color: #000; box-sizing: border-box;
+/* Couleurs d'origine (claires) même si le poste est en thème sombre : contrôles natifs compris */
+.wfc-root { position: relative; overflow: hidden; background: #f0f0f0; color: #000; color-scheme: light; box-sizing: border-box;
   font: 12px "Microsoft YaHei", "Segoe UI", sans-serif; }
 .wfc-root.wfc-fill { width: 100%; height: 100vh; }
 .wfc-root *, .wfc-root *::before, .wfc-root *::after { box-sizing: border-box; }
@@ -218,14 +219,20 @@ input.wf-ro {
 .wfc-menubar .wf-menubar { background: transparent; border: 0; padding: 1px 4px; gap: 0; }
 .wfc-menubar .wf-menu-btn { border: 0; background: transparent; padding: 2px 8px; font-size: 12px; }
 .wfc-menubar .wf-menu-btn:hover { background: #cde3f8; }
-.wfc-toolstrip { height: 100%; display: flex; flex-wrap: nowrap; align-items: stretch; overflow: hidden;
-  background: linear-gradient(#fbfcfe, #e3eaf4); border-bottom: 1px solid #c5d3e3; }
-.wfc-tool { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px;
-  padding: 4px 2px 3px; border: 1px solid transparent; background: transparent; font: inherit; font-size: 12px; cursor: pointer; }
+/* Barre d'outils : les boutons gardent leur largeur d'origine (max-width) s'il y a la place, se resserrent
+   jusqu'à --wfc-tool-min, puis passent à la ligne ; la barre prend la hauteur des lignes (StripRow). */
+.wfc-toolstrip { height: 100%; overflow: hidden; background: linear-gradient(#fbfcfe, #e3eaf4); border-bottom: 1px solid #c5d3e3; }
+.wfc-toolstrip-row { --wfc-tool-min: 76px; display: flex; flex-wrap: wrap; align-items: stretch; }
+.wfc-tool { flex: 1 1 var(--wfc-tool-min); min-width: var(--wfc-tool-min); display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-end; gap: 2px; padding: 4px 2px 3px; border: 1px solid transparent; background: transparent; font: inherit;
+  font-size: 12px; color: inherit; cursor: pointer; }
 .wfc-tool:hover:not(:disabled) { background: linear-gradient(#fdf6d8, #fbe49c); border-color: #e5c365; }
+.wfc-tool:focus-visible { outline: 2px solid #0078d7; outline-offset: -2px; }
 .wfc-tool:disabled { opacity: .45; cursor: default; }
-.wfc-tool-img { flex: 1 1 auto; width: 100%; background-repeat: no-repeat; background-position: center; background-size: auto; }
-.wfc-tool-text { white-space: nowrap; }
+.wfc-tool-img { flex: 1 1 auto; min-height: 24px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: auto; }
+/* Libellé sur deux lignes au plus (coupure française), le texte complet est dans l'infobulle */
+.wfc-tool-text { max-width: 100%; text-align: center; line-height: 1.15; overflow: hidden; overflow-wrap: break-word; hyphens: auto;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .wfc-tool-sep { width: 1px; margin: 6px 3px; background: #c5d3e3; }
 .wfc-status { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 8px;
   font-size: 12px; background: #f0f0f0; border-top: 1px solid #d0d0d0; }
@@ -240,7 +247,6 @@ input.wf-ro {
 .wfc-extra > .wf-embeds { height: 100%; align-content: flex-start; }
 .wfc-extra > .wf-embeds > iframe { flex: 1 0 100%; height: 100% !important; }
 .wfc-root .wfc-measure { background: #fff; }
-.wfc-tool-text { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 
 /* Champs libres trop larges pour la fenêtre : paires libellé + champ qui passent à la ligne */
 .wf-fit {

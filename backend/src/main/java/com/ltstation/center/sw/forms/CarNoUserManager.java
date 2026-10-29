@@ -93,7 +93,7 @@ public class CarNoUserManager extends SwForm {
         try {
             Row car = db().first("CarUser", "{PlateNumber} = :p", p("p", c("textBox1").Text()));
             if (car == null) {
-                throw new IllegalStateException("车牌不存在");
+                throw new IllegalStateException("Immatriculation introuvable");
             }
             g("CardUserView").RowsClear();
             addRow(car);

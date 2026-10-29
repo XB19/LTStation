@@ -12,7 +12,7 @@ public class BoxUpdate extends SwForm {
     private Row box() {
         Row b = db().first("BoxList", "{ID} = :i", p("i", argInt("boxID")));
         if (b == null) {
-            throw new IllegalStateException("通讯盒不存在");
+            throw new IllegalStateException("Boîtier de communication introuvable");
         }
         return b;
     }

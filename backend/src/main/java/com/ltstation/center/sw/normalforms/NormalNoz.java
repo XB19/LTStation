@@ -76,7 +76,7 @@ public class NormalNoz extends SwWebForm {
         }
         NozID = noz.i("NozID");
         String grade = "";
-        String tank = "罐";
+        String tank = "Cuve";
         Row g = db().first("NormalGrade", "{ID} = :g", p("g", noz.get("GradeID")));
         if (g != null) {
             grade = g.str("GradeName");

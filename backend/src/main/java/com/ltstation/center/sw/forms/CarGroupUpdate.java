@@ -31,7 +31,7 @@ public class CarGroupUpdate extends SwForm {
                 c("GroupPhoneBox").Text(g.get("Phone"));
                 return;
             }
-            throw new IllegalStateException("集团不存在");
+            throw new IllegalStateException("Groupe introuvable");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
@@ -44,7 +44,7 @@ public class CarGroupUpdate extends SwForm {
             if (r.Result()) {
                 Row g = db().first("CarGroup", "{ID} = :id", p("id", ID));
                 if (g == null) {
-                    throw new IllegalStateException("集团不存在");
+                    throw new IllegalStateException("Groupe introuvable");
                 }
                 List<Row> list = db().list("CarUser", "{CarGroupID} = :id", p("id", ID));
                 List<Integer> ids = list.stream().map(t -> t.i("ID")).toList();

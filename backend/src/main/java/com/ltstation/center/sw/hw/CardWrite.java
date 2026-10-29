@@ -171,13 +171,13 @@ public final class CardWrite {
             UserPublicData[] user = {null};
             Init(operate, user, new String[1]);
             if (!scVerifyPin(operate, DEFAULT_PIN)) {
-                throw new IllegalStateException("卡片产商类型错误");
+                throw new IllegalStateException("Fabricant de carte non reconnu");
             }
             if (!UpdateCreditCardInfo(operate, user[0], sPwd, sData)) {
-                throw new IllegalStateException("记账卡信息修改失败");
+                throw new IllegalStateException("Échec de la modification de la carte de crédit");
             }
             if (!sPwd.isEmpty() && !sPwd.equals(DEFAULT_PIN) && !fnChangePIN(operate, DEFAULT_PIN, sPwd)) {
-                throw new IllegalStateException("更新密码错误");
+                throw new IllegalStateException("Échec de la mise à jour du mot de passe");
             }
             return true;
         } catch (RuntimeException e) {
@@ -206,7 +206,7 @@ public final class CardWrite {
             operate.SCardConnect(READER);
             UserPublicData[] user = {null};
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("读取卡信息失败");
+                throw new IllegalStateException("Lecture de la carte impossible");
             }
             if (OldPwd.isEmpty()) {
                 OldPwd = DEFAULT_PIN;
@@ -215,10 +215,10 @@ public final class CardWrite {
                 throw new IllegalStateException("1");
             }
             if (!UpdateCreditCardInfo(operate, user[0], NewPwd, sData)) {
-                throw new IllegalStateException("数据修改失败");
+                throw new IllegalStateException("Échec de la modification des données");
             }
             if (!SetPasswordNew(operate, ID_NeedPwdBefore, OldPwd, NewPwd)) {
-                throw new IllegalStateException("重置密码失败");
+                throw new IllegalStateException("Échec de la réinitialisation du mot de passe");
             }
             operate.SCardDisconnect();
             return true;
@@ -234,13 +234,13 @@ public final class CardWrite {
             UserPublicData[] user = {null};
             Init(operate, user, new String[1]);
             if (!scVerifyPin(operate, DEFAULT_PIN)) {
-                throw new IllegalStateException("卡片产商类型错误");
+                throw new IllegalStateException("Fabricant de carte non reconnu");
             }
             if (!UpdateEmployeeCardInfo(operate, user[0].ASN, sEmployeeCode, sEmployee, sIDType, sID, sPwd, sData, sPer, user[0].IssueID)) {
-                throw new IllegalStateException("卡更新失败");
+                throw new IllegalStateException("Échec de la mise à jour de la carte");
             }
             if (!sPwd.isEmpty() && !fnChangePIN(operate, DEFAULT_PIN, sPwd)) {
-                throw new IllegalStateException("更新密码错误");
+                throw new IllegalStateException("Échec de la mise à jour du mot de passe");
             }
             operate.SCardDisconnect();
             return true;
@@ -382,7 +382,7 @@ public final class CardWrite {
             operate.SCardConnect(READER);
             UserPublicData[] user = {null};
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("读取卡信息失败");
+                throw new IllegalStateException("Lecture de la carte impossible");
             }
             if (OldPwd.isEmpty()) {
                 OldPwd = DEFAULT_PIN;
@@ -391,10 +391,10 @@ public final class CardWrite {
                 throw new IllegalStateException("1");
             }
             if (!UpdateGroupCardInfo(operate, user[0], UserName, ID, NewPwd, sData)) {
-                throw new IllegalStateException("数据修改失败");
+                throw new IllegalStateException("Échec de la modification des données");
             }
             if (!SetPasswordNew(operate, ID_NeedPwdBefore, OldPwd, NewPwd)) {
-                throw new IllegalStateException("重置密码失败");
+                throw new IllegalStateException("Échec de la réinitialisation du mot de passe");
             }
             operate.SCardDisconnect();
             return true;
@@ -485,7 +485,7 @@ public final class CardWrite {
         try {
             operate.SCardConnect(READER);
             if (!Init(operate, new UserPublicData[1], new String[1])) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             String text = scReadCardGeneralInfo(operate);
             operate.SCardDisconnect();
@@ -504,7 +504,7 @@ public final class CardWrite {
             operate.SCardConnect(READER);
             UserPublicData[] user = {null};
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             scReadCardGeneralInfo(operate);
             operate.SCardDisconnect();
@@ -521,7 +521,7 @@ public final class CardWrite {
         try {
             operate.SCardConnect(READER);
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             operate.SCardDisconnect();
             return true;
@@ -537,10 +537,10 @@ public final class CardWrite {
         try {
             operate.SCardConnect(READER);
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             if (!ReloadPassword(operate, user[0], NewPwd, sData1, sData2)) {
-                throw new IllegalStateException("密码重载失败");
+                throw new IllegalStateException("Échec du rechargement du mot de passe");
             }
             operate.SCardDisconnect();
             return true;
@@ -595,16 +595,16 @@ public final class CardWrite {
         try {
             operate.SCardConnect(READER);
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             if (scReadCardGeneralInfo(operate).substring(0, 2).equals("00")) {
                 sPwd = DEFAULT_PIN;
             }
             if (!scVerifyPin(operate, sPwd)) {
-                throw new IllegalStateException("密码输入错误");
+                throw new IllegalStateException("Mot de passe incorrect");
             }
             if (!scGetBalance(operate, Balance)) {
-                throw new IllegalStateException("读取错误");
+                throw new IllegalStateException("Erreur de lecture");
             }
             operate.SCardDisconnect();
             return true;
@@ -621,21 +621,21 @@ public final class CardWrite {
         grey[0] = new GreyCardRead();
         try {
             if (!operate.SCardConnect(READER)) {
-                throw new IllegalStateException("读卡器连接失败");
+                throw new IllegalStateException("Connexion au lecteur de cartes impossible");
             }
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化信息读取失败");
+                throw new IllegalStateException("Lecture des données d'initialisation impossible");
             }
             scReadCardGeneralInfo(operate);
             if (Pwd.isEmpty()) {
                 Pwd = "9999";
             }
             if (!scVerifyPin(operate, Pwd)) {
-                throw new IllegalStateException("密码验证出错");
+                throw new IllegalStateException("Erreur de vérification du mot de passe");
             }
             String[] res = {""};
             if (!fnReadGrey(operate, res)) {
-                throw new IllegalStateException("读取失败");
+                throw new IllegalStateException("Échec de la lecture");
             }
             GreyCardRead g = grey[0];
             String r = res[0];
@@ -675,18 +675,18 @@ public final class CardWrite {
         Operate operate = new Operate();
         try {
             if (!operate.SCardConnect(READER)) {
-                throw new IllegalStateException("读卡器连接失败");
+                throw new IllegalStateException("Connexion au lecteur de cartes impossible");
             }
             UserPublicData[] user = {null};
             if (!Init(operate, user, new String[1])) {
-                throw new IllegalStateException("初始化信息读取失败");
+                throw new IllegalStateException("Lecture des données d'initialisation impossible");
             }
             scReadCardGeneralInfo(operate);
             if (Pwd.isEmpty()) {
                 Pwd = "9999";
             }
             if (!scVerifyPin(operate, Pwd)) {
-                throw new IllegalStateException("密码验证出错");
+                throw new IllegalStateException("Erreur de vérification du mot de passe");
             }
             String text = "01";
             String text2 = amountHex(Amount);
@@ -718,7 +718,7 @@ public final class CardWrite {
                 throw new IllegalStateException("Error");
             }
             if (!text9.equals(OsMAC[0])) {
-                throw new IllegalStateException("密钥不匹配");
+                throw new IllegalStateException("Les clés ne correspondent pas");
             }
             String[] OsMAC2 = {""};
             if (!fnbMAC_DES(OsDataOut[0], INITVALUE_LOAD, text2 + "95" + text4 + text3, OsMAC2)) {
@@ -763,13 +763,13 @@ public final class CardWrite {
             UserPublicData[] user = {new UserPublicData()};
             Init(operate, user, new String[1]);
             if (!user[0].ASN.equals(Asn)) {
-                throw new IllegalStateException("卡号错误");
+                throw new IllegalStateException("N° de carte incorrect");
             }
             if (scReadCardGeneralInfo(operate).substring(0, 2).equals("00")) {
                 Pwd = DEFAULT_PIN;
             }
             if (!scVerifyPin(operate, Pwd)) {
-                throw new IllegalStateException("密码错误");
+                throw new IllegalStateException("Mot de passe incorrect");
             }
             String[] OutKey = {""};
             ReadKey(sData, OutKey);
@@ -784,7 +784,7 @@ public final class CardWrite {
             String text = "01" + text2 + text4;
             String[] recv = {""};
             if (!fnbInitForLoad(operate, text, recv)) {
-                throw new IllegalStateException("初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation");
             }
             if (!recv[0].isEmpty()) {
                 String text5 = recv[0].substring(8, 12);
@@ -815,13 +815,13 @@ public final class CardWrite {
             UserPublicData[] user = {new UserPublicData()};
             Init(operate, user, new String[1]);
             if (!user[0].ASN.equals(Asn)) {
-                throw new IllegalStateException("卡号错误");
+                throw new IllegalStateException("N° de carte incorrect");
             }
             if (scReadCardGeneralInfo(operate).substring(0, 2).equals("00")) {
                 Pwd = DEFAULT_PIN;
             }
             if (!scVerifyPin(operate, Pwd)) {
-                throw new IllegalStateException("密码错误");
+                throw new IllegalStateException("Mot de passe incorrect");
             }
             String[] OutKey = {""};
             ReadKey(sData, OutKey);
@@ -833,7 +833,7 @@ public final class CardWrite {
             String text = "01" + text2 + sTID;
             String[] recv = {""};
             if (!fnbInitForPurchase(operate, text, recv)) {
-                throw new IllegalStateException("圈提初始化失败");
+                throw new IllegalStateException("Échec de l'initialisation du retrait");
             }
             if (!recv[0].isEmpty()) {
                 text = recv[0].substring(22, 30) + recv[0].substring(8, 12) + "0001";
@@ -845,12 +845,12 @@ public final class CardWrite {
                 String[] OsMAC = {""};
                 fnbMAC_DES(OsDataOut[0], INITVALUE_LOAD, text2 + "05" + sTID + text3, OsMAC);
                 if (!fnbDebitForPurchase(operate, TTC + text3 + OsMAC[0])) {
-                    throw new IllegalStateException("圈提失败");
+                    throw new IllegalStateException("Échec du retrait");
                 }
                 operate.SCardDisconnect();
                 return true;
             }
-            throw new IllegalStateException("读取信息错误");
+            throw new IllegalStateException("Erreur de lecture des informations");
         } catch (RuntimeException e) {
             operate.SCardDisconnect();
             return false;
@@ -1000,7 +1000,7 @@ public final class CardWrite {
         try {
             String[] OutKey = {""};
             if (!ReadKey(sData, OutKey) || OutKey[0].isEmpty()) {
-                throw new IllegalStateException("密钥分解错误");
+                throw new IllegalStateException("Erreur de dérivation de la clé");
             }
             String key = BaseFunction.fnGetDeriveKey(OutKey[0], ASN);
             fnbUpDateEFBinFile(operate, GetPersonalString(sEmployeeName, sID, sIDType), SFI_BASIC_DATA, IssueID, ASN, key);
@@ -1018,7 +1018,7 @@ public final class CardWrite {
                 text3.append('0');
             }
             if (!fnbUpDateEFBinFile(operate, text3.toString(), SFI_GENERAL_DATA, IssueID, ASN, key)) {
-                throw new IllegalStateException("更新个人信息错误");
+                throw new IllegalStateException("Échec de la mise à jour des informations personnelles");
             }
             return true;
         } catch (RuntimeException e) {
@@ -1270,7 +1270,7 @@ public final class CardWrite {
                 if (i != 2) {
                     String[] OsMAC = {""};
                     if (!fnbMAC_3DES(AMKey, ORandom[0], text2, OsMAC, 4)) {
-                        throw new IllegalStateException("MAC 错误");
+                        throw new IllegalStateException("Erreur MAC");
                     }
                     text2 += OsMAC[0];
                 }
@@ -1297,7 +1297,7 @@ public final class CardWrite {
                 String text = BaseFunction.DES3_Encrypt(sTransferKey, cmdDHWriteKeys_Java[i] + sKeyList[KEY_ORDER[i]]);
                 String[] OsMAC = {""};
                 if (!fnbMAC_3DES(sTransferKey, ORandom[0], cmdDHWriteKeysHead_Java + text, OsMAC, 4)) {
-                    throw new IllegalStateException("MAC错误");
+                    throw new IllegalStateException("Erreur MAC");
                 }
                 if (!operate.ScardCommand(cmdDHWriteKeysHead_Java + text + OsMAC[0], new String[1]).equals("9000")) {
                     throw new IllegalStateException("70");
@@ -1472,10 +1472,10 @@ public final class CardWrite {
             String[] OsMac = {""};
             String[] OsMac2 = {""};
             if (!fnb3Des_CBC(text, "0182" + text5 + "000000000000000000000000", OsMac)) {
-                throw new IllegalStateException("数据出错");
+                throw new IllegalStateException("Erreur de données");
             }
             if (!fnb3Des_CBC(text, "0101" + text5 + "000000000000000000000000", OsMac2)) {
-                throw new IllegalStateException("数据出错");
+                throw new IllegalStateException("Erreur de données");
             }
             StringBuilder text6 = new StringBuilder(text4 + text3 + "80");
             int num = text6.length() % 16;
@@ -1487,9 +1487,9 @@ public final class CardWrite {
             String mac3 = OsMac3[0].substring(OsMac3[0].length() - 16);
             String[] OsMAC = {""};
             if (!fnbMAC_3DES(OsMac2[0], "0000000000000000", "8482000010" + mac3, OsMAC, 8)) {
-                throw new IllegalStateException("数据出错");
+                throw new IllegalStateException("Erreur de données");
             }
-            cmd(operate, "8482000010" + mac3 + OsMAC[0], "初始化出错");
+            cmd(operate, "8482000010" + mac3 + OsMAC[0], "Erreur d'initialisation");
             return true;
         } catch (RuntimeException e) {
             return false;

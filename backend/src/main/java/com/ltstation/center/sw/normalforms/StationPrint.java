@@ -44,7 +44,7 @@ public class StationPrint extends SwForm {
             } else {
                 db().insert("StationPrint", Row.of("PrintData", Wire.json(data), "PrintMachine", machine.toString()));
             }
-            MessageBox("Save Success");
+            MessageBox("Enregistrement réussi");
             Close("OK");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());

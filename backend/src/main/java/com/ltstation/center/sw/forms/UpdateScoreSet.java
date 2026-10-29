@@ -61,19 +61,19 @@ public class UpdateScoreSet extends SwForm {
     public void UpdateBtn_Click() {
         try {
             if (SID == 0) {
-                throw new IllegalStateException("无积分记录");
+                throw new IllegalStateException("Aucun enregistrement de points");
             }
             BigDecimal result;
             try {
                 result = new BigDecimal(c("ScoreRate").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("积分转换率错误");
+                throw new IllegalStateException("Taux de conversion des points incorrect");
             }
             Row obj = SW.dto().make("GradeScore", "GradeID", c("GradeType").SelectedRow().i("GradeSpecificID"), "OperateID",
                 c("ScoreType").SelectedIndex(), "Score", result, "StationID", IniInfo.StationID, "ID", SID, "SOID", 0);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/ScoreRuleDeal", Wire.json(obj));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 Close("OK");
                 return;
             }
@@ -87,7 +87,7 @@ public class UpdateScoreSet extends SwForm {
         Row obj = SW.dto().make("GradeScore", "StationID", IniInfo.StationID, "ID", SID, "SOID", 1);
         CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/ScoreRuleDeal", Wire.json(obj));
         if (r.Result()) {
-            MessageBox("操作成功");
+            MessageBox("Opération réussie");
             Close("OK");
             return;
         }

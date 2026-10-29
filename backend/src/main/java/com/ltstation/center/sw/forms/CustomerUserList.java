@@ -86,7 +86,7 @@ public class CustomerUserList extends SwForm {
             try {
                 result = Integer.parseInt(c("Page").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("页码错误");
+                throw new IllegalStateException("N° de page incorrect");
             }
             int result2;
             try {
@@ -95,10 +95,10 @@ public class CustomerUserList extends SwForm {
                 result2 = 0;
             }
             if (result > result2) {
-                throw new IllegalStateException("已经是最后一页");
+                throw new IllegalStateException("Vous êtes déjà sur la dernière page");
             }
             if (result < 1) {
-                throw new IllegalStateException("已经是首页");
+                throw new IllegalStateException("Vous êtes déjà sur la première page");
             }
             Index = result;
             LoadData(GetList(result));
@@ -123,7 +123,7 @@ public class CustomerUserList extends SwForm {
             try {
                 result = Integer.parseInt(c("Page").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("页码错误");
+                throw new IllegalStateException("N° de page incorrect");
             }
             if ("Next".equals(sender)) {
                 c("Page").Text(String.valueOf(result + 1));

@@ -46,7 +46,7 @@ public class ScoreDeal extends SwForm {
         try {
             g("TransactionView").RowsClear();
             for (Row item : list) {
-                String value = item.i("ScoreType") == 1 ? "升数" : "金额";
+                String value = item.i("ScoreType") == 1 ? "Litres" : "Montant";
                 g("TransactionView").RowsAdd(item.get("ID"), BaseFunction.GetOilNameByID(item.i("OilTypeID")), value, item.get("Rate"));
             }
         } catch (RuntimeException ignored) {

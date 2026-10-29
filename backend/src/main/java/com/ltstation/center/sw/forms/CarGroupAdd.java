@@ -22,7 +22,7 @@ public class CarGroupAdd extends SwForm {
             String text2 = c("GroupAddressBox").Text();
             String text3 = c("GroupCreditBox").Text();
             if (text.isEmpty() || text2.isEmpty() || text3.isEmpty()) {
-                throw new IllegalStateException("信息缺失,请补充");
+                throw new IllegalStateException("Informations manquantes, veuillez compléter");
             }
             long now = BaseFunction.ConvertDateTimeToInt(LocalDateTime.now());
             Row obj = SW.dto().make("CarGroupRequest", "CarGroupName", text, "CarGroupAddress", text2, "CarGroupCreditCode", text3,

@@ -104,35 +104,35 @@ abstract class CylinderForm extends SwForm {
      */
     void UploadCylinder(String vehicleId, int carUserId, boolean throwOnFail) {
         if (vehicleId.isEmpty()) {
-            throw new IllegalStateException("车辆信息未创建");
+            throw new IllegalStateException("Le véhicule n'est pas encore créé");
         }
         String text = c("CylinderBox").SelectedValue().toString();
         String cylinderType = c("CylinderBox").Text();
         String text2 = c("PDName").Text();
         if (text2.isEmpty()) {
-            throw new IllegalStateException("请输入产品名称");
+            throw new IllegalStateException("Saisissez le nom du produit");
         }
         String text3 = c("DielectricBox").SelectedValue().toString();
         String medium = c("DielectricBox").Text();
-        BigDecimal result = tryDecimal(c("WorkPressureBox").Text(), "充装压力格式错误");
-        BigDecimal result2 = tryDecimal(c("CubageBox").Text(), "容积格式错误");
-        BigDecimal result3 = tryDecimal(c("WallThicknessBox").Text(), "壁厚格式错误");
+        BigDecimal result = tryDecimal(c("WorkPressureBox").Text(), "Format de la pression de remplissage incorrect");
+        BigDecimal result2 = tryDecimal(c("CubageBox").Text(), "Format du volume incorrect");
+        BigDecimal result3 = tryDecimal(c("WallThicknessBox").Text(), "Format de l'épaisseur de paroi incorrect");
         String text4 = c("ManufactorBox").SelectedValue().toString();
         String manufactureName = c("ManufactorBox").Text();
         LocalDateTime pd = c("PDDate").Value();
         String text5 = c("PDCode").Text();
         if (text5.isEmpty()) {
-            throw new IllegalStateException("请输入产品编号");
+            throw new IllegalStateException("Saisissez le code produit");
         }
         String text6 = c("OWNoBox").Text();
         if (text6.isEmpty()) {
-            throw new IllegalStateException("请输入条码");
+            throw new IllegalStateException("Saisissez le code-barres");
         }
         LocalDateTime mj = c("MJDateBox").Value();
         LocalDateTime xj = c("XjDateBox").Value();
         LocalDateTime bf = c("BfDateBox").Value();
         if (text.isEmpty() || text3.isEmpty() || text4.isEmpty() || text2.isEmpty()) {
-            throw new IllegalStateException("信息缺失，请补充");
+            throw new IllegalStateException("Informations manquantes, veuillez compléter");
         }
         Row obj = SW.dto().make("CylinderRequest", "VehicleID", vehicleId, "BfDate", String.valueOf(BaseFunction.ConvertDateTimeToInt(bf)), "XjDate",
             String.valueOf(BaseFunction.ConvertDateTimeToInt(xj)), "MjDate", String.valueOf(BaseFunction.ConvertDateTimeToInt(mj)), "CylinderTypeId", text,

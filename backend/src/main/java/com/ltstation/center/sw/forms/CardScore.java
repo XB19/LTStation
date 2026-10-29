@@ -76,12 +76,12 @@ public class CardScore extends SwForm {
         try {
             if ("NextBtn".equals(sender)) {
                 if (PageIndex >= TotalPage) {
-                    throw new IllegalStateException("已处于最后一页");
+                    throw new IllegalStateException("Vous êtes déjà sur la dernière page");
                 }
                 PageIndex++;
             } else if ("PreBtn".equals(sender)) {
                 if (PageIndex == 1) {
-                    throw new IllegalStateException("当前是第一页");
+                    throw new IllegalStateException("Vous êtes sur la première page");
                 }
                 PageIndex--;
             }

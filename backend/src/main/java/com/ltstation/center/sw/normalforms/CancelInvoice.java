@@ -30,7 +30,7 @@ public class CancelInvoice extends SwForm {
             String billOrder = c("InvoiceBox").Text();
             ((ShowDataConfirmHandler) Owner).F_ShowDataConfirm(billOrder);
             // Task.Run de l'original : l'erreur éventuelle de ResetBill n'est pas affichée
-            Ask("是否执行操作", yes -> {
+            Ask("Exécuter l'opération ?", yes -> {
                 if (yes && ResetBill() == null) {
                     Close("OK");
                 }

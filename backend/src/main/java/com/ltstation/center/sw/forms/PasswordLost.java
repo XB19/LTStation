@@ -54,7 +54,7 @@ public class PasswordLost extends SwForm {
                 Row obj = SW.dto().make("CustomerParam", "Code", IniInfo.Code, "Mess", Wire.json(info));
                 CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/ReloadPwd", Wire.json(obj));
                 if (!r.Result()) {
-                    throw new IllegalStateException("中心验证错误");
+                    throw new IllegalStateException("Échec de la vérification par le Center");
                 }
                 if (!CardWrite.ReloadPin(text, list.get(5), list.get(1))) {
                     // Comme l'original : la requête de rétablissement renvoie le même objet (CipherFlg non resérialisé)

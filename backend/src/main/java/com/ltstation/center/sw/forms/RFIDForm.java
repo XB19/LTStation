@@ -70,7 +70,7 @@ public class RFIDForm extends SwForm {
             if (reader.OpenCom(c("PortCoboBox").Text(), Conv.toInt(c("BaudcomboBox").Text()), ex) != 0) {
                 throw new IllegalStateException(ex[0]);
             }
-            AddLog("连接成功");
+            AddLog("Connexion établie");
             c("ConnectBtn").Enabled(false);
             c("DisConnectBtn").Enabled(true);
         } catch (RuntimeException ex) {
@@ -84,7 +84,7 @@ public class RFIDForm extends SwForm {
 
     public void ReadBtn_Click() {
         reader.ReadTag(0, 2, 0, 5, null);
-        AddLog("读标签");
+        AddLog("Lire l'étiquette");
     }
 
     private void AnalyData(MessageTran msgTran) {
@@ -100,7 +100,7 @@ public class RFIDForm extends SwForm {
                 byte[] data = msgTran.AryTranData();
                 if (data.length != 1) {
                     if (data.length <= 24) {
-                        throw new IllegalStateException("请确认卡是否存在");
+                        throw new IllegalStateException("Vérifiez que la carte est présente");
                     }
                     StringBuilder text = new StringBuilder();
                     for (int j = 23; j < data.length - 4; j++) {
@@ -163,7 +163,7 @@ public class RFIDForm extends SwForm {
                 "LimitVolumeMonth", zero(c("MonthVolumeLImit").Text()), "isLimitVehicleNo", c("CarNoLimit").Checked(), "LimitVehicleNo",
                 c("CarNo").Text(), "Code", IniInfo.Code);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CreateRFIDAccount", Wire.json(obj));
-            MessageBox(r.Result() ? "操作完成" : BaseFunction.DecryptByAES(r.Mess()));
+            MessageBox(r.Result() ? "Opération terminée" : BaseFunction.DecryptByAES(r.Mess()));
         } else {
             MessageBox(error[0]);
         }
@@ -172,15 +172,15 @@ public class RFIDForm extends SwForm {
     private boolean Regular(String[] error) {
         error[0] = "";
         try {
-            dec(zero(c("RFIDLimitVolume").Text()), "单次升数限制格式错误");
+            dec(zero(c("RFIDLimitVolume").Text()), "Format de la limite de litres par plein incorrect");
             try {
                 Integer.parseInt(zero(c("DayTimeLimit").Text()).trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("日次数限制格式错误");
+                throw new IllegalStateException("Format de la limite de pleins par jour incorrect");
             }
-            dec(zero(c("DayAmountLimit").Text()), "日金额限制格式错误");
-            dec(zero(c("MonthVolumeLImit").Text()), "月金额限制格式错误");
-            dec(zero(c("MonthAmountLimit").Text()), "月升数限制格式错误");
+            dec(zero(c("DayAmountLimit").Text()), "Format de la limite de montant par jour incorrect");
+            dec(zero(c("MonthVolumeLImit").Text()), "Format de la limite de montant par mois incorrect");
+            dec(zero(c("MonthAmountLimit").Text()), "Format de la limite de litres par mois incorrect");
             return true;
         } catch (RuntimeException ex) {
             error[0] = ex.getMessage();

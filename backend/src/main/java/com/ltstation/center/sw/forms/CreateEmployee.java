@@ -40,7 +40,7 @@ public class CreateEmployee extends SwForm {
         try {
             Row stations = db().first("Stations");
             if (stations == null) {
-                throw new IllegalStateException("站点信息缺失");
+                throw new IllegalStateException("Informations de la station manquantes");
             }
             IniInfo.Code = stations.s("Code");
             Row customerParam = SW.dto().make("CustomerParam", "Code", IniInfo.Code, "Start", 0);

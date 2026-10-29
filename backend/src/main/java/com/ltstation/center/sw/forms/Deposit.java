@@ -419,13 +419,13 @@ public class Deposit extends SwForm {
                 }
                 case "STConfirm" -> {
                     if (c("STAsn").Text().isEmpty()) {
-                        throw new IllegalStateException("卡号不能为空");
+                        throw new IllegalStateException("Le n° de carte est obligatoire");
                     }
                     if (!isDouble(c("STBalance").Text())) {
-                        throw new IllegalStateException("余额信息格式错误");
+                        throw new IllegalStateException("Format du solde incorrect");
                     }
                     if (!isDouble(c("STAmount").Text())) {
-                        throw new IllegalStateException("金额信息错误");
+                        throw new IllegalStateException("Montant incorrect");
                     }
                 }
                 default -> {
@@ -532,7 +532,7 @@ public class Deposit extends SwForm {
                 case 0 -> {
                     double result2 = isDouble(c("STBalance").Text()) ? Double.parseDouble(c("STBalance").Text().trim()) : 0;
                     if (result > result2) {
-                        throw new IllegalStateException("转储金额过大");
+                        throw new IllegalStateException("Montant du transfert trop élevé");
                     }
                 }
                 case 1 -> payType = 15;

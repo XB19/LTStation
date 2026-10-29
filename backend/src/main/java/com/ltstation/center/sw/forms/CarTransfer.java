@@ -36,18 +36,18 @@ public class CarTransfer extends SwForm {
     public void AddButton_Click() {
         try {
             if (Gid == -1 || CID == -1) {
-                throw new IllegalStateException("转入转出对象错误");
+                throw new IllegalStateException("Bénéficiaire ou débiteur incorrect");
             }
             BigDecimal result;
             try {
                 result = new BigDecimal(c("Amount").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("金额格式错误");
+                throw new IllegalStateException("Format du montant incorrect");
             }
             Row obj = SW.dto().make("TransferUser", "GroupID", Gid, "UserID", CID, "EmpID", IniInfo.LoginID, "Amount", result);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CarBalanceUpdate", Wire.json(obj));
             if (r.Result()) {
-                MessageBox("操作完成");
+                MessageBox("Opération terminée");
                 Close("OK");
                 return;
             }

@@ -26,11 +26,11 @@ public class ScoreCheck extends SwForm {
     public void QueryBtn_Click() {
         try {
             if (ID == 0L) {
-                throw new IllegalStateException("记录不存在");
+                throw new IllegalStateException("Enregistrement introuvable");
             }
             Row t = tx();
             if (t == null) {
-                throw new IllegalStateException("记录不存在");
+                throw new IllegalStateException("Enregistrement introuvable");
             }
             String head = t.str("Asn").substring(0, 6);
             if (head.equals("000000") || head.equals("010004")) {
@@ -39,7 +39,7 @@ public class ScoreCheck extends SwForm {
                 Close("OK");
                 return;
             }
-            throw new IllegalStateException("该记录不需要手动处理");
+            throw new IllegalStateException("Cet enregistrement ne demande pas de traitement manuel");
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
@@ -63,7 +63,7 @@ public class ScoreCheck extends SwForm {
         try {
             Row t = tx();
             if (t == null) {
-                throw new IllegalStateException("记录不存在");
+                throw new IllegalStateException("Enregistrement introuvable");
             }
             List<String> list = new ArrayList<>();
             list.add(L("NozID") + "&" + t.str("POSP"));

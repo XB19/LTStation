@@ -31,7 +31,7 @@ public class CardScoreMess extends SwForm {
     private void LoadData(int pageIndex) {
         try {
             if (Asn.isEmpty()) {
-                throw new IllegalStateException("信息非法");
+                throw new IllegalStateException("Informations non valides");
             }
             Row obj = SW.dto().make("ScorePage", "Asn", Asn, "PageIndex", pageIndex);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CardScoreLog", Wire.json(obj));
@@ -50,7 +50,7 @@ public class CardScoreMess extends SwForm {
         try {
             g("TransactionView").RowsClear();
             for (Row item : list) {
-                String value = item.i("ScoreType") == 1 ? "积分扣除" : "积分增加";
+                String value = item.i("ScoreType") == 1 ? "Retrait de points" : "Ajout de points";
                 g("TransactionView").RowsAdd(item.get("Asn"), item.get("ScoreName"), value, item.get("ScoreValue"), item.get("FinalScore"),
                     BaseFunction.StampToDateTime(item.str("CreateTime")));
             }
@@ -63,12 +63,12 @@ public class CardScoreMess extends SwForm {
         try {
             if ("NextBtn".equals(sender)) {
                 if (PageIndex >= TotalPage) {
-                    throw new IllegalStateException("已经在最后一页");
+                    throw new IllegalStateException("Vous êtes déjà sur la dernière page");
                 }
                 PageIndex++;
             } else if ("PreBtn".equals(sender)) {
                 if (PageIndex == 1) {
-                    throw new IllegalStateException("当前为第一页");
+                    throw new IllegalStateException("Vous êtes sur la première page");
                 }
                 PageIndex--;
             }
@@ -81,7 +81,7 @@ public class CardScoreMess extends SwForm {
     private void LoadCardScore() {
         try {
             if (Asn.isEmpty()) {
-                throw new IllegalStateException("信息不存在");
+                throw new IllegalStateException("Informations introuvables");
             }
             Row obj = SW.dto().make("ScorePage", "Asn", Asn, "PageIndex", PageIndex);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/GetCardScoreMess", Wire.json(obj));
@@ -106,15 +106,15 @@ public class CardScoreMess extends SwForm {
             try {
                 result = new BigDecimal(c("ScoreValue").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("输入积分错误");
+                throw new IllegalStateException("Nombre de points incorrect");
             }
             if (result.signum() < 0) {
-                throw new IllegalStateException("输入积分非法");
+                throw new IllegalStateException("Nombre de points non valide");
             }
             Row del = SW.dto().make("ScoreDel", "SR", result, "Asn", Asn);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CardScoreDeal", Wire.json(del));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 LoadData(1);
                 return;
             }

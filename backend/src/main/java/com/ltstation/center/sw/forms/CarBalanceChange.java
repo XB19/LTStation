@@ -77,7 +77,7 @@ public class CarBalanceChange extends SwForm {
 
     public void DepositButton_Click() {
         try {
-            change("Deposit", amount(c("DepositAmount").Text(), "充值金额格式错误"));
+            change("Deposit", amount(c("DepositAmount").Text(), "Format du montant rechargé incorrect"));
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
@@ -85,7 +85,7 @@ public class CarBalanceChange extends SwForm {
 
     public void DebitBtn_Click() {
         try {
-            change("Red", amount(c("DeBox").Text(), "冲红金额格式错误"));
+            change("Red", amount(c("DeBox").Text(), "Format du montant contre-passé incorrect"));
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }

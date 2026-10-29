@@ -18,13 +18,13 @@ public class AddVirtualScore extends SwForm {
             String text = c("UserName").Text();
             String text2 = c("UserPhone").Text();
             if (text.isEmpty() || text2.isEmpty()) {
-                throw new IllegalStateException("请补充完整信息");
+                throw new IllegalStateException("Veuillez compléter les informations");
             }
             Row add = SW.dto().make("CenterVirtualUserAdd", "UserName", text, "Phone", text2, "EID", IniInfo.LoginID,
                 "CompanyID", IniInfo.CompanyID);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/AddVirtualScore", Wire.json(add));
             if (r.Result()) {
-                MessageBox("操作成功");
+                MessageBox("Opération réussie");
                 Close("OK");
                 return;
             }

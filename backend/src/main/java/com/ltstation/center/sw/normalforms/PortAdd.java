@@ -29,7 +29,7 @@ public class PortAdd extends SwForm {
             int dataBit = Integer.parseInt(c("DataBitSelect").Text().trim());
             int stopBit = Integer.parseInt(c("StopBitSelect").Text().trim());
             if (db().any("NormalPortSet", "{PortID} = :p", p("p", port))) {
-                throw new IllegalStateException("端口已被使用");
+                throw new IllegalStateException("Ce port est déjà utilisé");
             }
             String now = LocalDateTime.now().format(Conv.STD);
             int id = Conv.toInt(db().insert("NormalPortSet", Row.of("Baud", baud, "CreateTime", now, "Parity", c("ParitySelect").SelectedIndex(),

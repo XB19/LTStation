@@ -129,10 +129,10 @@ public class OilTransacation extends SwForm {
             String order = c("OrderSelect").SelectedIndex() != 0 ? "{GunId}" : "{TrueTime} DESC";
             Sugar.Page pg = db().page("OilTransactions", q.where, q.params, order, page, 50);
             result = pg.rows();
-            if (IniInfo.Language.contains("en")) {
-                c("TotalCount").Text("Record Total:" + pg.total() + ",50 per page Total Page:" + pg.totalPage());
-            } else {
+            if ("zh-CN".equals(IniInfo.Language)) {
                 c("TotalCount").Text("共" + pg.total() + "条记录,每页50条 共" + pg.totalPage() + "页");
+            } else {
+                c("TotalCount").Text("Total : " + pg.total() + " enregistrement(s), 50 par page, " + pg.totalPage() + " page(s)");
             }
             c("CurPage").Text(String.valueOf(page));
             c("TotalPageSecond").Text(String.valueOf(pg.totalPage()));

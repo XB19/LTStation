@@ -40,7 +40,7 @@ public class NozUpdate extends SwForm {
         try {
             Row noz = db().first("NormalNoz", "{ID} = :i AND {IsUsing} = true", p("i", argInt("ID")));
             if (noz == null) {
-                throw new IllegalStateException("枪信息不存在");
+                throw new IllegalStateException("Pistolet introuvable");
             }
             BigDecimal close = noz.dec("CloseValue").compareTo(M1) == 0 ? BigDecimal.ZERO : noz.dec("CloseValue");
             c("NozID").Text(noz.str("NozID"));
@@ -66,13 +66,13 @@ public class NozUpdate extends SwForm {
             try {
                 nid = Integer.parseInt(c("NozID").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("枪号格式错误");
+                throw new IllegalStateException("Format du n° de pistolet incorrect");
             }
             BigDecimal result;
             try {
                 result = new BigDecimal(c("Price").Text().trim());
             } catch (NumberFormatException e) {
-                throw new IllegalStateException("单价格式错误");
+                throw new IllegalStateException("Format du prix unitaire incorrect");
             }
             Row tank = c("TankSelect").SelectedRow();
             Row port = c("ComSelect").SelectedRow();
@@ -81,20 +81,20 @@ public class NozUpdate extends SwForm {
                 try {
                     result2 = new BigDecimal(c("CloseValueText").Text().trim());
                 } catch (NumberFormatException e) {
-                    throw new IllegalStateException("提前关阀量输入格式错误");
+                    throw new IllegalStateException("Format du volume d'arrêt anticipé incorrect");
                 }
                 if (result2.signum() > 0 && result2.compareTo(BigDecimal.ONE) >= 0) {
-                    throw new IllegalStateException("提前关阀量输入范围值在0-1之间");
+                    throw new IllegalStateException("Le volume d'arrêt anticipé doit être compris entre 0 et 1");
                 }
             }
             int accredit = c("AuthSelect").SelectedIndex();
             // comme l'original : le pistolet est cherché par numéro de pistolet égal à l'identifiant
             Row noz = db().first("NormalNoz", "{NozID} = :n AND {IsUsing} = true", p("n", id));
             if (noz == null) {
-                throw new IllegalStateException("枪信息不存在");
+                throw new IllegalStateException("Pistolet introuvable");
             }
             if (db().any("NormalNoz", "{NozID} = :n AND {ID} <> :i AND {IsUsing} = true", p("n", nid, "i", noz.i("ID")))) {
-                throw new IllegalStateException("枪号已存在");
+                throw new IllegalStateException("Ce n° de pistolet existe déjà");
             }
             BigDecimal price = noz.dec("Price");
             BigDecimal closeValue = noz.dec("CloseValue");

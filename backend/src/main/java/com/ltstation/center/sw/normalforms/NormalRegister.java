@@ -16,7 +16,7 @@ public class NormalRegister extends SwForm {
 
     private static void needStation() {
         if (IniInfo.CompanyID == 0 || IniInfo.StationID == 0) {
-            throw new IllegalStateException("站点未创建");
+            throw new IllegalStateException("La station n'est pas créée");
         }
     }
 
@@ -68,14 +68,14 @@ public class NormalRegister extends SwForm {
                 }
             }
             if (!flag) {
-                throw new IllegalStateException("站点未激活");
+                throw new IllegalStateException("La station n'est pas activée");
             }
             if (db().first("Stations") == null) {
-                throw new IllegalStateException("站点未创建");
+                throw new IllegalStateException("La station n'est pas créée");
             }
             Row emp = db().first("Employees");
             if (emp == null) {
-                throw new IllegalStateException("员工未创建");
+                throw new IllegalStateException("Aucun employé créé");
             }
             IniInfo.LoginName = emp.str("Name");
             IniInfo.LoginID = emp.i("EmployeeID");

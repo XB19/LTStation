@@ -82,10 +82,10 @@ public class CarAdd extends CylinderForm {
             String text4 = c("AccountBox").Text();
             int gradeID = Conv.toInt(c("LimitGradeCombox").SelectedValue());
             if (text.isEmpty() || text2.isEmpty()) {
-                throw new IllegalStateException("信息缺失");
+                throw new IllegalStateException("Informations manquantes");
             }
             if (text3.isEmpty() || text4.isEmpty()) {
-                throw new IllegalStateException("账户信息缺失");
+                throw new IllegalStateException("Informations du compte manquantes");
             }
             long now = BaseFunction.ConvertDateTimeToInt(LocalDateTime.now());
             Row carUserRequest = SW.dto().make("CarUserRequest", "UserName", text, "CarGroupID", GID, "PlateNumber", text2, "VehicleType", vehicleType,
@@ -102,7 +102,7 @@ public class CarAdd extends CylinderForm {
                 Row car = carIDs.get(0);
                 List<Row> groupQueries = new ArrayList<>();
                 if (!SupervisionFunction.LoadCarGroupHttp(car.str("applicantUserId"), groupQueries, ERROR)) {
-                    throw new IllegalStateException("集团不存在");
+                    throw new IllegalStateException("Groupe introuvable");
                 }
                 Row g = groupQueries.get(0);
                 Row carGroup = SW.dto().make("CarGroupRequest", "CarGroupName", g.get("useCompanyName"), "CarGroupAddress", g.get("useCompanyAddress"),
@@ -178,7 +178,7 @@ public class CarAdd extends CylinderForm {
                     LoadDielectricHttp();
                     LoadManufactorHttp();
                 }
-                MessageBox("上传成功,请继续填写车辆气瓶信息");
+                MessageBox("Envoi réussi : renseignez maintenant les bouteilles de gaz du véhicule");
                 tx.commit();
             }
         } catch (RuntimeException ex) {

@@ -100,7 +100,7 @@ public class ShiftForm extends SwForm {
                 g("NozView").HeaderText("Amount", L("TotalKG"));
             }
         } catch (RuntimeException e) {
-            MessageBox("Load Error");
+            MessageBox("Erreur de chargement");
             Close();
         }
     }
@@ -351,7 +351,7 @@ public class ShiftForm extends SwForm {
         if ("zh-CN".equals(IniInfo.Language)) {
             c("MessageLabel").Text("共" + TotalNumber + "条记录，每页50条，共" + pages + "页");
         } else {
-            c("MessageLabel").Text("Total Record:" + TotalNumber + "，50 records per page，Total Page:" + pages);
+            c("MessageLabel").Text("Total : " + TotalNumber + " enregistrement(s), 50 par page, " + pages + " page(s)");
         }
         c("CurPage").Text(String.valueOf(PageIndex + 1));
         c("TotalPageSecond").Text(String.valueOf(pages));
@@ -452,7 +452,7 @@ public class ShiftForm extends SwForm {
     public void ShiftClose_Click() {
         try {
             if (c("CheckedLabel").Visible()) {
-                MessageBox("已交班");
+                MessageBox("Poste clôturé");
                 return;
             }
             GetDateTime();

@@ -94,7 +94,7 @@ public class BoxNoz extends SwForm implements NormalEngine.NozVerView {
                 g("RFIDView").RowsAdd(item.get("ID"), item.get("RFIDNo"), item.get("Address"), item.get("NozID"));
             }
         } catch (RuntimeException ex) {
-            MessageBox("RFID:" + ex.getMessage());
+            MessageBox("RFID : " + ex.getMessage());
         }
     }
 

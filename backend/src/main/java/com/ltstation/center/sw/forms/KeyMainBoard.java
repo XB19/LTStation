@@ -30,7 +30,7 @@ public class KeyMainBoard extends SwForm {
         ReadKeysFromCenter();
         if (sid == 1) {
             c("label5").Text("en-US".equals(IniInfo.Language) ? "Init Card Key,Old Key is 1111111111111111"
-                : "请设定您的默认密钥，初始原密码A与原密码B为1111111111111111");
+                : "Définissez votre clé par défaut (anciens mots de passe A et B initiaux : 1111111111111111)");
         }
     }
 
