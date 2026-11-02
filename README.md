@@ -205,13 +205,20 @@ Les commandes destinées aux équipements sont écrites dans les mêmes tables e
 
 ## Reste à faire
 
-- **API `/ServerDeal/*`** : n'est plus nécessaire pour le nouveau logiciel Station. Elle ne servirait qu'à brancher les anciens logiciels Station et CardMake.
-- **Logiciel Station** : les menus qui, dans l'original, n'ont pas de fenêtre décrite dans les ressources n'ont pas été refaits :
-  - gestion des véhicules (Car User Manager) ;
-  - contrôle des véhicules (Car Check).
+- **CardMake (ICBoxCard)** : logiciel de fabrication des cartes, à réécrire.
+- **API des appareils côté Center** : GPRS, ICAir, EasyCardMake, JoyFill, Phone et App, à porter et à vérifier une à une.
+- **Lecteur Mifare** : `mwrf32.dll` est en 32 bits, le Java de l'application de bureau en 64 bits.
+- **Matériel** : tout le code existe, mais rien n'a encore été essayé avec de vrais appareils.
+- **Données réelles** : importer les sauvegardes SQL Server (`migrate_data.py`, `station_db.py migrate`) et les vérifier.
+- **Docker** : fichiers prêts, jamais lancés.
+- **Application de bureau** : installateur à signer, icône LTStation.
+- **Logiciel Station** :
+  - les menus qui, dans l'original, n'ont pas de fenêtre décrite dans les ressources n'ont pas été refaits :
+    gestion des véhicules (Car User Manager) et contrôle des véhicules (Car Check) ;
+  - `BoxScreen` V1 reste sans logique (l'original ne l'ouvre jamais, seule `BoxScreenV2` sert) ;
+  - l'ancien package `station` n'est plus utilisé et reste à retirer.
+- **Sécurité** : la clé AES Station ↔ Center est écrite dans `LegacyAes` et déjà publiée ; à changer des deux côtés.
 - **Interfaces mobiles et WeChat** :
-  - vues App et Phone ;
   - mini-programme ;
-  - JoyFill ;
-  - wxJoyFuelingOfficial.
-- **Notifications de paiement WeChat.**
+  - wxJoyFuelingOfficial ;
+  - notifications de paiement WeChat.
