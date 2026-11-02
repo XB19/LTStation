@@ -6,27 +6,31 @@
  */
 :root {
   color-scheme: light;
-  --lt-brand-gradient: linear-gradient(135deg, #1e88e5, #26c6da);
+  --lt-brand-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 62%, #0891b2 100%);
   --lt-brand-contrast: #fff;
   --lt-header-height: 64px;
-  --lt-elevation-sider: 2px 0 6px rgba(0, 21, 41, 0.08);
-  --lt-elevation-header: 0 1px 4px rgba(0, 21, 41, 0.08);
-  --lt-elevation-overlay: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --lt-elevation-sider: none;
+  --lt-elevation-header: none;
+  --lt-elevation-card: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --lt-elevation-overlay: 0 18px 50px rgba(15, 23, 42, 0.28);
+  --lt-scrollbar: rgba(100, 116, 139, 0.4);
+  --lt-scrollbar-hover: rgba(100, 116, 139, 0.7);
 
-  --lt-color-bg-layout: #f3f3f9;
+  --lt-color-bg-layout: #f4f6fb;
   --lt-color-bg-container: #fff;
-  --lt-color-text: rgba(0, 0, 0, 0.88);
+  --lt-color-text: #0f172a;
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --lt-brand-gradient: linear-gradient(135deg, #1565c0, #00838f);
-  --lt-elevation-sider: none;
-  --lt-elevation-header: none;
-  --lt-elevation-overlay: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --lt-brand-gradient: linear-gradient(135deg, #172554 0%, #1d4ed8 62%, #0e7490 100%);
+  --lt-elevation-card: none;
+  --lt-elevation-overlay: 0 18px 50px rgba(0, 0, 0, 0.6);
+  --lt-scrollbar: rgba(148, 163, 184, 0.3);
+  --lt-scrollbar-hover: rgba(148, 163, 184, 0.55);
 
-  --lt-color-bg-layout: #000;
-  --lt-color-bg-container: #141414;
+  --lt-color-bg-layout: #0b1120;
+  --lt-color-bg-container: #131c2e;
   --lt-color-text: rgba(255, 255, 255, 0.85);
 }
 
@@ -38,6 +42,40 @@ body {
   margin: 0;
   background: var(--lt-color-bg-layout);
   color: var(--lt-color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Barres de défilement fines, partout */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: var(--lt-scrollbar);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lt-scrollbar-hover);
+  background-clip: padding-box;
+}
+
+/* Cartes et tableaux du Center */
+.ant-card {
+  box-shadow: var(--lt-elevation-card);
+}
+.ant-card-bordered {
+  border-color: var(--lt-color-border-secondary);
+}
+.ant-table-wrapper .ant-table-thead > tr > th {
+  font-weight: 600;
+}
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Texte discret (états vides, horodatages secondaires) */

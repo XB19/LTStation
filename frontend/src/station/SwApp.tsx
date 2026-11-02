@@ -113,7 +113,7 @@ export default function SwApp() {
   return (
     <div className="sw-main">
       {/* Main_UI de CardMake garde sa taille d'origine (497 × 563) */}
-      <div style={CARD_MAKE ? { position: 'absolute', inset: 0, margin: 'auto', width: 497, height: 563 } : { display: 'contents' }}>
+      <div className={CARD_MAKE ? 'sw-cardmake' : undefined} style={CARD_MAKE ? undefined : { display: 'contents' }}>
         <RemoteForm key={`main:${stage.form}`} form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
       </div>
       {opened.map((o) => (

@@ -46,9 +46,9 @@
   background: var(--lt-color-bg-container);
 }
 .wf-group > legend {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--lt-color-primary);
+  color: var(--lt-color-text-secondary);
   padding: 0 6px;
   width: auto;
   margin: 0;
@@ -62,7 +62,7 @@
   min-width: 0;
 }
 .wf-caption-title {
-  background: color-mix(in srgb, var(--lt-color-primary) 7%, var(--lt-color-bg-container));
+  background: color-mix(in srgb, var(--lt-color-text) 3%, var(--lt-color-bg-container));
   color: var(--lt-color-text);
   font-weight: 600;
   padding: 7px 12px;
@@ -115,8 +115,8 @@
   font-size: 13px;
 }
 .wf-grid .ant-table-thead > tr > th {
-  background: color-mix(in srgb, var(--lt-color-primary) 7%, var(--lt-color-bg-container)) !important;
-  color: var(--lt-color-text);
+  background: color-mix(in srgb, var(--lt-color-text) 3%, var(--lt-color-bg-container)) !important;
+  color: var(--lt-color-text-secondary);
   padding: 6px 8px !important;
 }
 .wf-grid .ant-table-tbody > tr > td {
@@ -125,37 +125,39 @@
 }
 .wf-grid .ant-table-tbody > tr.wf-row-sel > td {
   background: var(--lt-color-primary-bg) !important;
-  box-shadow: inset 0 1px 0 var(--lt-color-primary), inset 0 -1px 0 var(--lt-color-primary);
+  box-shadow: inset 3px 0 0 var(--lt-color-primary);
 }
 .wf-ro input,
 input.wf-ro {
   background: var(--lt-color-fill) !important;
 }
 
-/* Boîte de dialogue des fenêtres d'origine : en-tête de couleur, corps sur le fond de l'application */
+/* Boîte de dialogue des fenêtres d'origine : en-tête clair, corps sur le fond de l'application */
 .wf-window .ant-modal-content {
   padding: 0;
   overflow: hidden;
-  border-radius: var(--lt-radius-lg);
+  border-radius: 14px;
+  box-shadow: var(--lt-elevation-overlay);
 }
 .wf-window .ant-modal-header {
   margin: 0;
-  padding: 11px 16px;
-  background: var(--lt-color-primary);
+  padding: 13px 18px;
+  background: var(--lt-color-bg-container);
+  border-bottom: 1px solid var(--lt-color-border-secondary);
   border-radius: 0;
 }
 .wf-window .ant-modal-title {
-  color: #fff;
-  font-size: 14px;
+  color: var(--lt-color-text);
+  font-size: 15px;
   font-weight: 600;
 }
 .wf-window .ant-modal-close {
-  top: 8px;
-  color: #fff;
+  top: 10px;
+  color: var(--lt-color-text-tertiary);
 }
 .wf-window .ant-modal-close:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  color: var(--lt-color-text);
+  background: var(--lt-color-fill);
 }
 .wf-window .ant-modal-body {
   padding: 14px;
@@ -169,15 +171,16 @@ input.wf-ro {
 }
 
 /* Menus d'origine : barre de menus, barre d'outils, barre d'état */
-.wf-menubar, .wf-toolbar { display: flex; flex-wrap: wrap; gap: 2px; padding: 2px 4px; background: var(--wf-bar-bg, #f3f6fa); border-bottom: 1px solid #d9e1ea; }
-.wf-toolbar { gap: 4px; padding: 4px; }
-.wf-menu-btn { border: 1px solid transparent; background: transparent; padding: 3px 10px; border-radius: 3px; cursor: pointer; font: inherit; color: inherit; }
-.wf-menu-btn:hover:not(:disabled) { background: #e2ebf5; border-color: #c4d4e6; }
+.wf-menubar, .wf-toolbar { display: flex; flex-wrap: wrap; gap: 2px; padding: 4px 6px; background: var(--wf-bar-bg, var(--lt-color-bg-container)); border-bottom: 1px solid var(--lt-color-border-secondary); }
+.wf-toolbar { gap: 6px; padding: 6px; }
+.wf-menu-btn { border: 1px solid transparent; background: transparent; padding: 4px 10px; border-radius: var(--lt-radius); cursor: pointer; font: inherit; color: inherit; transition: background-color .12s, border-color .12s; }
+.wf-menu-btn:hover:not(:disabled) { background: var(--lt-color-primary-bg); }
+.wf-menu-btn:focus-visible { outline: 2px solid var(--lt-color-primary); outline-offset: 1px; }
 .wf-menu-btn:disabled { opacity: .45; cursor: default; }
-.wf-toolbar .wf-menu-btn { border-color: #d6e0ea; background: #fff; }
-.wf-sep { width: 1px; align-self: stretch; background: #d0d8e2; margin: 2px 4px; }
-.wf-status { display: flex; gap: 16px; align-items: center; padding: 3px 8px; font-size: 12px; background: #f3f6fa; border-top: 1px solid #d9e1ea; }
-.wf-status-pro { width: 90px; height: 10px; }
+.wf-toolbar .wf-menu-btn { border-color: var(--lt-color-border); background: var(--lt-color-bg-container); }
+.wf-sep { width: 1px; align-self: stretch; background: var(--lt-color-border-secondary); margin: 3px 5px; }
+.wf-status { display: flex; gap: 16px; align-items: center; padding: 5px 12px; font-size: 12px; color: var(--lt-color-text-secondary); background: var(--lt-color-bg-container); border-top: 1px solid var(--lt-color-border-secondary); }
+.wf-status-pro { width: 90px; height: 6px; accent-color: var(--lt-color-primary); }
 .wf-cell-edit { display: block; min-height: 18px; cursor: text; }
 
 /* Fenêtres intégrées côte à côte dans un même conteneur (vignettes de pompes, pistolets) */
@@ -188,66 +191,92 @@ input.wf-ro {
   align-items: flex-start;
 }
 
-/* ------------------------------------------------------------ rendu fidèle WinForms (fenêtres principales et intégrées) */
-/* Couleurs d'origine (claires) même si le poste est en thème sombre : contrôles natifs compris */
-.wfc-root { position: relative; overflow: hidden; background: #f0f0f0; color: #000; color-scheme: light; box-sizing: border-box;
-  font: 12px "Microsoft YaHei", "Segoe UI", sans-serif; }
+/* ------------------------------------------------------------ fenêtres principales et intégrées */
+/* Mêmes positions que l'original ; toujours en clair, comme les images et couleurs d'état envoyées par le serveur */
+.wfc-root {
+  --wfc-ink: #0f172a;
+  --wfc-muted: #475569;
+  --wfc-line: #e2e8f0;
+  --wfc-surface: #fff;
+  --wfc-canvas: #f4f6fb;
+  --wfc-accent: #2563eb;
+  --wfc-accent-soft: #eff4ff;
+  position: relative; overflow: hidden; background: var(--wfc-canvas); color: var(--wfc-ink); color-scheme: light; box-sizing: border-box;
+  font: 12px "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+}
 .wfc-root.wfc-fill { width: 100%; height: 100vh; }
 .wfc-root *, .wfc-root *::before, .wfc-root *::after { box-sizing: border-box; }
+/* Polices à empattements des formulaires d'origine : une seule famille, tailles et graisses conservées */
+.wfc-root [style*="font-family"] { font-family: inherit !important; }
 .wfc-slot { position: absolute; overflow: hidden; }
 .wfc-panel, .wfc-flow, .wfc-tabs, .wfc-field, .wfc-measure { position: relative; width: 100%; height: 100%; }
 .wfc-flow { display: flex; flex-wrap: wrap; align-content: flex-start; overflow: auto; }
 .wfc-extra { position: absolute; inset: 0; overflow: auto; }
 .wfc-extra > .wf-embeds { gap: 0; padding: 0; }
+.wfc-extra > .wf-embeds:has(> .wfc-root) { gap: 12px; padding: 12px; }
 .wfc-label { width: 100%; height: 100%; display: flex; overflow: hidden; white-space: pre-wrap; line-height: 1.15; cursor: default; }
 .wfc-picture { width: 100%; height: 100%; background-repeat: no-repeat; background-position: center; background-size: contain; }
-.wfc-group { border: 1px solid #c9c9c9; border-radius: 2px; }
-.wfc-group-title { position: absolute; top: -1px; left: 8px; padding: 0 3px; background: inherit; z-index: 1; }
+.wfc-group { border: 1px solid var(--wfc-line); border-radius: 8px; }
+.wfc-group-title { position: absolute; top: -1px; left: 10px; padding: 0 4px; background: inherit; color: var(--wfc-muted); font-weight: 600; z-index: 1; }
 .wfc-field > * { width: 100% !important; height: 100% !important; min-width: 0 !important; }
 .wfc-field .ant-btn { height: 100% !important; }
 
+/* Tuiles intégrées (pistolets, cuves) : carte arrondie, couleurs d'état conservées */
+.wf-embeds > .wfc-root { border-radius: 10px; box-shadow: 0 1px 2px rgba(15, 23, 42, .08), 0 2px 8px rgba(15, 23, 42, .1); transition: box-shadow .15s, transform .15s; }
+.wf-embeds > .wfc-root:hover { box-shadow: 0 2px 4px rgba(15, 23, 42, .1), 0 8px 20px rgba(15, 23, 42, .14); transform: translateY(-1px); }
+
 /* Onglets */
-.wfc-tabbar { position: absolute; top: 0; left: 0; right: 0; height: 22px; display: flex; gap: 2px; padding-left: 2px;
-  border-bottom: 1px solid #a0a0a0; background: #f0f0f0; }
-.wfc-tabbar button { border: 1px solid #b5b5b5; border-bottom: 0; background: #e6e6e6; padding: 0 12px; font: inherit; font-size: 12px;
-  cursor: pointer; border-radius: 2px 2px 0 0; margin-top: 2px; }
-.wfc-tabbar button.active { background: #fff; margin-top: 0; color: #c00; }
-.wfc-tabpage { position: absolute; top: 22px; left: 0; right: 0; bottom: 0; background: #fff; overflow: hidden; }
+.wfc-tabbar { position: absolute; top: 0; left: 0; right: 0; height: 22px; display: flex; gap: 4px; padding: 0 8px;
+  border-bottom: 1px solid var(--wfc-line); background: var(--wfc-surface); }
+.wfc-tabbar button { border: 0; background: transparent; padding: 0 12px; font: inherit; font-size: 12px; color: var(--wfc-muted);
+  cursor: pointer; box-shadow: inset 0 -2px 0 transparent; transition: color .12s, box-shadow .12s; }
+.wfc-tabbar button:hover { color: var(--wfc-ink); }
+.wfc-tabbar button:focus-visible { outline: 2px solid var(--wfc-accent); outline-offset: -2px; }
+.wfc-tabbar button.active { color: var(--wfc-accent); font-weight: 600; box-shadow: inset 0 -2px 0 var(--wfc-accent); }
+.wfc-tabpage { position: absolute; top: 22px; left: 0; right: 0; bottom: 0; background: var(--wfc-canvas); overflow: hidden; }
 
 /* Barres : menus, outils (image et texte), état */
-.wfc-menubar { height: 100%; background: linear-gradient(#f7f9fc, #e6ecf5); }
-.wfc-menubar .wf-menubar { background: transparent; border: 0; padding: 1px 4px; gap: 0; }
-.wfc-menubar .wf-menu-btn { border: 0; background: transparent; padding: 2px 8px; font-size: 12px; }
-.wfc-menubar .wf-menu-btn:hover { background: #cde3f8; }
+.wfc-menubar { height: 100%; background: var(--wfc-surface) !important; border-bottom: 1px solid var(--wfc-line); }
+.wfc-menubar .wf-menubar { background: transparent; border: 0; padding: 1px 6px; gap: 2px; }
+.wfc-menubar .wf-menu-btn { border: 0; background: transparent; padding: 3px 9px; font-size: 12px; color: var(--wfc-ink); }
+.wfc-menubar .wf-menu-btn:hover:not(:disabled) { background: var(--wfc-accent-soft); color: var(--wfc-accent); }
 /* Barre d'outils : grille de boutons de même largeur ; StripRow choisit le nombre de colonnes pour répartir les
    boutons à parts égales sur le moins de lignes possible (largeur mini --wfc-tool-min), et la barre prend leur hauteur. */
-.wfc-toolstrip { height: 100%; overflow: hidden; background: linear-gradient(#fbfcfe, #e3eaf4); border-bottom: 1px solid #c5d3e3; }
-.wfc-toolstrip-row { --wfc-tool-min: 76px; display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--wfc-tool-min), 1fr)); }
+.wfc-toolstrip { height: 100%; overflow: hidden; background: var(--wfc-surface) !important; border-bottom: 1px solid var(--wfc-line); }
+.wfc-toolstrip-row { --wfc-tool-min: 76px; display: grid; gap: 2px; padding: 2px 4px; grid-template-columns: repeat(auto-fill, minmax(var(--wfc-tool-min), 1fr)); }
 .wfc-toolstrip-row > .wfc-tool-sep { display: none; }
-.wfc-tool { min-width: 0; display: flex; flex-direction: column; align-items: center;
-  justify-content: flex-end; gap: 2px; padding: 4px 2px 3px; border: 1px solid transparent; background: transparent; font: inherit;
-  font-size: 12px; color: inherit; cursor: pointer; }
-.wfc-tool:hover:not(:disabled) { background: linear-gradient(#fdf6d8, #fbe49c); border-color: #e5c365; }
-.wfc-tool:focus-visible { outline: 2px solid #0078d7; outline-offset: -2px; }
+.wfc-tool { min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 5px 3px 4px;
+  border: 0; border-radius: 8px; background: transparent; font: inherit; font-size: 12px; color: var(--wfc-ink); cursor: pointer;
+  transition: background-color .12s, color .12s; }
+.wfc-tool:hover:not(:disabled) { background: var(--wfc-accent-soft); color: var(--wfc-accent); }
+.wfc-tool:active:not(:disabled) { background: #dbe6ff; }
+.wfc-tool:focus-visible { outline: 2px solid var(--wfc-accent); outline-offset: -2px; }
 .wfc-tool:disabled { opacity: .45; cursor: default; }
-.wfc-tool-img { flex: 1 1 auto; min-height: 24px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: auto; }
+/* Icônes d'origine ramenées à une même taille : elles ne débordent plus et restent alignées */
+.wfc-tool-img { flex: 0 1 34px; min-height: 22px; width: 100%; background-repeat: no-repeat; background-position: center; background-size: contain; }
 /* Libellé sur deux lignes au plus (coupure française), le texte complet est dans l'infobulle */
 .wfc-tool-text { max-width: 100%; text-align: center; line-height: 1.15; overflow: hidden; overflow-wrap: break-word; hyphens: auto;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.wfc-tool-sep { width: 1px; margin: 6px 3px; background: #c5d3e3; }
-.wfc-status { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 8px;
-  font-size: 12px; background: #f0f0f0; border-top: 1px solid #d0d0d0; }
+.wfc-tool-sep { width: 1px; margin: 6px 3px; background: var(--wfc-line); }
+.wfc-status { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 12px;
+  font-size: 12px; color: var(--wfc-muted); background: var(--wfc-surface) !important; border-top: 1px solid var(--wfc-line); }
 
-/* Tableaux compacts, comme les DataGridView d'origine */
-.wfc-root .wf-grid .ant-table { font-size: 12px; border-radius: 0; }
+/* Tableaux compacts */
+.wfc-root .wf-grid { background: var(--wfc-surface); }
+.wfc-root .wf-grid .ant-table { font-size: 12px; border-radius: 0; color: var(--wfc-ink); }
 .wfc-root .wf-grid .ant-table-container { border-radius: 0 !important; }
-.wfc-root .wf-grid .ant-table-thead > tr > th { padding: 3px 6px !important; background: #f3f3f3; font-weight: 400; border-radius: 0 !important; }
-.wfc-root .wf-grid .ant-table-tbody > tr > td { padding: 2px 6px !important; }
-.wfc-root .wf-grid .ant-table-tbody > tr.wf-row-sel > td { background: #0078d7 !important; color: #fff; }
-.wfc-root .wf-grid .ant-empty-normal { margin: 8px 0; }
+.wfc-root .wf-grid .ant-table-thead > tr > th { padding: 5px 8px !important; background: #f8fafc !important; color: var(--wfc-muted); font-weight: 600; border-radius: 0 !important; border-bottom: 1px solid var(--wfc-line); }
+.wfc-root .wf-grid .ant-table-thead > tr > th::before { display: none; }
+.wfc-root .wf-grid .ant-table-tbody > tr > td { padding: 4px 8px !important; border-bottom: 1px solid #f1f5f9; }
+.wfc-root .wf-grid .ant-table-tbody > tr.wf-row-sel > td { background: #dbe6ff !important; color: #1e3a8a; box-shadow: none; }
+.wfc-root .wf-grid .ant-empty-normal { margin: 8px 0; color: #94a3b8; }
 .wfc-extra > .wf-embeds { height: 100%; align-content: flex-start; }
 .wfc-extra > .wf-embeds > iframe { flex: 1 0 100%; height: 100% !important; }
-.wfc-root .wfc-measure { background: #fff; }
+.wfc-root .wfc-measure { background: var(--wfc-surface); }
+
+/* CardMake : fenêtre de taille fixe posée sur le fond, en carte */
+.sw-cardmake { position: absolute; inset: 0; margin: auto; width: 497px; height: 563px; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 50px rgba(15, 23, 42, .18); }
+.sw-cardmake > .wfc-root.wfc-fill { height: 100%; }
 
 /* Champs libres trop larges pour la fenêtre : paires libellé + champ qui passent à la ligne */
 .wf-fit {
