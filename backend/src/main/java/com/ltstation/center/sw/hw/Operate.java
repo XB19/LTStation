@@ -46,7 +46,7 @@ public class Operate {
         }
     }
 
-    /** Noms des lecteurs PC/SC branchés ; null si le service de cartes à puce est indisponible. */
+    /** Noms des lecteurs PC/SC branchés ; null sans lecteur (SCardListReaders échoue alors) ou sans service de cartes à puce. */
     public String[] GetReaders() {
         if (!EstablishContext()) {
             return null;
@@ -55,7 +55,7 @@ public class Operate {
         for (CardTerminal t : terminals()) {
             names.add(t.getName());
         }
-        return names.toArray(new String[0]);
+        return names.isEmpty() ? null : names.toArray(new String[0]);
     }
 
     /** Connexion à la carte posée sur le lecteur nommé (protocole T=0 ou T=1). */
