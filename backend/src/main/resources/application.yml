@@ -84,6 +84,11 @@ app:
     pluse-base: ${PLUSE_BASE:1250}
     volume-by-self: ${VOLUME_BY_SELF:0}
     settlement-day: ${SETTLEMENT_DAY:5}
+  # Service SMS (codes de validation et avis de recharge) : identifiants dans .env
+  sms:
+    client-id: ${SMS_CLIENT_ID:}
+    client-secret: ${SMS_CLIENT_SECRET:}
+    token: ${SMS_TOKEN:}
   # Licence d'activation (table active_web), comme la plateforme d'origine.
   license:
     enabled: ${LICENSE_ENABLED:true}

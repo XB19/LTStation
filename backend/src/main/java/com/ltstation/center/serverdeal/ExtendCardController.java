@@ -6,6 +6,7 @@ import com.ltstation.center.legacy.Row;
 import com.ltstation.center.legacy.Sugar;
 import com.ltstation.center.legacy.Wire;
 import java.math.BigDecimal;
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  *    7 facture, 6 employé, le 9e chiffre du numéro valant 1, 2, 3, 4 et 0 (BaseFunction.GetNormalCardType) ;
  *  - C_Type : 0 et 4 = recharge, 1 = consommation (13), 2 = déduction (12) ;
  *  - GetMacStationValid : stations.station_mac contient le code d'activation saisi dans Active ;
- *  - BaseAuth = Employees.PcMenuAuth ; validité d'une carte : 5 ans, comme CreateCusTomerCardInfo.
+ *  - BaseAuth et IssueAuth = Employees.AuthID (numéros des droits de CardMake) ; validité d'une carte : 5 ans, comme CreateCusTomerCardInfo.
  */
 @RestController
 @RequestMapping("/ExtendUpdate")
@@ -36,8 +37,13 @@ public class ExtendCardController extends ServerDealBase {
     private static final DateTimeFormatter DAY = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static final DateTimeFormatter TIME = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    public ExtendCardController(@Qualifier("centerSugar") Sugar db, CenterDeal deal) {
+    private static final SecureRandom RANDOM = new SecureRandom();
+
+    private final SmsSender sms;
+
+    public ExtendCardController(@Qualifier("centerSugar") Sugar db, CenterDeal deal, SmsSender sms) {
         super(db, deal);
+        this.sms = sms;
     }
 
     // ------------------------------------------------------------ poste et connexion
@@ -96,7 +102,7 @@ public class ExtendCardController extends ServerDealBase {
                 throw fail("Les informations de la station n'existent pas");
             }
             return okJson(Row.of("EmpID", emp.i("EmployeeID"), "CompanyID", st.i("CompanyID"), "Name", emp.str("Name"),
-                "StationID", st.i("StationID"), "BaseAuth", emp.str("PcMenuAuth")));
+                "StationID", st.i("StationID"), "BaseAuth", emp.str("AuthID")));
         } catch (Exception ex) {
             return err(ex);
         }
@@ -465,10 +471,57 @@ public class ExtendCardController extends ServerDealBase {
         }
     }
 
-    // ------------------------------------------------------------ solde
+    // ------------------------------------------------------------ cycle de vie d'une carte
 
-    @RequestMapping("/CardBalanceChange")
-    public String CardBalanceChange(@RequestBody(required = false) String body) {
+    private void bump(String col) {
+        Row dv = db.first("DataVersions");
+        if (dv != null) {
+            dv.put(col, dv.i(col) + 1);
+            db.update("DataVersions", dv);
+        }
+    }
+
+    /** Code à 6 chiffres envoyé au téléphone de la carte et renvoyé dans Valid_Time : le logiciel compare la saisie. */
+    @RequestMapping("/CheckLockNumber")
+    public String CheckLockNumber(@RequestBody(required = false) String body) {
+        try {
+            Row card = cardDeal(req(body).str("Asn"));
+            String code = String.format("%06d", RANDOM.nextInt(1000000));
+            sms.send(card.str("Phone"), "Your validation code is " + code);
+            card.put("Valid_Time", code);
+            return okJson(card);
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    @RequestMapping("/CardPasswordUpdte")
+    public String CardPasswordUpdte(@RequestBody(required = false) String body) {
+        try {
+            Row m = req(body);
+            String asn = m.str("Asn");
+            CenterDeal.CusCard c = deal.getCusCardInfo(asn);
+            if (c.ok()) {
+                c.cardInfos().put("CipherFlg", m.str("Password"));
+                c.cardInfos().put("UpdateDatetime", LocalDateTime.now());
+                db.update("CustomerCardInfos", c.cardInfos());
+                return okEmpty();
+            }
+            CenterDeal.EmpCard e = deal.getEmpCardInfo(asn);
+            if (!e.ok()) {
+                throw fail(c.error());
+            }
+            e.cardInfos().put("CipherFlg", m.str("Password"));
+            db.update("EmployeeCardInfos", e.cardInfos());
+            return okEmpty();
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    /** Statut demandé : 0 = en service, autre = bloquée (liste noire), comme ServerDeal/CardLost. */
+    @RequestMapping("/CardStatueUpdate")
+    public String CardStatueUpdate(@RequestBody(required = false) String body) {
         try (Sugar.Tx tx = db.begin()) {
             try {
                 Row m = req(body);
@@ -477,34 +530,222 @@ public class ExtendCardController extends ServerDealBase {
                 if (!c.ok()) {
                     throw fail(c.error());
                 }
-                if (c.cardInfos().i("CardStatusTypeID") != 0) {
-                    throw fail("La carte n'est pas utilisable");
+                int statue = m.i("CardStatue");
+                c.cardInfos().put("CardStatusTypeID", statue);
+                c.cardInfos().put("UpdateDatetime", LocalDateTime.now());
+                db.update("CustomerCardInfos", c.cardInfos());
+                db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
+                if (statue != 0) {
+                    db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
                 }
-                int kind = m.i("C_Type");
-                boolean credit = kind == 0 || kind == 4;
-                int type = credit ? 2 : kind == 1 ? 13 : 12;
-                BigDecimal amount = m.dec("Amount");
-                double delta = (credit ? amount.add(m.dec("DisAmount")) : amount.negate()).doubleValue();
-                Row acc = c.accounts();
-                double balance = acc.d("Balance") + delta;
-                LocalDateTime now = LocalDateTime.now();
-                Row emp = db.first("Employees", "{EmployeeID} = :e", p("e", m.i("EmpID")));
-                Row l = Row.of("AccountDatetime", now.format(Conv.STD), "AccountNo", acc.get("AccountNo"), "Amount", credit ? amount.doubleValue() : amount.negate().doubleValue(),
-                    "ASN", asn, "Balance", balance, "CardTypeID", CenterDeal.cardTypeOf(asn), "ChequeNo", m.str("Memo"), "CreditCountID", "", "DiscountAmount", m.dec("DisAmount"),
-                    "EmployeeID", m.i("EmpID"), "FeeAmount", 0.0, "OperatorName", emp == null ? "" : emp.str("Name"), "PaymentID", 1, "ProcessCode", "", "StationID", m.i("StationID"),
-                    "TerminalNo", "", "TransactionTypeID", type, "TransDatetime", now.format(Conv.STD));
-                long id = Conv.toLong(db.insert("AccountServiceLogs", l));
-                acc.put("Balance", balance);
-                acc.put("UpdateDatetime", now);
-                acc.put("TransTime", now);
-                acc.put(credit ? "DepositDatetime" : "ConsumeDatetime", now);
-                db.update("CustomerAccounts", acc);
+                deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, asn, c.accounts().d("Balance"), statue != 0 ? 3 : 5, BigDecimal.ZERO, 0.0, null, 1,
+                    LocalDateTime.now().format(Conv.STD), c.cardInfos().i("StationID"));
+                bump("BasicBlack");
                 tx.commit();
-                return okJson(Row.of("AccountLogID", id, "Date", now.format(DAY), "Time", now.format(TIME)));
+                return okEmpty();
             } catch (Exception ex) {
                 tx.rollback();
                 return err(ex);
             }
         }
+    }
+
+    /** Nouveau numéro sur le même compte ; l'ancienne carte passe au statut 3 et en liste noire, comme ServerDeal/CardChange. */
+    @RequestMapping("/CardReplaceCard")
+    public String CardReplaceCard(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                Row m = req(body);
+                String asn = m.str("Asn");
+                CenterDeal.CusCard c = deal.getCusCardInfo(asn);
+                if (!c.ok()) {
+                    throw fail(c.error());
+                }
+                Row info = c.cardInfos();
+                if (info.i("CardStatusTypeID") == 3) {
+                    throw fail("Replaced");
+                }
+                info.put("CardStatusTypeID", 3);
+                info.put("UpdateDatetime", LocalDateTime.now());
+                db.update("CustomerCardInfos", info);
+                db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
+                db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
+                String prefix = asn.startsWith("00000000") ? asn.substring(0, 9) : asn.substring(0, 6);
+                String next = nextAsn("customer_card_infos", prefix);
+                info.put("ASN", next);
+                info.put("CardStatusTypeID", 0);
+                db.insert("CustomerCardInfos", info);
+                deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, next, c.accounts().d("Balance"), 8, BigDecimal.ZERO, 0.0, null, 1,
+                    LocalDateTime.now().format(Conv.STD), info.i("StationID"));
+                bump("BasicBlack");
+                String res = okJson(Row.of("Asn", next));
+                tx.commit();
+                return res;
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
+
+    /** Écriture de la nouvelle carte impossible : retour à l'ancienne. */
+    @RequestMapping("/CardReplaceBack")
+    public String CardReplaceBack(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                Row m = req(body);
+                String oldAsn = m.str("OldAsn");
+                String newAsn = m.str("NewAsn");
+                Row old = db.first("CustomerCardInfos", "{ASN} = :a", p("a", oldAsn));
+                if (old == null) {
+                    throw fail("Informations utilisateur introuvables");
+                }
+                db.delete("AccountServiceLogs", "{ASN} = :a", p("a", newAsn));
+                db.delete("CustomerCardInfos", "{ASN} = :a", p("a", newAsn));
+                old.put("CardStatusTypeID", 0);
+                old.put("UpdateDatetime", LocalDateTime.now());
+                db.update("CustomerCardInfos", old);
+                db.delete("BasicBlackLists", "{ASN} = :a", p("a", oldAsn));
+                bump("BasicBlack");
+                tx.commit();
+                return okEmpty();
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
+
+    @RequestMapping("/MessageSend")
+    public String MessageSend(@RequestBody(required = false) String body) {
+        try {
+            Row m = req(body);
+            sms.send(cardDeal(m.str("Asn")).str("Phone"), m.str("Content"));
+            return okEmpty();
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    @RequestMapping("/ExtendGetEmployeeCard")
+    public String ExtendGetEmployeeCard(@RequestBody(required = false) String body) {
+        try {
+            return okJson(db.list("EmployeeCardInfos", "{StationID} = :s ORDER BY {ASN}", p("s", req(body).i("StationID"))));
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    @RequestMapping("/ExtendGetSingleEmployeeCard")
+    public String ExtendGetSingleEmployeeCard(@RequestBody(required = false) String body) {
+        try {
+            Row i = db.first("EmployeeCardInfos", "{ASN} = :a", p("a", req(body).str("Asn")));
+            if (i == null) {
+                throw fail("Carte introuvable");
+            }
+            return okJson(i);
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    /** EmployeeID 0 = création ; le téléphone sert d'identifiant de connexion (la fenêtre n'en demande pas d'autre). */
+    @RequestMapping("/ExtendEmployeeUpdate")
+    public String ExtendEmployeeUpdate(@RequestBody(required = false) String body) {
+        try {
+            Row m = req(body);
+            Row e;
+            boolean add = m.i("EmployeeID") == 0;
+            if (add) {
+                Integer inner = db.scalar("SELECT max(code_inner) FROM employees WHERE station_id = :s", p("s", m.i("StationID")), Integer.class);
+                Integer id = db.scalar("SELECT max(employee_id) FROM employees", null, Integer.class);
+                int next = (id == null ? 0 : id) + 1;
+                e = Row.of("EmployeeNo", "E" + next, "Code", m.str("Name"), "StationID", m.i("StationID"), "CertificateTypeID", 1, "CertifyKey", "", "GenderID", 1,
+                    "Birthday", LocalDateTime.now(), "PostCode", "1", "CodeInner", (inner == null ? 0 : inner) + 1, "Password", "", "Score", BigDecimal.ZERO, "IsUsing", true,
+                    "CenterLogin", false, "OpenID", "", "GzhAuth", "", "RoleID", 0, "PcMenuAuth", "");
+            } else {
+                e = db.first("Employees", "{EmployeeID} = :e", p("e", m.i("EmployeeID")));
+                if (e == null) {
+                    throw fail("L'employé n'existe pas");
+                }
+            }
+            e.put("Name", m.str("Name"));
+            e.put("Telephone", m.str("Phone"));
+            e.put("Memo", m.str("Password"));
+            e.put("AuthID", m.str("IssueAuth"));
+            if (add) {
+                e.put("Address", m.str("Phone"));
+                db.insert("Employees", e);
+            } else {
+                db.update("Employees", e);
+            }
+            return okEmpty();
+        } catch (Exception ex) {
+            return err(ex);
+        }
+    }
+
+    // ------------------------------------------------------------ solde
+
+    /** Annulation d'une recharge dont l'écriture sur la carte a échoué : déduction du même montant. */
+    @RequestMapping("/CardBalanceReturn")
+    public String CardBalanceReturn(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                Row m = req(body);
+                m.put("C_Type", 2);
+                String res = balance(m);
+                tx.commit();
+                return res;
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
+
+    @RequestMapping("/CardBalanceChange")
+    public String CardBalanceChange(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                String res = balance(req(body));
+                tx.commit();
+                return res;
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
+
+    private String balance(Row m) {
+        String asn = m.str("Asn");
+        CenterDeal.CusCard c = deal.getCusCardInfo(asn);
+        if (!c.ok()) {
+            throw fail(c.error());
+        }
+        if (c.cardInfos().i("CardStatusTypeID") != 0) {
+            throw fail("La carte n'est pas utilisable");
+        }
+        int kind = m.i("C_Type");
+        boolean credit = kind == 0 || kind == 4;
+        int type = credit ? 2 : kind == 1 ? 13 : 12;
+        BigDecimal amount = m.dec("Amount");
+        double delta = (credit ? amount.add(m.dec("DisAmount")) : amount.negate()).doubleValue();
+        Row acc = c.accounts();
+        double balance = acc.d("Balance") + delta;
+        LocalDateTime now = LocalDateTime.now();
+        Row emp = db.first("Employees", "{EmployeeID} = :e", p("e", m.i("EmpID")));
+        Row l = Row.of("AccountDatetime", now.format(Conv.STD), "AccountNo", acc.get("AccountNo"), "Amount", credit ? amount.doubleValue() : amount.negate().doubleValue(),
+            "ASN", asn, "Balance", balance, "CardTypeID", CenterDeal.cardTypeOf(asn), "ChequeNo", m.str("Memo"), "CreditCountID", "", "DiscountAmount", m.dec("DisAmount"),
+            "EmployeeID", m.i("EmpID"), "FeeAmount", 0.0, "OperatorName", emp == null ? "" : emp.str("Name"), "PaymentID", 1, "ProcessCode", "", "StationID", m.i("StationID"),
+            "TerminalNo", "", "TransactionTypeID", type, "TransDatetime", now.format(Conv.STD));
+        long id = Conv.toLong(db.insert("AccountServiceLogs", l));
+        acc.put("Balance", balance);
+        acc.put("UpdateDatetime", now);
+        acc.put("TransTime", now);
+        acc.put(credit ? "DepositDatetime" : "ConsumeDatetime", now);
+        db.update("CustomerAccounts", acc);
+        return okJson(Row.of("AccountLogID", id, "Date", now.format(DAY), "Time", now.format(TIME)));
     }
 }
