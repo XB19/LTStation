@@ -26,15 +26,17 @@ public class EmpForm extends SwForm {
     }
 
     private String GetType(int id) {
+        // La table des droits d'abord : même libellé que la liste Droits de la fiche employé
+        Row a = db().first("AuthorityMess", "{User_IDMess} = :id", p("id", id));
+        if (a != null) {
+            return a.str("Name");
+        }
         return switch (id) {
             case 4 -> L("FuelEmployee");
             case 1 -> L("Administrators");
             case 2 -> L("Accounting");
             case 3 -> L("Cashier");
-            default -> {
-                Row a = db().first("AuthorityMess", "{User_IDMess} = :id", p("id", id));
-                yield a != null ? a.str("Name") : "";
-            }
+            default -> "";
         };
     }
 

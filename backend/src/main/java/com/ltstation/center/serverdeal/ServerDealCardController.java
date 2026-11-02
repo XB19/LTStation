@@ -261,7 +261,8 @@ public class ServerDealCardController extends ServerDealBase {
                 int stationId = modal.i("StationID");
                 Row st = db.first("Stations", "{StationID} = :s", p("s", stationId));
                 Integer maxInner = db.scalar("SELECT max(code_inner) FROM employees WHERE station_id = :s", p("s", stationId), Integer.class);
-                String maxNo = db.scalar("SELECT max(employee_no) FROM employees", null, String.class);
+                // Numéros numériques seulement : un numéro saisi à la main (DEMO0001) ne bloque pas les créations
+                Long maxNo = db.scalar("SELECT max(employee_no::bigint) FROM employees WHERE employee_no ~ '^[0-9]+$'", null, Long.class);
                 if (st == null) {
                     throw fail("Requête illégale");
                 }
@@ -296,7 +297,7 @@ public class ServerDealCardController extends ServerDealBase {
                         throw fail("Nom d'utilisateur en double");
                     }
                     modal.put("CodeInner", (maxInner == null ? 0 : maxInner) + 1);
-                    modal.put("EmployeeNo", maxNo != null && !maxNo.isEmpty() ? String.valueOf(Conv.toInt(maxNo) + 1) : "100001");
+                    modal.put("EmployeeNo", maxNo != null ? String.valueOf(maxNo + 1) : "100001");
                     modal.put("CertifyKey", "");
                     modal.put("CertificateTypeID", 1);
                     modal.put("GenderID", 1);

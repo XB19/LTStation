@@ -70,14 +70,8 @@ public class EmployeeController {
     @GetMapping("/next-codes")
     public Map<String, Object> nextCodes(@RequestParam(required = false) Integer stationId) {
         Map<String, Object> out = new LinkedHashMap<>();
-        String maxNo = db.jdbc().queryForObject("SELECT max(employee_no) FROM employees", Map.of(), String.class);
-        long no;
-        try {
-            no = maxNo == null || maxNo.isBlank() ? 100001 : Long.parseLong(maxNo.trim()) + 1;
-        } catch (NumberFormatException e) {
-            no = 100001;
-        }
-        out.put("employeeNo", String.valueOf(no));
+        Long maxNo = db.jdbc().queryForObject("SELECT max(employee_no::bigint) FROM employees WHERE employee_no ~ '^[0-9]+$'", Map.of(), Long.class);
+        out.put("employeeNo", String.valueOf(maxNo == null ? 100001 : maxNo + 1));
         if (stationId != null && stationId != 0) {
             Integer max = db.jdbc().queryForObject("SELECT max(code_inner) FROM employees WHERE station_id = :s",
                     Map.of("s", stationId), Integer.class);
