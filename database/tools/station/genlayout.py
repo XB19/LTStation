@@ -1,6 +1,7 @@
 """Génère la description JSON (positions, tailles, textes, colonnes) d'un formulaire WinForms du logiciel Station.
 
 Usage : python genlayout.py <dossier_decomp> <dossier_sortie> Form1 Form2 ...
+        python genlayout.py <dossier_decomp> <dossier_sortie> --cardmake
 Sources : <Form>.resx neutre (positions), <Form>.en.resx (textes anglais), <Form>.cs (ordre des onglets, colonnes des grilles).
 """
 import base64, json, os, re, struct, sys
@@ -293,7 +294,24 @@ def all_forms(base):
     return out
 
 
+def cardmake_forms(base):
+    """Fenêtres de CardMake (ICBoxCard.exe) : .resx à la racine, .cs dans ICBoxCard/, clés CardMake.X."""
+    cs_dir = os.path.join(base, 'ICBoxCard')
+    out = []
+    for fn in sorted(os.listdir(cs_dir)):
+        form = fn[:-3]
+        if fn.endswith('.cs') and 'private void InitializeComponent()' in open(os.path.join(cs_dir, fn), encoding='utf-8').read():
+            out.append((form, f'ICBoxCard.{form}', cs_dir, f'CardMake.{form}'))
+    return out
+
+
 if __name__ == '__main__':
+    if sys.argv[3:4] == ['--cardmake']:
+        base = os.path.join(DECOMP, 'ICBoxCard')
+        for form, res, cs_dir, key in cardmake_forms(base):
+            lay = gen(form, cs_dir, base, base, OUT, res, key)
+            print(key, '|', lay['title'], lay['size'], len(lay['controls']), 'contrôles', {k: len(v) for k, v in lay['columns'].items()})
+        sys.exit(0)
     base = os.path.join(DECOMP, 'StationSoftware')
     en_dir = os.path.join(DECOMP, 'Station_en')
     wanted = set(sys.argv[3:])

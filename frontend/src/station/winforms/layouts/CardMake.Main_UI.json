@@ -1,0 +1,247 @@
+{
+ "name": "CardMake.Main_UI",
+ "title": "Main_UI",
+ "size": [
+  497,
+  563
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    489,
+    525
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "ToolShow",
+   "type": "SkinToolStrip",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    489,
+    525
+   ],
+   "text": "skinToolStrip1",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  }
+ ],
+ "columns": {},
+ "events": {
+  "StationCreate": {
+   "Click": "StationCreate_Click"
+  },
+  "GradeSet": {
+   "Click": "StationCreate_Click"
+  },
+  "TankSet": {
+   "Click": "StationCreate_Click"
+  },
+  "EmpCardBtn": {
+   "Click": "StationCreate_Click"
+  },
+  "EmployeeCreate": {
+   "Click": "StationCreate_Click"
+  },
+  "CardTransform": {
+   "Click": "StationCreate_Click"
+  },
+  "CardList": {
+   "Click": "StationCreate_Click"
+  },
+  "DepositBtn": {
+   "Click": "StationCreate_Click"
+  },
+  "Reverse": {
+   "Click": "StationCreate_Click"
+  },
+  "ViewReport": {
+   "Click": "StationCreate_Click"
+  },
+  "CardReplaceBtn": {
+   "Click": "StationCreate_Click"
+  },
+  "EmpManager": {
+   "Click": "StationCreate_Click"
+  },
+  "CustomerStatement": {
+   "Click": "StationCreate_Click"
+  },
+  "PasswordChange": {
+   "Click": "StationCreate_Click"
+  },
+  "CardStatue": {
+   "Click": "StationCreate_Click"
+  },
+  "UserDepositBtn": {
+   "Click": "StationCreate_Click"
+  },
+  "CreditUserBtn": {
+   "Click": "StationCreate_Click"
+  },
+  "$this": {
+   "Load": "Main_UI_Load"
+  }
+ },
+ "menus": {
+  "ToolShow": {
+   "type": "ToolStrip",
+   "owners": [],
+   "items": [
+    {
+     "name": "StationCreate",
+     "type": "ToolStripButton",
+     "text": "Card Key",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/StationCreate.Image.png"
+    },
+    {
+     "name": "GradeSet",
+     "type": "ToolStripButton",
+     "text": "New Card Build",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/GradeSet.Image.png"
+    },
+    {
+     "name": "TankSet",
+     "type": "ToolStripButton",
+     "text": "Card Update",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/TankSet.Image.png"
+    },
+    {
+     "name": "EmpCardBtn",
+     "type": "ToolStripButton",
+     "text": "EmpCard",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/EmpCardBtn.Image.png"
+    },
+    {
+     "name": "EmployeeCreate",
+     "type": "ToolStripButton",
+     "text": "Card Balance",
+     "visible": false,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/EmployeeCreate.Image.png"
+    },
+    {
+     "name": "CardTransform",
+     "type": "ToolStripButton",
+     "text": "Card Transform",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CardTransform.Image.png"
+    },
+    {
+     "name": "CardList",
+     "type": "ToolStripButton",
+     "text": "Card List",
+     "visible": false,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CardList.Image.png"
+    },
+    {
+     "name": "DepositBtn",
+     "type": "ToolStripButton",
+     "text": "Deposit",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/DepositBtn.Image.png"
+    },
+    {
+     "name": "Reverse",
+     "type": "ToolStripButton",
+     "text": "Reverse",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/Reverse.Image.png"
+    },
+    {
+     "name": "ViewReport",
+     "type": "ToolStripButton",
+     "text": "ViewReport",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/ViewReport.Image.png"
+    },
+    {
+     "name": "CardReplaceBtn",
+     "type": "ToolStripButton",
+     "text": "Card Replace",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CardReplaceBtn.Image.png"
+    },
+    {
+     "name": "EmpManager",
+     "type": "ToolStripButton",
+     "text": "EmpManager",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/EmpManager.Image.png"
+    },
+    {
+     "name": "CustomerStatement",
+     "type": "ToolStripButton",
+     "text": "Customer Statement",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CustomerStatement.Image.png"
+    },
+    {
+     "name": "PasswordChange",
+     "type": "ToolStripButton",
+     "text": "Password Change",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/PasswordChange.Image.png"
+    },
+    {
+     "name": "CardStatue",
+     "type": "ToolStripButton",
+     "text": "Card Statue",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CardStatue.Image.png"
+    },
+    {
+     "name": "UserDepositBtn",
+     "type": "ToolStripButton",
+     "text": "VIP Deposit",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/UserDepositBtn.Image.png"
+    },
+    {
+     "name": "CreditUserBtn",
+     "type": "ToolStripButton",
+     "text": "Charge",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/CardMake.Main_UI/CreditUserBtn.Image.png"
+    }
+   ]
+  }
+ }
+}

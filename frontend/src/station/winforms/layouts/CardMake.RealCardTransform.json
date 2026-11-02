@@ -1,0 +1,377 @@
+{
+ "name": "CardMake.RealCardTransform",
+ "title": "RealCardTransform",
+ "size": [
+  520,
+  401
+ ],
+ "controls": [
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    512,
+    64
+   ],
+   "text": "Card Factory",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     4,
+     4,
+     4,
+     4
+    ]
+   }
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    98
+   ],
+   "size": [
+    512,
+    299
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     5,
+     6,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    197,
+    250
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "BalanceBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    212
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    215
+   ],
+   "size": [
+    74,
+    23
+   ],
+   "text": "Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "CardValidTimeBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    175
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    178
+   ],
+   "size": [
+    133,
+    23
+   ],
+   "text": "Card Valid Time:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "PhoneBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    138
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    141
+   ],
+   "size": [
+    64,
+    23
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "CardUserNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    101
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    104
+   ],
+   "size": [
+    140,
+    23
+   ],
+   "text": "Card User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "CardAccountBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    64
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    67
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Account:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "CardNumberBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    158,
+    27
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    30
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "FactoryBox",
+   "type": "ComboBox",
+   "parent": "groupBox2",
+   "loc": [
+    158,
+    22
+   ],
+   "size": [
+    344,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "Items": [
+     "ACS",
+     "BlueSky",
+     "RYZN"
+    ]
+   }
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    11,
+    28
+   ],
+   "size": [
+    117,
+    23
+   ],
+   "text": "Card_Factory:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "RealCardTransform_Load"
+  }
+ },
+ "menus": {}
+}

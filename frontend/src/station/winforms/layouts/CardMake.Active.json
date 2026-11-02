@@ -1,0 +1,290 @@
+{
+ "name": "CardMake.Active",
+ "title": "Active",
+ "size": [
+  410,
+  422
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    402,
+    384
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     5,
+     6,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "name": "PlatformBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    295
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    298
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Platform Info:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "ActiveBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    333
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Active",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "ActiveBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    251
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    254
+   ],
+   "size": [
+    99,
+    23
+   ],
+   "text": "Active Info:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "ValidBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    196
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    199
+   ],
+   "size": [
+    128,
+    23
+   ],
+   "text": "Validation Info:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "LoginPasswordBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    138
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    141
+   ],
+   "size": [
+    132,
+    23
+   ],
+   "text": "LoginPassword:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "LoginNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    81
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    84
+   ],
+   "size": [
+    105,
+    23
+   ],
+   "text": "Login Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "StationNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    146,
+    27
+   ],
+   "size": [
+    246,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    8,
+    30
+   ],
+   "size": [
+    119,
+    23
+   ],
+   "text": "Station Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ActiveBtn": {
+   "Click": "ActiveBtn_Click"
+  }
+ },
+ "menus": {}
+}

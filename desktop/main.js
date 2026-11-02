@@ -247,6 +247,8 @@ function menu() {
         { label: 'Journal du serveur', click: () => shell.openPath(logFile()) },
         { label: 'Dossier des données', click: () => shell.openPath(dataDir()) },
         { label: 'Recharger', accelerator: 'F5', click: () => openStation() },
+        { label: 'CardMake (cartes)', click: () => win.loadURL(stationUrl(readConfig()) + '?cardmake=1').catch(() => {}) },
+        { label: 'Logiciel Station', click: () => win.loadURL(stationUrl(readConfig())).catch(() => {}) },
         { type: 'separator' },
         { label: 'Plein écran', role: 'togglefullscreen' },
         { label: 'Quitter', role: 'quit' },

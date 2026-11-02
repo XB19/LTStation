@@ -1,0 +1,327 @@
+{
+ "name": "CardMake.CardTransformTable",
+ "title": "CardTransformTable",
+ "size": [
+  946,
+  483
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    938,
+    445
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    932,
+    398
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "panel4",
+   "type": "Panel",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    415
+   ],
+   "size": [
+    932,
+    27
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    938,
+    445
+   ],
+   "text": "Card List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QueryBox",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    50,
+    3
+   ],
+   "size": [
+    137,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    3,
+    10
+   ],
+   "size": [
+    41,
+    12
+   ],
+   "text": "query:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    900,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "Image": "res/forms/CardMake.CardTransformTable/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    876,
+    6
+   ],
+   "size": [
+    23,
+    12
+   ],
+   "text": "999",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "style": {
+    "align": "middle-right"
+   }
+  },
+  {
+   "name": "TotalCount",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    580,
+    6
+   ],
+   "size": [
+    209,
+    12
+   ],
+   "text": "123456",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "style": {
+    "align": "middle-right"
+   }
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "panel4",
+   "loc": [
+    866,
+    6
+   ],
+   "size": [
+    11,
+    12
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "panel4",
+   "loc": [
+    832,
+    1
+   ],
+   "size": [
+    32,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "panel4",
+   "loc": [
+    795,
+    1
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7,
+   "init": {
+    "Image": "res/forms/CardMake.CardTransformTable/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "ASN",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CustomerID",
+    "header": "Card Account",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CustomerName",
+    "header": "Card User Name",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CustomerPhone",
+    "header": "Phone",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardValidTime",
+    "header": "Card Valid Time",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "BAL",
+    "header": "Balance",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "TransactionView": {
+   "CellDoubleClick": "TransactionView_CellDoubleClick"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "$this": {
+   "Load": "CardTransformTable_Load"
+  }
+ },
+ "menus": {}
+}

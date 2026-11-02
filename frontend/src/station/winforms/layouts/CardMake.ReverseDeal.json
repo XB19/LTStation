@@ -1,0 +1,663 @@
+{
+ "name": "CardMake.ReverseDeal",
+ "title": "ReverseDeal",
+ "size": [
+  551,
+  596
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    543,
+    135
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     5,
+     6,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "name": "groupBox4",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    169
+   ],
+   "size": [
+    543,
+    175
+   ],
+   "text": "CUSTOMER DETAIL:",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    344
+   ],
+   "size": [
+    543,
+    190
+   ],
+   "text": "AGENT DETAIL:",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    534
+   ],
+   "size": [
+    543,
+    58
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     5,
+     6,
+     5,
+     6
+    ]
+   }
+  },
+  {
+   "name": "FactoryBox",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    219,
+    94
+   ],
+   "size": [
+    316,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "Items": [
+     "ACS",
+     "BlueSky",
+     "RYZN",
+     "MifareOne",
+     "RFID"
+    ]
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    97
+   ],
+   "size": [
+    117,
+    23
+   ],
+   "text": "Card_Factory:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    62
+   ],
+   "size": [
+    208,
+    23
+   ],
+   "text": "List of recent Transaction:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "TransactionList",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    219,
+    59
+   ],
+   "size": [
+    316,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "DateBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    363,
+    22
+   ],
+   "size": [
+    172,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    260,
+    25
+   ],
+   "size": [
+    96,
+    23
+   ],
+   "text": "Date & Time:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "TransactionIDBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    138,
+    22
+   ],
+   "size": [
+    115,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    4,
+    25
+   ],
+   "size": [
+    127,
+    23
+   ],
+   "text": "Transaction ID:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "ViewReportBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    404,
+    21
+   ],
+   "size": [
+    124,
+    33
+   ],
+   "text": "View Report",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "DepositBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    205,
+    21
+   ],
+   "size": [
+    124,
+    33
+   ],
+   "text": "Reversed",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "CardReadBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    21
+   ],
+   "size": [
+    124,
+    33
+   ],
+   "text": "Read Card",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "ReverMemo",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    184,
+    155
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label12",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    14,
+    158
+   ],
+   "size": [
+    80,
+    23
+   ],
+   "text": "*Reason:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "DepositAmountBox",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    184,
+    114
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    15,
+    117
+   ],
+   "size": [
+    155,
+    23
+   ],
+   "text": "*Reversal Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "OperateBox",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    184,
+    72
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    14,
+    75
+   ],
+   "size": [
+    78,
+    23
+   ],
+   "text": "Operate:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "AgentBulkAmountBox",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    184,
+    30
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    14,
+    33
+   ],
+   "size": [
+    163,
+    23
+   ],
+   "text": "Agent Bulk Amount:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "PhoneNumberBox",
+   "type": "TextBox",
+   "parent": "groupBox4",
+   "loc": [
+    184,
+    135
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label11",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    14,
+    138
+   ],
+   "size": [
+    140,
+    23
+   ],
+   "text": "*Phone Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "CardBalanceBox",
+   "type": "TextBox",
+   "parent": "groupBox4",
+   "loc": [
+    184,
+    98
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label10",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    14,
+    101
+   ],
+   "size": [
+    114,
+    23
+   ],
+   "text": "Card Balance:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "UserNameBox",
+   "type": "TextBox",
+   "parent": "groupBox4",
+   "loc": [
+    184,
+    61
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label9",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    14,
+    64
+   ],
+   "size": [
+    100,
+    23
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "CardNumberBox",
+   "type": "TextBox",
+   "parent": "groupBox4",
+   "loc": [
+    184,
+    24
+   ],
+   "size": [
+    347,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox4",
+   "loc": [
+    14,
+    27
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  }
+ ],
+ "columns": {},
+ "events": {
+  "TransactionList": {
+   "SelectedIndexChanged": "TransactionList_SelectedIndexChanged"
+  },
+  "ViewReportBtn": {
+   "Click": "ViewReportBtn_Click"
+  },
+  "DepositBtn": {
+   "Click": "DepositBtn_Click"
+  },
+  "CardReadBtn": {
+   "Click": "CardReadBtn_Click"
+  }
+ },
+ "menus": {}
+}

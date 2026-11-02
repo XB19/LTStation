@@ -1,0 +1,303 @@
+{
+ "name": "CardMake.EmployeeCardAdd",
+ "title": "EmployeeCardAdd",
+ "size": [
+  387,
+  322
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    379,
+    284
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "StationSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    26
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    29
+   ],
+   "size": [
+    58,
+    19
+   ],
+   "text": "Station:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    123,
+    230
+   ],
+   "size": [
+    130,
+    46
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "EmpPassword",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    93
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    95
+   ],
+   "size": [
+    75,
+    19
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "EmpSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    59
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    62
+   ],
+   "size": [
+    76,
+    19
+   ],
+   "text": "Employee:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "AccountBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    194
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    197
+   ],
+   "size": [
+    65,
+    19
+   ],
+   "text": "Account:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "CardNoBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    161
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    163
+   ],
+   "size": [
+    61,
+    19
+   ],
+   "text": "CardNo:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "ValidTimeBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    103,
+    126
+   ],
+   "size": [
+    258,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label14",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    19,
+    129
+   ],
+   "size": [
+    77,
+    19
+   ],
+   "text": "ValidTime:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  }
+ ],
+ "columns": {},
+ "events": {
+  "StationSelect": {
+   "SelectedIndexChanged": "StationSelect_SelectedIndexChanged"
+  },
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "$this": {
+   "Load": "EmployeeCardAdd_Load"
+  }
+ },
+ "menus": {}
+}

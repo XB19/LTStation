@@ -1,0 +1,454 @@
+{
+ "name": "CardMake.Card_View",
+ "title": "Card_View",
+ "size": [
+  882,
+  487
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    874,
+    449
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PrintBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    774,
+    15
+   ],
+   "size": [
+    71,
+    34
+   ],
+   "text": "Print",
+   "dock": null,
+   "visible": false,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "EndDateTime",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    457,
+    22
+   ],
+   "size": [
+    159,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    438,
+    25
+   ],
+   "size": [
+    13,
+    17
+   ],
+   "text": "-",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "DTStart",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    267,
+    22
+   ],
+   "size": [
+    165,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    182,
+    25
+   ],
+   "size": [
+    79,
+    17
+   ],
+   "text": "Date Range:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "ExportBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    15
+   ],
+   "size": [
+    71,
+    34
+   ],
+   "text": "Export",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "DowloadBar",
+   "type": "ProgressBar",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    19
+   ],
+   "size": [
+    609,
+    19
+   ],
+   "text": "",
+   "dock": "left",
+   "visible": false,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    619,
+    9
+   ],
+   "size": [
+    71,
+    28
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    816,
+    13
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "Image": "res/forms/CardMake.Card_View/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    781,
+    16
+   ],
+   "size": [
+    15,
+    17
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "style": {
+    "align": "middle-right"
+   }
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox2",
+   "loc": [
+    771,
+    16
+   ],
+   "size": [
+    13,
+    17
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "groupBox2",
+   "loc": [
+    732,
+    13
+   ],
+   "size": [
+    32,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    697,
+    13
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "Image": "res/forms/CardMake.Card_View/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "CardView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    3,
+    19
+   ],
+   "size": [
+    868,
+    330
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    56
+   ],
+   "size": [
+    874,
+    352
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    408
+   ],
+   "size": [
+    874,
+    41
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    874,
+    56
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "CardView": [
+   {
+    "name": "TransactionID",
+    "header": "User Name",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardNumber",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardUserName",
+    "header": "Phone",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "PhoneNumber",
+    "header": "OpenAccountTime",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "ExportBtn": {
+   "Click": "ExportBtn_Click"
+  }
+ },
+ "menus": {}
+}

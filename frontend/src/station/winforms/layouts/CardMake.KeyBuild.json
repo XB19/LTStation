@@ -1,0 +1,219 @@
+{
+ "name": "CardMake.KeyBuild",
+ "title": "KeyBuild",
+ "size": [
+  456,
+  235
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    448,
+    197
+   ],
+   "text": "Key",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "CardCreateBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    320,
+    151
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "NPB",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    229,
+    113
+   ],
+   "size": [
+    213,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "init": {
+    "PasswordChar": true
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    225,
+    87
+   ],
+   "size": [
+    100,
+    23
+   ],
+   "text": "Password B",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "NPA",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    113
+   ],
+   "size": [
+    213,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "PasswordChar": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    87
+   ],
+   "size": [
+    101,
+    23
+   ],
+   "text": "Password A",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "OPB",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    229,
+    53
+   ],
+   "size": [
+    213,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "PasswordChar": true
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    225,
+    27
+   ],
+   "size": [
+    164,
+    23
+   ],
+   "text": "Original Password B",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "OPA",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    10,
+    53
+   ],
+   "size": [
+    213,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7,
+   "init": {
+    "PasswordChar": true
+   }
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    6,
+    27
+   ],
+   "size": [
+    165,
+    23
+   ],
+   "text": "Original Password A",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  }
+ ],
+ "columns": {},
+ "events": {
+  "CardCreateBtn": {
+   "Click": "CardCreateBtn_Click"
+  }
+ },
+ "menus": {}
+}

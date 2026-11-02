@@ -266,9 +266,9 @@ public final class BaseFunction {
     }
 
     /** Réponse de Center (CustomerRespone). */
-    public record CustomerRespone(boolean Result, String Mess, int TotalCount) {
+    public record CustomerRespone(boolean Result, String Mess, int TotalCount, java.math.BigDecimal TotalAmount, int TotalPage) {
         static CustomerRespone empty() {
-            return new CustomerRespone(false, null, 0);
+            return new CustomerRespone(false, null, 0, java.math.BigDecimal.ZERO, 0);
         }
     }
 
@@ -291,7 +291,7 @@ public final class BaseFunction {
             if (r == null) {
                 return CustomerRespone.empty();
             }
-            return new CustomerRespone(r.b("Result"), r.str("Mess"), r.i("TotalCount"));
+            return new CustomerRespone(r.b("Result"), r.str("Mess"), r.i("TotalCount"), r.dec("TotalAmount"), r.i("TotalPage"));
         } catch (Exception e) {
             return CustomerRespone.empty();
         }

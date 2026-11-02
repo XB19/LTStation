@@ -1,0 +1,155 @@
+{
+ "name": "CardMake.EmpUpdate",
+ "title": "EmpUpdate",
+ "size": [
+  881,
+  722
+ ],
+ "controls": [
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    873,
+    684
+   ],
+   "text": "Emp List",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "padding": [
+     4,
+     5,
+     4,
+     5
+    ]
+   }
+  },
+  {
+   "name": "EmpView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox3",
+   "loc": [
+    4,
+    25
+   ],
+   "size": [
+    865,
+    654
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  }
+ ],
+ "columns": {
+  "EmpView": [
+   {
+    "name": "EmpID",
+    "header": "EmpID",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "StationID",
+    "header": "StationID",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Password",
+    "header": "Password",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "ASN",
+    "header": "Emp Name",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CustomerID",
+    "header": "Station",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CustomerName",
+    "header": "Phone",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardValidTime",
+    "header": "Auth",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "AddBtn": {
+   "Click": "AddBtn_Click"
+  },
+  "EmpView": {
+   "CellDoubleClick": "EmpView_CellDoubleClick"
+  },
+  "$this": {
+   "Load": "EmpUpdate_Load"
+  }
+ },
+ "menus": {
+  "AddMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "EmpView"
+   ],
+   "items": [
+    {
+     "name": "AddBtn",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
+  }
+ }
+}

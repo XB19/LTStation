@@ -1,0 +1,108 @@
+{
+ "name": "CardMake.GroupManage",
+ "title": "GroupManage",
+ "size": [
+  537,
+  406
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    529,
+    368
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "Box_Device",
+   "type": "SkinDataGridView",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    529,
+    368
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  }
+ ],
+ "columns": {
+  "Box_Device": [
+   {
+    "name": "GroupID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Device_No",
+    "header": "Group",
+    "visible": true,
+    "prop": "ID",
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "Box_Device": {
+   "CellDoubleClick": "Box_Device_CellDoubleClick"
+  },
+  "AddItem": {
+   "Click": "AddItem_Click"
+  },
+  "$this": {
+   "FormClosed": "GroupManage_FormClosed",
+   "Load": "GroupManage_Load"
+  }
+ },
+ "menus": {
+  "AddMenu": {
+   "type": "ContextMenuStrip",
+   "owners": [
+    "Box_Device"
+   ],
+   "items": [
+    {
+     "name": "AddItem",
+     "type": "ToolStripMenuItem",
+     "text": "Add",
+     "visible": true,
+     "items": []
+    }
+   ]
+  }
+ }
+}

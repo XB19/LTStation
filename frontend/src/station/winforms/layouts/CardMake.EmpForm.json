@@ -1,0 +1,298 @@
+{
+ "name": "CardMake.EmpForm",
+ "title": "EmpForm",
+ "size": [
+  542,
+  611
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    534,
+    116
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "padding": [
+     4,
+     5,
+     4,
+     5
+    ]
+   }
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    150
+   ],
+   "size": [
+    534,
+    457
+   ],
+   "text": "Employee Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999,
+   "style": {
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "padding": [
+     4,
+     5,
+     4,
+     5
+    ]
+   }
+  },
+  {
+   "name": "StationSelect",
+   "type": "ComboBox",
+   "parent": "groupBox1",
+   "loc": [
+    71,
+    34
+   ],
+   "size": [
+    186,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    7,
+    37
+   ],
+   "size": [
+    58,
+    19
+   ],
+   "text": "Station:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    330,
+    23
+   ],
+   "size": [
+    196,
+    46
+   ],
+   "text": "Bind New Employee Card",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Calibri",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    486,
+    79
+   ],
+   "size": [
+    40,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "Image": "res/forms/CardMake.EmpForm/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    417,
+    79
+   ],
+   "size": [
+    61,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    370,
+    79
+   ],
+   "size": [
+    39,
+    27
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "Image": "res/forms/CardMake.EmpForm/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "PageLabel",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    326,
+    83
+   ],
+   "size": [
+    31,
+    19
+   ],
+   "text": "1/1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "TransactionView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    4,
+    25
+   ],
+   "size": [
+    526,
+    427
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  }
+ ],
+ "columns": {
+  "TransactionView": [
+   {
+    "name": "EmpName",
+    "header": "员工姓名",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Noz",
+    "header": "Card Number",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardStatue",
+    "header": "Card Statue",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "TransactionView": {
+   "CellContentDoubleClick": "TransactionView_CellContentDoubleClick"
+  },
+  "StationSelect": {
+   "SelectedIndexChanged": "StationSelect_SelectedIndexChanged"
+  },
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "$this": {
+   "Load": "EmpForm_Load"
+  }
+ },
+ "menus": {}
+}

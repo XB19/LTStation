@@ -21,7 +21,10 @@ interface Boot {
   texts: Record<string, string>
 }
 
-type Stage = { kind: 'boot' } | { kind: 'form'; form: string; next: string | null } | { kind: 'main'; form: string } | { kind: 'exit'; text?: string }
+type Stage = { kind: 'boot' } | { kind: 'form'; form: string; next: string | null; args?: Record<string, unknown> } | { kind: 'main'; form: string } | { kind: 'exit'; text?: string }
+
+/** CardMake (ICBoxCard.exe) : même application, ouverte avec ?cardmake=1. */
+const CARD_MAKE = new URLSearchParams(window.location.search).has('cardmake')
 
 interface Opened {
   key: number
@@ -43,6 +46,14 @@ export default function SwApp() {
     setOpened([])
     setStage({ kind: 'boot' })
     try {
+      if (CARD_MAKE) {
+        // Program.cs de CardMake : poste activé → Login, sinon Active puis nouveau contrôle du poste
+        const c = await get<{ valid?: boolean; mac?: string; error?: string }>('/sw/cardmake/boot')
+        if (c.error) setStage({ kind: 'exit', text: c.error })
+        else if (c.valid) setStage({ kind: 'form', form: 'CardMake.Login', next: 'CardMake.Main_UI' })
+        else setStage({ kind: 'form', form: 'CardMake.Active', next: null, args: { MacD: c.mac } })
+        return
+      }
       const b = await get<Boot>('/sw/boot')
       setBoot(b)
       if (b.outOfTime) {
@@ -78,7 +89,7 @@ export default function SwApp() {
   }
   if (stage.kind === 'exit') {
     return (
-      <Result status="info" title="Station SoftWare" subTitle={stage.text ? tr(stage.text) : 'Le logiciel a été fermé.'}
+      <Result status="info" title={CARD_MAKE ? 'CardMake' : 'Station SoftWare'} subTitle={stage.text ? tr(stage.text) : 'Le logiciel a été fermé.'}
         extra={<Button type="primary" onClick={start}>Relancer</Button>} />
     )
   }
@@ -86,8 +97,12 @@ export default function SwApp() {
     return (
       <div className="sw-desktop">
         {/* key : une fenêtre neuve à chaque étape (sinon l'état de la page de connexion passerait à la fenêtre principale) */}
-        <RemoteForm key={`form:${stage.form}`} form={stage.form} onOpen={open}
-          onClose={(result) => (result === 'OK' && stage.next ? setStage({ kind: 'main', form: stage.next }) : setStage({ kind: 'exit' }))} />
+        <RemoteForm key={`form:${stage.form}`} form={stage.form} args={stage.args} onOpen={open}
+          onClose={(result) => {
+            if (result === 'OK' && stage.form === 'CardMake.Active') start()
+            else if (result === 'OK' && stage.next) setStage({ kind: 'main', form: stage.next })
+            else setStage({ kind: 'exit' })
+          }} />
         {opened.map((o) => (
           <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
             onClose={() => setOpened((x) => x.filter((y) => y.key !== o.key))} />
@@ -97,7 +112,10 @@ export default function SwApp() {
   }
   return (
     <div className="sw-main">
-      <RemoteForm key={`main:${stage.form}`} form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
+      {/* Main_UI de CardMake garde sa taille d'origine (497 × 563) */}
+      <div style={CARD_MAKE ? { position: 'absolute', inset: 0, margin: 'auto', width: 497, height: 563 } : { display: 'contents' }}>
+        <RemoteForm key={`main:${stage.form}`} form={stage.form} framed={false} onOpen={open} onClose={() => setStage({ kind: 'exit' })} />
+      </div>
       {opened.map((o) => (
         <RemoteForm key={o.key} form={o.form} args={o.args} parent={o.parent} attachId={o.attachId} onOpen={open}
           onClose={() => setOpened((x) => x.filter((y) => y.key !== o.key))} />

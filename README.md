@@ -205,7 +205,11 @@ Les commandes destinées aux équipements sont écrites dans les mêmes tables e
 
 ## Reste à faire
 
-- **CardMake (ICBoxCard)** : logiciel de fabrication des cartes, à réécrire.
+- **CardMake (ICBoxCard)** : les 28 fenêtres sont portées (`sw/cardmake`) et s'ouvrent par `/station/?cardmake=1` ou le menu
+  *Station > CardMake* de l'application de bureau. Écriture réelle des cartes, envoi de SMS et remplacement des clés restent à essayer sur site.
+- **Services reconstruits** : `ExtendUpdate/*` et `Station/*` n'existaient pas dans le serveur fourni. Ils sont refaits à partir
+  des clients et leurs règles sont à valider avec de vraies données (`ExtendCardController`, `ExtendReportController`, `StationCenterController`).
+  Aucun écran de Center ne crée encore les clients à crédit ni leurs relevés (`personal_credit`, `personal_credit_bill`).
 - **API des appareils côté Center** : GPRS, ICAir, EasyCardMake, JoyFill, Phone et App, à porter et à vérifier une à une.
 - **Lecteur Mifare** : `mwrf32.dll` est en 32 bits, le Java de l'application de bureau en 64 bits.
 - **Matériel** : tout le code existe, mais rien n'a encore été essayé avec de vrais appareils.

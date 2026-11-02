@@ -57,8 +57,12 @@ public abstract class SwForm {
 
     /** Employé connecté (IniInfo.LoginID) : la session du poste est ouverte. */
     protected void SessionLogin() {
+        SessionLogin(com.ltstation.center.sw.core.IniInfo.LoginID);
+    }
+
+    protected void SessionLogin(int employeeId) {
         if (session != null) {
-            session.setAttribute(com.ltstation.center.sw.web.SwBootController.SESSION_KEY, com.ltstation.center.sw.core.IniInfo.LoginID);
+            session.setAttribute(com.ltstation.center.sw.web.SwBootController.SESSION_KEY, employeeId);
         }
     }
 

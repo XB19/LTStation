@@ -1,0 +1,634 @@
+{
+ "name": "CardMake.CustomerBill",
+ "title": "CustomerBill",
+ "size": [
+  945,
+  634
+ ],
+ "controls": [
+  {
+   "name": "panel1",
+   "type": "Panel",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    937,
+    596
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "pictureBox1",
+   "type": "PictureBox",
+   "parent": "groupBox1",
+   "loc": [
+    9,
+    19
+   ],
+   "size": [
+    57,
+    56
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "Image": "res/forms/CardMake.CustomerBill/pictureBox1.Image.jpg"
+   }
+  },
+  {
+   "name": "PrintBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    861,
+    19
+   ],
+   "size": [
+    74,
+    41
+   ],
+   "text": "Print",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    342,
+    27
+   ],
+   "size": [
+    192,
+    23
+   ],
+   "text": "CUSTOMER STATEMENT",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "DTEnd",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    728,
+    162
+   ],
+   "size": [
+    204,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    651,
+    165
+   ],
+   "size": [
+    71,
+    23
+   ],
+   "text": "Date to:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "DTStart",
+   "type": "DateTimePicker",
+   "parent": "groupBox1",
+   "loc": [
+    441,
+    162
+   ],
+   "size": [
+    204,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm:ss"
+   }
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    342,
+    165
+   ],
+   "size": [
+    93,
+    23
+   ],
+   "text": "Date from:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "CardNo",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    129,
+    162
+   ],
+   "size": [
+    207,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    5,
+    165
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "CardBalance",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    671,
+    118
+   ],
+   "size": [
+    261,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    557,
+    121
+   ],
+   "size": [
+    108,
+    23
+   ],
+   "text": "Balance B/F:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    175,
+    118
+   ],
+   "size": [
+    299,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    5,
+    121
+   ],
+   "size": [
+    171,
+    23
+   ],
+   "text": "Holder / User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "IName",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    175,
+    75
+   ],
+   "size": [
+    757,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    5,
+    78
+   ],
+   "size": [
+    146,
+    23
+   ],
+   "text": "Institution Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "LogView",
+   "type": "SkinDataGridView",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    27
+   ],
+   "size": [
+    931,
+    306
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    706,
+    20
+   ],
+   "size": [
+    71,
+    28
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "Next",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    903,
+    23
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "init": {
+    "Image": "res/forms/CardMake.CustomerBill/Next.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "TotalPageSecond",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    877,
+    23
+   ],
+   "size": [
+    20,
+    23
+   ],
+   "text": "1",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "align": "middle-right"
+   }
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    857,
+    23
+   ],
+   "size": [
+    17,
+    23
+   ],
+   "text": "/",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "CurPage",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    819,
+    17
+   ],
+   "size": [
+    32,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "Cur",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    784,
+    23
+   ],
+   "size": [
+    29,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "Image": "res/forms/CardMake.CustomerBill/Cur.Image.png"
+   },
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    208
+   ],
+   "size": [
+    937,
+    336
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    544
+   ],
+   "size": [
+    937,
+    52
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "panel1",
+   "loc": [
+    0,
+    0
+   ],
+   "size": [
+    937,
+    208
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  }
+ ],
+ "columns": {
+  "LogView": [
+   {
+    "name": "TransactionID",
+    "header": "Date&Time",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardNumber",
+    "header": "TranasctionID",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "CardUserName",
+    "header": "Description",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "PhoneNumber",
+    "header": "Station",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "TransactionDateTime",
+    "header": "Product",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "DepositedAmount",
+    "header": "QTY",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Debit",
+    "header": "Debit",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Credit",
+    "header": "Credit",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Balance",
+    "header": "Balance",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   }
+  ]
+ },
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "Next": {
+   "Click": "Next_Click"
+  },
+  "CurPage": {
+   "TextChanged": "CurPage_TextChanged"
+  },
+  "Cur": {
+   "Click": "Next_Click"
+  },
+  "PrintBtn": {
+   "Click": "PrintBtn_Click"
+  }
+ },
+ "menus": {}
+}

@@ -1,0 +1,450 @@
+{
+ "name": "CardMake.EmpFormUpdate",
+ "title": "EmpFormUpdate",
+ "size": [
+  468,
+  420
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    460,
+    217
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    251
+   ],
+   "size": [
+    460,
+    165
+   ],
+   "text": "IssueAuth",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "PasswordBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    108,
+    130
+   ],
+   "size": [
+    289,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "PasswordChar": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    133
+   ],
+   "size": [
+    91,
+    23
+   ],
+   "text": "Password:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    267,
+    169
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "PhoneBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    108,
+    93
+   ],
+   "size": [
+    283,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    96
+   ],
+   "size": [
+    64,
+    23
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "StationNameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    108,
+    56
+   ],
+   "size": [
+    283,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    59
+   ],
+   "size": [
+    70,
+    23
+   ],
+   "text": "Station:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    108,
+    19
+   ],
+   "size": [
+    283,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    22
+   ],
+   "size": [
+    60,
+    23
+   ],
+   "text": "Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "UserDepositCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    326,
+    129
+   ],
+   "size": [
+    128,
+    27
+   ],
+   "text": "User Deposit",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "CardStatueCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    129
+   ],
+   "size": [
+    118,
+    27
+   ],
+   "text": "Card Statue",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "PasswordChangeCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    158,
+    129
+   ],
+   "size": [
+    166,
+    27
+   ],
+   "text": "Password Change",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "CardReplaceCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    326,
+    96
+   ],
+   "size": [
+    128,
+    27
+   ],
+   "text": "Card Replace",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "ReverseCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    158,
+    96
+   ],
+   "size": [
+    90,
+    27
+   ],
+   "text": "Reverse",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "EmpManagerCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    96
+   ],
+   "size": [
+    132,
+    27
+   ],
+   "text": "EmpManager",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "ViewReportCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    326,
+    63
+   ],
+   "size": [
+    123,
+    27
+   ],
+   "text": "View Report",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "DepositCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    158,
+    63
+   ],
+   "size": [
+    88,
+    27
+   ],
+   "text": "Deposit",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "CardTransformCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    63
+   ],
+   "size": [
+    149,
+    27
+   ],
+   "text": "Card Transform",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "CardUpdateCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    326,
+    30
+   ],
+   "size": [
+    125,
+    27
+   ],
+   "text": "Card Update",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "CardBuildCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    158,
+    30
+   ],
+   "size": [
+    107,
+    27
+   ],
+   "text": "Card Build",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "CardKeyCheck",
+   "type": "CheckBox",
+   "parent": "groupBox2",
+   "loc": [
+    3,
+    30
+   ],
+   "size": [
+    97,
+    27
+   ],
+   "text": "Card Key",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  }
+ ],
+ "columns": {},
+ "events": {
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  },
+  "$this": {
+   "Load": "EmpFormUpdate_Load"
+  }
+ },
+ "menus": {}
+}

@@ -1,0 +1,364 @@
+{
+ "name": "CardMake.CardStatue",
+ "title": "CardStatue",
+ "size": [
+  398,
+  443
+ ],
+ "controls": [
+  {
+   "name": "groupBox1",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    390,
+    82
+   ],
+   "text": "Card Query",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox3",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    116
+   ],
+   "size": [
+    390,
+    246
+   ],
+   "text": "Card Message",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "groupBox2",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    362
+   ],
+   "size": [
+    390,
+    77
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 999
+  },
+  {
+   "name": "LockNumber",
+   "type": "TextBox",
+   "parent": "groupBox1",
+   "loc": [
+    135,
+    33
+   ],
+   "size": [
+    249,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "groupBox1",
+   "loc": [
+    11,
+    36
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "QueryBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    15,
+    29
+   ],
+   "size": [
+    117,
+    41
+   ],
+   "text": "Query",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "ConfirmBtn",
+   "type": "SkinButton",
+   "parent": "groupBox2",
+   "loc": [
+    260,
+    29
+   ],
+   "size": [
+    124,
+    41
+   ],
+   "text": "Confirm",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1,
+   "style": {
+    "back": "transparent",
+    "font": {
+     "family": "Times New Roman",
+     "size": 12.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    }
+   }
+  },
+  {
+   "name": "StatueComBox",
+   "type": "ComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    147,
+    203
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "Items": [
+     "UnLock",
+     "Lock"
+    ]
+   }
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    11,
+    206
+   ],
+   "size": [
+    104,
+    23
+   ],
+   "text": "Card Statue:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "BalanceBox",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    147,
+    162
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    11,
+    165
+   ],
+   "size": [
+    74,
+    23
+   ],
+   "text": "Balacne:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "PhoneBox",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    147,
+    121
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    11,
+    124
+   ],
+   "size": [
+    64,
+    23
+   ],
+   "text": "Phone:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "UserName",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    147,
+    80
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    11,
+    83
+   ],
+   "size": [
+    100,
+    23
+   ],
+   "text": "User Name:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "CardNumber",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    147,
+    39
+   ],
+   "size": [
+    237,
+    31
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8,
+   "init": {
+    "ReadOnly": true
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    11,
+    42
+   ],
+   "size": [
+    118,
+    23
+   ],
+   "text": "Card Number:",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  }
+ ],
+ "columns": {},
+ "events": {
+  "QueryBtn": {
+   "Click": "QueryBtn_Click"
+  },
+  "ConfirmBtn": {
+   "Click": "ConfirmBtn_Click"
+  }
+ },
+ "menus": {}
+}

@@ -195,6 +195,13 @@ public class ExtendCardController extends ServerDealBase {
     public String ExtendUpdateGroup(@RequestBody(required = false) String body) {
         try {
             Row m = req(body);
+            if ("Delete".equals(m.str("UpdateType"))) {
+                if (db.count("Customers", "{GroupID} = :g", p("g", m.i("GroupID"))) > 0) {
+                    throw fail("Le groupe contient des clients");
+                }
+                db.delete("Groups", "{GroupID} = :g", p("g", m.i("GroupID")));
+                return okEmpty();
+            }
             Row g;
             boolean add = "Add".equals(m.str("UpdateType"));
             if (add) {
