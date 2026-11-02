@@ -256,6 +256,10 @@ public class CenterDeal {
         if (asn == null || asn.length() <= 6) {
             return 16;
         }
+        // Cartes Mifare (GetNormalCardType) : 000000000 = employé, les autres sont des cartes utilisateur
+        if (asn.startsWith("00000000") && asn.length() > 8) {
+            return asn.charAt(8) == '0' ? 4 : 1;
+        }
         return switch (asn.substring(0, 6)) {
             case "010001" -> 1;
             case "010002" -> 2;
