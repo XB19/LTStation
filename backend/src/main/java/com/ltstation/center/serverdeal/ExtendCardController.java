@@ -350,6 +350,7 @@ public class ExtendCardController extends ServerDealBase {
             "ValidDatetime", now.plusYears(5), "CustomerAccountID", id, "CardStatusTypeID", 0, "StationID", m.i("StationID"), "SpecialPrice", m.str("SpecialPrice"),
             "OpenAccounEmpName", emp.str("Name"), "OpenStationID", emp.i("StationID"), "CompanyID", m.i("CompanyID")));
         db.insert("AccountServiceLogs", log(asn, id, 1, 0, 0, m));
+        bump("White");
         m.put("Asn", asn);
         m.put("CustomerAccountID", id);
         m.put("ValidTime", time(now.plusYears(5)));
@@ -407,6 +408,7 @@ public class ExtendCardController extends ServerDealBase {
             db.delete("AccountServiceLogs", "{ASN} = :a", p("a", asn));
             db.delete("EmployeeCardInfos", "{ASN} = :a", p("a", asn));
             db.delete("CustomerAccounts", "{CustomerAccountID} = :c", p("c", e.cardInfos().i("CustomerAccountID")));
+            bump("White");
             return;
         }
         CenterDeal.CusCard c = deal.getCusCardInfo(asn);
@@ -433,6 +435,7 @@ public class ExtendCardController extends ServerDealBase {
             e.cardInfos().put("CipherFlg", m.str("Password"));
             e.cardInfos().put("SpecialPrice", m.str("SpecialPrice"));
             db.update("EmployeeCardInfos", e.cardInfos());
+            bump("White");
             return;
         }
         CenterDeal.CusCard c = deal.getCusCardInfo(asn);
@@ -520,27 +523,29 @@ public class ExtendCardController extends ServerDealBase {
     }
 
     /** Statut demandé : 0 = en service, autre = bloquée (liste noire), comme ServerDeal/CardLost. */
+    void setStatue(String asn, int statue) {
+        CenterDeal.CusCard c = deal.getCusCardInfo(asn);
+        if (!c.ok()) {
+            throw fail(c.error());
+        }
+        c.cardInfos().put("CardStatusTypeID", statue);
+        c.cardInfos().put("UpdateDatetime", LocalDateTime.now());
+        db.update("CustomerCardInfos", c.cardInfos());
+        db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
+        if (statue != 0) {
+            db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
+        }
+        deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, asn, c.accounts().d("Balance"), statue != 0 ? 3 : 5, BigDecimal.ZERO, 0.0, null, 1,
+            LocalDateTime.now().format(Conv.STD), c.cardInfos().i("StationID"));
+        bump("BasicBlack");
+    }
+
     @RequestMapping("/CardStatueUpdate")
     public String CardStatueUpdate(@RequestBody(required = false) String body) {
         try (Sugar.Tx tx = db.begin()) {
             try {
                 Row m = req(body);
-                String asn = m.str("Asn");
-                CenterDeal.CusCard c = deal.getCusCardInfo(asn);
-                if (!c.ok()) {
-                    throw fail(c.error());
-                }
-                int statue = m.i("CardStatue");
-                c.cardInfos().put("CardStatusTypeID", statue);
-                c.cardInfos().put("UpdateDatetime", LocalDateTime.now());
-                db.update("CustomerCardInfos", c.cardInfos());
-                db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
-                if (statue != 0) {
-                    db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
-                }
-                deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, asn, c.accounts().d("Balance"), statue != 0 ? 3 : 5, BigDecimal.ZERO, 0.0, null, 1,
-                    LocalDateTime.now().format(Conv.STD), c.cardInfos().i("StationID"));
-                bump("BasicBlack");
+                setStatue(m.str("Asn"), m.i("CardStatue"));
                 tx.commit();
                 return okEmpty();
             } catch (Exception ex) {
@@ -551,34 +556,51 @@ public class ExtendCardController extends ServerDealBase {
     }
 
     /** Nouveau numéro sur le même compte ; l'ancienne carte passe au statut 3 et en liste noire, comme ServerDeal/CardChange. */
+    String replace(String asn) {
+        CenterDeal.CusCard c = deal.getCusCardInfo(asn);
+        if (!c.ok()) {
+            throw fail(c.error());
+        }
+        Row info = c.cardInfos();
+        if (info.i("CardStatusTypeID") == 3) {
+            throw fail("Replaced");
+        }
+        info.put("CardStatusTypeID", 3);
+        info.put("UpdateDatetime", LocalDateTime.now());
+        db.update("CustomerCardInfos", info);
+        db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
+        db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
+        String prefix = asn.startsWith("00000000") ? asn.substring(0, 9) : asn.substring(0, 6);
+        String next = nextAsn("customer_card_infos", prefix);
+        info.put("ASN", next);
+        info.put("CardStatusTypeID", 0);
+        db.insert("CustomerCardInfos", info);
+        deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, next, c.accounts().d("Balance"), 8, BigDecimal.ZERO, 0.0, null, 1,
+            LocalDateTime.now().format(Conv.STD), info.i("StationID"));
+        bump("BasicBlack");
+        return next;
+    }
+
+    /** Écriture de la nouvelle carte impossible : retour à l'ancienne. */
+    void replaceBack(String oldAsn, String newAsn) {
+        Row old = db.first("CustomerCardInfos", "{ASN} = :a", p("a", oldAsn));
+        if (old == null) {
+            throw fail("Informations utilisateur introuvables");
+        }
+        db.delete("AccountServiceLogs", "{ASN} = :a", p("a", newAsn));
+        db.delete("CustomerCardInfos", "{ASN} = :a", p("a", newAsn));
+        old.put("CardStatusTypeID", 0);
+        old.put("UpdateDatetime", LocalDateTime.now());
+        db.update("CustomerCardInfos", old);
+        db.delete("BasicBlackLists", "{ASN} = :a", p("a", oldAsn));
+        bump("BasicBlack");
+    }
+
     @RequestMapping("/CardReplaceCard")
     public String CardReplaceCard(@RequestBody(required = false) String body) {
         try (Sugar.Tx tx = db.begin()) {
             try {
-                Row m = req(body);
-                String asn = m.str("Asn");
-                CenterDeal.CusCard c = deal.getCusCardInfo(asn);
-                if (!c.ok()) {
-                    throw fail(c.error());
-                }
-                Row info = c.cardInfos();
-                if (info.i("CardStatusTypeID") == 3) {
-                    throw fail("Replaced");
-                }
-                info.put("CardStatusTypeID", 3);
-                info.put("UpdateDatetime", LocalDateTime.now());
-                db.update("CustomerCardInfos", info);
-                db.delete("BasicBlackLists", "{ASN} = :a", p("a", asn));
-                db.insert("BasicBlackLists", Row.of("ASN", asn, "Time", LocalDateTime.now()));
-                String prefix = asn.startsWith("00000000") ? asn.substring(0, 9) : asn.substring(0, 6);
-                String next = nextAsn("customer_card_infos", prefix);
-                info.put("ASN", next);
-                info.put("CardStatusTypeID", 0);
-                db.insert("CustomerCardInfos", info);
-                deal.addAccountLog(c.accounts().str("AccountNo"), 0.0, next, c.accounts().d("Balance"), 8, BigDecimal.ZERO, 0.0, null, 1,
-                    LocalDateTime.now().format(Conv.STD), info.i("StationID"));
-                bump("BasicBlack");
-                String res = okJson(Row.of("Asn", next));
+                String res = okJson(Row.of("Asn", replace(req(body).str("Asn"))));
                 tx.commit();
                 return res;
             } catch (Exception ex) {
@@ -588,25 +610,12 @@ public class ExtendCardController extends ServerDealBase {
         }
     }
 
-    /** Écriture de la nouvelle carte impossible : retour à l'ancienne. */
     @RequestMapping("/CardReplaceBack")
     public String CardReplaceBack(@RequestBody(required = false) String body) {
         try (Sugar.Tx tx = db.begin()) {
             try {
                 Row m = req(body);
-                String oldAsn = m.str("OldAsn");
-                String newAsn = m.str("NewAsn");
-                Row old = db.first("CustomerCardInfos", "{ASN} = :a", p("a", oldAsn));
-                if (old == null) {
-                    throw fail("Informations utilisateur introuvables");
-                }
-                db.delete("AccountServiceLogs", "{ASN} = :a", p("a", newAsn));
-                db.delete("CustomerCardInfos", "{ASN} = :a", p("a", newAsn));
-                old.put("CardStatusTypeID", 0);
-                old.put("UpdateDatetime", LocalDateTime.now());
-                db.update("CustomerCardInfos", old);
-                db.delete("BasicBlackLists", "{ASN} = :a", p("a", oldAsn));
-                bump("BasicBlack");
+                replaceBack(m.str("OldAsn"), m.str("NewAsn"));
                 tx.commit();
                 return okEmpty();
             } catch (Exception ex) {
