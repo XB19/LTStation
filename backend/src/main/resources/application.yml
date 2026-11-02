@@ -84,6 +84,18 @@ app:
     pluse-base: ${PLUSE_BASE:1250}
     volume-by-self: ${VOLUME_BY_SELF:0}
     settlement-day: ${SETTLEMENT_DAY:5}
+  # Appareils connectés (/ICAir/*) : réglages du Web.config d'origine, jetons et clés dans .env
+  air:
+    secret-same: ${AIR_SECRET_SAME:1}
+    partner-token: ${AIR_PARTNER_TOKEN:}
+    monitor-url: ${AIR_MONITOR_URL:}
+    # stationId:companyUuid:stationUuid:clé, séparés par des virgules
+    monitor-stations: ${AIR_MONITOR_STATIONS:}
+    wx-app-id: ${AIR_WX_APP_ID:}
+    wx-secret: ${AIR_WX_SECRET:}
+    wx-template: ${AIR_WX_TEMPLATE:}
+    # 123.bin et atomizer.bin, programmes téléchargés par les boîtiers
+    program-dir: ${AIR_PROGRAM_DIR:./Dowload}
   # Service SMS (codes de validation et avis de recharge) : identifiants dans .env
   sms:
     client-id: ${SMS_CLIENT_ID:}
