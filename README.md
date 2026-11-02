@@ -210,8 +210,14 @@ Les commandes destinées aux équipements sont écrites dans les mêmes tables e
 - **Services reconstruits** : `ExtendUpdate/*` et `Station/*` n'existaient pas dans le serveur fourni. Ils sont refaits à partir
   des clients et leurs règles sont à valider avec de vraies données (`ExtendCardController`, `ExtendReportController`, `StationCenterController`).
   Aucun écran de Center ne crée encore les clients à crédit ni leurs relevés (`personal_credit`, `personal_credit_bill`).
-- **API des appareils côté Center** : GPRS, ICAir, EasyCardMake, JoyFill, Phone et App, à porter et à vérifier une à une.
-- **Lecteur Mifare** : `mwrf32.dll` est en 32 bits, le Java de l'application de bureau en 64 bits.
+- **Appareils côté Center** : `/ICAir/ICCommunication`, `/ICAir/BLSDeviceCommunication` et `/GPRS/Heartbeat` sont portés
+  (package `icair`) et testés avec des trames simulées, pas encore avec de vrais boîtiers.
+  Le programme des boîtiers (`123.bin`, `atomizer.bin`) n'est pas dans les sources : à déposer dans `AIR_PROGRAM_DIR`.
+  Les remboursements WeChat des commandes scan-pay sont marqués mais pas émis.
+- **API sans client connu** : `EasyCardMake`, `Phone` et les pages mobiles `App` ne sont pas portées.
+  Aucun logiciel fourni ne les appelle : à décider selon les applications réellement utilisées.
+- **Lecteur Mifare** : `mwrf32.dll` est en 32 bits ; `desktop/build-mifare.sh` prépare la passerelle `mwrf-helper.exe`,
+  que l'installateur embarque. Chargement de la DLL vérifié, lecture et écriture de cartes à essayer sur site.
 - **Matériel** : tout le code existe, mais rien n'a encore été essayé avec de vrais appareils.
 - **Données réelles** : importer les sauvegardes SQL Server (`migrate_data.py`, `station_db.py migrate`) et les vérifier.
 - **Docker** : fichiers prêts, jamais lancés.
@@ -219,8 +225,7 @@ Les commandes destinées aux équipements sont écrites dans les mêmes tables e
 - **Logiciel Station** :
   - les menus qui, dans l'original, n'ont pas de fenêtre décrite dans les ressources n'ont pas été refaits :
     gestion des véhicules (Car User Manager) et contrôle des véhicules (Car Check) ;
-  - `BoxScreen` V1 reste sans logique (l'original ne l'ouvre jamais, seule `BoxScreenV2` sert) ;
-  - l'ancien package `station` n'est plus utilisé et reste à retirer.
+  - `BoxScreen` V1 reste sans logique (l'original ne l'ouvre jamais, seule `BoxScreenV2` sert).
 - **Sécurité** : la clé AES Station ↔ Center est écrite dans `LegacyAes` et déjà publiée ; à changer des deux côtés.
 - **Interfaces mobiles et WeChat** :
   - mini-programme ;
