@@ -11,6 +11,8 @@ import sys
 import psycopg
 import pyodbc
 
+from translate_reference import translate
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC_DB = sys.argv[1] if len(sys.argv) > 1 else "Center_Test"
 
@@ -87,6 +89,7 @@ def main():
                 f"COALESCE((SELECT MAX({q(c)}) FROM {q(t)}), 0) + 1, false)")
         pg.execute("SET session_replication_role = origin")
         print(f"Total : {total} lignes migrées")
+        print(f"Tables de référence traduites : {translate('center', pg)} lignes")
 
 
 if __name__ == "__main__":

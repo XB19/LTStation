@@ -115,7 +115,7 @@ public class Sugar {
 
     /** Queryable&lt;T&gt;().Where(...).First() : première ligne ou null. "where" peut contenir ORDER BY. */
     public Row first(String table, String where, Map<String, ?> params) {
-        List<Row> l = jdbc.query(select(table, where) + " LIMIT 1", src(params), mapper(meta(table)));
+        List<Row> l = jdbc.query(select(table, inKeyOrder(table, where)) + " LIMIT 1", src(params), mapper(meta(table)));
         return l.isEmpty() ? null : l.get(0);
     }
 
@@ -124,7 +124,27 @@ public class Sugar {
     }
 
     public List<Row> list(String table, String where, Map<String, ?> params) {
-        return jdbc.query(select(table, where), src(params), mapper(meta(table)));
+        return jdbc.query(select(table, inKeyOrder(table, where)), src(params), mapper(meta(table)));
+    }
+
+    /**
+     * Sans ORDER BY, SQL Server rendait les lignes dans l'ordre de la clé primaire, et le code d'origine en dépend
+     * (première ligne, position dans une liste) ; PostgreSQL ne garantit aucun ordre.
+     */
+    private String inKeyOrder(String table, String where) {
+        String w = where == null ? "" : where;
+        String up = w.toUpperCase();
+        Meta m = meta(table);
+        List<String> pk = m.pkSnake();
+        if (pk.isEmpty()) {
+            // Tables sans clé déclarée : leur identifiant suit l'ordre d'insertion
+            pk = m.cols().stream().filter(c -> c.identity() || "id".equals(c.snake())).map(Col::snake).limit(1).toList();
+        }
+        if (pk.isEmpty() || up.contains("ORDER BY") || up.contains("LIMIT ") || up.contains("GROUP BY")) {
+            return where;
+        }
+        String order = "ORDER BY " + String.join(", ", pk.stream().map(k -> '"' + k + '"').toList());
+        return w.isBlank() ? order : w + " " + order;
     }
 
     public List<Row> list(String table) {

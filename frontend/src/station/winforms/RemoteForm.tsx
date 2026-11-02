@@ -400,7 +400,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     if (!p) continue
     const t = c.type
     if (isCombo(t)) {
-      options[c.name] = ((p.Items as unknown[]) ?? []).map((x, i) => ({ value: i, label: String(x ?? '') }))
+      options[c.name] = ((p.Items as unknown[]) ?? []).map((x, i) => ({ value: i, label: tr(String(x ?? '')) }))
       const i = Number(p.SelectedIndex ?? -1)
       // DropDown : texte libre (Text) quand aucun élément n'est choisi
       values[c.name] = i >= 0 ? i : (p.Text ? String(p.Text) : undefined)

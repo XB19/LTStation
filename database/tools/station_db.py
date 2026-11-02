@@ -16,6 +16,7 @@ import psycopg
 import pyodbc
 
 from migrate_data import load_env
+from translate_reference import translate
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATION_DIR = os.path.join(HERE, "..", "station")
@@ -100,6 +101,7 @@ def migrate(src_db):
             pg.execute(f"SELECT setval(pg_get_serial_sequence('{q(t)}', '{c}'), "
                        f"COALESCE((SELECT MAX({q(c)}) FROM {q(t)}), 0) + 1, false)")
         print(f"Total : {total} lignes copiées depuis {src_db}")
+        print(f"Tables de référence traduites : {translate('station', pg)} lignes")
 
 
 if __name__ == "__main__":

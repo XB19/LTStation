@@ -220,6 +220,8 @@ Les commandes destinées aux équipements sont écrites dans les mêmes tables e
   que l'installateur embarque. Chargement de la DLL vérifié, lecture et écriture de cartes à essayer sur site.
 - **Matériel** : tout le code existe, mais rien n'a encore été essayé avec de vrais appareils.
 - **Données réelles** : importer les sauvegardes SQL Server (`migrate_data.py`, `station_db.py migrate`) et les vérifier.
+  Les deux imports traduisent ensuite les tables de référence chinoises (`translate_reference.py`, `fr_reference.json`) ;
+  sur une base déjà en place, lancer `python database/tools/translate_reference.py`.
 - **Docker** : fichiers prêts, jamais lancés.
 - **Application de bureau** : installateur à signer, icône LTStation.
 - **Logiciel Station** :
