@@ -44,6 +44,10 @@
         "to": "runtime"
       },
       {
+        "from": "build/mifare",
+        "to": "mifare"
+      },
+      {
         "from": "../backend/target/center-1.0.0.jar",
         "to": "server/center.jar"
       }

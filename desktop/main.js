@@ -85,6 +85,11 @@ function probe(url) {
   })
 }
 
+// Passerelle 32 bits du lecteur Mifare (build-mifare.sh)
+function mifareDir() {
+  return app.isPackaged ? path.join(process.resourcesPath, 'mifare') : path.join(__dirname, 'build', 'mifare')
+}
+
 function startServer(cfg) {
   const { java, jar } = serverFiles()
   if (!fs.existsSync(java) || !fs.existsSync(jar)) throw new Error(`Serveur intégré introuvable (${!fs.existsSync(java) ? java : jar})`)
@@ -93,7 +98,7 @@ function startServer(cfg) {
   serverLog = ''
   server = spawn(java, ['-Dfile.encoding=UTF-8', '-jar', jar], {
     cwd: dataDir(),
-    env: { ...process.env, SERVER_PORT: String(cfg.port) },
+    env: { ...process.env, SERVER_PORT: String(cfg.port), LTSTATION_MIFARE_HELPER: path.join(mifareDir(), 'mwrf-helper.exe') },
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
   })

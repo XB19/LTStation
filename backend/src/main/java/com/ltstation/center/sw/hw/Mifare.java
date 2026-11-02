@@ -7,12 +7,21 @@ import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.ShortByReference;
 import com.sun.jna.win32.StdCallLibrary;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.HexFormat;
 
 /**
  * Lecteur Mifare mwrf32.dll (cartes employé et cartes de solde Normal). Mêmes fonctions que la classe Mifare de l'original.
- * Sans DLL (ou avec une JVM 64 bits face à la DLL 32 bits) ou sans lecteur, rf_init renvoie 0 : les fenêtres affichent
- * alors leur erreur habituelle (lecteur déconnecté) au lieu de planter.
+ * La DLL est en 32 bits : un Java 64 bits passe par la passerelle desktop/mifare (mwrf-helper.exe, chemin dans la
+ * propriété ltstation.mifare.helper ou la variable LTSTATION_MIFARE_HELPER).
+ * Sans DLL, sans passerelle ou sans lecteur, rf_init renvoie 0 : les fenêtres affichent alors leur erreur habituelle
+ * (lecteur déconnecté) au lieu de planter.
  */
 public final class Mifare {
 
@@ -39,6 +48,54 @@ public final class Mifare {
 
     private static Lib lib;
     private static boolean tried;
+    private static Process helper;
+    private static BufferedWriter toHelper;
+    private static BufferedReader fromHelper;
+
+    /** Passerelle 32 bits ; null si elle n'est pas installée. */
+    private static boolean helperReady() {
+        if (helper != null && helper.isAlive()) {
+            return true;
+        }
+        String path = System.getProperty("ltstation.mifare.helper", System.getenv("LTSTATION_MIFARE_HELPER"));
+        if (path == null || !new File(path).isFile()) {
+            return false;
+        }
+        try {
+            File exe = new File(path).getAbsoluteFile();
+            helper = new ProcessBuilder(exe.getPath()).directory(exe.getParentFile()).redirectErrorStream(true).start();
+            toHelper = new BufferedWriter(new OutputStreamWriter(helper.getOutputStream(), StandardCharsets.US_ASCII));
+            fromHelper = new BufferedReader(new InputStreamReader(helper.getInputStream(), StandardCharsets.US_ASCII));
+            Runtime.getRuntime().addShutdownHook(new Thread(helper::destroy));
+            return "ok".equals(call("ping"));
+        } catch (IOException ex) {
+            helper = null;
+            return false;
+        }
+    }
+
+    private static synchronized String call(String line) {
+        try {
+            toHelper.write(line);
+            toHelper.newLine();
+            toHelper.flush();
+            String answer = fromHelper.readLine();
+            if (answer == null) {
+                throw new IllegalStateException("Passerelle Mifare arrêtée");
+            }
+            return answer;
+        } catch (IOException ex) {
+            throw new IllegalStateException("Passerelle Mifare : " + ex.getMessage());
+        }
+    }
+
+    private static short callShort(String line) {
+        return Short.parseShort(call(line));
+    }
+
+    private static String hex(byte[] b) {
+        return HexFormat.of().formatHex(b);
+    }
 
     private static synchronized Lib lib() {
         if (!tried) {
@@ -56,7 +113,14 @@ public final class Mifare {
     public static long rf_init(int port, int baud) {
         Lib l = lib();
         if (l == null) {
-            return 0;
+            if (!helperReady()) {
+                return 0;
+            }
+            try {
+                return Long.parseLong(call("init " + port + " " + baud));
+            } catch (RuntimeException ex) {
+                return 0;
+            }
         }
         try {
             return Pointer.nativeValue(l.rf_init((short) port, baud));
@@ -71,6 +135,10 @@ public final class Mifare {
 
     /** rf_request + rf_anticoll + rf_select, résultats ignorés comme dans l'original. */
     public static void Select(long icdev) {
+        if (lib() == null) {
+            call("select " + icdev);
+            return;
+        }
         lib().rf_request(p(icdev), (byte) 1, new ShortByReference());
         IntByReference snr = new IntByReference();
         lib().rf_anticoll(p(icdev), (byte) 0, snr);
@@ -78,23 +146,34 @@ public final class Mifare {
     }
 
     public static short rf_authentication_key(long icdev, int mode, int secnr, byte[] keybuff) {
+        if (lib() == null) {
+            return callShort("auth " + icdev + " " + mode + " " + secnr + " " + hex(keybuff));
+        }
         return lib().rf_authentication_key(p(icdev), (byte) mode, (byte) secnr, keybuff);
     }
 
     /** Bloc lu en 32 caractères hexadécimaux. */
     public static String rf_read_hex(long icdev, int blocknr) {
+        if (lib() == null) {
+            return call("read " + icdev + " " + blocknr);
+        }
         byte[] buf = new byte[32];
         lib().rf_read_hex(p(icdev), (byte) blocknr, buf);
         return new String(buf, StandardCharsets.ISO_8859_1);
     }
 
     public static short rf_write_hex(long icdev, int blocknr, String hex) {
+        if (lib() == null) {
+            return callShort("write " + icdev + " " + blocknr + " " + hex);
+        }
         return lib().rf_write_hex(p(icdev), blocknr, hex.getBytes(StandardCharsets.ISO_8859_1));
     }
 
     public static void rf_exit(long icdev) {
         if (icdev > 0 && lib() != null) {
             lib().rf_exit(p(icdev));
+        } else if (icdev > 0) {
+            call("exit " + icdev);
         }
     }
 
