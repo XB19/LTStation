@@ -126,12 +126,13 @@ export default function MainLayout() {
   return (
     <Layout className="lt-layout">
       {contextHolder}
-      <Layout.Sider width={250} collapsible collapsed={collapsed} trigger={null} className="lt-sider" theme="light">
+      <Layout.Sider width={250} collapsible collapsed={collapsed} trigger={null} className="lt-sider" theme="dark">
         <div className="lt-brand" onClick={() => navigate('/')}>
           {collapsed ? 'LT' : me?.title ?? 'LTStation'}
         </div>
         {!collapsed && <div className="lt-welcome">Bienvenue, {me?.loginName}</div>}
         <Menu
+          theme="dark"
           mode="inline"
           selectedKeys={[location.pathname]}
           items={items}

@@ -5,17 +5,19 @@ export type ThemeMode = 'light' | 'dark'
 export type ModePreference = ThemeMode | 'system'
 export type Density = 'comfortable' | 'compact'
 
-/** Couleurs de la marque (bandeau latéral, page de connexion). */
+/** Couleurs de la marque ZENER. Le vert est un accent : trop clair pour du texte sur fond clair. */
 export const BRAND = {
-  primary: '#2563eb',
-  accent: '#0891b2',
+  primary: '#1a70b5',
+  navy: '#16305f',
+  accent: '#9bc133',
+  success: '#347434',
 }
 
 /** Jetons de départ communs : Ant Design en dérive toute la palette, en clair comme en sombre. */
 const SEED: ThemeConfig['token'] = {
   colorPrimary: BRAND.primary,
   colorInfo: BRAND.primary,
-  colorSuccess: '#16a34a',
+  colorSuccess: BRAND.success,
   colorWarning: '#d97706',
   colorError: '#dc2626',
   borderRadius: 8,
@@ -26,19 +28,21 @@ const SEED: ThemeConfig['token'] = {
 /** Neutres ardoise propres à chaque mode. */
 const BY_MODE: Record<ThemeMode, ThemeConfig['token']> = {
   light: {
-    colorBgLayout: '#f4f6fb',
-    colorText: '#0f172a',
-    colorTextSecondary: '#475569',
-    colorTextTertiary: '#64748b',
-    colorBorder: '#d5dce6',
-    colorBorderSecondary: '#e7ebf2',
+    colorBgLayout: '#dfe8f2',
+    colorBgContainer: '#f6f9fc',
+    colorBgElevated: '#f6f9fc',
+    colorText: '#12294f',
+    colorTextSecondary: '#3c5070',
+    colorTextTertiary: '#55688a',
+    colorBorder: '#b9c9dc',
+    colorBorderSecondary: '#d3dfeb',
   },
   dark: {
-    colorBgLayout: '#0b1120',
-    colorBgContainer: '#131c2e',
-    colorBgElevated: '#1a2438',
-    colorBorder: '#334155',
-    colorBorderSecondary: '#243047',
+    colorBgLayout: '#0c1a33',
+    colorBgContainer: '#13264a',
+    colorBgElevated: '#1a3058',
+    colorBorder: '#37507c',
+    colorBorderSecondary: '#27406b',
   },
 }
 
@@ -53,14 +57,21 @@ export function buildTheme(mode: ThemeMode, density: Density, motion: boolean): 
     algorithm,
     token: { ...SEED, ...BY_MODE[mode], motion },
     components: {
-      Layout: { headerHeight },
-      Menu: { itemBorderRadius: 8, subMenuItemBg: 'transparent', itemSelectedColor: BRAND.primary },
+      Layout: { headerHeight, siderBg: mode === 'dark' ? '#0a1630' : BRAND.navy },
+      Menu: {
+        itemBorderRadius: 8,
+        darkItemBg: 'transparent',
+        darkSubMenuItemBg: 'rgba(0, 0, 0, 0.16)',
+        darkItemSelectedBg: BRAND.primary,
+        darkItemColor: 'rgba(255, 255, 255, 0.82)',
+        darkGroupTitleColor: 'rgba(255, 255, 255, 0.6)',
+      },
       Table: {
         headerBorderRadius: 10,
-        headerBg: mode === 'dark' ? '#182235' : '#f8fafc',
-        headerColor: mode === 'dark' ? '#cbd5e1' : '#475569',
+        headerBg: mode === 'dark' ? '#1a3058' : '#d3e1ef',
+        headerColor: mode === 'dark' ? '#d5e2f2' : BRAND.navy,
         headerSplitColor: 'transparent',
-        rowHoverBg: mode === 'dark' ? '#1a2438' : '#f1f5fd',
+        rowHoverBg: mode === 'dark' ? '#1a3058' : '#e6eff8',
       },
       Card: { borderRadiusLG: 12 },
       Button: { fontWeight: 500, primaryShadow: 'none', defaultShadow: 'none', dangerShadow: 'none' },

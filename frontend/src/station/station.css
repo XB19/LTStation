@@ -485,7 +485,7 @@ body,
 }
 
 /* Logiciel Station piloté par le serveur : fenêtre principale plein écran */
-.sw-main { min-height: 100vh; background: var(--sw-bg, #f4f6fb); }
+.sw-main { min-height: 100vh; background: var(--sw-bg, #dfe8f2); }
 .sw-main > .wf-root { min-height: 100vh; }
 .sw-desktop { min-height: 100vh; background: var(--lt-brand-gradient); }
 

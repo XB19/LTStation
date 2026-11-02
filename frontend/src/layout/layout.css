@@ -6,8 +6,9 @@
 
 .lt-sider {
   box-shadow: var(--lt-elevation-sider);
-  border-inline-end: 1px solid var(--lt-color-border-secondary);
   overflow: auto;
+  --lt-scrollbar: rgba(255, 255, 255, 0.28);
+  --lt-scrollbar-hover: rgba(255, 255, 255, 0.5);
   height: 100vh;
   position: sticky;
   top: 0;
@@ -33,24 +34,21 @@
 .lt-welcome {
   padding: var(--lt-space-sm) 20px;
   font-size: var(--lt-font-size-sm);
-  color: var(--lt-color-text-tertiary);
-  border-bottom: 1px solid var(--lt-color-border-secondary);
+  color: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.lt-sider .ant-menu-light,
-.lt-sider .ant-menu-light > .ant-menu {
-  border-inline-end: none !important;
-}
 .lt-sider .ant-menu-item-group-title {
   padding-inline: 22px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--lt-color-text-tertiary);
 }
+/* Repère vert de la page en cours */
 .lt-sider .ant-menu-item-selected {
   font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--lt-brand-green);
 }
 
 .lt-header {
@@ -60,7 +58,7 @@
   gap: var(--lt-space-md);
   padding: 0 var(--lt-space-lg);
   box-shadow: var(--lt-elevation-header);
-  border-bottom: 1px solid var(--lt-color-border-secondary);
+  border-bottom: 2px solid var(--lt-brand-green);
   position: sticky;
   top: 0;
   z-index: 5;

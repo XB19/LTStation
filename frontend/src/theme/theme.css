@@ -6,7 +6,8 @@
  */
 :root {
   color-scheme: light;
-  --lt-brand-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 62%, #0891b2 100%);
+  --lt-brand-gradient: linear-gradient(135deg, #16305f 0%, #1a70b5 68%, #6fa83a 100%);
+  --lt-brand-green: #9bc133;
   --lt-brand-contrast: #fff;
   --lt-header-height: 64px;
   --lt-elevation-sider: none;
@@ -16,21 +17,21 @@
   --lt-scrollbar: rgba(100, 116, 139, 0.4);
   --lt-scrollbar-hover: rgba(100, 116, 139, 0.7);
 
-  --lt-color-bg-layout: #f4f6fb;
-  --lt-color-bg-container: #fff;
-  --lt-color-text: #0f172a;
+  --lt-color-bg-layout: #dfe8f2;
+  --lt-color-bg-container: #f6f9fc;
+  --lt-color-text: #12294f;
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --lt-brand-gradient: linear-gradient(135deg, #172554 0%, #1d4ed8 62%, #0e7490 100%);
+  --lt-brand-gradient: linear-gradient(135deg, #0a1630 0%, #16508c 68%, #4f7f2c 100%);
   --lt-elevation-card: none;
   --lt-elevation-overlay: 0 18px 50px rgba(0, 0, 0, 0.6);
   --lt-scrollbar: rgba(148, 163, 184, 0.3);
   --lt-scrollbar-hover: rgba(148, 163, 184, 0.55);
 
-  --lt-color-bg-layout: #0b1120;
-  --lt-color-bg-container: #131c2e;
+  --lt-color-bg-layout: #0c1a33;
+  --lt-color-bg-container: #13264a;
   --lt-color-text: rgba(255, 255, 255, 0.85);
 }
 
