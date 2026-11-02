@@ -1,7 +1,7 @@
 // Application de bureau du logiciel Station, comme Station.exe d'origine : elle démarre le serveur LTStation intégré
 // (Java et serveur fournis avec l'application), ouvre l'interface /station dans sa fenêtre et arrête le serveur à la fermeture.
 // Un serveur distant peut aussi être utilisé (menu Station → Adresse du serveur).
-const { app, BrowserWindow, Menu, ipcMain, shell, dialog } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, session, shell, dialog } = require('electron')
 const { spawn, execFile } = require('child_process')
 const fs = require('fs')
 const http = require('http')
@@ -88,6 +88,18 @@ function probe(url) {
 // Passerelle 32 bits du lecteur Mifare (build-mifare.sh)
 function mifareDir() {
   return app.isPackaged ? path.join(process.resourcesPath, 'mifare') : path.join(__dirname, 'build', 'mifare')
+}
+
+// Nouveau serveur installé : le cache de l'ancienne version ne doit pas être réaffiché
+async function clearCacheAfterUpdate() {
+  const stampFile = path.join(app.getPath('userData'), 'server-build.txt')
+  const { jar } = serverFiles()
+  if (!fs.existsSync(jar)) return
+  const { size, mtimeMs } = fs.statSync(jar)
+  const stamp = `${app.getVersion()}-${size}-${mtimeMs}`
+  if (fs.existsSync(stampFile) && fs.readFileSync(stampFile, 'utf8') === stamp) return
+  await session.defaultSession.clearCache()
+  fs.writeFileSync(stampFile, stamp)
 }
 
 function startServer(cfg) {
@@ -272,8 +284,9 @@ if (!app.requestSingleInstanceLock()) {
       win.focus()
     }
   })
-  app.whenReady().then(() => {
+  app.whenReady().then(async () => {
     fs.mkdirSync(dataDir(), { recursive: true })
+    await clearCacheAfterUpdate()
     menu()
     createWindow()
   })
