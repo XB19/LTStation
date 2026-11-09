@@ -34,3 +34,6 @@ backend/station/
 
 # Copies des bases locales pour Docker (contiennent les données)
 database/docker/dumps/
+
+# Kit d'installation client (contient des clés)
+deploy/out/
