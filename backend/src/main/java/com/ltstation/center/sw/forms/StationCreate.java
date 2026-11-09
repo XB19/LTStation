@@ -76,6 +76,18 @@ public class StationCreate extends SwForm {
         }
     }
 
+    /** Même enregistrement que la fenêtre Register, sans échange de code : réservé aux postes installés par le kit. */
+    private Row registerThisPc() {
+        List<String> macs = BaseFunction.GetMacAddress();
+        if (macs == null || macs.isEmpty()) {
+            return null;
+        }
+        String info = BaseFunction.EncryptByAes(macs.get(0));
+        Row row = Row.of("SourceInfo", info, "SecretInfo", BaseFunction.EncryptByAes(info));
+        db().insert("RegisterInfo", row);
+        return row;
+    }
+
     public void SaveBtn_Click() {
         try {
             if (none("Stations") || none("PriceInfos")) {
@@ -98,6 +110,9 @@ public class StationCreate extends SwForm {
             IniInfo.LoginID = employees.i("EmployeeID");
             IniInfo.LoginType = 1;
             Row registerInfo = db().first("RegisterInfo");
+            if (registerInfo == null && IniInfo.AutoRegister == 1) {
+                registerInfo = registerThisPc();
+            }
             if (registerInfo == null) {
                 throw new IllegalStateException(L("SystemNotActive"));
             }

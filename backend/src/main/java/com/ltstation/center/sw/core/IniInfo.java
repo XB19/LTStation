@@ -122,6 +122,8 @@ public final class IniInfo {
     public static String HandReportTitle = "";
     public static int WifiMode;
     public static int Auto;
+    /** 1 = poste installé par le kit : l'assistant de création enregistre lui-même le poste (RegisterInfo). */
+    public static int AutoRegister;
     public static int HandShiftPassword;
     public static String FoRanUrl = "";
     /** Service SMS des notifications de transaction (Nozzle.SendNote) : identifiants hors du code. */
@@ -276,6 +278,7 @@ public final class IniInfo {
         HandReportTitle = setting("HandReportTitle") == null ? "" : setting("HandReportTitle");
         WifiMode = i("WifiMode", 0);
         Auto = i("Auto", 0);
+        AutoRegister = i("AutoRegister", 0);
         HandShiftPassword = i("HandShiftPassword", 0);
         FoRanUrl = setting("FoRanUrl");
         SmsClientId = setting("SmsClientId");

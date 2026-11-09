@@ -2,6 +2,7 @@ package com.ltstation.center.sw.cardmake;
 
 import com.ltstation.center.legacy.Row;
 import com.ltstation.center.sw.core.BaseFunction;
+import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.form.SwWindow;
 
 /** Active : activation du poste (code fourni pour la valeur affichée dans ValidBox). */
@@ -14,6 +15,10 @@ public class Active extends CardMakeForm {
     protected void init() {
         M = argStr("MacD");
         c("ValidBox").Text(M);
+        // Poste installé par le kit : le code d'activation est celui de ce poste, inutile de le demander
+        if (IniInfo.AutoRegister == 1 && !M.isEmpty()) {
+            c("ActiveBox").Text(BaseFunction.EncryptByAes(M));
+        }
     }
 
     public void ActiveBtn_Click() {

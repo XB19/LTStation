@@ -37,3 +37,4 @@ database/docker/dumps/
 
 # Kit d'installation client (contient des clés)
 deploy/out/
+deploy/vendor/

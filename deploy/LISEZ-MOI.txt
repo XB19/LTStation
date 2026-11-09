@@ -1,86 +1,52 @@
 INSTALLATION DE LTSTATION SUR LE POSTE DE LA STATION
 ====================================================
 
-Ce kit contient :
-  1-Installateur\   l'application LTStation Station (Center, logiciel Station et CardMake)
-  2-Base\           la base de données de départ (vide, avec les tables de référence)
-  LISEZ-MOI.txt     cette fiche
-
-Vous recevrez séparément, en main propre, un dossier PRIVÉ (clés de cartes et licence).
-Ne le copiez jamais sur Internet, une messagerie ou un e-mail.
+Ce kit est CONFIDENTIEL (clés de cartes, mots de passe) : le transmettre sur clé USB,
+jamais par e-mail ni messagerie.
 
 Poste requis : Windows 10 ou 11, 64 bits, compte administrateur, 4 Go de mémoire au moins.
 
 
-ÉTAPE 1 - INSTALLER POSTGRESQL (une seule fois)
------------------------------------------------
-1. Télécharger PostgreSQL 17 pour Windows : https://www.postgresql.org/download/windows/
-2. Lancer l'installation avec les choix proposés (port 5432).
-3. Choisir un mot de passe pour l'utilisateur « postgres » et le NOTER.
-   Éviter les caractères  &  |  <  >  ^  %  dans ce mot de passe.
-4. Stack Builder à la fin de l'installation : inutile, fermer la fenêtre.
+1. INSTALLER
+------------
+1. Copier tout le dossier LTStation-Kit sur le poste (par exemple sur le Bureau).
+2. Double-cliquer sur INSTALLER.bat, puis répondre « Oui » à la demande d'autorisation de Windows.
+3. Attendre le message « Termine » (5 à 15 minutes : PostgreSQL, bases, application).
+   Ne pas fermer la fenêtre noire pendant l'installation.
+   Windows peut afficher « Windows a protégé votre ordinateur » : « Informations complémentaires »
+   puis « Exécuter quand même ».
+
+En cas d'erreur, rien n'est effacé : envoyer le fichier installation.log (dans ce dossier).
 
 
-ÉTAPE 2 - CRÉER LA BASE DE DONNÉES
-----------------------------------
-1. Ouvrir le dossier 2-Base et double-cliquer sur installer-base.bat.
-2. Saisir le mot de passe postgres de l'étape 1.
-3. Choisir le mot de passe du compte de départ de Center « admin » et le NOTER.
-   Ce compte a tous les droits : il sert à créer la station, les carburants et les employés.
-4. Attendre le message « Termine ».
-
-Si le script dit que la base existe déjà, il n'a rien modifié : ne pas supprimer une base
-qui contient des données réelles.
+2. CONFIGURER LA STATION DANS CENTER
+-----------------------------------
+1. Lancer l'application avec l'icône LTStation Station du bureau.
+2. Ouvrir un navigateur (Chrome, Edge) à l'adresse  http://localhost:8080/
+3. Se connecter avec les identifiants Center du fichier ACCES.txt.
+4. Créer, dans cet ordre : région et ville, société, station, carburants et prix,
+   cuves, pistolets, employés.
+5. Activer la station dans l'écran « Activation de station ».
 
 
-ÉTAPE 3 - INSTALLER L'APPLICATION
----------------------------------
-1. Ouvrir 1-Installateur et lancer « LTStation Station Setup ».
-2. Windows peut afficher « Windows a protégé votre ordinateur » (application non signée) :
-   cliquer « Informations complémentaires » puis « Exécuter quand même ».
-3. L'application démarre seule à la fin. Si elle demande la base de données, c'est que l'étape 2
-   n'est pas faite : la faire, puis relancer l'application.
+3. PREMIER LANCEMENT DU LOGICIEL STATION
+---------------------------------------
+L'application ouvre l'assistant de création : renseigner la station, les carburants et prix,
+les cuves, les ports série, les pistolets et un employé, puis Enregistrer.
+Le poste s'active automatiquement à la fin de l'assistant.
 
 
-ÉTAPE 4 - ACTIVER CENTER ET CRÉER LA STATION
---------------------------------------------
-1. L'application étant ouverte, ouvrir un navigateur (Chrome, Edge) à l'adresse  http://localhost:8080/
-2. Sur la page de connexion, cliquer « Activer la plateforme » et saisir le code du fichier
-   licence-center.txt (dossier PRIVÉ).
-3. Se connecter avec  admin  et le mot de passe choisi à l'étape 2.
-4. Créer, dans cet ordre : région et ville, société, la station, les carburants et leurs prix,
-   les cuves, les pistolets, puis les employés.
-5. Mode location : activer la station dans l'écran « Activation de station ».
-
-
-ÉTAPE 5 - INSTALLER LES CLÉS DE CARTES (dossier PRIVÉ)
------------------------------------------------------
-1. Fermer l'application.
-2. Dans le dossier PRIVÉ, double-cliquer sur installer-cles.bat et saisir le mot de passe postgres.
-3. Relancer l'application.
-Sans cette étape, aucune carte ne peut être lue ni écrite.
-
-
-ÉTAPE 6 - ENREGISTRER LE POSTE DANS LE LOGICIEL STATION
-------------------------------------------------------
-1. Au premier démarrage, le logiciel Station ouvre l'assistant de création de la station.
-2. Cliquer le bouton d'enregistrement : la fenêtre affiche un CODE MACHINE propre à ce poste.
-3. Envoyer ce code machine au fournisseur (copier-coller, sans espace).
-4. Saisir le CODE D'ACTIVATION reçu en retour, puis Enregistrer.
-5. Terminer l'assistant : station, carburants et prix, cuves, ports série, pistolets, employés.
-
-
-ÉTAPE 7 - BRANCHER LES APPAREILS
--------------------------------
+4. BRANCHER LES APPAREILS
+------------------------
 Avant de brancher : installer les pilotes du fabricant (lecteur de cartes, câbles USB-série).
 - Ports série (pompes, jauges, afficheurs) : relever le numéro COM dans le Gestionnaire de
   périphériques de Windows et le saisir dans les réglages des ports du logiciel Station.
 - Mode de fonctionnement : IC (cartes) ou Normal (boîtiers), dans les réglages système.
-- Cartes : faire les premiers essais sur des cartes de test, jamais sur des cartes de clients.
+- Cartes : premiers essais sur des cartes de test, jamais sur des cartes de clients.
 
 
 EN CAS DE PROBLÈME
 ------------------
 Noter : l'écran, l'action faite, le message exact (une photo suffit), l'heure.
 Joindre les journaux du jour :  %APPDATA%\LTStation Station\data\logs
-(touches Windows + R, coller ce chemin, Entrée).
+(touches Windows + R, coller ce chemin, Entrée), et installation.log s'il existe.
