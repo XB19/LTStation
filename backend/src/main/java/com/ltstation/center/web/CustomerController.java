@@ -4,6 +4,7 @@ import com.ltstation.center.common.Db;
 import com.ltstation.center.common.ExcelExport;
 import com.ltstation.center.common.ExcelExport.Col;
 import com.ltstation.center.common.PageResult;
+import com.ltstation.center.common.WorkOrders;
 import com.ltstation.center.security.CurrentUser;
 import com.ltstation.center.security.SessionUser;
 import com.ltstation.center.service.CompanyScopeService;
@@ -41,15 +42,16 @@ public class CustomerController {
     }
 
     public record Filter(Integer searchType, String userName, String phone, String certificateNo, String carNumber,
-                         String cardNo) {
+                         String cardNo, String workOrderNo, Integer equipmentId) {
     }
 
     private static final String CUSTOMER_SELECT = "SELECT ci.asn, cu.name customer_name, cu.customer_id cus_id, g.name group_name, "
             + "cu.vehicle_no car_no, cu.telephone phone, cu.certificate_no cno, ci.issue_datetime, ci.valid_datetime, "
-            + "ci.card_status_type_id, s.name station_name, ci.open_accoun_emp_name operate_name, a.balance "
-            + "FROM customer_card_infos ci JOIN customers cu ON cu.customer_id = ci.customer_id "
+            + "ci.card_status_type_id, s.name station_name, ci.open_accoun_emp_name operate_name, a.balance" + WorkOrders.COLUMNS
+            + " FROM customer_card_infos ci JOIN customers cu ON cu.customer_id = ci.customer_id "
             + "JOIN customer_accounts a ON a.customer_account_id = ci.customer_account_id "
-            + "LEFT JOIN groups g ON g.group_id = ci.group_id LEFT JOIN stations s ON s.station_id = ci.station_id";
+            + "LEFT JOIN groups g ON g.group_id = ci.group_id LEFT JOIN stations s ON s.station_id = ci.station_id"
+            + WorkOrders.joinCurrent("ci.asn");
 
     @GetMapping
     public Map<String, Object> list(@CurrentUser SessionUser user, @ModelAttribute Filter f,
@@ -69,7 +71,8 @@ public class CustomerController {
                 Col.of("Groupe", "groupName"), Col.of("Immatriculation", "carNo"), Col.of("Téléphone", "phone"),
                 Col.of("N° de pièce", "cno"), Col.of("Émission", "issueDatetime"), Col.of("Validité", "validDatetime"),
                 Col.of("État", "cardStatue"), Col.of("Station d'ouverture", "stationName"),
-                Col.of("Opérateur", "operateName"), Col.of("Solde", "balance")), rows);
+                Col.of("Opérateur", "operateName"), Col.of("Solde", "balance"), Col.of("Ordre de travail", "workOrderNo"),
+                Col.of("Équipement", "equipmentName"), Col.of("N° de série de l'équipement", "equipmentSerial")), rows);
     }
 
     private PageResult<Map<String, Object>> query(SessionUser user, Filter f, int page, int size) {
@@ -82,12 +85,14 @@ public class CustomerController {
                 StringBuilder w = new StringBuilder(" WHERE ec.station_id IN (:stations)");
                 like(w, p, "e.name", "name", f.userName());
                 like(w, p, "e.telephone", "phone", f.phone());
+                WorkOrders.filter(w, p, f.workOrderNo(), f.equipmentId());
                 r = db.page("SELECT ec.asn, e.name customer_name, e.employee_id cus_id, '' group_name, '' car_no, e.telephone phone, "
                         + "'' cno, ec.issue_datetime, ec.valid_datetime, ec.card_status_type_id, s.name station_name, "
-                        + "ec.open_accoun_emp_name operate_name, a.balance FROM employee_card_infos ec "
+                        + "ec.open_accoun_emp_name operate_name, a.balance" + WorkOrders.COLUMNS + " FROM employee_card_infos ec "
                         + "JOIN employees e ON e.employee_id = ec.employee_id "
                         + "JOIN customer_accounts a ON a.customer_account_id = ec.customer_account_id "
-                        + "LEFT JOIN stations s ON s.station_id = ec.open_station_id" + w, p, "ec.issue_datetime DESC", page, size);
+                        + "LEFT JOIN stations s ON s.station_id = ec.open_station_id" + WorkOrders.joinCurrent("ec.asn") + w,
+                        p, "ec.issue_datetime DESC", page, size);
             }
             case 2 -> {
                 StringBuilder w = new StringBuilder(" WHERE gc.station_id IN (:stations)");
@@ -99,10 +104,11 @@ public class CustomerController {
                 like(w, p, "g.certificate_no", "cno", f.certificateNo());
                 PageResult<Map<String, Object>> groups = db.page("SELECT gc.asn, g.name customer_name, g.group_id cus_id, '' group_name, "
                         + "'' car_no, g.telephone phone, g.certificate_no cno, gc.issue_datetime, gc.valid_datetime, "
-                        + "gc.card_status_type_id, s.name station_name, '' operate_name, round(ga.balance::numeric) balance "
-                        + "FROM group_card_infos gc JOIN groups g ON g.group_id = gc.group_id "
+                        + "gc.card_status_type_id, s.name station_name, '' operate_name, round(ga.balance::numeric) balance"
+                        + WorkOrders.COLUMNS + " FROM group_card_infos gc JOIN groups g ON g.group_id = gc.group_id "
                         + "JOIN group_accounts ga ON ga.group_account_id = gc.group_account_id "
-                        + "LEFT JOIN stations s ON s.station_id = gc.station_id" + w, p, "gc.issue_datetime DESC", page, size);
+                        + "LEFT JOIN stations s ON s.station_id = gc.station_id" + WorkOrders.joinCurrent("gc.asn") + w,
+                        p, "gc.issue_datetime DESC", page, size);
                 List<Map<String, Object>> rows = new ArrayList<>();
                 for (Map<String, Object> g : groups.rows()) {
                     rows.add(g);
@@ -123,6 +129,7 @@ public class CustomerController {
                     w.append(" AND ci.asn LIKE :card");
                     p.put("card", "%" + f.cardNo().trim() + "%");
                 }
+                WorkOrders.filter(w, p, f.workOrderNo(), f.equipmentId());
                 r = db.page(CUSTOMER_SELECT + w, p, "ci.issue_datetime DESC", page, size);
             }
         }

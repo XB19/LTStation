@@ -8,6 +8,7 @@ import ActiveDevice from './pages/main/ActiveDevice'
 import RenewOrder from './pages/main/RenewOrder'
 import AirSetting from './pages/main/AirSetting'
 import Employees from './pages/main/Employees'
+import Equipment from './pages/main/Equipment'
 import DiscountScore from './pages/main/DiscountScore'
 import SpecialPrice from './pages/main/SpecialPrice'
 import Transactions from './pages/main/Transactions'
@@ -47,6 +48,7 @@ export const PAGES: Record<string, ComponentType> = {
   '/main/renew-order': RenewOrder,
   '/main/air-setting': AirSetting,
   '/main/employees': Employees,
+  '/main/equipment': Equipment,
   '/main/discount-score': DiscountScore,
   '/main/special-price': SpecialPrice,
   '/main/transactions': Transactions,

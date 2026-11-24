@@ -2,6 +2,9 @@ package com.ltstation.center.web;
 
 import com.ltstation.center.common.ApiException;
 import com.ltstation.center.common.Db;
+import com.ltstation.center.common.ExcelImport;
+import com.ltstation.center.common.ExcelImport.Column;
+import com.ltstation.center.common.ExcelImport.Line;
 import com.ltstation.center.domain.entity.Employees;
 import com.ltstation.center.domain.entity.GPRSAccount;
 import com.ltstation.center.domain.repository.EmployeesRepository;
@@ -10,8 +13,13 @@ import com.ltstation.center.security.CurrentUser;
 import com.ltstation.center.security.SessionUser;
 import com.ltstation.center.service.CompanyScopeService;
 import com.ltstation.center.service.DataVersionService;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +34,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Configuration des employés et de leurs droits PC / mobile (Main/EmpConfigure d'origine).
@@ -173,6 +183,95 @@ public class EmployeeController {
         }
         versions.bump("employee");
         return get(user, id);
+    }
+
+    // ------------------------------------------------------------------ Import Excel
+
+    static final List<Column> IMPORT_COLUMNS = List.of(
+            new Column("Station", "station", true, false),
+            new Column("Nom", "name", true, false),
+            new Column("Identifiant de connexion", "loginName", true, true),
+            new Column("Mot de passe", "password", true, true),
+            new Column("Téléphone", "phone", false, true));
+
+    @GetMapping("/import-template")
+    public void template(HttpServletResponse response) throws IOException {
+        ExcelImport.template(response, "Modele_import_employes", IMPORT_COLUMNS,
+                List.of(List.of("Station Démo Lomé", "Kodjo Mensah", "kmensah", "Lome2026!", "22890112233")),
+                List.of("Import des employés : une ligne par employé, toutes les colonnes marquées * sont obligatoires.",
+                        "Station : nom exact d'une station de votre périmètre.",
+                        "Identifiant de connexion : unique (ni un autre employé ni un autre compte ne doit l'utiliser).",
+                        "Mot de passe : mot de passe de connexion initial. Ce fichier contient des mots de passe : "
+                                + "supprimez-le après l'import.",
+                        "Téléphone : facultatif, unique s'il est saisi. Gardez les colonnes au format Texte.",
+                        "Le n° d'employé et le code interne sont attribués automatiquement ; les droits sont choisis dans l'écran d'import.",
+                        "Supprimez la ligne d'exemple avant d'importer."));
+    }
+
+    /**
+     * Import : dryRun=true contrôle sans rien enregistrer ; sinon tous les employés sont créés, ou aucun s'il reste une erreur.
+     * Les droits PC / mobile choisis s'appliquent à tous les employés du fichier.
+     */
+    @PostMapping("/import")
+    @Transactional
+    public Map<String, Object> importFile(@CurrentUser SessionUser user, @RequestPart("file") MultipartFile file,
+                                          @RequestParam(defaultValue = "true") boolean dryRun,
+                                          @RequestParam(required = false) List<String> pcMenuAuth,
+                                          @RequestParam(required = false) List<String> gzhAuth) {
+        List<Line> lines = ExcelImport.read(file, IMPORT_COLUMNS);
+        Map<String, Integer> stations = new HashMap<>();
+        for (Map<String, Object> st : db.list("SELECT station_id, name FROM stations WHERE station_id IN (:s)",
+                Map.of("s", scope.stationIds(user)))) {
+            stations.put(ExcelImport.norm((String) st.get("name")), (Integer) st.get("stationId"));
+        }
+        Set<String> logins = new HashSet<>();
+        Set<String> phones = new HashSet<>();
+        List<Map<String, Object>> out = new ArrayList<>();
+        List<EmployeeForm> forms = new ArrayList<>();
+        for (Line l : lines) {
+            List<String> errors = new ArrayList<>(l.errors());
+            Integer station = l.get("station") == null ? null : stations.get(ExcelImport.norm(l.get("station")));
+            if (l.get("station") != null && station == null) {
+                errors.add("Station inconnue ou hors de votre périmètre : " + l.get("station"));
+            }
+            String login = l.get("loginName");
+            if (login != null) {
+                if (!logins.add(login.toLowerCase())) {
+                    errors.add("Identifiant en double dans le fichier : " + login);
+                } else if (db.one("SELECT 1 FROM employees WHERE address = :l", Map.of("l", login)) != null
+                        || db.one("SELECT 1 FROM gprs_account WHERE user_name = :l", Map.of("l", login)) != null) {
+                    errors.add("Identifiant déjà utilisé : " + login);
+                }
+            }
+            String phone = l.get("phone");
+            if (phone != null) {
+                if (!phones.add(phone)) {
+                    errors.add("Téléphone en double dans le fichier : " + phone);
+                } else if (db.one("SELECT 1 FROM employees WHERE telephone = :p", Map.of("p", phone)) != null) {
+                    errors.add("Ce numéro de téléphone existe déjà : " + phone);
+                }
+            }
+            Map<String, Object> row = new LinkedHashMap<>(l.values());
+            row.remove("password");
+            row.put("line", l.number());
+            row.put("action", "Création");
+            row.put("errors", errors);
+            out.add(row);
+            if (errors.isEmpty()) {
+                forms.add(new EmployeeForm(station, null, null, l.get("name"), login, l.get("password"), phone, pcMenuAuth, gzhAuth));
+            }
+        }
+        boolean hasErrors = out.stream().anyMatch(r -> !((List<?>) r.get("errors")).isEmpty());
+        if (dryRun || hasErrors) {
+            return ExcelImport.result(out, dryRun, 0);
+        }
+        // N° d'employé et code interne calculés pour chaque ligne, après les créations précédentes (même transaction)
+        for (EmployeeForm f : forms) {
+            Map<String, Object> codes = nextCodes(f.stationId());
+            add(user, new EmployeeForm(f.stationId(), (String) codes.get("employeeNo"), (Integer) codes.get("codeInner"), f.name(),
+                    f.loginName(), f.password(), f.phone(), f.pcMenuAuth(), f.gzhAuth()));
+        }
+        return ExcelImport.result(out, false, forms.size());
     }
 
     /** Suppression logique (ICEmployeeDelete) : is_using = false. */

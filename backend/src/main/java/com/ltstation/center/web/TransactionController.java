@@ -6,6 +6,7 @@ import com.ltstation.center.common.ExcelExport;
 import com.ltstation.center.common.ExcelExport.Col;
 import com.ltstation.center.common.PageResult;
 import com.ltstation.center.common.TimeBuckets;
+import com.ltstation.center.common.WorkOrders;
 import com.ltstation.center.security.CurrentUser;
 import com.ltstation.center.security.SessionUser;
 import com.ltstation.center.service.CompanyScopeService;
@@ -51,7 +52,7 @@ public class TransactionController {
     public record Filter(@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
                          @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,
                          Integer month, Integer regionId, Integer cityId, Integer stationId, String oilCode,
-                         String person, Integer cardType, String carNumber) {
+                         String person, Integer cardType, String carNumber, String workOrderNo, Integer equipmentId) {
     }
 
     private record Query(String where, Map<String, Object> params) {
@@ -100,13 +101,17 @@ public class TransactionController {
             w.append(" AND o.car_number = :car");
             p.put("car", f.carNumber());
         }
+        WorkOrders.filter(w, p, f.workOrderNo(), f.equipmentId());
         return new Query(w.toString(), p);
     }
 
+    /** Ordre de travail en vigueur sur la carte à la date de la transaction, et son équipement. */
+    private static final String JOINS = " LEFT JOIN stations s ON s.station_id = o.station_id"
+            + " LEFT JOIN grade_specifics g ON g.grade_specific_id = o.grade_specific_id" + WorkOrders.joinAt("o.asn", "o.true_time");
+
     private static final String SELECT = "SELECT o.id, o.asn, o.station_id, s.name station_name, o.gun_id, o.t_type, o.car_number, "
             + "g.name oil_name, o.posttc, o.volume, o.truely_pay amount, o.bal balance, o.volume_total, o.true_time create_time, "
-            + "o.error_flg_id, o.device_no FROM oil_transactions o LEFT JOIN stations s ON s.station_id = o.station_id "
-            + "LEFT JOIN grade_specifics g ON g.grade_specific_id = o.grade_specific_id";
+            + "o.error_flg_id, o.device_no" + WorkOrders.COLUMNS + " FROM oil_transactions o" + JOINS;
 
     @GetMapping
     public Map<String, Object> list(@CurrentUser SessionUser user, @ModelAttribute Filter f,
@@ -115,7 +120,7 @@ public class TransactionController {
         PageResult<Map<String, Object>> r = db.page(SELECT + q.where(), q.params(), "o.true_time DESC", page, size);
         r.rows().forEach(TransactionController::decorate);
         Map<String, Object> totals = db.one("SELECT COALESCE(sum(o.truely_pay), 0) amount, COALESCE(sum(o.volume), 0) volume "
-                + "FROM oil_transactions o" + q.where(), q.params());
+                + "FROM oil_transactions o" + WorkOrders.joinAt("o.asn", "o.true_time") + q.where(), q.params());
         Map<String, Object> out = new LinkedHashMap<>();
         out.put("rows", r.rows());
         out.put("total", r.total());
@@ -135,7 +140,8 @@ public class TransactionController {
                 Col.of("Type de transaction", "tradeType"), Col.of("Immatriculation", "carNumber"),
                 Col.of("Énergie", "oilName"), Col.of("Volume", "volume"), Col.of("Montant", "amount"),
                 Col.of("Solde", "balance"), Col.of("Volume cumulé", "volumeTotal"), Col.of("Date", "createTime"),
-                Col.of("Erreur", "error")), rows);
+                Col.of("Ordre de travail", "workOrderNo"), Col.of("Équipement", "equipmentName"),
+                Col.of("N° de série de l'équipement", "equipmentSerial"), Col.of("Erreur", "error")), rows);
     }
 
     /** Courbe montant / volume (GetTransactionPie) : 0 = par heure, 1 = par jour, 2 = par mois, 4 = par année. */

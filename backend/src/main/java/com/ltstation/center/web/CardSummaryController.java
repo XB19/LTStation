@@ -4,6 +4,7 @@ import com.ltstation.center.common.ApiException;
 import com.ltstation.center.common.Db;
 import com.ltstation.center.common.PageResult;
 import com.ltstation.center.common.TimeBuckets;
+import com.ltstation.center.common.WorkOrders;
 import com.ltstation.center.security.CurrentUser;
 import com.ltstation.center.security.SessionUser;
 import com.ltstation.center.service.CompanyScopeService;
@@ -47,10 +48,10 @@ public class CardSummaryController {
     public List<Map<String, Object>> users(@CurrentUser SessionUser user,
                                            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
                                            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end) {
-        String cards = "SELECT ci.station_id, cu.name, cu.customer_id holder_id, ci.asn, CAST(ci.customer_account_id AS text) acc "
-                + "FROM customer_card_infos ci JOIN customers cu ON cu.customer_id = ci.customer_id "
-                + "JOIN customer_accounts a ON a.customer_account_id = ci.customer_account_id "
-                + "WHERE ci.card_status_type_id = 0 AND substring(ci.asn, 1, 6) IN ('010001', 'FFFFFF') AND ci.station_id IN (:s)";
+        String cards = "SELECT ci.station_id, cu.name, cu.customer_id holder_id, ci.asn, CAST(ci.customer_account_id AS text) acc"
+                + WorkOrders.COLUMNS + " FROM customer_card_infos ci JOIN customers cu ON cu.customer_id = ci.customer_id "
+                + "JOIN customer_accounts a ON a.customer_account_id = ci.customer_account_id" + WorkOrders.joinCurrent("ci.asn")
+                + " WHERE ci.card_status_type_id = 0 AND substring(ci.asn, 1, 6) IN ('010001', 'FFFFFF') AND ci.station_id IN (:s)";
         return summarize(cards, start, end, scope.stationIds(user), true);
     }
 
@@ -62,10 +63,10 @@ public class CardSummaryController {
                                                @RequestParam(required = false) Integer regionId, @RequestParam(required = false) Integer cityId,
                                                @RequestParam(required = false) Integer stationId) {
         String cards = "SELECT e.station_id, e.name, e.employee_id holder_id, ec.asn, CAST(ec.customer_account_id AS text) acc, "
-                + "s.name station_name FROM employee_card_infos ec JOIN employees e ON e.employee_id = ec.employee_id "
+                + "s.name station_name" + WorkOrders.COLUMNS + " FROM employee_card_infos ec JOIN employees e ON e.employee_id = ec.employee_id "
                 + "JOIN customer_accounts a ON a.customer_account_id = ec.customer_account_id "
-                + "LEFT JOIN stations s ON s.station_id = e.station_id "
-                + "WHERE ec.card_status_type_id = 0 AND substring(ec.asn, 1, 6) = '010004' AND e.station_id IN (:s)";
+                + "LEFT JOIN stations s ON s.station_id = e.station_id" + WorkOrders.joinCurrent("ec.asn")
+                + " WHERE ec.card_status_type_id = 0 AND substring(ec.asn, 1, 6) = '010004' AND e.station_id IN (:s)";
         return summarize(cards, start, end, scope.scopedStations(user, regionId, cityId, stationId), false);
     }
 
@@ -109,6 +110,8 @@ public class CardSummaryController {
             row.put("stationName", c.get("stationName"));
             row.put("name", c.get("name"));
             row.put("accountNo", c.get("holderId"));
+            row.put("workOrderNo", c.get("workOrderNo"));
+            row.put("equipmentName", c.get("equipmentName"));
             put(row, total, "iniBalance", iniB);
             put(row, total, "saveAmount", save);
             put(row, total, "freeAmount", free);
@@ -211,9 +214,10 @@ public class CardSummaryController {
         }
         PageResult<Map<String, Object>> r = db.page("SELECT * FROM (SELECT l.id, l.asn, l.account_no, l.transaction_type_id, "
                 + "l.amount, l.fee_amount, l.discount_amount, l.balance, l.trans_datetime create_time, s.name station_name, "
-                + "COALESCE(cu.name, e.name, g.name) holder_name, "
+                + "COALESCE(cu.name, e.name, g.name) holder_name, wo.work_order_no, eq.name equipment_name, "
                 + "lag(l.balance) OVER (PARTITION BY l.account_no ORDER BY l.trans_datetime, l.id) prev_balance "
-                + "FROM account_service_logs l LEFT JOIN stations s ON s.station_id = l.station_id "
+                + "FROM account_service_logs l LEFT JOIN stations s ON s.station_id = l.station_id"
+                + WorkOrders.joinAt("l.asn", "l.trans_datetime") + " "
                 + "LEFT JOIN customer_card_infos ci ON ci.asn = l.asn LEFT JOIN customers cu ON cu.customer_id = ci.customer_id "
                 + "LEFT JOIN employee_card_infos ec ON ec.asn = l.asn LEFT JOIN employees e ON e.employee_id = ec.employee_id "
                 + "LEFT JOIN group_card_infos gc ON gc.asn = l.asn LEFT JOIN groups g ON g.group_id = gc.group_id "

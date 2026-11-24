@@ -50,7 +50,7 @@ export const MENU: MenuSection[] = [
   },
   {
     label: 'Configuration système',
-    visible: (me, has) => adminTypes(me) && any(has, '5', '6', '7', '8'),
+    visible: (me, has) => adminTypes(me) && any(has, '5', '6', '7', '8', '57'),
     groups: [
       {
         label: 'Configuration système',
@@ -59,6 +59,7 @@ export const MENU: MenuSection[] = [
           { path: '/main/employees', label: 'Configuration des employés', auth: '5' },
           { path: '/main/discount-score', label: 'Remises & points', auth: '7' },
           { path: '/main/special-price', label: 'Prix préférentiels', auth: '8' },
+          { path: '/main/equipment', label: 'Équipements et ordres de travail', auth: '57' },
         ],
       },
     ],
