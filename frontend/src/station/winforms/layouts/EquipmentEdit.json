@@ -1,0 +1,494 @@
+{
+ "name": "EquipmentEdit",
+ "title": "Équipement",
+ "size": [
+  720,
+  470
+ ],
+ "controls": [
+  {
+   "name": "FieldBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    712,
+    432
+   ],
+   "text": "Équipement",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "lNameBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    28
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Désignation *",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "NameBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    24
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "lWorkOrderBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    60
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "N° d'ordre de travail",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "WorkOrderBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    56
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "lCategoryBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    92
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Catégorie",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "CategoryBox",
+   "type": "ComboBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    88
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "lBrandBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    124
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Marque",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "BrandBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    120
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "lModelBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    156
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Modèle",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "ModelBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    152
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "lSerialBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    188
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "N° de série / châssis",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "SerialBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    184
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "lFleetBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    220
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "N° de parc / immatriculation",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "FleetBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    216
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "lGradeBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    252
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Énergie",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "GradeBox",
+   "type": "SkinComboBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    248
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  },
+  {
+   "name": "lCapacityBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    284
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Capacité du réservoir (L)",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17
+  },
+  {
+   "name": "CapacityBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    280
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  },
+  {
+   "name": "lStatusBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    316
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Statut",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 19
+  },
+  {
+   "name": "StatusBox",
+   "type": "SkinComboBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    312
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20
+  },
+  {
+   "name": "lMemoBox",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    20,
+    348
+   ],
+   "size": [
+    190,
+    14
+   ],
+   "text": "Observations",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21
+  },
+  {
+   "name": "MemoBox",
+   "type": "TextBox",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    344
+   ],
+   "size": [
+    460,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 22
+  },
+  {
+   "name": "WorkOrderHelp",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    220,
+    380
+   ],
+   "size": [
+    460,
+    14
+   ],
+   "text": "Un nouvel ordre de travail est reporté sur les cartes rattachées.",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 23
+  },
+  {
+   "name": "SaveBtn",
+   "type": "SkinButton",
+   "parent": "FieldBox",
+   "loc": [
+    440,
+    390
+   ],
+   "size": [
+    120,
+    32
+   ],
+   "text": "Enregistrer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 24,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "CancelBtn",
+   "type": "SkinButton",
+   "parent": "FieldBox",
+   "loc": [
+    570,
+    390
+   ],
+   "size": [
+    110,
+    32
+   ],
+   "text": "Annuler",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 25,
+   "style": {
+    "back": "transparent"
+   }
+  }
+ ],
+ "columns": {},
+ "events": {
+  "SaveBtn": {
+   "Click": "SaveBtn_Click"
+  },
+  "CancelBtn": {
+   "Click": "CancelBtn_Click"
+  }
+ },
+ "menus": {}
+}

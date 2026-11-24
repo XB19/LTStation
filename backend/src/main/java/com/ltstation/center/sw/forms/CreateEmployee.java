@@ -36,6 +36,22 @@ public class CreateEmployee extends SwForm {
     }
 
     private void DowLoadEmp() {
+        try {
+            downloadEmployees();
+        } catch (RuntimeException ex) {
+            MessageBox(ex.getMessage());
+        }
+        if (CID == 1) {
+            Row employees = db().first("Employees", "{Memo1} = :u AND {Memo2} = :p", p("u", c("LoginName").Text(), "p", c("Password").Text()));
+            IniInfo.LoginName = employees.s("Name");
+            IniInfo.LoginID = employees.i("EmployeeID");
+            IniInfo.LoginType = 1;
+        }
+        Close();
+    }
+
+    /** Recopie les employés de la station depuis Center (ServerDeal/GetEmployee) ; utilisé aussi par l'import Excel. */
+    static void downloadEmployees() {
         var tx = db().begin();
         try {
             Row stations = db().first("Stations");
@@ -67,15 +83,8 @@ public class CreateEmployee extends SwForm {
             tx.commit();
         } catch (RuntimeException ex) {
             tx.rollback();
-            MessageBox(ex.getMessage());
+            throw ex;
         }
-        if (CID == 1) {
-            Row employees = db().first("Employees", "{Memo1} = :u AND {Memo2} = :p", p("u", c("LoginName").Text(), "p", c("Password").Text()));
-            IniInfo.LoginName = employees.s("Name");
-            IniInfo.LoginID = employees.i("EmployeeID");
-            IniInfo.LoginType = 1;
-        }
-        Close();
     }
 
     private void GetStation() {

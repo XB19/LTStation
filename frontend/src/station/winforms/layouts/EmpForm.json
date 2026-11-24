@@ -2,7 +2,7 @@
  "name": "EmpForm",
  "title": "Employee Management",
  "size": [
-  467,
+  700,
   432
  ],
  "controls": [
@@ -15,7 +15,7 @@
     34
    ],
    "size": [
-    459,
+    692,
     346
    ],
    "text": "Employee Message",
@@ -33,7 +33,7 @@
     380
    ],
    "size": [
-    459,
+    692,
     48
    ],
    "text": "",
@@ -51,7 +51,7 @@
     17
    ],
    "size": [
-    113,
+    150,
     23
    ],
    "text": "Double-click on a row to modify",
@@ -68,11 +68,11 @@
    "type": "SkinButton",
    "parent": "groupBox1",
    "loc": [
-    378,
+    558,
     13
    ],
    "size": [
-    75,
+    110,
     32
    ],
    "text": "Confirm",
@@ -89,11 +89,11 @@
    "type": "SkinButton",
    "parent": "groupBox1",
    "loc": [
-    297,
+    422,
     13
    ],
    "size": [
-    75,
+    130,
     32
    ],
    "text": "Add Employee",
@@ -114,7 +114,7 @@
     17
    ],
    "size": [
-    453,
+    686,
     326
    ],
    "text": "",
@@ -134,6 +134,48 @@
      "underline": false
     },
     "border": "fixed3d"
+   }
+  },
+  {
+   "name": "TemplateBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    170,
+    13
+   ],
+   "size": [
+    110,
+    32
+   ],
+   "text": "Modèle Excel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ImportBtn",
+   "type": "SkinButton",
+   "parent": "groupBox1",
+   "loc": [
+    286,
+    13
+   ],
+   "size": [
+    130,
+    32
+   ],
+   "text": "Importer (Excel)",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "style": {
+    "back": "transparent"
    }
   }
  ],
@@ -185,6 +227,12 @@
   },
   "$this": {
    "Load": "EmpForm_Load"
+  },
+  "TemplateBtn": {
+   "Click": "TemplateBtn_Click"
+  },
+  "ImportBtn": {
+   "Click": "ImportBtn_Click"
   }
  },
  "menus": {}

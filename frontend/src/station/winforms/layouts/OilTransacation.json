@@ -1089,6 +1089,42 @@
    "style": {
     "back": "transparent"
    }
+  },
+  {
+   "name": "WorkOrderCheck",
+   "type": "SkinCheckBox",
+   "parent": "groupBox1",
+   "loc": [
+    1040,
+    18
+   ],
+   "size": [
+    120,
+    21
+   ],
+   "text": "Ordre de travail",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20
+  },
+  {
+   "name": "WorkOrderSelect",
+   "type": "SkinTextBox",
+   "parent": "groupBox1",
+   "loc": [
+    1166,
+    14
+   ],
+   "size": [
+    200,
+    28
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21
   }
  ],
  "columns": {
@@ -1152,6 +1188,22 @@
    {
     "name": "ASN",
     "header": "Asn",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "WorkOrderNo",
+    "header": "Ordre de travail",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Equipment",
+    "header": "Équipement",
     "visible": true,
     "prop": null,
     "readOnly": true,

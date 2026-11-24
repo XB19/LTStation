@@ -1,0 +1,594 @@
+{
+ "name": "CardWorkOrder",
+ "title": "Ordre de travail des cartes",
+ "size": [
+  1100,
+  720
+ ],
+ "controls": [
+  {
+   "name": "SearchBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1092,
+    230
+   ],
+   "text": "Carte",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "EditBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    264
+   ],
+   "size": [
+    1092,
+    200
+   ],
+   "text": "Ordre de travail",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "HistoryBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    464
+   ],
+   "size": [
+    1092,
+    252
+   ],
+   "text": "Historique de la carte",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "SearchRow",
+   "type": "Panel",
+   "parent": "SearchBox",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1086,
+    40
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "SearchRow",
+   "loc": [
+    10,
+    12
+   ],
+   "size": [
+    90,
+    14
+   ],
+   "text": "N° de carte :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "CardBox",
+   "type": "TextBox",
+   "parent": "SearchRow",
+   "loc": [
+    104,
+    6
+   ],
+   "size": [
+    260,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "SearchBtn",
+   "type": "SkinButton",
+   "parent": "SearchRow",
+   "loc": [
+    374,
+    3
+   ],
+   "size": [
+    110,
+    30
+   ],
+   "text": "Rechercher",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "SearchRow",
+   "loc": [
+    496,
+    12
+   ],
+   "size": [
+    580,
+    14
+   ],
+   "text": "N° complet, 5 derniers chiffres, porteur ou immatriculation ; vide = cartes ayant un ordre en cours",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "CardView",
+   "type": "SkinDataGridView",
+   "parent": "SearchBox",
+   "loc": [
+    3,
+    57
+   ],
+   "size": [
+    1086,
+    170
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    14,
+    28
+   ],
+   "size": [
+    100,
+    14
+   ],
+   "text": "Carte choisie :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "SelectedCard",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    120,
+    28
+   ],
+   "size": [
+    600,
+    14
+   ],
+   "text": "aucune : choisissez une carte dans la liste",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label4",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    14,
+    62
+   ],
+   "size": [
+    100,
+    14
+   ],
+   "text": "Équipement :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "EquipBox",
+   "type": "SkinComboBox",
+   "parent": "EditBox",
+   "loc": [
+    120,
+    56
+   ],
+   "size": [
+    420,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "label5",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    560,
+    62
+   ],
+   "size": [
+    140,
+    14
+   ],
+   "text": "N° d'ordre de travail :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13
+  },
+  {
+   "name": "WorkOrderBox",
+   "type": "TextBox",
+   "parent": "EditBox",
+   "loc": [
+    706,
+    56
+   ],
+   "size": [
+    250,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "label6",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    14,
+    96
+   ],
+   "size": [
+    100,
+    14
+   ],
+   "text": "En vigueur le :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "FromDate",
+   "type": "DateTimePicker",
+   "parent": "EditBox",
+   "loc": [
+    120,
+    90
+   ],
+   "size": [
+    180,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm"
+   }
+  },
+  {
+   "name": "label7",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    320,
+    96
+   ],
+   "size": [
+    100,
+    14
+   ],
+   "text": "Observations :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 17
+  },
+  {
+   "name": "MemoBox",
+   "type": "TextBox",
+   "parent": "EditBox",
+   "loc": [
+    424,
+    90
+   ],
+   "size": [
+    532,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 18
+  },
+  {
+   "name": "label8",
+   "type": "Label",
+   "parent": "EditBox",
+   "loc": [
+    120,
+    128
+   ],
+   "size": [
+    840,
+    14
+   ],
+   "text": "Sans n° saisi, l'ordre de l'équipement est repris. Les transactions à partir de cette date porteront cet ordre.",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 19
+  },
+  {
+   "name": "SaveBtn",
+   "type": "SkinButton",
+   "parent": "EditBox",
+   "loc": [
+    706,
+    150
+   ],
+   "size": [
+    120,
+    32
+   ],
+   "text": "Enregistrer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 20,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "EndBtn",
+   "type": "SkinButton",
+   "parent": "EditBox",
+   "loc": [
+    836,
+    150
+   ],
+   "size": [
+    200,
+    32
+   ],
+   "text": "Terminer l'ordre en cours",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 21,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "HistoryView",
+   "type": "SkinDataGridView",
+   "parent": "HistoryBox",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1086,
+    232
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  }
+ ],
+ "columns": {
+  "CardView": [
+   {
+    "name": "ASN",
+    "header": "N° de carte",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 180
+   },
+   {
+    "name": "Kind",
+    "header": "Type",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 90
+   },
+   {
+    "name": "Holder",
+    "header": "Porteur",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 200
+   },
+   {
+    "name": "Vehicle",
+    "header": "Immatriculation",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 120
+   },
+   {
+    "name": "WorkOrderNo",
+    "header": "Ordre en cours",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 170
+   },
+   {
+    "name": "Equipment",
+    "header": "Équipement",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 180
+   },
+   {
+    "name": "Since",
+    "header": "Depuis",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 130
+   }
+  ],
+  "HistoryView": [
+   {
+    "name": "WorkOrderNo",
+    "header": "Ordre de travail",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 180
+   },
+   {
+    "name": "Equipment",
+    "header": "Équipement",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 200
+   },
+   {
+    "name": "From",
+    "header": "Du",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 140
+   },
+   {
+    "name": "To",
+    "header": "Au",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 140
+   },
+   {
+    "name": "Memo",
+    "header": "Observations",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 220
+   },
+   {
+    "name": "By",
+    "header": "Saisi par",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 120
+   }
+  ]
+ },
+ "events": {
+  "$this": {
+   "Load": "CardWorkOrder_Load"
+  },
+  "SearchBtn": {
+   "Click": "SearchBtn_Click"
+  },
+  "CardView": {
+   "CellClick": "CardView_CellClick"
+  },
+  "SaveBtn": {
+   "Click": "SaveBtn_Click"
+  },
+  "EndBtn": {
+   "Click": "EndBtn_Click"
+  },
+  "EquipBox": {
+   "SelectedIndexChanged": "EquipBox_SelectedIndexChanged"
+  }
+ },
+ "menus": {}
+}

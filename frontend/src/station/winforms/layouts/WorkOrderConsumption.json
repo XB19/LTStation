@@ -1,0 +1,375 @@
+{
+ "name": "WorkOrderConsumption",
+ "title": "Consommation par ordre de travail",
+ "size": [
+  1180,
+  640
+ ],
+ "controls": [
+  {
+   "name": "FilterBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1172,
+    62
+   ],
+   "text": "Critères",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "ResultBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    96
+   ],
+   "size": [
+    1172,
+    510
+   ],
+   "text": "Résultat",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "TotalBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    606
+   ],
+   "size": [
+    1172,
+    30
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "FilterBox",
+   "loc": [
+    14,
+    28
+   ],
+   "size": [
+    30,
+    14
+   ],
+   "text": "Du :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "StartDate",
+   "type": "DateTimePicker",
+   "parent": "FilterBox",
+   "loc": [
+    46,
+    22
+   ],
+   "size": [
+    170,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm"
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "FilterBox",
+   "loc": [
+    226,
+    28
+   ],
+   "size": [
+    30,
+    14
+   ],
+   "text": "au :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
+  },
+  {
+   "name": "EndDate",
+   "type": "DateTimePicker",
+   "parent": "FilterBox",
+   "loc": [
+    260,
+    22
+   ],
+   "size": [
+    170,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "init": {
+    "Format": "Custom",
+    "CustomFormat": "yyyy-MM-dd HH:mm"
+   }
+  },
+  {
+   "name": "label3",
+   "type": "Label",
+   "parent": "FilterBox",
+   "loc": [
+    446,
+    28
+   ],
+   "size": [
+    110,
+    14
+   ],
+   "text": "Ordre de travail :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
+  },
+  {
+   "name": "WorkOrderBox",
+   "type": "TextBox",
+   "parent": "FilterBox",
+   "loc": [
+    560,
+    22
+   ],
+   "size": [
+    200,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "SearchBtn",
+   "type": "SkinButton",
+   "parent": "FilterBox",
+   "loc": [
+    776,
+    19
+   ],
+   "size": [
+    110,
+    30
+   ],
+   "text": "Rechercher",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ExportBtn",
+   "type": "SkinButton",
+   "parent": "FilterBox",
+   "loc": [
+    894,
+    19
+   ],
+   "size": [
+    110,
+    30
+   ],
+   "text": "Exporter",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ResultView",
+   "type": "SkinDataGridView",
+   "parent": "ResultBox",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1166,
+    490
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "TotalLabel",
+   "type": "Label",
+   "parent": "TotalBox",
+   "loc": [
+    10,
+    8
+   ],
+   "size": [
+    1100,
+    14
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  }
+ ],
+ "columns": {
+  "ResultView": [
+   {
+    "name": "WorkOrderNo",
+    "header": "Ordre de travail",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 170
+   },
+   {
+    "name": "Equipment",
+    "header": "Équipement",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 180
+   },
+   {
+    "name": "Category",
+    "header": "Catégorie",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 130
+   },
+   {
+    "name": "SerialNo",
+    "header": "N° de série",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 140
+   },
+   {
+    "name": "Oil",
+    "header": "Énergie",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 80
+   },
+   {
+    "name": "Count",
+    "header": "Transactions",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 90
+   },
+   {
+    "name": "Cards",
+    "header": "Cartes",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 60
+   },
+   {
+    "name": "Volume",
+    "header": "Volume",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 90
+   },
+   {
+    "name": "Amount",
+    "header": "Montant",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 100
+   },
+   {
+    "name": "First",
+    "header": "Première",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 130
+   },
+   {
+    "name": "Last",
+    "header": "Dernière",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 130
+   }
+  ]
+ },
+ "events": {
+  "$this": {
+   "Load": "WorkOrderConsumption_Load"
+  },
+  "SearchBtn": {
+   "Click": "SearchBtn_Click"
+  },
+  "ExportBtn": {
+   "Click": "ExportBtn_Click"
+  }
+ },
+ "menus": {}
+}

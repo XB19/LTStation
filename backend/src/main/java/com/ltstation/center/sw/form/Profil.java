@@ -223,7 +223,7 @@ public final class Profil {
     /** Boutons de la barre d'outils et éléments de menu gérés par TypeSwitch. */
     public static final List<String> MAIN_ITEMS = List.of("OilPrice", "StationPrint", "CardMake", "CardUpDate", "CardLost", "CardChange",
         "Deposit", "TransactionSearch", "EmpManager", "Shift", "DailyReport", "MonthReport", "CardSearch", "ScoreDeal", "DisCount",
-        "KeyManagement", "PSAMMake", "BusinessReport", "PasswodLost", "AuthorityManagement", "ShiftCancel",
+        "KeyManagement", "PSAMMake", "BusinessReport", "PasswodLost", "AuthorityManagement", "ShiftCancel", "Equipment",
         "TopSystemSeting", "BaseMessage", "SuperviseItem", "PortItem", "TankItem", "TankVolumeItem", "TankPortItem", "NozItem", "ShiftItem",
         "EmpLoginItem", "ExitItem",
         "TopStationManager", "ShiftReport", "DailyR", "MonthR", "TransactionR", "StockManager", "CardMessage",

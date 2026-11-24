@@ -1,0 +1,203 @@
+{
+ "name": "ImportPreview",
+ "title": "Contrôle du fichier",
+ "size": [
+  1000,
+  600
+ ],
+ "controls": [
+  {
+   "name": "InfoBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    992,
+    56
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "LineBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    90
+   ],
+   "size": [
+    992,
+    456
+   ],
+   "text": "Lignes du fichier",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "ActionBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    546
+   ],
+   "size": [
+    992,
+    50
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "SummaryLabel",
+   "type": "Label",
+   "parent": "InfoBox",
+   "loc": [
+    12,
+    22
+   ],
+   "size": [
+    960,
+    14
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "LineView",
+   "type": "SkinDataGridView",
+   "parent": "LineBox",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    986,
+    436
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "ImportBtn",
+   "type": "SkinButton",
+   "parent": "ActionBox",
+   "loc": [
+    690,
+    12
+   ],
+   "size": [
+    140,
+    32
+   ],
+   "text": "Importer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "CloseBtn",
+   "type": "SkinButton",
+   "parent": "ActionBox",
+   "loc": [
+    840,
+    12
+   ],
+   "size": [
+    130,
+    32
+   ],
+   "text": "Fermer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6,
+   "style": {
+    "back": "transparent"
+   }
+  }
+ ],
+ "columns": {
+  "LineView": [
+   {
+    "name": "Line",
+    "header": "Ligne",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 50
+   },
+   {
+    "name": "Result",
+    "header": "Résultat",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 110
+   },
+   {
+    "name": "Detail",
+    "header": "Contenu",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 360
+   },
+   {
+    "name": "Errors",
+    "header": "Erreurs",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 440
+   }
+  ]
+ },
+ "events": {
+  "$this": {
+   "Load": "ImportPreview_Load"
+  },
+  "ImportBtn": {
+   "Click": "ImportBtn_Click"
+  },
+  "CloseBtn": {
+   "Click": "CloseBtn_Click"
+  }
+ },
+ "menus": {}
+}

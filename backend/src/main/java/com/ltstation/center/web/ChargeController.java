@@ -3,7 +3,6 @@ package com.ltstation.center.web;
 import com.ltstation.center.common.Db;
 import com.ltstation.center.common.PageResult;
 import com.ltstation.center.common.TimeBuckets;
-import com.ltstation.center.common.WorkOrders;
 import com.ltstation.center.security.CurrentUser;
 import com.ltstation.center.security.SessionUser;
 import com.ltstation.center.service.CompanyScopeService;
@@ -50,9 +49,9 @@ public class ChargeController {
         p.put("end", end == null ? LocalDateTime.now() : end);
         p.put("nodes", scope.nodeList(user));
         String where = " WHERE d.create_time BETWEEN :start AND :end" + (perCompany ? " AND d.company_id IN (:nodes)" : "");
-        PageResult<Map<String, Object>> r = db.page("SELECT d.*, cu.vehicle_no car_number" + WorkOrders.COLUMNS + " FROM online_deposit d "
+        PageResult<Map<String, Object>> r = db.page("SELECT d.*, cu.vehicle_no car_number FROM online_deposit d "
                 + "LEFT JOIN customer_card_infos ci ON ci.asn = d.asn LEFT JOIN customers cu ON cu.customer_id = ci.customer_id"
-                + WorkOrders.joinAt("d.asn", "d.create_time") + where, p, "d.create_time DESC", page, size);
+                + where, p, "d.create_time DESC", page, size);
         r.rows().forEach(row -> row.put("chargeTypeName", chargeType(row.get("chargeType"))));
         Map<String, Object> out = new LinkedHashMap<>();
         out.put("rows", r.rows());

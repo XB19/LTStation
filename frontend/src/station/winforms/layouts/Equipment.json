@@ -1,0 +1,476 @@
+{
+ "name": "Equipment",
+ "title": "Équipements et ordres de travail",
+ "size": [
+  1180,
+  660
+ ],
+ "controls": [
+  {
+   "name": "ToolBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    34
+   ],
+   "size": [
+    1172,
+    104
+   ],
+   "text": "Recherche et actions",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 2
+  },
+  {
+   "name": "ListBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    138
+   ],
+   "size": [
+    1172,
+    490
+   ],
+   "text": "Équipements",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "HelpBox",
+   "type": "GroupBox",
+   "parent": "$this",
+   "loc": [
+    4,
+    628
+   ],
+   "size": [
+    1172,
+    28
+   ],
+   "text": "",
+   "dock": "bottom",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "ToolBox",
+   "loc": [
+    14,
+    28
+   ],
+   "size": [
+    80,
+    14
+   ],
+   "text": "Recherche :",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 3
+  },
+  {
+   "name": "SearchBox",
+   "type": "TextBox",
+   "parent": "ToolBox",
+   "loc": [
+    98,
+    22
+   ],
+   "size": [
+    300,
+    23
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 4
+  },
+  {
+   "name": "SearchBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    408,
+    19
+   ],
+   "size": [
+    110,
+    30
+   ],
+   "text": "Rechercher",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "label2",
+   "type": "Label",
+   "parent": "ToolBox",
+   "loc": [
+    530,
+    28
+   ],
+   "size": [
+    560,
+    14
+   ],
+   "text": "Désignation, ordre de travail, n° de série, n° de parc ou 5 derniers chiffres d'une carte",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "AddBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    14,
+    60
+   ],
+   "size": [
+    100,
+    30
+   ],
+   "text": "Ajouter",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "EditBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    122,
+    60
+   ],
+   "size": [
+    100,
+    30
+   ],
+   "text": "Modifier",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "DeleteBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    230,
+    60
+   ],
+   "size": [
+    100,
+    30
+   ],
+   "text": "Supprimer",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "CardsBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    338,
+    60
+   ],
+   "size": [
+    200,
+    30
+   ],
+   "text": "Cartes et ordres de travail",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ConsumptionBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    546,
+    60
+   ],
+   "size": [
+    170,
+    30
+   ],
+   "text": "Consommation par OT",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ImportBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    724,
+    60
+   ],
+   "size": [
+    140,
+    30
+   ],
+   "text": "Importer (Excel)",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "TemplateBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    872,
+    60
+   ],
+   "size": [
+    120,
+    30
+   ],
+   "text": "Modèle Excel",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 13,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "ExportBtn",
+   "type": "SkinButton",
+   "parent": "ToolBox",
+   "loc": [
+    1000,
+    60
+   ],
+   "size": [
+    100,
+    30
+   ],
+   "text": "Exporter",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14,
+   "style": {
+    "back": "transparent"
+   }
+  },
+  {
+   "name": "EquipView",
+   "type": "SkinDataGridView",
+   "parent": "ListBox",
+   "loc": [
+    3,
+    17
+   ],
+   "size": [
+    1166,
+    470
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0,
+   "init": {
+    "ReadOnly": true
+   },
+   "style": {
+    "font": {
+     "family": "微软雅黑",
+     "size": 9.0,
+     "bold": false,
+     "italic": false,
+     "underline": false
+    },
+    "border": "fixed3d"
+   }
+  },
+  {
+   "name": "HelpLabel",
+   "type": "Label",
+   "parent": "HelpBox",
+   "loc": [
+    10,
+    8
+   ],
+   "size": [
+    400,
+    14
+   ],
+   "text": "Double-cliquez sur un équipement pour le modifier.",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 16
+  }
+ ],
+ "columns": {
+  "EquipView": [
+   {
+    "name": "ID",
+    "header": "ID",
+    "visible": false,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "Name",
+    "header": "Désignation",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 190
+   },
+   {
+    "name": "WorkOrderNo",
+    "header": "Ordre de travail",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 170
+   },
+   {
+    "name": "Category",
+    "header": "Catégorie",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 140
+   },
+   {
+    "name": "BrandModel",
+    "header": "Marque / modèle",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 150
+   },
+   {
+    "name": "SerialNo",
+    "header": "N° de série",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 150
+   },
+   {
+    "name": "FleetNo",
+    "header": "N° de parc",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 90
+   },
+   {
+    "name": "Grade",
+    "header": "Énergie",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 80
+   },
+   {
+    "name": "Status",
+    "header": "Statut",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 110
+   },
+   {
+    "name": "Cards",
+    "header": "Cartes",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": 60
+   }
+  ]
+ },
+ "events": {
+  "$this": {
+   "Load": "Equipment_Load"
+  },
+  "SearchBtn": {
+   "Click": "SearchBtn_Click"
+  },
+  "AddBtn": {
+   "Click": "AddBtn_Click"
+  },
+  "EditBtn": {
+   "Click": "EditBtn_Click"
+  },
+  "DeleteBtn": {
+   "Click": "DeleteBtn_Click"
+  },
+  "CardsBtn": {
+   "Click": "CardsBtn_Click"
+  },
+  "ConsumptionBtn": {
+   "Click": "ConsumptionBtn_Click"
+  },
+  "ImportBtn": {
+   "Click": "ImportBtn_Click"
+  },
+  "TemplateBtn": {
+   "Click": "TemplateBtn_Click"
+  },
+  "ExportBtn": {
+   "Click": "ExportBtn_Click"
+  },
+  "EquipView": {
+   "CellDoubleClick": "EquipView_CellDoubleClick"
+  }
+ },
+ "menus": {}
+}

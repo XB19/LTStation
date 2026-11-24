@@ -4,7 +4,6 @@ import ReactECharts from '../../components/ThemedChart'
 import dayjs from 'dayjs'
 import { get, post } from '../../api/http'
 import PageHeader from '../../components/PageHeader'
-import { EquipmentSelect } from '../../components/CardWorkOrderModal'
 import RemoteSelect, { useSelectOptions } from '../../components/RemoteSelect'
 import SearchTable, { serializeFilters } from '../../components/SearchTable'
 import StationFilter from '../../components/StationFilter'
@@ -113,8 +112,6 @@ export default function Transactions() {
               <Form.Item name="carNumber" label="Immatriculation">
                 <Select allowClear showSearch style={{ width: 160 }} options={cars.map((c) => ({ value: c.text, label: c.text }))} />
               </Form.Item>
-              <Form.Item name="workOrderNo" label="Ordre de travail"><Input allowClear style={{ width: 170 }} /></Form.Item>
-              <Form.Item name="equipmentId" label="Équipement"><EquipmentSelect style={{ width: 200 }} /></Form.Item>
             </>
           }
           summary={(r) => (
@@ -136,8 +133,6 @@ export default function Transactions() {
             { title: 'Solde', dataIndex: 'balance', render: (v) => fmtNum(v) },
             { title: 'Volume cumulé', dataIndex: 'volumeTotal', render: (v) => fmtNum(v) },
             { title: 'Date', dataIndex: 'createTime', render: (v) => (v ? dayjs(v as string).format('YYYY-MM-DD HH:mm:ss') : '') },
-            { title: 'Ordre de travail', dataIndex: 'workOrderNo' },
-            { title: 'Équipement', dataIndex: 'equipmentName' },
             { title: 'Erreur', dataIndex: 'error' },
           ]}
         />

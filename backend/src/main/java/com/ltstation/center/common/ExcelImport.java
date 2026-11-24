@@ -1,11 +1,8 @@
 package com.ltstation.center.common;
 
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -23,7 +20,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Import Excel (.xlsx / .xls) : première feuille, ligne 1 = en-têtes, une ligne par enregistrement.
@@ -50,13 +46,16 @@ public final class ExcelImport {
     private ExcelImport() {
     }
 
-    /** Lit le fichier ; lève une erreur si une colonne obligatoire manque ou si le fichier n'est pas lisible. */
-    public static List<Line> read(MultipartFile file, List<Column> columns) {
-        String name = file.getOriginalFilename() == null ? "" : file.getOriginalFilename().toLowerCase(Locale.ROOT);
+    /**
+     * Lit un fichier reçu par OpenFileDialog du logiciel Station ; lève une erreur si une colonne obligatoire manque
+     * ou si le fichier n'est pas lisible.
+     */
+    public static List<Line> read(String fileName, InputStream in, List<Column> columns) {
+        String name = fileName == null ? "" : fileName.toLowerCase(Locale.ROOT);
         if (!name.endsWith(".xlsx") && !name.endsWith(".xls")) {
             throw new ApiException("Fichier Excel attendu (.xlsx ou .xls)");
         }
-        try (InputStream in = file.getInputStream(); Workbook wb = WorkbookFactory.create(in)) {
+        try (Workbook wb = WorkbookFactory.create(in)) {
             Sheet sheet = wb.getSheetAt(0);
             DataFormatter fmt = new DataFormatter(Locale.FRANCE);
             Row head = sheet.getRow(sheet.getFirstRowNum());
@@ -121,13 +120,22 @@ public final class ExcelImport {
         }
     }
 
+    public static final String XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
     /** Modèle .xlsx : en-têtes (obligatoires marqués *), colonnes texte au format Texte, lignes d'exemple, feuille d'aide. */
-    public static void template(HttpServletResponse response, String fileName, List<Column> columns, List<List<String>> examples,
-                                List<String> help) throws IOException {
-        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''"
-                + URLEncoder.encode(fileName + ".xlsx", StandardCharsets.UTF_8));
-        try (XSSFWorkbook wb = new XSSFWorkbook(); OutputStream out = response.getOutputStream()) {
+    public static byte[] templateBytes(List<Column> columns, List<List<String>> examples, List<String> help) {
+        java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+        try {
+            template(out, columns, examples, help);
+        } catch (IOException e) {
+            throw new ApiException("Modèle Excel impossible à créer : " + e.getMessage());
+        }
+        return out.toByteArray();
+    }
+
+    private static void template(OutputStream out, List<Column> columns, List<List<String>> examples, List<String> help)
+            throws IOException {
+        try (XSSFWorkbook wb = new XSSFWorkbook()) {
             Sheet sheet = wb.createSheet("Données");
             CellStyle head = wb.createCellStyle();
             Font bold = wb.createFont();
@@ -171,18 +179,6 @@ public final class ExcelImport {
     static String key(String header) {
         String s = Normalizer.normalize(header == null ? "" : header, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
         return s.replace("*", "").trim().replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
-    }
-
-    /** Résultat renvoyé à l'écran d'import : lignes (avec action et erreurs) et compteurs. */
-    public static Map<String, Object> result(List<Map<String, Object>> rows, boolean dryRun, int imported) {
-        long errors = rows.stream().filter(r -> !((List<?>) r.get("errors")).isEmpty()).count();
-        Map<String, Object> out = new LinkedHashMap<>();
-        out.put("rows", rows);
-        out.put("total", rows.size());
-        out.put("errorCount", errors);
-        out.put("dryRun", dryRun);
-        out.put("imported", imported);
-        return out;
     }
 
     /** Valeurs reconnues pour une liste fermée (comparaison sans accents ni casse). */

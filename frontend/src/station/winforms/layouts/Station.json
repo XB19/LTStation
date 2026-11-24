@@ -659,6 +659,9 @@
   "$this": {
    "FormClosing": "Station_FormClosing",
    "Load": "Station_Load"
+  },
+  "Equipment": {
+   "Click": "CardMake_Click"
   }
  },
  "menus": {
@@ -785,6 +788,20 @@
      "visible": true,
      "items": [],
      "image": "res/forms/Station/EmpManager.Image.png",
+     "size": [
+      100,
+      90
+     ],
+     "align": "bottom-center",
+     "tir": "overlay"
+    },
+    {
+     "name": "Equipment",
+     "type": "ToolStripButton",
+     "text": "Équipements",
+     "visible": true,
+     "items": [],
+     "image": "res/forms/Station/Equipment.Image.png",
      "size": [
       100,
       90

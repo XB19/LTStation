@@ -38,8 +38,6 @@ function Summary({ employees }: { employees?: boolean }) {
     { title: 'Nom', dataIndex: 'name' },
     { title: employees ? "N° d'employé" : 'Compte utilisateur', dataIndex: 'accountNo' },
     { title: 'N° de carte', dataIndex: 'asn' },
-    { title: 'Ordre de travail', dataIndex: 'workOrderNo' },
-    { title: 'Équipement', dataIndex: 'equipmentName' },
     { title: 'Solde initial', dataIndex: 'iniBalance', render: n3 },
     { title: 'Rechargé', dataIndex: 'saveAmount', render: n3 },
     { title: 'Offert', dataIndex: 'freeAmount', render: n3 },
@@ -49,7 +47,7 @@ function Summary({ employees }: { employees?: boolean }) {
     { title: 'Solde final', dataIndex: 'finalBalance', render: n3 },
     { title: 'Écart', dataIndex: 'error', render: n3 },
   ]
-  const offset = employees ? 6 : 5
+  const offset = employees ? 4 : 3
   return (
     <>
       <Space wrap style={{ marginBottom: 12 }}>
@@ -76,8 +74,6 @@ const BILL_COLUMNS = [
   { title: 'Nom', dataIndex: 'name' },
   { title: 'Compte', dataIndex: 'account' },
   { title: 'N° de carte', dataIndex: 'asn' },
-  { title: 'Ordre de travail', dataIndex: 'workOrderNo' },
-  { title: 'Équipement', dataIndex: 'equipmentName' },
   { title: 'Opération', dataIndex: 'operateType' },
   { title: 'Montant', dataIndex: 'amount', render: n3 },
   { title: 'Offert', dataIndex: 'discount', render: n3 },

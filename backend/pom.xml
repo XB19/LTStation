@@ -90,6 +90,14 @@
                 <directory>../frontend/src/station/winforms/layouts</directory>
                 <targetPath>station/layouts</targetPath>
             </resource>
+            <!-- Tables propres à LTStation de la base Station, créées au premier usage si absentes -->
+            <resource>
+                <directory>../database/station</directory>
+                <targetPath>station/db</targetPath>
+                <includes>
+                    <include>schema_extra.sql</include>
+                </includes>
+            </resource>
         </resources>
         <plugins>
             <plugin>

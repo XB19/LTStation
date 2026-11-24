@@ -33,8 +33,6 @@ export default function ChargeList() {
             { title: 'Montant', dataIndex: 'amount', render: (v) => fmtNum(v) },
             { title: 'Date', dataIndex: 'createTime', render: fmtDateTime },
             { title: 'Opérateur', dataIndex: 'operateName' },
-            { title: 'Ordre de travail', dataIndex: 'workOrderNo' },
-            { title: 'Équipement', dataIndex: 'equipmentName' },
           ]}
         />
       </Card>

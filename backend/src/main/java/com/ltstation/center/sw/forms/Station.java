@@ -80,7 +80,7 @@ public class Station extends SwForm {
             String[] array = content.split(",", -1);
             for (String b : List.of("OilPrice", "StationPrint", "CardMake", "CardUpDate", "CardLost", "CardChange", "Deposit", "TransactionSearch",
                 "EmpManager", "Shift", "DailyReport", "MonthReport", "CardSearch", "ScoreDeal", "DisCount", "KeyManagement", "PSAMMake", "BusinessReport",
-                "PasswodLost", "AuthorityManagement", "ShiftCancel")) {
+                "PasswodLost", "AuthorityManagement", "ShiftCancel", "Equipment")) {
                 c(b).Visible(false);
             }
             for (String m : List.of("TopSystemSeting", "TopStationManager", "TopCommunication", "ExtentTool", "TopUserCheck")) {
@@ -97,7 +97,11 @@ public class Station extends SwForm {
                 for (String s : array) {
                     switch (s) {
                         case "1" -> c("OilPrice").Visible(true);
-                        case "4" -> c("CardMake").Visible(true);
+                        case "4" -> {
+                            c("CardMake").Visible(true);
+                            // Équipements et ordres de travail des cartes : avec la création de cartes ou la gestion des employés
+                            c("Equipment").Visible(true);
+                        }
                         case "7" -> c("CardUpDate").Visible(true);
                         case "10" -> c("CardLost").Visible(true);
                         case "13" -> c("CardChange").Visible(true);
@@ -106,7 +110,10 @@ public class Station extends SwForm {
                             c("TransactionSearch").Visible(true);
                             c("TransactionR").Visible(true);
                         }
-                        case "5" -> c("EmpManager").Visible(true);
+                        case "5" -> {
+                            c("EmpManager").Visible(true);
+                            c("Equipment").Visible(true);
+                        }
                         case "8" -> {
                             c("Shift").Visible(true);
                             c("ShiftReport").Visible(true);
@@ -654,6 +661,7 @@ public class Station extends SwForm {
             case "CardUpDate" -> ShowDialog("CardUpDate", r -> { });
             case "CardChange" -> ShowDialog("CardChange", r -> { });
             case "EmpManager" -> ShowDialog("EmpForm", r -> { });
+            case "Equipment" -> ShowDialog("Equipment", r -> { });
             case "CardSearch" -> ShowDialog("CardLog", r -> { });
             case "DailyReport" -> {
                 switch (IniInfo.ReportType) {

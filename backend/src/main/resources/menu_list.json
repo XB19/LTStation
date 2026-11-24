@@ -44,8 +44,7 @@
     { "label": "Répartitions des flottes", "value": 51 },
     { "label": "Consommations des cartes flotte", "value": 52 },
     { "label": "Paiements par QR code", "value": 54 },
-    { "label": "Génération de QR code de paiement", "value": 55 },
-    { "label": "Équipements et ordres de travail", "value": 57 }
+    { "label": "Génération de QR code de paiement", "value": 55 }
   ],
   "phone": [
     { "label": "Attribution de carte", "value": 0 },

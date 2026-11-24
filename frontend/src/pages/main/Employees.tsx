@@ -1,19 +1,17 @@
 import { useCallback, useState } from 'react'
-import { Button, Card, Checkbox, Col, Form, Input, Row, Space, Tabs, Typography } from 'antd'
-import { UploadOutlined } from '@ant-design/icons'
+import { Card, Checkbox, Col, Form, Input, Row, Tabs } from 'antd'
 import { del, get, post, put } from '../../api/http'
 import { useAuth } from '../../auth/AuthContext'
 import CrudTable from '../../components/CrudTable'
-import ExcelImportModal from '../../components/ExcelImportModal'
 import PageHeader from '../../components/PageHeader'
 import RemoteSelect from '../../components/RemoteSelect'
 import StationFilter, { type StationFilterValue } from '../../components/StationFilter'
 
 type Row = Record<string, unknown>
 
-/** Droits que l'utilisateur connecté peut attribuer (les siens, ou tous pour le super administrateur). */
-function useRightOptions() {
+function EmployeeFormFields({ mode }: { mode: 'create' | 'edit' }) {
   const { me } = useAuth()
+  const form = Form.useFormInstance()
   const isSystem = me?.userId === -1
   const myPc = new Set(me?.auth ?? [])
   const myPhone = new Set((me?.gzhAuth ?? '').split(',').filter(Boolean))
@@ -23,56 +21,6 @@ function useRightOptions() {
   const phoneOptions = (me?.phoneMenus ?? [])
     .filter((m) => isSystem || myPhone.has(String(m.value)))
     .map((m) => ({ value: String(m.value), label: m.label }))
-  return { pcOptions, phoneOptions }
-}
-
-/** Droits ordinateur et mobile (cases à cocher). */
-function RightsTabs({ pcOptions, phoneOptions }: ReturnType<typeof useRightOptions>) {
-  return (
-    <Tabs
-      items={[
-        {
-          key: 'pc',
-          label: 'Droits ordinateur',
-          children: (
-            <Form.Item name="pcMenuAuth">
-              <Checkbox.Group style={{ width: '100%' }}>
-                <Row>
-                  {pcOptions.map((o) => (
-                    <Col span={8} key={o.value}>
-                      <Checkbox value={o.value}>{o.label}</Checkbox>
-                    </Col>
-                  ))}
-                </Row>
-              </Checkbox.Group>
-            </Form.Item>
-          ),
-        },
-        {
-          key: 'phone',
-          label: 'Droits mobile',
-          children: (
-            <Form.Item name="gzhAuth">
-              <Checkbox.Group style={{ width: '100%' }}>
-                <Row>
-                  {phoneOptions.map((o) => (
-                    <Col span={8} key={o.value}>
-                      <Checkbox value={o.value}>{o.label}</Checkbox>
-                    </Col>
-                  ))}
-                </Row>
-              </Checkbox.Group>
-            </Form.Item>
-          ),
-        },
-      ]}
-    />
-  )
-}
-
-function EmployeeFormFields({ mode }: { mode: 'create' | 'edit' }) {
-  const form = Form.useFormInstance()
-  const rights = useRightOptions()
 
   const onStation = async (stationId?: number) => {
     if (mode !== 'create' || stationId == null) return
@@ -126,7 +74,44 @@ function EmployeeFormFields({ mode }: { mode: 'create' | 'edit' }) {
         </Form.Item>
       </Col>
       <Col span={24}>
-        <RightsTabs {...rights} />
+        <Tabs
+          items={[
+            {
+              key: 'pc',
+              label: 'Droits ordinateur',
+              children: (
+                <Form.Item name="pcMenuAuth">
+                  <Checkbox.Group style={{ width: '100%' }}>
+                    <Row>
+                      {pcOptions.map((o) => (
+                        <Col span={8} key={o.value}>
+                          <Checkbox value={o.value}>{o.label}</Checkbox>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Checkbox.Group>
+                </Form.Item>
+              ),
+            },
+            {
+              key: 'phone',
+              label: 'Droits mobile',
+              children: (
+                <Form.Item name="gzhAuth">
+                  <Checkbox.Group style={{ width: '100%' }}>
+                    <Row>
+                      {phoneOptions.map((o) => (
+                        <Col span={8} key={o.value}>
+                          <Checkbox value={o.value}>{o.label}</Checkbox>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Checkbox.Group>
+                </Form.Item>
+              ),
+            },
+          ]}
+        />
       </Col>
     </Row>
   )
@@ -135,10 +120,6 @@ function EmployeeFormFields({ mode }: { mode: 'create' | 'edit' }) {
 /** Configuration des employés (Main/EmpConfigure d'origine). */
 export default function Employees() {
   const [filter, setFilter] = useState<StationFilterValue>({})
-  const [importing, setImporting] = useState(false)
-  const [reloadKey, setReloadKey] = useState(0)
-  const [rightsForm] = Form.useForm()
-  const rights = useRightOptions()
   const load = useCallback(() => get<Row[]>('/employees', filter), [filter])
   return (
     <>
@@ -149,13 +130,7 @@ export default function Employees() {
           load={load}
           addLabel="Ajouter un employé"
           modalWidth={820}
-          reloadKey={reloadKey}
-          toolbar={
-            <Space wrap>
-              <StationFilter value={filter} onChange={setFilter} />
-              <Button icon={<UploadOutlined />} onClick={() => setImporting(true)}>Importer depuis Excel</Button>
-            </Space>
-          }
+          toolbar={<StationFilter value={filter} onChange={setFilter} />}
           columns={[
             { title: 'Station', dataIndex: 'stationName' },
             { title: 'Nom', dataIndex: 'name' },
@@ -172,22 +147,6 @@ export default function Employees() {
           onDelete={(r) => del(`/employees/${r.employeeId}`)}
         />
       </Card>
-      <ExcelImportModal open={importing} onClose={() => setImporting(false)} onDone={() => setReloadKey((k) => k + 1)}
-        title="Importer des employés" templateUrl="/employees/import-template" importUrl="/employees/import"
-        help="Téléchargez le modèle, remplissez une ligne par employé (station, nom, identifiant, mot de passe, téléphone), puis déposez le fichier. Le n° d'employé et le code interne sont attribués automatiquement. Le fichier contient des mots de passe : supprimez-le après l'import."
-        extraFields={() => ({ pcMenuAuth: rightsForm.getFieldValue('pcMenuAuth') ?? [], gzhAuth: rightsForm.getFieldValue('gzhAuth') ?? [] })}
-        settings={
-          <Form form={rightsForm} layout="vertical" style={{ marginBottom: 12 }}>
-            <Typography.Text strong>Droits attribués à tous les employés du fichier</Typography.Text>
-            <RightsTabs {...rights} />
-          </Form>
-        }
-        columns={[
-          { title: 'Station', dataIndex: 'station' },
-          { title: 'Nom', dataIndex: 'name' },
-          { title: 'Identifiant', dataIndex: 'loginName' },
-          { title: 'Téléphone', dataIndex: 'phone' },
-        ]} />
     </>
   )
 }
