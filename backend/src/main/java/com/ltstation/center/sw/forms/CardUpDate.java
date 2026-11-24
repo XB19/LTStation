@@ -35,6 +35,7 @@ public class CardUpDate extends CardFormBase {
         PreaperLoadGroup();
         PreaperLoadDisCount();
         GetStation();
+        LoadEquipments();
         c("CardTool").SelectedIndex(0);
     }
 
@@ -233,6 +234,7 @@ public class CardUpDate extends CardFormBase {
                     DealSpecialPrice(pc.str("SpecialPrice"), "EmpReadButton");
                     c("EmpAccount").Text(pc.str("AccountNo"));
                     c("EmpPosEnable").Checked(pc.b("PosUse"));
+                    ShowWorkOrder(pc.str("Asn"));
                 }
                 case "PersonUpdatetButton" -> {
                     Row pc = userMessage(obj, "PersonCard");
@@ -487,6 +489,7 @@ public class CardUpDate extends CardFormBase {
                     }
                 }
                 case "EmployeeUpdateButton" -> {
+                    CheckWorkOrder();
                     Row emp = c("EmployeeSelect").SelectedRow();
                     String type = Conv.toStr(emp.get("CertifyType"));
                     if (!CardWrite.ChangeEmployeeCard(emp.str("Code"), emp.str("Name"), type.isEmpty() ? "1" : type, emp.str("CertifyKey"), ID_NeedPwdBefore,
@@ -505,10 +508,20 @@ public class CardUpDate extends CardFormBase {
             if (!UpdateCardInfo(btn)) {
                 throw new IllegalStateException(L("UpdateFailed"));
             }
-            MessageBox(L("UpdateSuccess"));
+            MessageBox(L("UpdateSuccess") + ("EmployeeUpdateButton".equals(btn) ? SaveWorkOrder(c("EmpAsn").Text()) : ""));
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
         }
+    }
+
+    /** Historique des ordres de travail de la carte employé lue. */
+    public void EmpWorkOrderBtn_Click() {
+        String asn = c("EmpAsn").Text();
+        if (asn.isEmpty()) {
+            MessageBox("Lisez d'abord la carte employé");
+            return;
+        }
+        ShowDialog("CardWorkOrder", r -> ShowWorkOrder(asn), "ASN", asn);
     }
 
     private static String IsZero(String str) {

@@ -2,7 +2,9 @@ package com.ltstation.center.sw.forms;
 
 import com.ltstation.center.legacy.Conv;
 import com.ltstation.center.sw.core.BaseFunction;
+import com.ltstation.center.sw.core.WorkOrderData;
 import com.ltstation.center.sw.form.SwForm;
+import java.util.Map;
 
 /** Contrôles de saisie communs à CardMake et CardUpDate (blocs répétés de leurs méthodes Regular). */
 abstract class CardFormBase extends SwForm {
@@ -13,6 +15,70 @@ abstract class CardFormBase extends SwForm {
     static final String MAIL = "^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$";
     static final String DEC = "^[0-9]+(.[0-9]{1,3})?$";
     static final String NUM = "^[0-9]*$";
+
+    // ------------------------------------------------------------ ordre de travail des cartes employé (EmpWorkOrder, EmpEquipment)
+
+    /** Liste des équipements de la page employé. */
+    void LoadEquipments() {
+        try {
+            c("EmpEquipment").DataSource(WorkOrderData.equipmentItems(), "Text", "ID");
+        } catch (RuntimeException e) {
+            MessageBox(e.getMessage());
+        }
+    }
+
+    /** L'équipement choisi reprend son n° d'ordre de travail. */
+    public void EmpEquipment_SelectedIndexChanged() {
+        Integer id = SelectedEquipment();
+        if (id != null) {
+            try {
+                c("EmpWorkOrder").Text(WorkOrderData.str(WorkOrderData.equipment(id).get("work_order_no")));
+            } catch (RuntimeException ignored) {
+                // équipement supprimé entre-temps
+            }
+        }
+    }
+
+    Integer SelectedEquipment() {
+        Object v = c("EmpEquipment").SelectedValue();
+        int id = v == null ? 0 : Conv.toInt(v);
+        return id == 0 ? null : id;
+    }
+
+    /** Contrôle la saisie avant d'écrire la carte (longueur du n°). */
+    void CheckWorkOrder() {
+        WorkOrderData.normalize(c("EmpWorkOrder").Text());
+    }
+
+    /** Affiche l'ordre en cours de la carte lue. */
+    void ShowWorkOrder(String asn) {
+        Map<String, Object> cur = WorkOrderData.current(asn);
+        c("EmpWorkOrder").Text(cur == null ? "" : WorkOrderData.str(cur.get("work_order_no")));
+        c("EmpEquipment").SelectedValue(cur == null || cur.get("equipment_id") == null ? 0 : cur.get("equipment_id"));
+    }
+
+    /**
+     * Enregistre l'ordre de travail saisi pour la carte (à partir de maintenant ; l'ancien reste dans l'historique).
+     * Champs vidés : l'ordre en cours prend fin. Renvoie le texte à ajouter au message de réussite.
+     */
+    String SaveWorkOrder(String asn) {
+        String no = WorkOrderData.normalize(c("EmpWorkOrder").Text());
+        Integer eq = SelectedEquipment();
+        try {
+            if (no == null && eq == null) {
+                if (WorkOrderData.current(asn) != null) {
+                    WorkOrderData.end(asn);
+                    return "\nOrdre de travail terminé.";
+                }
+                return "";
+            }
+            WorkOrderData.assign(asn, no, eq, null, null, false);
+            Map<String, Object> cur = WorkOrderData.current(asn);
+            return "\nOrdre de travail : " + (cur == null ? "" : WorkOrderData.str(cur.get("work_order_no")));
+        } catch (RuntimeException e) {
+            return "\nOrdre de travail non enregistré : " + e.getMessage();
+        }
+    }
 
     static void need(boolean ok, String message) {
         if (!ok) {

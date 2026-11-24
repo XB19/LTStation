@@ -37,6 +37,7 @@ public class CardMake extends CardFormBase {
     @Override
     protected void init() {
         IsCreate = !"false".equalsIgnoreCase(argStr("IsCreate"));
+        LoadEquipments();
     }
 
     public void CardMake_Load() {
@@ -280,7 +281,8 @@ public class CardMake extends CardFormBase {
                     throw new IllegalStateException(L("CardWriteError"));
                 }
                 operate.SCardDisconnect();
-                MessageBox(L("CardMakeSuccess"));
+                // Carte employé : ordre de travail saisi, rattaché à la nouvelle carte
+                MessageBox(L("CardMakeSuccess") + ("EmployeeConfirm".equals(btn) ? SaveWorkOrder(aSN) : ""));
             } catch (RuntimeException ex) {
                 operate.SCardDisconnect();
                 BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CardRollDelete", Wire.json(cardMessage));
@@ -402,6 +404,7 @@ public class CardMake extends CardFormBase {
             }
             switch (btn) {
                 case "EmployeeConfirm" -> {
+                    CheckWorkOrder();
                     Row emp = c("EmployeeSelect").SelectedRow();
                     m.put("ASN", c("EmpAsn").Text());
                     m.put("AccountNo", c("EmpAccount").Text());

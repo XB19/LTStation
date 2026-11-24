@@ -7172,6 +7172,78 @@
    "init": {
     "SelectedIndex": 3
    }
+  },
+  {
+   "name": "labelEmpWorkOrder",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    877,
+    107
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Ordre de travail",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 60
+  },
+  {
+   "name": "EmpWorkOrder",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    945,
+    104
+   ],
+   "size": [
+    195,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 61
+  },
+  {
+   "name": "labelEmpEquipment",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    13,
+    147
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Équipement",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 62
+  },
+  {
+   "name": "EmpEquipment",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    83,
+    144
+   ],
+   "size": [
+    484,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 63
   }
  ],
  "columns": {},
@@ -7235,6 +7307,9 @@
   },
   "$this": {
    "Load": "CardMake_Load"
+  },
+  "EmpEquipment": {
+   "SelectedIndexChanged": "EmpEquipment_SelectedIndexChanged"
   }
  },
  "menus": {}

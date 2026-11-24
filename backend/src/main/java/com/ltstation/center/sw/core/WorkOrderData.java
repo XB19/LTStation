@@ -210,7 +210,18 @@ public final class WorkOrderData {
      * Sans n° saisi, l'ordre de l'équipement choisi est repris. L'ordre précédent prend fin à cette date.
      */
     public static void assign(String asn, String workOrderNo, Integer equipmentId, LocalDateTime validFrom, String memo) {
-        String a = (String) card(asn).get("asn");
+        assign(asn, workOrderNo, equipmentId, validFrom, memo, true);
+    }
+
+    /**
+     * checkCard = false pour une carte que la station vient de créer sur Center et qui n'est pas encore recopiée
+     * dans ses tables de cartes (création et mise à jour des cartes employé).
+     */
+    public static void assign(String asn, String workOrderNo, Integer equipmentId, LocalDateTime validFrom, String memo, boolean checkCard) {
+        String a = checkCard ? (String) card(asn).get("asn") : asn == null ? "" : asn.trim();
+        if (a.isEmpty()) {
+            throw new IllegalStateException("N° de carte manquant");
+        }
         String no = normalize(workOrderNo);
         if (equipmentId != null && no == null) {
             no = (String) equipment(equipmentId).get("work_order_no");
@@ -237,6 +248,23 @@ public final class WorkOrderData {
         }
         exec("INSERT INTO card_work_order (asn, work_order_no, equipment_id, valid_from, memo, create_by) VALUES (:a, :no, :eq, :f, :m, :by)",
                 p("a", a, "no", no, "eq", equipmentId, "f", from, "m", memo == null || memo.isBlank() ? null : memo.trim(), "by", IniInfo.LoginName));
+    }
+
+    /** Ordre en cours d'une carte (null s'il n'y en a pas). */
+    public static Map<String, Object> current(String asn) {
+        return one("SELECT wo.*, eq.name AS equipment_name FROM card_work_order wo LEFT JOIN equipment eq ON eq.id = wo.equipment_id "
+                + "WHERE wo.asn = :a AND wo.valid_to IS NULL", p("a", asn == null ? "" : asn.trim()));
+    }
+
+    /** Équipements pour une liste déroulante : ID (0 = aucun) et libellé « désignation · OT n° ». */
+    public static List<com.ltstation.center.legacy.Row> equipmentItems() {
+        List<com.ltstation.center.legacy.Row> items = new java.util.ArrayList<>();
+        items.add(com.ltstation.center.legacy.Row.of("ID", 0, "Text", ""));
+        for (Map<String, Object> e : equipments("")) {
+            String no = str(e.get("work_order_no"));
+            items.add(com.ltstation.center.legacy.Row.of("ID", e.get("id"), "Text", e.get("name") + (no.isEmpty() ? "" : " · OT " + no)));
+        }
+        return items;
     }
 
     /** Fin de l'ordre en cours d'une carte. */

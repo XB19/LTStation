@@ -61,12 +61,48 @@
    "order": 1
   },
   {
-   "name": "label1",
-   "type": "Label",
+   "name": "SearchRow",
+   "type": "Panel",
    "parent": "ToolBox",
    "loc": [
-    14,
-    28
+    3,
+    17
+   ],
+   "size": [
+    1166,
+    40
+   ],
+   "text": "",
+   "dock": "top",
+   "visible": true,
+   "z": 0,
+   "order": 1
+  },
+  {
+   "name": "ButtonRow",
+   "type": "Panel",
+   "parent": "ToolBox",
+   "loc": [
+    3,
+    57
+   ],
+   "size": [
+    1166,
+    44
+   ],
+   "text": "",
+   "dock": "fill",
+   "visible": true,
+   "z": 0,
+   "order": 0
+  },
+  {
+   "name": "label1",
+   "type": "Label",
+   "parent": "SearchRow",
+   "loc": [
+    10,
+    12
    ],
    "size": [
     80,
@@ -76,33 +112,33 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 3
+   "order": 5
   },
   {
    "name": "SearchBox",
    "type": "TextBox",
-   "parent": "ToolBox",
+   "parent": "SearchRow",
    "loc": [
-    98,
-    22
+    94,
+    6
    ],
    "size": [
-    300,
+    320,
     23
    ],
    "text": "",
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 4
+   "order": 6
   },
   {
    "name": "SearchBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "SearchRow",
    "loc": [
-    408,
-    19
+    424,
+    3
    ],
    "size": [
     110,
@@ -112,7 +148,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 5,
+   "order": 7,
    "style": {
     "back": "transparent"
    }
@@ -120,10 +156,10 @@
   {
    "name": "label2",
    "type": "Label",
-   "parent": "ToolBox",
+   "parent": "SearchRow",
    "loc": [
-    530,
-    28
+    546,
+    12
    ],
    "size": [
     560,
@@ -133,15 +169,15 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 6
+   "order": 8
   },
   {
    "name": "AddBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    14,
-    60
+    10,
+    6
    ],
    "size": [
     100,
@@ -151,7 +187,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 7,
+   "order": 9,
    "style": {
     "back": "transparent"
    }
@@ -159,10 +195,10 @@
   {
    "name": "EditBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    122,
-    60
+    118,
+    6
    ],
    "size": [
     100,
@@ -172,7 +208,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 8,
+   "order": 10,
    "style": {
     "back": "transparent"
    }
@@ -180,10 +216,10 @@
   {
    "name": "DeleteBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    230,
-    60
+    226,
+    6
    ],
    "size": [
     100,
@@ -193,7 +229,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 9,
+   "order": 11,
    "style": {
     "back": "transparent"
    }
@@ -201,10 +237,10 @@
   {
    "name": "CardsBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    338,
-    60
+    334,
+    6
    ],
    "size": [
     200,
@@ -214,7 +250,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 10,
+   "order": 12,
    "style": {
     "back": "transparent"
    }
@@ -222,10 +258,10 @@
   {
    "name": "ConsumptionBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    546,
-    60
+    542,
+    6
    ],
    "size": [
     170,
@@ -235,7 +271,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 11,
+   "order": 13,
    "style": {
     "back": "transparent"
    }
@@ -243,10 +279,10 @@
   {
    "name": "ImportBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    724,
-    60
+    720,
+    6
    ],
    "size": [
     140,
@@ -256,7 +292,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 12,
+   "order": 14,
    "style": {
     "back": "transparent"
    }
@@ -264,10 +300,10 @@
   {
    "name": "TemplateBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    872,
-    60
+    868,
+    6
    ],
    "size": [
     120,
@@ -277,7 +313,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 13,
+   "order": 15,
    "style": {
     "back": "transparent"
    }
@@ -285,10 +321,10 @@
   {
    "name": "ExportBtn",
    "type": "SkinButton",
-   "parent": "ToolBox",
+   "parent": "ButtonRow",
    "loc": [
-    1000,
-    60
+    996,
+    6
    ],
    "size": [
     100,
@@ -298,7 +334,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 14,
+   "order": 16,
    "style": {
     "back": "transparent"
    }
@@ -350,7 +386,7 @@
    "dock": null,
    "visible": true,
    "z": 0,
-   "order": 16
+   "order": 18
   }
  ],
  "columns": {

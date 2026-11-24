@@ -6692,6 +6692,99 @@
    "visible": true,
    "z": 1,
    "order": 1
+  },
+  {
+   "name": "labelEmpWorkOrder",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    25,
+    108
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Ordre de travail",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 60
+  },
+  {
+   "name": "EmpWorkOrder",
+   "type": "TextBox",
+   "parent": "groupBox3",
+   "loc": [
+    95,
+    105
+   ],
+   "size": [
+    215,
+    21
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 61
+  },
+  {
+   "name": "labelEmpEquipment",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    316,
+    108
+   ],
+   "size": [
+    65,
+    12
+   ],
+   "text": "Équipement",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 62
+  },
+  {
+   "name": "EmpEquipment",
+   "type": "SkinComboBox",
+   "parent": "groupBox3",
+   "loc": [
+    384,
+    105
+   ],
+   "size": [
+    473,
+    22
+   ],
+   "text": "",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 63
+  },
+  {
+   "name": "EmpWorkOrderBtn",
+   "type": "SkinButton",
+   "parent": "groupBox3",
+   "loc": [
+    868,
+    101
+   ],
+   "size": [
+    190,
+    28
+   ],
+   "text": "Historique des ordres",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 64,
+   "style": {
+    "back": "transparent"
+   }
   }
  ],
  "columns": {},
@@ -6734,6 +6827,12 @@
   },
   "ChildLimitType": {
    "SelectedIndexChanged": "LimitType_SelectedIndexChanged"
+  },
+  "EmpEquipment": {
+   "SelectedIndexChanged": "EmpEquipment_SelectedIndexChanged"
+  },
+  "EmpWorkOrderBtn": {
+   "Click": "EmpWorkOrderBtn_Click"
   }
  },
  "menus": {}
