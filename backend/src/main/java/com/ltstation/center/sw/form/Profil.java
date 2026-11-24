@@ -103,7 +103,8 @@ public final class Profil {
     private static final Set<String> COMMON = Set.of("Login", "Station", "PWDInput", "ProBar");
 
     private static final Set<String> SAISIE_FORMS = Set.of("CardMake", "CardUpDate", "CardLost", "EmpLost", "CardChange", "Deposit",
-        "CardLog", "OilTransacation");
+        // CardWorkOrder : « Historique des ordres » des fenêtres de carte (ordre de travail des cartes employé)
+        "CardLog", "OilTransacation", "CardWorkOrder");
 
     private static final Set<String> CONSULTATION_FORMS = Set.of("Deposit", "CardLog", "OilTransacation", "ShiftForm", "RDaily",
         "DailyClose", "MonthClose", "BusinessReportMess");
