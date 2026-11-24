@@ -277,6 +277,8 @@ public final class BaseFunction {
      * réponse. En cas d'échec réseau, renvoie une réponse vide (Result = false), comme l'original.
      */
     public static CustomerRespone HttpPost(String url, String postData) {
+        // Profils Opérateur de saisie / Consultation : pas de recharge ni de modification (voir Profil)
+        com.ltstation.center.sw.form.Profil.checkCenterCall(url);
         try {
             Map<String, Object> body = new LinkedHashMap<>();
             body.put("Result", true);

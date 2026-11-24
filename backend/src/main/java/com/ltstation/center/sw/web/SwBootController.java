@@ -9,6 +9,7 @@ import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.MultiLanguage;
 import com.ltstation.center.sw.core.SW;
 import com.ltstation.center.sw.engine.StationEngine;
+import com.ltstation.center.sw.form.Profil;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -59,6 +60,8 @@ public class SwBootController {
 
     @GetMapping("/boot")
     public Map<String, Object> boot() {
+        // Postes déjà installés : profils Opérateur de saisie et Consultation ajoutés s'ils manquent
+        Profil.ensureProfiles();
         Map<String, Object> m = new LinkedHashMap<>();
         Row st = db().first("Stations");
         int valid = st == null ? -1 : BaseFunction.GetStationValid(st.s("Code"));
@@ -254,6 +257,8 @@ public class SwBootController {
         if (IniInfo.NormalType == 2) {
             v.removeAll(List.of("AppItem", "RFIDItem", "PriceDisplay", "DisplayPay", "RegisiterValid", "VirtueScore", "TankPortItem"));
         }
-        return v;
+        // Profils Opérateur de saisie / Consultation : seulement leurs boutons et menus
+        List<String> restricted = Profil.mainVisible(Profil.of(auth.s("AuthorityContent")), v);
+        return restricted == null ? v : restricted;
     }
 }

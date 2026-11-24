@@ -72,6 +72,8 @@ public class SwFormController {
         // Fenêtres de l'assistant d'installation : ouvertes sans connexion tant que la station n'est pas enregistrée
         if (!registry.anonymous(name) && !(registry.setup(name) && !SwBootController.registered())) {
             SwBootController.requireLogin(session);
+            // Profils Opérateur de saisie / Consultation : fenêtres prévues seulement
+            Profil.checkOpen(name);
         }
         SwForm f = registry.create(name);
         f.id = UUID.randomUUID().toString();
@@ -264,7 +266,12 @@ public class SwFormController {
         f.suspendCounter = 0;
         Map<String, Object> suspend = null;
         String error = null;
+        Profil.enterUi();
         try {
+            String refused = Profil.deny(f, handler);
+            if (refused != null) {
+                throw new SwException(refused);
+            }
             if ("init".equals(handler)) {
                 f.init();
             } else if ("$continue".equals(handler)) {
@@ -299,6 +306,13 @@ public class SwFormController {
         } finally {
             // Transaction restée ouverte (question en attente, exception) : annulée
             com.ltstation.center.sw.core.SW.db().rollbackOpen();
+        }
+        try {
+            Profil.apply(f, full && !"init".equals(handler));
+        } catch (RuntimeException ex) {
+            LOG.warn("{} : profil non appliqué", f.formName, ex);
+        } finally {
+            Profil.leaveUi();
         }
         Map<String, Object> out = state(f, full, suspend, error);
         // Modifications de la fenêtre propriétaire faites par l'enfant (événements TransferConfirm…) : renvoyées tout de suite

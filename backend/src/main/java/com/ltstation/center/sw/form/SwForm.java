@@ -421,6 +421,7 @@ public abstract class SwForm {
      * imprimante, le ticket est proposé à l'impression dans le navigateur (dialogue d'impression).
      */
     protected void PrintTicket(com.ltstation.center.sw.hw.PrintClass pc) {
+        Profil.checkExport(this);
         if (!pc.Print()) {
             Print(pc.lines());
         }
@@ -480,6 +481,7 @@ public abstract class SwForm {
 
     /** Fichier à télécharger par le client (export Excel, impression…). */
     protected void Download(String fileName, String contentType, byte[] data) {
+        Profil.checkExport(this);
         messages.add(Map.of("download", fileName, "contentType", contentType, "data", java.util.Base64.getEncoder().encodeToString(data)));
     }
 
@@ -498,6 +500,7 @@ public abstract class SwForm {
 
     /** Impression d'un ticket (lignes de texte) sur l'imprimante du poste. */
     protected void Print(List<String> lines) {
+        Profil.checkExport(this);
         messages.add(Map.of("print", lines));
     }
 

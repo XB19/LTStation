@@ -1,6 +1,7 @@
 package com.ltstation.center.sw.forms;
 
 import com.ltstation.center.legacy.Row;
+import com.ltstation.center.sw.form.Profil;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
@@ -60,7 +61,8 @@ public class Authority extends SwForm {
                 text.append(t, 0, t.indexOf('.')).append(',');
             }
         }
-        a.put("AuthorityContent", text.toString());
+        // Mode Opérateur de saisie / Consultation du profil conservé (il ne correspond à aucune case)
+        a.put("AuthorityContent", text + Profil.tokens(a.str("AuthorityContent")));
         db().update("AuthorityMess", a);
         MessageBox(L("OperateSuccess"));
     }

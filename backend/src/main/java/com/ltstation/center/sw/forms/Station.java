@@ -10,6 +10,7 @@ import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.MultiLanguage;
 import com.ltstation.center.sw.engine.StationEngine;
 import com.ltstation.center.sw.engine.SupervisionFunction;
+import com.ltstation.center.sw.form.Profil;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import com.ltstation.center.sw.hw.CameraFtpServer;
@@ -152,6 +153,19 @@ public class Station extends SwForm {
                 c("CarNoManager").Visible(true);
                 c("CarNoVerify").Visible(true);
                 c("SurveillanceCamera").Visible(true);
+            }
+            // Profils Opérateur de saisie / Consultation : seulement leurs boutons et menus
+            List<String> shown = new ArrayList<>();
+            for (String n : Profil.MAIN_ITEMS) {
+                if (c(n).Visible()) {
+                    shown.add(n);
+                }
+            }
+            List<String> restricted = Profil.mainVisible(Profil.current(), shown);
+            if (restricted != null) {
+                for (String n : Profil.MAIN_ITEMS) {
+                    c(n).Visible(restricted.contains(n));
+                }
             }
         } catch (RuntimeException ignored) {
             // comme l'original
