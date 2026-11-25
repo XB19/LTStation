@@ -111,6 +111,8 @@ app:
   upload-dir: ${UPLOAD_DIR:./uploads}
   # Origine du frontend en développement (Vite)
   cors-origins: ${CORS_ORIGINS:http://localhost:5173}
+  # Journal de diagnostic (logback-spring.xml) : dossier « Journaux » du poste, donné par l'application de bureau
+  log-dir: ${LTSTATION_LOG_DIR:logs}
 
 logging:
   level:

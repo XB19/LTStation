@@ -78,6 +78,7 @@ public class SwFormController {
         SwForm f = registry.create(name);
         f.id = UUID.randomUUID().toString();
         f.formName = name;
+        LOG.info("Fenêtre ouverte : {} {}", name, body.getOrDefault("args", ""));
         f.layout = Layouts.get(name);
         if (body.get("args") instanceof Map<?, ?> a) {
             f.args.putAll((Map<String, Object>) a);
@@ -184,6 +185,7 @@ public class SwFormController {
         if (f == null) {
             return Map.of("close", "Cancel");
         }
+        LOG.info("Fenêtre fermée : {}", f.formName);
         synchronized (f.lock()) {
             Map<String, String> ev = new LinkedHashMap<>(f.layout.events().getOrDefault("$this", Map.of()));
             // FormClosed += … branché dans le code
@@ -261,6 +263,15 @@ public class SwFormController {
      * produits sont abandonnés : le client rejoue l'événement complet avec la réponse.
      */
     private static Map<String, Object> run(SwForm f, String handler, Map<String, Object> body, boolean full) {
+        // Journal : chaque action de l'utilisateur ; les minuteries (quiet) seulement en DEBUG pour ne pas noyer le fichier
+        if (!handler.isEmpty() && !"$continue".equals(handler)) {
+            String sender = String.valueOf(body.getOrDefault("sender", ""));
+            if (Boolean.TRUE.equals(body.get("quiet"))) {
+                LOG.debug("{}.{} ({})", f.formName, handler, sender);
+            } else {
+                LOG.info("Action : {}.{}{}", f.formName, handler, sender.isEmpty() ? "" : " (" + sender + ")");
+            }
+        }
         applyClient(f, body);
         f.handler = handler;
         f.suspendCounter = 0;
@@ -292,6 +303,7 @@ public class SwFormController {
                 f.messages.clear();
             } else if (t instanceof SwException se) {
                 error = se.getMessage();
+                LOG.warn("{}.{} refusé : {}", f.formName, handler, error);
             } else {
                 error = t.getMessage() == null ? t.getClass().getSimpleName() : t.getMessage();
                 LOG.error("{}.{}", f.formName, handler, t);
@@ -301,8 +313,14 @@ public class SwFormController {
             f.messages.clear();
         } catch (SwException se) {
             error = se.getMessage();
+            LOG.warn("{}.{} refusé : {}", f.formName, handler, error);
         } catch (ReflectiveOperationException ex) {
             error = ex.getMessage();
+            LOG.error("{}.{}", f.formName, handler, ex);
+        } catch (RuntimeException ex) {
+            // Erreur dans init() ou resume() : journalisée avec la pile, puis renvoyée comme avant
+            LOG.error("{}.{}", f.formName, handler, ex);
+            throw ex;
         } finally {
             // Transaction restée ouverte (question en attente, exception) : annulée
             com.ltstation.center.sw.core.SW.db().rollbackOpen();

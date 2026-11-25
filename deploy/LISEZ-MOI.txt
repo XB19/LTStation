@@ -48,5 +48,7 @@ Avant de brancher : installer les pilotes du fabricant (lecteur de cartes, câbl
 EN CAS DE PROBLÈME
 ------------------
 Noter : l'écran, l'action faite, le message exact (une photo suffit), l'heure.
-Joindre les journaux du jour :  %APPDATA%\LTStation Station\data\logs
-(touches Windows + R, coller ce chemin, Entrée), et installation.log s'il existe.
+Joindre les journaux du jour : dans le logiciel, menu Station > « Dossier des journaux (diagnostic) ».
+C'est le dossier Journaux de l'installation :  %LOCALAPPDATA%\Programs\LTStation Station\Journaux
+(touches Windows + R, coller ce chemin, Entrée ; sinon %APPDATA%\LTStation Station\data\Journaux).
+Envoyer LTStation-AAAA-MM-JJ.log et Bureau-AAAA-MM-JJ.log du jour du problème, et installation.log s'il existe.

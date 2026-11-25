@@ -12,7 +12,44 @@ const configFile = () => path.join(app.getPath('userData'), 'config.json')
 /** Dossier de travail du serveur intégré : .env (base de données), station/ (réglages, impressions, exports), logs/. */
 const dataDir = () => path.join(app.getPath('userData'), 'data')
 const envFile = () => path.join(dataDir(), '.env')
-const logFile = () => path.join(dataDir(), 'logs', 'server.log')
+
+/**
+ * Journaux de diagnostic : dossier « Journaux » à côté de LTStation Station.exe (installation par utilisateur,
+ * modifiable) ; à défaut, data\Journaux. Le serveur y écrit LTStation-AAAA-MM-JJ.log (fenêtres, actions,
+ * messages, appels au Center, erreurs), l'application Bureau-AAAA-MM-JJ.log et la sortie brute serveur-console.log.
+ */
+let logDirCache = null
+function logDir() {
+  if (logDirCache) return logDirCache
+  const candidates = app.isPackaged ? [path.join(path.dirname(process.execPath), 'Journaux')] : []
+  candidates.push(path.join(dataDir(), 'Journaux'))
+  for (const dir of candidates) {
+    try {
+      fs.mkdirSync(dir, { recursive: true })
+      fs.accessSync(dir, fs.constants.W_OK)
+      logDirCache = dir
+      return dir
+    } catch {
+      // dossier non modifiable (installation dans Program Files) : suivant
+    }
+  }
+  logDirCache = app.getPath('temp')
+  return logDirCache
+}
+const logFile = () => path.join(logDir(), 'serveur-console.log')
+
+/** Une ligne dans Bureau-AAAA-MM-JJ.log (démarrage, serveur, pages en échec, plantages). */
+function journal(level, text) {
+  const now = new Date()
+  const pad = (n, w = 2) => String(n).padStart(w, '0')
+  const day = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
+  const time = `${day} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}.${pad(now.getMilliseconds(), 3)}`
+  try {
+    fs.appendFileSync(path.join(logDir(), `Bureau-${day}.log`), `${time} ${level.padEnd(5)} ${text}\r\n`)
+  } catch {
+    // journal indisponible : sans effet sur l'application
+  }
+}
 
 const DEFAULTS = { mode: 'local', serverUrl: 'http://localhost:8080', port: 8080 }
 
@@ -111,7 +148,8 @@ function startServer(cfg) {
   serverLog = ''
   server = spawn(java, ['-Dfile.encoding=UTF-8', '-jar', jar], {
     cwd: dataDir(),
-    env: { ...process.env, SERVER_PORT: String(cfg.port), LTSTATION_MIFARE_HELPER: path.join(mifareDir(), 'mwrf-helper.exe') },
+    env: { ...process.env, SERVER_PORT: String(cfg.port), LTSTATION_MIFARE_HELPER: path.join(mifareDir(), 'mwrf-helper.exe'),
+      LTSTATION_LOG_DIR: logDir() },
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
   })
@@ -121,7 +159,9 @@ function startServer(cfg) {
   }
   server.stdout.on('data', keep)
   server.stderr.on('data', keep)
-  server.on('exit', () => {
+  journal('INFO', `Serveur intégré démarré (port ${cfg.port}, java ${java})`)
+  server.on('exit', (code) => {
+    journal(quitting ? 'INFO' : 'ERROR', `Serveur intégré arrêté (code ${code})` + (quitting ? '' : ` ; dernières lignes :\r\n${serverLog.slice(-3000)}`))
     server = null
     try { fs.closeSync(out) } catch { /* déjà fermé */ }
   })
@@ -205,8 +245,14 @@ function createWindow() {
 
   win.webContents.on('did-fail-load', (_e, code, desc, url) => {
     if (!url || url.startsWith('file:')) return
+    journal('ERROR', `Page injoignable : ${url} (${desc || code})`)
     if (readConfig().mode === 'local') showSetup(`Serveur intégré injoignable (${desc || code})`)
     else showSettings(`Serveur injoignable (${desc || code}) : ${url}`)
+  })
+
+  win.webContents.on('render-process-gone', (_e, d) => journal('ERROR', `Fenêtre plantée : ${d.reason} (code ${d.exitCode})`))
+  win.webContents.on('console-message', (_e, level, message, line, source) => {
+    if (level >= 3) journal('ERROR', `Console : ${message} (${source}:${line})`)
   })
 
   openStation()
@@ -263,7 +309,7 @@ function menu() {
       submenu: [
         { label: 'Base de données (serveur intégré)…', click: async () => { await stopServer(); showSetup() } },
         { label: 'Adresse du serveur (serveur distant)…', click: () => showSettings() },
-        { label: 'Journal du serveur', click: () => shell.openPath(logFile()) },
+        { label: 'Dossier des journaux (diagnostic)', click: () => shell.openPath(logDir()) },
         { label: 'Dossier des données', click: () => shell.openPath(dataDir()) },
         { label: 'Recharger', accelerator: 'F5', click: () => openStation() },
         { label: 'CardMake (cartes)', click: () => win.loadURL(stationUrl(readConfig()) + '?cardmake=1').catch(() => {}) },
@@ -288,6 +334,9 @@ if (!app.requestSingleInstanceLock()) {
   })
   app.whenReady().then(async () => {
     fs.mkdirSync(dataDir(), { recursive: true })
+    const cfg = readConfig()
+    journal('INFO', `LTStation Station ${app.getVersion()} démarré (${process.platform} ${process.getSystemVersion()}, mode ${cfg.mode}, `
+      + `${cfg.mode === 'local' ? 'port ' + cfg.port : cfg.serverUrl}, données ${dataDir()})`)
     await clearCacheAfterUpdate()
     menu()
     createWindow()
@@ -305,5 +354,6 @@ app.on('before-quit', (e) => {
 app.on('window-all-closed', () => app.quit())
 
 process.on('uncaughtException', (err) => {
+  journal('ERROR', `Erreur de l'application : ${err && err.stack ? err.stack : err}`)
   dialog.showErrorBox('LTStation Station', String(err && err.stack ? err.stack : err))
 })

@@ -279,6 +279,7 @@ public final class BaseFunction {
     public static CustomerRespone HttpPost(String url, String postData) {
         // Profils Opérateur de saisie / Consultation : pas de recharge ni de modification (voir Profil)
         com.ltstation.center.sw.form.Profil.checkCenterCall(url);
+        String action = url == null ? "" : url.substring(url.lastIndexOf('/') + 1);
         try {
             Map<String, Object> body = new LinkedHashMap<>();
             body.put("Result", true);
@@ -291,11 +292,27 @@ public final class BaseFunction {
             HttpResponse<String> res = HTTP.send(req, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
             Row r = Wire.parseRow(res.body());
             if (r == null) {
+                centerFailure(action, url, "réponse illisible (HTTP " + res.statusCode() + ")");
                 return CustomerRespone.empty();
             }
+            CENTER_LOG.debug("Center {} : {}", action, r.b("Result") ? "OK" : "refusé");
             return new CustomerRespone(r.b("Result"), r.str("Mess"), r.i("TotalCount"), r.dec("TotalAmount"), r.i("TotalPage"));
         } catch (Exception e) {
+            centerFailure(action, url, e.getClass().getSimpleName() + (e.getMessage() == null ? "" : " : " + e.getMessage()));
             return CustomerRespone.empty();
+        }
+    }
+
+    private static final org.slf4j.Logger CENTER_LOG = org.slf4j.LoggerFactory.getLogger("Center");
+    private static final Map<String, Long> LAST_FAILURE = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /** Center injoignable : journalisé une fois par 5 minutes et par appel (les envois automatiques réessaient en boucle). */
+    private static void centerFailure(String action, String url, String reason) {
+        long now = System.currentTimeMillis();
+        Long last = LAST_FAILURE.get(action);
+        if (last == null || now - last > 300_000) {
+            LAST_FAILURE.put(action, now);
+            CENTER_LOG.warn("Appel au Center en échec : {} ({}) : {}", action, url, reason);
         }
     }
 

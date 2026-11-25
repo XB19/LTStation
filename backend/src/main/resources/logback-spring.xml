@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Journal de diagnostic : un fichier par jour, LTStation-AAAA-MM-JJ.log, dans app.log-dir
+  (dossier « Journaux » de l'application installée, voir desktop/main.js ; « logs » en développement).
+  On y trouve le démarrage, les fenêtres ouvertes, les actions, les messages affichés, les appels au Center et les erreurs complètes.
+  30 jours conservés, 300 Mo au plus.
+-->
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <springProperty scope="context" name="LOG_DIR" source="app.log-dir" defaultValue="logs"/>
+
+    <appender name="JOURNAL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/LTStation-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>300MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="JOURNAL"/>
+    </root>
+</configuration>

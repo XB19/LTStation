@@ -61,6 +61,7 @@ public abstract class SwForm {
     }
 
     protected void SessionLogin(int employeeId) {
+        JOURNAL.info("Connexion de l'employé {} ({})", employeeId, com.ltstation.center.sw.core.IniInfo.LoginName);
         if (session != null) {
             session.setAttribute(com.ltstation.center.sw.web.SwBootController.SESSION_KEY, employeeId);
         }
@@ -266,11 +267,16 @@ public abstract class SwForm {
 
     /** MessageBox.Show(texte) */
     protected void MessageBox(String text) {
+        JOURNAL.info("Message affiché [{}] : {}", formName, text);
         messages.add(Map.of("text", dotNet(text)));
     }
 
+    /** Journal de diagnostic (messages affichés, connexions). */
+    private static final org.slf4j.Logger JOURNAL = org.slf4j.LoggerFactory.getLogger("Station");
+
     /** MessageBox.Show(texte, titre) */
     protected void MessageBox(String text, String caption) {
+        JOURNAL.info("Message affiché [{}] {} : {}", formName, caption, text);
         messages.add(Map.of("text", dotNet(text), "caption", caption == null ? "" : caption));
     }
 

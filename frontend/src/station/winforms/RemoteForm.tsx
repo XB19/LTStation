@@ -309,7 +309,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
       try {
         for (;;) {
           const { data } = await http.post<FormState>(`/sw/form/${idRef.current}/event`,
-            { handler, sender, e, values: clientValues(), grids: clientGrids(), answers,
+            { handler, sender, e, quiet, values: clientValues(), grids: clientGrids(), answers,
               ownerValues: parent ? live.get(parent)?.values() : undefined })
           if (data.owner) live.get(data.owner.id)?.apply(data.owner)
           const q = await apply(data)
