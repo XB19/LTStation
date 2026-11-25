@@ -26,7 +26,8 @@ public class AddAuthority extends SwForm {
         }
         Integer max = db().scalar(db().sql("AuthorityMess", "SELECT MAX({User_IDMess}) FROM [AuthorityMess]"), null, Integer.class);
         if (max == null) {
-            throw new IllegalStateException("Sequence contains no elements");
+            // Aucun profil encore : le premier porte le n° 1
+            max = 0;
         }
         db().insert("AuthorityMess", Row.of("Name", text, "User_IDMess", max + 1, "AuthorityContent", text2.toString()));
         MessageBox(L("OperateSuccess"));

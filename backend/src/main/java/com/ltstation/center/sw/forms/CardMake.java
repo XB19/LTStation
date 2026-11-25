@@ -48,6 +48,8 @@ public class CardMake extends CardFormBase {
             }
             GetStation();
             c("CardSelect").SelectedIndex(1);
+            // WinForms déclenche SelectedIndexChanged quand le code change l'index : boutons d'initialisation affichés selon le fabricant
+            CardSelect_SelectedIndexChanged();
             c("CardTool").SelectedIndex(0);
             c("CardNoColor").SelectedIndex(0);
             c("CardNoType").SelectedIndex(0);
@@ -61,10 +63,31 @@ public class CardMake extends CardFormBase {
             for (String n : LIMIT_FIELDS) {
                 On(n, "TextChanged", "SkinTxt_TextChanged");
             }
+            // LTStation : seule la carte employé se crée ici (onglets utilisateur, groupe, crédit et secondaire retirés)
+            for (String page : OTHER_PAGES) {
+                c(page).Visible(false);
+            }
+            c("CardTool").SelectedIndex(EMPLOYEE_PAGE);
+            CardTool_SelectedIndexChanged();
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
             Close();
         }
+    }
+
+    /** Onglet Carte employé (CardTool) ; les autres onglets ne sont plus proposés. */
+    private static final int EMPLOYEE_PAGE = 1;
+    private static final String[] OTHER_PAGES = {"PersonPage", "PersonGroup", "CreditCard", "GroupChilrdCard"};
+    /** Boutons des onglets retirés : refusés même s'ils sont appelés directement. */
+    private static final java.util.Set<String> OTHER_BUTTONS = java.util.Set.of("PersonButton", "GroupButton", "CreditButton", "ChilrenConfirm",
+        "PersonInitButton", "GroupIniButton", "CreditIniButton", "ChilrenInit");
+
+    private boolean otherCardButton() {
+        if (OTHER_BUTTONS.contains(sender)) {
+            MessageBox("Seule la carte employé peut être créée ici");
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -240,6 +263,9 @@ public class CardMake extends CardFormBase {
                 m.get("EmployeeID"), "PosUse", m.b("PosUse"));
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CreateCardPre", Wire.json(obj2));
             if (!r.Result()) {
+                // L'original s'arrêtait sans message : la raison donnée par Center est affichée
+                String why = r.Mess() == null || r.Mess().isEmpty() ? "" : BaseFunction.DecryptByAES(r.Mess());
+                MessageBox(L("CardMakeError") + "-" + (why == null || why.isEmpty() ? "Center ne répond pas" : why));
                 return;
             }
             Row cardMessage = SW.dto().shape("CardMessage", Wire.parseRow(BaseFunction.DecryptByAES(r.Mess())));
@@ -392,6 +418,9 @@ public class CardMake extends CardFormBase {
     /** EmployeeConfirm, PersonButton, GroupButton, CreditButton, ChilrenConfirm. */
     public void EmployeeConfirm_Click() {
         String btn = sender;
+        if (otherCardButton()) {
+            return;
+        }
         try {
             if (!Regular(btn)) {
                 throw new IllegalStateException(L("FormatError"));
@@ -998,6 +1027,9 @@ public class CardMake extends CardFormBase {
     }
 
     public void PersonInitButton_Click() {
+        if (otherCardButton()) {
+            return;
+        }
         try {
             Ini_CardSelect = c("CardSelect").SelectedIndex();
             Card_Init();

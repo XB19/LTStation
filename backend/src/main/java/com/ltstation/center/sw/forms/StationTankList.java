@@ -111,7 +111,8 @@ public class StationTankList extends SwForm {
         try {
             Integer max = db().scalar(db().sql("tankConfig", "SELECT MAX({ID}) FROM [tankConfig]"), null, Integer.class);
             if (max == null) {
-                throw new IllegalStateException("Sequence contains no elements");
+                // Aucune cuve encore (poste neuf) : la première cuve porte le n° 1
+                max = 0;
             }
             db().insert("tankConfig", Row.of("ID", max + 1, "OilCode", Conv.toInt(gradeSpecifics.get(0).get("Code")), "Height", 0.0, "Vol", 0.0,
                 "OilUpper", 0.0, "OilLower", 0.0, "WaterUpper", 0.0, "LowerTemp", 0.0, "OilOverFlow", 0.0, "MonitorID", 1, "OutLimit", 0.0,

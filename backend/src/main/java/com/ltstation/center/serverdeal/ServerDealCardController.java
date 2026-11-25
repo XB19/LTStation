@@ -1205,4 +1205,147 @@ public class ServerDealCardController extends ServerDealBase {
             return err(ex);
         }
     }
+
+    // ------------------------------------------------------------ création de carte depuis le logiciel Station
+
+    /** Prochain ASN (20 chiffres) d'une série : max + 1, ou le premier numéro de la série. */
+    private String nextAsn(String table, String prefix, String first) {
+        String max = db.scalar("SELECT max(asn) FROM " + table + " WHERE left(asn, 6) = :p AND length(asn) = 20", p("p", prefix), String.class);
+        return max == null ? first : String.format("%020d", Long.parseLong(max) + 1);
+    }
+
+    /** Prochain identifiant d'une plage : max + 1 dans ]lo, hi], ou lo + 1. */
+    private long nextId(String sql, long lo, long hi) {
+        Long max = db.scalar(sql, p("lo", lo, "hi", hi), Long.class);
+        long next = (max == null ? lo : max) + 1;
+        if (next > hi) {
+            throw fail("Plus aucun numéro de compte disponible pour ce type de carte");
+        }
+        return next;
+    }
+
+    /**
+     * CreateCardPre (fenêtre Création de carte du logiciel Station) : la carte est créée sur Center avant d'être écrite ;
+     * renvoie ASN, compte (AccountNo) et identifiant (CusID). En cas d'échec d'écriture, le logiciel appelle CardRollDelete.
+     */
+    @RequestMapping("/CreateCardPre")
+    public String CreateCardPre(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                Row m = req(body);
+                Row st = db.first("Stations", "{StationID} = :s", p("s", m.i("OpenStationID")));
+                if (st == null) {
+                    throw fail("Station inconnue : vérifier les informations de la station");
+                }
+                String type = m.str("CardType");
+                Row out = switch (type) {
+                    case "010004", "010006" -> preEmployeeCard(m, st, type);
+                    case "010001", "010011" -> preCustomerCard(m, st, type);
+                    default -> throw fail("La création de ce type de carte (" + type + ") depuis le logiciel Station n'est pas encore disponible");
+                };
+                tx.commit();
+                return okJson(out);
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
+
+    /** Carte employé (010004) ou de maintenance (010006) : EmployeeCardInfos + CustomerAccounts (comme CreateEmployeeCardInfo). */
+    private Row preEmployeeCard(Row m, Row st, String type) {
+        boolean emp = "010004".equals(type);
+        Row employee = db.first("Employees", "{EmployeeID} = :e", p("e", m.i("EmployeeID")));
+        if (employee == null) {
+            throw fail("L'employé n'existe pas sur Center");
+        }
+        String asn = nextAsn("employee_card_infos", type, emp ? "01000411000000000001" : "01000611000000000001");
+        long id = nextId("SELECT max(customer_account_id) FROM customer_accounts WHERE customer_account_id > :lo AND customer_account_id <= :hi",
+            emp ? 2000000000L : 1600000000L, emp ? 2099999999L : 1699999999L);
+        LocalDateTime now = LocalDateTime.now();
+        Row opener = db.first("Employees", "{EmployeeID} = :e", p("e", m.i("OpenEmpID")));
+        db.insert("CustomerAccounts", newAccount(id, String.valueOf(id), 0.0));
+        db.insert("EmployeeCardInfos", Row.of("ASN", asn, "EmployeeID", employee.i("EmployeeID"), "CardTypeID", emp ? 4 : 6,
+            "CipherFlg", m.str("Pass"), "IssueDatetime", now, "ValidDatetime", now.plusYears(5), "CustomerAccountID", id,
+            "CardStatusTypeID", 0, "StationID", st.i("StationID"), "SpecialPrice", m.str("SpecialPrice"),
+            "OpenAccounEmpName", opener == null ? "" : opener.str("Name"), "OpenStationID", st.i("StationID"), "CompanyID", st.i("CompanyID")));
+        db.insert("AccountServiceLogs", accountLog(asn, 0.0, String.valueOf(id), 0.0, emp ? 4 : 6, m.i("OpenEmpID"), st.i("StationID"), 1, "20"));
+        db.insert("WhiteCardLists", Row.of("ASN", asn, "ValidateTime", now.plusYears(5), "StationID", st.i("StationID")));
+        bumpWhite();
+        return Row.of("ASN", asn, "AccountNo", String.valueOf(id), "CusID", id, "GroupID", "");
+    }
+
+    /** Carte utilisateur (010001) ou crédit (010011) : Customers + CustomerCardInfos + CustomerAccounts ; sans groupe, groupe « Particulier » (100000001). */
+    private Row preCustomerCard(Row m, Row st, String type) {
+        boolean credit = "010011".equals(type);
+        if (!m.str("CNO").isEmpty() && !checkTypeAndNo(m.i("CNOType"), m.str("CNO"))) {
+            throw fail("Ce numéro de pièce d'identité est déjà utilisé");
+        }
+        String asn = nextAsn("customer_card_infos", type, credit ? "01001111000000000001" : "01000111000000000001");
+        long id = credit ? Long.parseLong("17" + asn.substring(asn.length() - 8))
+            : nextId("SELECT max(customer_account_id) FROM customer_accounts WHERE customer_account_id > :lo AND customer_account_id <= :hi",
+                2100000000L, 2199999999L);
+        if (db.any("CustomerAccounts", "{CustomerAccountID} = :c", p("c", id))) {
+            throw fail("Le compte " + id + " existe déjà");
+        }
+        LocalDateTime now = LocalDateTime.now();
+        double creditLine = credit ? Conv.toDouble(m.get("CreditLine")) : 0.0;
+        db.insert("Customers", Row.of("CustomerID", id, "Address", m.get("Address"),
+            "Birthday", m.str("BirthDay").isEmpty() ? null : Conv.toDateTime(m.get("BirthDay")),
+            "CertificateTypeID", m.i("CNOType"), "CertificateNo", m.get("CNO"), "Name", m.get("Name"), "PostCode", m.get("PostCode"),
+            "Telephone", m.get("Phone"), "VehicleNo", m.get("CarNumber"), "VehicleColorID", m.i("CarColorType") > 0 ? m.i("CarColorType") : 1, "VehicleTypeID", m.i("CarType") > 0 ? m.i("CarType") : 1,
+            "GroupID", m.i("GroupBelongID") > 0 ? m.i("GroupBelongID") : 100000001, "Email", m.get("Email")));
+        db.insert("CustomerCardInfos", Row.of("AccountNo", String.valueOf(id), "ASN", asn, "CardStatusTypeID", 0, "CipherFlg", m.str("Pass"),
+            "CustomerAccountID", id, "CreditLines", creditLine, "CustomerID", id, "Discount", (int) Conv.toDouble(m.get("Discount")),
+            "GroupID", m.i("GroupBelongID") > 0 ? m.i("GroupBelongID") : 100000001, "isCreditCard", credit, "isLimitVehicleNo", m.b("IsLimitCarNo"), "IssueDatetime", now,
+            "LimitAmount", Conv.toDouble(m.get("LimitAmount")), "LimitAmountMonthly", Conv.toDouble(m.get("LimitAmountMonth")),
+            "LimitMileage", Conv.toDouble(m.get("LimitMileage")), "LimitOil", m.get("LimitOil"), "LimitTime", m.i("LimitTime"),
+            "LimitTypeID", m.i("LimitType"), "LimitVehicleNo", m.get("CarNumber"), "LimitVolume", Conv.toDouble(m.get("LimitVolume")),
+            "LimitVolumeMonthly", Conv.toDouble(m.get("LimitVolumeMonth")), "MileageTolerance", Conv.toDouble(m.get("MileageTolerance")),
+            "PreferentialPrice", 0.0, "Score", BigDecimal.ZERO, "StationID", st.i("StationID"), "UpdateDatetime", now,
+            "UseConfine", m.get("LimitStation"), "UsedAmountMonthly", 0.0, "ValidDatetime", now.plusYears(5), "MediaTypeID", 1,
+            "SpecialPrice", m.get("SpecialPrice"), "DateAccount", credit ? Conv.toInt(m.get("BillDate")) : null,
+            "DateRepayment", credit ? m.i("PayDate") : null, "CompanyID", st.i("CompanyID")));
+        db.insert("CustomerAccounts", newAccount(id, String.valueOf(id), creditLine));
+        db.insert("AccountServiceLogs", accountLog(asn, creditLine, String.valueOf(id), creditLine, credit ? 11 : 1, m.i("OpenEmpID"),
+            st.i("StationID"), 1, credit ? "21" : String.valueOf(id).substring(0, 2)));
+        return Row.of("ASN", asn, "AccountNo", String.valueOf(id), "CusID", id, "GroupID", "");
+    }
+
+    /** CardRollDelete : annule une carte créée par CreateCardPre dont l'écriture a échoué (refusé si la carte a déjà servi). */
+    @RequestMapping("/CardRollDelete")
+    public String CardRollDelete(@RequestBody(required = false) String body) {
+        try (Sugar.Tx tx = db.begin()) {
+            try {
+                String asn = req(body).str("ASN");
+                if (asn.length() != 20) {
+                    throw fail("Numéro de carte invalide");
+                }
+                if (db.count("AccountServiceLogs", "{ASN} = :a", p("a", asn)) > 1) {
+                    throw fail("La carte a déjà été utilisée : elle n'est pas supprimée");
+                }
+                Row emp = db.first("EmployeeCardInfos", "{ASN} = :a", p("a", asn));
+                if (emp != null) {
+                    db.delete("AccountServiceLogs", "{ASN} = :a", p("a", asn));
+                    db.delete("WhiteCardLists", "{ASN} = :a", p("a", asn));
+                    db.delete("EmployeeCardInfos", "{ASN} = :a", p("a", asn));
+                    db.delete("CustomerAccounts", "{CustomerAccountID} = :c", p("c", emp.get("CustomerAccountID")));
+                    bumpWhite();
+                } else {
+                    Row cus = db.first("CustomerCardInfos", "{ASN} = :a", p("a", asn));
+                    if (cus != null) {
+                        db.delete("AccountServiceLogs", "{ASN} = :a", p("a", asn));
+                        db.delete("CustomerCardInfos", "{ASN} = :a", p("a", asn));
+                        db.delete("CustomerAccounts", "{CustomerAccountID} = :c", p("c", cus.get("CustomerAccountID")));
+                        db.delete("Customers", "{CustomerID} = :c", p("c", cus.get("CustomerID")));
+                    }
+                }
+                tx.commit();
+                return okEmpty();
+            } catch (Exception ex) {
+                tx.rollback();
+                return err(ex);
+            }
+        }
+    }
 }

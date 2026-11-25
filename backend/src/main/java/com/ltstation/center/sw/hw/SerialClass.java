@@ -128,7 +128,9 @@ public class SerialClass {
             port.setComPortParameters(baudRate, dataBits, jStop(stopBits), jParity(parity));
             port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, readTimeout, 0);
             if (!port.openPort()) {
-                String msg = "Impossible d'ouvrir le port " + portName + " (appareil non branché ?)";
+                // Code d'erreur Windows (5 = port utilisé par un autre programme, 2 = port absent, 87 = réglage refusé par le pilote)
+                String msg = "Impossible d'ouvrir le port " + portName + " (" + baudRate + " bauds, " + dataBits + " bits, arrêt " + stopBits
+                    + ", parité " + parity + ") : erreur Windows " + port.getLastErrorCode() + " à l'étape " + port.getLastErrorLocation();
                 port = null;
                 throw new IllegalStateException(msg);
             }

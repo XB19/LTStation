@@ -38,7 +38,8 @@ public class ShiftItemForm extends SwForm {
         try {
             Integer max = maxId();
             if (max == null) {
-                throw new IllegalStateException("Sequence contains no elements");
+                // Aucun poste horaire encore : le premier porte le n° 1
+                max = 0;
             }
             int num = max + 1;
             db().insert("ShiftConfig", Row.of("ID", num, "Name", String.valueOf(num), "StartTime", 8, "EndTime", 8, "Scope", 30));
@@ -104,10 +105,7 @@ public class ShiftItemForm extends SwForm {
     public void Delete_Click() {
         try {
             Integer num = maxId();
-            if (num == null) {
-                throw new IllegalStateException("Sequence contains no elements");
-            }
-            if (num == 0) {
+            if (num == null || num == 0) {
                 throw new IllegalStateException(L("NoShift"));
             }
             db().delete("ShiftConfig", "{ID} = :id", p("id", num));

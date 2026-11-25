@@ -1,5 +1,6 @@
 package com.ltstation.center.sw.forms;
 
+import com.ltstation.center.legacy.Conv;
 import com.ltstation.center.legacy.Row;
 import com.ltstation.center.sw.core.BaseFunction;
 import com.ltstation.center.sw.core.IniInfo;
@@ -108,7 +109,9 @@ public class StationCreate extends SwForm {
             }
             IniInfo.LoginName = employees.s("Name");
             IniInfo.LoginID = employees.i("EmployeeID");
-            IniInfo.LoginType = 1;
+            // Profil réellement enregistré pour cet employé (Administrateur pour le premier employé), pas le profil n° 1
+            int type = Conv.toInt(employees.get("StationType"));
+            IniInfo.LoginType = type > 0 ? type : 1;
             Row registerInfo = db().first("RegisterInfo");
             if (registerInfo == null && IniInfo.AutoRegister == 1) {
                 registerInfo = registerThisPc();

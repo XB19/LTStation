@@ -200,7 +200,7 @@ public class Nozzle extends SwForm {
                     thread.start();
                     return;
                 } catch (RuntimeException ex) {
-                    NozLog.writeLog("Open Port-" + r.i("NozPort") + " Failed!");
+                    NozLog.writeLog("Open Port-" + r.i("NozPort") + " Failed! " + ex.getMessage());
                     return;
                 }
             }

@@ -18,10 +18,21 @@ public class CardLost extends SwForm {
 
     public void CardLost_Load() {
         c("TypeSelect").SelectedIndex(0);
-        c("BalanceChange").SelectedIndex(0);
+        // LTStation : seules les cartes employé se déclarent perdues ici (onglet des cartes clients retiré)
+        c("CardDeposit").Visible(false);
+        c("BalanceChange").SelectedIndex(1);
+        GetEmpLog();
+    }
+
+    private boolean clientCard() {
+        MessageBox("Seule la carte employé peut être gérée ici");
+        return true;
     }
 
     public void SearchButton_Click() {
+        if (clientCard()) {
+            return;
+        }
         try {
             if (c("TypeNo").Text().isEmpty() && c("UserName").Text().isEmpty() && c("SPhone").Text().isEmpty()) {
                 throw new IllegalStateException(L("NeedQueryCondition"));
@@ -53,6 +64,9 @@ public class CardLost extends SwForm {
     }
 
     public void ConfirmButton_Click() {
+        if (clientCard()) {
+            return;
+        }
         try {
             Row obj = SW.dto().make("CustomerParam", "Code", IniInfo.Code, "Mess", c("LostCardNoSelect").Text(), "Start", IniInfo.LoginID);
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CardLost", Wire.json(obj));

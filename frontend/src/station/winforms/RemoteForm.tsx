@@ -381,6 +381,8 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   const values: Record<string, unknown> = {}
   const options: Record<string, Option[]> = {}
   const hidden: string[] = []
+  // Visible = true envoyé par le serveur : affiche aussi un contrôle masqué dans le concepteur
+  const forced: string[] = []
   const disabled: string[] = []
   const readOnly: string[] = []
   const texts: Record<string, string> = {}
@@ -414,6 +416,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
     else values[c.name] = p.Text ?? ''
     if ('Text' in p && TEXT_TYPES.test(t) && !/TextBox|NumericUpDown/.test(t)) texts[c.name] = tr(String(p.Text ?? ''))
     if (p.Visible === false) hidden.push(c.name)
+    if (p.Visible === true) forced.push(c.name)
     if (p.Enabled === false) disabled.push(c.name)
     if (p.ReadOnly === true) readOnly.push(c.name)
   }
@@ -421,6 +424,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   for (const [n, p] of Object.entries(ctl)) {
     if (types[n]) continue
     if (p.Visible === false) hidden.push(n)
+    if (p.Visible === true) forced.push(n)
     if (p.Enabled === false) disabled.push(n)
     if ('Text' in p) texts[n] = tr(String(p.Text ?? ''))
   }
@@ -565,7 +569,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   const body = (
     <>
       <WinForm layout={layout} values={values} onChange={onChange} buttons={buttons} options={options} grids={gridProps}
-        hidden={hidden} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
+        hidden={hidden} forced={forced} disabled={disabled} readOnly={readOnly} texts={texts} busy={busy}
         passwords={layout.controls.filter((c) => ctl[c.name]?.PasswordChar).map((c) => c.name)}
         autoComplete={Object.fromEntries(Object.entries(ctl).filter(([, pr]) => Array.isArray(pr.AutoCompleteCustomSource))
           .map(([n, pr]) => [n, (pr.AutoCompleteCustomSource as unknown[]).map(String)]))}

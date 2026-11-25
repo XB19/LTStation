@@ -30,6 +30,8 @@ public class CardChange extends SwForm {
         c("TypeSelect").SelectedIndex(0);
         c("CardTypeIndex").SelectedIndex(0);
         c("CardTypeIndex").SelectedIndex(1);
+        // LTStation : seules les cartes employé (« Staff Card ») se remplacent ici
+        c("CardTypeIndex").Enabled(false);
     }
 
     /** Math.Round(decimal, n).ToString() : l'échelle n'est jamais augmentée. */
@@ -59,7 +61,8 @@ public class CardChange extends SwForm {
                 throw new IllegalStateException(L("NeedQueryCondition"));
             }
             int selectedIndex = c("TypeSelect").SelectedIndex();
-            int selectedIndex2 = c("CardTypeIndex").SelectedIndex();
+            // Carte employé uniquement, quelle que soit la valeur reçue
+            int selectedIndex2 = 1;
             Row obj = SW.dto().make("CustomerParam", "Code", IniInfo.Code, "Start", selectedIndex, "Mess",
                 selectedIndex2 + "|" + c("TypeNo").Text() + "|" + c("UserNameSearch").Text() + "|" + c("PhoneSearch").Text());
             CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CardChangeGetMess", Wire.json(obj));

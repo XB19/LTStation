@@ -61,7 +61,8 @@ public class AddDisCountForm extends SwForm {
         } else {
             Integer num = db().scalar(db().sql("DisCount", "SELECT MAX({ID}) FROM [DisCount]"), null, Integer.class);
             if (num == null) {
-                throw new IllegalStateException("Sequence contains no elements");
+                // Aucune remise encore : la première porte le n° 1
+                num = 0;
             }
             c("DisCountID").Text(String.valueOf(num + 1));
         }

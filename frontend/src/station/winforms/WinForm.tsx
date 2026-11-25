@@ -158,6 +158,8 @@ export interface WinFormProps {
   grids?: Record<string, GridProps>
   /** Contrôles masqués (fonctions liées au matériel, pagination d'origine…) */
   hidden?: string[]
+  /** Contrôles affichés par le code (Visible = true) alors qu'ils sont masqués dans le concepteur */
+  forced?: string[]
   /** Contrôles en lecture seule */
   readOnly?: string[]
   disabled?: string[]
@@ -289,20 +291,21 @@ export default function WinForm(p: WinFormProps) {
   const children = useMemo(() => {
     const m: Record<string, Ctrl[]> = {}
     const hidden = new Set(p.hidden ?? [])
+    const forced = new Set(p.forced ?? [])
     for (const c of layout.controls) {
-      if (!c.visible || hidden.has(c.name) || (!p.keepPager && (PAGER.has(c.name) || isPagerLabel(c)))) continue
+      if ((!c.visible && !forced.has(c.name)) || hidden.has(c.name) || (!p.keepPager && (PAGER.has(c.name) || isPagerLabel(c)))) continue
       if (isLabel(c) && !c.text && !p.texts?.[c.name]) continue
       ;(m[c.parent] ??= []).push(c)
     }
     return m
-  }, [layout, p.hidden, p.texts, p.keepPager])
+  }, [layout, p.hidden, p.forced, p.texts, p.keepPager])
 
   const inFlow = useMemo(() => new Set(layout.controls.filter((c) => !c.dock && !isLabel(c) && !c.type.includes('Button') && !c.type.includes('CheckBox')
     && !CONTAINERS.has(c.type) && !isGrid(c) && !isStrip(c)).map((c) => c.name)), [layout])
 
   const text = (c: Ctrl) => (p.texts?.[c.name] !== undefined ? p.texts[c.name] : tr(c.text))
   const itemText = (i: MenuItem) => (p.texts?.[i.name] !== undefined ? p.texts[i.name] : tr(i.text))
-  const shown = (i: MenuItem) => i.visible && !(p.hidden ?? []).includes(i.name)
+  const shown = (i: MenuItem) => (i.visible || (p.forced ?? []).includes(i.name)) && !(p.hidden ?? []).includes(i.name)
 
   /** Éléments d'un menu déroulant / contextuel au format antd. */
   const menuItems = (items: MenuItem[]): MenuProps['items'] => items.filter(shown).map((i) => (
@@ -592,7 +595,7 @@ export default function WinForm(p: WinFormProps) {
 
   const renderContainer = (c: Ctrl): ReactNode => {
     if (c.type === 'SkinTabControl' || c.type === 'TabControl') {
-      const pages = (layout.controls.filter((x) => x.parent === c.name && x.type.endsWith('TabPage') && x.visible && !(p.hidden ?? []).includes(x.name)))
+      const pages = (layout.controls.filter((x) => x.parent === c.name && x.type.endsWith('TabPage') && (x.visible || (p.forced ?? []).includes(x.name)) && !(p.hidden ?? []).includes(x.name)))
         .sort((a, b) => a.order - b.order)
       const active = p.tab?.[c.name] ?? tabs[c.name] ?? pages[0]?.name
       return (
@@ -637,12 +640,13 @@ export default function WinForm(p: WinFormProps) {
   const classicKids = useMemo(() => {
     const m: Record<string, Ctrl[]> = {}
     const hidden = new Set(p.hidden ?? [])
+    const forced = new Set(p.forced ?? [])
     for (const c of layout.controls) {
-      if (!c.visible || hidden.has(c.name)) continue
+      if ((!c.visible && !forced.has(c.name)) || hidden.has(c.name)) continue
       ;(m[c.parent] ??= []).push(c)
     }
     return m
-  }, [layout, p.hidden])
+  }, [layout, p.hidden, p.forced])
 
   /** Hauteur mesurée des barres d'outils et de menus passées sur plusieurs lignes (voir StripRow). */
   const [stripHeights, setStripHeights] = useState<Record<string, number>>({})

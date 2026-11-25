@@ -36,7 +36,23 @@ public class CardUpDate extends CardFormBase {
         PreaperLoadDisCount();
         GetStation();
         LoadEquipments();
-        c("CardTool").SelectedIndex(0);
+        // LTStation : seule la carte employé se gère ici (onglets utilisateur, groupe, crédit et secondaire retirés)
+        for (String page : new String[] {"PersonPage", "PersonGroup", "CreditCard", "ChildCard"}) {
+            c(page).Visible(false);
+        }
+        c("CardTool").SelectedIndex(1);
+    }
+
+    /** Boutons des onglets retirés : refusés même s'ils sont appelés directement. */
+    private static final java.util.Set<String> OTHER_BUTTONS = java.util.Set.of("PersonUpdatetButton", "PersonButton", "GroupIniButton",
+        "GroupUpdateButton", "ChildIniButton", "ChildUpdateButton", "CreditIniButton", "CreditButton", "GroupButton", "ChilrenConfirm");
+
+    private boolean otherCardButton() {
+        if (OTHER_BUTTONS.contains(sender)) {
+            MessageBox("Seule la carte employé peut être gérée ici");
+            return true;
+        }
+        return false;
     }
 
     private List<Row> grades() {
@@ -113,6 +129,9 @@ public class CardUpDate extends CardFormBase {
 
     public void PersonInitButton_Click() {
         String name = sender;
+        if (otherCardButton()) {
+            return;
+        }
         try {
             String[] res = {""};
             if (!CardWrite.ReadPinID(res)) {
@@ -465,6 +484,9 @@ public class CardUpDate extends CardFormBase {
     /** PersonButton, EmployeeUpdateButton, GroupUpdateButton, CreditButton, ChildUpdateButton. */
     public void PersonButton_Click() {
         String btn = sender;
+        if (otherCardButton()) {
+            return;
+        }
         List<String> list = new ArrayList<>();
         CardWrite.ReadKeyFromDBNotChange(list);
         try {
