@@ -1,0 +1,60 @@
+POSTES DE BUREAU LTSTATION
+==========================
+
+A quoi ça sert
+--------------
+Les utilisateurs Administrateur, Opérateur de saisie et Consultation travaillent depuis leur bureau,
+avec leur propre lecteur de cartes, sur les MÊMES données que la station :
+- une carte créée au bureau fonctionne tout de suite à la pompe ;
+- les transactions des pompes sont visibles tout de suite au bureau.
+
+Les pompes, cuves et afficheurs restent pilotés UNIQUEMENT par le PC de la station.
+Le bureau rejoint la station par un réseau privé chiffré (VPN Tailscale) : la base de la station
+n'est jamais ouverte sur Internet.
+
+Ce kit est CONFIDENTIEL (clés de cartes) : le transmettre sur clé USB, jamais par e-mail ni messagerie.
+
+
+ÉTAPE 1 - SUR LE PC DE LA STATION (une seule fois, à un moment sans vente)
+-------------------------------------------------------------------------
+1. Installer Tailscale : https://tailscale.com/download/windows
+   Se connecter avec le compte Tailscale de l'entreprise (le même pour tous les PC).
+   Dans les réglages de Tailscale, activer « Run unattended » (fonctionne même sans session ouverte).
+2. Copier le dossier « station » de ce kit sur le PC de la station.
+3. Clic droit sur site-acces-bureaux.ps1 > « Exécuter avec PowerShell » (en administrateur).
+   Mot de passe demandé : celui du compte postgres (fichier ACCES.txt du kit de la station).
+4. Un fichier ACCES-BUREAUX.txt apparaît sur le Bureau : adresse de la station et mot de passe des bureaux.
+   Le garder en lieu sûr.
+
+Le PC de la station doit rester allumé et connecté à Internet pour que les bureaux travaillent.
+S'il est coupé, la station continue de vendre normalement ; seuls les bureaux attendent.
+
+
+ÉTAPE 2 - SUR CHAQUE PC DE BUREAU
+---------------------------------
+Se connecter à Windows avec le compte de la personne qui utilisera le poste (avec droits administrateur).
+1. Installer Tailscale (même compte Tailscale qu'à l'étape 1) et vérifier qu'il est « Connected ».
+2. Brancher le lecteur de cartes et installer son pilote (lecteur ACS ACR1281).
+3. Copier ce dossier LTStation-Kit-Bureau sur le PC.
+4. Double-cliquer sur INSTALLER-BUREAU.bat, répondre « Oui » à Windows, puis donner :
+   - l'adresse de la station (fichier ACCES-BUREAUX.txt) ;
+   - le mot de passe des bureaux (fichier ACCES-BUREAUX.txt).
+5. Attendre « Termine », puis lancer LTStation Station avec l'icône du bureau.
+   La barre du bas affiche « Poste de bureau (sans équipements) ».
+6. Se connecter avec l'identifiant de l'employé.
+
+
+CRÉER LES COMPTES DES UTILISATEURS
+----------------------------------
+Sur la station ou sur un poste de bureau, connecté en Administrateur :
+Gestion des employés > Ajouter un employé > Droits : Administrateur, Opérateur de saisie ou Consultation.
+Ne jamais créer ces comptes dans le Center (navigateur) : les numéros de profil y sont différents.
+
+
+EN CAS DE PROBLÈME
+------------------
+- « la station ne répond pas » : Tailscale n'est pas connecté sur l'un des deux PC, ou le PC de la station est éteint.
+- Erreur de mot de passe : reprendre ACCES-BUREAUX.txt (relancer site-acces-bureaux.ps1 crée un nouveau mot de passe ;
+  il faut alors refaire l'étape 2 sur chaque bureau).
+- Joindre : installation-bureau.log (dans ce dossier) et les journaux du jour :
+  touches Windows + R, coller  %APPDATA%\LTStation Station\data\logs  puis Entrée.

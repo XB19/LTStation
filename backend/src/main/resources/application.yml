@@ -44,6 +44,9 @@ server:
         name: LTSESSION
 
 app:
+  # Poste de bureau (POSTE_BUREAU=1 dans .env) : base de la station par le VPN, lecteur de cartes local,
+  # ni pompes, ni cuves, ni afficheurs, ni moteur de la station (ils ne tournent que sur le PC de la station).
+  poste-bureau: ${POSTE_BUREAU:0}
   # Super administrateur optionnel (remplace les comptes maîtres codés en dur de l'original).
   # Laisser vide pour le désactiver.
   superadmin:

@@ -21,10 +21,13 @@ public class SW {
 
     private final Sugar sugar;
     private final String configFile;
+    private final boolean posteBureau;
 
-    public SW(@Qualifier("stationSugar") Sugar sugar, @Value("${station.config-file:station/StationSoftware.properties}") String configFile) {
+    public SW(@Qualifier("stationSugar") Sugar sugar, @Value("${station.config-file:station/StationSoftware.properties}") String configFile,
+              @Value("${app.poste-bureau:0}") String posteBureau) {
         this.sugar = sugar;
         this.configFile = configFile;
+        this.posteBureau = "1".equals(posteBureau.trim()) || "true".equalsIgnoreCase(posteBureau.trim());
     }
 
     @PostConstruct
@@ -33,6 +36,7 @@ public class SW {
         LegacyLog.setRoot(Path.of("logs"));
         IniInfo.FILE = Path.of(configFile);
         IniInfo.load();
+        IniInfo.PosteBureau = posteBureau;
     }
 
     /** Base locale de la station (StationNEW). */

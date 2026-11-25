@@ -124,6 +124,8 @@ public final class IniInfo {
     public static int Auto;
     /** 1 = poste installé par le kit : l'assistant de création enregistre lui-même le poste (RegisterInfo). */
     public static int AutoRegister;
+    /** Poste de bureau (.env POSTE_BUREAU=1) : aucun équipement ni moteur de la station sur ce poste. */
+    public static volatile boolean PosteBureau;
     public static int HandShiftPassword;
     public static String FoRanUrl = "";
     /** Service SMS des notifications de transaction (Nozzle.SendNote) : identifiants hors du code. */

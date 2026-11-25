@@ -196,9 +196,14 @@ public class Station extends SwForm {
         try {
             g("OilDataView").ColumnVisible("Deal", IniInfo.ScoreDeal != 0);
             c("GunAndTankTab").SelectedIndex(0);
-            NozSet();
-            TankSet();
-            if (!hardwareStarted) {
+            if (IniInfo.PosteBureau) {
+                // Poste de bureau : pompes, cuves et afficheurs sont pilotés par le PC de la station, pas ici
+                c("StationLabel").Text("Poste de bureau (sans équipements)");
+            } else {
+                NozSet();
+                TankSet();
+            }
+            if (!hardwareStarted && !IniInfo.PosteBureau) {
                 hardwareStarted = true;
                 if (IniInfo.NonLevel) {
                     thread("TankStockUpdate", this::TankStockUpdate);
@@ -281,7 +286,7 @@ public class Station extends SwForm {
         if (!view.b("loading")) {
             c("LoadPro").Visible(false);
         }
-        c("StationLabel").Text(view.str("progressText"));
+        c("StationLabel").Text(IniInfo.PosteBureau ? "Poste de bureau (sans équipements)" : view.str("progressText"));
         String shift = view.str("currentShift");
         if (!shift.isEmpty()) {
             c("LoginShiftMessage").Text(L("CurrentShift") + ":" + shift);

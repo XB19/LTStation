@@ -59,6 +59,14 @@ public final class WorkOrderData {
             if (ready) {
                 return;
             }
+            // Tables déjà créées (par le PC de la station) : rien à faire. Indispensable aux postes de bureau, dont le compte
+            // PostgreSQL n'est pas propriétaire des tables (CREATE INDEX IF NOT EXISTS exige quand même d'en être propriétaire).
+            Boolean exists = SW.db().jdbc().getJdbcTemplate().queryForObject(
+                "SELECT to_regclass('equipment') IS NOT NULL AND to_regclass('card_work_order') IS NOT NULL", Boolean.class);
+            if (Boolean.TRUE.equals(exists)) {
+                ready = true;
+                return;
+            }
             try (InputStream in = new ClassPathResource("station/db/schema_extra.sql").getInputStream()) {
                 SW.db().jdbc().getJdbcTemplate().execute(new String(in.readAllBytes(), StandardCharsets.UTF_8));
             } catch (IOException e) {

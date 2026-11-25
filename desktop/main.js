@@ -34,7 +34,8 @@ const stationUrl = (cfg) => baseUrl(cfg) + '/station/'
 
 // ------------------------------------------------------------ fichier .env du serveur intégré
 
-const ENV_KEYS = ['DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'STATION_DB_NAME']
+// POSTE_BUREAU=1 : poste de bureau (base de la station par le VPN, lecteur de cartes local, aucun équipement piloté)
+const ENV_KEYS = ['DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASSWORD', 'DB_NAME', 'STATION_DB_NAME', 'POSTE_BUREAU']
 
 function readEnv() {
   const out = {}
@@ -241,6 +242,7 @@ ipcMain.handle('setup:get', () => {
   return {
     DB_HOST: env.DB_HOST || 'localhost', DB_PORT: env.DB_PORT || '5432', DB_USER: env.DB_USER || 'postgres',
     DB_NAME: env.DB_NAME || 'center', STATION_DB_NAME: env.STATION_DB_NAME || 'station', hasPassword: !!env.DB_PASSWORD,
+    POSTE_BUREAU: env.POSTE_BUREAU || '0',
     port: readConfig().port, dataDir: dataDir(),
   }
 })

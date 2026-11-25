@@ -58,12 +58,27 @@ public class SwBootController {
         return false;
     }
 
+    /** Enregistre ce PC (adresse MAC) dans RegisterInfo, comme StationCreate pour un poste installé par le kit. */
+    private static void registerThisPc() {
+        List<String> macs = BaseFunction.GetMacAddress();
+        if (macs == null || macs.isEmpty()) {
+            return;
+        }
+        String info = BaseFunction.EncryptByAes(macs.get(0));
+        db().insert("RegisterInfo", Row.of("SourceInfo", info, "SecretInfo", BaseFunction.EncryptByAes(info)));
+    }
+
     @GetMapping("/boot")
     public Map<String, Object> boot() {
         // Postes déjà installés : profils Opérateur de saisie et Consultation ajoutés s'ils manquent
         Profil.ensureProfiles();
         Map<String, Object> m = new LinkedHashMap<>();
         Row st = db().first("Stations");
+        // Poste de bureau : la station existe déjà sur la base du site ; ce PC s'y enregistre au lieu d'ouvrir l'assistant
+        if (IniInfo.PosteBureau && st != null && !registered()) {
+            registerThisPc();
+        }
+        m.put("posteBureau", IniInfo.PosteBureau);
         int valid = st == null ? -1 : BaseFunction.GetStationValid(st.s("Code"));
         m.put("outOfTime", valid == 2 || valid == 3);
         m.put("registered", registered());

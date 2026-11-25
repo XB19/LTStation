@@ -94,6 +94,11 @@ public class StationEngine {
         if (started) {
             return;
         }
+        if (IniInfo.PosteBureau) {
+            // Poste de bureau : le moteur (synchronisation, transactions, équipements) ne tourne que sur le PC de la station
+            stationLog.writeLog("Poste de bureau : moteur de la station non démarré");
+            return;
+        }
         started = true;
         setIniInfo();
         IniInfo.ThreadStop = true;

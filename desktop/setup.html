@@ -20,6 +20,9 @@
     button:disabled { opacity: .6; cursor: default; }
     .err { background: #fee2e2; color: #b91c1c; padding: 10px 12px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; display: none; white-space: pre-wrap; }
     .hint { color: #94a3b8; font-size: 12px; margin-top: 14px; word-break: break-all; }
+    .check { display: flex; gap: 10px; align-items: flex-start; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 10px; padding: 12px; }
+    .check input { width: auto; margin: 3px 0 0; }
+    .check small { display: block; color: #64748b; font-weight: 400; margin-top: 3px; }
   </style>
 </head>
 <body>
@@ -36,6 +39,7 @@
       <div><label for="DB_NAME">Base Center</label><input id="DB_NAME"></div>
       <div><label for="STATION_DB_NAME">Base de la station</label><input id="STATION_DB_NAME"></div>
       <div class="full"><label for="port">Port du serveur intégré</label><input id="port"></div>
+      <div class="full"><label class="check"><input type="checkbox" id="POSTE_BUREAU"><span>Poste de bureau (sans équipements)<small>À cocher sur les PC des bureaux : ce poste travaille sur la base de la station (par le VPN), avec son lecteur de cartes, sans piloter les pompes, les cuves ni les afficheurs. Laisser décoché sur le PC de la station.</small></span></label></div>
     </div>
     <button id="save">Enregistrer et démarrer</button>
     <div class="hint" id="hint"></div>
@@ -48,11 +52,13 @@
     window.ltDesktop.getSetup().then((s) => {
       for (const k of keys) if (k !== 'DB_PASSWORD') document.getElementById(k).value = s[k] ?? ''
       document.getElementById('DB_PASSWORD').placeholder = s.hasPassword ? 'inchangé' : ''
+      document.getElementById('POSTE_BUREAU').checked = s.POSTE_BUREAU === '1'
       document.getElementById('hint').textContent = 'Dossier des données : ' + s.dataDir
     })
     const save = document.getElementById('save')
     save.onclick = async () => {
       const values = Object.fromEntries(keys.map((k) => [k, document.getElementById(k).value]))
+      values.POSTE_BUREAU = document.getElementById('POSTE_BUREAU').checked ? '1' : '0'
       save.disabled = true
       try { await window.ltDesktop.saveSetup(values) } catch (e) {
         err.textContent = e.message.replace(/^.*Error: /, ''); err.style.display = 'block'; save.disabled = false

@@ -162,6 +162,26 @@ Au premier lancement, la page **Base de données** demande le serveur PostgreSQL
 changer la base, d'ouvrir le journal ou le dossier des données, ou d'utiliser un serveur distant
 (**Adresse du serveur…**).
 
+### Postes de bureau
+
+Les utilisateurs (Administrateur, Opérateur de saisie, Consultation) peuvent travailler depuis leur bureau, avec leur propre
+lecteur de cartes, sur la base de la station :
+
+- chaque PC de bureau installe la même application, avec la case **Poste de bureau (sans équipements)** cochée
+  (`POSTE_BUREAU=1` dans `.env`) : ni pompes, ni cuves, ni afficheurs, ni moteur de la station ; le poste s'enregistre
+  seul au premier lancement ;
+- la base PostgreSQL de la station n'est accessible qu'à travers un VPN (Tailscale, adresses `100.64.0.0/10`), avec un
+  compte dédié `ltstation_bureau` (droits de lecture et d'écriture, jamais propriétaire des tables) ;
+- pourquoi pas le mode « serveur distant » : le lecteur de cartes est piloté par le serveur du poste, et un serveur ne
+  garde qu'un employé connecté à la fois.
+
+```bash
+python deploy/build_kit_bureau.py   # kit des bureaux dans deploy/out/LTStation-Kit-Bureau (après build_kit.py)
+```
+
+Le kit contient `station/site-acces-bureaux.ps1` (une fois, sur le PC de la station : compte, `pg_hba.conf`, pare-feu)
+et `INSTALLER-BUREAU.bat` (sur chaque PC de bureau). Voir `deploy/bureau/LISEZ-MOI-BUREAU.txt`.
+
 ## Contenu porté
 
 Toutes les entrées du menu web d'origine ont leur page.
