@@ -9,6 +9,7 @@ import com.ltstation.center.sw.core.BaseFunction;
 import com.ltstation.center.sw.core.BaseFunction.CustomerRespone;
 import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.SW;
+import com.ltstation.center.sw.form.Profil;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import java.io.IOException;
@@ -106,6 +107,8 @@ public class EmpForm extends SwForm {
                 try (InputStream in = Files.newInputStream(Path.of(path))) {
                     lines = ExcelImport.read(path, in, COLUMNS);
                 }
+                // Profils d'administrateur et accès au Center : réservés à l'administrateur général
+                boolean general = Profil.currentIsGeneral();
                 List<Row> profiles = db().list("AuthorityMess");
                 List<ImportPreview.Line> checked = new ArrayList<>();
                 List<Planned> plan = new ArrayList<>();
@@ -126,11 +129,16 @@ public class EmpForm extends SwForm {
                             .findFirst().orElse(null);
                         if (profile == null) {
                             errors.add("Profil inconnu : " + l.get("profile"));
+                        } else if (!general && Profil.isAdmin(profile.s("AuthorityContent"))) {
+                            errors.add(Profil.ONLY_GENERAL + " : profil " + profile.str("Name"));
                         }
                     }
                     boolean center = l.get("center") != null && ExcelImport.matches(l.get("center"), Set.of("Oui", "O", "Yes", "1", "Vrai"));
                     if (l.get("center") != null && !center && !ExcelImport.matches(l.get("center"), Set.of("Non", "N", "No", "0", "Faux"))) {
                         errors.add("Connexion au Center : Oui ou Non attendu");
+                    }
+                    if (center && !general) {
+                        errors.add(Profil.ONLY_GENERAL + " : connexion au Center");
                     }
                     checked.add(new ImportPreview.Line(l.number(), "Création", joinParts(l.get("name"), login,
                         profile == null ? null : profile.str("Name"), center ? "connexion Center" : null), errors));

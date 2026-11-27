@@ -7,6 +7,7 @@ import com.ltstation.center.sw.core.BaseFunction;
 import com.ltstation.center.sw.core.BaseFunction.CustomerRespone;
 import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.SW;
+import com.ltstation.center.sw.form.Profil;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
@@ -25,8 +26,18 @@ public class EmpUpdate extends SwForm {
 
     public void EmpUpdate_Load() {
         try {
-            c("Authority").DataSource(db().list("AuthorityMess"), "Name", "User_IDMess");
             Row e = db().first("Employees", "{EmployeeID} = :id", p("id", sID));
+            boolean general = Profil.currentIsGeneral();
+            if (e != null && !general && Profil.adminProfile(e.get("StationType"))) {
+                MessageBox(Profil.ONLY_GENERAL + " : modification d'un compte administrateur");
+                Close();
+                return;
+            }
+            c("Authority").DataSource(Profil.assignable(db().list("AuthorityMess")), "Name", "User_IDMess");
+            if (!general) {
+                // L'accès au Center n'est donné ou retiré que par l'administrateur général
+                c("CenterLogin").Enabled(false);
+            }
             if (e != null) {
                 c("EmpID").Text(e.str("EmployeeID"));
                 c("StationSelect").SelectedIndex(0);
@@ -61,10 +72,14 @@ public class EmpUpdate extends SwForm {
                 throw new IllegalStateException(L("InformationLoss"));
             }
             Row e = db().first("Employees", "{EmployeeID} = :id", p("id", Conv.toInt(c("EmpID").Text())));
+            boolean general = Profil.currentIsGeneral();
+            if (e != null && !general && (Profil.adminProfile(e.get("StationType")) || Profil.adminProfile(c("Authority").SelectedValue()))) {
+                throw new IllegalStateException(Profil.ONLY_GENERAL + " : comptes administrateurs");
+            }
             if (e != null) {
                 Row obj = SW.dto().make("CenterEmployees", "EmployeeID", e.get("EmployeeID"), "StationID", IniInfo.StationID, "PostCode",
                     Conv.toStr(c("Authority").SelectedValue()), "Address", c("LoginName").Text(), "Name", c("PersonName").Text(), "Memo",
-                    c("Password").Text(), "CenterLogin", c("CenterLogin").Checked());
+                    c("Password").Text(), "CenterLogin", general && c("CenterLogin").Checked(), "KeepCenterLogin", !general);
                 CustomerRespone r = BaseFunction.HttpPost(IniInfo.Center + "ServerDeal/CreateEmployee", Wire.json(obj));
                 if (!r.Result()) {
                     throw new IllegalStateException(BaseFunction.DecryptByAES(r.Mess()));

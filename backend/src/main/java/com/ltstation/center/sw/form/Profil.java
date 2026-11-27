@@ -35,6 +35,92 @@ public final class Profil {
     public static final String SAISIE = "SAISIE";
     public static final String CONSULTATION = "CONSULTATION";
 
+    // ------------------------------------------------------------ deux administrateurs
+
+    /**
+     * Administrateur général : tout le Center et toute l'application ; lui seul donne l'accès au Center et crée
+     * ou modifie les comptes administrateurs. Administrateur application : toute l'application, jamais le Center.
+     */
+    public static final String ADMIN_GENERAL = "ADMIN_GENERAL";
+    public static final String ADMIN_APPLICATION = "ADMIN_APPLICATION";
+    public static final String ONLY_GENERAL = "Réservé à l'administrateur général";
+
+    private static boolean has(String content, String token) {
+        if (content != null) {
+            for (String s : content.split(",")) {
+                if (token.equalsIgnoreCase(s.trim())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /** Enregistre le nom et les droits d'un profil (la table n'a pas de clé primaire déclarée : mise à jour par son numéro). */
+    public static void saveProfile(Object userIdMess, String name, String content) {
+        Sugar db = SW.db();
+        db.exec(db.sql("AuthorityMess", "UPDATE [AuthorityMess] SET {Name} = :n, {AuthorityContent} = :c WHERE {User_IDMess} = :u"),
+            Sugar.p("n", name, "c", content, "u", com.ltstation.center.legacy.Conv.toInt(userIdMess)));
+    }
+
+    /** Profil d'administrateur (général ou application). */
+    public static boolean isAdmin(String content) {
+        return has(content, ADMIN_GENERAL) || has(content, ADMIN_APPLICATION);
+    }
+
+    public static boolean isGeneral(String content) {
+        return has(content, ADMIN_GENERAL);
+    }
+
+    /** Profil par son numéro (Employees.StationType = AuthorityMess.User_IDMess). */
+    public static Row profile(Object userIdMess) {
+        if (userIdMess == null || String.valueOf(userIdMess).isBlank()) {
+            return null;
+        }
+        return SW.db().first("AuthorityMess", "{User_IDMess} = :id", Sugar.p("id", com.ltstation.center.legacy.Conv.toInt(userIdMess)));
+    }
+
+    /** Le numéro de profil désigne-t-il un administrateur (général ou application) ? */
+    public static boolean adminProfile(Object userIdMess) {
+        Row a = profile(userIdMess);
+        return a != null && isAdmin(a.s("AuthorityContent"));
+    }
+
+    /** L'employé connecté est-il administrateur général ? */
+    public static boolean currentIsGeneral() {
+        try {
+            Row a = profile(IniInfo.LoginType);
+            return a != null && isGeneral(a.s("AuthorityContent"));
+        } catch (RuntimeException e) {
+            return false;
+        }
+    }
+
+    /** Profils que l'employé connecté peut donner : tous pour l'administrateur général, sinon sans les administrateurs. */
+    public static List<Row> assignable(List<Row> all) {
+        if (currentIsGeneral()) {
+            return all;
+        }
+        List<Row> out = new ArrayList<>();
+        for (Row r : all) {
+            if (!isAdmin(r.s("AuthorityContent"))) {
+                out.add(r);
+            }
+        }
+        return out;
+    }
+
+    /** Assistant de création de la station : le premier employé est l'administrateur général. */
+    public static List<Row> firstEmployeeProfiles(List<Row> all) {
+        List<Row> out = new ArrayList<>();
+        for (Row r : all) {
+            if (isGeneral(r.s("AuthorityContent"))) {
+                out.add(r);
+            }
+        }
+        return out.isEmpty() ? all : out;
+    }
+
     /** Vrai pendant l'exécution d'un gestionnaire de fenêtre (pas pour les fils du moteur de la station). */
     private static final ThreadLocal<Boolean> UI = new ThreadLocal<>();
 
@@ -77,7 +163,8 @@ public final class Profil {
         if (content != null) {
             for (String s : content.split(",")) {
                 String t = s.trim();
-                if (SAISIE.equalsIgnoreCase(t) || CONSULTATION.equalsIgnoreCase(t)) {
+                if (SAISIE.equalsIgnoreCase(t) || CONSULTATION.equalsIgnoreCase(t) || ADMIN_GENERAL.equalsIgnoreCase(t)
+                    || ADMIN_APPLICATION.equalsIgnoreCase(t)) {
                     b.append(t.toUpperCase()).append(',');
                 }
             }
@@ -335,6 +422,28 @@ public final class Profil {
                 db.insert("AuthorityMess", Row.of("Name", "Consultation", "User_IDMess", ++max,
                     "AuthorityContent", "2,8,11,14,15,16,17," + CONSULTATION + ","));
                 LOG.info("Profil « Consultation » créé (n° {})", max);
+            }
+            String allRights = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,";
+            List<Row> now = db.list("AuthorityMess");
+            if (now.stream().noneMatch(r -> isGeneral(r.s("AuthorityContent")))) {
+                // L'ancien profil « Administrateur » (tous les droits) devient l'administrateur général : ses employés le restent
+                Row old = now.stream().filter(r -> of(r.s("AuthorityContent")) == Mode.COMPLET && !isAdmin(r.s("AuthorityContent"))
+                    && java.util.Arrays.stream(r.s("AuthorityContent").split(",")).map(String::trim).filter(t -> !t.isEmpty())
+                        .collect(java.util.stream.Collectors.toSet()).containsAll(java.util.Arrays.asList(allRights.split(","))))
+                    .findFirst().orElse(null);
+                if (old != null) {
+                    saveProfile(old.get("User_IDMess"), "Administrateur général", old.s("AuthorityContent").replaceAll(",?$", ",") + ADMIN_GENERAL + ",");
+                    LOG.info("Profil n° {} devenu « Administrateur général »", old.get("User_IDMess"));
+                } else {
+                    db.insert("AuthorityMess", Row.of("Name", "Administrateur général", "User_IDMess", ++max,
+                        "AuthorityContent", allRights + ADMIN_GENERAL + ","));
+                    LOG.info("Profil « Administrateur général » créé (n° {})", max);
+                }
+            }
+            if (now.stream().noneMatch(r -> has(r.s("AuthorityContent"), ADMIN_APPLICATION))) {
+                db.insert("AuthorityMess", Row.of("Name", "Administrateur application", "User_IDMess", ++max,
+                    "AuthorityContent", allRights + ADMIN_APPLICATION + ","));
+                LOG.info("Profil « Administrateur application » créé (n° {})", max);
             }
             ensured = true;
         } catch (RuntimeException e) {

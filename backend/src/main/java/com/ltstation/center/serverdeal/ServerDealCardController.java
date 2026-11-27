@@ -271,22 +271,30 @@ public class ServerDealCardController extends ServerDealBase {
                     if (ep == null) {
                         throw fail("L'utilisateur n'existe pas");
                     }
-                    Row acc = db.first("GPRSAccount", "{UserName} = :u AND {Password} = :pw", p("u", ep.str("Name"), "pw", ep.str("Memo")));
+                    // Compte de connexion au Center : identifiant (Address), comme à la création et à la connexion (AuthService) ;
+                    // les comptes enregistrés auparavant sous le nom de l'employé sont aussi retrouvés
+                    Row acc = db.first("GPRSAccount", "{UserName} = :u AND {Password} = :pw", p("u", ep.str("Address"), "pw", ep.str("Memo")));
+                    if (acc == null) {
+                        acc = db.first("GPRSAccount", "{UserName} = :u AND {Password} = :pw", p("u", ep.str("Name"), "pw", ep.str("Memo")));
+                    }
+                    // KeepCenterLogin : modification par un administrateur de l'application, qui ne gère pas l'accès au Center
+                    boolean keep = modal.b("KeepCenterLogin");
+                    boolean center = keep ? ep.b("CenterLogin") : modal.b("CenterLogin");
                     ep.put("Memo", modal.get("Memo"));
                     ep.put("Name", modal.get("Name"));
                     ep.put("Address", modal.get("Address"));
                     ep.put("PostCode", modal.get("PostCode"));
                     ep.put("StationID", stationId);
-                    ep.put("CenterLogin", modal.b("CenterLogin"));
+                    ep.put("CenterLogin", center);
                     db.update("Employees", ep);
-                    if (modal.b("CenterLogin")) {
+                    if (center || keep && acc != null) {
                         if (acc != null) {
-                            acc.put("UserName", ep.get("Name"));
+                            acc.put("UserName", ep.get("Address"));
                             acc.put("Password", ep.get("Memo"));
                             acc.put("TypeID", 1);
                             db.update("GPRSAccount", acc);
                         } else {
-                            db.insert("GPRSAccount", Row.of("UserName", ep.get("Name"), "Password", ep.get("Memo"), "TypeID", 1));
+                            db.insert("GPRSAccount", Row.of("UserName", ep.get("Address"), "Password", ep.get("Memo"), "TypeID", 1));
                         }
                     } else if (acc != null) {
                         db.deleteEntity("GPRSAccount", acc);
@@ -303,6 +311,11 @@ public class ServerDealCardController extends ServerDealBase {
                     modal.put("GenderID", 1);
                     modal.put("Birthday", nowStr());
                     modal.remove("EmployeeID");
+                    if (modal.b("KeepCenterLogin")) {
+                        // Création par un administrateur de l'application : jamais d'accès au Center
+                        modal.put("CenterLogin", false);
+                    }
+                    modal.remove("KeepCenterLogin");
                     db.insert("Employees", modal);
                     Row acc = db.first("GPRSAccount", "{UserName} = :u AND {Password} = :pw",
                         p("u", modal.str("Address"), "pw", modal.str("Memo")));

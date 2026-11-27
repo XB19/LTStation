@@ -55,6 +55,10 @@ public class Authority extends SwForm {
     public void Confirm_Click() {
         StringBuilder text = new StringBuilder();
         Row a = c("AuthoritySelect").SelectedRow();
+        if (Profil.isAdmin(a.str("AuthorityContent")) && !Profil.currentIsGeneral()) {
+            MessageBox(Profil.ONLY_GENERAL + " : droits des administrateurs");
+            return;
+        }
         for (String n : Controls("AuthorithBox")) {
             if (TypeOf(n).endsWith("CheckBox") && c(n).Checked()) {
                 String t = c(n).Text();
@@ -63,7 +67,8 @@ public class Authority extends SwForm {
         }
         // Mode Opérateur de saisie / Consultation du profil conservé (il ne correspond à aucune case)
         a.put("AuthorityContent", text + Profil.tokens(a.str("AuthorityContent")));
-        db().update("AuthorityMess", a);
+        // Mise à jour par le numéro du profil (la table n'a pas de clé primaire déclarée, db().update échouait)
+        Profil.saveProfile(a.get("User_IDMess"), a.str("Name"), a.str("AuthorityContent"));
         MessageBox(L("OperateSuccess"));
     }
 

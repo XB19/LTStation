@@ -125,7 +125,8 @@ Il utilise le même serveur et la même base que le Center : tout ce qui est sai
 - **Index des pistolets** : chaque pistolet a un index cumulé (`volume_total`). Les rapports donnent l'index de début, l'index de fin et l'écart.
 - **Profils de droits** : 24 droits, chacun correspondant à une fenêtre ou à un menu. Un employé sans profil a tous les droits.
 - **Profils restreints** (ajoutés au démarrage s'ils manquent, voir `sw/form/Profil.java`) :
-  - **Administrateur** : tous les droits ;
+  - **Administrateur général** (`ADMIN_GENERAL`, ancien profil « Administrateur ») : tout le Center et toute l'application ; lui seul donne l'accès au Center et crée ou modifie les comptes administrateurs ;
+  - **Administrateur application** (`ADMIN_APPLICATION`) : toute l'application, jamais le Center ; il ne peut ni cocher « Accès au Center », ni créer ou modifier un administrateur, ni changer les droits des profils d'administrateur ;
   - **Opérateur de saisie** : cartes employé (onglet « Carte employé » seulement), mise à jour, carte perdue, remplacement, solde en lecture, historique des cartes et des transactions, exports. Aucune recharge ni aucun mouvement de solde (retrait, transfert, remboursement) ;
   - **Consultation** : solde, historique des cartes, transactions, rapports et activité en lecture seule ; ni clôture, ni export, ni impression.
   - Le contrôle est fait par le serveur (fenêtres, boutons et appels au Center), pas seulement en masquant les boutons. Le mode est le mot `SAISIE` ou `CONSULTATION` dans `authority_mess.authority_content` ; les cases cochées du profil peuvent encore réduire ce qu'il voit.

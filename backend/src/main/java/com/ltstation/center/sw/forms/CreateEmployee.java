@@ -6,6 +6,7 @@ import com.ltstation.center.sw.core.BaseFunction;
 import com.ltstation.center.sw.core.BaseFunction.CustomerRespone;
 import com.ltstation.center.sw.core.IniInfo;
 import com.ltstation.center.sw.core.SW;
+import com.ltstation.center.sw.form.Profil;
 import com.ltstation.center.sw.form.SwForm;
 import com.ltstation.center.sw.form.SwWindow;
 import java.util.List;
@@ -28,11 +29,16 @@ public class CreateEmployee extends SwForm {
                 c("LoginName").Text(employees.s("Name"));
                 c("Password").Text(employees.s("CertifyKey"));
             }
-            c("BaseAuthority").SelectedIndex(1);
             c("BaseAuthority").Enabled(false);
         }
         List<Row> dataSource = db().list("AuthorityMess");
-        c("BaseAuthority").DataSource(dataSource, "Name", "ID");
+        // Assistant : le premier employé est l'administrateur général ; ensuite, seul lui peut donner un profil d'administrateur
+        c("BaseAuthority").DataSource(ID == 0 ? Profil.firstEmployeeProfiles(dataSource) : Profil.assignable(dataSource), "Name", "ID");
+        if (ID != 0 && !Profil.currentIsGeneral()) {
+            // L'accès au Center est réservé à l'administrateur général
+            c("CenterLogin").Checked(false);
+            c("CenterLogin").Enabled(false);
+        }
     }
 
     private void DowLoadEmp() {
@@ -108,13 +114,17 @@ public class CreateEmployee extends SwForm {
                 throw new IllegalStateException(L("InformationLoss"));
             }
             boolean checked = c("CenterLogin").Checked();
+            boolean general = CID == 0 || Profil.currentIsGeneral();
+            if (!general && Profil.adminProfile(c("BaseAuthority").SelectedRow().str("User_IDMess"))) {
+                throw new IllegalStateException(Profil.ONLY_GENERAL + " : création d'un administrateur");
+            }
             Row employees = SW.dto().make("CenterEmployees",
                 "StationID", c("StationSelect").SelectedRow().get("StationID"),
                 "Memo", c("Password").Text(),
                 "PostCode", c("BaseAuthority").SelectedRow().str("User_IDMess"),
                 "Address", c("LoginName").Text(),
                 "Name", c("PersonName").Text(),
-                "CenterLogin", checked);
+                "CenterLogin", general && checked, "KeepCenterLogin", !general);
             if (db().first("Employees", "{Name} = :n AND {Memo2} = :m", p("n", employees.get("Address"), "m", employees.get("Memo"))) != null) {
                 throw new IllegalStateException(L("DuplicateInformation"));
             }
