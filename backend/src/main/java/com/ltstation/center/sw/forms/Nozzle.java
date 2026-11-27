@@ -307,6 +307,8 @@ public class Nozzle extends SwForm {
             OnCommitFlg = false;
             String text = "";
             String text2 = "";
+            // Trame suivante arrivée dans la même lecture (réponse en retard collée à la suivante) : traitée ensuite
+            String rest = "";
             try {
                 String text3 = SerialClass.byteToHexStr(bits);
                 NozLog.writeLog("Data:" + text3);
@@ -315,6 +317,10 @@ public class Nozzle extends SwForm {
                     CacheLen = Integer.parseInt(Cache.substring(8, 12)) * 2 + 16;
                     if (Cache.length() < CacheLen) {
                         return;
+                    }
+                    if (Cache.length() > CacheLen && Cache.startsWith("FA", CacheLen)) {
+                        rest = Cache.substring(CacheLen);
+                        Cache = Cache.substring(0, CacheLen);
                     }
                     NozLog.writeLog("Receive:" + Cache);
                 }
@@ -425,6 +431,7 @@ public class Nozzle extends SwForm {
                     send(text);
                     OnCommitFlg = true;
                     Cache = "";
+                    nextFrame(rest);
                     return;
                 }
                 throw new IllegalStateException("CRC Error");
@@ -441,6 +448,15 @@ public class Nozzle extends SwForm {
                 NozLog.writeLog(String.valueOf(ex4.getMessage()));
                 OnCommitFlg = true;
             }
+            nextFrame(rest);
+        }
+    }
+
+    /** Trame suivante reçue collée à la précédente. */
+    private void nextFrame(String rest) {
+        if (rest != null && !rest.isEmpty()) {
+            NozLog.writeLog("Trame suivante collée : traitée à part");
+            Sp_DataReceived(SerialClass.strToToHexByte(rest));
         }
     }
 
@@ -486,8 +502,8 @@ public class Nozzle extends SwForm {
                     AMN = Conv.num((double) Integer.parseInt(cache.substring(22, 28), 16) / IniInfo.MFormat);
                     Vol = Conv.num((double) Integer.parseInt(cache.substring(28, 34), 16) / IniInfo.VFormat);
                 } else {
-                    AMN = Conv.num((double) Integer.parseInt(cache.substring(22, 30), 16) / IniInfo.MFormat);
-                    Vol = Conv.num((double) Integer.parseInt(cache.substring(30, 38), 16) / IniInfo.VFormat);
+                    AMN = Conv.num((double) h(cache.substring(22, 30)) / IniInfo.MFormat);
+                    Vol = Conv.num((double) h(cache.substring(30, 38)) / IniInfo.VFormat);
                 }
                 NozStatueUp(2, AMN, Vol, VolTotal);
                 NozW(i);
@@ -1268,8 +1284,12 @@ public class Nozzle extends SwForm {
         return new String(SerialClass.strToToHexByte(hexText), ANSI).replace("\0", "");
     }
 
-    private static int h(String s) {
-        return Integer.parseInt(s, 16);
+    /**
+     * Champ hexadécimal d'une trame de la pompe. Les champs sur 8 chiffres (solde, totalisateur, montant) dépassent un int :
+     * l'original C# ne plantait pas ; ici ils sont lus comme des nombres positifs (« 89000027 » = 2298478631).
+     */
+    private static long h(String s) {
+        return Long.parseUnsignedLong(s, 16);
     }
 
     /** Transaction au format récent (≥ 286 caractères) : enregistrement, supervision, SMS. */

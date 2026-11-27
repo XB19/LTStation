@@ -79,6 +79,8 @@ interface FormState {
   dyn?: { name: string; type: string; parent: string; text: string; size: [number, number] }[]
   /** Modifications de la fenêtre propriétaire faites par cette fenêtre */
   owner?: FormState & { id: string }
+  /** Fenêtres intégrées modifiées hors requête (tuiles des pistolets), par identifiant */
+  children?: Record<string, FormState>
 }
 
 /** Fenêtres affichées, par identifiant serveur : saisie courante et application d une réponse (fenêtres propriétaires). */
@@ -254,6 +256,7 @@ export default function RemoteForm({ form, args, onClose, onOpen, parent, attach
   /** Applique une réponse du serveur ; renvoie la question en attente éventuelle. */
   const apply = async (s: FormState) => {
     merge(s.controls ?? {})
+    for (const [cid, cs] of Object.entries(s.children ?? {})) live.get(cid)?.apply(cs)
     if (s.grids && Object.keys(s.grids).length) {
       setGrids((g) => {
         const n = { ...g, ...s.grids }

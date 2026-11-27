@@ -131,6 +131,9 @@ public class SwFormController {
         child.layout = Layouts.get(name);
         child.Owner = parent;
         child.session = parent.session;
+        if (!parent.embedded.contains(child)) {
+            parent.embedded.add(child);
+        }
         seed(child);
         if (parent.session != null) {
             forms(parent.session).put(child.id, child);
@@ -340,6 +343,25 @@ public class SwFormController {
                 Map<String, Object> o = state(owner, false, null, null);
                 o.put("id", owner.id);
                 out.put("owner", o);
+            }
+        }
+        // Fenêtres intégrées modifiées hors requête (fils de la station : état des pompes, montants…) : jointes à la réponse,
+        // sinon l'écran ne les verrait jamais (le minuteur RefreshView de la fenêtre principale les ramène chaque seconde)
+        if (suspend == null && !f.embedded.isEmpty()) {
+            Map<String, Object> kids = new LinkedHashMap<>();
+            for (SwForm c : f.embedded) {
+                if (c.id == null || c.closeResult != null) {
+                    continue;
+                }
+                Map<String, Object> st = state(c, false, null, null);
+                boolean changed = !((Map<?, ?>) st.get("controls")).isEmpty() || !((Map<?, ?>) st.get("grids")).isEmpty()
+                    || !((List<?>) st.get("messages")).isEmpty() || st.containsKey("dyn") || st.containsKey("events") || st.containsKey("timers");
+                if (changed) {
+                    kids.put(c.id, st);
+                }
+            }
+            if (!kids.isEmpty()) {
+                out.put("children", kids);
             }
         }
         return out;

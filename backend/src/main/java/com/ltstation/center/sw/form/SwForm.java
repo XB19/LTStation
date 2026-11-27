@@ -69,6 +69,8 @@ public abstract class SwForm {
 
     /** Fenêtre propriétaire (base.Owner) : celle qui a ouvert cette fenêtre. */
     protected SwForm Owner;
+    /** Fenêtres intégrées (Embed : tuiles des pistolets…) : leurs changements partent avec chaque réponse de cette fenêtre. */
+    final java.util.List<SwForm> embedded = new java.util.concurrent.CopyOnWriteArrayList<>();
     /** Valeurs renvoyées à la fenêtre parente à la fermeture. */
     protected final Row result = new Row();
 
