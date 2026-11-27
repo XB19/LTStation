@@ -999,6 +999,11 @@ public class StationEngine {
     private void dLog() {
         while (IniInfo.ThreadStop) {
             logDelete(Path.of("C:/inetpub/logs/LogFiles"));
+            try {
+                com.ltstation.center.sw.core.TankWatch.check();
+            } catch (RuntimeException e) {
+                stationLog.writeLog("TankWatch Error:" + e.getMessage());
+            }
             if (!sleep(60000)) {
                 return;
             }

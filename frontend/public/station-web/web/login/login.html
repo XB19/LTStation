@@ -33,7 +33,7 @@
                 <div class="container-login100">
                     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                         <form class="login100-form validate-form">
-                            <img style="width:35%;display:block; margin:0 auto" id="LoginImg" src="images/JoyFel.png" />
+                            <img style="width:35%;display:block; margin:0 auto" id="LoginImg" src="images/LCT.png" alt="LCT - Lomé Container Terminal" />
                             <div class="wrap-input100 validate-input m-b-23" id="UserValid" data-validate="Saisissez votre identifiant">
                                 <span class="label-input100" id="UserNameL">Identifiant :</span>
                                 <input class="input100" type="text" name="username" id="username" placeholder="Saisissez votre identifiant" autocomplete="off">
@@ -42,8 +42,11 @@
 
                             <div class="wrap-input100 validate-input" id="PassValid" data-validate="Saisissez votre mot de passe">
                                 <span class="label-input100" id="PassWordL">Mot de passe :</span>
-                                <input class="input100" type="password" name="pass" id="pass" placeholder="Saisissez votre mot de passe">
+                                <input class="input100" type="password" name="pass" id="pass" placeholder="Saisissez votre mot de passe" style="padding-right:44px">
                                 <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                <!-- Afficher / masquer le mot de passe -->
+                                <i class="zmdi zmdi-eye" id="togglePass" title="Afficher le mot de passe" onclick="TogglePass()"
+                                   style="position:absolute;right:10px;bottom:14px;font-size:20px;cursor:pointer;color:#999;z-index:5"></i>
                             </div>
 
                             <div class="text-right p-t-8 p-b-31">
@@ -98,6 +101,15 @@
             //        my.LoginLoad(UserName + "|" + Pass);
             //})
         })
+
+        function TogglePass() {
+            var p = document.getElementById("pass");
+            var eye = document.getElementById("togglePass");
+            var show = p.type === "password";
+            p.type = show ? "text" : "password";
+            eye.className = show ? "zmdi zmdi-eye-off" : "zmdi zmdi-eye";
+            eye.title = show ? "Masquer le mot de passe" : "Afficher le mot de passe";
+        }
 
         function Login() {
             var UserName = document.getElementById("username").value;

@@ -55,20 +55,22 @@ a {
     margin-top:15px;
     display:grid;
     right:0;
-    width:58%;
+    width:60%;
     height:120px;
 }
 
+    /* LTStation : libellés français plus longs que l'original, tenus sur une ligne sans être coupés */
     .rightTankMessage tt {
         padding-left: -10px;
         color: #fff;
-        font-size: 15px;
+        font-size: 14px;
+        white-space: nowrap;
     }
 
 
 
     .fensug {
-        width: 380px;
+        width: 470px;
         height: 168px;
         background: #fff;
         border: 9px #5576ac solid;
@@ -84,7 +86,7 @@ a {
     }
 
     .fensug .wavenum {
-        width: 380px;
+        width: 470px;
         height: 168px;
         overflow: hidden;
         -webkit-border-radius: 50%;
@@ -120,16 +122,18 @@ a {
             position: relative;
             z-index: 2;
             font-weight: bold;
-            width: 140px;
+            width: 170px;
             border-top: 2px #fff solid;
             margin: 3px 1px 1px 10px;
-            line-height: 35px;
+            line-height: 24px;
+            font-size: 17px;
+            overflow-wrap: anywhere;
         }
 
 
 
 .waven {
-    width: 380px;
+    width: 470px;
     height: 168px;
     webkit-border-radius: 25em;
     -moz-border-radius: 25em;

@@ -58,7 +58,10 @@
    "dock": null,
    "visible": true,
    "z": 1,
-   "order": 1
+   "order": 1,
+   "init": {
+    "PasswordChar": true
+   }
   },
   {
    "name": "LoginName",
@@ -250,6 +253,96 @@
    "visible": true,
    "z": 11,
    "order": 11
+  },
+  {
+   "name": "label1Req",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    66,
+    39
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 11
+  },
+  {
+   "name": "label2Req",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    42,
+    83
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 10
+  },
+  {
+   "name": "label3Req",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    54,
+    125
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 9
+  },
+  {
+   "name": "label4Req",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    42,
+    170
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
+  },
+  {
+   "name": "label5Req",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    66,
+    214
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 5
   }
  ],
  "columns": {},

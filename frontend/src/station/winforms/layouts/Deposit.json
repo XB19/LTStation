@@ -2259,6 +2259,42 @@
    "visible": true,
    "z": 9,
    "order": 9
+  },
+  {
+   "name": "label1ReqskinCaptionPanel1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    42,
+    39
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 15
+  },
+  {
+   "name": "label5ReqskinCaptionPanel1",
+   "type": "Label",
+   "parent": "skinCaptionPanel1",
+   "loc": [
+    913,
+    39
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 6
   }
  ],
  "columns": {

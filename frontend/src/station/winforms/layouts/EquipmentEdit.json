@@ -36,7 +36,7 @@
     190,
     14
    ],
-   "text": "Désignation *",
+   "text": "Désignation",
    "dock": null,
    "visible": true,
    "z": 0,
@@ -479,6 +479,24 @@
    "style": {
     "back": "transparent"
    }
+  },
+  {
+   "name": "lNameBoxReq",
+   "type": "Label",
+   "parent": "FieldBox",
+   "loc": [
+    211,
+    28
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 1
   }
  ],
  "columns": {},

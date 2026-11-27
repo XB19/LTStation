@@ -144,6 +144,8 @@ public final class IniInfo {
     public static int PFormat;
     public static int Mradio = 1;
     public static int Vradio = 1;
+    /** Alerte quand le volume d'une cuve varie d'au moins ce nombre de litres en une minute (0 = désactivée). */
+    public static int TankAlertVolume = 500;
     public static int Pradio = 1;
     public static int IsOnDuty;
     public static int BoxShift;
@@ -301,6 +303,7 @@ public final class IniInfo {
         MFormat = mf[0];
         MoneyFormat = pattern(mf[1]);
         Vradio = i("VolumeFormat", 2);
+        TankAlertVolume = i("TankAlertVolume", 500);
         int[] vf = formatOf(Vradio);
         VFormat = vf[0];
         VolumeFormat = pattern(vf[1]);

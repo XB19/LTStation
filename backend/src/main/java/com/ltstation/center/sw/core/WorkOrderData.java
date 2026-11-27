@@ -275,6 +275,25 @@ public final class WorkOrderData {
         return items;
     }
 
+    /** Remplacement de carte : l'ordre en cours de l'ancienne carte continue sur la nouvelle (texte pour le message). */
+    public static String carryOver(String oldAsn, String newAsn) {
+        try {
+            Map<String, Object> cur = current(oldAsn);
+            if (cur == null || newAsn == null || newAsn.isBlank()) {
+                return "";
+            }
+            LocalDateTime now = LocalDateTime.now();
+            exec("UPDATE card_work_order SET valid_to = :t WHERE id = :id", p("t", now, "id", cur.get("id")));
+            exec("UPDATE card_work_order SET valid_to = :t WHERE asn = :a AND valid_to IS NULL", p("t", now, "a", newAsn.trim()));
+            exec("INSERT INTO card_work_order (asn, work_order_no, equipment_id, valid_from, memo, create_by) VALUES (:a, :no, :e, :t, :m, :by)",
+                    p("a", newAsn.trim(), "no", cur.get("work_order_no"), "e", cur.get("equipment_id"), "t", now,
+                            "m", "Reprise de la carte " + oldAsn, "by", IniInfo.LoginName));
+            return "\nOrdre de travail " + str(cur.get("work_order_no")) + " repris sur la nouvelle carte.";
+        } catch (RuntimeException e) {
+            return "\nOrdre de travail non repris : " + e.getMessage();
+        }
+    }
+
     /** Fin de l'ordre en cours d'une carte. */
     public static void end(String asn) {
         if (exec("UPDATE card_work_order SET valid_to = now() WHERE asn = :a AND valid_to IS NULL", p("a", asn)) == 0) {

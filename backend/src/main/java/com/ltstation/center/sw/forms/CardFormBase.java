@@ -66,10 +66,8 @@ abstract class CardFormBase extends SwForm {
         Integer eq = SelectedEquipment();
         try {
             if (no == null && eq == null) {
-                if (WorkOrderData.current(asn) != null) {
-                    WorkOrderData.end(asn);
-                    return "\nOrdre de travail terminé.";
-                }
+                // Champs vides (carte modifiée sans recharger son ordre) : l'ordre en cours est gardé ; il se termine
+                // seulement par « Historique des ordres » > « Terminer l'ordre en cours »
                 return "";
             }
             WorkOrderData.assign(asn, no, eq, null, null, false);

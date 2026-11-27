@@ -28,6 +28,15 @@ public class Deposit extends SwForm {
         c("PayMent").SelectedIndex(0);
         c("BalanceChange").SelectedIndex(0);
         c("MasterPayMent").SelectedIndex(0);
+        // LTStation : seuls Recharge, Débit et Consommation ; la recharge se fait en litres, sans paiement, bonus ni points
+        for (String page : new String[] {"Transfer", "STransfer", "CreditPay", "DepositForMasterCard"}) {
+            c(page).Visible(false);
+        }
+        for (String n : new String[] {"label3", "PayMent", "label6", "DiscountAmount", "label8", "Score"}) {
+            c(n).Visible(false);
+        }
+        c("label5").Text("Nombre de litres");
+        c("skinCaptionPanel1").Text("Saisissez le n° de carte, cliquez sur « Lire la carte », saisissez le nombre de litres puis « Recharge »");
     }
 
     private static String now() {

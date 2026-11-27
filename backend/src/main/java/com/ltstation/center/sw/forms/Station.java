@@ -262,6 +262,10 @@ public class Station extends SwForm {
 
     /** Tableaux de gauche, poste courant, progression et erreurs (état du moteur de la station). */
     public void RefreshView() {
+        String alert = com.ltstation.center.sw.core.TankWatch.poll();
+        if (!alert.isEmpty()) {
+            MessageBox(alert, "Alerte cuve");
+        }
         StationEngine en = engine();
         if (en == null) {
             return;

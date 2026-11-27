@@ -101,7 +101,9 @@ public class CardChange extends SwForm {
                     MessageBox(L("CardMakeErrorReturn"));
                 }
             } else {
-                MessageBox(L("CardChangeComplete"));
+                // L'ordre de travail de l'ancienne carte passe sur la nouvelle
+                String moved = com.ltstation.center.sw.core.WorkOrderData.carryOver(c("OldAsn").Text(), c("CardAsn").Text());
+                MessageBox(L("CardChangeComplete") + moved);
             }
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());

@@ -39,8 +39,10 @@ public class OilTransacation extends SwForm {
         c("ShiftSelect").SelectedIndex(0);
         c("CardTypeSelect").SelectedIndex(0);
         c("OrderSelect").SelectedIndex(0);
-        c("StartDate").Value(LocalDateTime.now().minusDays(3));
+        // LTStation : les 2 derniers jours par défaut, période modifiable
+        c("StartDate").Value(LocalDateTime.now().minusDays(2));
         c("EndDate").Value(LocalDateTime.now().plusHours(1));
+        c("DateCheck").Checked(true);
         if (IniInfo.NormalType == 2) {
             g("TransactionView").HeaderText("VolumeTotal", L("Quality"));
             g("TotalSumView").HeaderText("TotalVolume", L("TotalQuality"));
@@ -230,25 +232,32 @@ public class OilTransacation extends SwForm {
     private DataTable ListToDataTabel(List<Row> oils) {
         DataTable dt = new DataTable();
         try {
-            for (String col : new String[] {"GunId", "GradeSpecificID", "PPU", "Volume", "AMN", "TruelyPay", "TrueTime", "Asn", "BAL", "TType", "Unit",
-                "POSP", "POSTTC", "EmployeeID", "VolumeTotal", "Shift", "CarNumber", "Mileage", "Discount", "Coupon", "CouponValue",
-                "Ordre de travail", "Équipement"}) {
+            for (String col : new String[] {"Pistolet", "Type d'huile", "Prix", "Volume", "Montant", "Payé", "Date", "N° de carte",
+                "Ordre de travail", "Équipement", "Quantité avant", "Quantité après", "Type de transaction", "Employé", "Index",
+                "Immatriculation", "Kilométrage", "Remise", "Coupon", "Valeur du coupon"}) {
                 dt.addColumn(col);
             }
             Map<String, String[]> wo = WorkOrderData.at(oils, "Asn", "TrueTime");
             for (Row oil : oils) {
                 String[] o = wo.getOrDefault(oil.get("Asn") + "|" + Conv.toDateTime(oil.get("TrueTime")), new String[] {"", ""});
                 dt.addRow(s(oil.get("GunId")), BaseFunction.GetOilNameByID(oil.i("GradeSpecificID")), s(oil.get("PPU")), s(oil.get("Volume")),
-                    s(oil.get("AMN")), s(oil.get("TruelyPay")), s(oil.get("TrueTime")), oil.get("Asn").toString(), s(oil.get("BAL")),
-                    BaseFunction.GetTType(oil.i("TType"), oil.str("Asn")), BaseFunction.GetPayType(oil.i("Unit")), s(oil.get("POSP")),
-                    oil.get("POSTTC").toString(), BaseFunction.GetEmpName(oil.i("EmployeeID")), s(oil.get("VolumeTotal")), oil.get("Shift").toString(),
-                    s(oil.get("CarNumber")), s(oil.get("Mileage")), s(oil.get("Discount")), oil.get("Coupon").toString(), s(oil.get("CouponValue")),
-                    s(o[0]), s(o[1]));
+                    s(oil.get("AMN")), s(oil.get("TruelyPay")), s(oil.get("TrueTime")), oil.get("Asn").toString(), s(o[0]), s(o[1]),
+                    s(before(oil)), s(oil.get("BAL")), BaseFunction.GetTType(oil.i("TType"), oil.str("Asn")),
+                    BaseFunction.GetEmpName(oil.i("EmployeeID")), s(oil.get("VolumeTotal")), s(oil.get("CarNumber")), s(oil.get("Mileage")),
+                    s(oil.get("Discount")), oil.get("Coupon").toString(), s(oil.get("CouponValue")));
             }
             return dt;
         } catch (RuntimeException e) {
             return null;
         }
+    }
+
+    /** Quantité sur la carte avant le plein : quantité après (BAL, enregistrée par la pompe) + volume servi. */
+    private static Object before(Row oil) {
+        if (oil.get("BAL") == null) {
+            return "";
+        }
+        return Conv.round(Conv.toDouble(oil.get("BAL")) + Conv.toDouble(oil.get("Volume")), IniInfo.Vradio);
     }
 
     private void SetButtonEnable(int page) {
@@ -277,7 +286,7 @@ public class OilTransacation extends SwForm {
         for (Row item : list) {
             String[] o = wo.getOrDefault(item.get("Asn") + "|" + Conv.toDateTime(item.get("TrueTime")), new String[] {"", ""});
             g("TransactionView").RowsAdd(item.get("GunId"), BaseFunction.GetOilNameByID(item.i("GradeSpecificID")), item.get("PPU"), item.get("Volume"),
-                item.get("AMN"), item.get("TruelyPay"), item.get("TrueTime"), item.get("Asn"), o[0], o[1], item.get("BAL"),
+                item.get("AMN"), item.get("TruelyPay"), item.get("TrueTime"), item.get("Asn"), o[0], o[1], before(item), item.get("BAL"),
                 BaseFunction.GetTType(item.i("TType"), item.str("Asn")), BaseFunction.GetPayType(item.i("Unit")), item.get("POSP"), hex(item.get("POSTTC")),
                 BaseFunction.GetEmpName(item.i("EmployeeID")), item.get("VolumeTotal"), item.get("Shift"), item.get("CarNumber"), item.get("Mileage"),
                 item.get("Discount"), item.get("Coupon"), item.get("CouponValue"));

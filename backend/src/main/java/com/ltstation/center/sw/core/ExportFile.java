@@ -634,6 +634,8 @@ public class ExportFile {
         cell(sheet, 0, 0, TableName, cellStyle);
         int num = 2;
         if (TableName.equals(L("Transaction"))) {
+            // LTStation : en-têtes repris des colonnes du tableau (colonnes retirées, quantités, ordre de travail)
+            s = dt.Columns.toArray(new String[0]);
             sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, s.length - 1));
             sheet.createRow(1);
             cell(sheet, 1, 0, L("PrintTime") + ":", null);
@@ -656,6 +658,15 @@ public class ExportFile {
             cell(sheet, 1, n - 1, IniInfo.LoginName, null);
             for (int j = 0; j < dt.Rows.size(); j++) {
                 sheet.setColumnWidth(j, j == 0 || j == 7 ? 5120 : 2560);
+            }
+            // Tableaux LTStation (équipements, consommation…) : ligne d'en-têtes ; Log et Buss gardent leur forme d'origine
+            if (!"Log".equals(TableName) && !"Buss".equals(TableName)) {
+                sheet.createRow(2);
+                for (int i = 0; i < n; i++) {
+                    cell(sheet, 2, i, dt.Columns.get(i), cellStyle);
+                    sheet.setColumnWidth(i, 5120);
+                }
+                num++;
             }
         }
         for (int k = 0; k < dt.Rows.size(); k++) {

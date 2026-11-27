@@ -4844,7 +4844,10 @@
    "dock": null,
    "visible": true,
    "z": 2,
-   "order": 2
+   "order": 2,
+   "init": {
+    "PasswordChar": true
+   }
   },
   {
    "name": "EmpPassword",
@@ -4862,7 +4865,10 @@
    "dock": null,
    "visible": true,
    "z": 3,
-   "order": 3
+   "order": 3,
+   "init": {
+    "PasswordChar": true
+   }
   },
   {
    "name": "EmpValidTime",
@@ -6785,6 +6791,78 @@
    "style": {
     "back": "transparent"
    }
+  },
+  {
+   "name": "label4ReqgroupBox3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    27
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 14
+  },
+  {
+   "name": "label5ReqgroupBox3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    370,
+    27
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 12
+  },
+  {
+   "name": "label9ReqgroupBox3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    79,
+    68
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 8
+  },
+  {
+   "name": "label8ReqgroupBox3",
+   "type": "Label",
+   "parent": "groupBox3",
+   "loc": [
+    370,
+    68
+   ],
+   "size": [
+    8,
+    12
+   ],
+   "text": "*",
+   "dock": null,
+   "visible": true,
+   "z": 0,
+   "order": 7
   }
  ],
  "columns": {},

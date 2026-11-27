@@ -103,7 +103,7 @@
     75,
     21
    ],
-   "text": "Type Select",
+   "text": "Type d'huile",
    "dock": null,
    "visible": true,
    "z": 3,
@@ -1139,7 +1139,7 @@
    },
    {
     "name": "OilType",
-    "header": "Type",
+    "header": "Type d'huile",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -1210,8 +1210,16 @@
     "width": null
    },
    {
+    "name": "QtyBefore",
+    "header": "Quantité avant",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
     "name": "BAL",
-    "header": "Balance",
+    "header": "Quantité après",
     "visible": true,
     "prop": null,
     "readOnly": true,
@@ -1228,7 +1236,7 @@
    {
     "name": "PayMent",
     "header": "Pay Type",
-    "visible": true,
+    "visible": false,
     "prop": null,
     "readOnly": true,
     "width": null
@@ -1236,7 +1244,7 @@
    {
     "name": "PosP",
     "header": "Com",
-    "visible": true,
+    "visible": false,
     "prop": null,
     "readOnly": true,
     "width": null
@@ -1244,7 +1252,7 @@
    {
     "name": "POSTTC",
     "header": "POSTTC",
-    "visible": true,
+    "visible": false,
     "prop": null,
     "readOnly": true,
     "width": null
@@ -1268,7 +1276,7 @@
    {
     "name": "Shift",
     "header": "Shift",
-    "visible": true,
+    "visible": false,
     "prop": null,
     "readOnly": true,
     "width": null
