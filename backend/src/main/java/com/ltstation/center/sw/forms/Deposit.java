@@ -37,6 +37,18 @@ public class Deposit extends SwForm {
         }
         c("label5").Text("Nombre de litres");
         c("skinCaptionPanel1").Text("Saisissez le n° de carte, cliquez sur « Lire la carte », saisissez le nombre de litres puis « Recharge »");
+        if (com.ltstation.center.common.Litres.on()) {
+            // Cartes en litres : soldes et montants de la fenêtre sont des litres
+            for (String n : new String[] {"label21", "label2", "label13", "label12"}) {
+                c(n).Text("Solde (litres)");
+            }
+            for (String n : new String[] {"label30", "label40"}) {
+                c(n).Text("Solde (litres) :");
+            }
+            c("label18").Text("Nombre de litres");
+            c("label10").Text("Litres à débiter");
+            c("label7").Text("Litres consommés");
+        }
     }
 
     private static String now() {

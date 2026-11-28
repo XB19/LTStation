@@ -1320,6 +1320,14 @@
     "prop": null,
     "readOnly": true,
     "width": null
+   },
+   {
+    "name": "EstimatedCost",
+    "header": "Coût estimé (F)",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
    }
   ],
   "TotalSumView": [
@@ -1350,6 +1358,14 @@
    {
     "name": "TotalUserCard",
     "header": "Total Record",
+    "visible": true,
+    "prop": null,
+    "readOnly": true,
+    "width": null
+   },
+   {
+    "name": "EstimatedCost",
+    "header": "Coût estimé (F)",
     "visible": true,
     "prop": null,
     "readOnly": true,

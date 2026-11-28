@@ -69,6 +69,9 @@ public class PriceController {
     @Transactional
     public PriceInfos add(@CurrentUser SessionUser user, @RequestBody PriceForm f) {
         validate(user, f);
+        if (com.ltstation.center.common.Litres.refused(f.newPrice())) {
+            throw new ApiException(com.ltstation.center.common.Litres.PRICE_LOCKED);
+        }
         if (db.one("SELECT 1 FROM price_infos WHERE station_id = :s AND grade_specific_id = :g",
                 Map.of("s", f.stationId(), "g", f.gradeId())) != null) {
             throw new ApiException("Ce prix existe déjà");
@@ -96,6 +99,9 @@ public class PriceController {
     public PriceInfos update(@CurrentUser SessionUser user, @PathVariable int id, @RequestBody PriceForm f) {
         PriceInfos p = prices.findById(id).orElseThrow(() -> new ApiException("Information inexistante"));
         validate(user, f);
+        if (com.ltstation.center.common.Litres.refused(f.newPrice())) {
+            throw new ApiException(com.ltstation.center.common.Litres.PRICE_LOCKED);
+        }
         if (db.one("SELECT 1 FROM price_infos WHERE id <> :id AND station_id = :s AND grade_specific_id = :g",
                 Map.of("id", id, "s", f.stationId(), "g", f.gradeId())) != null) {
             throw new ApiException("Cette information existe déjà");

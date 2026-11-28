@@ -163,6 +163,19 @@ Au premier lancement, la page **Base de données** demande le serveur PostgreSQL
 changer la base, d'ouvrir le journal ou le dossier des données, ou d'utiliser un serveur distant
 (**Adresse du serveur…**).
 
+### Cartes en litres
+
+Les cartes employé servent à donner des litres (pas de paiement) : `CARTES_EN_LITRES=1` (par défaut, dans `.env`).
+
+- Le boîtier de la pompe retire « volume × prix » du solde : le **prix de chaque énergie est verrouillé à 1**
+  (Réglage des prix, ajout d'une énergie, Center web et `ServerDeal/UpOilPrice`) ; les **prix spéciaux** sont refusés ;
+- soldes, recharges et débits s'affichent en litres (Solde, tuile du pistolet, Transactions, Journal des cartes, exports) ;
+- **coût de référence au litre** par énergie (colonne de Réglage des prix, table `reference_cost` de la base Station) :
+  sert seulement au « Coût estimé (F) » des transactions et de leurs totaux, jamais aux cartes ni aux pompes ;
+- un prix différent de 1 saisi avant le verrou est signalé à l'ouverture de Réglage des prix.
+
+`CARTES_EN_LITRES=0` rend le fonctionnement d'origine (soldes en argent).
+
 ### Postes de bureau
 
 Les utilisateurs (Administrateur, Opérateur de saisie, Consultation) peuvent travailler depuis leur bureau, avec leur propre

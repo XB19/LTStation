@@ -275,6 +275,14 @@ public class CardLog extends SwForm {
     public void CardLog_Load() {
         c("DTStartDate").Value(LocalDateTime.now().minusDays(1));
         c("DTEndDate").Value(LocalDateTime.now().plusDays(1));
+        if (com.ltstation.center.common.Litres.on()) {
+            // Cartes en litres : recharges, consommations et soldes sont des litres
+            g("CardLogView").HeaderText("dataGridViewTextBoxColumn3", "Litres rechargés");
+            g("CardLogView").HeaderText("dataGridViewTextBoxColumn5", "Litres consommés");
+            g("CardLogView").HeaderText("dataGridViewTextBoxColumn7", "Solde (litres)");
+            g("LogTotalView").HeaderText("OilPrice", "Litres rechargés");
+            g("LogTotalView").HeaderText("Amount", "Litres consommés");
+        }
     }
 
     public void SkinTxt_TextChanged() {

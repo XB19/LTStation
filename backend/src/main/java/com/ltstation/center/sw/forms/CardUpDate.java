@@ -41,6 +41,20 @@ public class CardUpDate extends CardFormBase {
             c(page).Visible(false);
         }
         c("CardTool").SelectedIndex(1);
+        hideSpecialPrices();
+    }
+
+    /** Cartes en litres : pas de prix spécial (la pompe retirerait autre chose que les litres servis) ; champs masqués. */
+    private void hideSpecialPrices() {
+        if (!com.ltstation.center.common.Litres.on()) {
+            return;
+        }
+        for (String n : Controls("EGradePrice")) {
+            if (!TypeOf(n).endsWith("Button")) {
+                c(n).Visible(false);
+            }
+        }
+        c("EGradePrice").Text("");
     }
 
     /** Boutons des onglets retirés : refusés même s'ils sont appelés directement. */
@@ -175,6 +189,9 @@ public class CardUpDate extends CardFormBase {
     }
 
     private String GetSpecialPrice(String BtnName) {
+        if (com.ltstation.center.common.Litres.on()) {
+            return "";
+        }
         StringBuilder text = new StringBuilder();
         try {
             String g;

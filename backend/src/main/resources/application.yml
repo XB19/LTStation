@@ -44,6 +44,8 @@ server:
         name: LTSESSION
 
 app:
+  # Cartes en litres (CARTES_EN_LITRES=1, par défaut) : prix verrouillé à 1, pas de prix spécial, coût réel dans les rapports
+  cartes-en-litres: ${CARTES_EN_LITRES:1}
   # Poste de bureau (POSTE_BUREAU=1 dans .env) : base de la station par le VPN, lecteur de cartes local,
   # ni pompes, ni cuves, ni afficheurs, ni moteur de la station (ils ne tournent que sur le PC de la station).
   poste-bureau: ${POSTE_BUREAU:0}

@@ -47,6 +47,21 @@ public class OilTransacation extends SwForm {
             g("TransactionView").HeaderText("VolumeTotal", L("Quality"));
             g("TotalSumView").HeaderText("TotalVolume", L("TotalQuality"));
         }
+        // Cartes en litres : les montants sont des litres ; le coût estimé (coût de référence au litre) sert à la gestion
+        boolean litres = com.ltstation.center.common.Litres.on();
+        if (litres) {
+            g("TransactionView").HeaderText("Amount", "Débité (L)");
+            g("TransactionView").HeaderText("TruePay", "Payé (L)");
+            g("TotalSumView").HeaderText("TotalAmount", "Total débité (L)");
+        }
+        g("TransactionView").ColumnVisible("EstimatedCost", litres);
+        g("TotalSumView").ColumnVisible("EstimatedCost", litres);
+    }
+
+    /** Coût estimé d'une vente : volume × coût de référence au litre de son énergie (vide si aucun coût n'est saisi). */
+    private static Object cost(Row oil, java.util.Map<Integer, BigDecimal> costs) {
+        BigDecimal c = costs.getOrDefault(oil.i("GradeSpecificID"), BigDecimal.ZERO);
+        return c.signum() == 0 ? "" : com.ltstation.center.sw.core.ReferenceCost.estimate(oil.get("Volume"), c);
     }
 
     private void LoadShiftDuty() {
@@ -123,10 +138,18 @@ public class OilTransacation extends SwForm {
                     d = d.add(Conv.toDecimal(item.get("SumVolume")));
                     num += Conv.toLong(item.get("SumCount"));
                 }
-                g("TotalSumView").RowsAdd(L("Total"), Conv.round(d, IniInfo.Vradio), Conv.round(value.doubleValue(), IniInfo.Mradio), num);
+                // Coût estimé total : volume de chaque énergie × son coût de référence
+                java.util.Map<Integer, BigDecimal> costs = com.ltstation.center.sw.core.ReferenceCost.byGradeId();
+                BigDecimal totalCost = BigDecimal.ZERO;
+                for (Row gv : db().query(db().sql("select {OilTransactions.GradeSpecificID} AS G, sum({OilTransactions.Volume}) AS V from [OilTransactions]"
+                    + (q.where == null ? "" : " where " + q.where) + " group by {OilTransactions.GradeSpecificID}"), q.params)) {
+                    totalCost = totalCost.add(com.ltstation.center.sw.core.ReferenceCost.estimate(gv.get("V"), costs.getOrDefault(gv.i("G"), BigDecimal.ZERO)));
+                }
+                g("TotalSumView").RowsAdd(L("Total"), Conv.round(d, IniInfo.Vradio), Conv.round(value.doubleValue(), IniInfo.Mradio), num,
+                    totalCost.signum() == 0 ? "" : totalCost);
                 for (Row item : list) {
                     g("TotalSumView").RowsAdd(GetCardType(item.str("Key")), Conv.round(Conv.toDecimal(item.get("SumVolume")), IniInfo.Vradio),
-                        Conv.round(Conv.toDouble(item.get("SumAmount")), IniInfo.Mradio), Conv.toLong(item.get("SumCount")));
+                        Conv.round(Conv.toDouble(item.get("SumAmount")), IniInfo.Mradio), Conv.toLong(item.get("SumCount")), "");
                 }
             }
             String order = c("OrderSelect").SelectedIndex() != 0 ? "{GunId}" : "{TrueTime} DESC";
@@ -232,19 +255,21 @@ public class OilTransacation extends SwForm {
     private DataTable ListToDataTabel(List<Row> oils) {
         DataTable dt = new DataTable();
         try {
-            for (String col : new String[] {"Pistolet", "Type d'huile", "Prix", "Volume", "Montant", "Payé", "Date", "N° de carte",
+            for (String col : new String[] {"Pistolet", "Type d'huile", "Prix", "Volume", com.ltstation.center.common.Litres.on() ? "Débité (L)" : "Montant",
+                com.ltstation.center.common.Litres.on() ? "Payé (L)" : "Payé", "Date", "N° de carte",
                 "Ordre de travail", "Équipement", "Quantité avant", "Quantité après", "Type de transaction", "Employé", "Index",
-                "Immatriculation", "Kilométrage", "Remise", "Coupon", "Valeur du coupon"}) {
+                "Immatriculation", "Kilométrage", "Remise", "Coupon", "Valeur du coupon", "Coût estimé (F)"}) {
                 dt.addColumn(col);
             }
             Map<String, String[]> wo = WorkOrderData.at(oils, "Asn", "TrueTime");
+            Map<Integer, BigDecimal> costs = com.ltstation.center.sw.core.ReferenceCost.byGradeId();
             for (Row oil : oils) {
                 String[] o = wo.getOrDefault(oil.get("Asn") + "|" + Conv.toDateTime(oil.get("TrueTime")), new String[] {"", ""});
                 dt.addRow(s(oil.get("GunId")), BaseFunction.GetOilNameByID(oil.i("GradeSpecificID")), s(oil.get("PPU")), s(oil.get("Volume")),
-                    s(oil.get("AMN")), s(oil.get("TruelyPay")), s(oil.get("TrueTime")), oil.get("Asn").toString(), s(o[0]), s(o[1]),
+                    s(oil.get("AMN")), s(oil.get("TruelyPay")), s(oil.get("TrueTime")), s(oil.get("Asn")), s(o[0]), s(o[1]),
                     s(before(oil)), s(oil.get("BAL")), BaseFunction.GetTType(oil.i("TType"), oil.str("Asn")),
                     BaseFunction.GetEmpName(oil.i("EmployeeID")), s(oil.get("VolumeTotal")), s(oil.get("CarNumber")), s(oil.get("Mileage")),
-                    s(oil.get("Discount")), oil.get("Coupon").toString(), s(oil.get("CouponValue")));
+                    s(oil.get("Discount")), s(oil.get("Coupon")), s(oil.get("CouponValue")), s(cost(oil, costs)));
             }
             return dt;
         } catch (RuntimeException e) {
@@ -283,13 +308,14 @@ public class OilTransacation extends SwForm {
     private void ShowData(List<Row> list) {
         g("TransactionView").RowsClear();
         Map<String, String[]> wo = WorkOrderData.at(list, "Asn", "TrueTime");
+        Map<Integer, BigDecimal> costs = com.ltstation.center.sw.core.ReferenceCost.byGradeId();
         for (Row item : list) {
             String[] o = wo.getOrDefault(item.get("Asn") + "|" + Conv.toDateTime(item.get("TrueTime")), new String[] {"", ""});
             g("TransactionView").RowsAdd(item.get("GunId"), BaseFunction.GetOilNameByID(item.i("GradeSpecificID")), item.get("PPU"), item.get("Volume"),
                 item.get("AMN"), item.get("TruelyPay"), item.get("TrueTime"), item.get("Asn"), o[0], o[1], before(item), item.get("BAL"),
                 BaseFunction.GetTType(item.i("TType"), item.str("Asn")), BaseFunction.GetPayType(item.i("Unit")), item.get("POSP"), hex(item.get("POSTTC")),
                 BaseFunction.GetEmpName(item.i("EmployeeID")), item.get("VolumeTotal"), item.get("Shift"), item.get("CarNumber"), item.get("Mileage"),
-                item.get("Discount"), item.get("Coupon"), item.get("CouponValue"));
+                item.get("Discount"), item.get("Coupon"), item.get("CouponValue"), cost(item, costs));
         }
     }
 

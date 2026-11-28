@@ -160,7 +160,7 @@ public class Nozzle extends SwForm {
                 c("NozzleStatue").Image("res/OFF.png");
             }
             c("CardNo").Text(Asn.isEmpty() ? nz(L("NoCard")) : Asn);
-            c("Amount").Text(AMN.isEmpty() ? L("Amount") + ":0" : L("Amount") + ":" + AMN);
+            c("Amount").Text(amountLabel() + (AMN.isEmpty() ? ":0" : ":" + AMN));
             c("Volume").Text(Vol.isEmpty() ? L("Volume") + ":0" : L("Volume") + ":" + Vol);
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
@@ -220,6 +220,7 @@ public class Nozzle extends SwForm {
             c("OilType").Text("Énergie : " + oil);
             c("PPU").Text("Prix : " + price.toPlainString());
         }
+        c("Amount").Text(amountLabel() + ":0");
         Row o = db().first("OilTransactions", "{GunId} = :g AND ({TType} = 5 OR {TType} = 6) ORDER BY {TrueTime} DESC", p("g", nozId));
         if (o != null) {
             switch (o.i("TType")) {
@@ -1290,6 +1291,11 @@ public class Nozzle extends SwForm {
      */
     private static long h(String s) {
         return Long.parseUnsignedLong(s, 16);
+    }
+
+    /** Libellé du montant de la tuile : des litres quand les cartes fonctionnent en litres. */
+    private String amountLabel() {
+        return com.ltstation.center.common.Litres.on() ? "Débité (L) " : L("Amount");
     }
 
     /** Transaction au format récent (≥ 286 caractères) : enregistrement, supervision, SMS. */

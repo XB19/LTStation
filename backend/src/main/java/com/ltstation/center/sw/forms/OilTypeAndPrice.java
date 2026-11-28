@@ -31,6 +31,19 @@ public class OilTypeAndPrice extends SwForm {
         if (sid == 1) {
             c("NextButton").Text(L("Confirm"));
         }
+        // Cartes en litres : un prix saisi avant le verrou fausserait les soldes (la pompe retire volume × prix)
+        if (com.ltstation.center.common.Litres.on()) {
+            StringBuilder wrong = new StringBuilder();
+            for (Row p : db().list("PriceInfos")) {
+                if (com.ltstation.center.common.Litres.refused(p.get("NewPPU"))) {
+                    wrong.append(wrong.length() == 0 ? "" : ", ").append(p.str("Code")).append(" (").append(Conv.toStr(p.get("NewPPU"))).append(")");
+                }
+            }
+            if (wrong.length() > 0) {
+                MessageBox(com.ltstation.center.common.Litres.PRICE_LOCKED + ".\nÀ corriger : remettre à 1 le prix de " + wrong
+                    + ".\nLe coût réel se saisit dans la colonne « Coût de référence ».");
+            }
+        }
     }
 
     private void DowOilType() {
@@ -95,7 +108,7 @@ public class OilTypeAndPrice extends SwForm {
         for (Row item : db().query(sql, null)) {
             BigDecimal price = Conv.toDecimal(item.get("Price"));
             grid.RowsAdd(item.get("Code"), item.str("Code"), price.scale() > IniInfo.Pradio ? price.setScale(IniInfo.Pradio, RoundingMode.HALF_EVEN) : price,
-                Conv.toDateTime(item.get("ValidTime")).format(Conv.STD));
+                Conv.toDateTime(item.get("ValidTime")).format(Conv.STD), com.ltstation.center.sw.core.ReferenceCost.of(item.str("Code")));
         }
     }
 
@@ -112,10 +125,23 @@ public class OilTypeAndPrice extends SwForm {
             int col = g("OilPriceView").CurrentCellColumnIndex();
             String text = Conv.toStr(g("OilPriceView").Cell(index, col));
             int id = Integer.parseInt(Conv.toStr(g("OilPriceView").Cell(index, "ID")));
+            if (col == 4) {
+                // Coût de référence au litre (colonne ajoutée) : rapports seulement, ni Center ni pompes ; « ID » contient le code
+                if (!text.matches("^\\d+$|^(\\d+)(\\.\\d+)?$")) {
+                    throw new IllegalStateException(L("NumberOrDecimal"));
+                }
+                com.ltstation.center.sw.core.ReferenceCost.set(Conv.toStr(g("OilPriceView").Cell(index, "ID")), Conv.toDecimal(text));
+                tx.commit();
+                LoadData();
+                return;
+            }
             Row price = priceOf(id);
             if (col == 2) {
                 if (!text.matches("^-?\\d+$|^(-?\\d+)(\\.\\d+)?$")) {
                     throw new IllegalStateException(L("NumberOrDecimal"));
+                }
+                if (com.ltstation.center.common.Litres.refused(text)) {
+                    throw new IllegalStateException(com.ltstation.center.common.Litres.PRICE_LOCKED);
                 }
                 price.put("CurrentPPU", Conv.toDecimal(price.get("NewPPU")));
                 price.put("NewPPU", Conv.toDecimal(text));

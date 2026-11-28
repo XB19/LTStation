@@ -69,10 +69,25 @@ public class CardMake extends CardFormBase {
             }
             c("CardTool").SelectedIndex(EMPLOYEE_PAGE);
             CardTool_SelectedIndexChanged();
+            hideSpecialPrices();
         } catch (RuntimeException ex) {
             MessageBox(ex.getMessage());
             Close();
         }
+    }
+
+
+    /** Cartes en litres : pas de prix spécial (la pompe retirerait autre chose que les litres servis) ; champs masqués. */
+    private void hideSpecialPrices() {
+        if (!com.ltstation.center.common.Litres.on()) {
+            return;
+        }
+        for (String n : Controls("EGradePrice")) {
+            if (!TypeOf(n).endsWith("Button")) {
+                c(n).Visible(false);
+            }
+        }
+        c("EGradePrice").Text("");
     }
 
     /** Onglet Carte employé (CardTool) ; les autres onglets ne sont plus proposés. */
@@ -369,6 +384,9 @@ public class CardMake extends CardFormBase {
     }
 
     private String GetSpecialPrice(String BtnName) {
+        if (com.ltstation.center.common.Litres.on()) {
+            return "";
+        }
         StringBuilder text = new StringBuilder();
         try {
             String g;

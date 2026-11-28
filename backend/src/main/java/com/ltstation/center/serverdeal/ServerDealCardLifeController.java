@@ -592,6 +592,9 @@ public class ServerDealCardLifeController extends ServerDealBase {
                 if (gra == null) {
                     throw fail(NULL_REF);
                 }
+                if (com.ltstation.center.common.Litres.refused(modal.get("NewPPU"))) {
+                    throw fail(com.ltstation.center.common.Litres.PRICE_LOCKED);
+                }
                 Row price = db.first("PriceInfos", "{StationID} = :s AND {GradeSpecificID} = :g",
                     p("s", modal.i("StationID"), "g", gra.i("GradeSpecificID")));
                 if (price == null) {

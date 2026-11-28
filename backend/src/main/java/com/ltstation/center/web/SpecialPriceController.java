@@ -43,6 +43,9 @@ public class SpecialPriceController {
     @PostMapping
     @Transactional
     public void add(@RequestBody SpecialPriceForm f) {
+        if (com.ltstation.center.common.Litres.on()) {
+            throw new ApiException(com.ltstation.center.common.Litres.SPECIAL_PRICE_LOCKED);
+        }
         validate(f);
         if (db.one("SELECT 1 FROM sprice_price_set WHERE name = :n", Db.p("n", f.name())) != null) {
             throw new ApiException("Nom en double");
@@ -57,6 +60,9 @@ public class SpecialPriceController {
     @PutMapping("/{id}")
     @Transactional
     public void update(@PathVariable int id, @RequestBody SpecialPriceForm f) {
+        if (com.ltstation.center.common.Litres.on()) {
+            throw new ApiException(com.ltstation.center.common.Litres.SPECIAL_PRICE_LOCKED);
+        }
         validate(f);
         if (db.one("SELECT 1 FROM sprice_price_set WHERE id = :id", Db.p("id", id)) == null) {
             throw new ApiException("Information inexistante");

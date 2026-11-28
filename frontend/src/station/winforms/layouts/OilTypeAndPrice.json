@@ -200,6 +200,14 @@
     "prop": null,
     "readOnly": true,
     "width": null
+   },
+   {
+    "name": "RefCost",
+    "header": "Coût de référence (F/L)",
+    "visible": true,
+    "prop": null,
+    "readOnly": false,
+    "width": null
    }
   ]
  },

@@ -41,6 +41,9 @@ public class CreateOilPrice extends SwForm {
             }
             String num = "^-?\\d+$|^(-?\\d+)(\\.\\d+)?$";
             if (c("OilPrice").Text().matches(num) && c("DensityT").Text().matches(num)) {
+                if (com.ltstation.center.common.Litres.refused(c("OilPrice").Text())) {
+                    throw new IllegalStateException(com.ltstation.center.common.Litres.PRICE_LOCKED);
+                }
                 if (new BigDecimal(c("OilPrice").Text()).signum() < 0) {
                     throw new IllegalStateException(L("FormatError"));
                 }
